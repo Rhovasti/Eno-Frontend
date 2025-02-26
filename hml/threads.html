@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Pelisivusto - Langat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pelisivusto</h1>
+        <nav>
+            <a href="index.html">Etusivu</a>
+            <a href="threads.html">Langat</a>
+            <a href="storyboard.html">Storyboard</a>
+            <a href="wiki.html">Wiki</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Langat</h2>
+
+        <select id="gameSelect">
+            <option value="">Valitse peli</option>
+        </select>
+
+        <select id="chapterSelect" disabled>
+            <option value="">Valitse Luku</option>
+        </select>
+
+        <button id="createChapterButton" disabled>Luo Uusi Luku</button>
+
+        <div id="newChapterForm" style="display:none;">
+            <h3>Luo Uusi Luku</h3>
+            <form id="createChapterForm">
+                <input type="text" id="chapterTitle" placeholder="Luvun otsikko" required>
+                <textarea id="chapterDescription" placeholder="Luvun kuvaus"></textarea>
+                <button type="submit">Luo Luku</button>
+            </form>
+        </div>
+
+        <select id="beatSelect" disabled>
+            <option value="">Valitse Beatti</option>
+        </select>
+
+        <button id="createBeatButton" disabled>Luo Uusi Beatti</button>
+
+        <div id="newBeatForm" style="display:none;">
+            <h3>Luo Uusi Beatti</h3>
+            <form id="createBeatForm">
+                <input type="text" id="beatTitle" placeholder="Beatin otsikko" required>
+                <textarea id="beatContent" placeholder="Beatin sisältö" required></textarea>
+                <button type="submit">Luo Beatti</button>
+            </form>
+        </div>
+
+        <div id="postsContainer"></div>
+
+        <div id="newPostForm" style="display:none;">
+            <h3>Luo uusi viesti</h3>
+            <form id="createPostForm">
+                <input type="text" id="postTitle" placeholder="Viestin otsikko" required>
+                <textarea id="postContent" placeholder="Viestin sisältö" required></textarea>
+                <label>
+                    <input type="checkbox" id="isGMPost"> Post as Game Master
+                </label>
+                <button type="submit">Lähetä</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="threads.js"></script>
+</body>
+</html>

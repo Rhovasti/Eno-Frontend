@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Pelisivusto - Etusivu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pelisivusto</h1>
+        <nav id="navBar">
+            <a href="index.html">Etusivu</a>
+            <a href="threads.html">Langat</a>
+            <a href="storyboard.html">Storyboard</a>
+            <a href="wiki.html">Wiki</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="welcomeMessage">
+            <h2>Tervetuloa Pelisivustolle!</h2>
+            <p>Valitse peli alla olevasta listasta tai luo uusi peli.</p>
+        </div>
+
+        <div id="gameList">
+            <h2>Pelit</h2>
+            <ul id="availableGames">
+                <!-- Pelilistaus lisätään tähän dynaamisesti -->
+            </ul>
+        </div>
+
+        <div id="newGameForm">
+            <h2>Luo uusi peli</h2>
+            <form id="createGameForm">
+                <input type="text" id="gameName" placeholder="Pelin nimi" required>
+                <textarea id="gameDescription" placeholder="Pelin kuvaus"></textarea>
+                <button type="submit">Luo peli</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
