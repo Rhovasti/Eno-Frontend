@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             li.textContent = game.name;
             li.addEventListener('click', () => {
                 // Navigate to threads page with selected game
-                window.location.href = `/hml/threads.html?gameId=${game.id}`;
+                window.location.href = `/threads.html?gameId=${game.id}`;
             });
             availableGames.appendChild(li);
         });
@@ -115,9 +115,31 @@ document.addEventListener('DOMContentLoaded', function() {
         if (parts.length === 2) return parts.pop().split(';').shift();
         return null;
     }
+    
+    // Logout function
+    function handleLogout() {
+        fetch('/api/logout', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${getCookie('token')}`
+            }
+        })
+        .then(response => {
+            localStorage.removeItem('user');
+            document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            window.location.href = '/';
+        })
+        .catch(error => console.error('Logout error:', error));
+    }
 
     // Add event listener if form exists
     if (createGameForm) {
         createGameForm.addEventListener('submit', createGame);
+    }
+    
+    // Add logout handler if button exists on this page
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', handleLogout);
     }
 });

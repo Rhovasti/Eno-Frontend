@@ -77,14 +77,15 @@
         <h1>Pelisivusto</h1>
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <nav id="navBar">
-                <a href="index.html">Etusivu</a>
-                <a href="hml/threads.html">Langat</a>
-                <a href="hml/storyboard.html">Storyboard</a>
-                <a href="hml/wiki.html">Wiki</a>
+                <a href="/">Etusivu</a>
+                <a href="/threads.html">Langat</a>
+                <a href="/storyboard.html">Storyboard</a>
+                <a href="/wiki.html">Wiki</a>
             </nav>
             <div id="userControls">
                 <div id="userInfo" style="display: none;">
                     <span>Tervetuloa, <span id="username"></span></span>
+                    <span id="userEmail" style="margin-left: 5px; font-size: 12px; color: #666;"></span>
                     <span id="userBadges"></span>
                 </div>
                 <button id="adminBtn" class="btn btn-admin" style="display: none;">Hallintapaneeli</button>
@@ -143,6 +144,10 @@
                 userInfo.style.display = 'inline-block';
                 username.textContent = user.username;
                 
+                // Display user email
+                const userEmail = document.getElementById('userEmail');
+                userEmail.textContent = user.email;
+                
                 // Display badges for user roles
                 const roles = JSON.parse(user.roles || '[]');
                 if (user.is_admin) {
@@ -179,18 +184,7 @@
                 window.location.href = 'hml/login.html';
             });
             
-            logoutBtn.addEventListener('click', function() {
-                fetch('/api/logout', {
-                    method: 'POST'
-                })
-                .then(() => {
-                    localStorage.removeItem('user');
-                    window.location.reload();
-                })
-                .catch(error => {
-                    console.error('Logout error:', error);
-                });
-            });
+            // Logout handler is now defined in script.js
             
             adminBtn.addEventListener('click', function() {
                 window.location.href = 'hml/admin.html';
