@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Create new post
+    // Create new post on existing beat
     if (createPostForm) {
         createPostForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -304,7 +304,12 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             submitButton.textContent = 'Lähetetään...';
             
-            console.log('Posting new message:', { beatId, title, postType });
+            console.log('Posting new message to existing beat:', { 
+                beatId, 
+                title,
+                contentLength: content.length,
+                postType
+            });
             
             fetch('/api/posts', {
                 method: 'POST',
@@ -326,7 +331,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                // Refresh posts
+                console.log('Post created successfully:', data);
+                // Refresh posts for the current beat
                 loadPosts(beatId);
                 createPostForm.reset();
                 // Reset button state

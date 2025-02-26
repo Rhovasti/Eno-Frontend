@@ -17,21 +17,83 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../')));
 app.use(express.urlencoded({ extended: true }));
 
-// MySQL connection
-const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root', // Adjust as needed
-    password: '', // Adjust as needed
-    database: 'Foorumi' // Updated to match the new schema
-});
+// Create a function to get a fresh database connection
+function getDbConnection() {
+    return mysql.createConnection({
+        host: '127.0.0.1',
+        user: 'eno', // Using native password authentication
+        password: 'password', // Update this in production
+        database: 'Foorumi'
+    });
+}
 
-db.connect(err => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
+// Global variable for database connection
+let db = getDbConnection();
+
+// Improved database connection with retry logic
+function connectWithRetry(maxRetries = 5, delay = 5000) {
+    let retries = 0;
+    
+    function tryConnect() {
+        // Create a fresh connection
+        db = getDbConnection();
+        
+        db.connect(err => {
+            if (err) {
+                console.error('Error connecting to the database:', err);
+                
+                if (retries < maxRetries) {
+                    retries++;
+                    console.log(`Retrying database connection (${retries}/${maxRetries}) in ${delay/1000} seconds...`);
+                    setTimeout(tryConnect, delay);
+                } else {
+                    console.error('Maximum connection retries reached. Database connection failed.');
+                    // The server will still run but database features won't work
+                }
+                return;
+            }
+            
+            console.log('Connected to the database successfully');
+            
+            // Verify the database structure
+            db.query('SHOW TABLES', (err, results) => {
+                if (err) {
+                    console.error('Error listing tables:', err);
+                    return;
+                }
+                
+                const tables = results.map(row => Object.values(row)[0]);
+                console.log('Available tables:', tables.join(', '));
+                
+                // Check if essential tables exist
+                const requiredTables = ['users', 'games', 'chapters', 'beats', 'posts'];
+                const missingTables = requiredTables.filter(table => !tables.includes(table));
+                
+                if (missingTables.length > 0) {
+                    console.error('Missing required tables:', missingTables.join(', '));
+                    console.error('Database schema might be incomplete');
+                }
+            });
+        });
+        
+        // Add error handler to recreate connection if it fails
+        db.on('error', (err) => {
+            console.error('Database connection error:', err);
+            if (err.code === 'PROTOCOL_CONNECTION_LOST' || 
+                err.code === 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR') {
+                console.log('Reconnecting to database...');
+                connectWithRetry();
+            } else {
+                throw err;
+            }
+        });
     }
-    console.log('Connected to the database');
-});
+    
+    tryConnect();
+}
+
+// Start the connection process
+connectWithRetry();
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
@@ -158,34 +220,52 @@ app.post('/api/register', async (req, res) => {
 // User login
 app.post('/api/login', (req, res) => {
     const { email, password } = req.body;
+    console.log('Login attempt with email:', email);
 
     // Validate input
     if (!email || !password) {
+        console.log('Missing email or password');
         return res.status(400).json({ error: 'Email and password are required' });
     }
 
     // Find user in database
     const query = 'SELECT * FROM users WHERE email = ?';
+    console.log('Running query:', query, 'with params:', [email]);
+    
     db.query(query, [email], async (err, results) => {
         if (err) {
-            console.error('Login error:', err);
+            console.error('Login database error:', err);
             return res.status(500).json({ error: 'Login failed' });
         }
 
-        if (results.length === 0) {
+        console.log('Query results:', results ? `Found ${results.length} users` : 'No results');
+        
+        if (!results || results.length === 0) {
+            console.log('No user found with email:', email);
             return res.status(401).json({ error: 'Invalid email or password' });
         }
 
         const user = results[0];
+        console.log('User found:', { 
+            id: user.id, 
+            username: user.username, 
+            hasPassword: !!user.password,
+            passwordLength: user.password ? user.password.length : 0
+        });
 
         // Compare passwords
         try {
+            console.log('Comparing passwords...');
             const match = await bcrypt.compare(password, user.password);
+            console.log('Password match result:', match);
+            
             if (!match) {
+                console.log('Password does not match');
                 return res.status(401).json({ error: 'Invalid email or password' });
             }
 
             // Create JWT token
+            console.log('Creating JWT token...');
             const token = jwt.sign({
                 id: user.id,
                 username: user.username,
@@ -205,6 +285,7 @@ app.post('/api/login', (req, res) => {
             const userInfo = { ...user };
             delete userInfo.password;
 
+            console.log('Login successful for user:', user.username);
             res.json({
                 message: 'Login successful',
                 user: userInfo,
@@ -212,7 +293,7 @@ app.post('/api/login', (req, res) => {
             });
         } catch (error) {
             console.error('Bcrypt error:', error);
-            res.status(500).json({ error: 'Login failed' });
+            res.status(500).json({ error: 'Login failed - ' + error.message });
         }
     });
 });
@@ -451,32 +532,56 @@ app.post('/api/posts', authenticateToken, authorize(['player', 'gm']), (req, res
         userRoles = [];
     }
     
-    console.log('Creating post with data:', {
-        beatId,
-        authorId,
-        title: title.substring(0, 20) + '...',
-        contentLength: content.length, 
-        postType,
-        userRoles
-    });
-    
-    // Validate postType based on user role
-    if (postType === 'gm' && !userRoles.includes('gm') && !req.user.is_admin) {
-        return res.status(403).json({ error: 'Only GMs can create GM posts' });
-    }
-
-    const query = `
-        INSERT INTO posts (beat_id, author_id, title, content, post_type)
-        VALUES (?, ?, ?, ?, ?)
-    `;
-    const params = [beatId, authorId, title, content, postType || 'player'];
-
-    db.query(query, params, (err, result) => {
+    // First, verify that the beat exists before adding a post to it
+    const checkBeatQuery = 'SELECT id, chapter_id FROM beats WHERE id = ?';
+    db.query(checkBeatQuery, [beatId], (err, beatResults) => {
         if (err) {
-            console.error('Error creating post:', err);
-            return res.status(500).json({ error: 'Error creating post: ' + err.message });
+            console.error('Error checking beat existence:', err);
+            return res.status(500).json({ error: 'Database error checking beat' });
         }
-        res.status(201).json({ message: 'Post created successfully', id: result.insertId });
+        
+        if (!beatResults || beatResults.length === 0) {
+            console.error('Attempted to create post for nonexistent beat:', beatId);
+            return res.status(404).json({ error: 'Beat not found' });
+        }
+        
+        console.log('Creating post with data:', {
+            beatId,
+            authorId,
+            title: title.substring(0, 20) + '...',
+            contentLength: content.length, 
+            postType,
+            userRoles,
+            beat: beatResults[0]
+        });
+        
+        // Validate postType based on user role
+        if (postType === 'gm' && !userRoles.includes('gm') && !req.user.is_admin) {
+            return res.status(403).json({ error: 'Only GMs can create GM posts' });
+        }
+
+        // Insert post connected to the existing beat
+        const query = `
+            INSERT INTO posts (beat_id, author_id, title, content, post_type)
+            VALUES (?, ?, ?, ?, ?)
+        `;
+        const params = [beatId, authorId, title, content, postType || 'player'];
+
+        db.query(query, params, (err, result) => {
+            if (err) {
+                console.error('Error creating post:', err);
+                return res.status(500).json({ error: 'Error creating post: ' + err.message });
+            }
+            
+            // Log success message with more details
+            console.log(`Post created successfully - ID: ${result.insertId}, Beat: ${beatId}, Author: ${authorId}`);
+            
+            res.status(201).json({ 
+                message: 'Post created successfully', 
+                id: result.insertId,
+                beatId: beatId
+            });
+        });
     });
 });
 
@@ -601,6 +706,28 @@ app.get('/api/auth-test', (req, res) => {
             token: token.substring(0, 10) + '...'
         });
     }
+});
+
+// Add health check endpoint
+app.get('/health', (req, res) => {
+    // Check database connection status
+    let dbStatus = 'unknown';
+    
+    try {
+        if (db && db.state === 'authenticated') {
+            dbStatus = 'connected';
+        } else {
+            dbStatus = 'disconnected';
+        }
+    } catch (error) {
+        dbStatus = 'error: ' + error.message;
+    }
+    
+    res.json({ 
+        status: 'ok', 
+        message: 'Server is running',
+        database: dbStatus
+    });
 });
 
 // Start the server
