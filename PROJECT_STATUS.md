@@ -13,8 +13,8 @@
    - JWT-based authentication with token storage
 
 3. **Game Structure**:
-   - Data model with Games → Chapters → Beats → Posts hierarchy
-   - API endpoints for all CRUD operations on these entities
+   - Basic hierarchy of Games → Chapters → Beats → Posts established
+   - API endpoints for most CRUD operations on these entities
    - Role-based permissions (GMs can create content, players can post)
 
 4. **Frontend UI**:
@@ -38,24 +38,33 @@
    - ✅ HTTPS implemented on production (https://www.iinou.eu)
    - Add rate limiting for login attempts
 
-4. **Feature Gaps**:
+4. **Game Structure Issues**:
+   - Fix post creation flow (currently creates new beats incorrectly)
+   - Implement correct workflow: GMs create chapters & beats, both GMs & players add posts to existing beats
+   - Add functionality to close/archive chapters and beats to maintain story flow
+   - Ensure current chapter/beat is clearly indicated to players
+
+5. **Feature Gaps**:
    - Post editing functionality missing
    - No image upload capabilities
    - No notification system
    - Better error handling and user feedback
 
-5. **Testing**:
+6. **Testing**:
    - No automated tests
    - Manual testing scripts are basic
 
 ## Next Steps
 
 1. **High Priority**:
+   - Fix the post creation flow (should add posts to existing beats, not create new beats)
+   - Implement GM-only creation of chapters and beats
    - Complete the threads.html page implementation
    - Fix MySQL connection issues or standardize on SQLite
-   - Implement post editing functionality
 
 2. **Medium Priority**:
+   - Add chapter/beat archiving functionality
+   - Implement post editing functionality 
    - Enhance the storyboard visualization
    - Add image upload capability
    - Implement better error handling
