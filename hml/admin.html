@@ -281,7 +281,32 @@
                     return response.json();
                 })
                 .then(users => {
-                    renderUserTable(users);
+                    console.log('Users received from API:', users);
+                    
+                    // Check if users is valid and contains expected properties
+                    if (!Array.isArray(users)) {
+                        console.error('API response is not an array:', users);
+                        showError('Invalid response from server');
+                        return;
+                    }
+                    
+                    // Validate each user object
+                    const validUsers = users.filter(user => {
+                        if (!user || typeof user !== 'object') {
+                            console.error('Invalid user object:', user);
+                            return false;
+                        }
+                        
+                        if (!user.id) {
+                            console.error('User missing ID:', user);
+                            return false;
+                        }
+                        
+                        return true;
+                    });
+                    
+                    console.log(`Filtered ${users.length - validUsers.length} invalid users`);
+                    renderUserTable(validUsers);
                 })
                 .catch(error => {
                     console.error('Error fetching users:', error);
@@ -293,7 +318,20 @@
                 userTableBody.innerHTML = '';
                 
                 users.forEach(user => {
-                    const userRoles = JSON.parse(user.roles || '[]');
+                    // Safely parse the roles with error handling
+                    let userRoles = [];
+                    try {
+                        userRoles = JSON.parse(user.roles || '[]');
+                        // Ensure it's an array
+                        if (!Array.isArray(userRoles)) {
+                            console.error('User roles is not an array:', user.roles);
+                            userRoles = [];
+                        }
+                    } catch (error) {
+                        console.error('Error parsing user roles:', error, user.roles);
+                        userRoles = [];
+                    }
+                    
                     const tr = document.createElement('tr');
                     
                     tr.innerHTML = `
@@ -307,7 +345,7 @@
                         </td>
                         <td>${new Date(user.created_at).toLocaleDateString()}</td>
                         <td class="action-buttons">
-                            <button class="btn-small btn-edit" data-id="${user.id}" data-username="${user.username}" data-roles='${user.roles}' data-is-admin="${user.is_admin}">Muokkaa</button>
+                            <button class="btn-small btn-edit" data-id="${user.id}" data-username="${user.username}" data-roles-player="${userRoles.includes('player')}" data-roles-gm="${userRoles.includes('gm')}" data-is-admin="${user.is_admin}">Muokkaa</button>
                             <button class="btn-small btn-delete" data-id="${user.id}" data-username="${user.username}">Poista</button>
                         </td>
                     `;
@@ -320,7 +358,16 @@
                     button.addEventListener('click', function() {
                         const userId = this.getAttribute('data-id');
                         const username = this.getAttribute('data-username');
-                        const roles = JSON.parse(this.getAttribute('data-roles') || '[]');
+                        
+                        // Get individual role flags directly from data attributes
+                        const hasPlayerRole = this.getAttribute('data-roles-player') === 'true';
+                        const hasGMRole = this.getAttribute('data-roles-gm') === 'true';
+                        
+                        // Build roles array from individual flags
+                        const roles = [];
+                        if (hasPlayerRole) roles.push('player');
+                        if (hasGMRole) roles.push('gm');
+                        
                         const isAdmin = this.getAttribute('data-is-admin') === 'true';
                         
                         openEditModal(userId, username, roles, isAdmin);
@@ -340,10 +387,18 @@
             }
             
             function openEditModal(userId, username, roles, isAdmin) {
+                console.log('Opening edit modal with userId:', userId);
+                
+                if (!userId) {
+                    showError('User ID is missing');
+                    console.error('User ID is missing when opening edit modal');
+                    return;
+                }
+                
                 document.getElementById('userId').value = userId;
                 document.getElementById('userNameDisplay').textContent = username;
-                document.getElementById('rolePlayer').checked = roles.includes('player');
-                document.getElementById('roleGM').checked = roles.includes('gm');
+                document.getElementById('rolePlayer').checked = Array.isArray(roles) && roles.includes('player');
+                document.getElementById('roleGM').checked = Array.isArray(roles) && roles.includes('gm');
                 document.getElementById('roleAdmin').checked = isAdmin;
                 
                 editUserModal.style.display = 'block';
@@ -370,6 +425,14 @@
                     is_admin: roleAdmin
                 };
                 console.log('Request body:', requestBody);
+                
+                // Check if userId is valid before making the request
+                if (!userId) {
+                    console.error('User ID is missing');
+                    showError('User ID is missing');
+                    return;
+                }
+                
                 console.log('Update URL:', `/api/users/${userId}/roles`);
                 
                 fetch(`/api/users/${userId}/roles`, {
