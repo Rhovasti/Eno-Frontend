@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Pelisivusto - Hallintapaneeli</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .user-table th, .user-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .user-table th {
+            background-color: #f7f7f7;
+            font-weight: bold;
+        }
+        
+        .user-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .user-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: white;
+            margin-right: 5px;
+        }
+        
+        .badge-admin {
+            background-color: #dc3545;
+        }
+        
+        .badge-gm {
+            background-color: #007bff;
+        }
+        
+        .badge-player {
+            background-color: #28a745;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            color: white;
+        }
+        
+        .btn-edit {
+            background-color: #007bff;
+        }
+        
+        .btn-delete {
+            background-color: #dc3545;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 50%;
+            max-width: 500px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: black;
+        }
+        
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .checkbox-group label {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        #errorMessage, #successMessage {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        #errorMessage {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        #successMessage {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .logout-btn {
+            margin-left: 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pelisivusto - Hallintapaneeli</h1>
+        <nav>
+            <a href="../index.html">Etusivu</a>
+            <a href="threads.html">Langat</a>
+            <a href="storyboard.html">Storyboard</a>
+            <a href="wiki.html">Wiki</a>
+            <button id="logoutBtn" class="logout-btn">Kirjaudu ulos</button>
+        </nav>
+    </header>
+
+    <div class="container admin-container">
+        <h2>Käyttäjien hallinta</h2>
+        
+        <div id="errorMessage"></div>
+        <div id="successMessage"></div>
+        
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Käyttäjänimi</th>
+                    <th>Sähköposti</th>
+                    <th>Roolit</th>
+                    <th>Luotu</th>
+                    <th>Toiminnot</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- User rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Edit User Modal -->
+    <div id="editUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Muokkaa käyttäjän rooleja</h2>
+            
+            <form id="editUserForm">
+                <input type="hidden" id="userId">
+                <p><strong>Käyttäjä:</strong> <span id="userNameDisplay"></span></p>
+                
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="rolePlayer"> Pelaaja
+                    </label>
+                    <label>
+                        <input type="checkbox" id="roleGM"> GM
+                    </label>
+                    <label>
+                        <input type="checkbox" id="roleAdmin"> Admin
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-edit">Tallenna muutokset</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in and is admin
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!user.id || !user.is_admin) {
+                // Redirect to login if not admin
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            const userTableBody = document.getElementById('userTableBody');
+            const editUserModal = document.getElementById('editUserModal');
+            const editUserForm = document.getElementById('editUserForm');
+            const closeModal = document.querySelector('.close');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const logoutBtn = document.getElementById('logoutBtn');
+            
+            // Load users
+            fetchUsers();
+            
+            // Event listeners
+            closeModal.addEventListener('click', function() {
+                editUserModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === editUserModal) {
+                    editUserModal.style.display = 'none';
+                }
+            });
+            
+            editUserForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                updateUserRoles();
+            });
+            
+            logoutBtn.addEventListener('click', function() {
+                logout();
+            });
+            
+            // Functions
+            function fetchUsers() {
+                fetch('/api/users', {
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch users');
+                    }
+                    return response.json();
+                })
+                .then(users => {
+                    renderUserTable(users);
+                })
+                .catch(error => {
+                    console.error('Error fetching users:', error);
+                    showError('Käyttäjien hakeminen epäonnistui');
+                });
+            }
+            
+            function renderUserTable(users) {
+                userTableBody.innerHTML = '';
+                
+                users.forEach(user => {
+                    const userRoles = JSON.parse(user.roles || '[]');
+                    const tr = document.createElement('tr');
+                    
+                    tr.innerHTML = `
+                        <td>${user.id}</td>
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>
+                            ${user.is_admin ? '<span class="badge badge-admin">Admin</span>' : ''}
+                            ${userRoles.includes('gm') ? '<span class="badge badge-gm">GM</span>' : ''}
+                            ${userRoles.includes('player') ? '<span class="badge badge-player">Player</span>' : ''}
+                        </td>
+                        <td>${new Date(user.created_at).toLocaleDateString()}</td>
+                        <td class="action-buttons">
+                            <button class="btn-small btn-edit" data-id="${user.id}" data-username="${user.username}" data-roles='${user.roles}' data-is-admin="${user.is_admin}">Muokkaa</button>
+                            <button class="btn-small btn-delete" data-id="${user.id}" data-username="${user.username}">Poista</button>
+                        </td>
+                    `;
+                    
+                    userTableBody.appendChild(tr);
+                });
+                
+                // Add event listeners for edit and delete buttons
+                document.querySelectorAll('.btn-edit').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const userId = this.getAttribute('data-id');
+                        const username = this.getAttribute('data-username');
+                        const roles = JSON.parse(this.getAttribute('data-roles') || '[]');
+                        const isAdmin = this.getAttribute('data-is-admin') === 'true';
+                        
+                        openEditModal(userId, username, roles, isAdmin);
+                    });
+                });
+                
+                document.querySelectorAll('.btn-delete').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const userId = this.getAttribute('data-id');
+                        const username = this.getAttribute('data-username');
+                        
+                        if (confirm(`Haluatko varmasti poistaa käyttäjän ${username}?`)) {
+                            deleteUser(userId);
+                        }
+                    });
+                });
+            }
+            
+            function openEditModal(userId, username, roles, isAdmin) {
+                document.getElementById('userId').value = userId;
+                document.getElementById('userNameDisplay').textContent = username;
+                document.getElementById('rolePlayer').checked = roles.includes('player');
+                document.getElementById('roleGM').checked = roles.includes('gm');
+                document.getElementById('roleAdmin').checked = isAdmin;
+                
+                editUserModal.style.display = 'block';
+            }
+            
+            function updateUserRoles() {
+                const userId = document.getElementById('userId').value;
+                const rolePlayer = document.getElementById('rolePlayer').checked;
+                const roleGM = document.getElementById('roleGM').checked;
+                const roleAdmin = document.getElementById('roleAdmin').checked;
+                
+                // Create roles array
+                const roles = [];
+                if (rolePlayer) roles.push('player');
+                if (roleGM) roles.push('gm');
+                
+                fetch(`/api/users/${userId}/roles`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        roles: roles,
+                        is_admin: roleAdmin
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to update user roles');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    editUserModal.style.display = 'none';
+                    showSuccess('Käyttäjän roolit päivitetty onnistuneesti');
+                    fetchUsers(); // Refresh the user list
+                })
+                .catch(error => {
+                    console.error('Error updating roles:', error);
+                    showError('Roolien päivittäminen epäonnistui');
+                });
+            }
+            
+            function deleteUser(userId) {
+                fetch(`/api/users/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to delete user');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    showSuccess('Käyttäjä poistettu onnistuneesti');
+                    fetchUsers(); // Refresh the user list
+                })
+                .catch(error => {
+                    console.error('Error deleting user:', error);
+                    showError('Käyttäjän poistaminen epäonnistui');
+                });
+            }
+            
+            function logout() {
+                fetch('/api/logout', {
+                    method: 'POST'
+                })
+                .then(() => {
+                    localStorage.removeItem('user');
+                    window.location.href = 'login.html';
+                })
+                .catch(error => {
+                    console.error('Logout error:', error);
+                });
+            }
+            
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 5000);
+            }
+            
+            function showSuccess(message) {
+                successMessage.textContent = message;
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Helper function to get cookie value
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            }
+        });
+    </script>
+</body>
+</html>

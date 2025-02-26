@@ -4,22 +4,104 @@
     <meta charset="UTF-8">
     <title>Pelisivusto - Etusivu</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #userControls {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        
+        #userInfo {
+            margin-right: 15px;
+        }
+        
+        .user-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: white;
+            margin-left: 5px;
+        }
+        
+        .admin-badge {
+            background-color: #dc3545;
+        }
+        
+        .gm-badge {
+            background-color: #007bff;
+        }
+        
+        .player-badge {
+            background-color: #28a745;
+        }
+        
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+        }
+        
+        .btn-login {
+            background-color: #007bff;
+        }
+        
+        .btn-logout {
+            background-color: #dc3545;
+        }
+        
+        .btn-admin {
+            background-color: #6c757d;
+            margin-right: 10px;
+        }
+        
+        #newGameForm {
+            display: none; /* Hide by default, show only to GMs */
+        }
+        
+        .auth-required {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 20px 0;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Pelisivusto</h1>
-        <nav id="navBar">
-            <a href="index.html">Etusivu</a>
-            <a href="hml/threads.html">Langat</a>
-            <a href="hml/storyboard.html">Storyboard</a>
-            <a href="hml/wiki.html">Wiki</a>
-        </nav>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <nav id="navBar">
+                <a href="index.html">Etusivu</a>
+                <a href="hml/threads.html">Langat</a>
+                <a href="hml/storyboard.html">Storyboard</a>
+                <a href="hml/wiki.html">Wiki</a>
+            </nav>
+            <div id="userControls">
+                <div id="userInfo" style="display: none;">
+                    <span>Tervetuloa, <span id="username"></span></span>
+                    <span id="userBadges"></span>
+                </div>
+                <button id="adminBtn" class="btn btn-admin" style="display: none;">Hallintapaneeli</button>
+                <button id="loginBtn" class="btn btn-login">Kirjaudu sisään</button>
+                <button id="logoutBtn" class="btn btn-logout" style="display: none;">Kirjaudu ulos</button>
+            </div>
+        </div>
     </header>
 
     <div class="container">
         <div id="welcomeMessage">
             <h2>Tervetuloa Pelisivustolle!</h2>
             <p>Valitse peli alla olevasta listasta tai luo uusi peli.</p>
+        </div>
+
+        <div class="auth-required" id="authMessage">
+            Kirjaudu sisään nähdäksesi sisällön.
         </div>
 
         <div id="gameList">
@@ -39,6 +121,82 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const adminBtn = document.getElementById('adminBtn');
+            const userInfo = document.getElementById('userInfo');
+            const username = document.getElementById('username');
+            const userBadges = document.getElementById('userBadges');
+            const authMessage = document.getElementById('authMessage');
+            const gameList = document.getElementById('gameList');
+            const newGameForm = document.getElementById('newGameForm');
+            
+            // Check if user is logged in
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            if (user.id) {
+                // User is logged in
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'inline-block';
+                userInfo.style.display = 'inline-block';
+                username.textContent = user.username;
+                
+                // Display badges for user roles
+                const roles = JSON.parse(user.roles || '[]');
+                if (user.is_admin) {
+                    userBadges.innerHTML += '<span class="user-badge admin-badge">Admin</span>';
+                    adminBtn.style.display = 'inline-block';
+                }
+                if (roles.includes('gm')) {
+                    userBadges.innerHTML += '<span class="user-badge gm-badge">GM</span>';
+                    // Show new game form for GMs
+                    newGameForm.style.display = 'block';
+                }
+                if (roles.includes('player')) {
+                    userBadges.innerHTML += '<span class="user-badge player-badge">Pelaaja</span>';
+                }
+                
+                // Show game list
+                gameList.style.display = 'block';
+                authMessage.style.display = 'none';
+            } else {
+                // User is not logged in
+                loginBtn.style.display = 'inline-block';
+                logoutBtn.style.display = 'none';
+                userInfo.style.display = 'none';
+                adminBtn.style.display = 'none';
+                
+                // Hide content that requires authentication
+                gameList.style.display = 'none';
+                newGameForm.style.display = 'none';
+                authMessage.style.display = 'block';
+            }
+            
+            // Event listeners
+            loginBtn.addEventListener('click', function() {
+                window.location.href = 'hml/login.html';
+            });
+            
+            logoutBtn.addEventListener('click', function() {
+                fetch('/api/logout', {
+                    method: 'POST'
+                })
+                .then(() => {
+                    localStorage.removeItem('user');
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Logout error:', error);
+                });
+            });
+            
+            adminBtn.addEventListener('click', function() {
+                window.location.href = 'hml/admin.html';
+            });
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
