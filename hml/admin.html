@@ -255,14 +255,28 @@
             
             // Functions
             function fetchUsers() {
+                // Get token from either cookie or localStorage
+                const authToken = getCookie('token') || (user.token || '');
+                console.log('Auth token for fetch users:', authToken);
+                
                 fetch('/api/users', {
                     headers: {
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': `Bearer ${authToken}`
                     }
                 })
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Failed to fetch users');
+                        return response.text().then(text => {
+                            try {
+                                // Try to parse as JSON
+                                const data = JSON.parse(text);
+                                throw new Error(data.error || 'Failed to fetch users');
+                            } catch (e) {
+                                // If not valid JSON, use text as error message
+                                console.error('Server response is not valid JSON:', text);
+                                throw new Error('Server error: ' + response.status);
+                            }
+                        });
                     }
                     return response.json();
                 })
@@ -346,44 +360,78 @@
                 if (rolePlayer) roles.push('player');
                 if (roleGM) roles.push('gm');
                 
+                // Get token from either cookie or localStorage
+                const authToken = getCookie('token') || (user.token || '');
+                console.log('Auth token for role update:', authToken);
+                console.log('User data from localStorage:', user);
+                
+                const requestBody = {
+                    roles: roles,
+                    is_admin: roleAdmin
+                };
+                console.log('Request body:', requestBody);
+                console.log('Update URL:', `/api/users/${userId}/roles`);
+                
                 fetch(`/api/users/${userId}/roles`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': `Bearer ${authToken}`
                     },
-                    body: JSON.stringify({
-                        roles: roles,
-                        is_admin: roleAdmin
-                    })
+                    body: JSON.stringify(requestBody)
                 })
                 .then(response => {
+                    console.log('Role update response status:', response.status);
                     if (!response.ok) {
-                        throw new Error('Failed to update user roles');
+                        return response.text().then(text => {
+                            try {
+                                // Try to parse as JSON
+                                const data = JSON.parse(text);
+                                throw new Error(data.error || 'Failed to update user roles');
+                            } catch (e) {
+                                // If not valid JSON, use text as error message
+                                console.error('Server response is not valid JSON:', text);
+                                throw new Error('Server error: ' + response.status);
+                            }
+                        });
                     }
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Role update success:', data);
                     editUserModal.style.display = 'none';
                     showSuccess('Käyttäjän roolit päivitetty onnistuneesti');
                     fetchUsers(); // Refresh the user list
                 })
                 .catch(error => {
                     console.error('Error updating roles:', error);
-                    showError('Roolien päivittäminen epäonnistui');
+                    showError('Roolien päivittäminen epäonnistui: ' + error.message);
                 });
             }
             
             function deleteUser(userId) {
+                // Get token from either cookie or localStorage
+                const authToken = getCookie('token') || (user.token || '');
+                
                 fetch(`/api/users/${userId}`, {
                     method: 'DELETE',
                     headers: {
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': `Bearer ${authToken}`
                     }
                 })
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Failed to delete user');
+                        return response.text().then(text => {
+                            try {
+                                // Try to parse as JSON
+                                const data = JSON.parse(text);
+                                throw new Error(data.error || 'Failed to delete user');
+                            } catch (e) {
+                                // If not valid JSON, use text as error message
+                                console.error('Server response is not valid JSON:', text);
+                                throw new Error('Server error: ' + response.status);
+                            }
+                        });
                     }
                     return response.json();
                 })
@@ -393,7 +441,7 @@
                 })
                 .catch(error => {
                     console.error('Error deleting user:', error);
-                    showError('Käyttäjän poistaminen epäonnistui');
+                    showError('Käyttäjän poistaminen epäonnistui: ' + error.message);
                 });
             }
             

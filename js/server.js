@@ -37,15 +37,21 @@ db.connect(err => {
 const authenticateToken = (req, res, next) => {
     const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
     
+    console.log('Authentication middleware - token:', token ? 'Token found' : 'No token');
+    console.log('Authorization header:', req.headers.authorization);
+    console.log('Cookies:', req.cookies);
+    
     if (!token) {
         return res.status(401).json({ error: 'Authentication required' });
     }
 
     try {
         const user = jwt.verify(token, JWT_SECRET);
+        console.log('Token verified, user:', user);
         req.user = user;
         next();
     } catch (error) {
+        console.error('Token verification error:', error);
         return res.status(403).json({ error: 'Invalid or expired token' });
     }
 };
@@ -400,7 +406,10 @@ app.post('/api/posts', authenticateToken, authorize(['player', 'gm']), (req, res
 
 // Get all users (admin only)
 app.get('/api/users', authenticateToken, (req, res) => {
+    console.log('GET /api/users - User in request:', req.user);
+    
     if (!req.user.is_admin) {
+        console.log('User not admin, access denied');
         return res.status(403).json({ error: 'Admin access required' });
     }
 
@@ -416,15 +425,26 @@ app.get('/api/users', authenticateToken, (req, res) => {
 
 // Update user roles (admin only)
 app.put('/api/users/:userId/roles', authenticateToken, (req, res) => {
+    console.log('Role update request received:', {
+        requestUser: req.user,
+        userId: req.params.userId,
+        body: req.body,
+        authHeader: req.headers.authorization
+    });
+
     if (!req.user.is_admin) {
+        console.log('User not admin. User data:', req.user);
         return res.status(403).json({ error: 'Admin access required' });
     }
 
     const userId = req.params.userId;
     const { roles, is_admin } = req.body;
 
+    console.log('Updating user roles:', { userId, roles, is_admin });
+
     // Validate roles
     if (!Array.isArray(roles) || !roles.every(role => ['player', 'gm'].includes(role))) {
+        console.log('Invalid roles format:', roles);
         return res.status(400).json({ error: 'Invalid roles' });
     }
 
@@ -439,9 +459,11 @@ app.put('/api/users/:userId/roles', authenticateToken, (req, res) => {
         }
 
         if (result.affectedRows === 0) {
+            console.log('User not found:', userId);
             return res.status(404).json({ error: 'User not found' });
         }
 
+        console.log('User roles updated successfully:', { userId, roles, is_admin });
         res.json({ message: 'User roles updated successfully' });
     });
 });
@@ -472,6 +494,35 @@ app.delete('/api/users/:userId', authenticateToken, (req, res) => {
 
         res.json({ message: 'User deleted successfully' });
     });
+});
+
+// Special debug endpoint to check authentication
+app.get('/api/auth-test', (req, res) => {
+    const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
+    
+    if (!token) {
+        return res.json({ 
+            authenticated: false,
+            message: 'No token found',
+            cookies: req.cookies,
+            authHeader: req.headers.authorization
+        });
+    }
+    
+    try {
+        const user = jwt.verify(token, JWT_SECRET);
+        return res.json({
+            authenticated: true,
+            user: user,
+            tokenSource: req.cookies.token ? 'cookie' : 'header'
+        });
+    } catch (error) {
+        return res.json({
+            authenticated: false,
+            error: error.message,
+            token: token.substring(0, 10) + '...'
+        });
+    }
 });
 
 // Start the server

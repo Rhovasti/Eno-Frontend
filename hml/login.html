@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<\!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
@@ -132,8 +132,10 @@
                         errorMessage.textContent = data.error;
                         errorMessage.style.display = 'block';
                     } else {
-                        // Store user info in localStorage (except token, which is in HTTP-only cookie)
-                        localStorage.setItem('user', JSON.stringify(data.user));
+                        // Store user info and token in localStorage
+                        const userData = data.user;
+                        userData.token = data.token;  // Include token in localStorage for API calls
+                        localStorage.setItem('user', JSON.stringify(userData));
                         
                         // Redirect to home page
                         window.location.href = '../index.html';
