@@ -60,6 +60,7 @@ const authenticateToken = (req, res, next) => {
 const authorize = (roles) => {
     return (req, res, next) => {
         if (!req.user) {
+            console.error('Authorization failed: No user in request');
             return res.status(401).json({ error: 'Authentication required' });
         }
 
@@ -68,11 +69,31 @@ const authorize = (roles) => {
             return next();
         }
 
+        // Safely parse user roles with error handling
+        let userRoles = [];
+        try {
+            userRoles = Array.isArray(req.user.roles) ? req.user.roles : JSON.parse(req.user.roles || '[]');
+        } catch (error) {
+            console.error('Error parsing user roles in authorization middleware:', error, req.user.roles);
+            userRoles = [];
+        }
+
+        console.log('User roles for authorization:', {
+            userId: req.user.id,
+            username: req.user.username,
+            userRoles,
+            requiredRoles: roles
+        });
+
         // Check if user has any of the required roles
-        const userRoles = JSON.parse(req.user.roles);
         const hasRole = roles.some(role => userRoles.includes(role));
         
         if (!hasRole) {
+            console.error('Authorization failed: Insufficient permissions', { 
+                userId: req.user.id, 
+                userRoles, 
+                requiredRoles: roles 
+            });
             return res.status(403).json({ error: 'Insufficient permissions' });
         }
 
@@ -400,8 +421,36 @@ app.post('/api/posts', authenticateToken, authorize(['player', 'gm']), (req, res
     const { beatId, title, content, postType } = req.body;
     const authorId = req.user.id;
     
+    // Input validation
+    if (!beatId) {
+        console.error('Missing beatId in request body:', req.body);
+        return res.status(400).json({ error: 'Beat ID is required' });
+    }
+    
+    if (!title || !content) {
+        console.error('Missing title or content in request body:', req.body);
+        return res.status(400).json({ error: 'Title and content are required' });
+    }
+    
+    // Safely parse user roles with error handling
+    let userRoles = [];
+    try {
+        userRoles = Array.isArray(req.user.roles) ? req.user.roles : JSON.parse(req.user.roles || '[]');
+    } catch (error) {
+        console.error('Error parsing user roles:', error, req.user.roles);
+        userRoles = [];
+    }
+    
+    console.log('Creating post with data:', {
+        beatId,
+        authorId,
+        title: title.substring(0, 20) + '...',
+        contentLength: content.length, 
+        postType,
+        userRoles
+    });
+    
     // Validate postType based on user role
-    const userRoles = JSON.parse(req.user.roles);
     if (postType === 'gm' && !userRoles.includes('gm') && !req.user.is_admin) {
         return res.status(403).json({ error: 'Only GMs can create GM posts' });
     }
@@ -410,12 +459,12 @@ app.post('/api/posts', authenticateToken, authorize(['player', 'gm']), (req, res
         INSERT INTO posts (beat_id, author_id, title, content, post_type)
         VALUES (?, ?, ?, ?, ?)
     `;
-    const params = [beatId, authorId, title, content, postType];
+    const params = [beatId, authorId, title, content, postType || 'player'];
 
     db.query(query, params, (err, result) => {
         if (err) {
             console.error('Error creating post:', err);
-            return res.status(500).json({ error: 'Error creating post' });
+            return res.status(500).json({ error: 'Error creating post: ' + err.message });
         }
         res.status(201).json({ message: 'Post created successfully', id: result.insertId });
     });

@@ -27,8 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
         username.textContent = user.username;
         userEmail.textContent = user.email;
         
-        // Display badges for user roles
-        const roles = JSON.parse(user.roles || '[]');
+        // Safely parse and display badges for user roles
+        let roles = [];
+        try {
+            roles = JSON.parse(user.roles || '[]');
+            if (!Array.isArray(roles)) roles = [];
+        } catch (error) {
+            console.error('Error parsing user roles:', error);
+            roles = [];
+        }
+        
         if (user.is_admin) {
             userBadges.innerHTML += '<span class="user-badge admin-badge">Admin</span>';
         }
@@ -56,7 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const newBeatForm = document.getElementById('newBeatForm');
     const createBeatForm = document.getElementById('createBeatForm');
     
-    const roles = JSON.parse(user.roles || '[]');
+    // Safely parse roles
+    let roles = [];
+    try {
+        roles = JSON.parse(user.roles || '[]');
+        if (!Array.isArray(roles)) roles = [];
+    } catch (error) {
+        console.error('Error parsing user roles:', error);
+        roles = [];
+    }
+    
     const isGM = roles.includes('gm') || user.is_admin;
     
     // Check URL parameters for game ID
@@ -167,6 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = document.getElementById('chapterTitle').value;
             const description = document.getElementById('chapterDescription').value;
             
+            // Basic validation
+            if (!gameId) {
+                alert('Valitse ensin peli');
+                return;
+            }
+            
+            if (!title) {
+                alert('Otsikko vaaditaan');
+                return;
+            }
+            
             fetch(`/api/games/${gameId}/chapters`, {
                 method: 'POST',
                 headers: {
@@ -177,7 +205,11 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Failed to create chapter');
+                    return response.json().then(data => {
+                        throw new Error(data.error || `Server error: ${response.status}`);
+                    }).catch(e => {
+                        throw new Error(`Failed to create chapter: ${response.statusText}`);
+                    });
                 }
                 return response.json();
             })
@@ -187,7 +219,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 newChapterForm.style.display = 'none';
                 createChapterForm.reset();
             })
-            .catch(error => console.error('Error creating chapter:', error));
+            .catch(error => {
+                console.error('Error creating chapter:', error);
+                alert(`Virhe luvun luomisessa: ${error.message}`);
+            });
         });
     }
     
@@ -200,6 +235,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = document.getElementById('beatTitle').value;
             const content = document.getElementById('beatContent').value;
             
+            // Basic validation
+            if (!chapterId) {
+                alert('Valitse ensin luku');
+                return;
+            }
+            
+            if (!title) {
+                alert('Otsikko vaaditaan');
+                return;
+            }
+            
             fetch(`/api/chapters/${chapterId}/beats`, {
                 method: 'POST',
                 headers: {
@@ -210,7 +256,11 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Failed to create beat');
+                    return response.json().then(data => {
+                        throw new Error(data.error || `Server error: ${response.status}`);
+                    }).catch(e => {
+                        throw new Error(`Failed to create beat: ${response.statusText}`);
+                    });
                 }
                 return response.json();
             })
@@ -220,7 +270,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 newBeatForm.style.display = 'none';
                 createBeatForm.reset();
             })
-            .catch(error => console.error('Error creating beat:', error));
+            .catch(error => {
+                console.error('Error creating beat:', error);
+                alert(`Virhe beatin luomisessa: ${error.message}`);
+            });
         });
     }
     
@@ -234,6 +287,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('postContent').value;
             const postType = isGMPostCheckbox.checked ? 'gm' : 'player';
             
+            // Basic validation
+            if (!beatId) {
+                alert('Valitse ensin beatti');
+                return;
+            }
+            
+            if (!title || !content) {
+                alert('Otsikko ja sisältö vaaditaan');
+                return;
+            }
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Lähetetään...';
+            
+            console.log('Posting new message:', { beatId, title, postType });
+            
             fetch('/api/posts', {
                 method: 'POST',
                 headers: {
@@ -244,7 +316,12 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Failed to create post');
+                    return response.json().then(data => {
+                        throw new Error(data.error || `Server error: ${response.status}`);
+                    }).catch(e => {
+                        // If JSON parsing fails, use status text
+                        throw new Error(`Failed to create post: ${response.statusText}`);
+                    });
                 }
                 return response.json();
             })
@@ -252,8 +329,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Refresh posts
                 loadPosts(beatId);
                 createPostForm.reset();
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
             })
-            .catch(error => console.error('Error creating post:', error));
+            .catch(error => {
+                console.error('Error creating post:', error);
+                alert(`Virhe viestin luomisessa: ${error.message}`);
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            });
         });
     }
     
