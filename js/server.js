@@ -397,8 +397,18 @@ app.get('/api/beats/:beatId/posts', authenticateToken, (req, res) => {
     });
 });
 
+// Unauthenticated debug endpoint for testing
+app.get('/api/debug/posts', (req, res) => {
+    console.log('Debug endpoint accessed');
+    res.json([
+        { id: 999, title: 'Debug Post', content: 'This is a debug post', post_type: 'player', username: 'debug_user' }
+    ]);
+});
+
 // Get all posts (mainly for debugging/admin purposes)
 app.get('/api/posts', authenticateToken, (req, res) => {
+    console.log('GET /api/posts endpoint accessed by user:', req.user ? req.user.username : 'unknown');
+    
     const query = `
         SELECT p.*, u.username
         FROM posts p
