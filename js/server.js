@@ -376,6 +376,25 @@ app.get('/api/beats/:beatId/posts', authenticateToken, (req, res) => {
     });
 });
 
+// Get all posts (mainly for debugging/admin purposes)
+app.get('/api/posts', authenticateToken, (req, res) => {
+    const query = `
+        SELECT p.*, u.username
+        FROM posts p
+        LEFT JOIN users u ON p.author_id = u.id
+        ORDER BY p.created_at DESC
+        LIMIT 50
+    `;
+
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching posts:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        res.json(results);
+    });
+});
+
 // Create a new post (both players and GMs can create posts)
 app.post('/api/posts', authenticateToken, authorize(['player', 'gm']), (req, res) => {
     const { beatId, title, content, postType } = req.body;
