@@ -35,7 +35,7 @@
 
 3. **Security Enhancements**:
    - Move JWT secret to environment variables
-   - Implement HTTPS
+   - ✅ HTTPS implemented on production (https://www.iinou.eu)
    - Add rate limiting for login attempts
 
 4. **Feature Gaps**:
