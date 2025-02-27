@@ -255,14 +255,15 @@
             
             // Functions
             function fetchUsers() {
-                // Get token from either cookie or localStorage
-                const authToken = getCookie('token') || (user.token || '');
-                console.log('Auth token for fetch users:', authToken);
+                // Try to get token from cookie first, fallback to localStorage 
+                const authToken = getCookie('token') || (user ? user.token || '' : '');
+                console.log('Auth token for fetch users:', authToken ? 'Found token' : 'No token');
                 
                 fetch('/api/users', {
                     headers: {
                         'Authorization': `Bearer ${authToken}`
-                    }
+                    },
+                    credentials: 'include' // Important: Include cookies in the request
                 })
                 .then(response => {
                     if (!response.ok) {
@@ -415,9 +416,9 @@
                 if (rolePlayer) roles.push('player');
                 if (roleGM) roles.push('gm');
                 
-                // Get token from either cookie or localStorage
-                const authToken = getCookie('token') || (user.token || '');
-                console.log('Auth token for role update:', authToken);
+                // Try to get token from cookie first, fallback to localStorage
+                const authToken = getCookie('token') || (user ? user.token || '' : '');
+                console.log('Auth token for role update:', authToken ? 'Found token' : 'No token');
                 console.log('User data from localStorage:', user);
                 
                 const requestBody = {
@@ -441,6 +442,7 @@
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${authToken}`
                     },
+                    credentials: 'include', // Important: Include cookies in the request
                     body: JSON.stringify(requestBody)
                 })
                 .then(response => {
@@ -473,14 +475,16 @@
             }
             
             function deleteUser(userId) {
-                // Get token from either cookie or localStorage
-                const authToken = getCookie('token') || (user.token || '');
+                // Try to get token from cookie first, fallback to localStorage
+                const authToken = getCookie('token') || (user ? user.token || '' : '');
+                console.log('Auth token for delete user:', authToken ? 'Found token' : 'No token');
                 
                 fetch(`/api/users/${userId}`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': `Bearer ${authToken}`
-                    }
+                    },
+                    credentials: 'include' // Important: Include cookies in the request
                 })
                 .then(response => {
                     if (!response.ok) {

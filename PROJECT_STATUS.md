@@ -1,5 +1,24 @@
 # Eno Frontend Project Status
 
+## Recent Updates (Feb 2025)
+
+1. **Fixed User Registration & Admin Panel Issues**:
+   - Fixed CommonJS/ES module compatibility issue in package.json
+   - Improved token handling in admin.html for better authentication
+   - Enhanced error handling and debugging in the SQLite server
+   - Registration system now working properly
+
+2. **Python Script Improvements**:
+   - Enhanced compatibility of fetch_beat_posts.py and post_to_beat.py scripts
+   - Added better error handling and role parsing
+   - Improved token management for API authentication
+   - Scripts now work reliably with both MySQL and SQLite backends
+
+3. **Database Standardization**:
+   - Moved to SQLite as primary database for simpler deployment
+   - Created systemd service for reliable server operation
+   - Resolved schema parsing issues
+
 ## What Works
 
 1. **Server Setup**:
@@ -8,9 +27,10 @@
    - Role-based authorization system (admin, gm, player roles)
 
 2. **User Management**:
-   - User registration and authentication
-   - Admin panel for role management
-   - JWT-based authentication with token storage
+   - ✅ User registration and authentication functioning properly
+   - ✅ Admin panel for role management working correctly
+   - ✅ JWT-based authentication with token storage
+   - ✅ Python scripts for automated post management
 
 3. **Game Structure**:
    - Basic hierarchy of Games → Chapters → Beats → Posts established
@@ -25,8 +45,8 @@
 ## What Needs Work
 
 1. **Database Setup**:
-   - Local MySQL setup needs debugging (auth issues)
-   - SQLite works as dev alternative but needs better integration
+   - ✅ SQLite now working properly as primary database
+   - MySQL setup remains as an option but needs further debugging
 
 2. **UI Improvements**:
    - Thread display page needs completion
@@ -60,13 +80,11 @@
    - Fix the post creation flow (should add posts to existing beats, not create new beats)
    - Implement GM-only creation of chapters and beats
    - Complete the threads.html page implementation
-   - Fix MySQL connection issues or standardize on SQLite
 
 2. **Medium Priority**:
    - Add chapter/beat archiving functionality
    - Implement post editing functionality 
    - Enhance the storyboard visualization
-   - Add image upload capability
    - Implement better error handling
 
 3. **Low Priority**:
@@ -74,15 +92,28 @@
    - Implement user preferences
    - Add notification system
 
+## Future Features
+
+1. **Image Support**:
+   - Add image upload capability for posts
+   - Integrate with S3 bucket (https://kuvatjakalat.s3.eu-north-1.amazonaws.com/)
+   - Add image moderation and size limits
+
+2. **Dice Rolling System**:
+   - Implement random dice rolls for game checks
+   - Support various dice systems (d20, d100, etc.)
+   - Allow GM to set difficulty thresholds
+   - Display roll results in posts
+
 ## Development Setup
 
-1. **SQLite Setup** (Easiest for development):
+1. **SQLite Setup** (Recommended):
    ```
    npm install
-   node js/server_sqlite.js
+   node js/server_sqlite_new.js
    ```
 
-2. **MySQL Setup** (Production preferred):
+2. **MySQL Setup** (Alternative):
    ```
    # Fix database connection first
    node js/server.js
@@ -91,3 +122,12 @@
 3. **Test Account**:
    - Admin: admin@example.com / admin123
    - Test User: test@example.com / testpassword123
+
+4. **Python Scripts**:
+   ```
+   # Fetch posts from a beat
+   ./fetch_beat_posts.py BEAT_ID --url https://www.iinou.eu/ --email admin@example.com --password admin123
+   
+   # Post to a beat
+   ./post_to_beat.py BEAT_ID --url https://www.iinou.eu/ --email admin@example.com --password admin123 --title "Test Post" --content "This is a test post" --type gm
+   ```
