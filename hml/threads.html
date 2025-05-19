@@ -88,6 +88,7 @@
         </select>
 
         <button id="createChapterButton" disabled>Luo Uusi Luku</button>
+        <button id="archiveChapterButton" disabled>Arkistoi Luku</button>
 
         <div id="newChapterForm" style="display:none;">
             <h3>Luo Uusi Luku</h3>
@@ -122,6 +123,9 @@
                 <textarea id="postContent" placeholder="Viestin sisältö" required></textarea>
                 <label>
                     <input type="checkbox" id="isGMPost"> Post as Game Master
+                </label>
+                <label id="archiveChapterLabel" style="display:none; margin-top: 10px;">
+                    <input type="checkbox" id="archiveChapterOnPost"> Archive this chapter after posting
                 </label>
                 <button type="submit">Lähetä</button>
             </form>

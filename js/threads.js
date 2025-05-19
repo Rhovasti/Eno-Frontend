@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const newPostForm = document.getElementById('newPostForm');
     const createPostForm = document.getElementById('createPostForm');
     const isGMPostCheckbox = document.getElementById('isGMPost');
+    const archiveChapterOnPostCheckbox = document.getElementById('archiveChapterOnPost');
+    const archiveChapterLabel = document.getElementById('archiveChapterLabel');
     
     // Handle creating chapters and beats - only for GMs
     const createChapterButton = document.getElementById('createChapterButton');
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const createBeatButton = document.getElementById('createBeatButton');
     const newBeatForm = document.getElementById('newBeatForm');
     const createBeatForm = document.getElementById('createBeatForm');
+    const archiveChapterButton = document.getElementById('archiveChapterButton');
     
     // Safely parse roles
     let roles = [];
@@ -75,6 +78,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     const isGM = roles.includes('gm') || user.is_admin;
+    
+    // Toggle archive chapter option when GM checkbox is changed
+    if (isGMPostCheckbox) {
+        isGMPostCheckbox.addEventListener('change', function() {
+            if (this.checked && isGM) {
+                archiveChapterLabel.style.display = 'block';
+            } else {
+                archiveChapterLabel.style.display = 'none';
+                archiveChapterOnPostCheckbox.checked = false;
+            }
+        });
+    }
     
     // Check URL parameters for game ID
     const urlParams = new URLSearchParams(window.location.search);
@@ -131,30 +146,66 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for chapter selection
     chapterSelect.addEventListener('change', function() {
         const chapterId = this.value;
+        const selectedOption = this.options[this.selectedIndex];
+        const isArchived = selectedOption.dataset.archived === 'true';
+        
         beatSelect.disabled = !chapterId;
-        createBeatButton.disabled = !chapterId || !isGM;
+        createBeatButton.disabled = !chapterId || !isGM || isArchived;
+        archiveChapterButton.disabled = !chapterId || !isGM || isArchived;
         
         if (chapterId) {
             loadBeats(chapterId);
+            
+            // Show notice if chapter is archived
+            if (isArchived) {
+                if (!document.getElementById('archiveNotice')) {
+                    const notice = document.createElement('div');
+                    notice.id = 'archiveNotice';
+                    notice.className = 'archive-notice';
+                    notice.style.cssText = 'background-color: #f8f9fa; border: 1px solid #dee2e6; color: #6c757d; padding: 10px; margin: 10px 0; border-radius: 4px;';
+                    notice.textContent = 'Tämä luku on arkistoitu. Uusien viestien ja beattien luominen on estetty.';
+                    chapterSelect.parentNode.insertBefore(notice, chapterSelect.nextSibling);
+                }
+            } else {
+                // Remove notice if it exists
+                const notice = document.getElementById('archiveNotice');
+                if (notice) notice.remove();
+            }
         } else {
             // Clear beat select
             beatSelect.innerHTML = '<option value="">Valitse Beatti</option>';
             beatSelect.disabled = true;
             postsContainer.innerHTML = '';
             newPostForm.style.display = 'none';
+            
+            // Remove archive notice
+            const notice = document.getElementById('archiveNotice');
+            if (notice) notice.remove();
         }
     });
     
     // Event listener for beat selection
     beatSelect.addEventListener('change', function() {
         const beatId = this.value;
+        const selectedChapterOption = chapterSelect.options[chapterSelect.selectedIndex];
+        const isChapterArchived = selectedChapterOption.dataset.archived === 'true';
         
         if (beatId) {
             loadPosts(beatId);
-            newPostForm.style.display = 'block';
             
-            // Hide GM post option if user is not a GM
-            isGMPostCheckbox.parentElement.style.display = isGM ? 'block' : 'none';
+            // Only show new post form if chapter is not archived
+            if (!isChapterArchived) {
+                newPostForm.style.display = 'block';
+                
+                // Hide GM post option if user is not a GM
+                isGMPostCheckbox.parentElement.style.display = isGM ? 'block' : 'none';
+                
+                // Hide archive chapter option by default
+                archiveChapterLabel.style.display = 'none';
+                archiveChapterOnPostCheckbox.checked = false;
+            } else {
+                newPostForm.style.display = 'none';
+            }
         } else {
             postsContainer.innerHTML = '';
             newPostForm.style.display = 'none';
@@ -172,6 +223,46 @@ document.addEventListener('DOMContentLoaded', function() {
     if (createBeatButton) {
         createBeatButton.addEventListener('click', function() {
             newBeatForm.style.display = newBeatForm.style.display === 'none' ? 'block' : 'none';
+        });
+    }
+    
+    // Archive chapter
+    if (archiveChapterButton) {
+        archiveChapterButton.addEventListener('click', function() {
+            const chapterId = chapterSelect.value;
+            const selectedOption = chapterSelect.options[chapterSelect.selectedIndex];
+            const chapterTitle = selectedOption.textContent;
+            
+            if (!chapterId) {
+                alert('Valitse ensin luku');
+                return;
+            }
+            
+            if (confirm(`Haluatko varmasti arkistoida luvun "${chapterTitle}"? Tämä kokoaa kaikki luvun beatit yhteen tarinaksi ja sulkee luvun.`)) {
+                fetch(`/api/chapters/${chapterId}/archive`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(data => {
+                            throw new Error(data.error || `Server error: ${response.status}`);
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert('Luku arkistoitu onnistuneesti!');
+                    // Reload chapters to update the list
+                    loadChapters(gameSelect.value);
+                })
+                .catch(error => {
+                    console.error('Error archiving chapter:', error);
+                    alert(`Virhe luvun arkistoinnissa: ${error.message}`);
+                });
+            }
         });
     }
     
@@ -286,6 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = document.getElementById('postTitle').value;
             const content = document.getElementById('postContent').value;
             const postType = isGMPostCheckbox.checked ? 'gm' : 'player';
+            const archiveChapter = archiveChapterOnPostCheckbox.checked;
             
             // Basic validation
             if (!beatId) {
@@ -308,7 +400,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 beatId, 
                 title,
                 contentLength: content.length,
-                postType
+                postType,
+                archiveChapter
             });
             
             fetch('/api/posts', {
@@ -317,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${getCookie('token')}`
                 },
-                body: JSON.stringify({ beatId, title, content, postType })
+                body: JSON.stringify({ beatId, title, content, postType, archiveChapter })
             })
             .then(response => {
                 if (!response.ok) {
@@ -338,6 +431,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset button state
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
+                
+                // If chapter was archived, reload chapters to update the list
+                if (data.chapterArchived) {
+                    alert('Luku arkistoitu onnistuneesti!');
+                    loadChapters(gameSelect.value);
+                }
             })
             .catch(error => {
                 console.error('Error creating post:', error);
@@ -351,7 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Functions to load data
     function loadChapters(gameId) {
-        fetch(`/api/games/${gameId}/chapters`, {
+        fetch(`/api/games/${gameId}/chapters?includeArchived=true`, {
             headers: {
                 'Authorization': `Bearer ${getCookie('token')}`
             }
@@ -366,12 +465,26 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear and populate chapter select
             chapterSelect.innerHTML = '<option value="">Valitse Luku</option>';
             
-            chapters.forEach(chapter => {
-                const option = document.createElement('option');
-                option.value = chapter.id;
-                option.textContent = chapter.title || `Luku ${chapter.sequence_number}`;
-                chapterSelect.appendChild(option);
-            });
+            // Sort chapters by sequence number and show all (including archived)
+            chapters
+                .sort((a, b) => a.sequence_number - b.sequence_number)
+                .forEach(chapter => {
+                    const option = document.createElement('option');
+                    option.value = chapter.id;
+                    option.textContent = chapter.title || `Luku ${chapter.sequence_number}`;
+                    
+                    // Style archived chapters differently
+                    if (chapter.is_archived) {
+                        option.textContent += ' (Arkistoitu)';
+                        option.style.color = '#999';
+                        option.style.fontStyle = 'italic';
+                    }
+                    
+                    // Store archived status in data attribute
+                    option.dataset.archived = chapter.is_archived ? 'true' : 'false';
+                    
+                    chapterSelect.appendChild(option);
+                });
             
             chapterSelect.disabled = false;
             createChapterButton.disabled = !isGM;

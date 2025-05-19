@@ -551,11 +551,18 @@ app.post('/api/games', authenticateToken, authorize(['gm', 'op']), (req, res) =>
     });
 });
 
-// Get chapters for a game
+// Get chapters for a game (by default, exclude archived)
 app.get('/api/games/:gameId/chapters', authenticateToken, (req, res) => {
     const gameId = req.params.gameId;
+    const includeArchived = req.query.includeArchived === 'true';
     
-    db.all('SELECT * FROM chapters WHERE game_id = ? ORDER BY sequence_number ASC', [gameId], (err, chapters) => {
+    let query = 'SELECT * FROM chapters WHERE game_id = ?';
+    if (!includeArchived) {
+        query += ' AND (is_archived = 0 OR is_archived IS NULL)';
+    }
+    query += ' ORDER BY sequence_number ASC';
+    
+    db.all(query, [gameId], (err, chapters) => {
         if (err) {
             console.error('Error fetching chapters:', err);
             return res.status(500).json({ error: 'Database error' });
@@ -613,6 +620,7 @@ app.get('/api/chapters/:chapterId/beats', authenticateToken, (req, res) => {
 // Create a new beat (only GMs can create beats)
 app.post('/api/chapters/:chapterId/beats', authenticateToken, authorize(['gm', 'op']), (req, res) => {
     const chapterId = req.params.chapterId;
+    const { title, content } = req.body;
 
     // Get the current max sequence_number
     db.get('SELECT MAX(sequence_number) AS max_sequence FROM beats WHERE chapter_id = ?', [chapterId], (err, result) => {
@@ -624,10 +632,10 @@ app.post('/api/chapters/:chapterId/beats', authenticateToken, authorize(['gm', '
         const maxSequence = result ? (result.max_sequence || 0) : 0;
         const newSequenceNumber = maxSequence + 1;
 
-        // Create the beat
+        // Create the beat with title and content
         db.run(
-            'INSERT INTO beats (chapter_id, sequence_number) VALUES (?, ?)',
-            [chapterId, newSequenceNumber],
+            'INSERT INTO beats (chapter_id, sequence_number, title, content) VALUES (?, ?, ?, ?)',
+            [chapterId, newSequenceNumber, title || null, content || null],
             function(err) {
                 if (err) {
                     console.error('Error creating beat:', err);
@@ -664,7 +672,7 @@ app.get('/api/beats/:beatId/posts', authenticateToken, (req, res) => {
 
 // Create a new post (both players and GMs can create posts)
 app.post('/api/posts', authenticateToken, (req, res) => {
-    const { beatId, title, content, postType } = req.body;
+    const { beatId, title, content, postType, archiveChapter } = req.body;
     const authorId = req.user.id;
     
     // Input validation
@@ -734,11 +742,52 @@ app.post('/api/posts', authenticateToken, (req, res) => {
                 // Log success message with more details
                 console.log(`Post created successfully - ID: ${this.lastID}, Beat: ${beatId}, Author: ${authorId}`);
                 
-                res.status(201).json({ 
-                    message: 'Post created successfully', 
-                    id: this.lastID,
-                    beatId: beatId
-                });
+                // Check if we should archive the chapter after posting
+                if (archiveChapter) {
+                    // Get chapter ID from the beat
+                    db.get('SELECT chapter_id FROM beats WHERE id = ?', [beatId], (err, beatInfo) => {
+                        if (err || !beatInfo) {
+                            console.error('Error fetching beat info for archiving:', err);
+                            // Still return success for the post creation
+                            return res.status(201).json({ 
+                                message: 'Post created successfully (archiving failed)', 
+                                id: this.lastID,
+                                beatId: beatId
+                            });
+                        }
+                        
+                        // Archive the chapter
+                        const chapterId = beatInfo.chapter_id;
+                        db.run(
+                            'UPDATE chapters SET is_archived = 1, archived_at = CURRENT_TIMESTAMP WHERE id = ?',
+                            [chapterId],
+                            (err) => {
+                                if (err) {
+                                    console.error('Error archiving chapter:', err);
+                                    return res.status(201).json({ 
+                                        message: 'Post created successfully (archiving failed)', 
+                                        id: this.lastID,
+                                        beatId: beatId
+                                    });
+                                }
+                                
+                                console.log(`Chapter ${chapterId} archived successfully after posting`);
+                                res.status(201).json({ 
+                                    message: 'Post created and chapter archived successfully', 
+                                    id: this.lastID,
+                                    beatId: beatId,
+                                    chapterArchived: true
+                                });
+                            }
+                        );
+                    });
+                } else {
+                    res.status(201).json({ 
+                        message: 'Post created successfully', 
+                        id: this.lastID,
+                        beatId: beatId
+                    });
+                }
             }
         );
     });
@@ -838,6 +887,86 @@ app.delete('/api/users/:userId', authenticateToken, (req, res) => {
 
         res.json({ message: 'User deleted successfully' });
     });
+});
+
+// Chapter archiving endpoints
+
+// Archive a chapter (GM only)
+app.post('/api/chapters/:chapterId/archive', authenticateToken, authorize(['gm', 'op']), (req, res) => {
+    const chapterId = req.params.chapterId;
+    
+    // First, get all beats for this chapter with their content
+    db.all(
+        `SELECT b.*, 
+         COALESCE(b.title, 'Beat ' || b.sequence_number) as display_title,
+         b.content
+         FROM beats b
+         WHERE b.chapter_id = ?
+         ORDER BY b.sequence_number ASC`,
+        [chapterId],
+        (err, beats) => {
+            if (err) {
+                console.error('Error fetching beats:', err);
+                return res.status(500).json({ error: 'Database error' });
+            }
+            
+            // Compile beats into a narrative
+            let narrative = '';
+            beats.forEach((beat, index) => {
+                if (index > 0) narrative += '\n\n---\n\n';
+                narrative += `## ${beat.display_title}\n\n`;
+                if (beat.content) {
+                    narrative += beat.content;
+                }
+            });
+            
+            // Update chapter with archive status and narrative
+            db.run(
+                `UPDATE chapters 
+                 SET is_archived = 1, 
+                     archived_at = CURRENT_TIMESTAMP, 
+                     archived_narrative = ?
+                 WHERE id = ?`,
+                [narrative, chapterId],
+                function(err) {
+                    if (err) {
+                        console.error('Error archiving chapter:', err);
+                        return res.status(500).json({ error: 'Database error' });
+                    }
+                    
+                    if (this.changes === 0) {
+                        return res.status(404).json({ error: 'Chapter not found' });
+                    }
+                    
+                    res.json({ 
+                        message: 'Chapter archived successfully',
+                        narrative: narrative
+                    });
+                }
+            );
+        }
+    );
+});
+
+// Get archived chapters for storyboard
+app.get('/api/games/:gameId/archived-chapters', authenticateToken, (req, res) => {
+    const gameId = req.params.gameId;
+    
+    db.all(
+        `SELECT id, title, description, sequence_number, archived_at, archived_narrative
+         FROM chapters
+         WHERE game_id = ? AND is_archived = 1
+         ORDER BY sequence_number ASC`,
+        [gameId],
+        (err, chapters) => {
+            if (err) {
+                console.error('Error fetching archived chapters:', err);
+                return res.status(500).json({ error: 'Database error' });
+            }
+            
+            res.json(chapters);
+        }
+    );
 });
 
 // Add health check endpoint
