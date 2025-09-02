@@ -1,0 +1,304 @@
+<\!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .panel {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Tester</h1>
+    
+    <div class="panel">
+        <h2>1. Login First</h2>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" value="admin@example.com">
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" value="admin123">
+        </div>
+        <button id="loginBtn">Login</button>
+        <div class="result">
+            <h3>Login Result</h3>
+            <pre id="loginResult">Not logged in yet</pre>
+        </div>
+    </div>
+    
+    <div class="panel">
+        <h2>2. Create a Beat</h2>
+        <div class="input-group">
+            <label for="chapterId">Chapter ID:</label>
+            <input type="number" id="chapterId" value="1">
+        </div>
+        <div class="input-group">
+            <label for="beatTitle">Beat Title:</label>
+            <input type="text" id="beatTitle" value="Test Beat">
+        </div>
+        <div class="input-group">
+            <label for="beatContent">Beat Content:</label>
+            <textarea id="beatContent" rows="3">This is a test beat</textarea>
+        </div>
+        <button id="createBeatBtn">Create Beat</button>
+        <div class="result">
+            <h3>Beat Creation Result</h3>
+            <pre id="beatResult">No beat created yet</pre>
+        </div>
+    </div>
+    
+    <div class="panel">
+        <h2>3. Add a Post to a Beat</h2>
+        <div class="input-group">
+            <label for="beatId">Beat ID:</label>
+            <input type="number" id="beatId" value="">
+        </div>
+        <div class="input-group">
+            <label for="postTitle">Post Title:</label>
+            <input type="text" id="postTitle" value="Test Post">
+        </div>
+        <div class="input-group">
+            <label for="postContent">Post Content:</label>
+            <textarea id="postContent" rows="3">This is a test post</textarea>
+        </div>
+        <div class="input-group">
+            <label for="postType">Post Type:</label>
+            <select id="postType">
+                <option value="player">Player</option>
+                <option value="gm">GM</option>
+            </select>
+        </div>
+        <button id="createPostBtn">Create Post</button>
+        <div class="result">
+            <h3>Post Creation Result</h3>
+            <pre id="postResult">No post created yet</pre>
+        </div>
+    </div>
+    
+    <div class="panel">
+        <h2>4. Check Status</h2>
+        <button id="checkBeatsBtn">Check Beats</button>
+        <div class="result">
+            <h3>Beats Status</h3>
+            <pre id="beatsResult">No status check yet</pre>
+        </div>
+        <button id="checkPostsBtn">Check Posts</button>
+        <div class="result">
+            <h3>Posts Status</h3>
+            <pre id="postsResult">No status check yet</pre>
+        </div>
+    </div>
+    
+    <script>
+        let authToken = '';
+        let lastCreatedBeatId = null;
+        
+        // Login
+        document.getElementById('loginBtn').addEventListener('click', async function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const loginResult = document.getElementById('loginResult');
+            
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                loginResult.textContent = JSON.stringify(data, null, 2);
+                
+                if (data.token) {
+                    authToken = data.token;
+                    document.getElementById('beatId').value = lastCreatedBeatId || '';
+                }
+            } catch (error) {
+                loginResult.textContent = 'Error: ' + error.message;
+            }
+        });
+        
+        // Create Beat
+        document.getElementById('createBeatBtn').addEventListener('click', async function() {
+            if (\!authToken) {
+                alert('Please login first');
+                return;
+            }
+            
+            const chapterId = document.getElementById('chapterId').value;
+            const title = document.getElementById('beatTitle').value;
+            const content = document.getElementById('beatContent').value;
+            const beatResult = document.getElementById('beatResult');
+            
+            try {
+                const response = await fetch(`/api/chapters/${chapterId}/beats`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: JSON.stringify({ title, content })
+                });
+                
+                const data = await response.json();
+                beatResult.textContent = JSON.stringify(data, null, 2);
+                
+                if (data.id) {
+                    lastCreatedBeatId = data.id;
+                    document.getElementById('beatId').value = data.id;
+                }
+            } catch (error) {
+                beatResult.textContent = 'Error: ' + error.message;
+            }
+        });
+        
+        // Create Post
+        document.getElementById('createPostBtn').addEventListener('click', async function() {
+            if (\!authToken) {
+                alert('Please login first');
+                return;
+            }
+            
+            const beatId = document.getElementById('beatId').value;
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            const postType = document.getElementById('postType').value;
+            const postResult = document.getElementById('postResult');
+            
+            if (\!beatId) {
+                alert('Please enter a Beat ID or create a beat first');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: JSON.stringify({ beatId, title, content, postType })
+                });
+                
+                const data = await response.json();
+                postResult.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                postResult.textContent = 'Error: ' + error.message;
+            }
+        });
+        
+        // Check Beats
+        document.getElementById('checkBeatsBtn').addEventListener('click', async function() {
+            if (\!authToken) {
+                alert('Please login first');
+                return;
+            }
+            
+            const chapterId = document.getElementById('chapterId').value;
+            const beatsResult = document.getElementById('beatsResult');
+            
+            try {
+                const response = await fetch(`/api/chapters/${chapterId}/beats`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+                
+                const data = await response.json();
+                
+                // Count unique beat IDs
+                const uniqueIds = new Set();
+                data.forEach(beat => uniqueIds.add(beat.id));
+                
+                beatsResult.textContent = `Found ${data.length} beat records with ${uniqueIds.size} unique beat IDs\n\n`;
+                beatsResult.textContent += JSON.stringify(data, null, 2);
+            } catch (error) {
+                beatsResult.textContent = 'Error: ' + error.message;
+            }
+        });
+        
+        // Check Posts
+        document.getElementById('checkPostsBtn').addEventListener('click', async function() {
+            if (\!authToken) {
+                alert('Please login first');
+                return;
+            }
+            
+            const beatId = document.getElementById('beatId').value || lastCreatedBeatId;
+            const postsResult = document.getElementById('postsResult');
+            
+            if (\!beatId) {
+                postsResult.textContent = 'No beat ID specified';
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/beats/${beatId}/posts`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+                
+                const data = await response.json();
+                postsResult.textContent = `Found ${data.length} posts for beat ${beatId}\n\n`;
+                postsResult.textContent += JSON.stringify(data, null, 2);
+            } catch (error) {
+                postsResult.textContent = 'Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

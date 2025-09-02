@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Debug</title>
+</head>
+<body>
+    <h1>Login Debug Page</h1>
+    <div id="output"></div>
+    
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        
+        const output = document.getElementById('output');
+        let info = '';
+        
+        // Check localStorage
+        const user = localStorage.getItem('user');
+        info += '<h3>LocalStorage User:</h3>';
+        info += '<pre>' + (user || 'null') + '</pre>';
+        
+        // Check cookies
+        info += '<h3>All Cookies:</h3>';
+        info += '<pre>' + document.cookie + '</pre>';
+        
+        // Check token cookie specifically
+        const token = getCookie('token');
+        info += '<h3>Token Cookie:</h3>';
+        info += '<pre>' + (token || 'null') + '</pre>';
+        
+        // Test API call
+        info += '<h3>API Test:</h3>';
+        fetch('/api/games', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            info += '<pre>API Response: ' + JSON.stringify(data, null, 2) + '</pre>';
+            output.innerHTML = info;
+        })
+        .catch(error => {
+            info += '<pre>API Error: ' + error.message + '</pre>';
+            output.innerHTML = info;
+        });
+        
+        output.innerHTML = info;
+    </script>
+</body>
+</html>

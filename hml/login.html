@@ -1,4 +1,4 @@
-<\!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
@@ -123,6 +123,7 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
+                    credentials: 'include',
                     body: JSON.stringify({ email, password })
                 })
                 .then(response => response.json())
@@ -132,13 +133,18 @@
                         errorMessage.textContent = data.error;
                         errorMessage.style.display = 'block';
                     } else {
-                        // Store user info and token in localStorage
-                        const userData = data.user;
-                        userData.token = data.token;  // Include token in localStorage for API calls
-                        localStorage.setItem('user', JSON.stringify(userData));
+                        // Store user info in localStorage
+                        localStorage.setItem('user', JSON.stringify(data.user));
                         
-                        // Redirect to home page
-                        window.location.href = '../index.html';
+                        // Also store token in localStorage as backup (since HTTP-only cookies might not work in all browsers/contexts)
+                        if (data.token) {
+                            localStorage.setItem('auth_token', data.token);
+                        }
+                        
+                        // Add a small delay to ensure everything is properly set before redirect
+                        setTimeout(() => {
+                            window.location.href = '../index.html';
+                        }, 200);
                     }
                 })
                 .catch(error => {

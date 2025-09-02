@@ -1,0 +1,9 @@
+mkdir -p /var/www/pelisivusto
+cd /var/www/pelisivusto
+put -r css
+put -r hml
+put -r js
+put -r sql
+put index.html
+put package.json
+put package-lock.json

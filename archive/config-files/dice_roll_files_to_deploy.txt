@@ -1,0 +1,39 @@
+# Dice Roll Feature - Files to Deploy
+
+## Files that need to be uploaded to production:
+
+1. **js/server_sqlite.js** - Updated server with dice roll endpoints
+2. **js/diceEngine.js** - NEW FILE - Dice rolling engine
+3. **js/threads.js** - Updated with dice roll UI handling
+4. **hml/threads.html** - Updated with dice roll form elements
+5. **css/styles.css** - Updated with dice roll styles
+6. **sql/add_dice_rolls.sql** - Database migration script
+
+## Deployment Steps:
+
+1. Upload all files to the production server
+2. SSH into the production server
+3. Backup existing files:
+   ```bash
+   cd /root/Eno/Eno-Frontend
+   cp js/server_sqlite.js js/server_sqlite.backup.$(date +%Y%m%d).js
+   cp js/threads.js js/threads.backup.$(date +%Y%m%d).js
+   cp hml/threads.html hml/threads.backup.$(date +%Y%m%d).html
+   cp css/styles.css css/styles.backup.$(date +%Y%m%d).css
+   ```
+
+4. Apply database migration:
+   ```bash
+   sqlite3 data/foorumi.db < sql/add_dice_rolls.sql
+   ```
+
+5. Restart the server:
+   ```bash
+   pkill -f 'node.*server'
+   nohup node js/server_sqlite.js > server.log 2>&1 &
+   ```
+
+## Testing:
+- Visit https://eno.anotherrealm.org/hml/threads.html
+- Create a post with dice roll
+- Verify dice results appear with the post

@@ -255,59 +255,19 @@
             
             // Functions
             function fetchUsers() {
-                // Try to get token from cookie first, fallback to localStorage 
-                const authToken = getCookie('token') || (user ? user.token || '' : '');
-                console.log('Auth token for fetch users:', authToken ? 'Found token' : 'No token');
-                
                 fetch('/api/users', {
                     headers: {
-                        'Authorization': `Bearer ${authToken}`
-                    },
-                    credentials: 'include' // Important: Include cookies in the request
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
                 })
                 .then(response => {
                     if (!response.ok) {
-                        return response.text().then(text => {
-                            try {
-                                // Try to parse as JSON
-                                const data = JSON.parse(text);
-                                throw new Error(data.error || 'Failed to fetch users');
-                            } catch (e) {
-                                // If not valid JSON, use text as error message
-                                console.error('Server response is not valid JSON:', text);
-                                throw new Error('Server error: ' + response.status);
-                            }
-                        });
+                        throw new Error('Failed to fetch users');
                     }
                     return response.json();
                 })
                 .then(users => {
-                    console.log('Users received from API:', users);
-                    
-                    // Check if users is valid and contains expected properties
-                    if (!Array.isArray(users)) {
-                        console.error('API response is not an array:', users);
-                        showError('Invalid response from server');
-                        return;
-                    }
-                    
-                    // Validate each user object
-                    const validUsers = users.filter(user => {
-                        if (!user || typeof user !== 'object') {
-                            console.error('Invalid user object:', user);
-                            return false;
-                        }
-                        
-                        if (!user.id) {
-                            console.error('User missing ID:', user);
-                            return false;
-                        }
-                        
-                        return true;
-                    });
-                    
-                    console.log(`Filtered ${users.length - validUsers.length} invalid users`);
-                    renderUserTable(validUsers);
+                    renderUserTable(users);
                 })
                 .catch(error => {
                     console.error('Error fetching users:', error);
@@ -319,20 +279,7 @@
                 userTableBody.innerHTML = '';
                 
                 users.forEach(user => {
-                    // Safely parse the roles with error handling
-                    let userRoles = [];
-                    try {
-                        userRoles = JSON.parse(user.roles || '[]');
-                        // Ensure it's an array
-                        if (!Array.isArray(userRoles)) {
-                            console.error('User roles is not an array:', user.roles);
-                            userRoles = [];
-                        }
-                    } catch (error) {
-                        console.error('Error parsing user roles:', error, user.roles);
-                        userRoles = [];
-                    }
-                    
+                    const userRoles = JSON.parse(user.roles || '[]');
                     const tr = document.createElement('tr');
                     
                     tr.innerHTML = `
@@ -346,7 +293,7 @@
                         </td>
                         <td>${new Date(user.created_at).toLocaleDateString()}</td>
                         <td class="action-buttons">
-                            <button class="btn-small btn-edit" data-id="${user.id}" data-username="${user.username}" data-roles-player="${userRoles.includes('player')}" data-roles-gm="${userRoles.includes('gm')}" data-is-admin="${user.is_admin}">Muokkaa</button>
+                            <button class="btn-small btn-edit" data-id="${user.id}" data-username="${user.username}" data-roles='${user.roles}' data-is-admin="${user.is_admin}">Muokkaa</button>
                             <button class="btn-small btn-delete" data-id="${user.id}" data-username="${user.username}">Poista</button>
                         </td>
                     `;
@@ -359,16 +306,7 @@
                     button.addEventListener('click', function() {
                         const userId = this.getAttribute('data-id');
                         const username = this.getAttribute('data-username');
-                        
-                        // Get individual role flags directly from data attributes
-                        const hasPlayerRole = this.getAttribute('data-roles-player') === 'true';
-                        const hasGMRole = this.getAttribute('data-roles-gm') === 'true';
-                        
-                        // Build roles array from individual flags
-                        const roles = [];
-                        if (hasPlayerRole) roles.push('player');
-                        if (hasGMRole) roles.push('gm');
-                        
+                        const roles = JSON.parse(this.getAttribute('data-roles') || '[]');
                         const isAdmin = this.getAttribute('data-is-admin') === 'true';
                         
                         openEditModal(userId, username, roles, isAdmin);
@@ -388,18 +326,10 @@
             }
             
             function openEditModal(userId, username, roles, isAdmin) {
-                console.log('Opening edit modal with userId:', userId);
-                
-                if (!userId) {
-                    showError('User ID is missing');
-                    console.error('User ID is missing when opening edit modal');
-                    return;
-                }
-                
                 document.getElementById('userId').value = userId;
                 document.getElementById('userNameDisplay').textContent = username;
-                document.getElementById('rolePlayer').checked = Array.isArray(roles) && roles.includes('player');
-                document.getElementById('roleGM').checked = Array.isArray(roles) && roles.includes('gm');
+                document.getElementById('rolePlayer').checked = roles.includes('player');
+                document.getElementById('roleGM').checked = roles.includes('gm');
                 document.getElementById('roleAdmin').checked = isAdmin;
                 
                 editUserModal.style.display = 'block';
@@ -416,89 +346,44 @@
                 if (rolePlayer) roles.push('player');
                 if (roleGM) roles.push('gm');
                 
-                // Try to get token from cookie first, fallback to localStorage
-                const authToken = getCookie('token') || (user ? user.token || '' : '');
-                console.log('Auth token for role update:', authToken ? 'Found token' : 'No token');
-                console.log('User data from localStorage:', user);
-                
-                const requestBody = {
-                    roles: roles,
-                    is_admin: roleAdmin
-                };
-                console.log('Request body:', requestBody);
-                
-                // Check if userId is valid before making the request
-                if (!userId) {
-                    console.error('User ID is missing');
-                    showError('User ID is missing');
-                    return;
-                }
-                
-                console.log('Update URL:', `/api/users/${userId}/roles`);
-                
                 fetch(`/api/users/${userId}/roles`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${authToken}`
+                        'Authorization': `Bearer ${getCookie('token')}`
                     },
-                    credentials: 'include', // Important: Include cookies in the request
-                    body: JSON.stringify(requestBody)
+                    body: JSON.stringify({
+                        roles: roles,
+                        is_admin: roleAdmin
+                    })
                 })
                 .then(response => {
-                    console.log('Role update response status:', response.status);
                     if (!response.ok) {
-                        return response.text().then(text => {
-                            try {
-                                // Try to parse as JSON
-                                const data = JSON.parse(text);
-                                throw new Error(data.error || 'Failed to update user roles');
-                            } catch (e) {
-                                // If not valid JSON, use text as error message
-                                console.error('Server response is not valid JSON:', text);
-                                throw new Error('Server error: ' + response.status);
-                            }
-                        });
+                        throw new Error('Failed to update user roles');
                     }
                     return response.json();
                 })
                 .then(data => {
-                    console.log('Role update success:', data);
                     editUserModal.style.display = 'none';
                     showSuccess('Käyttäjän roolit päivitetty onnistuneesti');
                     fetchUsers(); // Refresh the user list
                 })
                 .catch(error => {
                     console.error('Error updating roles:', error);
-                    showError('Roolien päivittäminen epäonnistui: ' + error.message);
+                    showError('Roolien päivittäminen epäonnistui');
                 });
             }
             
             function deleteUser(userId) {
-                // Try to get token from cookie first, fallback to localStorage
-                const authToken = getCookie('token') || (user ? user.token || '' : '');
-                console.log('Auth token for delete user:', authToken ? 'Found token' : 'No token');
-                
                 fetch(`/api/users/${userId}`, {
                     method: 'DELETE',
                     headers: {
-                        'Authorization': `Bearer ${authToken}`
-                    },
-                    credentials: 'include' // Important: Include cookies in the request
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
                 })
                 .then(response => {
                     if (!response.ok) {
-                        return response.text().then(text => {
-                            try {
-                                // Try to parse as JSON
-                                const data = JSON.parse(text);
-                                throw new Error(data.error || 'Failed to delete user');
-                            } catch (e) {
-                                // If not valid JSON, use text as error message
-                                console.error('Server response is not valid JSON:', text);
-                                throw new Error('Server error: ' + response.status);
-                            }
-                        });
+                        throw new Error('Failed to delete user');
                     }
                     return response.json();
                 })
@@ -508,7 +393,7 @@
                 })
                 .catch(error => {
                     console.error('Error deleting user:', error);
-                    showError('Käyttäjän poistaminen epäonnistui: ' + error.message);
+                    showError('Käyttäjän poistaminen epäonnistui');
                 });
             }
             

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Käyttäjäprofiili - Pelisivusto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .profile-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+
+        .profile-sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .profile-username {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .profile-email {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .profile-badges {
+            margin-bottom: 20px;
+        }
+
+        .profile-stats {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        .stat-label {
+            color: #666;
+        }
+
+        .stat-value {
+            font-weight: bold;
+        }
+
+        .profile-main {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-card h4 {
+            margin: 0 0 10px 0;
+            color: #007bff;
+        }
+
+        .game-card .game-role {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .role-gm {
+            background-color: #007bff;
+        }
+
+        .role-player {
+            background-color: #28a745;
+        }
+
+        .recent-posts {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recent-posts li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recent-posts li:last-child {
+            border-bottom: none;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .edit-profile-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #f8f9fa;
+        }
+
+        .tab.active {
+            border-bottom-color: #007bff;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .bio-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .bio-section textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .save-bio-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .save-bio-btn:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .games-list {
+            margin-top: 20px;
+        }
+        
+        .game-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .game-item h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .game-stats {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .game-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .game-links a {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Käyttäjäprofiili</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <nav id="navBar">
+                <a href="/">Etusivu</a>
+                <a href="/hml/threads.html">Langat</a>
+                <a href="/hml/storyboard.html">Storyboard</a>
+                <a href="/hml/wiki.html">Wiki</a>
+                <a href="/hml/profile.html">Profiili</a>
+            </nav>
+            <div id="userControls">
+                <button id="logoutBtn" class="btn btn-logout">Kirjaudu ulos</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <!-- Sidebar -->
+        <div class="profile-sidebar">
+            <div class="profile-avatar" id="profileAvatar"></div>
+            <div class="profile-username" id="profileUsername"></div>
+            <div class="profile-email" id="profileEmail"></div>
+            <div class="profile-badges" id="profileBadges"></div>
+            
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Liittynyt:</span>
+                    <span class="stat-value" id="joinDate">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pelejä:</span>
+                    <span class="stat-value" id="gameCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Viestejä:</span>
+                    <span class="stat-value" id="postCount">0</span>
+                </div>
+            </div>
+
+            <button class="edit-profile-btn" id="editProfileBtn">Muokkaa profiilia</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="profile-main">
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active" data-tab="overview">Yleiskatsaus</div>
+                <div class="tab" data-tab="games">Pelit</div>
+                <div class="tab" data-tab="posts">Viimeisimmät viestit</div>
+                <div class="tab" data-tab="settings">Asetukset</div>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content active" id="overview">
+                <div class="profile-section">
+                    <h3>Tietoja minusta</h3>
+                    <div class="bio-section">
+                        <p id="userBio">Ei kuvausta vielä.</p>
+                        <div id="bioEdit" style="display: none;">
+                            <textarea id="bioTextarea" placeholder="Kerro itsestäsi..."></textarea>
+                            <button class="save-bio-btn" id="saveBioBtn">Tallenna</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Aktiiviset pelit</h3>
+                    <div class="games-grid" id="activeGames">
+                        <!-- Active games will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="games">
+                <div class="profile-section">
+                    <h3>Kaikki pelit</h3>
+                    <div class="games-grid" id="allGames">
+                        <!-- All games will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="posts">
+                <div class="profile-section">
+                    <h3>Viimeisimmät viestit</h3>
+                    <ul class="recent-posts" id="recentPosts">
+                        <!-- Recent posts will be loaded here -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" id="settings">
+                <div class="profile-section">
+                    <h3>Profiiliasetukset</h3>
+                    <form id="profileSettingsForm">
+                        <div class="form-group">
+                            <label for="displayName">Näyttönimi</label>
+                            <input type="text" id="displayName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Sähköposti</label>
+                            <input type="email" id="email" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="notificationPrefs">Ilmoitusasetukset</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="emailNotifications">
+                                <label for="emailNotifications">Sähköposti-ilmoitukset</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="gameInvites">
+                                <label for="gameInvites">Pelikutsut</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tallenna asetukset</button>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Vaihda salasana</h3>
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Nykyinen salasana</label>
+                            <input type="password" id="currentPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">Uusi salasana</label>
+                            <input type="password" id="newPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Vahvista uusi salasana</label>
+                            <input type="password" id="confirmPassword" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Vaihda salasana</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        async function loadUserGames() {
+            // Only show for GMs
+            const profileUser = await getUserProfile();
+            if (!profileUser) return;
+            
+            const roles = JSON.parse(profileUser.roles || "[]");
+            if (!roles.includes("gm") && !profileUser.is_admin) {
+                return;
+            }
+            
+            // Show games section
+            document.getElementById("gamesSection").style.display = "block";
+            
+            try {
+                const response = await fetch("/api/games", {
+                    headers: {
+                        "Authorization": `Bearer ${getCookie("token")}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const games = await response.json();
+                    const userGames = games.filter(game => game.created_by === parseInt(userId));
+                    
+                    const gamesDiv = document.getElementById("userGames");
+                    
+                    if (userGames.length === 0) {
+                        gamesDiv.innerHTML = "<p>Ei vielä luotuja pelejä.</p>";
+                        return;
+                    }
+                    
+                    gamesDiv.innerHTML = userGames.map(game => `
+                        <div class="game-item">
+                            <h4>${game.title}</h4>
+                            <p>${game.description}</p>
+                            <div class="game-stats">
+                                <span>📊 ${game.total_posts || 0} postausta</span> |
+                                <span>👥 ${game.player_count || 0} pelaajaa</span> |
+                                <span>📖 ${game.chapter_count || 0} lukua</span>
+                            </div>
+                            <div class="game-links">
+                                <a href="/hml/gm-dashboard.html?game=${game.id}" class="btn btn-primary btn-sm">GM Dashboard</a>
+                                <a href="/hml/threads.html?game=${game.id}" class="btn btn-secondary btn-sm">Näytä peli</a>
+                            </div>
+                        </div>
+                    `).join("");
+                }
+            } catch (error) {
+                console.error("Error loading games:", error);
+            }
+        }
+        
+        async function getUserProfile() {
+            try {
+                const response = await fetch(`/api/users/${userId}`, {
+                    headers: {
+                        "Authorization": `Bearer ${getCookie("token")}`
+                    }
+                });
+                if (response.ok) {
+                    return await response.json();
+                }
+            } catch (error) {
+                console.error("Error fetching user profile:", error);
+            }
+            return null;
+        }
+    <script src="/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!user.id) {
+                window.location.href = '/hml/login.html';
+                return;
+            }
+
+            // Initialize profile
+            initializeProfile();
+
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(tc => tc.classList.remove('active'));
+
+                    // Add active class to clicked
+                    tab.classList.add('active');
+                    const tabId = tab.dataset.tab;
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Logout
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                fetch('/api/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                })
+                .then(() => {
+                    localStorage.removeItem('user');
+                    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    window.location.href = '/hml/login.html';
+                });
+            });
+
+            // Edit profile bio
+            const editProfileBtn = document.getElementById('editProfileBtn');
+            const userBio = document.getElementById('userBio');
+            const bioEdit = document.getElementById('bioEdit');
+            const bioTextarea = document.getElementById('bioTextarea');
+            const saveBioBtn = document.getElementById('saveBioBtn');
+
+            editProfileBtn.addEventListener('click', () => {
+                userBio.style.display = 'none';
+                bioEdit.style.display = 'block';
+                bioTextarea.value = userBio.textContent !== 'Ei kuvausta vielä.' ? userBio.textContent : '';
+                bioTextarea.focus();
+            });
+
+            saveBioBtn.addEventListener('click', async () => {
+                const newBio = bioTextarea.value.trim();
+                
+                try {
+                    const response = await fetch(`/api/users/${user.id}/profile`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        },
+                        body: JSON.stringify({ bio: newBio })
+                    });
+                    
+                    if (response.ok) {
+                        userBio.textContent = newBio || 'Ei kuvausta vielä.';
+                        userBio.style.display = 'block';
+                        bioEdit.style.display = 'none';
+                    } else {
+                        alert('Virhe profiilin päivityksessä');
+                    }
+                } catch (error) {
+                    console.error('Error updating bio:', error);
+                    alert('Virhe profiilin päivityksessä');
+                }
+            });
+
+            async function initializeProfile() {
+                try {
+                    // Fetch full profile data from API
+                    const profileResponse = await fetch(`/api/users/${user.id}/profile`, {
+                        headers: {
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        }
+                    });
+                    
+                    if (!profileResponse.ok) {
+                        throw new Error('Failed to fetch profile');
+                    }
+                    
+                    const profileData = await profileResponse.json();
+                    
+                    // Set basic info
+                    const profileAvatar = document.getElementById('profileAvatar');
+                    profileAvatar.textContent = profileData.username.charAt(0).toUpperCase();
+                    
+                    document.getElementById('profileUsername').textContent = profileData.username;
+                    document.getElementById('profileEmail').textContent = profileData.email;
+                    
+                    // Set bio
+                    const userBio = document.getElementById('userBio');
+                    userBio.textContent = profileData.bio || 'Ei kuvausta vielä.';
+                    
+                    // Add badges
+                    const profileBadges = document.getElementById('profileBadges');
+                    const roles = JSON.parse(profileData.roles || '[]');
+                    
+                    if (profileData.is_admin) {
+                        profileBadges.innerHTML += '<span class="user-badge admin-badge">Admin</span> ';
+                    }
+                    if (roles.includes('gm')) {
+                        profileBadges.innerHTML += '<span class="user-badge gm-badge">GM</span> ';
+                    }
+                    if (roles.includes('player')) {
+                        profileBadges.innerHTML += '<span class="user-badge player-badge">Pelaaja</span>';
+                    }
+
+                    // Set join date
+                    const joinDate = profileData.created_at ? new Date(profileData.created_at).toLocaleDateString('fi-FI') : '-';
+                    document.getElementById('joinDate').textContent = joinDate;
+                    
+                    // Set stats
+                    document.getElementById('gameCount').textContent = profileData.game_count || 0;
+                    document.getElementById('postCount').textContent = profileData.post_count || 0;
+
+                    // Load user's games
+                    loadUserGames();
+                    
+                    // Load recent posts
+                    loadRecentPosts();
+
+                    // Set settings form values
+                    document.getElementById('displayName').value = profileData.username;
+                    document.getElementById('email').value = profileData.email;
+                    
+                } catch (error) {
+                    console.error('Error initializing profile:', error);
+                }
+            }
+
+            async function loadUserGames() {
+                try {
+                    const response = await fetch('/api/games', {
+                        headers: {
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const games = await response.json();
+                        
+                        // Count games and display
+                        document.getElementById('gameCount').textContent = games.length;
+                        
+                        // Display games
+                        const activeGamesContainer = document.getElementById('activeGames');
+                        const allGamesContainer = document.getElementById('allGames');
+                        
+                        games.forEach(game => {
+                            const gameCard = createGameCard(game);
+                            allGamesContainer.appendChild(gameCard.cloneNode(true));
+                            
+                            // Add to active games if not archived
+                            if (!game.is_archived) {
+                                activeGamesContainer.appendChild(gameCard);
+                            }
+                        });
+                        
+                        if (activeGamesContainer.children.length === 0) {
+                            activeGamesContainer.innerHTML = '<p>Ei aktiivisia pelejä.</p>';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading games:', error);
+                }
+            }
+
+            function createGameCard(game) {
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.style.cursor = 'pointer';
+                
+                const isGM = game.gm_id === user.id;
+                const roleClass = isGM ? 'role-gm' : 'role-player';
+                const roleText = isGM ? 'GM' : 'Pelaaja';
+                
+                card.innerHTML = `
+                    <h4>${game.name}</h4>
+                    <p>${game.description || 'Ei kuvausta'}</p>
+                    <span class="game-role ${roleClass}">${roleText}</span>
+                `;
+                
+                card.addEventListener('click', () => {
+                    window.location.href = `/hml/threads.html?game=${game.id}`;
+                });
+                
+                return card;
+            }
+
+            async function loadRecentPosts() {
+                try {
+                    const response = await fetch(`/api/users/${user.id}/posts?limit=5`, {
+                        headers: {
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const posts = await response.json();
+                        const recentPostsContainer = document.getElementById('recentPosts');
+                        
+                        if (posts.length === 0) {
+                            recentPostsContainer.innerHTML = '<li>Ei viestejä vielä.</li>';
+                        } else {
+                            recentPostsContainer.innerHTML = '';
+                            posts.forEach(post => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `
+                                    <strong>${post.title || 'Ei otsikkoa'}</strong>
+                                    <p>${post.content.substring(0, 150)}${post.content.length > 150 ? '...' : ''}</p>
+                                    <div class="post-meta">
+                                        ${post.game_name} - ${post.chapter_title} - ${new Date(post.created_at).toLocaleDateString('fi-FI')}
+                                    </div>
+                                `;
+                                li.style.cursor = 'pointer';
+                                li.addEventListener('click', () => {
+                                    window.location.href = `/hml/threads.html?game=${post.game_id}&chapter=${post.chapter_id}&beat=${post.beat_id}`;
+                                });
+                                recentPostsContainer.appendChild(li);
+                            });
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading recent posts:', error);
+                }
+            }
+            
+            // Profile settings form
+            const profileSettingsForm = document.getElementById('profileSettingsForm');
+            profileSettingsForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const displayName = document.getElementById('displayName').value.trim();
+                
+                try {
+                    const response = await fetch(`/api/users/${user.id}/profile`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        },
+                        body: JSON.stringify({ displayName })
+                    });
+                    
+                    if (response.ok) {
+                        alert('Asetukset tallennettu!');
+                        // Update local storage
+                        user.username = displayName;
+                        localStorage.setItem('user', JSON.stringify(user));
+                        // Update display
+                        document.getElementById('profileUsername').textContent = displayName;
+                        document.getElementById('username').textContent = displayName;
+                    } else {
+                        alert('Virhe asetusten tallennuksessa');
+                    }
+                } catch (error) {
+                    console.error('Error saving settings:', error);
+                    alert('Virhe asetusten tallennuksessa');
+                }
+            });
+            
+            // Password change form
+            const changePasswordForm = document.getElementById('changePasswordForm');
+            changePasswordForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (newPassword !== confirmPassword) {
+                    alert('Uudet salasanat eivät täsmää!');
+                    return;
+                }
+                
+                try {
+                    const response = await fetch(`/api/users/${user.id}/password`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        },
+                        body: JSON.stringify({ currentPassword, newPassword })
+                    });
+                    
+                    if (response.ok) {
+                        alert('Salasana vaihdettu onnistuneesti!');
+                        changePasswordForm.reset();
+                    } else {
+                        const error = await response.json();
+                        alert(error.error || 'Virhe salasanan vaihdossa');
+                    }
+                } catch (error) {
+                    console.error('Error changing password:', error);
+                    alert('Virhe salasanan vaihdossa');
+                }
+            });
+        });
+
+        // Helper function to get cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        async function loadUserGames() {
+            // Only show for GMs
+            const profileUser = await getUserProfile();
+            if (!profileUser) return;
+            
+            const roles = JSON.parse(profileUser.roles || "[]");
+            if (!roles.includes("gm") && !profileUser.is_admin) {
+                return;
+            }
+            
+            // Show games section
+            document.getElementById("gamesSection").style.display = "block";
+            
+            try {
+                const response = await fetch("/api/games", {
+                    headers: {
+                        "Authorization": `Bearer ${getCookie("token")}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const games = await response.json();
+                    const userGames = games.filter(game => game.created_by === parseInt(userId));
+                    
+                    const gamesDiv = document.getElementById("userGames");
+                    
+                    if (userGames.length === 0) {
+                        gamesDiv.innerHTML = "<p>Ei vielä luotuja pelejä.</p>";
+                        return;
+                    }
+                    
+                    gamesDiv.innerHTML = userGames.map(game => `
+                        <div class="game-item">
+                            <h4>${game.title}</h4>
+                            <p>${game.description}</p>
+                            <div class="game-stats">
+                                <span>📊 ${game.total_posts || 0} postausta</span> |
+                                <span>👥 ${game.player_count || 0} pelaajaa</span> |
+                                <span>📖 ${game.chapter_count || 0} lukua</span>
+                            </div>
+                            <div class="game-links">
+                                <a href="/hml/gm-dashboard.html?game=${game.id}" class="btn btn-primary btn-sm">GM Dashboard</a>
+                                <a href="/hml/threads.html?game=${game.id}" class="btn btn-secondary btn-sm">Näytä peli</a>
+                            </div>
+                        </div>
+                    `).join("");
+                }
+            } catch (error) {
+                console.error("Error loading games:", error);
+            }
+        }
+        
+        async function getUserProfile() {
+            try {
+                const response = await fetch(`/api/users/${userId}`, {
+                    headers: {
+                        "Authorization": `Bearer ${getCookie("token")}`
+                    }
+                });
+                if (response.ok) {
+                    return await response.json();
+                }
+            } catch (error) {
+                console.error("Error fetching user profile:", error);
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>

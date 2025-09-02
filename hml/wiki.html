@@ -1,93 +1,30 @@
-<!DOCTYPE html>
-<html lang="fi">
-    <head>
-        <meta charset="UTF-8">
-        <title>Wiki</title>
-        <link rel="stylesheet" href="/css/styles.css">
-        <style>
-            #userControls {
-                display: flex;
-                align-items: center;
-                margin-left: 20px;
-            }
-            
-            #userInfo {
-                margin-right: 15px;
-            }
-            
-            .user-badge {
-                display: inline-block;
-                padding: 3px 8px;
-                border-radius: 12px;
-                font-size: 12px;
-                color: white;
-                margin-left: 5px;
-            }
-            
-            .admin-badge {
-                background-color: #dc3545;
-            }
-            
-            .gm-badge {
-                background-color: #007bff;
-            }
-            
-            .player-badge {
-                background-color: #28a745;
-            }
-            
-            .btn {
-                padding: 6px 12px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 14px;
-                color: white;
-            }
-            
-            .btn-login {
-                background-color: #007bff;
-            }
-            
-            .btn-logout {
-                background-color: #dc3545;
-            }
-        </style>
-    </head>
-<body>
-    <header>
-        <h1>Wiki</h1>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <nav id="navBar">
-                <a href="/">Etusivu</a>
-                <a href="/threads.html">Langat</a>
-                <a href="/storyboard.html">Storyboard</a>
-                <a href="/wiki.html">Wiki</a>
-            </nav>
-            <div id="userControls">
-                <div id="userInfo" style="display: none;">
-                    <span>Tervetuloa, <span id="username"></span></span>
-                    <span id="userEmail" style="margin-left: 5px; font-size: 12px; color: #666;"></span>
-                    <span id="userBadges"></span>
-                </div>
-                <button id="loginBtn" class="btn btn-login">Kirjaudu sisään</button>
-                <button id="logoutBtn" class="btn btn-logout" style="display: none;">Kirjaudu ulos</button>
-            </div>
-        </div>
-    </header>
-    <div class="container paper">
-        <h2>Game World Encyclopedia</h2>
-        <article class="wiki-entry">
-            <h3>The Forgotten Realm</h3>
-            <p>A mysterious land shrouded in mist, where ancient magic still lingers...</p>
-            <p class="handwritten">Note: Expand on the history of the realm</p>
-        </article>
-        <article class="wiki-entry">
-            <h3>The Order of the Silver Star</h3>
-            <p>A secretive organization dedicated to preserving the balance of power...</p>
-            <p class="handwritten">Idea: Create a rival organization?</p>
-        </article>
-    </div>
-    <script src="/js/script.js"></script>
-</body>
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Wiki</title>
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+<body>
+    <header>
+        <h1>Wiki</h1>
+        <nav id="navBar">
+            <!-- Linkit lisätään dynaamisesti JavaScriptin avulla -->
+        </nav>
+    </header>
+    <div class="container paper">
+        <h2>Game World Encyclopedia</h2>
+        <article class="wiki-entry">
+            <h3>The Forgotten Realm</h3>
+            <p>A mysterious land shrouded in mist, where ancient magic still lingers...</p>
+            <p class="handwritten">Note: Expand on the history of the realm</p>
+        </article>
+        <article class="wiki-entry">
+            <h3>The Order of the Silver Star</h3>
+            <p>A secretive organization dedicated to preserving the balance of power...</p>
+            <p class="handwritten">Idea: Create a rival organization?</p>
+        </article>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
 </html>

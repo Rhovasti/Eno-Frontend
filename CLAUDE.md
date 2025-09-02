@@ -1,9 +1,17 @@
 # Eno Frontend Development Guide
 
+## Important Documentation
+- **Test Server Guide**: See `testserver.md` for local development setup
+- **Production Server Guide**: See `productionserver.md` for deployment procedures
+- **Known Issues**: See `KNOWN_ISSUES.md` for current bugs and workarounds
+- **Project Status**: See `PROJECT_STATUS.md` for feature status and roadmap
+- **Planned Features**: See `PLANNED_FEATURES.md` for upcoming feature specifications and roadmap
+- **SSL Renewal Issue**: See `SSL_RENEWAL_ISSUE.md` for current SSL certificate problem and solutions
+
 ## Build Commands
-- **Start Server**: `node js/server.js`
-- **Database Setup**: Import schema from `sql/mysql_schema.txt`
-- **Frontend**: Open HTML files directly in browser or use a static server
+- **Start Server**: `node js/server_sqlite_new.js` (SQLite version recommended)
+- **Database Setup**: SQLite auto-creates tables on startup
+- **Frontend**: Served via Node.js on port 3000
 
 ## Code Style Guidelines
 
@@ -34,3 +42,34 @@
 - Consistent error objects with status codes
 - User-friendly error messages
 - Proper logging of errors to console
+
+## Current Architecture
+
+### Server Setup
+- **Development**: `node js/server_sqlite_new.js` on http://localhost:3000
+- **Production**: https://www.iinou.eu (see `productionserver.md`)
+- **Database**: SQLite (`data/database.sqlite`)
+- **Image Storage**: AWS S3 bucket "kuvatjakalat"
+
+### Key Features
+- **AI Image Generation**: Sketch + style transfer using Stability AI
+- **Game Structure**: Games → Chapters → Beats → Posts
+- **User Roles**: Admin, GM (Game Master), Player
+- **Authentication**: JWT tokens in cookies
+
+### Environment Variables
+Required in `.env` file:
+```
+STABILITY_API_KEY=your_stability_api_key
+AWS_ACCESS_KEY_ID=your_aws_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret
+AWS_BUCKET_NAME=kuvatjakalat
+AWS_REGION=eu-north-1
+AI_API_KEY=your_anthropic_api_key
+JWT_SECRET=change_in_production
+```
+
+### Deployment
+- **Quick Deploy**: Run `./deploy_image_generation.sh`
+- **Manual Deploy**: See steps in `productionserver.md`
+- **Server Restart**: `pkill -f "node.*server" && node js/server_sqlite_new.js &`

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phase 3 UI Functionality Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .test-section {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .warning { background-color: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Phase 3 UI Functionality Test</h1>
+    </header>
+
+    <div class="container">
+        <div class="test-section">
+            <h2>1. Authentication State</h2>
+            <div id="authTest"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>2. Navigation Links Test</h2>
+            <div id="navTest"></div>
+            <div>
+                <a href="hml/threads.html" target="_blank">→ Test Threads</a> |
+                <a href="hml/storyboard.html" target="_blank">→ Test Storyboard</a> |
+                <a href="hml/admin.html" target="_blank">→ Test Admin</a> |
+                <a href="hml/profile.html" target="_blank">→ Test Profile</a>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>3. User Role Display</h2>
+            <div id="roleTest"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>4. API Connectivity Test</h2>
+            <div id="apiTest"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>5. Games Integration Test</h2>
+            <div id="gamesTest"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>6. Image Generation UI Elements</h2>
+            <div id="imageTest"></div>
+        </div>
+    </div>
+
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            
+            if (name === 'token') {
+                return localStorage.getItem('auth_token');
+            }
+            return null;
+        }
+
+        function addResult(containerId, message, type = 'success') {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.textContent = message;
+            container.appendChild(div);
+        }
+
+        async function runTests() {
+            // Test 1: Authentication
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            const token = getCookie('token');
+            
+            if (user.id) {
+                addResult('authTest', `✅ User logged in: ${user.username} (${user.email})`);
+                addResult('authTest', `✅ User ID: ${user.id}, Admin: ${user.is_admin ? 'Yes' : 'No'}`);
+            } else {
+                addResult('authTest', '❌ No user found in localStorage', 'error');
+            }
+
+            if (token) {
+                addResult('authTest', '✅ Authentication token found');
+            } else {
+                addResult('authTest', '❌ No authentication token found', 'error');
+            }
+
+            // Test 2: Navigation links
+            const navLinks = [
+                'hml/threads.html',
+                'hml/storyboard.html', 
+                'hml/admin.html',
+                'hml/profile.html',
+                'hml/wiki.html'
+            ];
+
+            for (const link of navLinks) {
+                try {
+                    const response = await fetch(link, { method: 'HEAD' });
+                    if (response.ok) {
+                        addResult('navTest', `✅ ${link} - Available`);
+                    } else {
+                        addResult('navTest', `❌ ${link} - Not found (${response.status})`, 'error');
+                    }
+                } catch (error) {
+                    addResult('navTest', `❌ ${link} - Error: ${error.message}`, 'error');
+                }
+            }
+
+            // Test 3: User roles
+            if (user.id) {
+                try {
+                    const roles = JSON.parse(user.roles || '[]');
+                    addResult('roleTest', `✅ User roles: ${roles.join(', ') || 'None'}`);
+                    
+                    if (user.is_admin) {
+                        addResult('roleTest', '✅ Admin badge should display');
+                    }
+                    if (roles.includes('gm')) {
+                        addResult('roleTest', '✅ GM badge should display');
+                    }
+                    if (roles.includes('player')) {
+                        addResult('roleTest', '✅ Player badge should display');
+                    }
+                } catch (error) {
+                    addResult('roleTest', `❌ Error parsing roles: ${error.message}`, 'error');
+                }
+            }
+
+            // Test 4: API connectivity
+            if (token) {
+                try {
+                    const response = await fetch('/api/games', {
+                        headers: { 'Authorization': `Bearer ${token}` },
+                        credentials: 'include'
+                    });
+                    
+                    if (response.ok) {
+                        const games = await response.json();
+                        addResult('apiTest', `✅ Games API working (${games.length} games)`);
+                        
+                        // Test posts API
+                        const postsResponse = await fetch('/api/posts', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            credentials: 'include',
+                            body: JSON.stringify({
+                                beatId: 3,
+                                title: 'UI Test Post',
+                                content: 'Testing UI functionality',
+                                postType: 'player'
+                            })
+                        });
+                        
+                        if (postsResponse.ok) {
+                            addResult('apiTest', '✅ Post creation API working');
+                        } else {
+                            addResult('apiTest', `⚠️ Post creation failed (${postsResponse.status})`, 'warning');
+                        }
+                        
+                    } else {
+                        addResult('apiTest', `❌ Games API failed (${response.status})`, 'error');
+                    }
+                } catch (error) {
+                    addResult('apiTest', `❌ API Error: ${error.message}`, 'error');
+                }
+            }
+
+            // Test 5: Games integration
+            if (token) {
+                try {
+                    const response = await fetch('/api/games', {
+                        headers: { 'Authorization': `Bearer ${token}` },
+                        credentials: 'include'
+                    });
+                    
+                    if (response.ok) {
+                        const games = await response.json();
+                        addResult('gamesTest', `✅ Total games: ${games.length}`);
+                        
+                        const activeGames = games.filter(g => !g.is_archived);
+                        addResult('gamesTest', `✅ Active games: ${activeGames.length}`);
+                        
+                        const aiGames = games.filter(g => g.is_ai_gm);
+                        addResult('gamesTest', `✅ AI GM games: ${aiGames.length}`);
+                        
+                        if (games.length > 0) {
+                            addResult('gamesTest', `✅ Sample game: "${games[0].name}"`);
+                        }
+                    }
+                } catch (error) {
+                    addResult('gamesTest', `❌ Error: ${error.message}`, 'error');
+                }
+            }
+
+            // Test 6: Image generation elements
+            const imageElements = [
+                'doodleCanvas',
+                'styleSelect',
+                'generateImageBtn'
+            ];
+            
+            let foundElements = 0;
+            imageElements.forEach(elementId => {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    foundElements++;
+                    addResult('imageTest', `✅ Found element: ${elementId}`);
+                } else {
+                    addResult('imageTest', `ℹ️ Element not on this page: ${elementId}`, 'warning');
+                }
+            });
+            
+            if (foundElements === 0) {
+                addResult('imageTest', 'ℹ️ Image generation elements are on threads.html page', 'warning');
+                addResult('imageTest', '→ Test image generation on threads.html with a game selected');
+            }
+        }
+
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>

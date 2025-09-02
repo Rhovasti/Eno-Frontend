@@ -3,77 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <title>Pelisivusto - Langat</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
-        #userControls {
+        /* GM Assistance Styling */
+        .gm-assistance {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #007bff;
+        }
+        
+        .gm-assistance h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 1.1em;
+        }
+        
+        .assistance-description {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .suggestion-controls {
             display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
             align-items: center;
-            margin-left: 20px;
         }
         
-        #userInfo {
-            margin-right: 15px;
+        .suggestion-controls select {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background: white;
         }
         
-        .user-badge {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 12px;
+        .btn-suggestion {
+            background: #17a2b8;
             color: white;
-            margin-left: 5px;
-        }
-        
-        .admin-badge {
-            background-color: #dc3545;
-        }
-        
-        .gm-badge {
-            background-color: #007bff;
-        }
-        
-        .player-badge {
-            background-color: #28a745;
-        }
-        
-        .btn {
-            padding: 6px 12px;
             border: none;
+            padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 14px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-suggestion:hover {
+            background: #138496;
+        }
+        
+        .btn-suggestion:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .suggestion-results {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        
+        .suggestion-results h5 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 1em;
+        }
+        
+        #suggestionContent {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            color: #212529;
+        }
+        
+        .suggestion-item {
+            background: #e7f3ff;
+            border: 1px solid #b8daff;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:hover {
+            background: #cce7ff;
+        }
+        
+        .suggestion-item.selected {
+            background: #007bff;
             color: white;
+            border-color: #0056b3;
         }
         
-        .btn-login {
-            background-color: #007bff;
+        .suggestion-actions {
+            display: flex;
+            gap: 10px;
         }
         
-        .btn-logout {
-            background-color: #dc3545;
+        .btn-use {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-use:hover {
+            background: #218838;
+        }
+        
+        .btn-new {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-new:hover {
+            background: #5a6268;
+        }
+        
+        .suggestion-loading {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+        
+        .suggestion-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        /* Audio Generation Styling */
+        #audioGenerationSection {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #6f42c1;
+        }
+        
+        #audioGenerationSection h3 {
+            color: #6f42c1;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .audio-generation-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        #audioPrompt {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .audio-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .audio-options select {
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        #generateAudioBtn {
+            background: #6f42c1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+            align-self: flex-start;
+        }
+        
+        #generateAudioBtn:hover {
+            background: #5a32a3;
+        }
+        
+        #generateAudioBtn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        #audioGenerationStatus {
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        #audioGenerationStatus.loading {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        #audioGenerationStatus.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        #audioGenerationStatus.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        #generatedAudioPreview {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .audio-info {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .audio-options {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Pelisivusto</h1>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <nav>
-                <a href="/">Etusivu</a>
-                <a href="/threads.html">Langat</a>
-                <a href="/storyboard.html">Storyboard</a>
-                <a href="/wiki.html">Wiki</a>
-            </nav>
-            <div id="userControls">
-                <div id="userInfo" style="display: none;">
-                    <span>Tervetuloa, <span id="username"></span></span>
-                    <span id="userEmail" style="margin-left: 5px; font-size: 12px; color: #666;"></span>
-                    <span id="userBadges"></span>
-                </div>
-                <button id="loginBtn" class="btn btn-login">Kirjaudu sisään</button>
-                <button id="logoutBtn" class="btn btn-logout" style="display: none;">Kirjaudu ulos</button>
-            </div>
-        </div>
+        <nav>
+            <a href="../index.html">Etusivu</a>
+            <a href="threads.html">Langat</a>
+            <a href="storyboard.html">Storyboard</a>
+            <a href="gm-selection.html">AI-pelinjohtajat</a>
+            <a href="wiki.html">Wiki</a>
+        </nav>
     </header>
 
     <div class="container">
@@ -88,7 +288,6 @@
         </select>
 
         <button id="createChapterButton" disabled>Luo Uusi Luku</button>
-        <button id="archiveChapterButton" disabled>Arkistoi Luku</button>
 
         <div id="newChapterForm" style="display:none;">
             <h3>Luo Uusi Luku</h3>
@@ -121,18 +320,127 @@
             <form id="createPostForm">
                 <input type="text" id="postTitle" placeholder="Viestin otsikko" required>
                 <textarea id="postContent" placeholder="Viestin sisältö" required></textarea>
+                
+                <!-- Dice Roll Section -->
+                <div class="dice-roll-section">
+                    <h4>Nopanheitto (valinnainen)</h4>
+                    <div class="dice-controls">
+                        <input type="text" id="diceNotation" placeholder="esim. 2d6+3, 1d20" pattern="^\d+d\d+([+-]\d+)?$">
+                        <input type="text" id="rollPurpose" placeholder="Mihin heitto? (esim. Hyökkäys, Taito)">
+                        <button type="button" id="rollDiceBtn">🎲 Heitä</button>
+                    </div>
+                    <div id="diceResult" class="dice-result" style="display:none;"></div>
+                </div>
+                
                 <label>
                     <input type="checkbox" id="isGMPost"> Post as Game Master
                 </label>
-                <label id="archiveChapterLabel" style="display:none; margin-top: 10px;">
-                    <input type="checkbox" id="archiveChapterOnPost"> Archive this chapter after posting
-                </label>
+                
+                <!-- GM Assistance Section (only visible when posting as GM) -->
+                <div id="gmAssistanceSection" class="gm-assistance" style="display:none;">
+                    <h4>🤖 AI-pelinjohtajan avustaja</h4>
+                    <p class="assistance-description">Saa ehdotuksia tarinan jatkamiseen pelin nykyisen tilanteen perusteella</p>
+                    
+                    <div class="suggestion-controls">
+                        <select id="suggestionType">
+                            <option value="">Valitse ehdotustyyppi</option>
+                            <option value="plot_advancement">📚 Juonen eteenpäin vieminen</option>
+                            <option value="character_development">👥 Hahmonkehitys</option>
+                            <option value="environmental_details">🌍 Ympäristökuvaus</option>
+                            <option value="challenge_creation">⚔️ Haasteen luominen</option>
+                            <option value="dialogue_npc">💬 NPC-dialogi</option>
+                            <option value="scene_transition">🔄 Kohtauksen vaihto</option>
+                        </select>
+                        <button type="button" id="getSuggestionBtn" class="btn-suggestion">💡 Pyydä ehdotus</button>
+                    </div>
+                    
+                    <div id="suggestionResults" class="suggestion-results" style="display:none;">
+                        <h5>Ehdotukset:</h5>
+                        <div id="suggestionContent"></div>
+                        <div class="suggestion-actions">
+                            <button type="button" id="useSuggestionBtn" class="btn-use">✓ Käytä ehdotusta</button>
+                            <button type="button" id="newSuggestionBtn" class="btn-new">🔄 Uusi ehdotus</button>
+                        </div>
+                    </div>
+                </div>
+                
                 <button type="submit">Lähetä</button>
             </form>
+            
+            <!-- Image Generation Section (after post creation) -->
+            <div id="imageGenerationSection" style="display:none;">
+                <h3>Luo AI-kuva viestiin</h3>
+                <div class="image-generation-form">
+                    <textarea id="imagePrompt" placeholder="Kuvaile mitä haluat kuvaan englanniksi tai yksinkertaisilla suomen sanoilla (esim. 'wizard in dark cave' tai 'velho luolassa')" rows="3"></textarea>
+                    
+                    <!-- Doodle Canvas -->
+                    <div class="doodle-section">
+                        <h4>Piirrä luonnos (valinnainen)</h4>
+                        <canvas id="doodleCanvas" width="384" height="576" style="border: 1px solid #ddd; background: white; cursor: crosshair; max-width: 100%;"></canvas>
+                        <div class="canvas-controls">
+                            <button type="button" id="clearCanvasBtn">🗑️ Tyhjennä</button>
+                            <button type="button" id="undoCanvasBtn">↩️ Kumoa</button>
+                            <input type="color" id="brushColor" value="#000000">
+                            <input type="range" id="brushSize" min="1" max="20" value="3">
+                            <span id="brushSizeDisplay">3px</span>
+                        </div>
+                    </div>
+                    
+                    <div class="image-options">
+                        <select id="styleSelect">
+                            <option value="">Valitse tyyli</option>
+                            <option value="comic">Comic</option>
+                            <option value="sketch">Sketch</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="generateImageBtn">🎨 Luo kuva</button>
+                    <div id="imageGenerationStatus" style="display:none;"></div>
+                    <div id="generatedImagePreview" style="display:none;"></div>
+                </div>
+            </div>
+            
+            <!-- Audio Generation Section (after post creation) -->
+            <div id="audioGenerationSection" style="display:none;">
+                <h3>Luo AI-ääni viestiin</h3>
+                <div class="audio-generation-form">
+                    <textarea id="audioPrompt" placeholder="Kuvaile millaista ääntä tai musiikkia haluat (esim. 'synkkä metsän tunnelma', 'mystinen taustamusiikki', 'askeleet kivisellä lattialla')" rows="3"></textarea>
+                    
+                    <div class="audio-options">
+                        <select id="audioTypeSelect">
+                            <option value="">Valitse ääni-tyyppi</option>
+                            <option value="ambient">🌫️ Tunnelma (ambient)</option>
+                            <option value="music">🎵 Musiikki</option>
+                            <option value="sfx">🔊 Ääniefekti</option>
+                        </select>
+                        
+                        <select id="audioStyleSelect">
+                            <option value="">Valitse tyyli</option>
+                            <option value="orchestral">🎼 Orkestri</option>
+                            <option value="cinematic">🎬 Elokuvallinen</option>
+                            <option value="acoustic">🎸 Akustinen</option>
+                            <option value="electronic">🎹 Elektroninen</option>
+                            <option value="medieval">🏰 Keskiaikainen</option>
+                            <option value="dark">🌙 Synkkä</option>
+                        </select>
+                        
+                        <select id="audioDurationSelect">
+                            <option value="15">15 sekuntia</option>
+                            <option value="30" selected>30 sekuntia</option>
+                            <option value="60">60 sekuntia</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="generateAudioBtn">🎵 Luo ääni</button>
+                    <div id="audioGenerationStatus" style="display:none;"></div>
+                    <div id="generatedAudioPreview" style="display:none;"></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="/js/script.js"></script>
-    <script src="/js/threads.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/diceEngine.js"></script>
+    <script src="../js/threads.js"></script>
 </body>
 </html>

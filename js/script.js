@@ -14,15 +14,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchGames() {
+        const token = getCookie('token');
+        if (!token) {
+            console.error('No authentication token found');
+            // Don't redirect immediately - just show error message
+            if (availableGames) {
+                availableGames.innerHTML = '<li style="color: red;">Kirjautumistietoja ei löytynyt. <a href="/hml/login.html">Kirjaudu sisään</a></li>';
+            }
+            return;
+        }
+        
         fetch('/api/games', {
             headers: {
-                'Authorization': `Bearer ${getCookie('token')}`
-            }
+                'Authorization': `Bearer ${token}`
+            },
+            credentials: 'include'
         })
             .then(response => {
                 if (!response.ok) {
                     if (response.status === 401) {
                         // Redirect to login if not authenticated
+                        console.error('Authentication failed, redirecting to login');
                         window.location.href = '/hml/login.html';
                         return;
                     }
@@ -35,7 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     displayGames(games);
                 }
             })
-            .catch(error => console.error('Error fetching games:', error));
+            .catch(error => {
+                console.error('Error fetching games:', error);
+                // Show user-friendly error in the games list
+                if (availableGames) {
+                    availableGames.innerHTML = '<li style="color: red;">Virhe pelien lataamisessa - yritä päivittää sivu tai kirjaudu uudelleen</li>';
+                }
+            });
     }
 
     function createGame(event) {
@@ -56,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${getCookie('token')}`
             },
+            credentials: 'include',
             body: JSON.stringify({ name, description })
         })
             .then(response => {
@@ -108,11 +127,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Helper function to get cookie value
+    // Helper function to get cookie value with localStorage fallback
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
+        
+        // Fallback to localStorage if cookie not found
+        if (name === 'token') {
+            return localStorage.getItem('auth_token');
+        }
         return null;
     }
     
@@ -122,10 +146,12 @@ document.addEventListener('DOMContentLoaded', function() {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${getCookie('token')}`
-            }
+            },
+            credentials: 'include'
         })
         .then(response => {
             localStorage.removeItem('user');
+            localStorage.removeItem('auth_token');
             document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             window.location.href = '/';
         })

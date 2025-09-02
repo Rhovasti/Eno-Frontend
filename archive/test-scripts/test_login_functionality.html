@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Login Functionality</title>
+</head>
+<body>
+    <h2>Login Functionality Test</h2>
+    <button onclick="testFullLoginFlow()">Test Full Login Flow</button>
+    <div id="results"></div>
+    
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            
+            // Fallback to localStorage if cookie not found
+            if (name === 'token') {
+                return localStorage.getItem('auth_token');
+            }
+            return null;
+        }
+        
+        async function testFullLoginFlow() {
+            const results = document.getElementById('results');
+            let output = '<h3>Login Flow Test Results:</h3>';
+            
+            try {
+                // Step 1: Login
+                output += '<p>1. Testing login...</p>';
+                const loginResponse = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    credentials: 'include',
+                    body: JSON.stringify({email: 'test@test.com', password: 'test'})
+                });
+                const loginData = await loginResponse.json();
+                
+                if (loginData.user) {
+                    output += '<p style="color: green;">✓ Login successful</p>';
+                    localStorage.setItem('user', JSON.stringify(loginData.user));
+                    
+                    // Store token in localStorage as backup
+                    if (loginData.token) {
+                        localStorage.setItem('auth_token', loginData.token);
+                        output += '<p style="color: green;">✓ Token stored in localStorage</p>';
+                    }
+                    
+                    // Step 2: Check cookie/token
+                    await new Promise(resolve => setTimeout(resolve, 200)); // Wait for cookie
+                    const token = getCookie('token');
+                    if (token) {
+                        output += '<p style="color: green;">✓ Token cookie set</p>';
+                        
+                        // Step 3: Test games API
+                        const gamesResponse = await fetch('/api/games', {
+                            headers: {'Authorization': `Bearer ${token}`},
+                            credentials: 'include'
+                        });
+                        
+                        if (gamesResponse.ok) {
+                            const games = await gamesResponse.json();
+                            output += `<p style="color: green;">✓ Games API working (${games.length} games found)</p>`;
+                        } else {
+                            output += `<p style="color: red;">✗ Games API failed: ${gamesResponse.status}</p>`;
+                        }
+                    } else {
+                        output += '<p style="color: red;">✗ Token cookie not set</p>';
+                    }
+                } else {
+                    output += '<p style="color: red;">✗ Login failed</p>';
+                }
+            } catch (error) {
+                output += `<p style="color: red;">✗ Error: ${error.message}</p>`;
+            }
+            
+            results.innerHTML = output;
+        }
+    </script>
+</body>
+</html>

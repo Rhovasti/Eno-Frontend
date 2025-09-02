@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Luo uusi peli - Pelisivusto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .create-game-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .submit-section {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-cancel {
+            background-color: #6c757d;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background-color: #5a6268;
+        }
+
+        .preview-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* AI Assistance Styles */
+        .ai-assist-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .ai-assist-btn:hover {
+            background-color: #545b62;
+        }
+
+        .ai-assist-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-group-with-ai {
+            position: relative;
+        }
+
+        .ai-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .ai-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ai-modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ai-modal-close:hover,
+        .ai-modal-close:focus {
+            color: black;
+        }
+
+        .ai-options {
+            margin: 20px 0;
+        }
+
+        .ai-result {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+
+        .ai-actions {
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .ai-usage {
+            font-size: 12px;
+            color: #666;
+            text-align: right;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Luo uusi peli</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <nav id="navBar">
+                <a href="/">Etusivu</a>
+                <a href="/hml/threads.html">Langat</a>
+                <a href="/hml/storyboard.html">Storyboard</a>
+                <a href="/hml/wiki.html">Wiki</a>
+            </nav>
+            <div id="userControls">
+                <div id="userInfo" style="display: none;">
+                    <span>Tervetuloa, <span id="username"></span></span>
+                    <span id="userBadges"></span>
+                </div>
+                <button id="logoutBtn" class="btn btn-logout" style="display: none;">Kirjaudu ulos</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="create-game-container">
+        <h2>Luo uusi peli</h2>
+        
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+
+        <form id="createGameForm">
+            <!-- Basic Information -->
+            <div class="form-section">
+                <h3>Perustiedot</h3>
+                
+                <div class="form-group">
+                    <label for="gameName">Pelin nimi *</label>
+                    <input type="text" id="gameName" name="name" required>
+                    <div class="help-text">Anna pelillesi kuvaava nimi</div>
+                </div>
+
+                <div class="form-group form-group-with-ai">
+                    <label for="gameDescription">
+                        Pelin kuvaus
+                        <button type="button" class="ai-assist-btn" onclick="openAIModal('description')">
+                            🤖 AI-apuri
+                        </button>
+                    </label>
+                    <textarea id="gameDescription" name="description" placeholder="Kerro pelistäsi: genre, tarina, säännöt..."></textarea>
+                    <div class="help-text">Tämä näkyy pelaajille pelin esittelyssä</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gameGenre">Genre</label>
+                    <select id="gameGenre" name="genre">
+                        <option value="">Valitse genre</option>
+                        <option value="fantasy">Fantasia</option>
+                        <option value="scifi">Sci-Fi</option>
+                        <option value="horror">Kauhu</option>
+                        <option value="mystery">Mysteeri</option>
+                        <option value="historical">Historiallinen</option>
+                        <option value="modern">Moderni</option>
+                        <option value="other">Muu</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Chapter Creation -->
+            <div class="form-section">
+                <h3>Luo ensimmäinen luku
+                    <button type="button" class="ai-assist-btn" onclick="openAIModal('chapter')">
+                        🤖 Luo AI:lla
+                    </button>
+                    <button type="button" class="ai-assist-btn" onclick="openAIModal('storyarc')">
+                        📚 Luo tarinakaari
+                    </button>
+                </h3>
+                
+                <div class="form-group">
+                    <label for="firstChapterTitle">Ensimmäisen luvun nimi</label>
+                    <input type="text" id="firstChapterTitle" name="firstChapterTitle" placeholder="esim. Seikkailu alkaa">
+                    <div class="help-text">Voit luoda luvun myöhemmin tai antaa AI:n ehdottaa</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstChapterDescription">Luvun kuvaus</label>
+                    <textarea id="firstChapterDescription" name="firstChapterDescription" placeholder="Kuvaa luvun tapahtumia ja tunnelmaa..."></textarea>
+                    <div class="help-text">Tämä auttaa pelaajia ymmärtämään, mistä luvussa on kyse</div>
+                </div>
+            </div>
+
+            <!-- Game Settings -->
+            <div class="form-section">
+                <h3>Peliasetukset</h3>
+                
+                <div class="settings-grid">
+                    <div class="form-group">
+                        <label for="maxPlayers">Maksimi pelaajamäärä</label>
+                        <input type="number" id="maxPlayers" name="maxPlayers" min="1" max="20" value="5">
+                        <div class="help-text">Kuinka monta pelaajaa voi liittyä peliin</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postFrequency">Odotettu postaustiheys</label>
+                        <select id="postFrequency" name="postFrequency">
+                            <option value="daily">Päivittäin</option>
+                            <option value="weekly" selected>Viikoittain</option>
+                            <option value="biweekly">Joka toinen viikko</option>
+                            <option value="flexible">Joustava</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="requireApplication" name="requireApplication">
+                    <label for="requireApplication">Vaadi hakemus liittyäkseen</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="isPrivate" name="isPrivate">
+                    <label for="isPrivate">Yksityinen peli (vain kutsulla)</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="allowSpectators" name="allowSpectators" checked>
+                    <label for="allowSpectators">Salli katsojat</label>
+                </div>
+            </div>
+
+            <!-- Initial Chapter -->
+            <div class="form-section">
+                <h3>Ensimmäinen luku</h3>
+                
+                <div class="form-group">
+                    <label for="chapterTitle">Luvun otsikko</label>
+                    <input type="text" id="chapterTitle" name="chapterTitle" placeholder="esim. Prologi, Luku 1: Alku">
+                    <div class="help-text">Voit luoda ensimmäisen luvun heti, tai lisätä sen myöhemmin</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="chapterDescription">Luvun kuvaus</label>
+                    <textarea id="chapterDescription" name="chapterDescription" placeholder="Luvun aloitusteksti tai tausta..."></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <button type="submit" class="btn-submit">Luo peli</button>
+                <button type="button" class="btn-cancel" onclick="window.location.href='/'">Peruuta</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- AI Modal -->
+    <div id="aiModal" class="ai-modal">
+        <div class="ai-modal-content">
+            <span class="ai-modal-close" onclick="closeAIModal()">&times;</span>
+            <h2>AI-apuri pelin kuvaukseen</h2>
+            <p>Anna AI:lle tietoja, joiden pohjalta se voi luoda kuvauksen pelillesi:</p>
+            
+            <div class="ai-options">
+                <div class="form-group">
+                    <label for="aiTheme">Pelin teema/aihe</label>
+                    <input type="text" id="aiTheme" placeholder="esim. Poliittinen juonittelu, Selviytyminen, Mysteeri">
+                </div>
+                
+                <div class="form-group">
+                    <label for="aiKeywords">Avainsanat (pilkulla eroteltuina)</label>
+                    <input type="text" id="aiKeywords" placeholder="esim. lohikäärmeet, valtakunnat, petos">
+                </div>
+                
+                <div class="form-group">
+                    <label for="aiAudience">Kohdeyleisö</label>
+                    <input type="text" id="aiAudience" placeholder="esim. Kokeneet roolipelaajat, Aloittelijat">
+                </div>
+            </div>
+            
+            <button type="button" class="btn-submit" onclick="generateAIContent()" id="generateBtn">
+                Luo kuvaus
+            </button>
+            
+            <div id="aiResult" style="display:none;">
+                <h3>Luotu kuvaus:</h3>
+                <div class="ai-result" id="aiResultText"></div>
+                <div class="ai-actions">
+                    <button type="button" class="btn-submit" onclick="useAIContent()">Käytä tätä</button>
+                    <button type="button" class="btn-cancel" onclick="generateAIContent()">Luo uusi</button>
+                </div>
+                <div class="ai-usage" id="aiUsage"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Modal for Chapter Generation -->
+    <div id="aiChapterModal" class="ai-modal">
+        <div class="ai-modal-content">
+            <span class="ai-modal-close" onclick="closeAIChapterModal()">&times;</span>
+            <h2>AI-apuri ensimmäiselle luvulle</h2>
+            <p>AI luo ensimmäisen luvun pelin kuvauksen pohjalta.</p>
+            
+            <div class="ai-options">
+                <div class="form-group">
+                    <label>Pelin nimi:</label>
+                    <div id="aiChapterGameName" style="font-weight: bold; margin-bottom: 10px;"></div>
+                </div>
+                <div class="form-group">
+                    <label>Pelin kuvaus:</label>
+                    <div id="aiChapterGameDesc" style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin-bottom: 10px; max-height: 150px; overflow-y: auto;"></div>
+                </div>
+            </div>
+            
+            <button type="button" class="btn-submit" onclick="generateAIChapter()" id="generateChapterBtn">
+                Luo ensimmäinen luku
+            </button>
+            
+            <div id="aiChapterResult" style="display:none;">
+                <h3>Luotu luku:</h3>
+                <div class="form-group">
+                    <label>Luvun nimi:</label>
+                    <div class="ai-result" id="aiChapterTitle"></div>
+                </div>
+                <div class="form-group">
+                    <label>Luvun kuvaus:</label>
+                    <div class="ai-result" id="aiChapterDescription"></div>
+                </div>
+                <div class="ai-actions">
+                    <button type="button" class="btn-submit" onclick="useAIChapter()">Käytä tätä</button>
+                    <button type="button" class="btn-cancel" onclick="generateAIChapter()">Luo uusi</button>
+                </div>
+                <div class="ai-usage" id="aiChapterUsage"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Modal for Story Arc Generation -->
+    <div id="aiStoryArcModal" class="ai-modal">
+        <div class="ai-modal-content">
+            <span class="ai-modal-close" onclick="closeAIStoryArcModal()">&times;</span>
+            <h2>AI-apuri tarinakaarelle</h2>
+            <p>AI luo kokonaisen tarinakaaren useilla luvuilla.</p>
+            
+            <div class="ai-options">
+                <div class="form-group">
+                    <label>Pelin nimi:</label>
+                    <div id="aiStoryArcGameName" style="font-weight: bold; margin-bottom: 10px;"></div>
+                </div>
+                <div class="form-group">
+                    <label>Pelin kuvaus:</label>
+                    <div id="aiStoryArcGameDesc" style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin-bottom: 10px; max-height: 150px; overflow-y: auto;"></div>
+                </div>
+                <div class="form-group">
+                    <label for="numberOfChapters">Lukujen määrä</label>
+                    <input type="number" id="numberOfChapters" min="3" max="10" value="5">
+                    <div class="help-text">Valitse 3-10 lukua</div>
+                </div>
+            </div>
+            
+            <button type="button" class="btn-submit" onclick="generateAIStoryArc()" id="generateStoryArcBtn">
+                Luo tarinakaari
+            </button>
+            
+            <div id="aiStoryArcResult" style="display:none;">
+                <h3>Luotu tarinakaari:</h3>
+                <div id="aiStoryArcChapters" style="max-height: 400px; overflow-y: auto;"></div>
+                <div class="ai-actions">
+                    <button type="button" class="btn-submit" onclick="alert('Tämä ominaisuus lisätään myöhemmin')">Tallenna luonnos</button>
+                    <button type="button" class="btn-cancel" onclick="generateAIStoryArc()">Luo uusi</button>
+                </div>
+                <div class="ai-usage" id="aiStoryArcUsage"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication and GM role
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!user.id) {
+                window.location.href = '/hml/login.html';
+                return;
+            }
+
+            const roles = JSON.parse(user.roles || '[]');
+            if (!roles.includes('gm') && !user.is_admin) {
+                alert('Vain GM-roolilla varustetut käyttäjät voivat luoda pelejä.');
+                window.location.href = '/';
+                return;
+            }
+
+            // Update user info in header
+            const userInfo = document.getElementById('userInfo');
+            const username = document.getElementById('username');
+            const userBadges = document.getElementById('userBadges');
+            const logoutBtn = document.getElementById('logoutBtn');
+
+            userInfo.style.display = 'inline-block';
+            username.textContent = user.username;
+            logoutBtn.style.display = 'inline-block';
+
+            if (user.is_admin) {
+                userBadges.innerHTML += '<span class="user-badge admin-badge">Admin</span>';
+            }
+            if (roles.includes('gm')) {
+                userBadges.innerHTML += '<span class="user-badge gm-badge">GM</span>';
+            }
+
+            // Form submission
+            const form = document.getElementById('createGameForm');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Hide previous messages
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'none';
+
+                // Gather form data
+                const formData = {
+                    title: document.getElementById('gameName').value.trim(),
+                    description: document.getElementById('gameDescription').value.trim(),
+                    genre: document.getElementById('gameGenre').value,
+                    maxPlayers: parseInt(document.getElementById('maxPlayers').value),
+                    postingFrequency: document.getElementById('postFrequency').value,
+                    isPrivate: document.getElementById('isPrivate').checked
+                };
+
+                // Validate
+                if (!formData.title) {
+                    errorMessage.textContent = 'Pelin nimi on pakollinen.';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+
+                try {
+                    // Create game
+                    const response = await fetch('/api/games', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${getCookie('token')}`
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Pelin luonti epäonnistui');
+                    }
+
+                    const game = await response.json();
+
+                    // Create initial chapter if provided
+                    const chapterTitle = document.getElementById('firstChapterTitle').value.trim();
+                    if (chapterTitle) {
+                        await fetch(`/api/games/${game.id}/chapters`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${getCookie('token')}`
+                            },
+                            body: JSON.stringify({
+                                title: chapterTitle,
+                                description: document.getElementById('firstChapterDescription').value.trim(),
+                                sequence_number: 1
+                            })
+                        });
+                    }
+
+                    successMessage.textContent = 'Peli luotu onnistuneesti!';
+                    successMessage.style.display = 'block';
+                    
+                    // Redirect after short delay
+                    setTimeout(() => {
+                        window.location.href = `/hml/threads.html?game=${game.id}`;
+                    }, 1500);
+
+                } catch (error) {
+                    console.error('Error creating game:', error);
+                    errorMessage.textContent = 'Virhe pelin luonnissa. Yritä uudelleen.';
+                    errorMessage.style.display = 'block';
+                }
+            });
+        });
+
+        // Helper function to get cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        // AI Modal functions
+        let currentAIField = null;
+
+        function openAIModal(field) {
+            currentAIField = field;
+            
+            if (field === 'description') {
+                document.getElementById('aiModal').style.display = 'block';
+                // Pre-fill genre if available
+                const genre = document.getElementById('gameGenre').value;
+                const genreMap = {
+                    'fantasy': 'fantasia',
+                    'scifi': 'tieteisfiktiota',
+                    'horror': 'kauhua',
+                    'mystery': 'mysteeriä',
+                    'historical': 'historiallista fiktiota',
+                    'modern': 'nykypäivää'
+                };
+                // You can use this genre info in the AI prompt
+            } else if (field === 'chapter') {
+                // Show chapter modal with game info
+                const gameName = document.getElementById('gameName').value;
+                const gameDesc = document.getElementById('gameDescription').value;
+                
+                if (!gameName || !gameDesc) {
+                    alert('Anna ensin pelin nimi ja kuvaus');
+                    return;
+                }
+                
+                document.getElementById('aiChapterGameName').textContent = gameName;
+                document.getElementById('aiChapterGameDesc').textContent = gameDesc;
+                document.getElementById('aiChapterModal').style.display = 'block';
+            } else if (field === 'storyarc') {
+                // Show story arc modal with game info
+                const gameName = document.getElementById('gameName').value;
+                const gameDesc = document.getElementById('gameDescription').value;
+                
+                if (!gameName || !gameDesc) {
+                    alert('Anna ensin pelin nimi ja kuvaus');
+                    return;
+                }
+                
+                document.getElementById('aiStoryArcGameName').textContent = gameName;
+                document.getElementById('aiStoryArcGameDesc').textContent = gameDesc;
+                document.getElementById('aiStoryArcModal').style.display = 'block';
+            }
+        }
+
+        function closeAIModal() {
+            document.getElementById('aiModal').style.display = 'none';
+            document.getElementById('aiResult').style.display = 'none';
+            // Clear inputs
+            document.getElementById('aiTheme').value = '';
+            document.getElementById('aiKeywords').value = '';
+            document.getElementById('aiAudience').value = '';
+        }
+
+        async function generateAIContent() {
+            const generateBtn = document.getElementById('generateBtn');
+            generateBtn.disabled = true;
+            generateBtn.textContent = 'Luodaan...';
+
+            const genre = document.getElementById('gameGenre').value;
+            const theme = document.getElementById('aiTheme').value;
+            const keywords = document.getElementById('aiKeywords').value.split(',').map(k => k.trim()).filter(k => k);
+            const audience = document.getElementById('aiAudience').value;
+
+            try {
+                const response = await fetch('/api/ai/generate-game-description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        genre,
+                        theme,
+                        keywords,
+                        targetAudience: audience
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'AI-generointi epäonnistui');
+                }
+
+                const result = await response.json();
+                document.getElementById('aiResultText').textContent = result.content;
+                document.getElementById('aiResult').style.display = 'block';
+                
+                // Update usage info
+                updateAIUsage();
+                
+            } catch (error) {
+                alert('Virhe: ' + error.message);
+            } finally {
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Luo kuvaus';
+            }
+        }
+
+        function useAIContent() {
+            const content = document.getElementById('aiResultText').textContent;
+            if (currentAIField === 'description') {
+                document.getElementById('gameDescription').value = content;
+            }
+            closeAIModal();
+        }
+
+        async function updateAIUsage() {
+            try {
+                const response = await fetch('/api/ai/usage', {
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const usage = await response.json();
+                    document.getElementById('aiUsage').textContent = 
+                        `AI-käyttö tänään: ${usage.used_today}/${usage.limit_per_day}`;
+                }
+            } catch (error) {
+                console.error('Error fetching AI usage:', error);
+            }
+        }
+
+        // Chapter Generation Functions
+        function closeAIChapterModal() {
+            document.getElementById('aiChapterModal').style.display = 'none';
+            document.getElementById('aiChapterResult').style.display = 'none';
+        }
+
+        async function generateAIChapter() {
+            const generateBtn = document.getElementById('generateChapterBtn');
+            generateBtn.disabled = true;
+            generateBtn.textContent = 'Luodaan...';
+
+            const gameName = document.getElementById('gameName').value;
+            const gameDescription = document.getElementById('gameDescription').value;
+            const genre = document.getElementById('gameGenre').value;
+
+            try {
+                const response = await fetch('/api/ai/generate-first-chapter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        gameId: 'temp', // This is temporary, real ID will be assigned after game creation
+                        gameName,
+                        gameDescription,
+                        genre
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Luvun generointi epäonnistui');
+                }
+
+                const result = await response.json();
+                document.getElementById('aiChapterTitle').textContent = result.title;
+                document.getElementById('aiChapterDescription').textContent = result.description;
+                document.getElementById('aiChapterResult').style.display = 'block';
+                
+                // Update usage info
+                updateAIUsage();
+                
+            } catch (error) {
+                alert('Virhe: ' + error.message);
+            } finally {
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Luo ensimmäinen luku';
+            }
+        }
+
+        function useAIChapter() {
+            const title = document.getElementById('aiChapterTitle').textContent;
+            const description = document.getElementById('aiChapterDescription').textContent;
+            
+            document.getElementById('firstChapterTitle').value = title;
+            document.getElementById('firstChapterDescription').value = description;
+            
+            closeAIChapterModal();
+        }
+
+        // Story Arc Generation Functions
+        function closeAIStoryArcModal() {
+            document.getElementById('aiStoryArcModal').style.display = 'none';
+            document.getElementById('aiStoryArcResult').style.display = 'none';
+        }
+
+        async function generateAIStoryArc() {
+            const generateBtn = document.getElementById('generateStoryArcBtn');
+            generateBtn.disabled = true;
+            generateBtn.textContent = 'Luodaan...';
+
+            const gameName = document.getElementById('gameName').value;
+            const gameDescription = document.getElementById('gameDescription').value;
+            const genre = document.getElementById('gameGenre').value;
+            const numberOfChapters = parseInt(document.getElementById('numberOfChapters').value);
+
+            try {
+                const response = await fetch('/api/ai/generate-story-arc', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        gameId: 'temp', // This is temporary, real ID will be assigned after game creation
+                        gameName,
+                        gameDescription,
+                        genre,
+                        numberOfChapters
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Tarinakaaren generointi epäonnistui');
+                }
+
+                const result = await response.json();
+                const chaptersDiv = document.getElementById('aiStoryArcChapters');
+                chaptersDiv.innerHTML = '';
+                
+                result.chapters.forEach((chapter, index) => {
+                    const chapterDiv = document.createElement('div');
+                    chapterDiv.style.marginBottom = '20px';
+                    chapterDiv.style.padding = '15px';
+                    chapterDiv.style.border = '1px solid #ddd';
+                    chapterDiv.style.borderRadius = '4px';
+                    chapterDiv.innerHTML = `
+                        <h4>Luku ${index + 1}: ${chapter.title}</h4>
+                        <p>${chapter.description}</p>
+                    `;
+                    chaptersDiv.appendChild(chapterDiv);
+                });
+                
+                document.getElementById('aiStoryArcResult').style.display = 'block';
+                
+                // Update usage info
+                updateAIUsage();
+                
+                // If first chapter exists, offer to use it
+                if (result.chapters.length > 0) {
+                    const useFirstChapter = confirm('Haluatko käyttää ensimmäistä lukua peliisi?');
+                    if (useFirstChapter) {
+                        document.getElementById('firstChapterTitle').value = result.chapters[0].title;
+                        document.getElementById('firstChapterDescription').value = result.chapters[0].description;
+                    }
+                }
+                
+            } catch (error) {
+                alert('Virhe: ' + error.message);
+            } finally {
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Luo tarinakaari';
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('aiModal');
+            const chapterModal = document.getElementById('aiChapterModal');
+            const storyArcModal = document.getElementById('aiStoryArcModal');
+            
+            if (event.target === modal) {
+                closeAIModal();
+            } else if (event.target === chapterModal) {
+                closeAIChapterModal();
+            } else if (event.target === storyArcModal) {
+                closeAIStoryArcModal();
+            }
+        }
+    </script>
+</body>
+</html>

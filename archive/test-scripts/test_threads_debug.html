@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Threads Auth</title>
+</head>
+<body>
+    <h2>Debug Threads Authentication</h2>
+    <div id="results"></div>
+    
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            
+            if (name === 'token') {
+                return localStorage.getItem('auth_token');
+            }
+            return null;
+        }
+        
+        async function testThreadsAuth() {
+            const results = document.getElementById('results');
+            let output = '<h3>Threads Authentication Test:</h3>';
+            
+            // Check user localStorage
+            const user = localStorage.getItem('user');
+            output += `<p><strong>LocalStorage user:</strong> ${user ? 'Found' : 'Missing'}</p>`;
+            
+            // Check token
+            const token = getCookie('token');
+            output += `<p><strong>Token:</strong> ${token ? 'Found' : 'Missing'}</p>`;
+            
+            if (token) {
+                try {
+                    // Test games API call like threads.js does
+                    const response = await fetch('/api/games', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        },
+                        credentials: 'include'
+                    });
+                    
+                    if (response.ok) {
+                        const games = await response.json();
+                        output += `<p style="color: green;"><strong>Games API:</strong> Success (${games.length} games)</p>`;
+                        output += '<p><strong>First 3 games:</strong></p><ul>';
+                        games.slice(0, 3).forEach(game => {
+                            output += `<li>${game.name} (ID: ${game.id})</li>`;
+                        });
+                        output += '</ul>';
+                    } else {
+                        output += `<p style="color: red;"><strong>Games API:</strong> Failed (${response.status})</p>`;
+                    }
+                } catch (error) {
+                    output += `<p style="color: red;"><strong>Games API:</strong> Error - ${error.message}</p>`;
+                }
+            }
+            
+            results.innerHTML = output;
+        }
+        
+        // Auto-run test
+        testThreadsAuth();
+    </script>
+</body>
+</html>

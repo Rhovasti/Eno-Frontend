@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Archive Test</title>
+</head>
+<body>
+    <h1>Archive Visibility Test</h1>
+    
+    <div id="newPostForm">
+        <h3>Test Post Form</h3>
+        <form id="createPostForm">
+            <input type="text" id="postTitle" placeholder="Title">
+            <textarea id="postContent" placeholder="Content"></textarea>
+            <label>
+                <input type="checkbox" id="isGMPost"> GM Post
+            </label>
+            <label id="archiveChapterLabel" style="display:none; margin-top: 10px; background-color: yellow;">
+                <input type="checkbox" id="archiveChapterOnPost"> Archive this chapter
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gmCheckbox = document.getElementById('isGMPost');
+            const archiveLabel = document.getElementById('archiveChapterLabel');
+            
+            console.log('GM checkbox:', gmCheckbox);
+            console.log('Archive label:', archiveLabel);
+            
+            if (gmCheckbox && archiveLabel) {
+                gmCheckbox.addEventListener('change', function() {
+                    console.log('Checkbox changed:', this.checked);
+                    archiveLabel.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

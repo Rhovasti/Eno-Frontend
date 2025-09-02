@@ -58,6 +58,20 @@
             margin-right: 10px;
         }
         
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
         #newGameForm {
             display: none; /* Hide by default, show only to GMs */
         }
@@ -70,6 +84,17 @@
             margin: 20px 0;
             display: none;
         }
+        #username a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dotted #666;
+            transition: border-color 0.3s;
+        }
+        
+        #username a:hover {
+            border-bottom-color: #007bff;
+            color: #007bff;
+        }
     </style>
 </head>
 <body>
@@ -78,9 +103,12 @@
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <nav id="navBar">
                 <a href="/">Etusivu</a>
-                <a href="/threads.html">Langat</a>
-                <a href="/storyboard.html">Storyboard</a>
-                <a href="/wiki.html">Wiki</a>
+                <a href="/hml/threads.html">Langat</a>
+                <a href="/hml/storyboard.html">Storyboard</a>
+                <a href="/hml/gm-selection.html">AI-pelinjohtajat</a>
+                <a href="/hml/wiki.html">Wiki</a>
+            <a href="/hml/order-game.html">Tilaa Peli</a>
+                <a href="/hml/profile.html" id="profileLink" style="display: none;">Profiili</a>
             </nav>
             <div id="userControls">
                 <div id="userInfo" style="display: none;">
@@ -114,11 +142,8 @@
 
         <div id="newGameForm">
             <h2>Luo uusi peli</h2>
-            <form id="createGameForm">
-                <input type="text" id="gameName" placeholder="Pelin nimi" required>
-                <textarea id="gameDescription" placeholder="Pelin kuvaus"></textarea>
-                <button type="submit">Luo peli</button>
-            </form>
+            <p>Luo uusi peli kehittyneellä lomakkeella.</p>
+            <button class="btn btn-primary" onclick="window.location.href='/hml/create-game.html'">Luo uusi peli</button>
         </div>
     </div>
 
@@ -142,7 +167,7 @@
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'inline-block';
                 userInfo.style.display = 'inline-block';
-                username.textContent = user.username;
+                username.innerHTML = '<a href="/hml/profile.html?user=' + user.id + '">' + user.username + '</a>';
                 
                 // Display user email
                 const userEmail = document.getElementById('userEmail');
@@ -166,6 +191,12 @@
                 // Show game list
                 gameList.style.display = 'block';
                 authMessage.style.display = 'none';
+                
+                // Show profile link
+                const profileLink = document.getElementById('profileLink');
+                if (profileLink) {
+                    profileLink.style.display = 'inline-block';
+                }
             } else {
                 // User is not logged in
                 loginBtn.style.display = 'inline-block';

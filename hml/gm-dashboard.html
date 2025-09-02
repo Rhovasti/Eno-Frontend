@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Dashboard - Eno</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .game-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .game-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .game-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #6c757d;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: #495057;
+            border-bottom: 3px solid #007bff;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .outline-section {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .chapter-list {
+            margin-top: 20px;
+        }
+
+        .chapter-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .chapter-item.completed {
+            border-left: 4px solid #28a745;
+        }
+
+        .chapter-item.in-progress {
+            border-left: 4px solid #ffc107;
+        }
+
+        .chapter-item.planned {
+            border-left: 4px solid #6c757d;
+        }
+
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .chapter-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .chapter-status {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-in-progress {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-planned {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .chapter-description {
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        .chapter-notes {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        .chapter-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .outline-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit-mode .chapter-item {
+            cursor: move;
+        }
+
+        .edit-mode .editable {
+            background: #fff;
+            border: 1px dashed #007bff;
+            padding: 5px;
+            min-height: 20px;
+        }
+
+        .add-chapter-btn {
+            width: 100%;
+            padding: 15px;
+            border: 2px dashed #6c757d;
+            background: transparent;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-chapter-btn:hover {
+            border-color: #007bff;
+            color: #007bff;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .settings-section {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .progress-section {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .recent-posts {
+            margin-top: 20px;
+        }
+
+        .post-item {
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 0;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn-ai {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .btn-ai:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GM Dashboard</h1>
+        <nav id="navBar">
+            <a href="/">Etusivu</a>
+            <a href="/hml/threads.html">Langat</a>
+            <a href="/hml/storyboard.html">Storyboard</a>
+            <a href="/hml/wiki.html">Wiki</a>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="game-header">
+            <h2 class="game-title" id="gameTitle">Ladataan...</h2>
+            <p id="gameDescription"></p>
+            
+            <div class="game-stats">
+                <div class="stat-card">
+                    <div class="stat-label">Pelaajia</div>
+                    <div class="stat-value" id="playerCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Lukuja</div>
+                    <div class="stat-value" id="chapterCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Postauksia</div>
+                    <div class="stat-value" id="postCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Viimeisin postaus</div>
+                    <div class="stat-value" id="lastPost">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('outline')">Tarinakaari</button>
+            <button class="tab" onclick="switchTab('progress')">Edistyminen</button>
+            <button class="tab" onclick="switchTab('settings')">Asetukset</button>
+        </div>
+
+        <!-- Outline Tab -->
+        <div id="outline-tab" class="tab-content active">
+            <div class="outline-section">
+                <h3>Pelin tarinakaari</h3>
+                <p>Suunnittele ja seuraa pelisi tarinaa. Voit muokata lukuja ja lisätä muistiinpanoja.</p>
+                
+                <div class="outline-actions">
+                    <button class="btn btn-primary" onclick="toggleEditMode()">
+                        <span id="editModeText">Muokkaa</span>
+                    </button>
+                    <button class="btn btn-ai" onclick="loadAIOutline()">
+                        🤖 Lataa AI-luonnos
+                    </button>
+                    <button class="btn btn-secondary" onclick="saveOutline()" style="display:none" id="saveBtn">
+                        Tallenna muutokset
+                    </button>
+                </div>
+
+                <div class="chapter-list" id="chapterList">
+                    <!-- Chapters will be loaded here -->
+                </div>
+
+                <button class="add-chapter-btn" onclick="addNewChapter()" style="display:none" id="addChapterBtn">
+                    + Lisää uusi luku
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Tab -->
+        <div id="progress-tab" class="tab-content">
+            <div class="progress-section">
+                <h3>Pelin edistyminen</h3>
+                
+                <div id="currentChapterInfo">
+                    <h4>Nykyinen luku: <span id="currentChapterName">-</span></h4>
+                    <p id="currentChapterDesc"></p>
+                </div>
+
+                <div class="recent-posts">
+                    <h4>Viimeisimmät postaukset</h4>
+                    <div id="recentPostsList">
+                        <!-- Recent posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="settings-tab" class="tab-content">
+            <div class="settings-grid">
+                <div class="settings-section">
+                    <h3>Peliasetukset</h3>
+                    <form id="gameSettingsForm">
+                        <div class="form-group">
+                            <label>Pelin nimi</label>
+                            <input type="text" id="settingsGameName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Kuvaus</label>
+                            <textarea id="settingsGameDesc" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Maksimi pelaajamäärä</label>
+                            <input type="number" id="settingsMaxPlayers" min="1" max="20">
+                        </div>
+                        <div class="form-group">
+                            <label>Pelin tila</label>
+                            <select id="settingsGameStatus">
+                                <option value="open">Avoin uusille pelaajille</option>
+                                <option value="closed">Suljettu</option>
+                                <option value="completed">Päättynyt</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tallenna asetukset</button>
+                    </form>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Vaaralliset toiminnot</h3>
+                    <button class="btn btn-danger" onclick="archiveGame()">Arkistoi peli</button>
+                    <p class="help-text">Arkistoitu peli on vain luku -tilassa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        let gameId;
+        let gameData;
+        let outlineData = { chapters: [] };
+        let isEditMode = false;
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Get game ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            gameId = urlParams.get('game');
+            
+            if (!gameId) {
+                alert('Peli-ID puuttuu');
+                window.location.href = '/';
+                return;
+            }
+
+            // Check authentication
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!user.id) {
+                window.location.href = '/hml/login.html';
+                return;
+            }
+
+            await loadGameData();
+            await loadOutline();
+            loadRecentPosts();
+        });
+
+        async function loadGameData() {
+            try {
+                const response = await fetch(`/api/games/${gameId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load game data');
+                }
+
+                gameData = await response.json();
+                
+                // Check if user is the GM
+                const user = JSON.parse(localStorage.getItem('user') || '{}');
+                if (gameData.created_by !== user.id && !user.is_admin) {
+                    alert('Vain pelin GM voi käyttää tätä sivua');
+                    window.location.href = `/hml/threads.html?game=${gameId}`;
+                    return;
+                }
+
+                // Update UI with game data
+                document.getElementById('gameTitle').textContent = gameData.title;
+                document.getElementById('gameDescription').textContent = gameData.description;
+                document.getElementById('playerCount').textContent = gameData.player_count || 0;
+                document.getElementById('chapterCount').textContent = gameData.chapter_count || 0;
+                document.getElementById('postCount').textContent = gameData.total_posts || 0;
+                
+                // Settings
+                document.getElementById('settingsGameName').value = gameData.title;
+                document.getElementById('settingsGameDesc').value = gameData.description;
+                document.getElementById('settingsMaxPlayers').value = gameData.max_players || 5;
+                document.getElementById('settingsGameStatus').value = gameData.status || 'open';
+
+            } catch (error) {
+                console.error('Error loading game data:', error);
+                alert('Virhe pelin tietojen lataamisessa');
+            }
+        }
+
+        async function loadOutline() {
+            try {
+                const response = await fetch(`/api/games/${gameId}/outline`, {
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    outlineData = JSON.parse(data.outline_data);
+                    renderOutline();
+                } else if (response.status === 404) {
+                    // No outline yet, try to load from existing chapters
+                    await loadChaptersAsOutline();
+                }
+            } catch (error) {
+                console.error('Error loading outline:', error);
+            }
+        }
+
+        async function loadChaptersAsOutline() {
+            try {
+                const response = await fetch(`/api/games/${gameId}/chapters`, {
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                });
+
+                if (response.ok) {
+                    const chapters = await response.json();
+                    outlineData.chapters = chapters.map(ch => ({
+                        id: ch.id,
+                        title: ch.title,
+                        description: ch.description,
+                        status: ch.is_archived ? 'completed' : 'in_progress',
+                        notes: ''
+                    }));
+                    renderOutline();
+                }
+            } catch (error) {
+                console.error('Error loading chapters:', error);
+            }
+        }
+
+        function renderOutline() {
+            const chapterList = document.getElementById('chapterList');
+            chapterList.innerHTML = '';
+
+            if (outlineData.chapters.length === 0) {
+                chapterList.innerHTML = '<p>Ei lukuja vielä. Luo uusi luku tai lataa AI-luonnos.</p>';
+                return;
+            }
+
+            outlineData.chapters.forEach((chapter, index) => {
+                const chapterEl = document.createElement('div');
+                chapterEl.className = `chapter-item ${chapter.status}`;
+                chapterEl.innerHTML = `
+                    <div class="chapter-header">
+                        <div class="chapter-title ${isEditMode ? 'editable' : ''}" 
+                             contenteditable="${isEditMode}" 
+                             data-field="title" 
+                             data-index="${index}">
+                            ${chapter.title}
+                        </div>
+                        <span class="chapter-status status-${chapter.status}">
+                            ${getStatusText(chapter.status)}
+                        </span>
+                    </div>
+                    <div class="chapter-description ${isEditMode ? 'editable' : ''}" 
+                         contenteditable="${isEditMode}"
+                         data-field="description" 
+                         data-index="${index}">
+                        ${chapter.description}
+                    </div>
+                    ${chapter.notes ? `
+                        <div class="chapter-notes ${isEditMode ? 'editable' : ''}" 
+                             contenteditable="${isEditMode}"
+                             data-field="notes" 
+                             data-index="${index}">
+                            GM muistiinpanot: ${chapter.notes}
+                        </div>
+                    ` : ''}
+                    ${isEditMode ? `
+                        <div class="chapter-actions">
+                            <select onchange="updateChapterStatus(${index}, this.value)">
+                                <option value="planned" ${chapter.status === 'planned' ? 'selected' : ''}>Suunniteltu</option>
+                                <option value="in_progress" ${chapter.status === 'in_progress' ? 'selected' : ''}>Käynnissä</option>
+                                <option value="completed" ${chapter.status === 'completed' ? 'selected' : ''}>Valmis</option>
+                            </select>
+                            <button class="btn btn-sm btn-danger" onclick="removeChapter(${index})">Poista</button>
+                        </div>
+                    ` : ''}
+                `;
+                chapterList.appendChild(chapterEl);
+            });
+
+            // Add event listeners for editable content
+            if (isEditMode) {
+                document.querySelectorAll('.editable').forEach(el => {
+                    el.addEventListener('blur', function() {
+                        const field = this.dataset.field;
+                        const index = parseInt(this.dataset.index);
+                        outlineData.chapters[index][field] = this.textContent.trim();
+                    });
+                });
+            }
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'planned': 'Suunniteltu',
+                'in_progress': 'Käynnissä',
+                'completed': 'Valmis'
+            };
+            return statusMap[status] || status;
+        }
+
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            document.getElementById('editModeText').textContent = isEditMode ? 'Peruuta' : 'Muokkaa';
+            document.getElementById('saveBtn').style.display = isEditMode ? 'inline-block' : 'none';
+            document.getElementById('addChapterBtn').style.display = isEditMode ? 'block' : 'none';
+            renderOutline();
+        }
+
+        function addNewChapter() {
+            outlineData.chapters.push({
+                id: Date.now(),
+                title: 'Uusi luku',
+                description: 'Kuvaus...',
+                status: 'planned',
+                notes: ''
+            });
+            renderOutline();
+        }
+
+        function removeChapter(index) {
+            if (confirm('Haluatko varmasti poistaa tämän luvun?')) {
+                outlineData.chapters.splice(index, 1);
+                renderOutline();
+            }
+        }
+
+        function updateChapterStatus(index, status) {
+            outlineData.chapters[index].status = status;
+        }
+
+        async function saveOutline() {
+            try {
+                const response = await fetch(`/api/games/${gameId}/outline`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        outline_data: JSON.stringify(outlineData)
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Muutokset tallennettu!');
+                    toggleEditMode();
+                } else {
+                    throw new Error('Save failed');
+                }
+            } catch (error) {
+                console.error('Error saving outline:', error);
+                alert('Virhe tallennuksessa');
+            }
+        }
+
+        async function loadAIOutline() {
+            if (outlineData.chapters.length > 0) {
+                if (!confirm('Tämä korvaa nykyisen tarinakaaren. Haluatko jatkaa?')) {
+                    return;
+                }
+            }
+
+            // Check if we have game data to generate from
+            if (!gameData.title || !gameData.description) {
+                alert('Pelin tiedot puuttuvat AI-generointia varten');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/ai/generate-story-arc', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        gameId: gameId,
+                        gameName: gameData.title,
+                        gameDescription: gameData.description,
+                        genre: gameData.genre || 'fantasy',
+                        numberOfChapters: 5
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'AI generation failed');
+                }
+
+                const result = await response.json();
+                
+                // Convert AI chapters to outline format
+                outlineData.chapters = result.chapters.map((ch, index) => ({
+                    id: Date.now() + index,
+                    title: ch.title,
+                    description: ch.description,
+                    status: index === 0 ? 'in_progress' : 'planned',
+                    notes: 'AI-generoitu'
+                }));
+                
+                outlineData.ai_generated = true;
+                renderOutline();
+                
+                // Enable edit mode to allow saving
+                if (!isEditMode) {
+                    toggleEditMode();
+                }
+                
+                alert('AI-tarinakaari luotu! Muokkaa tarvittaessa ja tallenna.');
+                
+            } catch (error) {
+                console.error('Error generating AI outline:', error);
+                alert('Virhe AI-generoinnissa: ' + error.message);
+            }
+        }
+
+        async function loadRecentPosts() {
+            try {
+                const response = await fetch(`/api/games/${gameId}/recent-posts`, {
+                    headers: {
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    }
+                });
+
+                if (response.ok) {
+                    const posts = await response.json();
+                    const postsList = document.getElementById('recentPostsList');
+                    
+                    if (posts.length === 0) {
+                        postsList.innerHTML = '<p>Ei postauksia vielä.</p>';
+                        return;
+                    }
+
+                    postsList.innerHTML = posts.map(post => `
+                        <div class="post-item">
+                            <strong>${post.author_name}</strong> - ${formatDate(post.created_at)}
+                            <br>
+                            <small>${post.content.substring(0, 100)}...</small>
+                        </div>
+                    `).join('');
+
+                    // Update last post stat
+                    if (posts.length > 0) {
+                        document.getElementById('lastPost').textContent = formatDate(posts[0].created_at);
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading recent posts:', error);
+            }
+        }
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('fi-FI', { 
+                day: 'numeric', 
+                month: 'numeric', 
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Settings form handler
+        document.getElementById('gameSettingsForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            try {
+                const response = await fetch(`/api/games/${gameId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getCookie('token')}`
+                    },
+                    body: JSON.stringify({
+                        title: document.getElementById('settingsGameName').value,
+                        description: document.getElementById('settingsGameDesc').value,
+                        max_players: parseInt(document.getElementById('settingsMaxPlayers').value),
+                        status: document.getElementById('settingsGameStatus').value
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Asetukset tallennettu!');
+                    loadGameData();
+                } else {
+                    throw new Error('Update failed');
+                }
+            } catch (error) {
+                console.error('Error updating settings:', error);
+                alert('Virhe asetusten tallennuksessa');
+            }
+        });
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+    </script>
+</body>
+</html>
