@@ -14,7 +14,25 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // JWT Secret - in production this should be in an environment variable
-const JWT_SECRET = 'eno-game-platform-secret-key-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET || 'eno-game-platform-secret-key-change-in-production';
+
+// Define user roles and their permissions
+const USER_ROLES = {
+    ADMIN: 'admin',
+    GM: 'gm',
+    EDITOR: 'editor',
+    PLAYER: 'player',
+    ANONYMOUS: 'anonymous'
+};
+
+// Define permissions for each role
+const ROLE_PERMISSIONS = {
+    [USER_ROLES.ADMIN]: ['all'], // Can do everything
+    [USER_ROLES.GM]: ['create_game', 'manage_game', 'create_post', 'edit_own_post', 'create_beat', 'create_chapter', 'archive_chapter', 'view_all'],
+    [USER_ROLES.EDITOR]: ['edit_wiki', 'create_wiki', 'edit_lore', 'create_lore', 'view_all', 'create_post', 'edit_own_post'],
+    [USER_ROLES.PLAYER]: ['create_post', 'edit_own_post', 'join_game', 'view_public'],
+    [USER_ROLES.ANONYMOUS]: ['view_public', 'create_post'] // Can view and post anonymously
+};
 
 // Initialize Anthropic client
 const anthropic = new Anthropic({
@@ -183,6 +201,49 @@ const db = new sqlite3.Database(dbPath, (err) => {
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )`);
         
+        // Create wiki_entries table
+        db.run(`CREATE TABLE IF NOT EXISTS wiki_entries (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title VARCHAR(200) NOT NULL,
+            category VARCHAR(50) NOT NULL,
+            excerpt TEXT,
+            content TEXT NOT NULL,
+            tags TEXT, -- JSON array
+            related TEXT, -- JSON array
+            author_id INTEGER,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_by INTEGER,
+            status VARCHAR(20) DEFAULT 'published',
+            version_number INTEGER DEFAULT 1,
+            FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE SET NULL,
+            FOREIGN KEY (updated_by) REFERENCES users(id) ON DELETE SET NULL
+        )`);
+        
+        // Create wiki_entry_history table for version control
+        db.run(`CREATE TABLE IF NOT EXISTS wiki_entry_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            entry_id INTEGER NOT NULL,
+            version_number INTEGER NOT NULL,
+            title VARCHAR(200) NOT NULL,
+            category VARCHAR(50) NOT NULL,
+            excerpt TEXT,
+            content TEXT NOT NULL,
+            tags TEXT, -- JSON array
+            related TEXT, -- JSON array
+            edited_by INTEGER NOT NULL,
+            edited_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            change_summary TEXT,
+            FOREIGN KEY (entry_id) REFERENCES wiki_entries(id) ON DELETE CASCADE,
+            FOREIGN KEY (edited_by) REFERENCES users(id) ON DELETE SET NULL
+        )`);
+        
+        // Create indexes for performance
+        db.run(`CREATE INDEX IF NOT EXISTS idx_wiki_entries_title ON wiki_entries(title)`);
+        db.run(`CREATE INDEX IF NOT EXISTS idx_wiki_entries_category ON wiki_entries(category)`);
+        db.run(`CREATE INDEX IF NOT EXISTS idx_wiki_entries_created_at ON wiki_entries(created_at)`);
+        db.run(`CREATE INDEX IF NOT EXISTS idx_wiki_entry_history_entry_id ON wiki_entry_history(entry_id, version_number)`);
+        
         // Check if admin user exists, if not, create it
         db.get('SELECT * FROM users WHERE email = ?', ['admin@example.com'], (err, row) => {
             if (err) {
@@ -208,6 +269,19 @@ const db = new sqlite3.Database(dbPath, (err) => {
                                 return;
                             }
                             console.log('Admin user created successfully');
+                        }
+                    );
+                    
+                    // Also create an editor test user
+                    const editorRoles = JSON.stringify(['editor', 'player']);
+                    db.run('INSERT INTO users (username, email, password, roles, is_admin) VALUES (?, ?, ?, ?, ?)',
+                        ['editor', 'editor@iinou.eu', hash, editorRoles, 0],
+                        (err) => {
+                            if (err) {
+                                console.error('Error creating editor user:', err);
+                                return;
+                            }
+                            console.log('Editor test user created successfully');
                         }
                     );
                 });
@@ -590,11 +664,60 @@ const authenticateToken = (req, res, next) => {
     }
 };
 
+// Optional authentication - allows anonymous users
+const optionalAuth = (req, res, next) => {
+    const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
+    
+    if (!token) {
+        // No token, treat as anonymous user
+        req.user = {
+            id: 0,
+            username: 'Anonymous',
+            roles: JSON.stringify([USER_ROLES.ANONYMOUS]),
+            is_admin: false,
+            is_anonymous: true
+        };
+        return next();
+    }
+    
+    try {
+        const user = jwt.verify(token, JWT_SECRET);
+        req.user = user;
+        next();
+    } catch (error) {
+        // Invalid token, treat as anonymous
+        req.user = {
+            id: 0,
+            username: 'Anonymous',
+            roles: JSON.stringify([USER_ROLES.ANONYMOUS]),
+            is_admin: false,
+            is_anonymous: true
+        };
+        next();
+    }
+};
+
+// Check if user has specific permission
+const hasPermission = (userRoles, requiredPermission) => {
+    for (const role of userRoles) {
+        const permissions = ROLE_PERMISSIONS[role] || [];
+        if (permissions.includes('all') || permissions.includes(requiredPermission)) {
+            return true;
+        }
+    }
+    return false;
+};
+
 // Role-based authorization middleware
-const authorize = (roles) => {
+const authorize = (rolesOrPermissions) => {
     return (req, res, next) => {
         if (!req.user) {
             return res.status(401).json({ error: 'Authentication required' });
+        }
+
+        // Anonymous users cannot use authorized endpoints
+        if (req.user.is_anonymous) {
+            return res.status(403).json({ error: 'Anonymous users cannot perform this action' });
         }
 
         // Admin can access everything
@@ -602,12 +725,27 @@ const authorize = (roles) => {
             return next();
         }
 
-        // Check if user has any of the required roles
-        const userRoles = JSON.parse(req.user.roles);
-        const hasRole = roles.some(role => userRoles.includes(role));
+        const userRoles = JSON.parse(req.user.roles || '[]');
         
-        if (!hasRole) {
-            return res.status(403).json({ error: 'Insufficient permissions' });
+        // Check if we're checking for permissions or roles
+        const isPermissionCheck = rolesOrPermissions.some(item => item.includes('_'));
+        
+        if (isPermissionCheck) {
+            // Check permissions
+            const hasRequiredPermission = rolesOrPermissions.some(permission => 
+                hasPermission(userRoles, permission)
+            );
+            
+            if (!hasRequiredPermission) {
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            }
+        } else {
+            // Check roles (backward compatibility)
+            const hasRole = rolesOrPermissions.some(role => userRoles.includes(role));
+            
+            if (!hasRole) {
+                return res.status(403).json({ error: 'Insufficient permissions' });
+            }
         }
 
         next();
@@ -632,6 +770,11 @@ app.get('/storyboard.html', (req, res) => {
 // Serve wiki page
 app.get('/wiki.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../hml/wiki.html'));
+});
+
+// Serve dynamic wiki page
+app.get('/wiki_dynamic.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../hml/wiki_dynamic.html'));
 });
 
 // Serve admin page
@@ -758,6 +901,42 @@ app.post('/api/login', (req, res) => {
     });
 });
 
+// Anonymous login endpoint
+app.post('/api/login/anonymous', (req, res) => {
+    // Create a temporary anonymous session
+    const anonUser = {
+        id: 0,
+        username: `Anon_${Date.now()}`,
+        email: 'anonymous@eno.game',
+        roles: JSON.stringify([USER_ROLES.ANONYMOUS]),
+        is_admin: false,
+        is_anonymous: true
+    };
+    
+    // Create JWT token for anonymous user
+    const token = jwt.sign({
+        id: anonUser.id,
+        username: anonUser.username,
+        email: anonUser.email,
+        roles: anonUser.roles,
+        is_admin: anonUser.is_admin,
+        is_anonymous: true
+    }, JWT_SECRET, { expiresIn: '12h' }); // Shorter expiration for anonymous users
+    
+    // Set token as cookie
+    res.cookie('token', token, {
+        httpOnly: true,
+        maxAge: 12 * 60 * 60 * 1000, // 12 hours
+        sameSite: 'lax'
+    });
+    
+    res.json({
+        message: 'Anonymous login successful',
+        user: anonUser,
+        token: token
+    });
+});
+
 // Logout
 app.post('/api/logout', (req, res) => {
     res.clearCookie('token');
@@ -781,10 +960,17 @@ app.get('/api/user', authenticateToken, (req, res) => {
     });
 });
 
-// Get all games (now requires authentication)
-app.get('/api/games', authenticateToken, (req, res) => {
-    // Both admin and regular users can see all games
-    db.all('SELECT * FROM games', (err, games) => {
+// Get all games (accessible to everyone including anonymous users)
+app.get('/api/games', optionalAuth, (req, res) => {
+    // Everyone can see public games, but anonymous users can't see private games
+    let query = 'SELECT * FROM games';
+    let params = [];
+    
+    if (req.user?.is_anonymous) {
+        query += ' WHERE is_private = 0 OR is_private IS NULL';
+    }
+    
+    db.all(query, params, (err, games) => {
         if (err) {
             console.error('Error fetching games:', err);
             return res.status(500).json({ error: 'Database error' });
@@ -830,7 +1016,7 @@ app.post('/api/games', authenticateToken, authorize(['gm']), (req, res) => {
 });
 
 // Get chapters for a game including archived ones
-app.get('/api/games/:gameId/chapters', authenticateToken, (req, res) => {
+app.get('/api/games/:gameId/chapters', optionalAuth, (req, res) => {
     const gameId = req.params.gameId;
     const includeArchived = req.query.includeArchived === 'true';
     
@@ -851,7 +1037,7 @@ app.get('/api/games/:gameId/chapters', authenticateToken, (req, res) => {
 });
 
 // Get archived chapters for storyboard
-app.get('/api/games/:gameId/archived-chapters', authenticateToken, (req, res) => {
+app.get('/api/games/:gameId/archived-chapters', optionalAuth, (req, res) => {
     const gameId = req.params.gameId;
     
     db.all('SELECT * FROM chapters WHERE game_id = ? AND is_archived = 1 ORDER BY sequence_number ASC', 
@@ -1012,7 +1198,7 @@ app.post('/api/games/:gameId/chapters', authenticateToken, authorize(['gm']), (r
 });
 
 // Get beats for a chapter
-app.get('/api/chapters/:chapterId/beats', authenticateToken, (req, res) => {
+app.get('/api/chapters/:chapterId/beats', optionalAuth, (req, res) => {
     const chapterId = req.params.chapterId;
     
     // SQLite doesn't handle complex joins as well as MySQL, so we'll do this in two steps
@@ -1103,7 +1289,7 @@ app.post('/api/chapters/:chapterId/beats', authenticateToken, authorize(['gm']),
 });
 
 // Get posts for a beat
-app.get('/api/beats/:beatId/posts', authenticateToken, (req, res) => {
+app.get('/api/beats/:beatId/posts', optionalAuth, (req, res) => {
     const beatId = req.params.beatId;
     
     db.all(
@@ -1124,10 +1310,19 @@ app.get('/api/beats/:beatId/posts', authenticateToken, (req, res) => {
     );
 });
 
-// Create a new post (both players and GMs can create posts)
-app.post('/api/posts', authenticateToken, authorize(['player', 'gm']), (req, res) => {
+// Create a new post (players, GMs, and anonymous users can create posts)
+app.post('/api/posts', authenticateToken, (req, res) => {
     const { beatId, title, content, postType, archiveChapter } = req.body;
     const authorId = req.user.id;
+    
+    // Check if user has permission to post
+    const userRoles = JSON.parse(req.user.roles || '[]');
+    const canPost = userRoles.includes('player') || userRoles.includes('gm') || 
+                   userRoles.includes('anonymous') || req.user.is_admin;
+    
+    if (!canPost) {
+        return res.status(403).json({ error: 'Insufficient permissions to create posts' });
+    }
     
     // Input validation
     if (!beatId) {
@@ -3465,6 +3660,1095 @@ ${opening.options.join('\n')}
 
 **${gmProfile.name}:** ${gmComment}`;
 }
+
+// ==========================================
+// WIKI API ENDPOINTS
+// ==========================================
+
+// Get all wiki entries with optional filtering (public viewing allowed)
+app.get('/api/wiki/entries', optionalAuth, async (req, res) => {
+    try {
+        const { category, search, tags, page = 1, limit = 20 } = req.query;
+        const offset = (parseInt(page) - 1) * parseInt(limit);
+        
+        // Build the query dynamically based on filters
+        let query = `
+            SELECT w.*, u.username as author_name
+            FROM wiki_entries w
+            LEFT JOIN users u ON w.author_id = u.id
+            WHERE w.status = 'published'
+        `;
+        const params = [];
+        
+        // Add category filter
+        if (category && category !== 'all') {
+            query += ` AND w.category = ?`;
+            params.push(category);
+        }
+        
+        // Add search filter (searches in title, excerpt, and content)
+        if (search) {
+            query += ` AND (w.title LIKE ? OR w.excerpt LIKE ? OR w.content LIKE ?)`;
+            const searchTerm = `%${search}%`;
+            params.push(searchTerm, searchTerm, searchTerm);
+        }
+        
+        // Get total count for pagination
+        const countQuery = query.replace('SELECT w.*, u.username as author_name', 'SELECT COUNT(*) as total');
+        
+        db.get(countQuery, params, (err, countRow) => {
+            if (err) {
+                console.error('Error counting wiki entries:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+            
+            // Add ordering and pagination
+            query += ` ORDER BY w.created_at DESC LIMIT ? OFFSET ?`;
+            params.push(parseInt(limit), offset);
+            
+            db.all(query, params, (err, rows) => {
+                if (err) {
+                    console.error('Error fetching wiki entries:', err);
+                    return res.status(500).json({ success: false, error: 'Database error' });
+                }
+                
+                // Parse JSON fields and filter by tags if needed
+                let entries = rows.map(row => ({
+                    ...row,
+                    tags: row.tags ? JSON.parse(row.tags) : [],
+                    related: row.related ? JSON.parse(row.related) : []
+                }));
+                
+                // Filter by tags if provided
+                if (tags) {
+                    const tagList = tags.split(',').map(tag => tag.trim().toLowerCase());
+                    entries = entries.filter(entry =>
+                        entry.tags.some(tag => tagList.includes(tag.toLowerCase()))
+                    );
+                }
+                
+                // If no entries in database, return sample data
+                if (entries.length === 0 && !search && !category && !tags) {
+                    const sampleEntries = getSampleWikiEntries();
+                    return res.json({
+                        success: true,
+                        entries: sampleEntries,
+                        count: sampleEntries.length,
+                        totalCount: sampleEntries.length,
+                        page: parseInt(page),
+                        totalPages: Math.ceil(sampleEntries.length / parseInt(limit))
+                    });
+                }
+                
+                res.json({
+                    success: true,
+                    entries: entries,
+                    count: entries.length,
+                    totalCount: countRow.total,
+                    page: parseInt(page),
+                    totalPages: Math.ceil(countRow.total / parseInt(limit))
+                });
+            });
+        });
+        
+    } catch (error) {
+        console.error('Error fetching wiki entries:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Internal server error' 
+        });
+    }
+});
+
+// Get specific wiki entry by ID (public viewing allowed)
+app.get('/api/wiki/entries/:entryId', optionalAuth, async (req, res) => {
+    try {
+        const entryId = req.params.entryId;
+        
+        // Try to get from database first
+        db.get(`
+            SELECT w.*, u.username as author_name, u2.username as updated_by_name
+            FROM wiki_entries w
+            LEFT JOIN users u ON w.author_id = u.id
+            LEFT JOIN users u2 ON w.updated_by = u2.id
+            WHERE w.id = ? AND w.status = 'published'
+        `, [entryId], (err, row) => {
+            if (err) {
+                console.error('Error fetching wiki entry:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+            
+            if (row) {
+                // Parse JSON fields
+                const entry = {
+                    ...row,
+                    tags: row.tags ? JSON.parse(row.tags) : [],
+                    related: row.related ? JSON.parse(row.related) : []
+                };
+                
+                return res.json({
+                    success: true,
+                    entry: entry
+                });
+            }
+            
+            // Fallback to sample data if not in database
+            const sampleEntries = getSampleWikiEntries();
+            const sampleEntry = sampleEntries.find(e => e.id === entryId);
+            
+            if (!sampleEntry) {
+                return res.status(404).json({
+                    success: false,
+                    error: 'Wiki entry not found'
+                });
+            }
+            
+            res.json({
+                success: true,
+                entry: sampleEntry
+            });
+        });
+    } catch (error) {
+        console.error('Error fetching wiki entry:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Internal server error'
+        });
+    }
+});
+
+// Get wiki categories with counts (public viewing allowed)
+app.get('/api/wiki/categories', optionalAuth, async (req, res) => {
+    try {
+        // Get category counts from database
+        const categoryCounts = await new Promise((resolve, reject) => {
+            db.all(`
+                SELECT 
+                    category,
+                    COUNT(*) as count
+                FROM wiki_entries 
+                WHERE status = 'published'
+                GROUP BY category
+                ORDER BY category
+            `, [], (err, rows) => {
+                if (err) reject(err);
+                else {
+                    const counts = {};
+                    rows.forEach(row => {
+                        counts[row.category] = row.count;
+                    });
+                    resolve(counts);
+                }
+            });
+        });
+        
+        // Get total count
+        const total = await new Promise((resolve, reject) => {
+            db.get(`
+                SELECT COUNT(*) as total 
+                FROM wiki_entries 
+                WHERE status = 'published'
+            `, [], (err, row) => {
+                if (err) reject(err);
+                else resolve(row?.total || 0);
+            });
+        });
+        
+        const categories = [
+            { id: 'all', name: 'All Entries', count: total },
+            { id: 'culture', name: 'Cultures', count: categoryCounts.culture || 0 },
+            { id: 'geography', name: 'Geography', count: categoryCounts.geography || 0 },
+            { id: 'mythology', name: 'Mythology', count: categoryCounts.mythology || 0 },
+            { id: 'magic', name: 'Magic Systems', count: categoryCounts.magic || 0 },
+            { id: 'history', name: 'History', count: categoryCounts.history || 0 },
+            { id: 'characters', name: 'Notable Figures', count: categoryCounts.characters || 0 },
+            { id: 'organizations', name: 'Organizations', count: categoryCounts.organizations || 0 },
+            { id: 'economics', name: 'Economics', count: categoryCounts.economics || 0 },
+            { id: 'cities', name: 'Cities & Places', count: categoryCounts.cities || 0 }
+        ];
+        
+        res.json({
+            success: true,
+            categories: categories,
+            total: total
+        });
+        
+    } catch (error) {
+        console.error('Error fetching categories:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Internal server error'
+        });
+    }
+});
+
+// Helper function to get sample wiki entries
+function getSampleWikiEntries() {
+    return [
+        {
+            id: 'cultures-of-eno',
+            title: 'Cultures of Eno',
+            category: 'culture',
+            excerpt: 'The diverse societies of Eno, each with unique biological and spiritual characteristics shaped by their valleys.',
+            content: `The planet Eno hosts numerous distinct cultures, each adapted to their specific valley environments:
+
+**Night Valley Cultures**: Known for their connection to shadows and mysteries, these societies have developed unique forms of magic and communication that function in perpetual twilight.
+
+**Day Valley Cultures**: Radiant societies that harness light and energy, creating advanced technologies powered by perpetual sunshine.
+
+**Dawn Valley Cultures**: Transitional societies that celebrate beginnings and change, known for their healing arts and agricultural innovations.
+
+**Dusk Valley Cultures**: Philosophical societies focused on endings and reflection, maintaining vast libraries and archives of knowledge.`,
+            tags: ['valleys', 'societies', 'biology', 'spirituality'],
+            related: ['night-valley', 'day-valley', 'dawn-valley', 'dusk-valley']
+        },
+        {
+            id: 'night-valley',
+            title: 'Night Valley',
+            category: 'geography',
+            excerpt: 'The realm of shadows and mysteries, where ancient magic still lingers in eternal twilight.',
+            content: `Night Valley exists in a state of perpetual twilight, creating a unique ecosystem and culture. Major cities include:
+
+**Palwede**: A major port city with 47,137 inhabitants, featuring impressive fortifications and a thriving shadow market.
+
+**Ithemate**: Known for its mystical academies and connection to ancient magics.
+
+The valley's cool climate and mysterious atmosphere have shaped its inhabitants into master traders and scholars of the arcane.`,
+            tags: ['valley', 'geography', 'darkness', 'shadow', 'cities'],
+            related: ['cultures-of-eno', 'palwede-city', 'shadow-magic']
+        },
+        {
+            id: 'soul-system',
+            title: 'The Soul System of Eno',
+            category: 'mythology',
+            excerpt: 'The hierarchical soul structure that connects all entities in Eno, from the Primordial World Soul to individual beings.',
+            content: `The Soul System is the fundamental spiritual framework of Eno:
+
+**Primordial World Soul**: The all-encompassing source of all souls in Eno, containing the essence of the entire world.
+
+**Valley Souls**: Four major souls corresponding to each valley:
+- Valley Soul of Darkness (Night)
+- Valley Soul of Light (Day)  
+- Valley Soul of Beginnings (Dawn)
+- Valley Soul of Endings (Dusk)
+
+**Entity Souls**: Every city, building, and individual possesses a soul that connects to the greater hierarchy, creating a web of spiritual interconnection.`,
+            tags: ['souls', 'spirituality', 'mythology', 'hierarchy'],
+            related: ['cultures-of-eno', 'magic-systems']
+        },
+        {
+            id: 'economic-networks',
+            title: 'Trade Networks of Eno',
+            category: 'economics',
+            excerpt: 'The complex trade relationships between cities, focusing on luxury goods and regional specialties.',
+            content: `Eno's economy is characterized by sophisticated trade networks:
+
+**Major Trade Hubs**:
+- Guild: Population 79,193 - Industrial center and major port
+- Mahyapak: Population 71,912 - Industrial powerhouse with extensive trade routes
+- Jeong: Population 50,393 - Central market connecting multiple valleys
+
+**Primary Trade Goods**:
+- Jewelry: High-value luxury items traded across vast distances
+- Machinery: Industrial products from advanced cities
+- Textiles: Woven goods from medieval settlements
+- Raw Materials: Wood, stone, and food for local consumption
+
+Trade is primarily conducted in luxury goods due to transportation costs over long distances.`,
+            tags: ['trade', 'economy', 'cities', 'resources'],
+            related: ['guild-city', 'mahyapak-city', 'resource-taxonomy']
+        },
+        {
+            id: 'magic-systems',
+            title: 'Magic Systems',
+            category: 'magic',
+            excerpt: 'The various forms of magic practiced across Eno, shaped by valley influences and soul connections.',
+            content: `Magic in Eno manifests differently in each valley:
+
+**Shadow Magic (Night Valley)**: Manipulation of darkness and mystery, used for concealment and revelation of hidden truths.
+
+**Light Magic (Day Valley)**: Harnessing of radiant energy for creation and transformation.
+
+**Transition Magic (Dawn Valley)**: Powers of change and renewal, particularly strong in healing and growth.
+
+**Reflection Magic (Dusk Valley)**: Abilities related to memory, wisdom, and temporal manipulation.
+
+All magic is connected to the soul system, with practitioners drawing power from their connection to valley souls.`,
+            tags: ['magic', 'valleys', 'souls', 'power'],
+            related: ['soul-system', 'night-valley', 'day-valley']
+        },
+        {
+            id: 'guild-city',
+            title: 'Guild',
+            category: 'geography',
+            excerpt: 'The largest city in Eno with 79,193 inhabitants, a major industrial and trading center.',
+            content: `Guild stands as Eno's most populous city and economic powerhouse:
+
+**Demographics**: 79,193 inhabitants at Industrial technology level
+**Infrastructure**: Major port, central market, impressive fortifications, grand temple
+**Culture**: Wildlands culture following the Isti religion
+**Economy**: Center of machinery production and luxury goods trade
+
+Founded in year 50, Guild has grown to become the primary hub for inter-valley commerce.`,
+            tags: ['city', 'trade', 'industry', 'port'],
+            related: ['economic-networks', 'trade-routes']
+        },
+        {
+            id: 'technological-eras',
+            title: 'Technology Levels',
+            category: 'history',
+            excerpt: 'The three technological eras that define settlement capabilities and trade relationships.',
+            content: `Eno's settlements exist at different technological levels:
+
+**Tribal Era** (66% of settlements):
+- Basic tools and organic agriculture
+- Limited trade capabilities
+- Subsistence economies
+- Population typically under 10,000
+
+**Medieval Era** (30% of settlements):
+- Metal working and complex crafts
+- Regional trade networks
+- Fortified cities
+- Populations 10,000-50,000
+
+**Industrial Era** (4% of settlements):
+- Machinery and mass production
+- Global trade capabilities
+- Advanced infrastructure
+- Populations exceeding 50,000
+
+The technological disparity creates unique trade opportunities and cultural exchanges.`,
+            tags: ['technology', 'progress', 'civilization', 'development'],
+            related: ['economic-networks', 'guild-city']
+        }
+    ];
+}
+
+// Create or update wiki entry (Editor and Admin only)
+app.post('/api/wiki/entries', authenticateToken, authorize(['editor', 'admin']), async (req, res) => {
+    try {
+        const { title, category, excerpt, content, tags, related } = req.body;
+        
+        if (!title || !category || !content) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Title, category, and content are required' 
+            });
+        }
+        
+        // Sanitize content to prevent XSS
+        const sanitizedContent = content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+        
+        // Generate excerpt if not provided
+        const finalExcerpt = excerpt || sanitizedContent.replace(/<[^>]*>/g, '').substring(0, 150) + '...';
+        
+        // Convert arrays to JSON strings
+        const tagsJson = JSON.stringify(tags || []);
+        const relatedJson = JSON.stringify(related || []);
+        
+        // Insert into database
+        const query = `
+            INSERT INTO wiki_entries (
+                title, category, excerpt, content, tags, related,
+                author_id, created_at, updated_at, status, version_number
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'), 'published', 1)
+        `;
+        
+        db.run(query, [
+            title,
+            category,
+            finalExcerpt,
+            sanitizedContent,
+            tagsJson,
+            relatedJson,
+            req.user.id
+        ], function(err) {
+            if (err) {
+                console.error('Error creating wiki entry:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+            
+            const entryId = this.lastID;
+            
+            // Create initial version in history
+            const historyQuery = `
+                INSERT INTO wiki_entry_history (
+                    entry_id, version_number, title, category, excerpt, content,
+                    tags, related, edited_by, edited_at, change_summary
+                ) VALUES (?, 1, ?, ?, ?, ?, ?, ?, ?, datetime('now'), 'Initial creation')
+            `;
+            
+            db.run(historyQuery, [
+                entryId,
+                title,
+                category,
+                finalExcerpt,
+                sanitizedContent,
+                tagsJson,
+                relatedJson,
+                req.user.id
+            ], (historyErr) => {
+                if (historyErr) {
+                    console.error('Error creating wiki entry history:', historyErr);
+                }
+                
+                // Return the created entry
+                res.json({
+                    success: true,
+                    message: 'Wiki entry created successfully',
+                    entry: {
+                        id: entryId,
+                        title,
+                        category,
+                        excerpt: finalExcerpt,
+                        content: sanitizedContent,
+                        tags: tags || [],
+                        related: related || [],
+                        author_id: req.user.id,
+                        author_name: req.user.username,
+                        created_at: new Date().toISOString(),
+                        version_number: 1
+                    }
+                });
+            });
+        });
+    } catch (error) {
+        console.error('Error creating wiki entry:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Update wiki entry (Editor and Admin only)
+app.put('/api/wiki/entries/:entryId', authenticateToken, authorize(['editor', 'admin']), async (req, res) => {
+    try {
+        const { entryId } = req.params;
+        const { title, category, excerpt, content, tags, related } = req.body;
+        
+        // First, get the current entry to save to history
+        db.get('SELECT * FROM wiki_entries WHERE id = ?', [entryId], (err, currentEntry) => {
+            if (err) {
+                console.error('Error fetching wiki entry:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+            
+            if (!currentEntry) {
+                return res.status(404).json({ success: false, error: 'Wiki entry not found' });
+            }
+            
+            // Save current version to history
+            const historyQuery = `
+                INSERT INTO wiki_entry_history (
+                    entry_id, version_number, title, category, excerpt, content,
+                    tags, related, edited_by, edited_at, change_summary
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), ?)
+            `;
+            
+            db.run(historyQuery, [
+                entryId,
+                currentEntry.version_number,
+                currentEntry.title,
+                currentEntry.category,
+                currentEntry.excerpt,
+                currentEntry.content,
+                currentEntry.tags,
+                currentEntry.related,
+                req.user.id,
+                'Updated by ' + req.user.username
+            ], (historyErr) => {
+                if (historyErr) {
+                    console.error('Error creating wiki entry history:', historyErr);
+                }
+                
+                // Sanitize content if provided
+                const sanitizedContent = content ? content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') : currentEntry.content;
+                
+                // Update the entry
+                const updateQuery = `
+                    UPDATE wiki_entries 
+                    SET title = ?, category = ?, excerpt = ?, content = ?, 
+                        tags = ?, related = ?, updated_at = datetime('now'), 
+                        updated_by = ?, version_number = version_number + 1
+                    WHERE id = ?
+                `;
+                
+                db.run(updateQuery, [
+                    title || currentEntry.title,
+                    category || currentEntry.category,
+                    excerpt || currentEntry.excerpt,
+                    sanitizedContent,
+                    tags ? JSON.stringify(tags) : currentEntry.tags,
+                    related ? JSON.stringify(related) : currentEntry.related,
+                    req.user.id,
+                    entryId
+                ], function(updateErr) {
+                    if (updateErr) {
+                        console.error('Error updating wiki entry:', updateErr);
+                        return res.status(500).json({ success: false, error: 'Database error' });
+                    }
+                    
+                    // Fetch the updated entry
+                    db.get(`
+                        SELECT w.*, u.username as author_name
+                        FROM wiki_entries w
+                        LEFT JOIN users u ON w.author_id = u.id
+                        WHERE w.id = ?
+                    `, [entryId], (fetchErr, updatedEntry) => {
+                        if (fetchErr) {
+                            console.error('Error fetching updated entry:', fetchErr);
+                            return res.status(500).json({ success: false, error: 'Database error' });
+                        }
+                        
+                        res.json({
+                            success: true,
+                            message: 'Wiki entry updated successfully',
+                            entry: {
+                                ...updatedEntry,
+                                tags: updatedEntry.tags ? JSON.parse(updatedEntry.tags) : [],
+                                related: updatedEntry.related ? JSON.parse(updatedEntry.related) : [],
+                                updated_by_username: req.user.username
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    } catch (error) {
+        console.error('Error updating wiki entry:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Search wiki entries with autocomplete support
+app.get('/api/wiki/search', optionalAuth, async (req, res) => {
+    try {
+        const { q, limit = 10 } = req.query;
+        
+        if (!q || q.length < 2) {
+            return res.json({ results: [] });
+        }
+        
+        // Search in title, excerpt, and content with relevance scoring
+        const searchTerm = `%${q}%`;
+        const results = await new Promise((resolve, reject) => {
+            db.all(`
+                SELECT 
+                    id,
+                    title,
+                    category,
+                    excerpt,
+                    tags,
+                    CASE 
+                        WHEN title LIKE ? THEN 3
+                        WHEN excerpt LIKE ? THEN 2
+                        WHEN content LIKE ? THEN 1
+                        ELSE 0
+                    END as relevance
+                FROM wiki_entries
+                WHERE status = 'published'
+                AND (
+                    title LIKE ?
+                    OR excerpt LIKE ?
+                    OR content LIKE ?
+                    OR tags LIKE ?
+                )
+                ORDER BY relevance DESC, title ASC
+                LIMIT ?
+            `, [
+                searchTerm, searchTerm, searchTerm,
+                searchTerm, searchTerm, searchTerm, searchTerm,
+                parseInt(limit)
+            ], (err, rows) => {
+                if (err) reject(err);
+                else resolve(rows || []);
+            });
+        });
+        
+        // Parse JSON fields and format response
+        const formattedResults = results.map(row => ({
+            id: row.id,
+            title: row.title,
+            category: row.category,
+            excerpt: row.excerpt,
+            tags: row.tags ? JSON.parse(row.tags) : [],
+            relevance: row.relevance
+        }));
+        
+        res.json({
+            success: true,
+            query: q,
+            results: formattedResults,
+            count: formattedResults.length
+        });
+    } catch (error) {
+        console.error('Error searching wiki entries:', error);
+        res.status(500).json({ success: false, error: 'Search failed' });
+    }
+});
+
+// Get wiki entry version history
+app.get('/api/wiki/entries/:entryId/history', authenticateToken, async (req, res) => {
+    try {
+        const { entryId } = req.params;
+        
+        const history = await new Promise((resolve, reject) => {
+            db.all(`
+                SELECT 
+                    h.*,
+                    u.username as author_name
+                FROM wiki_entry_history h
+                LEFT JOIN users u ON h.edited_by = u.id
+                WHERE h.entry_id = ?
+                ORDER BY h.version_number DESC
+            `, [entryId], (err, rows) => {
+                if (err) reject(err);
+                else resolve(rows || []);
+            });
+        });
+        
+        res.json({
+            success: true,
+            entryId: entryId,
+            history: history.map(h => ({
+                ...h,
+                tags: h.tags ? JSON.parse(h.tags) : [],
+                related: h.related ? JSON.parse(h.related) : []
+            }))
+        });
+    } catch (error) {
+        console.error('Error fetching version history:', error);
+        res.status(500).json({ success: false, error: 'Failed to fetch history' });
+    }
+});
+
+// Get wiki graph data for visualization
+app.get('/api/wiki/graph', optionalAuth, async (req, res) => {
+    try {
+        // Fetch all published entries with their relationships
+        const entries = await new Promise((resolve, reject) => {
+            db.all(`
+                SELECT 
+                    id, 
+                    title, 
+                    category, 
+                    excerpt,
+                    tags,
+                    related
+                FROM wiki_entries 
+                WHERE status = 'published'
+                ORDER BY title
+            `, [], (err, rows) => {
+                if (err) reject(err);
+                else resolve(rows || []);
+            });
+        });
+        
+        // Build nodes and links for graph visualization
+        const nodes = [];
+        const links = [];
+        const nodeMap = new Map();
+        
+        // Create nodes from entries
+        entries.forEach(entry => {
+            const tags = entry.tags ? JSON.parse(entry.tags) : [];
+            const related = entry.related ? JSON.parse(entry.related) : [];
+            
+            const node = {
+                id: `entry-${entry.id}`,
+                entryId: entry.id,
+                title: entry.title,
+                category: entry.category,
+                excerpt: entry.excerpt,
+                tags: tags,
+                related: related,
+                type: 'entry',
+                size: Math.max(10, entry.title.length / 3), // Node size based on title length
+                color: getCategoryColor(entry.category)
+            };
+            
+            nodes.push(node);
+            nodeMap.set(entry.id.toString(), node);
+        });
+        
+        // Create tag nodes (smaller nodes for common tags)
+        const tagCounts = new Map();
+        entries.forEach(entry => {
+            const tags = entry.tags ? JSON.parse(entry.tags) : [];
+            tags.forEach(tag => {
+                tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+            });
+        });
+        
+        // Only create tag nodes for tags used by multiple entries
+        Array.from(tagCounts.entries())
+            .filter(([tag, count]) => count >= 2)
+            .forEach(([tag, count]) => {
+                nodes.push({
+                    id: `tag-${tag}`,
+                    title: `#${tag}`,
+                    type: 'tag',
+                    size: 5 + (count * 2),
+                    color: '#95a5a6',
+                    count: count
+                });
+            });
+        
+        // Create links between entries and their related entries
+        entries.forEach(entry => {
+            const related = entry.related ? JSON.parse(entry.related) : [];
+            const sourceNode = nodeMap.get(entry.id.toString());
+            
+            if (sourceNode) {
+                // Link to related entries
+                related.forEach(relatedId => {
+                    const targetNode = nodeMap.get(relatedId.toString()) || 
+                                     entries.find(e => e.title.toLowerCase().includes(relatedId.toLowerCase()));
+                    
+                    if (targetNode) {
+                        links.push({
+                            source: sourceNode.id,
+                            target: `entry-${targetNode.id}`,
+                            type: 'related',
+                            strength: 1.0
+                        });
+                    }
+                });
+                
+                // Link to tag nodes for frequently used tags
+                const tags = entry.tags ? JSON.parse(entry.tags) : [];
+                tags.forEach(tag => {
+                    if (tagCounts.get(tag) >= 2) {
+                        links.push({
+                            source: sourceNode.id,
+                            target: `tag-${tag}`,
+                            type: 'tag',
+                            strength: 0.3
+                        });
+                    }
+                });
+            }
+        });
+        
+        res.json({
+            success: true,
+            nodes: nodes,
+            links: links,
+            stats: {
+                entryCount: entries.length,
+                nodeCount: nodes.length,
+                linkCount: links.length,
+                categories: [...new Set(entries.map(e => e.category))],
+                topTags: Array.from(tagCounts.entries())
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 10)
+            }
+        });
+        
+    } catch (error) {
+        console.error('Error generating graph data:', error);
+        
+        // Fallback to sample data
+        const sampleEntries = getSampleWikiEntries();
+        const nodes = sampleEntries.map(entry => ({
+            id: `entry-${entry.id}`,
+            entryId: entry.id,
+            title: entry.title,
+            category: entry.category,
+            excerpt: entry.excerpt,
+            type: 'entry',
+            size: Math.max(10, entry.title.length / 3),
+            color: getCategoryColor(entry.category)
+        }));
+        
+        const links = [];
+        sampleEntries.forEach(entry => {
+            if (entry.related) {
+                entry.related.forEach(relatedId => {
+                    const target = sampleEntries.find(e => e.id === relatedId);
+                    if (target) {
+                        links.push({
+                            source: `entry-${entry.id}`,
+                            target: `entry-${target.id}`,
+                            type: 'related',
+                            strength: 1.0
+                        });
+                    }
+                });
+            }
+        });
+        
+        res.json({
+            success: true,
+            nodes: nodes,
+            links: links,
+            stats: {
+                entryCount: sampleEntries.length,
+                nodeCount: nodes.length,
+                linkCount: links.length
+            }
+        });
+    }
+});
+
+// Helper function to get category colors for graph visualization
+function getCategoryColor(category) {
+    const colors = {
+        'culture': '#e74c3c',      // Red
+        'geography': '#27ae60',    // Green
+        'mythology': '#9b59b6',    // Purple
+        'magic': '#3498db',        // Blue
+        'history': '#f39c12',      // Orange
+        'characters': '#e67e22',   // Dark orange
+        'organizations': '#34495e', // Dark gray
+        'economics': '#16a085',    // Teal
+        'cities': '#2c3e50',       // Very dark gray
+        'default': '#95a5a6'       // Light gray
+    };
+    
+    return colors[category] || colors.default;
+}
+
+// Delete wiki entry (Admin only)
+app.delete('/api/wiki/entries/:entryId', authenticateToken, authorize(['admin']), async (req, res) => {
+    try {
+        const { entryId } = req.params;
+        
+        // In a real implementation, this would delete from database
+        res.json({
+            success: true,
+            message: 'Wiki entry deleted successfully'
+        });
+    } catch (error) {
+        console.error('Error deleting wiki entry:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// === GEOSPATIAL API ENDPOINTS ===
+
+// Get geospatial data from Mundi system
+app.get('/api/geo/cities', optionalAuth, async (req, res) => {
+    try {
+        const citiesPath = path.join(__dirname, '../../Mundi/mundi.ai/eno-cities-scaled.geojson');
+        
+        if (!fs.existsSync(citiesPath)) {
+            return res.status(404).json({ 
+                success: false, 
+                error: 'Cities geospatial data not found' 
+            });
+        }
+        
+        const geojsonData = JSON.parse(fs.readFileSync(citiesPath, 'utf8'));
+        
+        // Add wiki entry associations where city names match
+        if (geojsonData.features) {
+            for (let feature of geojsonData.features) {
+                const cityName = feature.properties.Burg;
+                if (cityName) {
+                    // Check if there's a matching wiki entry
+                    const wikiEntry = await new Promise((resolve) => {
+                        db.get(`
+                            SELECT id, title, category, excerpt
+                            FROM wiki_entries
+                            WHERE status = 'published' 
+                            AND (LOWER(title) LIKE LOWER(?) OR LOWER(content) LIKE LOWER(?))
+                        `, [`%${cityName}%`, `%${cityName}%`], (err, row) => {
+                            if (err) resolve(null);
+                            else resolve(row);
+                        });
+                    });
+                    
+                    if (wikiEntry) {
+                        feature.properties.wikiEntry = wikiEntry;
+                    }
+                }
+            }
+        }
+        
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'cities'
+        });
+        
+    } catch (error) {
+        console.error('Error loading cities data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load cities data' });
+    }
+});
+
+// Get rivers geospatial data
+app.get('/api/geo/rivers', optionalAuth, async (req, res) => {
+    try {
+        const riversPath = path.join(__dirname, '../../Mundi/mundi.ai/eno-rivers-scaled.geojson');
+        
+        if (!fs.existsSync(riversPath)) {
+            return res.status(404).json({ 
+                success: false, 
+                error: 'Rivers geospatial data not found' 
+            });
+        }
+        
+        const geojsonData = JSON.parse(fs.readFileSync(riversPath, 'utf8'));
+        
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'rivers'
+        });
+        
+    } catch (error) {
+        console.error('Error loading rivers data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load rivers data' });
+    }
+});
+
+// Get lakes geospatial data
+app.get('/api/geo/lakes', optionalAuth, async (req, res) => {
+    try {
+        const lakesPath = path.join(__dirname, '../../Mundi/mundi.ai/eno-lakes-scaled.geojson');
+        
+        if (!fs.existsSync(lakesPath)) {
+            return res.status(404).json({ 
+                success: false, 
+                error: 'Lakes geospatial data not found' 
+            });
+        }
+        
+        const geojsonData = JSON.parse(fs.readFileSync(lakesPath, 'utf8'));
+        
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'lakes'
+        });
+        
+    } catch (error) {
+        console.error('Error loading lakes data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load lakes data' });
+    }
+});
+
+// Get villages geospatial data
+app.get('/api/geo/villages', optionalAuth, async (req, res) => {
+    try {
+        const villagesPath = path.join(__dirname, '../../Mundi/mundi.ai/eno-villages-scaled.geojson');
+        
+        if (!fs.existsSync(villagesPath)) {
+            return res.status(404).json({ 
+                success: false, 
+                error: 'Villages geospatial data not found' 
+            });
+        }
+        
+        const geojsonData = JSON.parse(fs.readFileSync(villagesPath, 'utf8'));
+        
+        // Add wiki entry associations where village names might match
+        if (geojsonData.features) {
+            for (let feature of geojsonData.features) {
+                const villageName = feature.properties.name || feature.properties.Name;
+                if (villageName) {
+                    // Check if there's a matching wiki entry
+                    const wikiEntry = await new Promise((resolve) => {
+                        db.get(`
+                            SELECT id, title, category, excerpt
+                            FROM wiki_entries
+                            WHERE status = 'published' 
+                            AND (LOWER(title) LIKE LOWER(?) OR LOWER(content) LIKE LOWER(?))
+                        `, [`%${villageName}%`, `%${villageName}%`], (err, row) => {
+                            if (err) resolve(null);
+                            else resolve(row);
+                        });
+                    });
+                    
+                    if (wikiEntry) {
+                        feature.properties.wikiEntry = wikiEntry;
+                    }
+                }
+            }
+        }
+        
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'villages'
+        });
+        
+    } catch (error) {
+        console.error('Error loading villages data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load villages data' });
+    }
+});
+
+// Get all geospatial layers for map initialization
+app.get('/api/geo/layers', optionalAuth, async (req, res) => {
+    try {
+        const layers = [
+            {
+                id: 'cities',
+                name: 'Cities',
+                endpoint: '/api/geo/cities',
+                type: 'Point',
+                style: {
+                    color: '#e74c3c',
+                    fillColor: '#e74c3c',
+                    radius: 8,
+                    weight: 2,
+                    fillOpacity: 0.8
+                },
+                popupTemplate: 'city'
+            },
+            {
+                id: 'villages', 
+                name: 'Villages',
+                endpoint: '/api/geo/villages',
+                type: 'Point',
+                style: {
+                    color: '#f39c12',
+                    fillColor: '#f39c12',
+                    radius: 5,
+                    weight: 1,
+                    fillOpacity: 0.6
+                },
+                popupTemplate: 'village'
+            },
+            {
+                id: 'rivers',
+                name: 'Rivers',
+                endpoint: '/api/geo/rivers',
+                type: 'LineString',
+                style: {
+                    color: '#3498db',
+                    weight: 3,
+                    opacity: 0.7
+                },
+                popupTemplate: 'river'
+            },
+            {
+                id: 'lakes',
+                name: 'Lakes',
+                endpoint: '/api/geo/lakes',
+                type: 'Polygon',
+                style: {
+                    color: '#2980b9',
+                    fillColor: '#3498db',
+                    weight: 2,
+                    fillOpacity: 0.5
+                },
+                popupTemplate: 'lake'
+            }
+        ];
+        
+        res.json({
+            success: true,
+            layers: layers
+        });
+        
+    } catch (error) {
+        console.error('Error loading layer configuration:', error);
+        res.status(500).json({ success: false, error: 'Failed to load layer configuration' });
+    }
+});
 
 // Start the server
 app.listen(port, () => {
