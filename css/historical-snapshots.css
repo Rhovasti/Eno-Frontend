@@ -1,0 +1,794 @@
+/* Historical Snapshot System Styles */
+
+/* Snapshot Controls Panel */
+.snapshot-controls {
+    position: absolute;
+    top: 360px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 280px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.snapshot-controls h3 {
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.snapshot-controls h3::before {
+    content: "📸";
+    font-size: 16px;
+}
+
+/* Snapshot Control Sections */
+.snapshot-section {
+    margin-bottom: 16px;
+}
+
+.snapshot-section h4 {
+    margin: 0 0 8px 0;
+    color: #34495e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Create Snapshot Section */
+.create-snapshot-form {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.snapshot-input-group {
+    margin-bottom: 10px;
+}
+
+.snapshot-input-group label {
+    display: block;
+    font-size: 11px;
+    color: #495057;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.snapshot-input-group input,
+.snapshot-input-group textarea,
+.snapshot-input-group select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: inherit;
+}
+
+.snapshot-input-group textarea {
+    resize: vertical;
+    min-height: 40px;
+    max-height: 80px;
+}
+
+.snapshot-input-group input:focus,
+.snapshot-input-group textarea:focus,
+.snapshot-input-group select:focus {
+    outline: none;
+    border-color: #34495e;
+    box-shadow: 0 0 0 2px rgba(52, 73, 94, 0.2);
+}
+
+.snapshot-tags-input {
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.create-snapshot-btn {
+    width: 100%;
+    background: #34495e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.create-snapshot-btn:hover {
+    background: #2c3e50;
+    transform: translateY(-1px);
+}
+
+.create-snapshot-btn:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Snapshot List */
+.snapshot-list {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: #fafafa;
+}
+
+.snapshot-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    margin: 0;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 11px;
+}
+
+.snapshot-item:hover {
+    background: #ecf0f1;
+}
+
+.snapshot-item:last-child {
+    border-bottom: none;
+}
+
+.snapshot-item.selected {
+    background: #34495e;
+    color: white;
+}
+
+.snapshot-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.snapshot-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.snapshot-title {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+}
+
+.snapshot-meta {
+    font-size: 10px;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.snapshot-description {
+    font-size: 10px;
+    opacity: 0.7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.snapshot-item.selected .snapshot-description,
+.snapshot-item.selected .snapshot-meta {
+    opacity: 0.9;
+}
+
+.snapshot-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.snapshot-item:hover .snapshot-actions {
+    opacity: 1;
+}
+
+.snapshot-action-btn {
+    background: rgba(52, 73, 94, 0.1);
+    border: 1px solid rgba(52, 73, 94, 0.2);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #34495e;
+}
+
+.snapshot-action-btn:hover {
+    background: #34495e;
+    color: white;
+}
+
+.snapshot-item.selected .snapshot-action-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.snapshot-item.selected .snapshot-action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Toggle Controls */
+.snapshot-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #34495e;
+}
+
+.snapshot-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #34495e;
+}
+
+.snapshot-toggle label {
+    cursor: pointer;
+    user-select: none;
+    flex: 1;
+}
+
+/* Filter Controls */
+.snapshot-filters {
+    margin-bottom: 12px;
+}
+
+.filter-group {
+    margin-bottom: 8px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 11px;
+    color: #495057;
+    margin-bottom: 3px;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.category-filter-btn {
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-filter-btn:hover {
+    background: #34495e;
+    color: white;
+    border-color: #2c3e50;
+}
+
+.category-filter-btn.active {
+    background: #34495e;
+    color: white;
+    border-color: #2c3e50;
+}
+
+/* Import/Export Controls */
+.snapshot-io-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.snapshot-io-btn {
+    flex: 1;
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.snapshot-io-btn:hover {
+    background: #34495e;
+    color: white;
+    border-color: #2c3e50;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+/* Snapshot Statistics */
+.snapshot-stats {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 12px;
+}
+
+.snapshot-stats h4 {
+    margin: 0 0 6px 0;
+    font-size: 11px;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.snapshot-stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.snapshot-stat-value {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Snapshot Popups */
+.snapshot-popup-container {
+    font-family: inherit;
+}
+
+.snapshot-popup {
+    max-width: 280px;
+}
+
+.snapshot-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.snapshot-header .snapshot-icon {
+    font-size: 16px;
+}
+
+.snapshot-header h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 14px;
+    flex: 1;
+}
+
+.snapshot-meta {
+    margin-bottom: 8px;
+    font-size: 11px;
+}
+
+.snapshot-time {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 2px;
+}
+
+.snapshot-category {
+    background: rgba(52, 73, 94, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.snapshot-significance {
+    font-weight: 500;
+    color: #f39c12;
+}
+
+.snapshot-description {
+    font-size: 11px;
+    color: #34495e;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.snapshot-metrics {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 6px;
+    margin-bottom: 8px;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.snapshot-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.snapshot-load-btn,
+.snapshot-compare-btn {
+    flex: 1;
+    background: #34495e;
+    color: white;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.snapshot-load-btn:hover {
+    background: #2c3e50;
+}
+
+.snapshot-compare-btn {
+    background: #95a5a6;
+}
+
+.snapshot-compare-btn:hover {
+    background: #7f8c8d;
+}
+
+/* Snapshot Markers on Map */
+.snapshot-marker {
+    transition: all 0.3s ease;
+}
+
+.snapshot-marker:hover {
+    transform: scale(1.2);
+}
+
+.snapshot-major_event {
+    filter: drop-shadow(0 0 4px rgba(231, 76, 60, 0.6));
+}
+
+.snapshot-political_change {
+    filter: drop-shadow(0 0 4px rgba(155, 89, 182, 0.6));
+}
+
+.snapshot-territorial_shift {
+    filter: drop-shadow(0 0 4px rgba(52, 152, 219, 0.6));
+}
+
+.snapshot-character_milestone {
+    filter: drop-shadow(0 0 4px rgba(46, 204, 113, 0.6));
+}
+
+.snapshot-cultural_moment {
+    filter: drop-shadow(0 0 4px rgba(243, 156, 18, 0.6));
+}
+
+.snapshot-economic_event {
+    filter: drop-shadow(0 0 4px rgba(26, 188, 156, 0.6));
+}
+
+.snapshot-milestone {
+    filter: drop-shadow(0 0 4px rgba(149, 165, 166, 0.6));
+}
+
+.snapshot-user_bookmark {
+    filter: drop-shadow(0 0 4px rgba(52, 73, 94, 0.6));
+}
+
+/* Loading and Error States */
+.snapshot-loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.snapshot-loading::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    border-top-color: #34495e;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.snapshot-error {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 11px;
+    color: #e74c3c;
+    text-align: center;
+}
+
+/* Animation Effects */
+@keyframes snapshotCapture {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+        box-shadow: 0 0 20px rgba(52, 73, 94, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.snapshot-capturing {
+    animation: snapshotCapture 0.8s ease-in-out;
+}
+
+@keyframes snapshotLoad {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.snapshot-loading-effect {
+    animation: snapshotLoad 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .snapshot-controls {
+        top: 340px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        min-width: 0;
+        max-height: 400px;
+    }
+
+    .snapshot-list {
+        max-height: 180px;
+    }
+
+    .snapshot-item {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .snapshot-title {
+        font-size: 11px;
+    }
+
+    .snapshot-meta,
+    .snapshot-description {
+        font-size: 9px;
+    }
+
+    .create-snapshot-form {
+        padding: 10px;
+    }
+
+    .snapshot-input-group input,
+    .snapshot-input-group textarea,
+    .snapshot-input-group select {
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+
+    .snapshot-io-controls {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .snapshot-controls {
+        top: 320px;
+        padding: 12px;
+        max-height: 300px;
+    }
+
+    .snapshot-controls h3 {
+        font-size: 14px;
+    }
+
+    .snapshot-section h4 {
+        font-size: 12px;
+    }
+
+    .snapshot-list {
+        max-height: 120px;
+    }
+
+    .snapshot-item {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .snapshot-actions {
+        flex-direction: row;
+        opacity: 1;
+        width: 100%;
+    }
+
+    .snapshot-popup {
+        max-width: 220px;
+    }
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .snapshot-controls {
+        backdrop-filter: blur(15px);
+    }
+
+    .snapshot-marker {
+        filter: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .snapshot-controls {
+        background: rgba(44, 62, 80, 0.95);
+        color: #ecf0f1;
+    }
+
+    .snapshot-controls h3 {
+        color: #ecf0f1;
+        border-bottom-color: #34495e;
+    }
+
+    .snapshot-section h4 {
+        color: #bdc3c7;
+    }
+
+    .snapshot-toggle {
+        color: #bdc3c7;
+    }
+
+    .create-snapshot-form {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .snapshot-input-group label {
+        color: #bdc3c7;
+    }
+
+    .snapshot-input-group input,
+    .snapshot-input-group textarea,
+    .snapshot-input-group select {
+        background: #2c3e50;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .snapshot-list {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .snapshot-item {
+        color: #ecf0f1;
+        border-bottom-color: #4a6741;
+    }
+
+    .snapshot-item:hover {
+        background: #4a6741;
+    }
+
+    .snapshot-item.selected {
+        background: #2c3e50;
+    }
+
+    .category-filter-btn {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .snapshot-io-btn {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .snapshot-stats {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .snapshot-stats h4 {
+        color: #bdc3c7;
+    }
+
+    .snapshot-stat-row {
+        color: #95a5a6;
+    }
+
+    .snapshot-stat-value {
+        color: #ecf0f1;
+    }
+
+    .snapshot-error {
+        background: rgba(231, 76, 60, 0.2);
+        border-color: rgba(231, 76, 60, 0.5);
+        color: #ff6b6b;
+    }
+}
+
+/* Accessibility Enhancements */
+.snapshot-controls:focus-within {
+    box-shadow: 0 0 0 3px rgba(52, 73, 94, 0.3);
+}
+
+.snapshot-item:focus {
+    outline: 2px solid #34495e;
+    outline-offset: 1px;
+}
+
+.create-snapshot-btn:focus,
+.snapshot-io-btn:focus,
+.category-filter-btn:focus {
+    outline: 2px solid #34495e;
+    outline-offset: 1px;
+}
+
+/* Performance Optimizations */
+.snapshot-marker {
+    will-change: transform, opacity;
+}
+
+.snapshot-item {
+    will-change: background-color;
+}
+
+.create-snapshot-btn {
+    will-change: transform, background-color;
+}

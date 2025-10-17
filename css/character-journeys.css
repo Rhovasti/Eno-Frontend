@@ -1,0 +1,685 @@
+/* Character Journey Visualization System Styles */
+
+/* Character Journey Controls Panel */
+.journey-controls {
+    position: absolute;
+    top: 200px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 250px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.journey-controls h3 {
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #9b59b6;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.journey-controls h3::before {
+    content: "🗺️";
+    font-size: 16px;
+}
+
+/* Journey Control Sections */
+.journey-section {
+    margin-bottom: 16px;
+}
+
+.journey-section h4 {
+    margin: 0 0 8px 0;
+    color: #34495e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Toggle Controls */
+.journey-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #34495e;
+}
+
+.journey-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #9b59b6;
+}
+
+.journey-toggle label {
+    cursor: pointer;
+    user-select: none;
+    flex: 1;
+}
+
+/* Character List */
+.character-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px;
+    background: #fafafa;
+}
+
+.character-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    margin: 2px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 11px;
+}
+
+.character-item:hover {
+    background: #ecf0f1;
+}
+
+.character-item.selected {
+    background: #9b59b6;
+    color: white;
+}
+
+.character-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.character-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.character-name {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.character-details {
+    font-size: 10px;
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.character-item.selected .character-details {
+    opacity: 0.9;
+}
+
+/* Character List Controls */
+.character-list-controls {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.character-list-btn {
+    flex: 1;
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.character-list-btn:hover {
+    background: #9b59b6;
+    color: white;
+    border-color: #8e44ad;
+}
+
+/* Opacity and Time Window Controls */
+.path-opacity-control,
+.time-window-control {
+    margin: 8px 0;
+}
+
+.path-opacity-control label,
+.time-window-control label {
+    font-size: 11px;
+    color: #34495e;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.path-opacity-slider,
+.time-window-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #ecf0f1;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.path-opacity-slider::-webkit-slider-thumb,
+.time-window-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #9b59b6;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.path-opacity-slider::-moz-range-thumb,
+.time-window-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #9b59b6;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider-value {
+    text-align: center;
+    font-size: 10px;
+    color: #7f8c8d;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+/* Animation Controls */
+.animation-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.animation-btn {
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    text-align: center;
+    min-width: 60px;
+}
+
+.animation-btn:hover {
+    background: #9b59b6;
+    color: white;
+    border-color: #8e44ad;
+}
+
+.animation-btn:disabled {
+    background: #f8f9fa;
+    color: #95a5a6;
+    cursor: not-allowed;
+    border-color: #dee2e6;
+}
+
+.animation-btn.active {
+    background: #e74c3c;
+    color: white;
+    border-color: #c0392b;
+}
+
+/* Character Journey Tooltips */
+.character-journey-tooltip {
+    max-width: 200px;
+}
+
+.character-journey-tooltip h4 {
+    margin: 0 0 6px 0;
+    color: #2c3e50;
+    font-size: 13px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 3px;
+}
+
+.character-journey-tooltip p {
+    margin: 3px 0;
+    font-size: 11px;
+    color: #34495e;
+}
+
+/* Life Event Popups */
+.life-event-popup {
+    max-width: 180px;
+}
+
+.life-event-popup h4 {
+    margin: 0 0 6px 0;
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+.event-time {
+    font-weight: bold;
+    color: #9b59b6;
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+.event-type {
+    background: #ecf0f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #7f8c8d;
+    display: inline-block;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.life-event-popup p {
+    margin: 0;
+    font-size: 11px;
+    color: #34495e;
+    line-height: 1.3;
+}
+
+/* Journey Statistics */
+.journey-stats {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 12px;
+}
+
+.journey-stats h4 {
+    margin: 0 0 6px 0;
+    font-size: 11px;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Journey Path Styles (applied via JavaScript) */
+.character-journey-path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+}
+
+.character-journey-path.selected {
+    filter: drop-shadow(0 0 4px rgba(155, 89, 182, 0.6));
+}
+
+.character-journey-path.scholar {
+    stroke-dasharray: 10, 5;
+}
+
+.character-journey-path.military {
+    stroke-dasharray: 15, 3, 3, 3;
+}
+
+.character-journey-path.explorer {
+    stroke-dasharray: none;
+}
+
+/* Relationship Lines */
+.relationship-line {
+    stroke-dasharray: 5, 10;
+    stroke-opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.relationship-line:hover {
+    stroke-opacity: 0.9;
+    stroke-width: 3;
+}
+
+/* Influence Zones */
+.influence-zone {
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.influence-zone.highlighted {
+    fill-opacity: 0.3;
+    stroke-opacity: 0.6;
+}
+
+/* Loading and Error States */
+.journey-loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.journey-loading::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    border-top-color: #9b59b6;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.journey-error {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 11px;
+    color: #e74c3c;
+    text-align: center;
+}
+
+/* Character Type Icons */
+.character-item::before {
+    content: "👤";
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.character-item[data-type="explorer"]::before {
+    content: "🗺️";
+}
+
+.character-item[data-type="scholar"]::before {
+    content: "📚";
+}
+
+.character-item[data-type="military"]::before {
+    content: "⚔️";
+}
+
+.character-item[data-type="architect"]::before {
+    content: "🏗️";
+}
+
+.character-item[data-type="healer"]::before {
+    content: "🏥";
+}
+
+.character-item[data-type="ruler"]::before {
+    content: "👑";
+}
+
+.character-item[data-type="merchant"]::before {
+    content: "💰";
+}
+
+.character-item[data-type="artist"]::before {
+    content: "🎨";
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .journey-controls {
+        top: 180px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        min-width: 0;
+        max-height: 400px;
+    }
+
+    .character-list {
+        max-height: 150px;
+    }
+
+    .animation-controls {
+        flex-direction: column;
+    }
+
+    .animation-btn {
+        min-width: 0;
+    }
+
+    .character-list-controls {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .journey-controls {
+        top: 160px;
+        padding: 12px;
+        max-height: 300px;
+    }
+
+    .journey-controls h3 {
+        font-size: 14px;
+    }
+
+    .character-item {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+
+    .character-name {
+        font-size: 11px;
+    }
+
+    .character-details {
+        font-size: 9px;
+    }
+
+    .journey-section h4 {
+        font-size: 12px;
+    }
+
+    .journey-toggle {
+        font-size: 11px;
+    }
+
+    .character-journey-tooltip {
+        max-width: 150px;
+    }
+
+    .life-event-popup {
+        max-width: 130px;
+    }
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .character-color {
+        border-width: 0.5px;
+    }
+
+    .journey-controls {
+        backdrop-filter: blur(15px);
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .journey-controls {
+        background: rgba(44, 62, 80, 0.95);
+        color: #ecf0f1;
+    }
+
+    .journey-controls h3 {
+        color: #ecf0f1;
+        border-bottom-color: #9b59b6;
+    }
+
+    .journey-section h4 {
+        color: #bdc3c7;
+    }
+
+    .journey-toggle {
+        color: #bdc3c7;
+    }
+
+    .character-list {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .character-item {
+        color: #ecf0f1;
+    }
+
+    .character-item:hover {
+        background: #4a6741;
+    }
+
+    .character-item.selected {
+        background: #9b59b6;
+        color: white;
+    }
+
+    .character-list-btn {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .character-list-btn:hover {
+        background: #9b59b6;
+        border-color: #8e44ad;
+    }
+
+    .animation-btn {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .animation-btn:hover {
+        background: #9b59b6;
+        border-color: #8e44ad;
+    }
+
+    .journey-stats {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .journey-stats h4 {
+        color: #bdc3c7;
+    }
+
+    .stat-row {
+        color: #95a5a6;
+    }
+
+    .stat-value {
+        color: #ecf0f1;
+    }
+
+    .journey-error {
+        background: rgba(231, 76, 60, 0.2);
+        border-color: rgba(231, 76, 60, 0.5);
+        color: #ff6b6b;
+    }
+}
+
+/* Accessibility Enhancements */
+.journey-controls:focus-within {
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.3);
+}
+
+.character-item:focus {
+    outline: 2px solid #9b59b6;
+    outline-offset: 1px;
+}
+
+.animation-btn:focus {
+    outline: 2px solid #9b59b6;
+    outline-offset: 1px;
+}
+
+/* Animation keyframes for special effects */
+@keyframes journeyPulse {
+    0%, 100% {
+        stroke-opacity: 0.7;
+        stroke-width: 3;
+    }
+    50% {
+        stroke-opacity: 1;
+        stroke-width: 5;
+    }
+}
+
+.character-journey-path.animating {
+    animation: journeyPulse 2s ease-in-out infinite;
+}
+
+@keyframes eventHighlight {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+.life-event-marker.highlighted {
+    animation: eventHighlight 1s ease-in-out;
+}
+
+/* Character selection effects */
+.character-item.selecting {
+    animation: characterSelect 0.3s ease-out;
+}
+
+@keyframes characterSelect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

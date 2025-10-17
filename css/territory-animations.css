@@ -1,0 +1,770 @@
+/* Territory Animation System Styles */
+
+/* Territory Controls Panel */
+.territory-controls {
+    position: absolute;
+    top: 280px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 260px;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.territory-controls h3 {
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.territory-controls h3::before {
+    content: "🏛️";
+    font-size: 16px;
+}
+
+/* Territory Control Sections */
+.territory-section {
+    margin-bottom: 16px;
+}
+
+.territory-section h4 {
+    margin: 0 0 8px 0;
+    color: #34495e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Toggle Controls */
+.territory-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #34495e;
+}
+
+.territory-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #e74c3c;
+}
+
+.territory-toggle label {
+    cursor: pointer;
+    user-select: none;
+    flex: 1;
+}
+
+/* Faction List */
+.faction-list {
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px;
+    background: #fafafa;
+}
+
+.faction-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    margin: 2px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 11px;
+}
+
+.faction-item:hover {
+    background: #ecf0f1;
+}
+
+.faction-item.highlighted {
+    background: #e74c3c;
+    color: white;
+}
+
+.faction-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.faction-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.faction-name {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.faction-details {
+    font-size: 10px;
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.faction-item.highlighted .faction-details {
+    opacity: 0.9;
+}
+
+.faction-pattern {
+    font-size: 9px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-left: 4px;
+}
+
+.faction-item.highlighted .faction-pattern {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Opacity and Animation Controls */
+.territory-opacity-control,
+.border-width-control,
+.animation-speed-control {
+    margin: 8px 0;
+}
+
+.territory-opacity-control label,
+.border-width-control label,
+.animation-speed-control label {
+    font-size: 11px;
+    color: #34495e;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.territory-opacity-slider,
+.border-width-slider,
+.animation-speed-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #ecf0f1;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.territory-opacity-slider::-webkit-slider-thumb,
+.border-width-slider::-webkit-slider-thumb,
+.animation-speed-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e74c3c;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.territory-opacity-slider::-moz-range-thumb,
+.border-width-slider::-moz-range-thumb,
+.animation-speed-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e74c3c;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider-value {
+    text-align: center;
+    font-size: 10px;
+    color: #7f8c8d;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+/* Animation Controls */
+.territory-animation-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.territory-animation-btn {
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    text-align: center;
+    min-width: 60px;
+}
+
+.territory-animation-btn:hover {
+    background: #e74c3c;
+    color: white;
+    border-color: #c0392b;
+}
+
+.territory-animation-btn:disabled {
+    background: #f8f9fa;
+    color: #95a5a6;
+    cursor: not-allowed;
+    border-color: #dee2e6;
+}
+
+.territory-animation-btn.active {
+    background: #27ae60;
+    color: white;
+    border-color: #229954;
+}
+
+/* Territory Statistics */
+.territory-stats {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 12px;
+}
+
+.territory-stats h4 {
+    margin: 0 0 6px 0;
+    font-size: 11px;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.territory-stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.territory-stat-value {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Territory Popups and Tooltips */
+.territory-popup {
+    max-width: 200px;
+}
+
+.territory-popup h4 {
+    margin: 0 0 8px 0;
+    color: #2c3e50;
+    font-size: 13px;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 4px;
+}
+
+.territory-info p {
+    margin: 4px 0;
+    font-size: 11px;
+    color: #34495e;
+}
+
+.capital-popup {
+    max-width: 180px;
+}
+
+.capital-popup h4 {
+    margin: 0 0 6px 0;
+    color: #2c3e50;
+    font-size: 12px;
+}
+
+.capital-popup p {
+    margin: 3px 0;
+    font-size: 11px;
+    color: #34495e;
+}
+
+.conflict-popup {
+    max-width: 190px;
+}
+
+.conflict-popup h4 {
+    margin: 0 0 6px 0;
+    color: #e74c3c;
+    font-size: 12px;
+}
+
+.conflict-popup p {
+    margin: 3px 0;
+    font-size: 11px;
+    color: #34495e;
+}
+
+.trade-route-popup {
+    max-width: 180px;
+}
+
+.trade-route-popup h4 {
+    margin: 0 0 6px 0;
+    color: #f39c12;
+    font-size: 12px;
+}
+
+.trade-route-popup p {
+    margin: 3px 0;
+    font-size: 11px;
+    color: #34495e;
+}
+
+.territory-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+/* Territory Map Elements Styling */
+.territory-northern_kingdom {
+    transition: all 0.3s ease;
+}
+
+.territory-southern_empire {
+    transition: all 0.3s ease;
+}
+
+.territory-eastern_federation {
+    transition: all 0.3s ease;
+}
+
+.territory-western_clans {
+    transition: all 0.3s ease;
+}
+
+.territory-central_city_states {
+    transition: all 0.3s ease;
+}
+
+.territory-nomadic_tribes {
+    transition: all 0.3s ease;
+}
+
+.territory-independent {
+    transition: all 0.3s ease;
+}
+
+/* Conflict Zone Styling */
+.conflict-zone {
+    transition: all 0.5s ease;
+}
+
+.conflict-active {
+    animation: conflictPulse 3s ease-in-out infinite;
+}
+
+@keyframes conflictPulse {
+    0%, 100% {
+        fill-opacity: 0.2;
+        stroke-opacity: 0.6;
+    }
+    50% {
+        fill-opacity: 0.5;
+        stroke-opacity: 1;
+    }
+}
+
+/* Trade Route Styling */
+.trade-route {
+    transition: all 0.3s ease;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.trade-route:hover {
+    stroke-width: 6px !important;
+    stroke-opacity: 1 !important;
+}
+
+/* Loading and Error States */
+.territory-loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.territory-loading::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    border-top-color: #e74c3c;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.territory-error {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 11px;
+    color: #e74c3c;
+    text-align: center;
+}
+
+/* Faction Type Icons */
+.faction-item::before {
+    content: "🏛️";
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.faction-item[data-type="kingdom"]::before {
+    content: "👑";
+}
+
+.faction-item[data-type="empire"]::before {
+    content: "🏛️";
+}
+
+.faction-item[data-type="federation"]::before {
+    content: "🤝";
+}
+
+.faction-item[data-type="tribal"]::before {
+    content: "⛺";
+}
+
+.faction-item[data-type="city_state"]::before {
+    content: "🏰";
+}
+
+.faction-item[data-type="nomadic"]::before {
+    content: "🐎";
+}
+
+.faction-item[data-type="independent"]::before {
+    content: "🏴";
+}
+
+/* Territory Animation Effects */
+@keyframes territoryExpansion {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.territory-expanding {
+    animation: territoryExpansion 1s ease-out;
+}
+
+@keyframes territoryContraction {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.4;
+    }
+}
+
+.territory-contracting {
+    animation: territoryContraction 1s ease-in;
+}
+
+@keyframes borderShift {
+    0%, 100% {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dashoffset: 10;
+    }
+}
+
+.border-shifting {
+    animation: borderShift 2s ease-in-out infinite;
+}
+
+/* Capital City Effects */
+.capital-marker {
+    transition: all 0.3s ease;
+}
+
+.capital-marker:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 6px rgba(52, 152, 219, 0.6));
+}
+
+.capital-marker.major {
+    animation: capitalPulse 4s ease-in-out infinite;
+}
+
+@keyframes capitalPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .territory-controls {
+        top: 260px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        min-width: 0;
+        max-height: 350px;
+    }
+
+    .faction-list {
+        max-height: 120px;
+    }
+
+    .territory-animation-controls {
+        flex-direction: column;
+    }
+
+    .territory-animation-btn {
+        min-width: 0;
+    }
+
+    .faction-item {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+
+    .faction-name {
+        font-size: 11px;
+    }
+
+    .faction-details {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .territory-controls {
+        top: 240px;
+        padding: 12px;
+        max-height: 280px;
+    }
+
+    .territory-controls h3 {
+        font-size: 14px;
+    }
+
+    .territory-section h4 {
+        font-size: 12px;
+    }
+
+    .territory-toggle {
+        font-size: 11px;
+    }
+
+    .territory-popup {
+        max-width: 150px;
+    }
+
+    .capital-popup {
+        max-width: 130px;
+    }
+
+    .conflict-popup {
+        max-width: 140px;
+    }
+
+    .trade-route-popup {
+        max-width: 130px;
+    }
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .faction-color {
+        border-width: 0.5px;
+    }
+
+    .territory-controls {
+        backdrop-filter: blur(15px);
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .territory-controls {
+        background: rgba(44, 62, 80, 0.95);
+        color: #ecf0f1;
+    }
+
+    .territory-controls h3 {
+        color: #ecf0f1;
+        border-bottom-color: #e74c3c;
+    }
+
+    .territory-section h4 {
+        color: #bdc3c7;
+    }
+
+    .territory-toggle {
+        color: #bdc3c7;
+    }
+
+    .faction-list {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .faction-item {
+        color: #ecf0f1;
+    }
+
+    .faction-item:hover {
+        background: #4a6741;
+    }
+
+    .faction-item.highlighted {
+        background: #e74c3c;
+        color: white;
+    }
+
+    .territory-animation-btn {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .territory-animation-btn:hover {
+        background: #e74c3c;
+        border-color: #c0392b;
+    }
+
+    .territory-stats {
+        background: #34495e;
+        border-color: #4a6741;
+    }
+
+    .territory-stats h4 {
+        color: #bdc3c7;
+    }
+
+    .territory-stat-row {
+        color: #95a5a6;
+    }
+
+    .territory-stat-value {
+        color: #ecf0f1;
+    }
+
+    .territory-error {
+        background: rgba(231, 76, 60, 0.2);
+        border-color: rgba(231, 76, 60, 0.5);
+        color: #ff6b6b;
+    }
+}
+
+/* Accessibility Enhancements */
+.territory-controls:focus-within {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+}
+
+.faction-item:focus {
+    outline: 2px solid #e74c3c;
+    outline-offset: 1px;
+}
+
+.territory-animation-btn:focus {
+    outline: 2px solid #e74c3c;
+    outline-offset: 1px;
+}
+
+/* Performance Optimizations */
+.territory-northern_kingdom,
+.territory-southern_empire,
+.territory-eastern_federation,
+.territory-western_clans,
+.territory-central_city_states,
+.territory-nomadic_tribes,
+.territory-independent {
+    will-change: opacity, transform;
+}
+
+.conflict-zone {
+    will-change: opacity, fill-opacity;
+}
+
+.trade-route {
+    will-change: stroke-width, stroke-opacity;
+}
+
+/* Special territory status indicators */
+.territory-status-founding {
+    filter: saturate(0.7) brightness(0.9);
+}
+
+.territory-status-expansion {
+    filter: saturate(1.3) brightness(1.1);
+}
+
+.territory-status-peak {
+    filter: saturate(1.5) brightness(1.2);
+}
+
+.territory-status-decline {
+    filter: saturate(0.6) brightness(0.8);
+}
+
+.territory-status-contraction {
+    filter: saturate(0.5) brightness(0.7);
+}

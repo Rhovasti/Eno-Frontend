@@ -1,0 +1,384 @@
+/* Epoch Overlay System Styles */
+
+/* Era Label Markers */
+.era-label-marker {
+    background: none !important;
+    border: none !important;
+}
+
+.era-label {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.era-label.active {
+    background: rgba(52, 152, 219, 0.9);
+    border-color: rgba(52, 152, 219, 0.8);
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
+}
+
+.era-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.era-timespan {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+.era-label.active .era-timespan {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Epoch-specific styling */
+.era-label[data-era="ancient-past"] {
+    background: rgba(142, 68, 173, 0.9);
+    border-color: rgba(142, 68, 173, 0.8);
+}
+
+.era-label[data-era="ancient-past"].active {
+    box-shadow: 0 6px 25px rgba(142, 68, 173, 0.4);
+}
+
+.era-label[data-era="age-of-foundations"] {
+    background: rgba(41, 128, 185, 0.9);
+    border-color: rgba(41, 128, 185, 0.8);
+}
+
+.era-label[data-era="age-of-foundations"].active {
+    box-shadow: 0 6px 25px rgba(41, 128, 185, 0.4);
+}
+
+.era-label[data-era="before-era"] {
+    background: rgba(22, 160, 133, 0.9);
+    border-color: rgba(22, 160, 133, 0.8);
+}
+
+.era-label[data-era="before-era"].active {
+    box-shadow: 0 6px 25px rgba(22, 160, 133, 0.4);
+}
+
+.era-label[data-era="current-era"] {
+    background: rgba(39, 174, 96, 0.9);
+    border-color: rgba(39, 174, 96, 0.8);
+}
+
+.era-label[data-era="current-era"].active {
+    box-shadow: 0 6px 25px rgba(39, 174, 96, 0.4);
+}
+
+.era-label[data-era="near-future"] {
+    background: rgba(243, 156, 18, 0.9);
+    border-color: rgba(243, 156, 18, 0.8);
+}
+
+.era-label[data-era="near-future"].active {
+    box-shadow: 0 6px 25px rgba(243, 156, 18, 0.4);
+}
+
+/* Epoch Boundary Markers */
+.epoch-boundary-marker {
+    background: none !important;
+    border: none !important;
+}
+
+.boundary-line {
+    height: 2px;
+    background: currentColor;
+    position: relative;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.boundary-line:hover {
+    opacity: 1;
+    height: 3px;
+}
+
+.boundary-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Epoch Overlay Effects */
+.leaflet-overlay-pane .epoch-atmosphere {
+    mix-blend-mode: multiply;
+    transition: all 1s ease;
+}
+
+/* Map Container Epoch Styling */
+.map-epoch-ancient-past {
+    filter: sepia(20%) hue-rotate(270deg) saturate(1.2);
+}
+
+.map-epoch-age-of-foundations {
+    filter: sepia(10%) hue-rotate(200deg) saturate(1.1);
+}
+
+.map-epoch-before-era {
+    filter: sepia(5%) hue-rotate(150deg) saturate(1.05);
+}
+
+.map-epoch-current-era {
+    filter: none;
+}
+
+.map-epoch-near-future {
+    filter: sepia(15%) hue-rotate(30deg) saturate(1.15) brightness(1.05);
+}
+
+/* Epoch Transition Effects */
+.epoch-transition {
+    transition: filter 1s ease-in-out;
+}
+
+/* Era Controls Panel (if needed) */
+.epoch-controls {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.epoch-controls h3 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 14px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.epoch-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 13px;
+    color: #34495e;
+}
+
+.epoch-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #3498db;
+}
+
+.epoch-toggle label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.intensity-slider {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.intensity-slider input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #ecf0f1;
+    outline: none;
+    accent-color: #3498db;
+}
+
+.intensity-value {
+    text-align: center;
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Epoch Information Tooltip */
+.epoch-info-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    max-width: 250px;
+    z-index: 1001;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.epoch-info-tooltip h4 {
+    margin: 0 0 5px 0;
+    color: #3498db;
+    font-size: 14px;
+}
+
+.epoch-info-tooltip p {
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.epoch-landmarks {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+.epoch-landmarks li {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 2px 0;
+}
+
+.epoch-landmarks li:before {
+    content: "• ";
+    color: #3498db;
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .epoch-controls {
+        top: 70px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        min-width: 0;
+    }
+
+    .era-label {
+        padding: 6px 10px;
+        transform: scale(0.85);
+    }
+
+    .era-label.active {
+        transform: scale(1);
+    }
+
+    .era-name {
+        font-size: 12px;
+    }
+
+    .era-timespan {
+        font-size: 10px;
+    }
+
+    .boundary-label {
+        font-size: 9px;
+        padding: 1px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .epoch-controls {
+        top: 60px;
+        padding: 10px;
+    }
+
+    .era-label {
+        padding: 4px 8px;
+        transform: scale(0.8);
+    }
+
+    .era-name {
+        font-size: 11px;
+    }
+
+    .era-timespan {
+        font-size: 9px;
+    }
+
+    .epoch-info-tooltip {
+        max-width: 200px;
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+}
+
+/* Animation keyframes for special effects */
+@keyframes epochPulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.era-label.pulsing {
+    animation: epochPulse 2s ease-in-out infinite;
+}
+
+@keyframes epochGlow {
+    0%, 100% {
+        box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(52, 152, 219, 0.6);
+    }
+}
+
+.era-label.active.glowing {
+    animation: epochGlow 3s ease-in-out infinite;
+}
+
+/* Color transition effects */
+.leaflet-container {
+    transition: filter 1s ease-in-out;
+}
+
+/* Era-specific map filters for enhanced atmosphere */
+.map-container.epoch-ancient-past {
+    --epoch-filter: sepia(20%) hue-rotate(270deg) saturate(1.2) contrast(1.1);
+}
+
+.map-container.epoch-age-of-foundations {
+    --epoch-filter: sepia(10%) hue-rotate(200deg) saturate(1.1) contrast(1.05);
+}
+
+.map-container.epoch-before-era {
+    --epoch-filter: sepia(5%) hue-rotate(150deg) saturate(1.05);
+}
+
+.map-container.epoch-current-era {
+    --epoch-filter: none;
+}
+
+.map-container.epoch-near-future {
+    --epoch-filter: sepia(15%) hue-rotate(30deg) saturate(1.15) brightness(1.05);
+}
+
+/* Apply the epoch filters */
+.map-container[class*="epoch-"] .leaflet-container {
+    filter: var(--epoch-filter, none);
+}

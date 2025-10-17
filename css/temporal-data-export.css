@@ -1,0 +1,485 @@
+/**
+ * Temporal Data Export System Styles
+ *
+ * Professional styling for the data export control panel and UI components
+ */
+
+/* Main Export Controls Panel */
+.export-controls {
+    position: absolute;
+    top: 440px;
+    right: 20px;
+    min-width: 320px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1000;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.export-controls h3 {
+    margin: 0;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Export Sections */
+.export-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+.export-section:last-child {
+    border-bottom: none;
+}
+
+.export-section h4 {
+    margin: 0 0 12px 0;
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Export Format Selection */
+.format-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.format-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.format-option:hover {
+    border-color: #667eea;
+    background: #f7fafc;
+}
+
+.format-option.selected {
+    border-color: #667eea;
+    background: #edf2f7;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.format-option input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #667eea;
+}
+
+.format-option label {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Data Category Selection */
+.category-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.category-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.category-option:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.category-option.selected {
+    background: #edf2f7;
+    border-color: #667eea;
+}
+
+.category-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4a5568;
+    flex-grow: 1;
+}
+
+.category-option input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #667eea;
+}
+
+.category-count {
+    font-size: 11px;
+    color: #718096;
+    background: #edf2f7;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Export Actions */
+.export-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.export-btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.export-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.export-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.export-btn.secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+}
+
+.export-btn.secondary:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.export-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Export Progress */
+.export-progress {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f7fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.export-progress.active {
+    background: #edf2f7;
+    border-color: #667eea;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.progress-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.progress-percentage {
+    font-size: 12px;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Export Options */
+.export-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.export-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.export-toggle label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4a5568;
+    flex-grow: 1;
+}
+
+.export-toggle input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #667eea;
+}
+
+/* Export Statistics */
+.export-stats {
+    background: #f7fafc;
+    border-radius: 6px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.export-stats h4 {
+    margin: 0 0 8px 0;
+    color: #2d3748;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.export-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 12px;
+}
+
+.export-stat-row span:first-child {
+    color: #718096;
+    font-weight: 500;
+}
+
+.export-stat-value {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Export Quick Actions */
+.export-quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.quick-action-btn {
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.quick-action-btn:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.quick-action-btn:active {
+    transform: translateY(1px);
+}
+
+/* Export Status Messages */
+.export-status {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.export-status.success {
+    background: #f0fff4;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.export-status.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #feb2b2;
+}
+
+.export-status.warning {
+    background: #fffbeb;
+    color: #744210;
+    border: 1px solid #f6e05e;
+}
+
+/* File Size Indicator */
+.file-size-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f7fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    margin-top: 8px;
+}
+
+.file-size-label {
+    font-size: 12px;
+    color: #718096;
+    font-weight: 500;
+}
+
+.file-size-value {
+    font-size: 12px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Loading Animation */
+@keyframes exportSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.export-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e2e8f0;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: exportSpin 1s linear infinite;
+}
+
+/* Export Success Animation */
+@keyframes exportSuccess {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.export-btn.success {
+    animation: exportSuccess 0.6s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .export-controls {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        max-width: none;
+        min-width: auto;
+        max-height: 60vh;
+    }
+
+    .format-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .export-quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .export-controls {
+        background: rgba(45, 55, 72, 0.95);
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+
+    .export-section {
+        border-color: #4a5568;
+    }
+
+    .format-option,
+    .category-option,
+    .quick-action-btn {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+
+    .format-option:hover,
+    .category-option:hover,
+    .quick-action-btn:hover {
+        background: #4a5568;
+    }
+
+    .export-stats {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+
+    .export-stat-value {
+        color: #e2e8f0;
+    }
+
+    .file-size-indicator {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+}

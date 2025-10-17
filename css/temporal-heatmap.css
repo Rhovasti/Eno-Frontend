@@ -1,0 +1,581 @@
+/* Temporal Heat Map System Styles */
+
+/* Heat Map Containers */
+.temporal-heatmap-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 400;
+}
+
+.heat-map-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    transition: opacity 0.5s ease;
+}
+
+/* Heat Map Grid Cells */
+.heat-cell {
+    position: absolute;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.heat-cell:hover {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    z-index: 401;
+    transform: scale(1.05);
+}
+
+/* Heat Map Controls Panel */
+.heatmap-controls {
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 220px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.heatmap-controls h3 {
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.heatmap-controls h3::before {
+    content: "🔥";
+    font-size: 16px;
+}
+
+/* Heat Mode Selection */
+.heat-mode-section {
+    margin-bottom: 16px;
+}
+
+.heat-mode-section h4 {
+    margin: 0 0 8px 0;
+    color: #34495e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.heat-mode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.heat-mode-btn {
+    background: #ecf0f1;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.heat-mode-btn:hover {
+    background: #d5dbdb;
+    border-color: #bdc3c7;
+}
+
+.heat-mode-btn.active {
+    background: #e74c3c;
+    color: white;
+    border-color: #c0392b;
+    font-weight: 500;
+}
+
+.heat-mode-btn.active::after {
+    content: " ✓";
+    float: right;
+}
+
+/* Intensity Controls */
+.intensity-controls {
+    margin-bottom: 16px;
+}
+
+.intensity-slider-container {
+    margin: 8px 0;
+}
+
+.intensity-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #ecf0f1;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.intensity-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #e74c3c;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.intensity-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #e74c3c;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.intensity-value {
+    text-align: center;
+    font-size: 11px;
+    color: #7f8c8d;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Grid Size Controls */
+.grid-size-controls {
+    margin-bottom: 16px;
+}
+
+.grid-size-buttons {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.grid-size-btn {
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    text-align: center;
+    min-width: 50px;
+}
+
+.grid-size-btn:hover {
+    background: #d5dbdb;
+}
+
+.grid-size-btn.active {
+    background: #3498db;
+    color: white;
+    border-color: #2980b9;
+}
+
+/* Time Range Controls */
+.time-range-controls {
+    margin-bottom: 16px;
+}
+
+.time-range-input {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.time-range-input input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.time-range-input input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Toggle Controls */
+.heat-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #34495e;
+}
+
+.heat-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #e74c3c;
+}
+
+.heat-toggle label {
+    cursor: pointer;
+    user-select: none;
+    flex: 1;
+}
+
+/* Heat Map Legend */
+.heatmap-legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    padding: 12px 16px;
+    z-index: 1000;
+    min-width: 180px;
+}
+
+.legend-title {
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.legend-gradient {
+    height: 20px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.legend-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.legend-stats {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.legend-stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+}
+
+/* Heat Map Tooltip */
+.heatmap-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    max-width: 200px;
+    z-index: 1002;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tooltip-title {
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.tooltip-value {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+}
+
+.tooltip-events {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.tooltip-event {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 1px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Animation Effects */
+.heat-cell.updating {
+    animation: heatPulse 0.6s ease-in-out;
+}
+
+@keyframes heatPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.heat-map-layer.transitioning {
+    animation: heatTransition 0.8s ease-in-out;
+}
+
+@keyframes heatTransition {
+    0% {
+        opacity: 0;
+        filter: blur(2px);
+    }
+    50% {
+        opacity: 0.5;
+        filter: blur(1px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+/* Performance Optimization */
+.heat-cell {
+    will-change: opacity, transform;
+}
+
+.heat-map-layer {
+    will-change: opacity;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .heatmap-controls {
+        top: 110px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        min-width: 0;
+        padding: 12px;
+    }
+
+    .heatmap-legend {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        min-width: 0;
+    }
+
+    .heat-mode-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .heat-mode-btn {
+        flex: 1;
+        min-width: 0;
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .grid-size-buttons {
+        justify-content: space-between;
+    }
+
+    .grid-size-btn {
+        min-width: 40px;
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heatmap-controls {
+        top: 100px;
+        padding: 10px;
+        max-height: 300px;
+    }
+
+    .heatmap-controls h3 {
+        font-size: 14px;
+    }
+
+    .heat-mode-btn {
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+
+    .heatmap-tooltip {
+        max-width: 160px;
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .legend-title {
+        font-size: 11px;
+    }
+
+    .legend-labels {
+        font-size: 9px;
+    }
+
+    .legend-stats {
+        font-size: 9px;
+    }
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .heat-cell {
+        border-radius: 2px;
+    }
+
+    .heatmap-controls {
+        backdrop-filter: blur(15px);
+    }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+    .heatmap-controls {
+        background: rgba(44, 62, 80, 0.95);
+        color: #ecf0f1;
+    }
+
+    .heatmap-controls h3 {
+        color: #ecf0f1;
+        border-bottom-color: #e74c3c;
+    }
+
+    .heat-mode-section h4 {
+        color: #bdc3c7;
+    }
+
+    .heat-mode-btn {
+        background: #34495e;
+        color: #ecf0f1;
+    }
+
+    .heat-mode-btn:hover {
+        background: #4a6741;
+    }
+
+    .grid-size-btn {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .grid-size-btn:hover {
+        background: #4a6741;
+    }
+
+    .time-range-input input {
+        background: #34495e;
+        color: #ecf0f1;
+        border-color: #4a6741;
+    }
+
+    .heat-toggle {
+        color: #bdc3c7;
+    }
+}
+
+/* Loading State */
+.heatmap-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    z-index: 1003;
+}
+
+.heatmap-loading::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error State */
+.heatmap-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    z-index: 1003;
+    max-width: 250px;
+    text-align: center;
+}
+
+.heatmap-error button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.heatmap-error button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
