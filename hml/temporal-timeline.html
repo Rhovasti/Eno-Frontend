@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Timeline - Eno Worldbuilding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .timeline-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 30px;
+        }
+
+        .temporal-timeline {
+            width: 100%;
+        }
+
+        .timeline-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .zoom-controls button {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: #3498db;
+            color: white;
+            font-size: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .zoom-controls button:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .zoom-controls button:active {
+            transform: scale(0.95);
+        }
+
+        #zoomLevel {
+            font-weight: 600;
+            color: #2c3e50;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .time-display {
+            flex: 1;
+            text-align: center;
+        }
+
+        #currentTime {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            display: inline-block;
+            padding: 8px 16px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .timeline-filters {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .timeline-filters select {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+        }
+
+        .timeline-filters label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .timeline-filters input[type="range"] {
+            width: 100px;
+        }
+
+        #importanceValue {
+            font-weight: bold;
+            color: #3498db;
+            min-width: 20px;
+        }
+
+        .timeline-canvas-container {
+            position: relative;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        #timelineCanvas {
+            display: block;
+            cursor: grab;
+            width: 100%;
+        }
+
+        #timelineCanvas:active {
+            cursor: grabbing;
+        }
+
+        .event-tooltip {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .timeline-minimap {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        #minimapCanvas {
+            display: block;
+            width: 100%;
+        }
+
+        .cluster-popup {
+            position: absolute;
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+            max-width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .cluster-popup h4 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .cluster-event {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cluster-event:hover {
+            background: #e8f4f8;
+            transform: translateX(5px);
+        }
+
+        .cluster-event strong {
+            color: #2c3e50;
+        }
+
+        .cluster-event small {
+            color: #7f8c8d;
+        }
+
+        .event-legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .legend-label {
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            border-radius: 6px;
+        }
+
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            list-style-position: inside;
+            color: #34495e;
+        }
+
+        .instructions li {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-controls {
+                flex-direction: column;
+            }
+
+            .page-header h1 {
+                font-size: 1.8em;
+            }
+
+            .timeline-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>⏰ Temporal Timeline</h1>
+        <p>Explore 12,000+ cycles of world history</p>
+    </div>
+
+    <div class="timeline-container">
+        <div id="timelineViewer"></div>
+
+        <div class="event-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e74c3c;"></div>
+                <span class="legend-label">Battles</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #3498db;"></div>
+                <span class="legend-label">Foundings</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2ecc71;"></div>
+                <span class="legend-label">Treaties</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f39c12;"></div>
+                <span class="legend-label">Births</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #95a5a6;"></div>
+                <span class="legend-label">Deaths</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #9b59b6;"></div>
+                <span class="legend-label">Discoveries</span>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li><strong>Drag</strong> the timeline left/right to navigate through time</li>
+                <li><strong>Scroll</strong> or use +/- buttons to zoom in/out (7 zoom levels)</li>
+                <li><strong>Click</strong> event markers to see details</li>
+                <li><strong>Filter</strong> events by type or importance</li>
+                <li><strong>Minimap</strong> at bottom shows your current viewport in full timeline</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Load time converter utility -->
+    <script src="../js/utils/timeConverter.js"></script>
+
+    <!-- Load timeline component -->
+    <script src="../js/components/timeline/TemporalTimeline.js"></script>
+
+    <script>
+        // Initialize timeline
+        const timeline = new TemporalTimeline('timelineViewer', {
+            initialCycle: 0, // Start at cycle 0
+            initialZoomLevel: 3, // Start at 'decade' view
+            onEventClick: (event) => {
+                // Show event details in an alert (could be a modal in production)
+                alert(`
+Event: ${event.title}
+Time: ${event.formatted_time}
+Type: ${event.event_type}
+Importance: ${event.importance}/10
+Location: ${event.location_type}: ${event.location_id}
+
+Description:
+${event.description || 'No description available'}
+
+Participants:
+${event.participants.join(', ') || 'None listed'}
+                `.trim());
+            },
+            onTimeChange: (cycle) => {
+                console.log('Time changed to cycle:', cycle);
+                // Could trigger updates to other components (like a map)
+            }
+        });
+
+        // Example: Jump to specific events
+        window.jumpToMalveibaFounding = () => {
+            timeline.jumpToCycle(-500);
+            timeline.currentZoomLevel = 4; // Zoom in to cycle view
+            timeline.loadEvents().then(() => timeline.render());
+        };
+
+        // Example: Filter to battles only
+        window.showBattlesOnly = () => {
+            timeline.setFilters({
+                eventTypes: ['battle'],
+                minImportance: 5
+            });
+        };
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                const zoom = timeline.zoomLevels[timeline.currentZoomLevel];
+                timeline.currentCycle -= zoom.span * 0.1;
+                timeline.render();
+            } else if (e.key === 'ArrowRight') {
+                const zoom = timeline.zoomLevels[timeline.currentZoomLevel];
+                timeline.currentCycle += zoom.span * 0.1;
+                timeline.render();
+            } else if (e.key === '+' || e.key === '=') {
+                timeline.zoomIn();
+            } else if (e.key === '-' || e.key === '_') {
+                timeline.zoomOut();
+            }
+        });
+
+        console.log('Temporal Timeline loaded successfully!');
+        console.log('Try: jumpToMalveibaFounding() or showBattlesOnly()');
+    </script>
+</body>
+</html>

@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eno Unified Map - Hierarchical World Explorer</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #1a1a2e;
+            transition: filter 0.3s ease;
+        }
+
+        #map.loading {
+            filter: blur(1px) brightness(0.8);
+        }
+
+        .breadcrumb {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 14px;
+            max-width: 600px;
+        }
+
+        .breadcrumb-item {
+            display: inline-block;
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb-item:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item.active {
+            color: #2c3e50;
+            cursor: default;
+            font-weight: 600;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 8px;
+            color: #95a5a6;
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 80px;
+            right: 15px;
+            width: 350px;
+            max-height: calc(100vh - 100px);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .info-panel.visible {
+            display: block;
+        }
+
+        .info-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .info-header h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+
+        .info-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 13px;
+        }
+
+        .info-content {
+            padding: 15px;
+        }
+
+        .info-section {
+            margin-bottom: 15px;
+        }
+
+        .info-section h4 {
+            color: #2c3e50;
+            font-size: 14px;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 13px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            transition: background 0.2s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .floor-selector {
+            position: absolute;
+            bottom: 80px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+        }
+
+        .floor-selector.visible {
+            display: block;
+        }
+
+        .floor-selector h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .floor-btn {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: #ecf0f1;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .floor-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .floor-info {
+            font-size: 11px;
+            color: #7f8c8d;
+            margin-top: 3px;
+        }
+
+        .floor-btn:hover {
+            background: #d5dbdb;
+        }
+
+        .floor-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+
+        .zoom-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 1000;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+
+        .zoom-level {
+            font-weight: 600;
+            color: #3498db;
+        }
+
+        .layer-controls {
+            position: absolute;
+            top: 80px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        .layer-controls h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .layer-controls label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+            font-size: 13px;
+            color: #555;
+            user-select: none;
+        }
+
+        .layer-controls input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .layer-controls .action-btn {
+            display: block;
+            width: 100%;
+            margin: 6px 0;
+            padding: 8px 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .layer-controls .action-btn:hover {
+            background: #2980b9;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 350px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            font-size: 14px;
+            background: rgba(255,255,255,0.95);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 2px 20px rgba(52,152,219,0.4);
+            background: white;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            color: #7f8c8d;
+            pointer-events: none;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            margin-top: 5px;
+        }
+
+        .search-results.visible {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: #f8f9fa;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .search-result-subtitle {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .search-result-type {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        .search-result-type.citystate {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .search-result-type.district {
+            background: #f39c12;
+            color: white;
+        }
+
+        .search-result-type.building {
+            background: #2ecc71;
+            color: white;
+        }
+
+        /* Enhanced marker styling */
+        .citystate-marker {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .citystate-marker:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .leaflet-interactive {
+            transition: filter 0.15s ease;
+        }
+
+        /* Only apply hover effects to non-floor-plan elements */
+        .leaflet-interactive:not([data-floor-room]):hover {
+            filter: brightness(1.1) saturate(1.2);
+        }
+
+        /* Custom popup enhancements */
+        .leaflet-popup-content {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .map-popup {
+            min-width: 200px;
+        }
+
+        .map-popup strong {
+            color: #2c3e50;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 4px;
+        }
+
+        .popup-buttons button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .popup-buttons button:hover {
+            background: linear-gradient(135deg, #2980b9, #21618c);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .popup-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .popup-buttons button {
+            flex: 1;
+            padding: 5px 10px;
+            border: 1px solid #3498db;
+            background: white;
+            color: #3498db;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .popup-buttons button:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .wiki-entry {
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .wiki-entry:last-child {
+            border-bottom: none;
+        }
+
+        .wiki-entry h4 {
+            margin: 0 0 5px 0;
+            font-size: 14px;
+        }
+
+        .wiki-entry a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .wiki-entry a:hover {
+            text-decoration: underline;
+        }
+
+        .wiki-entry p {
+            margin: 5px 0;
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+
+        .wiki-entry small {
+            color: #95a5a6;
+            font-size: 11px;
+        }
+
+        .search-box {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .search-input {
+            width: 300px;
+            padding: 12px 40px 12px 15px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 14px;
+            background: rgba(255,255,255,0.95);
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 2px 15px rgba(52,152,219,0.4);
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 250px;
+            font-size: 12px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 8px;
+            border: 1px solid #bdc3c7;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+            display: none;
+        }
+
+        .loading.visible {
+            display: block;
+        }
+
+        /* Animation enhancements */
+        .leaflet-marker-icon,
+        .leaflet-marker-shadow {
+            transition: all 0.3s ease;
+        }
+
+        .leaflet-popup-content-wrapper {
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .leaflet-control-layers {
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .layer-transition {
+            animation: layerFadeIn 0.5s ease;
+        }
+
+        @keyframes layerFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #ecf0f1;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+        }
+
+        .leaflet-popup-content {
+            margin: 15px;
+            font-size: 13px;
+        }
+
+        .popup-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .popup-info {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* Game marker styles */
+        .game-marker {
+            border: none !important;
+            background: transparent !important;
+        }
+
+        .game-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            }
+        }
+
+        .reduce-motion * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .wiki-marker {
+            border: none !important;
+            background: transparent !important;
+        }
+
+        .wiki-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #16a085;
+            color: white;
+            font-size: 16px;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .game-status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        .game-status-badge.active {
+            background: #27ae60;
+            color: white;
+        }
+
+        .game-status-badge.recruiting {
+            background: #f39c12;
+            color: white;
+        }
+
+        .game-status-badge.archived {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .wiki-category-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            background: #16a085;
+            color: white;
+            margin-left: 8px;
+        }
+
+        .game-popup .game-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        .game-status.recruiting {
+            background: #f39c12;
+            color: white;
+        }
+
+        .game-status.active {
+            background: #27ae60;
+            color: white;
+        }
+
+        .game-status.archived {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .game-info {
+            margin: 8px 0;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .game-popup .popup-buttons {
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .game-popup .popup-buttons button {
+            flex: none;
+            width: 100%;
+            margin: 2px 0;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .search-container {
+                width: calc(100% - 30px);
+                left: 15px;
+                transform: none;
+            }
+
+            .search-input {
+                font-size: 16px; /* Prevents zoom on iOS */
+                padding: 14px 45px 14px 15px;
+            }
+
+            .layer-controls {
+                top: 70px;
+                left: 10px;
+                right: 10px;
+                min-width: auto;
+                padding: 12px;
+            }
+
+            .layer-controls label {
+                font-size: 14px;
+                margin: 10px 0;
+            }
+
+            .info-panel {
+                top: 70px;
+                right: 10px;
+                left: 10px;
+                width: auto;
+                max-height: calc(100vh - 80px);
+            }
+
+            .breadcrumb {
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                max-width: none;
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+
+            .zoom-indicator {
+                bottom: 10px;
+                left: 10px;
+                font-size: 11px;
+                padding: 8px 12px;
+            }
+
+            .legend {
+                bottom: 10px;
+                right: 10px;
+                max-width: 200px;
+                font-size: 11px;
+                padding: 12px;
+            }
+
+            .floor-selector {
+                bottom: 60px;
+                right: 10px;
+                left: 10px;
+                width: auto;
+            }
+
+            .floor-btn {
+                padding: 10px 15px;
+                font-size: 14px;
+                margin: 8px 0;
+            }
+
+            /* Touch-friendly popup buttons */
+            .popup-buttons button {
+                padding: 12px 16px;
+                font-size: 14px;
+                margin: 6px 3px;
+                min-height: 44px; /* iOS touch target size */
+            }
+
+            .map-popup {
+                min-width: 250px;
+                max-width: calc(100vw - 40px);
+            }
+
+            /* Reduce animation complexity on mobile for performance */
+            .leaflet-marker-icon,
+            .leaflet-marker-shadow {
+                transition: none;
+            }
+
+            .citystate-marker:hover {
+                transform: none;
+                filter: none;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+            .legend-color {
+                border-width: 0.5px;
+            }
+
+            .search-icon {
+                font-size: 16px;
+            }
+        }
+
+        /* Temporal Controls Styling */
+        .temporal-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(139, 115, 85, 0.95);
+            border: 2px solid #8b7355;
+            border-radius: 12px;
+            padding: 15px 20px;
+            min-width: 600px;
+            max-width: 800px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .temporal-controls.collapsed .temporal-body {
+            display: none;
+        }
+
+        .temporal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .temporal-header h3 {
+            margin: 0;
+            color: #f5e6d3;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .toggle-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            color: #f5e6d3;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .temporal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .time-display-large {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .current-time {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5e6d3;
+            margin-bottom: 5px;
+        }
+
+        .current-era {
+            font-size: 14px;
+            color: #d4af37;
+            font-style: italic;
+        }
+
+        .playback-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: #f5e6d3;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+
+        .control-btn:active {
+            transform: scale(0.95);
+        }
+
+        .timeline-scrubber {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .scrubber-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: rgba(245, 230, 211, 0.7);
+        }
+
+        #timeScrubber {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        #timeScrubber::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4af37;
+            cursor: pointer;
+            border: 2px solid #f5e6d3;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #timeScrubber::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4af37;
+            cursor: pointer;
+            border: 2px solid #f5e6d3;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .speed-control {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .speed-control label {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            color: #f5e6d3;
+            font-size: 12px;
+        }
+
+        .speed-control select {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            color: #f5e6d3;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .quick-jumps {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .quick-jump-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 5px;
+            color: #f5e6d3;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .quick-jump-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.7);
+        }
+
+        .temporal-filters {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            font-size: 12px;
+            color: #f5e6d3;
+        }
+
+        .temporal-filters label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .temporal-filters input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        /* Mobile responsiveness for temporal controls */
+        @media (max-width: 768px) {
+            .temporal-controls {
+                min-width: 90%;
+                left: 5%;
+                transform: translateX(0);
+                bottom: 10px;
+                padding: 10px;
+            }
+
+            .temporal-header h3 {
+                font-size: 16px;
+            }
+
+            .current-time {
+                font-size: 18px;
+            }
+
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .quick-jumps {
+                flex-wrap: wrap;
+            }
+
+            .quick-jump-btn {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+
+            .temporal-filters {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+        /* Era Atmosphere System - Simple Implementation */
+        .era-atmosphere-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 500;
+            transition: background-color 2s ease, opacity 2s ease;
+            opacity: 0;
+        }
+
+        .era-atmosphere-overlay.active {
+            opacity: 1;
+        }
+
+        /* Era-specific atmosphere tints */
+        .era-atmosphere-overlay.ancient-past {
+            background: radial-gradient(circle at center, rgba(142, 68, 173, 0.15), rgba(142, 68, 173, 0.08));
+        }
+
+        .era-atmosphere-overlay.age-of-foundations {
+            background: radial-gradient(circle at center, rgba(41, 128, 185, 0.12), rgba(41, 128, 185, 0.06));
+        }
+
+        .era-atmosphere-overlay.before-era {
+            background: radial-gradient(circle at center, rgba(22, 160, 133, 0.1), rgba(22, 160, 133, 0.05));
+        }
+
+        .era-atmosphere-overlay.current-era {
+            background: transparent;
+        }
+
+        .era-atmosphere-overlay.near-future {
+            background: radial-gradient(circle at center, rgba(243, 156, 18, 0.12), rgba(243, 156, 18, 0.06));
+        }
+
+        .era-atmosphere-overlay.far-future {
+            background: radial-gradient(circle at center, rgba(231, 76, 60, 0.15), rgba(231, 76, 60, 0.08));
+        }
+
+        /* Era indicator badge */
+        .era-indicator {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 12px 18px;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .era-indicator:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .era-indicator-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 4px;
+        }
+
+        .era-indicator-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+            transition: color 0.5s ease;
+        }
+
+        .era-indicator-timespan {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+
+        /* Era-specific indicator colors */
+        .era-indicator[data-era="ancient-past"] .era-indicator-name {
+            color: #a569bd;
+        }
+
+        .era-indicator[data-era="age-of-foundations"] .era-indicator-name {
+            color: #5dade2;
+        }
+
+        .era-indicator[data-era="before-era"] .era-indicator-name {
+            color: #48c9b0;
+        }
+
+        .era-indicator[data-era="current-era"] .era-indicator-name {
+            color: #52be80;
+        }
+
+        .era-indicator[data-era="near-future"] .era-indicator-name {
+            color: #f5b041;
+        }
+
+        .era-indicator[data-era="far-future"] .era-indicator-name {
+            color: #ec7063;
+        }
+
+        /* Mobile adjustments for era indicator */
+        @media (max-width: 768px) {
+            .era-indicator {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
+
+            .era-indicator-label {
+                font-size: 9px;
+            }
+
+            .era-indicator-name {
+                font-size: 13px;
+            }
+
+            .era-indicator-timespan {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Era Atmosphere Overlay -->
+    <div class="era-atmosphere-overlay" id="eraAtmosphere"></div>
+
+    <!-- Era Indicator Badge -->
+    <div class="era-indicator" id="eraIndicator" data-era="current-era">
+        <div class="era-indicator-label">Time Period</div>
+        <div class="era-indicator-name">Current Era</div>
+        <div class="era-indicator-timespan">Cycle 0 - 999</div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="breadcrumb" id="breadcrumb">
+        <span class="breadcrumb-item active" data-level="world">World</span>
+    </div>
+
+    <div class="search-container">
+        <div class="search-input-wrapper">
+            <input type="text" id="mapSearch" class="search-input" placeholder="Search locations..." autocomplete="off">
+            <div class="search-icon">🔍</div>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="info-panel" id="infoPanel">
+        <div class="info-header">
+            <button class="close-btn" onclick="closeInfoPanel()">&times;</button>
+            <h3 id="infoTitle">Feature Details</h3>
+            <p id="infoSubtitle"></p>
+        </div>
+        <div class="info-content" id="infoContent"></div>
+    </div>
+
+    <div class="floor-selector" id="floorSelector"></div>
+
+    <div class="zoom-indicator">
+        View: <span class="zoom-level" id="zoomLevel">World</span> (Zoom: <span id="zoomValue">3</span>)
+    </div>
+
+    <div class="layer-controls">
+        <h4>Map Layers</h4>
+        <label><input type="checkbox" id="layer-citystates" checked> Citystates</label>
+        <label><input type="checkbox" id="layer-regions" checked> Regions</label>
+        <label><input type="checkbox" id="layer-districts" checked> Districts</label>
+        <label><input type="checkbox" id="layer-buildings" checked> Buildings</label>
+
+        <h4 style="margin-top:12px;">Game Layers</h4>
+        <label><input type="checkbox" id="layer-games" checked> All Games</label>
+        <label><input type="checkbox" id="layer-games-active"> Active Only</label>
+        <label><input type="checkbox" id="layer-games-recruiting"> Recruiting Only</label>
+
+        <h4 style="margin-top:12px;">Wiki Layers</h4>
+        <label><input type="checkbox" id="layer-wiki"> Wiki Entries</label>
+
+        <h4 style="margin-top:12px;">Actions</h4>
+        <button class="action-btn" onclick="createWikiEntry()">📖 Create Wiki Entry</button>
+        <button class="action-btn" onclick="shareLocation()">🔗 Share Location</button>
+        <button class="action-btn" onclick="viewEconomics()">💰 Economics</button>
+    </div>
+
+    <div class="legend" id="legend"></div>
+
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <div>Loading map data...</div>
+    </div>
+
+    <!-- Temporal Controls Panel -->
+    <div class="temporal-controls" id="temporalControls">
+        <div class="temporal-header">
+            <h3>⏰ Temporal Navigator</h3>
+            <button class="toggle-btn" id="toggleTemporal">Collapse</button>
+        </div>
+
+        <div class="temporal-body" id="temporalBody">
+            <div class="time-display-large">
+                <div class="current-time" id="currentTime">Cycle 0, Day 1</div>
+                <div class="current-era" id="currentEra">Now Era</div>
+            </div>
+
+            <div class="playback-controls">
+                <button class="control-btn" id="rewindBtn" title="Rewind (10 cycles)">⏪</button>
+                <button class="control-btn" id="stepBackBtn" title="Step Back (1 cycle)">⏮</button>
+                <button class="control-btn" id="playPauseBtn" title="Play/Pause (Space)">▶</button>
+                <button class="control-btn" id="stepForwardBtn" title="Step Forward (1 cycle)">⏭</button>
+                <button class="control-btn" id="fastForwardBtn" title="Fast Forward (10 cycles)">⏩</button>
+            </div>
+
+            <div class="timeline-scrubber">
+                <div class="scrubber-labels">
+                    <span>Ancient Past (-10000)</span>
+                    <span>Present (0)</span>
+                    <span>Future (+2000)</span>
+                </div>
+                <input type="range" id="timeScrubber" min="-10000" max="2000" value="0" step="1">
+            </div>
+
+            <div class="speed-control">
+                <label>
+                    <span>Playback Speed</span>
+                    <select id="playbackSpeed">
+                        <option value="0.5">0.5x</option>
+                        <option value="1" selected>1x</option>
+                        <option value="2">2x</option>
+                        <option value="5">5x</option>
+                        <option value="10">10x</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Step Size</span>
+                    <select id="stepSize">
+                        <option value="1" selected>1 cycle</option>
+                        <option value="10">10 cycles</option>
+                        <option value="100">100 cycles</option>
+                        <option value="365">1 year (360 days)</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="quick-jumps">
+                <button class="quick-jump-btn" data-cycle="-5000">Ancient Past</button>
+                <button class="quick-jump-btn" data-cycle="-500">Foundations</button>
+                <button class="quick-jump-btn" data-cycle="0">Present</button>
+                <button class="quick-jump-btn" data-cycle="500">Future</button>
+            </div>
+
+            <div class="temporal-filters">
+                <label><input type="checkbox" id="filter-events" checked> Show Historical Events</label>
+                <label><input type="checkbox" id="filter-eras" checked> Show Era Atmosphere</label>
+                <label><input type="checkbox" id="filter-transitions" checked> Smooth Transitions</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/utils/timeConverter.js"></script>
+    <script src="../js/components/maps/TemporalMapExtension.js"></script>
+    <script src="/js/components/maps/UnifiedMapViewer.js"></script>
+
+    <script>
+        // Temporal Integration for Unified Map
+        let temporalExtension = null;
+        let isPlaying = false;
+        let playbackInterval = null;
+
+        // Initialize temporal controls after map loads
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                initTemporalControls();
+            }, 500); // Wait for map initialization
+        });
+
+        function initTemporalControls() {
+            if (!map) {
+                console.error('Map not initialized for temporal controls');
+                return;
+            }
+
+            // Initialize TemporalMapExtension
+            try {
+                temporalExtension = new TemporalMapExtension(map, {
+                    onTimeChange: (cycle, day) => {
+                        updateTimeDisplay(cycle, day);
+                        updateEraDisplay(cycle);
+                        loadTemporalEvents(cycle, day);
+                        updateTemporalCitystates(cycle);
+                    }
+                });
+                console.log('Temporal extension initialized');
+
+                // Load initial temporal citystate state
+                updateTemporalCitystates(0);
+            } catch (error) {
+                console.error('Error initializing temporal extension:', error);
+            }
+
+            // Wire up control buttons
+            document.getElementById('playPauseBtn').addEventListener('click', togglePlayback);
+            document.getElementById('stepBackBtn').addEventListener('click', () => stepTime(-1));
+            document.getElementById('stepForwardBtn').addEventListener('click', () => stepTime(1));
+            document.getElementById('rewindBtn').addEventListener('click', () => jumpTime(-10));
+            document.getElementById('fastForwardBtn').addEventListener('click', () => jumpTime(10));
+
+            // Timeline scrubber
+            document.getElementById('timeScrubber').addEventListener('input', (e) => {
+                const cycle = parseInt(e.target.value);
+                if (temporalExtension) {
+                    temporalExtension.setTime(cycle, 1);
+                }
+            });
+
+            // Quick jump buttons
+            document.querySelectorAll('.quick-jump-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const cycle = parseInt(btn.dataset.cycle);
+                    if (temporalExtension) {
+                        temporalExtension.setTime(cycle, 1);
+                    }
+                });
+            });
+
+            // Speed control
+            document.getElementById('playbackSpeed').addEventListener('change', (e) => {
+                if (isPlaying) {
+                    stopPlayback();
+                    startPlayback();
+                }
+            });
+
+            // Toggle collapse
+            document.getElementById('toggleTemporal').addEventListener('click', () => {
+                const controls = document.getElementById('temporalControls');
+                const btn = document.getElementById('toggleTemporal');
+                controls.classList.toggle('collapsed');
+                btn.textContent = controls.classList.contains('collapsed') ? 'Expand' : 'Collapse';
+            });
+
+            // Era atmosphere filter toggle
+            document.getElementById('filter-eras').addEventListener('change', (e) => {
+                if (temporalExtension) {
+                    const current = temporalExtension.getCurrentTime();
+                    updateEraDisplay(current.cycle);
+                }
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.target.matches('input, textarea, select')) return;
+
+                if (e.key === ' ') {
+                    e.preventDefault();
+                    togglePlayback();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    stepTime(-1);
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    stepTime(1);
+                } else if (e.key === 'Home' || e.key === 'r') {
+                    e.preventDefault();
+                    if (temporalExtension) {
+                        temporalExtension.setTime(0, 1);
+                    }
+                }
+            });
+
+            // Initialize from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCycle = urlParams.get('cycle');
+            const urlDay = urlParams.get('day');
+
+            if (urlCycle !== null && temporalExtension) {
+                const cycle = parseInt(urlCycle);
+                const day = urlDay ? parseInt(urlDay) : 1;
+                temporalExtension.setTime(cycle, day);
+            }
+        }
+
+        function togglePlayback() {
+            if (isPlaying) {
+                stopPlayback();
+            } else {
+                startPlayback();
+            }
+        }
+
+        function startPlayback() {
+            isPlaying = true;
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            playPauseBtn.textContent = '⏸';
+            playPauseBtn.title = 'Pause (Space)';
+
+            const speed = parseFloat(document.getElementById('playbackSpeed').value);
+            const baseInterval = 1000; // 1 second per cycle at 1x speed
+            const interval = baseInterval / speed;
+
+            playbackInterval = setInterval(() => {
+                if (temporalExtension) {
+                    const stepSize = parseInt(document.getElementById('stepSize').value);
+                    temporalExtension.stepTime(stepSize);
+                }
+            }, interval);
+        }
+
+        function stopPlayback() {
+            isPlaying = false;
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            playPauseBtn.textContent = '▶';
+            playPauseBtn.title = 'Play (Space)';
+
+            if (playbackInterval) {
+                clearInterval(playbackInterval);
+                playbackInterval = null;
+            }
+        }
+
+        function stepTime(direction) {
+            if (temporalExtension) {
+                const stepSize = parseInt(document.getElementById('stepSize').value);
+                temporalExtension.stepTime(direction * stepSize);
+            }
+        }
+
+        function jumpTime(cycles) {
+            if (temporalExtension) {
+                const current = temporalExtension.getCurrentTime();
+                temporalExtension.setTime(current.cycle + cycles, current.day);
+            }
+        }
+
+        function updateTimeDisplay(cycle, day) {
+            const timeDisplay = document.getElementById('currentTime');
+            timeDisplay.textContent = `Cycle ${cycle}, Day ${day}`;
+
+            // Update scrubber
+            document.getElementById('timeScrubber').value = cycle;
+        }
+
+        function updateEraDisplay(cycle) {
+            const eraDisplay = document.getElementById('currentEra');
+            const eraInfo = getEraInfo(cycle);
+
+            eraDisplay.textContent = eraInfo.name;
+
+            // Update era atmosphere overlay
+            updateEraAtmosphere(eraInfo);
+
+            // Update era indicator badge
+            updateEraIndicator(eraInfo);
+        }
+
+        function getEraInfo(cycle) {
+            // Define era boundaries
+            const eras = [
+                {
+                    name: 'Ancient Past',
+                    slug: 'ancient-past',
+                    cycleStart: -10000,
+                    cycleEnd: -1000,
+                    description: 'The dawn of civilization',
+                    color: '#a569bd'
+                },
+                {
+                    name: 'Age of Foundations',
+                    slug: 'age-of-foundations',
+                    cycleStart: -1000,
+                    cycleEnd: -100,
+                    description: 'Great cities were founded',
+                    color: '#5dade2'
+                },
+                {
+                    name: 'Before Era',
+                    slug: 'before-era',
+                    cycleStart: -100,
+                    cycleEnd: 0,
+                    description: 'The century before current reckoning',
+                    color: '#48c9b0'
+                },
+                {
+                    name: 'Current Era',
+                    slug: 'current-era',
+                    cycleStart: 0,
+                    cycleEnd: 1000,
+                    description: 'The present age',
+                    color: '#52be80'
+                },
+                {
+                    name: 'Near Future',
+                    slug: 'near-future',
+                    cycleStart: 1000,
+                    cycleEnd: 2000,
+                    description: 'Prophesied events',
+                    color: '#f5b041'
+                },
+                {
+                    name: 'Far Future',
+                    slug: 'far-future',
+                    cycleStart: 2000,
+                    cycleEnd: 10000,
+                    description: 'Distant possibilities',
+                    color: '#ec7063'
+                }
+            ];
+
+            // Find matching era
+            for (const era of eras) {
+                if (cycle >= era.cycleStart && cycle < era.cycleEnd) {
+                    return era;
+                }
+            }
+
+            // Default to current era if no match
+            return eras[3];
+        }
+
+        function updateEraAtmosphere(eraInfo) {
+            // Check if atmosphere is enabled
+            const showEras = document.getElementById('filter-eras').checked;
+            const overlay = document.getElementById('eraAtmosphere');
+
+            if (!showEras) {
+                overlay.classList.remove('active');
+                return;
+            }
+
+            // Remove all era classes
+            overlay.className = 'era-atmosphere-overlay';
+
+            // Add current era class and activate
+            overlay.classList.add(eraInfo.slug, 'active');
+        }
+
+        function updateEraIndicator(eraInfo) {
+            const indicator = document.getElementById('eraIndicator');
+            const nameEl = indicator.querySelector('.era-indicator-name');
+            const timespanEl = indicator.querySelector('.era-indicator-timespan');
+
+            // Update data attribute for color styling
+            indicator.setAttribute('data-era', eraInfo.slug);
+
+            // Update text content
+            nameEl.textContent = eraInfo.name;
+            timespanEl.textContent = `Cycle ${eraInfo.cycleStart} - ${eraInfo.cycleEnd - 1}`;
+        }
+
+        // Event management
+        let eventMarkers = [];
+        let eventCache = new Map();
+        let currentEventTimeRange = null;
+
+        async function loadTemporalEvents(cycle, day) {
+            // Check if event filtering is enabled
+            const showEvents = document.getElementById('filter-events').checked;
+            if (!showEvents) {
+                clearEventMarkers();
+                return;
+            }
+
+            // Define time range window (show events +/- 500 cycles from current time)
+            const timeWindow = 500;
+            const timeStart = cycle - timeWindow;
+            const timeEnd = cycle + timeWindow;
+
+            // Check if we already loaded this time range
+            if (currentEventTimeRange &&
+                currentEventTimeRange.start === timeStart &&
+                currentEventTimeRange.end === timeEnd) {
+                // Just update visibility based on current cycle
+                updateEventVisibility(cycle);
+                return;
+            }
+
+            try {
+                // Fetch events from API
+                const response = await fetch(`/api/temporal/events?timeStart=${timeStart}&timeEnd=${timeEnd}`);
+                const data = await response.json();
+
+                if (data.success && data.events) {
+                    currentEventTimeRange = { start: timeStart, end: timeEnd };
+                    displayTemporalEvents(data.events, cycle);
+                }
+            } catch (error) {
+                console.error('Error loading temporal events:', error);
+            }
+        }
+
+        function displayTemporalEvents(events, currentCycle) {
+            // Clear existing markers
+            clearEventMarkers();
+
+            // Create markers for each event
+            events.forEach(event => {
+                // Normalize event format (API returns cycle_start/cycle_end, not timeRange)
+                const normalizedEvent = {
+                    ...event,
+                    timeRange: {
+                        start: event.cycle_start || event.timeRange?.start,
+                        end: event.cycle_end || event.cycle_start || event.timeRange?.end
+                    },
+                    location: {
+                        lat: event.latitude || event.location?.lat,
+                        lon: event.longitude || event.location?.lon
+                    },
+                    category: event.event_type || event.category
+                };
+
+                // Check if event should be visible at current time
+                const isVisible = currentCycle >= normalizedEvent.timeRange.start &&
+                                 (normalizedEvent.timeRange.end === null ||
+                                  currentCycle <= normalizedEvent.timeRange.end);
+
+                if (!isVisible && !document.getElementById('filter-transitions').checked) {
+                    return; // Skip events not in current timeframe
+                }
+
+                const marker = createEventMarker(normalizedEvent, isVisible);
+                eventMarkers.push({ marker, event: normalizedEvent });
+            });
+        }
+
+        function createEventMarker(event, isVisible) {
+            // Determine marker color based on event category
+            const categoryColors = {
+                'political': '#3498db',
+                'military': '#e74c3c',
+                'battle': '#e74c3c',
+                'cultural': '#9b59b6',
+                'economic': '#f39c12',
+                'technological': '#16a085',
+                'demographic': '#27ae60',
+                'natural': '#95a5a6',
+                'religious': '#e67e22',
+                'founding': '#2ecc71',
+                'treaty': '#3498db',
+                'discovery': '#16a085',
+                'birth': '#9b59b6',
+                'death': '#7f8c8d'
+            };
+
+            const color = categoryColors[event.category] || '#7f8c8d';
+            const opacity = isVisible ? 1.0 : 0.3;
+
+            // Create custom icon
+            const icon = L.divIcon({
+                className: 'temporal-event-marker',
+                html: `
+                    <div class="event-marker-pin" style="
+                        background: ${color};
+                        opacity: ${opacity};
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        border: 2px solid white;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                        transition: all 0.3s ease;
+                    "></div>
+                `,
+                iconSize: [24, 24],
+                iconAnchor: [12, 12]
+            });
+
+            const marker = L.marker([event.location.lat, event.location.lon], {
+                icon: icon,
+                zIndexOffset: isVisible ? 1000 : 100
+            });
+
+            // Add popup with event details
+            const popupContent = `
+                <div style="min-width: 200px;">
+                    <h4 style="margin: 0 0 8px 0; color: ${color};">${event.title}</h4>
+                    <p style="margin: 4px 0; font-size: 12px; color: #666;">
+                        <strong>Time:</strong> Cycle ${event.timeRange.start} - ${event.timeRange.end}
+                    </p>
+                    <p style="margin: 4px 0; font-size: 12px; color: #666;">
+                        <strong>Category:</strong> ${event.category}
+                    </p>
+                    <p style="margin: 8px 0 0 0; font-size: 13px;">
+                        ${event.description}
+                    </p>
+                    ${event.significance ? `
+                        <p style="margin: 8px 0 0 0; font-size: 11px; color: #999;">
+                            Significance: ${Math.round(event.significance * 100)}%
+                        </p>
+                    ` : ''}
+                </div>
+            `;
+
+            marker.bindPopup(popupContent);
+            marker.addTo(map);
+
+            return marker;
+        }
+
+        function updateEventVisibility(currentCycle) {
+            eventMarkers.forEach(({ marker, event }) => {
+                const isVisible = currentCycle >= event.timeRange.start &&
+                                 currentCycle <= event.timeRange.end;
+
+                // Update marker opacity
+                const markerElement = marker.getElement();
+                if (markerElement) {
+                    const pin = markerElement.querySelector('.event-marker-pin');
+                    if (pin) {
+                        pin.style.opacity = isVisible ? '1.0' : '0.3';
+                        marker.setZIndexOffset(isVisible ? 1000 : 100);
+                    }
+                }
+            });
+        }
+
+        function clearEventMarkers() {
+            eventMarkers.forEach(({ marker }) => {
+                map.removeLayer(marker);
+            });
+            eventMarkers = [];
+        }
+
+        // Add event filter toggle listener
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const eventFilterCheckbox = document.getElementById('filter-events');
+                if (eventFilterCheckbox) {
+                    eventFilterCheckbox.addEventListener('change', () => {
+                        if (temporalExtension) {
+                            const current = temporalExtension.getCurrentTime();
+                            loadTemporalEvents(current.cycle, current.day);
+                        }
+                    });
+                }
+            }, 600);
+        });
+
+        // Temporal Citystate Management
+        let citystateMarkers = [];
+        let citystateFoundingData = {};
+
+        // Sample founding dates for citystates (these should come from database in production)
+        const CITYSTATE_FOUNDING_DATES = {
+            'malveiba': { cycle: -500, population_c998: 125000 },
+            'aira': { cycle: -800, population_c998: 85000 },
+            'aiya': { cycle: -650, population_c998: 92000 },
+            'alebuo': { cycle: -420, population_c998: 195000 },
+            'alos': { cycle: -730, population_c998: 78000 },
+            'amajed': { cycle: -290, population_c998: 65000 },
+            'aneroa': { cycle: -550, population_c998: 110000 },
+            'anoi': { cycle: -480, population_c998: 88000 },
+            'asatia': { cycle: -610, population_c998: 103000 },
+            'belgali': { cycle: -890, population_c998: 142000 },
+            'biliqan': { cycle: -375, population_c998: 71000 },
+            'bodla': { cycle: -710, population_c998: 98000 },
+            'brochyra': { cycle: -520, population_c998: 115000 },
+            'buana': { cycle: -640, population_c998: 89000 },
+            'chamirod': { cycle: -450, population_c998: 82000 },
+            'doros': { cycle: -780, population_c998: 138000 },
+            'esrirnya': { cycle: -330, population_c998: 67000 },
+            'fanha': { cycle: -690, population_c998: 105000 },
+            'fryskar': { cycle: -580, population_c998: 97000 },
+            'gyba': { cycle: -410, population_c998: 75000 },
+            'hadjari': { cycle: -860, population_c998: 128000 },
+            'izori': { cycle: -510, population_c998: 91000 },
+            'journal': { cycle: -390, population_c998: 69000 },
+            'kalati': { cycle: -770, population_c998: 119000 },
+            'kudchna': { cycle: -620, population_c998: 108000 },
+            'kudina': { cycle: -540, population_c998: 94000 },
+            'lephoe': { cycle: -470, population_c998: 86000 },
+            'luquti': { cycle: -720, population_c998: 124000 },
+            'mahyapak': { cycle: -800, population_c998: 135000 },
+            'misagnar': { cycle: -360, population_c998: 72000 },
+            'nesha': { cycle: -590, population_c998: 99000 },
+            'oatue': { cycle: -680, population_c998: 112000 },
+            'obida': { cycle: -430, population_c998: 79000 },
+            'oqospar': { cycle: -750, population_c998: 121000 },
+            'paelgom': { cycle: -560, population_c998: 95000 },
+            'phoelit': { cycle: -820, population_c998: 147000 },
+            'raki': { cycle: -380, population_c998: 70000 },
+            'rubochoi': { cycle: -700, population_c998: 107000 },
+            'sapigyar': { cycle: -490, population_c998: 84000 },
+            'scirga': { cycle: -630, population_c998: 102000 },
+            'silfara': { cycle: -570, population_c998: 96000 },
+            'sutia': { cycle: -440, population_c998: 81000 },
+            'syqad': { cycle: -660, population_c998: 106000 },
+            'szargony': { cycle: -740, population_c998: 116000 },
+            'tsanghom': { cycle: -600, population_c998: 104000 },
+            'urir': { cycle: -530, population_c998: 93000 },
+            'vulagnia': { cycle: -460, population_c998: 87000 },
+            'yareli': { cycle: -670, population_c998: 109000 },
+            'yogarum': { cycle: -790, population_c998: 130000 }
+        };
+
+        async function updateTemporalCitystates(cycle) {
+            // Get citystate data
+            let citystateData;
+            try {
+                const response = await fetch('/api/citystates');
+                const data = await response.json();
+                if (!data.success || !data.citystates) return;
+                citystateData = data.citystates;
+            } catch (error) {
+                console.error('Error loading citystate data:', error);
+                return;
+            }
+
+            // Update visibility and size of existing citystate markers
+            citystateData.forEach(citystate => {
+                const cityName = citystate.name.toLowerCase();
+                const foundingInfo = CITYSTATE_FOUNDING_DATES[cityName];
+
+                if (!foundingInfo) return;
+
+                const foundingCycle = foundingInfo.cycle;
+                const populationC998 = foundingInfo.population_c998;
+
+                // Check if city should be visible
+                const isVisible = cycle >= foundingCycle;
+
+                // Calculate population at current cycle (growth model)
+                const population = calculatePopulation(foundingCycle, populationC998, cycle);
+
+                // Update or create marker
+                updateCitystateMarker(citystate, isVisible, population, foundingCycle);
+            });
+        }
+
+        function calculatePopulation(foundingCycle, populationC998, currentCycle) {
+            // City not founded yet
+            if (currentCycle < foundingCycle) return 0;
+
+            // Population at cycle 998 is the reference
+            const referenceCycle = 998;
+            const totalGrowthPeriod = referenceCycle - foundingCycle;
+
+            if (currentCycle >= referenceCycle) {
+                // After reference cycle, population stays constant or grows slowly
+                const extraYears = currentCycle - referenceCycle;
+                return Math.floor(populationC998 * (1 + extraYears * 0.001)); // 0.1% per year growth
+            }
+
+            // Before reference cycle: use logistic growth model
+            const cyclesSinceFounding = currentCycle - foundingCycle;
+            const growthProgress = cyclesSinceFounding / totalGrowthPeriod;
+
+            // Logistic growth: slow start, rapid middle, slow end
+            const logisticGrowth = 1 / (1 + Math.exp(-10 * (growthProgress - 0.5)));
+
+            // Start with 5% of final population
+            const initialPopulation = populationC998 * 0.05;
+            const populationGrowth = (populationC998 - initialPopulation) * logisticGrowth;
+
+            return Math.floor(initialPopulation + populationGrowth);
+        }
+
+        function updateCitystateMarker(citystate, isVisible, population, foundingCycle) {
+            const cityName = citystate.name.toLowerCase();
+
+            // Find existing marker
+            let existingMarkerData = citystateMarkers.find(m => m.cityName === cityName);
+
+            if (!isVisible) {
+                // Remove marker if exists and city not founded yet
+                if (existingMarkerData) {
+                    map.removeLayer(existingMarkerData.marker);
+                    citystateMarkers = citystateMarkers.filter(m => m.cityName !== cityName);
+                }
+                return;
+            }
+
+            // Calculate marker size based on population
+            const baseRadius = 4;
+            const maxRadius = 16;
+            const populationScale = Math.sqrt(population / 10000);
+            const radius = Math.min(baseRadius + populationScale, maxRadius);
+
+            const latLng = [citystate.center.lat, citystate.center.lng];
+
+            if (existingMarkerData) {
+                // Update existing marker size
+                existingMarkerData.marker.setRadius(radius);
+                existingMarkerData.marker.setStyle({
+                    fillOpacity: 0.7,
+                    opacity: 1.0
+                });
+            } else {
+                // Create new marker
+                const marker = L.circleMarker(latLng, {
+                    radius: radius,
+                    fillColor: '#e74c3c',
+                    color: '#fff',
+                    weight: 2,
+                    opacity: 1.0,
+                    fillOpacity: 0.7,
+                    className: 'temporal-citystate-marker'
+                });
+
+                const displayName = citystate.display_name || citystate.name;
+                marker.bindPopup(`
+                    <div style="min-width: 200px;">
+                        <h4 style="margin: 0 0 8px 0;">${displayName}</h4>
+                        <p style="margin: 4px 0; font-size: 12px; color: #666;">
+                            <strong>Founded:</strong> Cycle ${foundingCycle}
+                        </p>
+                        <p style="margin: 4px 0; font-size: 12px; color: #666;">
+                            <strong>Population:</strong> ${population.toLocaleString()}
+                        </p>
+                        <p style="margin: 4px 0; font-size: 12px; color: #666;">
+                            <strong>Buildings:</strong> ${citystate.building_count || 0}
+                        </p>
+                    </div>
+                `);
+
+                marker.addTo(map);
+
+                citystateMarkers.push({
+                    cityName: cityName,
+                    marker: marker,
+                    citystate: citystate
+                });
+            }
+        }
+
+        // Temporal Building Management
+        const REFERENCE_CYCLE = 998; // Buildings' age is measured at this cycle
+
+        // Store building temporal data
+        let buildingTemporalCache = new Map();
+
+        function calculateBuildingConstructionCycle(age) {
+            // At Cycle 998, building is 'age' years old
+            return REFERENCE_CYCLE - age;
+        }
+
+        function calculateBuildingGeneration(constructionCycle, currentCycle) {
+            // Buildings start at generation 1
+            // Each ~200 cycles, buildings undergo major renovation (generation++)
+            const ageAtCurrentCycle = currentCycle - constructionCycle;
+
+            if (ageAtCurrentCycle < 0) return 0; // Not built yet
+            if (ageAtCurrentCycle < 200) return 1; // Original construction
+            if (ageAtCurrentCycle < 400) return 2; // First renovation
+            if (ageAtCurrentCycle < 600) return 3; // Second renovation
+            return 4; // Modern/multiple renovations
+        }
+
+        function getBuildingCondition(constructionCycle, currentCycle) {
+            const ageAtCurrentCycle = currentCycle - constructionCycle;
+
+            if (ageAtCurrentCycle < 0) return { status: 'unbuilt', label: 'Not Yet Built', opacity: 0 };
+            if (ageAtCurrentCycle < 10) return { status: 'new', label: 'Recently Built', opacity: 1.0 };
+            if (ageAtCurrentCycle < 100) return { status: 'good', label: 'Good Condition', opacity: 0.9 };
+            if (ageAtCurrentCycle < 300) return { status: 'aging', label: 'Aging', opacity: 0.8 };
+            if (ageAtCurrentCycle < 500) return { status: 'old', label: 'Old', opacity: 0.7 };
+            return { status: 'ancient', label: 'Ancient', opacity: 0.6 };
+        }
+
+        // Override the global displayBuildings function with temporal awareness
+        window.displayBuildingsWithTemporalData = function(cityName, districtName, buildingsData, currentCycle) {
+            // This will be called from UnifiedMapViewer when buildings are loaded
+            // We'll enhance building display with temporal visibility
+
+            buildingsData.features.forEach(building => {
+                const buildingId = building.properties.id;
+                const age = building.properties.age || 10;
+                const generation = building.properties.generation || 1;
+
+                // Calculate temporal properties
+                const constructionCycle = calculateBuildingConstructionCycle(age);
+                const expectedGeneration = calculateBuildingGeneration(constructionCycle, currentCycle);
+                const condition = getBuildingCondition(constructionCycle, currentCycle);
+
+                // Cache temporal data
+                buildingTemporalCache.set(buildingId, {
+                    constructionCycle: constructionCycle,
+                    age: age,
+                    generation: generation,
+                    expectedGeneration: expectedGeneration,
+                    condition: condition
+                });
+            });
+
+            // Log temporal building info for debugging
+            console.log(`Loaded ${buildingsData.features.length} buildings for ${cityName}/${districtName} at cycle ${currentCycle}`);
+        };
+
+        // Function to get building lifecycle info for popups
+        window.getBuildingLifecycleInfo = function(buildingId, currentCycle) {
+            const temporal = buildingTemporalCache.get(buildingId);
+            if (!temporal) return null;
+
+            const { constructionCycle, age, generation, expectedGeneration, condition } = temporal;
+
+            return {
+                constructionCycle: constructionCycle,
+                ageAtCurrentCycle: currentCycle - constructionCycle,
+                generation: generation,
+                expectedGeneration: expectedGeneration,
+                condition: condition.label,
+                isVisible: currentCycle >= constructionCycle,
+                renovations: generation > 1 ? `${generation - 1} major renovations` : 'Original construction',
+                builtIn: `Built in Cycle ${constructionCycle} (${REFERENCE_CYCLE - constructionCycle} years before C${REFERENCE_CYCLE})`
+            };
+        };
+
+        // Function to filter buildings by temporal visibility
+        window.filterBuildingsByTime = function(buildingsData, currentCycle) {
+            return buildingsData.features.filter(building => {
+                const age = building.properties.age || 10;
+                const constructionCycle = calculateBuildingConstructionCycle(age);
+                return currentCycle >= constructionCycle;
+            });
+        };
+
+        // Hook into temporal extension to update buildings when time changes
+        function updateTemporalBuildings(cycle) {
+            // Check if we have building data loaded
+            if (typeof window.currentContext !== 'undefined' &&
+                window.currentContext.cityName &&
+                window.currentContext.districtName) {
+
+                const cityName = window.currentContext.cityName;
+                const districtName = window.currentContext.districtName;
+                const cacheKey = `buildings_${cityName}_${districtName}`;
+
+                // Check if buildings are in cache (from UnifiedMapViewer)
+                if (typeof window.dataCache !== 'undefined' && window.dataCache[cacheKey]) {
+                    const buildingsData = window.dataCache[cacheKey];
+
+                    // Update temporal cache with current cycle info
+                    if (window.displayBuildingsWithTemporalData) {
+                        window.displayBuildingsWithTemporalData(cityName, districtName, buildingsData, cycle);
+                    }
+
+                    // Log info
+                    const visibleBuildings = window.filterBuildingsByTime(buildingsData, cycle);
+                    console.log(`Cycle ${cycle}: ${visibleBuildings.length}/${buildingsData.features.length} buildings exist`);
+                }
+            }
+        }
+
+        // Integrate with temporal controls
+        const originalOnTimeChange = temporalExtension?.options?.onTimeChange;
+        if (temporalExtension) {
+            temporalExtension.options.onTimeChange = (cycle, day) => {
+                if (originalOnTimeChange) {
+                    originalOnTimeChange(cycle, day);
+                }
+                updateTemporalBuildings(cycle);
+            };
+        }
+    </script>
+</body>
+</html>

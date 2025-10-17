@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eno World Encyclopedia</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/wiki_dynamic_production.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+
+    <style>
+        /* Most styles now in wiki_dynamic_production.css */
+        /* Minimal inline overrides for dynamic values only */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Eno World Encyclopedia</h1>
+        <a href="/" class="back-to-main-btn">← Back to Main</a>
+        <nav id="navBar">
+            <!-- Navigation links added dynamically -->
+        </nav>
+    </header>
+
+    <div class="wiki-container">
+        <!-- Left Sidebar: Topic List (Navigation) -->
+        <aside class="category-sidebar">
+            <div class="search-container">
+                <input type="text"
+                       class="search-input"
+                       id="searchInput"
+                       placeholder="Search topics..." />
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <h3>Topics</h3>
+            <ul class="topic-list" id="topicList">
+                <!-- Topics will be loaded dynamically -->
+            </ul>
+
+            <h3 style="margin-top: var(--space-2xl);">Navigation</h3>
+            <button class="btn-preview" id="openGraphBtn" style="width: 100%; margin-top: var(--space-md);">
+                🕸️ View Relationship Graph
+            </button>
+        </aside>
+
+        <!-- Main Content: Topic Detail View + Timeline -->
+        <main class="wiki-content">
+            <!-- Welcome/Empty State -->
+            <div class="topic-detail active" id="welcomeView">
+                <div class="topic-detail-header">
+                    <h1 class="topic-detail-title">Welcome to Eno World Encyclopedia</h1>
+                </div>
+                <div class="topic-detail-content">
+                    <p>Select a topic from the list on the left to view its details, or use the search to find specific entries.</p>
+                    <p>The timeline below and map on the right will update to show contextual information related to the selected topic.</p>
+                </div>
+            </div>
+
+            <!-- Topic Detail (will be populated dynamically) -->
+            <div class="topic-detail" id="topicDetailView">
+                <!-- Content loaded dynamically -->
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading" id="loadingState" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading topic...</p>
+            </div>
+
+            <!-- Timeline Panel (Moved from sidebar for better horizontal space) -->
+            <div class="timeline-panel-main" id="timelinePanelMain">
+                <div class="panel-header">
+                    <h3>📅 Timeline</h3>
+                    <button class="panel-toggle" id="toggleTimelineMain" title="Toggle Timeline">▼</button>
+                </div>
+                <div class="panel-content" id="timelineContentMain">
+                    <div id="wikiTimeline" class="timeline-container">
+                        <div class="timeline-placeholder">
+                            Select an entry with temporal data to view timeline
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar: Context Panel with Map -->
+        <aside class="context-panel">
+            <!-- Map Panel -->
+            <div class="map-panel" id="mapPanel">
+                <div class="panel-header">
+                    <h3>🗺️ Map</h3>
+                    <button class="panel-toggle" id="toggleMap" title="Toggle Map">▼</button>
+                </div>
+                <div class="panel-content" id="mapContent">
+                    <div id="wikiMap" class="map-container">
+                        <div class="map-placeholder">
+                            Select an entry with location data to view map
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Context Image Panel (Collapsed by default when timeline/map active) -->
+            <div class="context-image-panel" id="contextImagePanel">
+                <div class="panel-header">
+                    <h3 id="contextImageTitle">🖼️ Images</h3>
+                    <button class="panel-toggle" id="toggleImages" title="Toggle Images">▼</button>
+                </div>
+                <div class="panel-content" id="imageContent">
+                    <div class="context-image-container" id="contextImageContainer">
+                        <div class="context-image-placeholder">
+                            Select a topic to view contextual image
+                        </div>
+                    </div>
+                    <button class="view-more-images-btn" id="viewMoreImagesBtn" style="display: none;">
+                        📷 View More Images / Interactive Map
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Graph Navigation Modal -->
+    <div class="graph-panel" id="graphPanel">
+        <div class="graph-panel-content">
+            <div class="graph-panel-header">
+                <h2 class="graph-panel-title">Topic Relationship Graph</h2>
+                <button class="graph-close-btn" id="closeGraphBtn">&times;</button>
+            </div>
+            <div class="graph-container">
+                <svg class="graph-svg" id="graphSvg">
+                    <!-- D3.js force-directed graph will render here -->
+                </svg>
+                <div class="graph-controls">
+                    <button class="graph-btn" id="resetZoomBtn">Reset View</button>
+                    <button class="graph-btn" id="centerGraphBtn">Center</button>
+                </div>
+            </div>
+            <div class="graph-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4a90e2;"></div>
+                    <span>Wiki Entries - Click to navigate</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f39c12;"></div>
+                    <span>Tags</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #e74c3c;"></div>
+                    <span>Current Entry</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entry Modal -->
+    <div class="entry-modal" id="entryModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div id="modalBody">
+                <!-- Full entry content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Editor Modal -->
+    <div class="editor-modal" id="editorModal">
+        <div class="editor-content">
+            <div class="editor-header">
+                <h2 class="editor-title" id="editorTitle">New Wiki Entry</h2>
+                <span class="modal-close" id="editorClose">&times;</span>
+            </div>
+
+            <form class="editor-form" id="editorForm">
+                <div class="form-group">
+                    <label for="entryTitle">Title *</label>
+                    <input type="text" id="entryTitle" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="entryCategory">Category *</label>
+                    <select id="entryCategory" name="category" required>
+                        <option value="">Select a category...</option>
+                        <option value="culture">Cultures</option>
+                        <option value="geography">Geography</option>
+                        <option value="mythology">Mythology</option>
+                        <option value="magic">Magic Systems</option>
+                        <option value="history">History</option>
+                        <option value="characters">Notable Figures</option>
+                        <option value="organizations">Organizations</option>
+                        <option value="economics">Economics</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="entryExcerpt">Excerpt (Optional - auto-generated if empty)</label>
+                    <input type="text" id="entryExcerpt" name="excerpt" maxlength="200">
+                </div>
+
+                <div class="form-group">
+                    <label for="entryContent">Content *</label>
+                    <textarea id="entryContent" name="content" required placeholder="Use **bold** for emphasis, *italic* for titles, and - for lists"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="entryTags">Tags (comma-separated)</label>
+                    <input type="text" id="entryTags" name="tags" placeholder="e.g. valley, magic, culture">
+                </div>
+
+                <div class="form-group">
+                    <label for="entryRelated">Related Entries (comma-separated IDs)</label>
+                    <input type="text" id="entryRelated" name="related" placeholder="e.g. night-valley, soul-system">
+                </div>
+
+                <div class="editor-buttons">
+                    <button type="button" class="btn-preview" id="btnPreview">Preview</button>
+                    <button type="button" class="btn-cancel" id="btnCancel">Cancel</button>
+                    <button type="submit" class="btn-save" id="btnSave">Save Entry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Editor Toolbar (visible for editors/admins) -->
+    <div class="editor-toolbar" id="editorToolbar">
+        <button class="new-entry-btn" id="newEntryBtn">+ New Entry</button>
+    </div>
+
+    <!-- User Badge -->
+    <div class="user-badge" id="userBadge" style="display: none;"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="../js/utils/timeConverter.js"></script>
+    <script src="../js/components/timeline/TemporalTimeline.js"></script>
+    <script src="../js/CitystateMapViewer.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/wiki_production_map.js"></script>
+    <script src="../js/wiki_dynamic.js"></script>
+    <script src="../js/wiki_timeline_integration.js"></script>
+    <script src="../js/wiki_map_integration.js"></script>
+    <script src="../js/wiki_timeline_map_integration.js"></script>
+</body>
+</html>

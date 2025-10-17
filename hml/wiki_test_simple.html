@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wiki Edit Test - Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .status {
+            background: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .editor-section {
+            background: #e8f5e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        .editor-section.visible {
+            display: block;
+        }
+        .edit-button {
+            background: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Wiki Edit Feature Test</h1>
+    
+    <div class="status">
+        <h2>Authentication Status</h2>
+        <p>Logged in: <span id="loginStatus">Checking...</span></p>
+        <p>Username: <span id="username">-</span></p>
+        <p>Email: <span id="email">-</span></p>
+        <p>Roles: <span id="roles">-</span></p>
+        <p>Is Editor: <span id="isEditor">-</span></p>
+        <p>Token exists: <span id="tokenExists">-</span></p>
+    </div>
+    
+    <div class="editor-section" id="editorSection">
+        <h2>Editor Features (You should see this if you're an editor)</h2>
+        <button class="edit-button">+ New Entry</button>
+        <button class="edit-button">Edit Selected</button>
+        <p>If you can see this section, the editor detection is working!</p>
+    </div>
+    
+    <div>
+        <h2>Actions</h2>
+        <button onclick="checkAuth()">Refresh Auth Status</button>
+        <button onclick="login()">Login as Editor</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+    
+    <div style="margin-top: 30px;">
+        <h2>Console Output</h2>
+        <pre id="console" style="background: #f5f5f5; padding: 10px; max-height: 300px; overflow-y: auto;"></pre>
+    </div>
+    
+    <script>
+        // Override console.log to display in page
+        const originalLog = console.log;
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const consoleDiv = document.getElementById('console');
+            consoleDiv.textContent += args.join(' ') + '\n';
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        };
+        
+        console.log('Script loaded successfully');
+        
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        
+        async function checkAuth() {
+            console.log('Checking authentication...');
+            
+            // Check for token
+            const token = getCookie('token') || localStorage.getItem('auth_token');
+            document.getElementById('tokenExists').textContent = token ? 'Yes' : 'No';
+            
+            if (!token) {
+                console.log('No token found');
+                document.getElementById('loginStatus').textContent = 'No';
+                document.getElementById('loginStatus').className = 'error';
+                document.getElementById('editorSection').classList.remove('visible');
+                return;
+            }
+            
+            console.log('Token found, checking with server...');
+            
+            try {
+                const response = await fetch('/api/user', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const user = await response.json();
+                    console.log('User data received:', user);
+                    
+                    document.getElementById('loginStatus').textContent = 'Yes';
+                    document.getElementById('loginStatus').className = 'success';
+                    document.getElementById('username').textContent = user.username;
+                    document.getElementById('email').textContent = user.email;
+                    document.getElementById('roles').textContent = user.roles;
+                    
+                    // Parse roles
+                    const roles = typeof user.roles === 'string' 
+                        ? JSON.parse(user.roles) 
+                        : user.roles;
+                    
+                    const isEditor = roles.includes('editor') || roles.includes('admin') || user.is_admin;
+                    
+                    document.getElementById('isEditor').textContent = isEditor ? 'Yes' : 'No';
+                    document.getElementById('isEditor').className = isEditor ? 'success' : 'error';
+                    
+                    if (isEditor) {
+                        document.getElementById('editorSection').classList.add('visible');
+                        console.log('Editor features enabled');
+                    } else {
+                        document.getElementById('editorSection').classList.remove('visible');
+                        console.log('User is not an editor');
+                    }
+                } else {
+                    console.log('Authentication failed:', response.status);
+                    document.getElementById('loginStatus').textContent = 'No';
+                    document.getElementById('loginStatus').className = 'error';
+                    document.getElementById('editorSection').classList.remove('visible');
+                }
+            } catch (error) {
+                console.log('Error checking auth:', error);
+                document.getElementById('loginStatus').textContent = 'Error';
+                document.getElementById('loginStatus').className = 'error';
+            }
+        }
+        
+        async function login() {
+            console.log('Attempting login...');
+            
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        email: 'editor@iinou.eu',
+                        password: 'password123'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.token) {
+                    console.log('Login successful');
+                    
+                    // Store token
+                    localStorage.setItem('auth_token', data.token);
+                    document.cookie = `token=${data.token}; path=/`;
+                    
+                    // Refresh auth status
+                    await checkAuth();
+                } else {
+                    console.log('Login failed:', data);
+                }
+            } catch (error) {
+                console.log('Login error:', error);
+            }
+        }
+        
+        function logout() {
+            console.log('Logging out...');
+            localStorage.removeItem('auth_token');
+            document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+            checkAuth();
+        }
+        
+        // Check auth on load
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded, checking authentication...');
+            checkAuth();
+        });
+    </script>
+</body>
+</html>
