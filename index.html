@@ -106,7 +106,8 @@
                 <a href="/hml/threads.html">Langat</a>
                 <a href="/hml/storyboard.html">Storyboard</a>
                 <a href="/hml/gm-selection.html">AI-pelinjohtajat</a>
-                <a href="/hml/wiki.html">Wiki</a>
+                <a href="/hml/wiki_dynamic.html">Wiki</a>
+                <a href="/hml/map-selection.html">🗺️ Kartat</a>
             <a href="/hml/order-game.html">Tilaa Peli</a>
                 <a href="/hml/profile.html" id="profileLink" style="display: none;">Profiili</a>
             </nav>
@@ -167,17 +168,29 @@
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'inline-block';
                 userInfo.style.display = 'inline-block';
-                username.innerHTML = '<a href="/hml/profile.html?user=' + user.id + '">' + user.username + '</a>';
                 
-                // Display user email
+                // Check if anonymous user
+                const roles = JSON.parse(user.roles || '[]');
+                if (roles.includes('anonymous')) {
+                    username.innerHTML = '🎭 ' + user.username;
+                    userBadges.innerHTML += '<span class="user-badge" style="background-color: #9c27b0;">Anonyymi</span>';
+                } else {
+                    username.innerHTML = '<a href="/hml/profile.html?user=' + user.id + '">' + user.username + '</a>';
+                }
+                
+                // Display user email (if not anonymous)
                 const userEmail = document.getElementById('userEmail');
-                userEmail.textContent = user.email;
+                if (!roles.includes('anonymous')) {
+                    userEmail.textContent = user.email;
+                }
                 
                 // Display badges for user roles
-                const roles = JSON.parse(user.roles || '[]');
                 if (user.is_admin) {
                     userBadges.innerHTML += '<span class="user-badge admin-badge">Admin</span>';
                     adminBtn.style.display = 'inline-block';
+                }
+                if (roles.includes('editor')) {
+                    userBadges.innerHTML += '<span class="user-badge" style="background-color: #ff9800;">Editor</span>';
                 }
                 if (roles.includes('gm')) {
                     userBadges.innerHTML += '<span class="user-badge gm-badge">GM</span>';
@@ -188,13 +201,13 @@
                     userBadges.innerHTML += '<span class="user-badge player-badge">Pelaaja</span>';
                 }
                 
-                // Show game list
+                // Show game list for all logged in users (including anonymous)
                 gameList.style.display = 'block';
                 authMessage.style.display = 'none';
                 
-                // Show profile link
+                // Show profile link (but not for anonymous users)
                 const profileLink = document.getElementById('profileLink');
-                if (profileLink) {
+                if (profileLink && !roles.includes('anonymous')) {
                     profileLink.style.display = 'inline-block';
                 }
             } else {
@@ -204,10 +217,16 @@
                 userInfo.style.display = 'none';
                 adminBtn.style.display = 'none';
                 
-                // Hide content that requires authentication
-                gameList.style.display = 'none';
+                // Still show game list but with a notice
+                gameList.style.display = 'block';
                 newGameForm.style.display = 'none';
-                authMessage.style.display = 'block';
+                authMessage.style.display = 'none';
+                
+                // Add a notice that they can log in for more features
+                const availableGames = document.getElementById('availableGames');
+                if (availableGames) {
+                    availableGames.innerHTML = '<li style="color: #666;">Ladataan pelejä... <a href="/hml/login.html">Kirjaudu sisään</a> nähdäksesi kaikki ominaisuudet.</li>';
+                }
             }
             
             // Event listeners

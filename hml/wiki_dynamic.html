@@ -388,6 +388,198 @@
             color: #8b7355;
             z-index: 500;
         }
+
+        /* City Detail Modal Styles */
+        .city-detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .city-detail-content {
+            width: 90%;
+            height: 90%;
+            max-width: 1200px;
+            max-height: 800px;
+            background: #2a2a2a;
+            border: 2px solid #8b7355;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .city-detail-header {
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-bottom: 1px solid #8b7355;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .city-info h2 {
+            color: #d4af37;
+            margin: 0 0 5px 0;
+            font-size: 1.5em;
+        }
+
+        .city-stats {
+            display: flex;
+            gap: 15px;
+        }
+
+        .city-stats .stat {
+            color: #ccc;
+            font-size: 0.9em;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        .city-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .layer-toggles {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .layer-toggles label {
+            color: #ccc;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .layer-toggles input[type="checkbox"] {
+            margin: 0;
+        }
+
+        .action-btn {
+            background: #4a6741;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .action-btn:hover {
+            background: #5a7751;
+        }
+
+        .action-btn:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        .close-btn {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .close-btn:hover {
+            background: #a0522d;
+        }
+
+        .city-detail-map {
+            flex: 1;
+            position: relative;
+            background: #1a1a1a;
+        }
+
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ccc;
+            z-index: 1000;
+        }
+
+        .spinner {
+            border: 3px solid #333;
+            border-top: 3px solid #d4af37;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .city-detail-status {
+            background: #1a1a1a;
+            padding: 10px 20px;
+            border-top: 1px solid #8b7355;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        /* Popup action styles */
+        .popup-actions {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .detail-btn {
+            background: #4a6741;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+        }
+
+        .detail-btn:hover {
+            background: #5a7751;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .city-detail-content {
+                width: 95%;
+                height: 95%;
+            }
+
+            .city-detail-header {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+
+            .layer-toggles {
+                justify-content: center;
+            }
+        }
         
         /* Editor Modal Styles */
         .editor-modal {
@@ -700,6 +892,14 @@
             <!-- Map View (Hidden by default) -->
             <div class="map-view" id="mapView">
                 <div class="map-controls">
+                    <h4>Basemap</h4>
+                    <div class="basemap-control" style="margin-bottom: 15px;">
+                        <select id="basemapSelector" style="width: 100%; padding: 5px; border-radius: 4px; border: 1px solid #8b7355;">
+                            <option value="satellite">Satellite Imagery</option>
+                            <option value="relief">Relief Topography</option>
+                        </select>
+                    </div>
+
                     <h4>Map Layers</h4>
                     <div class="layer-control">
                         <input type="checkbox" id="layerCities" checked>
@@ -709,13 +909,27 @@
                         <input type="checkbox" id="layerVillages">
                         <label for="layerVillages">Villages</label>
                     </div>
+
+                    <h4 style="margin-top: 15px;">Vector Layers</h4>
+                    <div class="layer-control">
+                        <input type="checkbox" id="layerRoads">
+                        <label for="layerRoads">Road Network</label>
+                    </div>
                     <div class="layer-control">
                         <input type="checkbox" id="layerRivers">
                         <label for="layerRivers">Rivers</label>
                     </div>
                     <div class="layer-control">
                         <input type="checkbox" id="layerLakes">
-                        <label for="layerLakes">Lakes</label>
+                        <label for="layerLakes">Lakes & Water</label>
+                    </div>
+                    <div class="layer-control">
+                        <input type="checkbox" id="layerBiomes">
+                        <label for="layerBiomes">Biome Regions</label>
+                    </div>
+                    <div class="layer-control">
+                        <input type="checkbox" id="layerElevation">
+                        <label for="layerElevation">Elevation Contours</label>
                     </div>
                 </div>
                 <div class="map-container" id="mapContainer"></div>
@@ -838,6 +1052,8 @@
     
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/city_detail_viewer.js"></script>
+    <script src="../js/CitystateMapViewer.js"></script>
     <script src="../js/wiki_dynamic.js"></script>
 </body>
 </html>
