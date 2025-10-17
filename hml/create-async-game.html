@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luo Asynkroninen Peli - Eno</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .create-async-game-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .radio-option:hover {
+            background: #f8f9fa;
+        }
+
+        .radio-option input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .radio-option.selected {
+            border-color: #007bff;
+            background: #e3f2fd;
+        }
+
+        .time-input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .time-input {
+            width: 80px !important;
+        }
+
+        .submit-section {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-cancel {
+            background-color: #6c757d;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background-color: #5a6268;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .preview-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .preview-card h4 {
+            margin-top: 0;
+            color: #495057;
+        }
+
+        .preview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .preview-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .create-async-game-container {
+                margin: 20px 10px;
+                padding: 20px;
+            }
+            
+            .settings-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .time-input-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Luo Asynkroninen Peli</h1>
+        <nav id="navBar">
+            <a href="/">Etusivu</a>
+            <a href="/hml/threads.html">Langat</a>
+            <a href="/hml/storyboard.html">Storyboard</a>
+            <a href="/hml/wiki_dynamic.html">Wiki</a>
+            <a href="/hml/my-games.html">Omat Pelit</a>
+            <a href="/hml/async-games.html">Asynkroniset Pelit</a>
+        </nav>
+    </header>
+
+    <div class="create-async-game-container">
+        <h2>Luo uusi asynkroninen roolipeli</h2>
+        <p>Luo pitkäkestoinen, narratiivipohjainen peli jossa pelaajat voivat osallistua omaan tahtiinsa.</p>
+        
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+
+        <form id="createAsyncGameForm">
+            <!-- Basic Information -->
+            <div class="form-section">
+                <h3><span class="section-icon">📖</span> Perustiedot</h3>
+                
+                <div class="form-group">
+                    <label for="gameName">Pelin nimi *</label>
+                    <input type="text" id="gameName" name="name" required>
+                    <div class="help-text">Anna pelillesi kuvaava nimi joka heijastaa sen tarinaa ja tunnelmaa</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gameDescription">Pelin kuvaus *</label>
+                    <textarea id="gameDescription" name="description" required placeholder="Kerro pelistäsi: maailma, tarina, hahmot, tunnelma..."></textarea>
+                    <div class="help-text">Tämä kuvaus näkyy pelaajille kun he harkitsevat peliin liittymistä</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gameGenre">Genre</label>
+                    <select id="gameGenre" name="genre">
+                        <option value="">Valitse genre</option>
+                        <option value="fantasy">Fantasia</option>
+                        <option value="scifi">Sci-Fi</option>
+                        <option value="horror">Kauhu</option>
+                        <option value="mystery">Mysteeri</option>
+                        <option value="historical">Historiallinen</option>
+                        <option value="modern">Moderni</option>
+                        <option value="cyberpunk">Kyberpunk</option>
+                        <option value="steampunk">Steampunk</option>
+                        <option value="other">Muu</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Async Session Settings -->
+            <div class="form-section">
+                <h3><span class="section-icon">⏰</span> Asynkroninen Toiminta</h3>
+                
+                <div class="form-group">
+                    <label>Istunnon tyyppi</label>
+                    <div class="radio-group">
+                        <div class="radio-option" onclick="selectRadio('sessionType', 'async')">
+                            <input type="radio" name="sessionType" value="async" id="typeAsync" checked>
+                            <div>
+                                <strong>Asynkroninen</strong><br>
+                                <small>Pelaajat toimivat omaan tahtiinsa, ei reaaliaikaista pelaamista</small>
+                            </div>
+                        </div>
+                        <div class="radio-option" onclick="selectRadio('sessionType', 'scheduled')">
+                            <input type="radio" name="sessionType" value="scheduled" id="typeScheduled">
+                            <div>
+                                <strong>Aikataulutettu</strong><br>
+                                <small>Säännölliset istunnot tiettyinä aikoina</small>
+                            </div>
+                        </div>
+                        <div class="radio-option" onclick="selectRadio('sessionType', 'hybrid')">
+                            <input type="radio" name="sessionType" value="hybrid" id="typeHybrid">
+                            <div>
+                                <strong>Hybridi</strong><br>
+                                <small>Yhdistää asynkronista ja aikataulutettu pelaamista</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Narratiivijaksotiheys</label>
+                    <div class="radio-group">
+                        <div class="radio-option" onclick="selectRadio('turnFrequency', 'daily')">
+                            <input type="radio" name="turnFrequency" value="daily" id="freqDaily" checked>
+                            <div>
+                                <strong>Päivittäin</strong><br>
+                                <small>Uusi narratiivijakso joka päivä - nopea tahti</small>
+                            </div>
+                        </div>
+                        <div class="radio-option" onclick="selectRadio('turnFrequency', 'weekly')">
+                            <input type="radio" name="turnFrequency" value="weekly" id="freqWeekly">
+                            <div>
+                                <strong>Viikoittain</strong><br>
+                                <small>Uusi narratiivijakso joka viikko - rauhallinen tahti</small>
+                            </div>
+                        </div>
+                        <div class="radio-option" onclick="selectRadio('turnFrequency', 'manual')">
+                            <input type="radio" name="turnFrequency" value="manual" id="freqManual">
+                            <div>
+                                <strong>Manuaalinen</strong><br>
+                                <small>GM käynnistää narratiivijaksot manuaalisesti</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="form-group">
+                        <label for="contributionWindow">Toiminta-ikkuna (tuntia)</label>
+                        <input type="number" id="contributionWindow" name="contribution_window_hours" min="1" max="168" value="24">
+                        <div class="help-text">Kuinka kauan pelaajilla on aikaa lähettää toimintojaan</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxInactiveDays">Max. inaktiivisuus (päivää)</label>
+                        <input type="number" id="maxInactiveDays" name="max_inactive_days" min="1" max="30" value="7">
+                        <div class="help-text">Kuinka monta päivää pelaaja voi olla inaktiivinen ennen varoitusta</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Style -->
+            <div class="form-section">
+                <h3><span class="section-icon">🎭</span> Narratiivityyli</h3>
+                
+                <div class="form-group">
+                    <label>Tarinankerronnan tyyli</label>
+                    <div class="radio-group">
+                        <div class="radio-option" onclick="selectRadio('narrativeStyle', 'collaborative')">
+                            <input type="radio" name="narrativeStyle" value="collaborative" id="styleCollaborative" checked>
+                            <div>
+                                <strong>Yhteistyöllinen</strong><br>
+                                <small>Pelaajat ja GM luovat tarinaa yhdessä tasavertaisesti</small>
+                            </div>
+                        </div>
+                        <div class="radio-option" onclick="selectRadio('narrativeStyle', 'gm_driven')">
+                            <input type="radio" name="narrativeStyle" value="gm_driven" id="styleGMDriven">
+                            <div>
+                                <strong>GM-johtoinen</strong><br>
+                                <small>GM ohjaa tarinan kulkua ja pelaajat reagoivat</small>
+                            </div>
+                        </div>
+                        <div class="radio-option" onclick="selectRadio('narrativeStyle', 'ai_assisted')">
+                            <input type="radio" name="narrativeStyle" value="ai_assisted" id="styleAIAssisted">
+                            <div>
+                                <strong>AI-avusteinen</strong><br>
+                                <small>Tekoäly auttaa tarinankerronnassa ja maailman kehityksessä</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="autoAdvanceTurns" name="auto_advance_turns" checked>
+                    <label for="autoAdvanceTurns">Automaattinen narratiivijaksotus</label>
+                    <div class="help-text">Aktivoi narratiivijaksot automaattisesti aikataulun mukaan</div>
+                </div>
+            </div>
+
+            <!-- Player Management -->
+            <div class="form-section">
+                <h3><span class="section-icon">👥</span> Pelaajien Hallinta</h3>
+                
+                <div class="settings-grid">
+                    <div class="form-group">
+                        <label for="maxPlayers">Maksimi pelaajamäärä</label>
+                        <input type="number" id="maxPlayers" name="max_players" min="2" max="20" value="6">
+                        <div class="help-text">Suositeltu määrä asynkroniselle pelille on 4-8 pelaajaa</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expectedDuration">Odotettu kesto (viikkoa)</label>
+                        <input type="number" id="expectedDuration" name="expected_duration_weeks" min="1" max="104" value="12">
+                        <div class="help-text">Arvio kampanjan pituudesta - auttaa pelaajia sitoutumisessa</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="enrollmentDeadline">Ilmoittautumisen määräaika (valinnainen)</label>
+                    <input type="datetime-local" id="enrollmentDeadline" name="enrollment_deadline">
+                    <div class="help-text">Aseta määräaika jos haluat rajata rekrytointiaikaa</div>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-card" id="gamePreview">
+                <h4>📋 Pelin Esikatselu</h4>
+                <div id="previewContent">
+                    <p><strong id="previewName">Pelin nimi</strong></p>
+                    <p id="previewDescription">Pelin kuvaus näkyy tässä...</p>
+                    <div class="preview-stats">
+                        <div class="preview-stat">
+                            <span>🎭</span>
+                            <span id="previewStyle">Narratiivityyli</span>
+                        </div>
+                        <div class="preview-stat">
+                            <span>⏰</span>
+                            <span id="previewFrequency">Jaksotiheys</span>
+                        </div>
+                        <div class="preview-stat">
+                            <span>👥</span>
+                            <span id="previewPlayers">Pelaajamäärä</span>
+                        </div>
+                        <div class="preview-stat">
+                            <span>📅</span>
+                            <span id="previewDuration">Kesto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <button type="submit" class="btn-submit">Luo asynkroninen peli</button>
+                <button type="button" class="btn-cancel" onclick="window.location.href='/hml/async-games.html'">Peruuta</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication and GM role
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!user.id) {
+                window.location.href = '/hml/login.html';
+                return;
+            }
+
+            const roles = JSON.parse(user.roles || '[]');
+            if (!roles.includes('gm') && !user.is_admin) {
+                alert('Vain GM-roolilla varustetut käyttäjät voivat luoda asynkronisia pelejä.');
+                window.location.href = '/hml/async-games.html';
+                return;
+            }
+
+            // Set up event listeners
+            setupEventListeners();
+            updatePreview();
+        });
+
+        function setupEventListeners() {
+            // Form elements that should trigger preview update
+            const formElements = ['gameName', 'gameDescription', 'maxPlayers', 'expectedDuration'];
+            formElements.forEach(id => {
+                document.getElementById(id).addEventListener('input', updatePreview);
+            });
+
+            // Radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.addEventListener('change', updatePreview);
+            });
+
+            // Form submission
+            document.getElementById('createAsyncGameForm').addEventListener('submit', handleFormSubmit);
+        }
+
+        function selectRadio(name, value) {
+            document.querySelector(`input[name="${name}"][value="${value}"]`).checked = true;
+            
+            // Update visual selection
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('.radio-option').classList.remove('selected');
+            });
+            document.querySelector(`input[name="${name}"][value="${value}"]`).closest('.radio-option').classList.add('selected');
+            
+            updatePreview();
+        }
+
+        function updatePreview() {
+            const name = document.getElementById('gameName').value || 'Pelin nimi';
+            const description = document.getElementById('gameDescription').value || 'Pelin kuvaus näkyy tässä...';
+            const maxPlayers = document.getElementById('maxPlayers').value;
+            const expectedDuration = document.getElementById('expectedDuration').value;
+            
+            const narrativeStyle = document.querySelector('input[name="narrativeStyle"]:checked')?.value;
+            const turnFrequency = document.querySelector('input[name="turnFrequency"]:checked')?.value;
+
+            document.getElementById('previewName').textContent = name;
+            document.getElementById('previewDescription').textContent = description;
+            document.getElementById('previewPlayers').textContent = `Max ${maxPlayers} pelaajaa`;
+            document.getElementById('previewDuration').textContent = `~${expectedDuration} viikkoa`;
+            
+            // Style display
+            const styleTexts = {
+                'collaborative': 'Yhteistyöllinen',
+                'gm_driven': 'GM-johtoinen',
+                'ai_assisted': 'AI-avusteinen'
+            };
+            document.getElementById('previewStyle').textContent = styleTexts[narrativeStyle] || 'Narratiivityyli';
+            
+            // Frequency display
+            const frequencyTexts = {
+                'daily': 'Päivittäin',
+                'weekly': 'Viikoittain',
+                'manual': 'Manuaalinen'
+            };
+            document.getElementById('previewFrequency').textContent = frequencyTexts[turnFrequency] || 'Jaksotiheys';
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Hide previous messages
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            // Gather form data
+            const formData = {
+                name: document.getElementById('gameName').value.trim(),
+                description: document.getElementById('gameDescription').value.trim(),
+                session_type: document.querySelector('input[name="sessionType"]:checked').value,
+                turn_frequency: document.querySelector('input[name="turnFrequency"]:checked').value,
+                contribution_window_hours: parseInt(document.getElementById('contributionWindow').value),
+                max_inactive_days: parseInt(document.getElementById('maxInactiveDays').value),
+                narrative_style: document.querySelector('input[name="narrativeStyle"]:checked').value,
+                auto_advance_turns: document.getElementById('autoAdvanceTurns').checked,
+                max_players: parseInt(document.getElementById('maxPlayers').value),
+                expected_duration_weeks: parseInt(document.getElementById('expectedDuration').value),
+                enrollment_deadline: document.getElementById('enrollmentDeadline').value || null
+            };
+
+            // Validate required fields
+            if (!formData.name || !formData.description) {
+                errorMessage.textContent = 'Pelin nimi ja kuvaus ovat pakollisia.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            if (formData.max_players < 2 || formData.max_players > 20) {
+                errorMessage.textContent = 'Pelaajamäärän tulee olla 2-20 välillä.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/async-games', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Pelin luonti epäonnistui');
+                }
+
+                const result = await response.json();
+
+                successMessage.textContent = 'Asynkroninen peli luotu onnistuneesti!';
+                successMessage.style.display = 'block';
+                
+                // Redirect after short delay
+                setTimeout(() => {
+                    window.location.href = `/hml/async-game-session.html?game=${result.gameId}`;
+                }, 1500);
+
+            } catch (error) {
+                console.error('Error creating async game:', error);
+                errorMessage.textContent = 'Virhe pelin luonnissa: ' + error.message;
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        function getAuthToken() {
+            // Try localStorage first (primary method)
+            const token = localStorage.getItem('auth_token');
+            if (token) return token;
+
+            // Fallback to cookies if localStorage doesn't have it
+            return getCookie('token');
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        // Initialize radio button selections
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                radio.closest('.radio-option').classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eno - Karttatyökalut</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .map-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .map-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .map-card-header {
+            height: 200px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .map-card-header.temporal {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+        }
+
+        .map-card-header.unified {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+
+        .map-card-header.timeline {
+            background: linear-gradient(45deg, #e67e22, #d35400);
+        }
+
+        .map-card-content {
+            padding: 30px;
+        }
+
+        .map-card h2 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+
+        .map-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .map-button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .map-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .map-button.temporal {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+
+        .map-button.unified {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .map-button.timeline {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-new {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .status-updated {
+            background: #f39c12;
+            color: white;
+        }
+
+        .status-stable {
+            background: #27ae60;
+            color: white;
+        }
+
+        .comparison-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .comparison-section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .feature-supported {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .feature-partial {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .feature-not-supported {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .map-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/" class="back-link">← Takaisin etusivulle</a>
+            <h1>🗺️ Karttatyökalut</h1>
+            <p>Valitse sopiva karttatyökalu tutkimustyösi tarpeisiin</p>
+        </div>
+
+        <div class="map-grid">
+            <!-- 4D Temporal Mapping System -->
+            <div class="map-card">
+                <div class="map-card-header temporal">
+                    <span class="status-badge status-new">Uusi</span>
+                    ⏰
+                </div>
+                <div class="map-card-content">
+                    <h2>4D Aika-Avaruuskartta</h2>
+                    <p>Edistynyt temporaalinen visualisointijärjestelmä maailman historian tutkimiseen yli 12,000 vuoden ajalta. Sisältää kehittyneet analyysityökalut ja ajan yli ulottuvat visualisoinnit.</p>
+
+                    <ul class="features-list">
+                        <li>Aikakausien päällekkäiset visualisoinnit</li>
+                        <li>Temporaaliset lämpökartat</li>
+                        <li>Hahmojen elämänpolkujen seuranta</li>
+                        <li>Alueellisten muutosten animaatiot</li>
+                        <li>Historialliset tilanvedokset</li>
+                        <li>Moniformaattinen datan vienti</li>
+                    </ul>
+
+                    <a href="/hml/temporal-map.html" class="map-button temporal">
+                        🚀 Avaa 4D Temporaalikartta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Unified Map Viewer -->
+            <div class="map-card">
+                <div class="map-card-header unified">
+                    <span class="status-badge status-stable">Vakaa</span>
+                    🌍
+                </div>
+                <div class="map-card-content">
+                    <h2>Yhtenäinen Maailmankartta</h2>
+                    <p>Hierarkinen maailmantutkimusjärjestelmä, joka mahdollistaa syvällisen sukeltamisen maailmasta kaupunkivaltioihin ja yksittäisiin rakennuksiin. Integroitu peli- ja wiki-järjestelmiin.</p>
+
+                    <ul class="features-list">
+                        <li>Hierarkinen zoomaus (Maailma → Kaupungit)</li>
+                        <li>Integroitu peli- ja wiki-data</li>
+                        <li>Hakutoiminnallisuus</li>
+                        <li>Kerrosvalitsin rakennuksille</li>
+                        <li>Taloudellisten näkymien tuki</li>
+                        <li>Sijainnin jakaminen</li>
+                    </ul>
+
+                    <a href="/hml/unified-map.html" class="map-button unified">
+                        🗺️ Avaa Yhtenäinen Kartta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Temporal Timeline -->
+            <div class="map-card">
+                <div class="map-card-header timeline">
+                    <span class="status-badge status-updated">Päivitetty</span>
+                    📅
+                </div>
+                <div class="map-card-content">
+                    <h2>Temporaalinen Aikajana</h2>
+                    <p>Lineaarinen aikajananäkymä historian tapahtumien tutkimiseen. Keskittyy kronologiseen etenemiseen ja tapahtumien välisiin yhteyksiin ajassa.</p>
+
+                    <ul class="features-list">
+                        <li>Kronologinen tapahtumien järjestys</li>
+                        <li>Zoomattava aikajana</li>
+                        <li>Tapahtumien suodatus</li>
+                        <li>Aikakauden merkintä</li>
+                        <li>Nopea navigointi</li>
+                        <li>Tapahtumien linkitys</li>
+                    </ul>
+
+                    <a href="/hml/temporal-timeline.html" class="map-button timeline">
+                        📊 Avaa Temporaalinen Aikajana
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2>Karttatyökalujen Vertailu</h2>
+            <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">
+                Valitse oikea työkalu käyttötarkoituksesi mukaan
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Ominaisuus</th>
+                        <th>4D Temporaali</th>
+                        <th>Yhtenäinen Kartta</th>
+                        <th>Aikajana</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Avaruudellinen visualisointi</td>
+                        <td class="feature-supported">Täysi</td>
+                        <td class="feature-supported">Täysi</td>
+                        <td class="feature-not-supported">Ei</td>
+                    </tr>
+                    <tr>
+                        <td>Ajallinen analyysi</td>
+                        <td class="feature-supported">Edistynyt</td>
+                        <td class="feature-not-supported">Ei</td>
+                        <td class="feature-supported">Perus</td>
+                    </tr>
+                    <tr>
+                        <td>Hahmojen seuranta</td>
+                        <td class="feature-supported">Täysi</td>
+                        <td class="feature-not-supported">Ei</td>
+                        <td class="feature-partial">Osittain</td>
+                    </tr>
+                    <tr>
+                        <td>Peli-integraatio</td>
+                        <td class="feature-partial">Kehitteillä</td>
+                        <td class="feature-supported">Täysi</td>
+                        <td class="feature-not-supported">Ei</td>
+                    </tr>
+                    <tr>
+                        <td>Wiki-integraatio</td>
+                        <td class="feature-partial">Kehitteillä</td>
+                        <td class="feature-supported">Täysi</td>
+                        <td class="feature-not-supported">Ei</td>
+                    </tr>
+                    <tr>
+                        <td>Datan vienti</td>
+                        <td class="feature-supported">Moniformaatti</td>
+                        <td class="feature-not-supported">Ei</td>
+                        <td class="feature-partial">Perus</td>
+                    </tr>
+                    <tr>
+                        <td>Suorituskyky</td>
+                        <td class="feature-partial">Keskitaso</td>
+                        <td class="feature-supported">Nopea</td>
+                        <td class="feature-supported">Nopea</td>
+                    </tr>
+                    <tr>
+                        <td>Käyttöliittymä</td>
+                        <td class="feature-supported">Edistynyt</td>
+                        <td class="feature-supported">Intuitiivinen</td>
+                        <td class="feature-supported">Yksinkertainen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="comparison-section">
+            <h2>Käyttötapaukset</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <h3 style="color: #9b59b6;">🏛️ Historian Tutkimus</h3>
+                    <p><strong>Suositus:</strong> 4D Temporaalikartta</p>
+                    <p>Parhaiten soveltuu syvälliseen historian analysointiin, aikakausien vertailuun ja pitkän aikavälin trendien tunnistamiseen.</p>
+                </div>
+
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <h3 style="color: #27ae60;">🎮 Pelissä Navigointi</h3>
+                    <p><strong>Suositus:</strong> Yhtenäinen Kartta</p>
+                    <p>Optimoitu aktiiviseen pelaamiseen, sijainnin hakuun ja nopean navigoinnin tarpeisiin peleissä.</p>
+                </div>
+
+                <div style="padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <h3 style="color: #e67e22;">📚 Kronologinen Oppiminen</h3>
+                    <p><strong>Suositus:</strong> Temporaalinen Aikajana</p>
+                    <p>Ihanteellinen tapahtumien kronologiseen opiskeluun ja historiallisten yhteyksien ymmärtämiseen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any interactive features here
+            console.log('Map selection interface loaded');
+
+            // Track which map tools users visit
+            const mapButtons = document.querySelectorAll('.map-button');
+            mapButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const mapType = this.getAttribute('href').split('/').pop().split('.')[0];
+                    console.log(`User navigated to: ${mapType}`);
+
+                    // Could add analytics tracking here
+                    // analytics.track('map_tool_accessed', { tool: mapType });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

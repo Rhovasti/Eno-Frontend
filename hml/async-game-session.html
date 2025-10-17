@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynkroninen Peli - Eno</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .game-session-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .game-header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .game-title {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .game-status-bar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-active { background: #28a745; }
+        .badge-recruiting { background: #007bff; }
+        .badge-paused { background: #ffc107; color: #212529; }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 20px;
+        }
+
+        .narrative-panel {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .narrative-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cycle-info {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cycle-status {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .cycle-timeline {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .narrative-content {
+            padding: 20px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .narrative-entry {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .narrative-entry:last-child {
+            border-bottom: none;
+        }
+
+        .narrative-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .narrative-text {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .action-panel,
+        .player-panel {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .panel-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .panel-content {
+            padding: 20px;
+        }
+
+        .action-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .action-type-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-type-btn {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .action-type-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .action-type-btn.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .priority-slider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .priority-value {
+            font-weight: bold;
+            min-width: 20px;
+        }
+
+        .btn-submit-action {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-submit-action:hover {
+            background: #1e7e34;
+        }
+
+        .btn-submit-action:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .pending-actions {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .action-item {
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+
+        .action-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .action-type-tag {
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .action-content {
+            font-size: 13px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .player-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .player-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .player-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .player-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .player-character {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .activity-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .activity-online { background: #28a745; }
+        .activity-recent { background: #ffc107; }
+        .activity-offline { background: #dc3545; }
+
+        .temporal-section {
+            margin-bottom: 20px;
+        }
+
+        .temporal-section h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .temporal-list {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .temporal-item {
+            padding: 8px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .temporal-item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .temporal-item-details {
+            color: #666;
+            font-size: 11px;
+        }
+
+        .temporal-actions {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            border: 1px solid #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            border-color: #545b62;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+            }
+            
+            .game-status-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Asynkroninen Peli</h1>
+        <nav id="navBar">
+            <a href="/">Etusivu</a>
+            <a href="/hml/threads.html">Langat</a>
+            <a href="/hml/storyboard.html">Storyboard</a>
+            <a href="/hml/wiki_dynamic.html">Wiki</a>
+            <a href="/hml/map-selection.html">🗺️ Kartat</a>
+            <a href="/hml/my-games.html">Omat Pelit</a>
+            <a href="/hml/async-games.html">Asynkroniset Pelit</a>
+        </nav>
+    </header>
+
+    <div class="game-session-container">
+        <!-- Game Header -->
+        <div class="game-header">
+            <h2 class="game-title" id="gameTitle">Ladataan peliä...</h2>
+            <p id="gameDescription">Pelin kuvaus ladataan...</p>
+            
+            <div class="game-status-bar">
+                <div class="status-item">
+                    <span>Tila:</span>
+                    <span class="status-badge" id="gameStatus">-</span>
+                </div>
+                <div class="status-item">
+                    <span>👥</span>
+                    <span id="playerCount">0 pelaajaa</span>
+                </div>
+                <div class="status-item">
+                    <span>⏰</span>
+                    <span id="turnFrequency">-</span>
+                </div>
+                <div class="status-item">
+                    <span>🎭</span>
+                    <span id="narrativeStyle">-</span>
+                </div>
+                <div class="status-item">
+                    <span>📊</span>
+                    <span id="pendingActionCount">0 odottavaa toimintoa</span>
+                </div>
+                <div class="status-item">
+                    <span>⏰</span>
+                    <button id="temporalViewBtn" class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px;">Temporaalinen näkymä</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Narrative Panel -->
+            <div class="narrative-panel">
+                <div class="narrative-header">
+                    <h3>📖 Narratiivi</h3>
+                    <button id="refreshNarrative" class="btn btn-secondary">🔄</button>
+                </div>
+                
+                <div class="cycle-info" id="cycleInfo" style="display:none;">
+                    <div class="cycle-status" id="cycleStatus">Narratiivijakso</div>
+                    <div class="cycle-timeline" id="cycleTimeline">Aikataulutiedot</div>
+                </div>
+                
+                <div class="narrative-content" id="narrativeContent">
+                    <p>Ladataan narratiivia...</p>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Action Submission Panel -->
+                <div class="action-panel">
+                    <div class="panel-header">⚡ Lähetä Toiminto</div>
+                    <div class="panel-content">
+                        <form id="actionForm" class="action-form">
+                            <div class="form-group">
+                                <label>Toimintotyyppi:</label>
+                                <div class="action-type-selector">
+                                    <button type="button" class="action-type-btn active" data-type="dialogue">💬 Dialogi</button>
+                                    <button type="button" class="action-type-btn" data-type="action">⚡ Toiminta</button>
+                                    <button type="button" class="action-type-btn" data-type="reaction">💭 Reaktio</button>
+                                    <button type="button" class="action-type-btn" data-type="ooc">📝 OOC</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="actionTarget">Kohde (valinnainen):</label>
+                                <input type="text" id="actionTarget" placeholder="Kehen/mihin toiminto kohdistuu">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="actionContent">Toiminnon kuvaus:</label>
+                                <textarea id="actionContent" placeholder="Kuvaile toimintosi yksityiskohtaisesti..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Prioriteetti:</label>
+                                <div class="priority-slider">
+                                    <span>Matala</span>
+                                    <input type="range" id="actionPriority" min="1" max="10" value="5">
+                                    <span>Korkea</span>
+                                    <span class="priority-value" id="priorityValue">5</span>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit-action" id="submitActionBtn">
+                                Lähetä Toiminto
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Pending Actions -->
+                <div class="action-panel">
+                    <div class="panel-header">⏳ Omat Odottavat Toiminnot</div>
+                    <div class="panel-content">
+                        <div id="pendingActions" class="pending-actions">
+                            <p>Ei odottavia toimintoja.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Players Panel -->
+                <div class="player-panel">
+                    <div class="panel-header">👥 Pelaajat</div>
+                    <div class="panel-content">
+                        <div id="playerList" class="player-list">
+                            <p>Ladataan pelaajia...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temporal Context Panel -->
+                <div class="action-panel" id="temporalPanel" style="display: none;">
+                    <div class="panel-header">⏰ Temporaalinen Konteksti</div>
+                    <div class="panel-content">
+                        <div id="temporalContext">
+                            <div class="temporal-section">
+                                <h4>🏛️ Nykyiset Tapahtumat</h4>
+                                <div id="currentEvents" class="temporal-list">
+                                    <p>Ladataan tapahtumia...</p>
+                                </div>
+                            </div>
+                            <div class="temporal-section">
+                                <h4>👤 Aktiiviset Hahmot</h4>
+                                <div id="activeCharacters" class="temporal-list">
+                                    <p>Ladataan hahmoja...</p>
+                                </div>
+                            </div>
+                            <div class="temporal-section">
+                                <h4>🗺️ Alueet</h4>
+                                <div id="activeTerritories" class="temporal-list">
+                                    <p>Ladataan alueita...</p>
+                                </div>
+                            </div>
+                            <div class="temporal-actions">
+                                <button id="openFullTemporalMap" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                                    Avaa Täysi Temporaalikartta
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        let currentGame = null;
+        let currentUser = null;
+        let selectedActionType = 'dialogue';
+        let refreshInterval = null;
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            if (!currentUser.id) {
+                window.location.href = '/hml/login.html';
+                return;
+            }
+
+            // Get game ID from URL
+            const gameId = new URLSearchParams(window.location.search).get('game');
+            if (!gameId) {
+                alert('Peli-ID puuttuu');
+                window.location.href = '/hml/async-games.html';
+                return;
+            }
+
+            // Setup event listeners
+            setupEventListeners();
+            
+            // Load game data
+            await loadGame(gameId);
+            
+            // Start auto-refresh
+            startAutoRefresh();
+        });
+
+        function setupEventListeners() {
+            // Action type selector
+            document.querySelectorAll('.action-type-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    selectActionType(btn.dataset.type);
+                });
+            });
+
+            // Priority slider
+            document.getElementById('actionPriority').addEventListener('input', (e) => {
+                document.getElementById('priorityValue').textContent = e.target.value;
+            });
+
+            // Action form
+            document.getElementById('actionForm').addEventListener('submit', handleActionSubmit);
+
+            // Refresh button
+            document.getElementById('refreshNarrative').addEventListener('click', () => {
+                if (currentGame) loadGameState(currentGame.id);
+            });
+
+            // Temporal view toggle
+            document.getElementById('temporalViewBtn').addEventListener('click', toggleTemporalPanel);
+
+            // Full temporal map button
+            document.getElementById('openFullTemporalMap').addEventListener('click', () => {
+                window.open('/hml/temporal-map.html', '_blank');
+            });
+        }
+
+        function selectActionType(type) {
+            selectedActionType = type;
+            document.querySelectorAll('.action-type-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.type === type);
+            });
+        }
+
+        async function loadGame(gameId) {
+            try {
+                const response = await fetch(`/api/async-games/${gameId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load game');
+                }
+
+                currentGame = await response.json();
+                updateGameDisplay();
+                await loadGameState(gameId);
+                
+            } catch (error) {
+                console.error('Error loading game:', error);
+                alert('Virhe pelin lataamisessa: ' + error.message);
+                window.location.href = '/hml/async-games.html';
+            }
+        }
+
+        function updateGameDisplay() {
+            document.getElementById('gameTitle').textContent = currentGame.name;
+            document.getElementById('gameDescription').textContent = currentGame.description || 'Ei kuvausta';
+            
+            // Status badge
+            const statusBadge = document.getElementById('gameStatus');
+            statusBadge.textContent = getStateDisplayText(currentGame.game_state);
+            statusBadge.className = `status-badge badge-${currentGame.game_state}`;
+            
+            document.getElementById('playerCount').textContent = `${currentGame.active_players || 0} pelaajaa`;
+            document.getElementById('turnFrequency').textContent = getFrequencyDisplayText(currentGame.turn_frequency);
+            document.getElementById('narrativeStyle').textContent = getNarrativeStyleText(currentGame.narrative_style);
+        }
+
+        async function loadGameState(gameId) {
+            try {
+                // Load narrative cycles and player actions in parallel
+                const [narrativeResponse, actionsResponse, playersResponse] = await Promise.all([
+                    fetch(`/api/async-games/${gameId}/narrative-cycles`, {
+                        headers: { 'Authorization': `Bearer ${getAuthToken()}` }
+                    }),
+                    fetch(`/api/async-games/${gameId}/actions?user=${currentUser.id}`, {
+                        headers: { 'Authorization': `Bearer ${getAuthToken()}` }
+                    }),
+                    fetch(`/api/async-games/${gameId}/players`, {
+                        headers: { 'Authorization': `Bearer ${getAuthToken()}` }
+                    })
+                ]);
+
+                if (narrativeResponse.ok) {
+                    const narratives = await narrativeResponse.json();
+                    updateNarrativeDisplay(narratives);
+                }
+
+                if (actionsResponse.ok) {
+                    const actions = await actionsResponse.json();
+                    updatePendingActions(actions.filter(a => a.action_status === 'pending'));
+                    document.getElementById('pendingActionCount').textContent = `${actions.filter(a => a.action_status === 'pending').length} odottavaa toimintoa`;
+                }
+
+                if (playersResponse.ok) {
+                    const players = await playersResponse.json();
+                    updatePlayersList(players);
+                }
+
+            } catch (error) {
+                console.error('Error loading game state:', error);
+            }
+        }
+
+        function updateNarrativeDisplay(narratives) {
+            const content = document.getElementById('narrativeContent');
+            
+            if (narratives.length === 0) {
+                content.innerHTML = '<p>Ei narratiivia vielä saatavilla. Ensimmäinen narratiivijakso luodaan kun pelaajat ovat lähettäneet toimintojaan.</p>';
+                return;
+            }
+
+            content.innerHTML = narratives.map(narrative => `
+                <div class="narrative-entry">
+                    <div class="narrative-meta">
+                        <span>Jakso ${narrative.cycle_number} - ${formatDate(narrative.completion_time)}</span>
+                        <span>${narrative.actions_processed} toimintoa käsitelty</span>
+                    </div>
+                    <div class="narrative-text">${formatNarrative(narrative.narrative_generated)}</div>
+                </div>
+            `).join('');
+        }
+
+        function updatePendingActions(actions) {
+            const container = document.getElementById('pendingActions');
+            
+            if (actions.length === 0) {
+                container.innerHTML = '<p>Ei odottavia toimintoja.</p>';
+                return;
+            }
+
+            container.innerHTML = actions.map(action => `
+                <div class="action-item">
+                    <div class="action-header">
+                        <span class="action-type-tag">${getActionTypeText(action.action_type)}</span>
+                        <small>${formatDate(action.submitted_at)}</small>
+                    </div>
+                    <div class="action-content">${action.action_content}</div>
+                    ${action.target_entity ? `<div style="font-size: 12px; color: #666; margin-top: 5px;">Kohde: ${action.target_entity}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function updatePlayersList(players) {
+            const container = document.getElementById('playerList');
+            
+            container.innerHTML = players.map(player => {
+                const activityClass = getActivityClass(player.last_activity);
+                const isCurrentUser = player.user_id === currentUser.id;
+                
+                return `
+                    <div class="player-item ${isCurrentUser ? 'current-user' : ''}">
+                        <div class="player-info">
+                            <div class="player-avatar">${player.username.charAt(0).toUpperCase()}</div>
+                            <div class="player-details">
+                                <div class="player-name">${player.username} ${isCurrentUser ? '(Sinä)' : ''}</div>
+                                <div class="player-character">${player.character_name || 'Ei hahmoa'}</div>
+                            </div>
+                        </div>
+                        <div class="activity-indicator ${activityClass}" title="${getActivityText(player.last_activity)}"></div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function handleActionSubmit(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitActionBtn');
+            const content = document.getElementById('actionContent').value.trim();
+            
+            if (!content) {
+                alert('Toiminnon kuvaus on pakollinen');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Lähetetään...';
+
+            try {
+                const actionData = {
+                    action_type: selectedActionType,
+                    action_content: content,
+                    action_priority: parseInt(document.getElementById('actionPriority').value),
+                    target_entity: document.getElementById('actionTarget').value.trim() || null
+                };
+
+                const response = await fetch(`/api/async-games/${currentGame.id}/actions`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    },
+                    body: JSON.stringify(actionData)
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Toiminnon lähetys epäonnistui');
+                }
+
+                // Clear form
+                document.getElementById('actionContent').value = '';
+                document.getElementById('actionTarget').value = '';
+                document.getElementById('actionPriority').value = '5';
+                document.getElementById('priorityValue').textContent = '5';
+
+                // Refresh game state
+                await loadGameState(currentGame.id);
+
+                alert('Toiminto lähetetty onnistuneesti!');
+
+            } catch (error) {
+                console.error('Error submitting action:', error);
+                alert('Virhe toiminnon lähetyksessä: ' + error.message);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Lähetä Toiminto';
+            }
+        }
+
+        function toggleTemporalPanel() {
+            const panel = document.getElementById('temporalPanel');
+            const btn = document.getElementById('temporalViewBtn');
+
+            if (panel.style.display === 'none' || panel.style.display === '') {
+                panel.style.display = 'block';
+                btn.textContent = 'Piilota Temporaali';
+                loadTemporalData();
+            } else {
+                panel.style.display = 'none';
+                btn.textContent = 'Temporaalinen näkymä';
+            }
+        }
+
+        async function loadTemporalData() {
+            try {
+                // Fetch temporal data from the API
+                const response = await fetch('/api/temporal/complete');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch temporal data');
+                }
+
+                const temporalData = await response.json();
+                if (temporalData.success) {
+                    updateTemporalDisplay(temporalData.data);
+                } else {
+                    throw new Error('Temporal data API returned error');
+                }
+            } catch (error) {
+                console.error('Error loading temporal data:', error);
+                // Display sample data if API fails
+                updateTemporalDisplay(getSampleTemporalData());
+            }
+        }
+
+        function updateTemporalDisplay(data) {
+            // Update current events
+            const eventsContainer = document.getElementById('currentEvents');
+            if (data.events && data.events.length > 0) {
+                eventsContainer.innerHTML = data.events.slice(0, 3).map(event => `
+                    <div class="temporal-item">
+                        <div class="temporal-item-title">${event.title}</div>
+                        <div class="temporal-item-details">
+                            ${event.category} • ${event.timeRange.start} - ${event.timeRange.end}
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                eventsContainer.innerHTML = '<p style="font-size: 12px; color: #666;">Ei aktiivisia tapahtumia</p>';
+            }
+
+            // Update active characters
+            const charactersContainer = document.getElementById('activeCharacters');
+            if (data.characters && data.characters.length > 0) {
+                charactersContainer.innerHTML = data.characters.slice(0, 3).map(character => `
+                    <div class="temporal-item">
+                        <div class="temporal-item-title">${character.name}</div>
+                        <div class="temporal-item-details">
+                            ${character.type} • ${character.lifespan.birth} - ${character.lifespan.death}
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                charactersContainer.innerHTML = '<p style="font-size: 12px; color: #666;">Ei aktiivisia hahmoja</p>';
+            }
+
+            // Update active territories
+            const territoriesContainer = document.getElementById('activeTerritories');
+            if (data.territories && data.territories.length > 0) {
+                territoriesContainer.innerHTML = data.territories.slice(0, 2).map(territory => `
+                    <div class="temporal-item">
+                        <div class="temporal-item-title">${territory.name}</div>
+                        <div class="temporal-item-details">
+                            ${territory.factionId} • ${territory.area} km²
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                territoriesContainer.innerHTML = '<p style="font-size: 12px; color: #666;">Ei aktiivisia alueita</p>';
+            }
+        }
+
+        function getSampleTemporalData() {
+            // Fallback sample data if API is unavailable
+            return {
+                events: [
+                    {
+                        title: 'Kuninkaanvaltaistuimen kiista',
+                        category: 'political',
+                        timeRange: { start: -4800, end: -4750 }
+                    },
+                    {
+                        title: 'Suuri vaellus alkaa',
+                        category: 'demographic',
+                        timeRange: { start: -3000, end: -2900 }
+                    }
+                ],
+                characters: [
+                    {
+                        name: 'Aldric Perustaja',
+                        type: 'ruler',
+                        lifespan: { birth: -5020, death: -4965 }
+                    },
+                    {
+                        name: 'Mira Viisas',
+                        type: 'scholar',
+                        lifespan: { birth: -4995, death: -4920 }
+                    }
+                ],
+                territories: [
+                    {
+                        name: 'Pohjoinen Kuningaskunta',
+                        factionId: 'northern_kingdom',
+                        area: 10000
+                    }
+                ]
+            };
+        }
+
+        function startAutoRefresh() {
+            // Refresh every 30 seconds
+            refreshInterval = setInterval(() => {
+                if (currentGame) {
+                    loadGameState(currentGame.id);
+                }
+            }, 30000);
+        }
+
+        // Helper functions
+        function formatDate(dateString) {
+            if (!dateString) return 'Ei päivämäärää';
+            return new Date(dateString).toLocaleString('fi-FI');
+        }
+
+        function formatNarrative(text) {
+            if (!text) return 'Ei narratiivia saatavilla';
+            return text.split('\n').map(paragraph => 
+                paragraph.trim() ? `<p>${paragraph}</p>` : ''
+            ).join('');
+        }
+
+        function getStateDisplayText(state) {
+            const states = {
+                'recruiting': 'Rekrytointi',
+                'active': 'Aktiivinen',
+                'paused': 'Tauolla',
+                'concluded': 'Päättynyt'
+            };
+            return states[state] || state;
+        }
+
+        function getFrequencyDisplayText(frequency) {
+            const frequencies = {
+                'hourly': 'Tunneittain',
+                'daily': 'Päivittäin',
+                'weekly': 'Viikoittain',
+                'manual': 'Manuaalinen'
+            };
+            return frequencies[frequency] || frequency;
+        }
+
+        function getNarrativeStyleText(style) {
+            const styles = {
+                'gm_driven': 'GM-johtoinen',
+                'collaborative': 'Yhteistyö',
+                'ai_assisted': 'AI-avusteinen'
+            };
+            return styles[style] || style;
+        }
+
+        function getActionTypeText(type) {
+            const types = {
+                'dialogue': 'Dialogi',
+                'action': 'Toiminta',
+                'reaction': 'Reaktio',
+                'ooc': 'OOC',
+                'character_development': 'Hahmon kehitys'
+            };
+            return types[type] || type;
+        }
+
+        function getActivityClass(lastActivity) {
+            if (!lastActivity) return 'activity-offline';
+            
+            const now = new Date();
+            const activity = new Date(lastActivity);
+            const diffHours = (now - activity) / (1000 * 60 * 60);
+            
+            if (diffHours < 1) return 'activity-online';
+            if (diffHours < 24) return 'activity-recent';
+            return 'activity-offline';
+        }
+
+        function getActivityText(lastActivity) {
+            if (!lastActivity) return 'Ei aktiivisuustietoja';
+            
+            const now = new Date();
+            const activity = new Date(lastActivity);
+            const diffHours = (now - activity) / (1000 * 60 * 60);
+            
+            if (diffHours < 1) return 'Aktiivinen nyt';
+            if (diffHours < 24) return `Aktiivinen ${Math.floor(diffHours)} tuntia sitten`;
+            const diffDays = Math.floor(diffHours / 24);
+            return `Aktiivinen ${diffDays} päivää sitten`;
+        }
+
+        function getAuthToken() {
+            // Try localStorage first (primary method)
+            const token = localStorage.getItem('auth_token');
+            if (token) return token;
+
+            // Fallback to cookies if localStorage doesn't have it
+            return getCookie('token');
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+
+        // Clean up interval on page unload
+        window.addEventListener('beforeunload', () => {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+        });
+    </script>
+</body>
+</html>

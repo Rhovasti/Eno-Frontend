@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynkroniset Pelit - Eno</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .game-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-group label {
+            font-weight: bold;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .async-game-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            position: relative;
+        }
+        
+        .async-game-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .game-state-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .state-recruiting {
+            background: #28a745;
+        }
+        
+        .state-active {
+            background: #007bff;
+        }
+        
+        .state-paused {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .state-concluded {
+            background: #6c757d;
+        }
+        
+        .session-type-indicator {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .type-async {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .type-scheduled {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .type-hybrid {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .game-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .narrative-cycle-info {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 3px solid #007bff;
+        }
+        
+        .cycle-status {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .cycle-timing {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .game-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+        
+        .btn-disabled {
+            background: #e9ecef;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .loading-spinner {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-filters {
+                flex-direction: column;
+            }
+            
+            .page-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .header-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Asynkroniset Pelit</h1>
+        <nav id="navBar">
+            <a href="/">Etusivu</a>
+            <a href="/hml/threads.html">Langat</a>
+            <a href="/hml/storyboard.html">Storyboard</a>
+            <a href="/hml/wiki_dynamic.html">Wiki</a>
+            <a href="/hml/my-games.html">Omat Pelit</a>
+            <a href="/hml/async-games.html" class="active">Asynkroniset Pelit</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Asynkroniset Roolipelit</h2>
+            <div class="header-actions">
+                <a href="/hml/create-async-game.html" class="btn btn-success">+ Luo uusi asynkroninen peli</a>
+                <button id="refreshBtn" class="btn btn-secondary">🔄 Päivitä</button>
+            </div>
+        </div>
+        
+        <div class="game-filters">
+            <div class="filter-group">
+                <label>Pelin tila:</label>
+                <select id="stateFilter">
+                    <option value="">Kaikki tilat</option>
+                    <option value="recruiting">Rekrytointi</option>
+                    <option value="active">Aktiivinen</option>
+                    <option value="paused">Tauolla</option>
+                    <option value="concluded">Päättynyt</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Istunto tyyppi:</label>
+                <select id="typeFilter">
+                    <option value="">Kaikki tyypit</option>
+                    <option value="async">Asynkroninen</option>
+                    <option value="scheduled">Aikataulutettu</option>
+                    <option value="hybrid">Hybridi</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Tahtitiheys:</label>
+                <select id="frequencyFilter">
+                    <option value="">Kaikki tahdit</option>
+                    <option value="hourly">Tunneittain</option>
+                    <option value="daily">Päivittäin</option>
+                    <option value="weekly">Viikoittain</option>
+                    <option value="manual">Manuaalinen</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Haku:</label>
+                <input type="text" id="searchFilter" placeholder="Pelin nimi...">
+            </div>
+        </div>
+        
+        <div id="loadingSpinner" class="loading-spinner" style="display:none;">
+            <p>Ladataan pelejä...</p>
+        </div>
+        
+        <div id="asyncGamesGrid" class="games-grid">
+            <!-- Async games will be loaded here -->
+        </div>
+        
+        <div id="emptyState" class="empty-state" style="display:none;">
+            <h3>Ei asynkronisia pelejä saatavilla</h3>
+            <p>Tule ensimmäisten joukossa mukaan uusiin narratiivisiin seikkailuihin!</p>
+            <div style="margin-top: 20px;">
+                <a href="/hml/create-async-game.html" class="btn btn-success">Luo ensimmäinen asynkroninen peli</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+    <script>
+        let allAsyncGames = [];
+        let currentUser = null;
+        
+        document.addEventListener('DOMContentLoaded', async function() {
+            currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            if (!currentUser.id) {
+                window.location.href = '/hml/login.html';
+                return;
+            }
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Load initial data
+            await loadAsyncGames();
+        });
+        
+        function setupEventListeners() {
+            // Filter change events
+            document.getElementById('stateFilter').addEventListener('change', applyFilters);
+            document.getElementById('typeFilter').addEventListener('change', applyFilters);
+            document.getElementById('frequencyFilter').addEventListener('change', applyFilters);
+            document.getElementById('searchFilter').addEventListener('input', applyFilters);
+            
+            // Refresh button
+            document.getElementById('refreshBtn').addEventListener('click', () => {
+                loadAsyncGames();
+            });
+        }
+        
+        async function loadAsyncGames() {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const grid = document.getElementById('asyncGamesGrid');
+            const emptyState = document.getElementById('emptyState');
+            
+            loadingSpinner.style.display = 'block';
+            grid.style.display = 'none';
+            emptyState.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/async-games', {
+                    headers: {
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load async games');
+                }
+                
+                const data = await response.json();
+                allAsyncGames = data.games || [];
+
+                loadingSpinner.style.display = 'none';
+
+                if (allAsyncGames.length === 0) {
+                    emptyState.style.display = 'block';
+                    return;
+                }
+
+                grid.style.display = 'grid';
+                renderGames(allAsyncGames);
+                
+            } catch (error) {
+                console.error('Error loading async games:', error);
+                loadingSpinner.style.display = 'none';
+                alert('Virhe pelien lataamisessa: ' + error.message);
+            }
+        }
+        
+        function applyFilters() {
+            const stateFilter = document.getElementById('stateFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const frequencyFilter = document.getElementById('frequencyFilter').value;
+            const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+            
+            const filteredGames = allAsyncGames.filter(game => {
+                if (stateFilter && game.game_state !== stateFilter) return false;
+                if (typeFilter && game.session_type !== typeFilter) return false;
+                if (frequencyFilter && game.turn_frequency !== frequencyFilter) return false;
+                if (searchFilter && !game.name.toLowerCase().includes(searchFilter)) return false;
+                return true;
+            });
+            
+            renderGames(filteredGames);
+        }
+        
+        function renderGames(games) {
+            const grid = document.getElementById('asyncGamesGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            // Ensure games is an array
+            if (!Array.isArray(games)) {
+                console.error('renderGames: Expected array, got:', games);
+                games = [];
+            }
+
+            if (games.length === 0) {
+                grid.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            emptyState.style.display = 'none';
+            
+            grid.innerHTML = games.map(game => createGameCard(game)).join('');
+        }
+        
+        function createGameCard(game) {
+            const isUserInGame = game.players && game.players.some(p => p.user_id === currentUser.id);
+            const canJoin = game.game_state === 'recruiting' && !isUserInGame && 
+                           game.active_players < game.max_players;
+            
+            // Get next narrative cycle info
+            const cycleInfo = getNextCycleInfo(game);
+            
+            return `
+                <div class="async-game-card">
+                    <div class="game-state-badge state-${game.game_state}">
+                        ${getStateDisplayText(game.game_state)}
+                    </div>
+                    
+                    <div class="session-type-indicator type-${game.session_type}">
+                        ${getTypeDisplayText(game.session_type)}
+                    </div>
+                    
+                    <h3>${escapeHtml(game.name)}</h3>
+                    <p>${escapeHtml(game.description || 'Ei kuvausta saatavilla')}</p>
+                    
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span>👥</span>
+                            <span>${game.active_players || 0}/${game.max_players || 'Unlimited'} pelaajaa</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>⏰</span>
+                            <span>${getFrequencyDisplayText(game.turn_frequency)}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>📊</span>
+                            <span>${game.pending_actions || 0} odottavaa toimintoa</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>🎭</span>
+                            <span>${getNarrativeStyleText(game.narrative_style)}</span>
+                        </div>
+                    </div>
+                    
+                    ${cycleInfo ? `
+                        <div class="narrative-cycle-info">
+                            <div class="cycle-status">${cycleInfo.status}</div>
+                            <div class="cycle-timing">${cycleInfo.timing}</div>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="game-actions">
+                        ${canJoin ? `
+                            <button onclick="joinGame(${game.id})" class="btn btn-success">
+                                Liity peliin
+                            </button>
+                        ` : ''}
+                        
+                        ${isUserInGame ? `
+                            <a href="/hml/async-game-session.html?game=${game.id}" class="btn btn-primary">
+                                Siirry peliin
+                            </a>
+                        ` : `
+                            <a href="/hml/async-game-view.html?game=${game.id}" class="btn btn-secondary">
+                                Näytä peli
+                            </a>
+                        `}
+                        
+                        ${game.gm_id === currentUser.id || currentUser.is_admin ? `
+                            <a href="/hml/async-gm-tools.html?game=${game.id}" class="btn btn-secondary">
+                                GM-työkalut
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+        
+        async function joinGame(gameId) {
+            try {
+                const response = await fetch(`/api/async-games/${gameId}/join`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    },
+                    body: JSON.stringify({
+                        character_name: `${currentUser.username}'s Character`,
+                        character_data: {}
+                    })
+                });
+                
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Failed to join game');
+                }
+                
+                alert('Liityit peliin onnistuneesti!');
+                await loadAsyncGames(); // Refresh the game list
+                
+            } catch (error) {
+                console.error('Error joining game:', error);
+                alert('Virhe peliin liittyessä: ' + error.message);
+            }
+        }
+        
+        function getStateDisplayText(state) {
+            const states = {
+                'recruiting': 'Rekrytointi',
+                'active': 'Aktiivinen',
+                'paused': 'Tauolla',
+                'concluded': 'Päättynyt',
+                'archived': 'Arkistoitu'
+            };
+            return states[state] || state;
+        }
+        
+        function getTypeDisplayText(type) {
+            const types = {
+                'async': 'Asynkroninen',
+                'scheduled': 'Aikataulutettu',
+                'hybrid': 'Hybridi'
+            };
+            return types[type] || type;
+        }
+        
+        function getFrequencyDisplayText(frequency) {
+            const frequencies = {
+                'hourly': 'Tunneittain',
+                'daily': 'Päivittäin', 
+                'weekly': 'Viikoittain',
+                'manual': 'Manuaalinen'
+            };
+            return frequencies[frequency] || frequency;
+        }
+        
+        function getNarrativeStyleText(style) {
+            const styles = {
+                'gm_driven': 'GM-johtoinen',
+                'collaborative': 'Yhteistyö',
+                'ai_assisted': 'AI-avusteinen'
+            };
+            return styles[style] || style;
+        }
+        
+        function getNextCycleInfo(game) {
+            if (!game.next_narrative_cycle) return null;
+            
+            const nextCycle = new Date(game.next_narrative_cycle);
+            const now = new Date();
+            const timeDiff = nextCycle.getTime() - now.getTime();
+            
+            if (timeDiff <= 0) {
+                return {
+                    status: 'Narratiivijakso käsittelyssä',
+                    timing: 'Odottaa käsittelyä'
+                };
+            }
+            
+            const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            let timing;
+            if (hours > 24) {
+                const days = Math.floor(hours / 24);
+                timing = `${days} päivää`;
+            } else if (hours > 0) {
+                timing = `${hours}h ${minutes}min`;
+            } else {
+                timing = `${minutes} minuuttia`;
+            }
+            
+            return {
+                status: 'Seuraava narratiivijakso',
+                timing: `${timing} kuluttua`
+            };
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function getAuthToken() {
+            // Try localStorage first (primary method)
+            const token = localStorage.getItem('auth_token');
+            if (token) return token;
+
+            // Fallback to cookies if localStorage doesn't have it
+            return getCookie('token');
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+    </script>
+</body>
+</html>
