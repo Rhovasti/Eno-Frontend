@@ -84,15 +84,19 @@
             <a href="/">Etusivu</a>
             <a href="/hml/threads.html">Langat</a>
             <a href="/hml/storyboard.html">Storyboard</a>
-            <a href="/hml/wiki.html">Wiki</a>
+            <a href="/hml/wiki_dynamic.html">Wiki</a>
             <a href="/hml/my-games.html" class="active">Omat Pelit</a>
+            <a href="/hml/async-games.html">Asynkroniset Pelit</a>
         </nav>
     </header>
 
     <main class="container">
         <div class="page-header">
             <h2>GM Dashboard - Hallinnoi pelejäsi</h2>
-            <a href="/hml/create-game.html" class="btn btn-primary">+ Luo uusi peli</a>
+            <div style="display: flex; gap: 10px;">
+                <a href="/hml/create-game.html" class="btn btn-primary">+ Luo uusi peli</a>
+                <a href="/hml/create-async-game.html" class="btn btn-secondary">+ Luo asynkroninen peli</a>
+            </div>
         </div>
         
         <div id="myGamesGrid" class="games-grid">
@@ -133,7 +137,7 @@
             try {
                 const response = await fetch('/api/games', {
                     headers: {
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': `Bearer ${getAuthToken()}`
                     }
                 });
                 
@@ -180,6 +184,15 @@
             }
         }
         
+        function getAuthToken() {
+            // Try localStorage first (primary method)
+            const token = localStorage.getItem('auth_token');
+            if (token) return token;
+
+            // Fallback to cookies if localStorage doesn't have it
+            return getCookie('token');
+        }
+
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);

@@ -157,7 +157,7 @@
             <a href="../index.html">Etusivu</a>
             <a href="threads.html">Langat</a>
             <a href="storyboard.html">Storyboard</a>
-            <a href="wiki.html">Wiki</a>
+            <a href="wiki_dynamic.html">Wiki</a>
             <button id="logoutBtn" class="logout-btn">Kirjaudu ulos</button>
         </nav>
     </header>
@@ -201,6 +201,9 @@
                     </label>
                     <label>
                         <input type="checkbox" id="roleGM"> GM
+                    </label>
+                    <label>
+                        <input type="checkbox" id="roleEditor"> Editor
                     </label>
                     <label>
                         <input type="checkbox" id="roleAdmin"> Admin
@@ -289,6 +292,7 @@
                         <td>
                             ${user.is_admin ? '<span class="badge badge-admin">Admin</span>' : ''}
                             ${userRoles.includes('gm') ? '<span class="badge badge-gm">GM</span>' : ''}
+                            ${userRoles.includes('editor') ? '<span class="badge badge-editor" style="background-color: #ff9800;">Editor</span>' : ''}
                             ${userRoles.includes('player') ? '<span class="badge badge-player">Player</span>' : ''}
                         </td>
                         <td>${new Date(user.created_at).toLocaleDateString()}</td>
@@ -330,6 +334,7 @@
                 document.getElementById('userNameDisplay').textContent = username;
                 document.getElementById('rolePlayer').checked = roles.includes('player');
                 document.getElementById('roleGM').checked = roles.includes('gm');
+                document.getElementById('roleEditor').checked = roles.includes('editor');
                 document.getElementById('roleAdmin').checked = isAdmin;
                 
                 editUserModal.style.display = 'block';
@@ -339,12 +344,14 @@
                 const userId = document.getElementById('userId').value;
                 const rolePlayer = document.getElementById('rolePlayer').checked;
                 const roleGM = document.getElementById('roleGM').checked;
+                const roleEditor = document.getElementById('roleEditor').checked;
                 const roleAdmin = document.getElementById('roleAdmin').checked;
                 
                 // Create roles array
                 const roles = [];
                 if (rolePlayer) roles.push('player');
                 if (roleGM) roles.push('gm');
+                if (roleEditor) roles.push('editor');
                 
                 fetch(`/api/users/${userId}/roles`, {
                     method: 'PUT',

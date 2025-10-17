@@ -64,6 +64,47 @@
             margin-top: 20px;
             text-align: center;
         }
+        
+        .btn-anon {
+            background-color: #9c27b0;
+            margin-left: 10px;
+        }
+        
+        .btn-anon:hover {
+            background-color: #7b1fa2;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .button-group .btn {
+            flex: 1;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .divider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .divider span {
+            background: #f7f7f7;
+            padding: 0 15px;
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +114,7 @@
             <a href="../index.html">Etusivu</a>
             <a href="threads.html">Langat</a>
             <a href="storyboard.html">Storyboard</a>
-            <a href="wiki.html">Wiki</a>
+            <a href="wiki_dynamic.html">Wiki</a>
         </nav>
     </header>
 
@@ -95,8 +136,19 @@
                 
                 <button type="submit" class="btn">Kirjaudu</button>
                 
+                <div class="divider">
+                    <span>TAI</span>
+                </div>
+                
+                <button type="button" class="btn btn-anon" id="anonLoginBtn">
+                    🎭 Jatka Anonyymina
+                </button>
+                
                 <div class="form-footer">
                     <p>Eikö sinulla ole tiliä? <a href="register.html">Rekisteröidy</a></p>
+                    <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                        Anonyymina voit selata sisältöä, mutta et voi osallistua peleihin
+                    </p>
                 </div>
             </form>
         </div>
@@ -106,6 +158,41 @@
         document.addEventListener('DOMContentLoaded', function() {
             const loginForm = document.getElementById('loginForm');
             const errorMessage = document.getElementById('errorMessage');
+            const anonLoginBtn = document.getElementById('anonLoginBtn');
+            
+            // Handle anonymous login
+            anonLoginBtn.addEventListener('click', function() {
+                // Send anonymous login request
+                fetch('/api/login/anonymous', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        errorMessage.textContent = data.error;
+                        errorMessage.style.display = 'block';
+                    } else {
+                        // Store anonymous user info
+                        localStorage.setItem('user', JSON.stringify(data.user));
+                        if (data.token) {
+                            localStorage.setItem('auth_token', data.token);
+                        }
+                        // Redirect to main page
+                        setTimeout(() => {
+                            window.location.href = '../index.html';
+                        }, 200);
+                    }
+                })
+                .catch(error => {
+                    console.error('Anonymous login error:', error);
+                    errorMessage.textContent = 'Anonyymi kirjautuminen epäonnistui.';
+                    errorMessage.style.display = 'block';
+                });
+            });
             
             loginForm.addEventListener('submit', function(event) {
                 event.preventDefault();
