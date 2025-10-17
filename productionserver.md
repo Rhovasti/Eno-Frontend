@@ -1,8 +1,8 @@
 # Eno Frontend Production Server Documentation
 
-> **⚠️ IMPORTANT SSL ISSUE**: As of 2025-06-07, the SSL certificate has expired. See `SSL_RENEWAL_ISSUE.md` for details and workarounds. The site is functional but browsers will show security warnings.
+> **✅ SSL STATUS**: SSL certificate is VALID until 2025-11-05. Auto-renewal via Certbot is working correctly with systemd timer.
 > 
-> **✅ SERVER STATUS**: Production server is online and functional as of 2025-06-07 21:37 UTC. Apache proxy configuration fixed (port 3001 → 3000).
+> **✅ SERVER STATUS**: Production server is online and functional as of 2025-09-24. Latest deployment includes Wiki system, Narrative Engine, and AsyncGameManager.
 > 
 > **🎨 IMAGE GENERATION**: UI visible on production with "coming soon" placeholder. Backend integration requires dependency resolution (see `js/server_sqlite_new.js` issues).
 

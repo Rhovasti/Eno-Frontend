@@ -1,12 +1,11 @@
 # Eno Frontend Development Guide
 
 ## Important Documentation
-- **Test Server Guide**: See `testserver.md` for local development setup
 - **Production Server Guide**: See `productionserver.md` for deployment procedures
-- **Known Issues**: See `KNOWN_ISSUES.md` for current bugs and workarounds
-- **Project Status**: See `PROJECT_STATUS.md` for feature status and roadmap
-- **Planned Features**: See `PLANNED_FEATURES.md` for upcoming feature specifications and roadmap
-- **SSL Renewal Issue**: See `SSL_RENEWAL_ISSUE.md` for current SSL certificate problem and solutions
+- **Archive Documentation**: See `ARCHIVE.md` for information about archived files
+- **Feature Documentation**: See `WIKI_UI_*`, `MAP_*`, and other feature-specific .md files
+- **Auto-Media Generation**: See `docs/AUTO_MEDIA_GENERATION.md` for user guide and `docs/AUTO_MEDIA_GENERATION_TECHNICAL.md` for technical docs
+- **Test Server Guide**: See `testserver.md` for local development setup
 
 ## Build Commands
 - **Start Server**: `node js/server_sqlite_new.js` (SQLite version recommended)
@@ -52,7 +51,8 @@
 - **Image Storage**: AWS S3 bucket "kuvatjakalat"
 
 ### Key Features
-- **AI Image Generation**: Sketch + style transfer using Stability AI
+- **Auto-Media Generation**: AI-powered automatic image and audio generation from post content (see `docs/AUTO_MEDIA_GENERATION.md`)
+- **AI Image Generation**: Stability AI SD 3.5 Medium with ControlNet support for character portraits
 - **Game Structure**: Games → Chapters → Beats → Posts
 - **User Roles**: Admin, GM (Game Master), Player
 - **Authentication**: JWT tokens in cookies
@@ -70,6 +70,9 @@ JWT_SECRET=change_in_production
 ```
 
 ### Deployment
-- **Quick Deploy**: Run `./deploy_image_generation.sh`
-- **Manual Deploy**: See steps in `productionserver.md`
-- **Server Restart**: `pkill -f "node.*server" && node js/server_sqlite_new.js &`
+- **Full Deploy**: `./deploy_complete_features.sh` (recommended for production)
+- **Image Deploy**: `./deploy_image_generation.sh` (specialized for image features)
+- **Wiki Deploy**: `./DEPLOYMENT_WIKI_UI.sh` (wiki-specific updates)
+- **Quick Restart**: `./production_restart.sh` or `./restart_iinou_server.sh`
+- **Manual Deploy**: See detailed steps in `productionserver.md`
+- **Archived Scripts**: See `ARCHIVE.md` for historical deployment methods

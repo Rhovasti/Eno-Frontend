@@ -26,3 +26,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+# Backup directories and files
+backup*/
+*.backup
+*.bak
+
+# Test files (move to archive/test-files/)
+test-*.html
+test_*.html
