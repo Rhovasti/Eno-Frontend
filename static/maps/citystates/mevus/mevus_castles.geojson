@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6080984242140772,
+              -37.61279377625072
+            ],
+            [
+              -3.6089653242140773,
+              -37.61230787625073
+            ],
+            [
+              -3.608847624214077,
+              -37.61209777625073
+            ],
+            [
+              -3.608189224214077,
+              -37.61183677625072
+            ],
+            [
+              -3.608030524214077,
+              -37.612237076250715
+            ],
+            [
+              -3.6080984242140772,
+              -37.61279377625072
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "mevus.geojson_fixed.geojson_poly_castle",
+        "age": 597,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "mevus"
+      }
+    }
+  ]
+}

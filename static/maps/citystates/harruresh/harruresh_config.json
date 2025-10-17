@@ -1,0 +1,92 @@
+{
+  "citystate": "harruresh",
+  "display_name": "Harruresh",
+  "bounds": {
+    "west": 53.4622177442245,
+    "south": -2.145910530479503,
+    "east": 53.5014505442245,
+    "north": -2.1138287304795047
+  },
+  "center": {
+    "lat": -2.129869630479504,
+    "lng": 53.4818341442245
+  },
+  "castle_position": {
+    "lat": -2.1223998527017165,
+    "lng": 53.4814948775579
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2195,
+    "districts": 7,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 9,
+    "trees": 14
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2195,
+      "types": {
+        "residential": 1187,
+        "commercial": 795,
+        "industrial": 213
+      },
+      "total_occupants": 12243,
+      "avg_occupants": 5.577676537585422,
+      "avg_floors": 2.0387243735763096
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Free Water",
+        "West Slums",
+        "Clear Yard",
+        "Salt Cross",
+        "Scholars Rock",
+        "Night Road",
+        "Candlefire Gate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    },
+    "trees": {
+      "count": 14
+    }
+  },
+  "layers": {
+    "base_map": "citystates/harruresh/harruresh_map.png",
+    "vector_data": {
+      "buildings": "citystates/harruresh/harruresh_buildings.geojson",
+      "districts": "citystates/harruresh/harruresh_districts.geojson",
+      "castles": "citystates/harruresh/harruresh_castles.geojson",
+      "towers": "citystates/harruresh/harruresh_towers.geojson",
+      "walls": "citystates/harruresh/harruresh_walls.geojson",
+      "fields": "citystates/harruresh/harruresh_fields.geojson",
+      "trees": "citystates/harruresh/harruresh_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:34",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/harruresh_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/harruresh"
+    }
+  }
+}

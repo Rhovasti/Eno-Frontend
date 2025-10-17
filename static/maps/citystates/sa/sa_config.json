@@ -1,0 +1,91 @@
+{
+  "citystate": "sa",
+  "display_name": "Sa",
+  "bounds": {
+    "west": -27.70892205286428,
+    "south": -21.55091915434212,
+    "east": -27.687059252864287,
+    "north": -21.531032354342127
+  },
+  "center": {
+    "lat": -21.540975754342124,
+    "lng": -27.697990652864284
+  },
+  "castle_position": {
+    "lat": -21.536902549934968,
+    "lng": -27.69489252021432
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 434,
+    "districts": 6,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 8,
+    "trees": 23
+  },
+  "statistics": {
+    "buildings": {
+      "count": 434,
+      "types": {
+        "residential": 272,
+        "industrial": 104,
+        "other": 58
+      },
+      "total_occupants": 3445,
+      "avg_occupants": 7.93778801843318,
+      "avg_floors": 1.8824884792626728
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Artisans Wall",
+        "Downtide Hook",
+        "New Field",
+        "The Horn",
+        "Castle",
+        "Western Sa"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 23
+    }
+  },
+  "layers": {
+    "base_map": "citystates/sa/sa_map.png",
+    "vector_data": {
+      "buildings": "citystates/sa/sa_buildings.geojson",
+      "districts": "citystates/sa/sa_districts.geojson",
+      "castles": "citystates/sa/sa_castles.geojson",
+      "towers": "citystates/sa/sa_towers.geojson",
+      "walls": "citystates/sa/sa_walls.geojson",
+      "fields": "citystates/sa/sa_fields.geojson",
+      "trees": "citystates/sa/sa_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:58",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/sa_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/sa"
+    }
+  }
+}

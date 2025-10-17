@@ -1,0 +1,88 @@
+{
+  "citystate": "sobriro",
+  "display_name": "Sobriro",
+  "bounds": {
+    "west": 41.916709710316525,
+    "south": -32.09833513719913,
+    "east": 41.94002571031653,
+    "north": -32.073285137199136
+  },
+  "center": {
+    "lat": -32.08581013719913,
+    "lng": 41.92836771031653
+  },
+  "castle_position": {
+    "lat": -32.087341781643474,
+    "lng": 41.923759954761046
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 493,
+    "districts": 3,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 10,
+    "trees": 3
+  },
+  "statistics": {
+    "buildings": {
+      "count": 493,
+      "types": {
+        "other": 348,
+        "commercial": 131,
+        "residential": 14
+      },
+      "total_occupants": 2936,
+      "avg_occupants": 5.955375253549696,
+      "avg_floors": 2.257606490872211
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Middle Village",
+        "Upper Ward",
+        "Estate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 3
+    }
+  },
+  "layers": {
+    "base_map": "citystates/sobriro/sobriro_map.png",
+    "vector_data": {
+      "buildings": "citystates/sobriro/sobriro_buildings.geojson",
+      "districts": "citystates/sobriro/sobriro_districts.geojson",
+      "castles": "citystates/sobriro/sobriro_castles.geojson",
+      "towers": "citystates/sobriro/sobriro_towers.geojson",
+      "walls": "citystates/sobriro/sobriro_walls.geojson",
+      "fields": "citystates/sobriro/sobriro_fields.geojson",
+      "trees": "citystates/sobriro/sobriro_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:15",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/sobriro_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/sobriro"
+    }
+  }
+}

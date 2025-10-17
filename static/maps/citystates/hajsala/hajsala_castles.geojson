@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              41.18585121376313,
+              -17.113356918935494
+            ],
+            [
+              41.18485511376312,
+              -17.112810218935493
+            ],
+            [
+              41.18573481376312,
+              -17.1121960189355
+            ],
+            [
+              41.186444113763116,
+              -17.113135818935497
+            ],
+            [
+              41.18634611376312,
+              -17.113314318935494
+            ],
+            [
+              41.18608331376312,
+              -17.113085618935493
+            ],
+            [
+              41.18585121376313,
+              -17.113356918935494
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "hajsala.geojson_fixed.geojson_poly_castle",
+        "age": 432,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "hajsala"
+      }
+    }
+  ]
+}

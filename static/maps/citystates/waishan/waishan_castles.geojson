@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -33.65631236984713,
+              -11.832360228220873
+            ],
+            [
+              -33.65613266735713,
+              -11.832675626192254
+            ],
+            [
+              -33.65631134652986,
+              -11.832772714875373
+            ],
+            [
+              -33.656193046529864,
+              -11.832964614875374
+            ],
+            [
+              -33.656548246529866,
+              -11.833150914875374
+            ],
+            [
+              -33.65706354652987,
+              -11.832438514875372
+            ],
+            [
+              -33.65666404652987,
+              -11.832200914875374
+            ],
+            [
+              -33.656499646529866,
+              -11.832467414875373
+            ],
+            [
+              -33.65631236984713,
+              -11.832360228220873
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "waishan.geojson_fixed.geojson_poly_castle",
+        "age": 797,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "waishan"
+      }
+    }
+  ]
+}

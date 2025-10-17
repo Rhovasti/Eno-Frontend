@@ -1,0 +1,87 @@
+{
+  "citystate": "aneroa",
+  "display_name": "Aneroa",
+  "bounds": {
+    "west": -7.800180724344469,
+    "south": -36.705491615857625,
+    "east": -7.774530724344468,
+    "north": -36.68009661585762
+  },
+  "center": {
+    "lat": -36.69279411585762,
+    "lng": -7.787355724344469
+  },
+  "castle_position": {
+    "lat": -36.68816257300059,
+    "lng": -7.785208352915897
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 940,
+    "districts": 5,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 11,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 940,
+      "types": {
+        "residential": 518,
+        "commercial": 175,
+        "other": 247
+      },
+      "total_occupants": 6167,
+      "avg_occupants": 6.56063829787234,
+      "avg_floors": 2.046808510638298
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Golden Cliff",
+        "Northern Square",
+        "The Mills",
+        "Merchants District",
+        "Pearl Tower"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    }
+  },
+  "layers": {
+    "base_map": "citystates/aneroa/aneroa_map.png",
+    "vector_data": {
+      "buildings": "citystates/aneroa/aneroa_buildings.geojson",
+      "districts": "citystates/aneroa/aneroa_districts.geojson",
+      "castles": "citystates/aneroa/aneroa_castles.geojson",
+      "towers": "citystates/aneroa/aneroa_towers.geojson",
+      "walls": "citystates/aneroa/aneroa_walls.geojson",
+      "fields": "citystates/aneroa/aneroa_fields.geojson",
+      "trees": "citystates/aneroa/aneroa_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:29",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/aneroa_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/aneroa"
+    }
+  }
+}

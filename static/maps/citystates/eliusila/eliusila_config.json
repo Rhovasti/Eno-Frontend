@@ -1,0 +1,89 @@
+{
+  "citystate": "eliusila",
+  "display_name": "Eliusila",
+  "bounds": {
+    "west": -17.5024694450792,
+    "south": -17.224268935658003,
+    "east": -17.483095445079208,
+    "north": -17.207888935658005
+  },
+  "center": {
+    "lat": -17.216078935658004,
+    "lng": -17.492782445079204
+  },
+  "castle_position": {
+    "lat": -17.20950693565805,
+    "lng": -17.494150599624625
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 351,
+    "districts": 5,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 12,
+    "trees": 17
+  },
+  "statistics": {
+    "buildings": {
+      "count": 351,
+      "types": {
+        "residential": 293,
+        "commercial": 58
+      },
+      "total_occupants": 1966,
+      "avg_occupants": 5.601139601139601,
+      "avg_floors": 2.0028490028490027
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Estate",
+        "Old Eliusila",
+        "Citadel",
+        "Grey Square",
+        "Timber Chapel"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 12
+    },
+    "trees": {
+      "count": 17
+    }
+  },
+  "layers": {
+    "base_map": "citystates/eliusila/eliusila_map.png",
+    "vector_data": {
+      "buildings": "citystates/eliusila/eliusila_buildings.geojson",
+      "districts": "citystates/eliusila/eliusila_districts.geojson",
+      "castles": "citystates/eliusila/eliusila_castles.geojson",
+      "towers": "citystates/eliusila/eliusila_towers.geojson",
+      "walls": "citystates/eliusila/eliusila_walls.geojson",
+      "fields": "citystates/eliusila/eliusila_fields.geojson",
+      "trees": "citystates/eliusila/eliusila_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:35",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/eliusila_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/eliusila"
+    }
+  }
+}

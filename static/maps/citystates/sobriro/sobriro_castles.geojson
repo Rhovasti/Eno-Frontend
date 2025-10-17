@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              41.92398871031661,
+              -32.088022137199026
+            ],
+            [
+              41.92310811031659,
+              -32.087771837199035
+            ],
+            [
+              41.92345921031661,
+              -32.08653643719904
+            ],
+            [
+              41.9240216103166,
+              -32.08669633719904
+            ],
+            [
+              41.9239082103166,
+              -32.087095537199026
+            ],
+            [
+              41.9236676103166,
+              -32.08702713719904
+            ],
+            [
+              41.92356931031661,
+              -32.08737283719902
+            ],
+            [
+              41.9241281103166,
+              -32.08753163719903
+            ],
+            [
+              41.92398871031661,
+              -32.088022137199026
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "sobriro.geojson_fixed.geojson_poly_castle",
+        "age": 13,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "sobriro"
+      }
+    }
+  ]
+}

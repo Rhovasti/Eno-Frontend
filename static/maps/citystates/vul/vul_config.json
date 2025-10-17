@@ -1,0 +1,92 @@
+{
+  "citystate": "vul",
+  "display_name": "Vul",
+  "bounds": {
+    "west": 50.38880048438604,
+    "south": 21.455756817748174,
+    "east": 50.419685884386055,
+    "north": 21.488249217748184
+  },
+  "center": {
+    "lat": 21.47200301774818,
+    "lng": 50.40424318438605
+  },
+  "castle_position": {
+    "lat": 21.469508581384517,
+    "lng": 50.402465502568106
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1942,
+    "districts": 8,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 8,
+    "trees": 78
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1942,
+      "types": {
+        "residential": 1477,
+        "commercial": 465
+      },
+      "total_occupants": 10147,
+      "avg_occupants": 5.2250257466529355,
+      "avg_floors": 2.036560247167868
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Everwell Gate",
+        "Western Vul",
+        "Old Road",
+        "Castle",
+        "Chicken Town",
+        "Wolfcrest Point",
+        "Red Cliff",
+        "Blue End"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 78
+    }
+  },
+  "layers": {
+    "base_map": "citystates/vul/vul_map.png",
+    "vector_data": {
+      "buildings": "citystates/vul/vul_buildings.geojson",
+      "districts": "citystates/vul/vul_districts.geojson",
+      "castles": "citystates/vul/vul_castles.geojson",
+      "towers": "citystates/vul/vul_towers.geojson",
+      "walls": "citystates/vul/vul_walls.geojson",
+      "fields": "citystates/vul/vul_fields.geojson",
+      "trees": "citystates/vul/vul_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:05",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/vul_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/vul"
+    }
+  }
+}

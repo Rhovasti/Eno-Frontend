@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.833148905965043,
+              -33.69804776487543
+            ],
+            [
+              27.82997480596504,
+              -33.699399864875424
+            ],
+            [
+              27.829742805965044,
+              -33.698855364875435
+            ],
+            [
+              27.83099630596504,
+              -33.69832136487543
+            ],
+            [
+              27.83076270596504,
+              -33.69777296487543
+            ],
+            [
+              27.830209905965045,
+              -33.698008464875436
+            ],
+            [
+              27.829978605965042,
+              -33.697465564875436
+            ],
+            [
+              27.832452105965043,
+              -33.69641196487543
+            ],
+            [
+              27.833148905965043,
+              -33.69804776487543
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "vialiranave.geojson_fixed.geojson_poly_castle",
+        "age": 850,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "vialiranave"
+      }
+    }
+  ]
+}

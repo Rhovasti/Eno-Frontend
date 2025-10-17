@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -11.447778184105177,
+              13.329178466294938
+            ],
+            [
+              -11.447911084105177,
+              13.330234966294938
+            ],
+            [
+              -11.447333684105176,
+              13.330307566294938
+            ],
+            [
+              -11.447458484105178,
+              13.329012166294937
+            ],
+            [
+              -11.447514484105175,
+              13.328966366294935
+            ],
+            [
+              -11.447778184105177,
+              13.329178466294938
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "patrellasa.geojson_fixed.geojson_poly_castle",
+        "age": 979,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "patrellasa"
+      }
+    }
+  ]
+}

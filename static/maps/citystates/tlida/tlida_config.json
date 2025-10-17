@@ -1,0 +1,90 @@
+{
+  "citystate": "tlida",
+  "display_name": "Tlida",
+  "bounds": {
+    "west": 56.74520139933803,
+    "south": -3.465248861059479,
+    "east": 56.77383799933803,
+    "north": -3.4321432610594793
+  },
+  "center": {
+    "lat": -3.4486960610594792,
+    "lng": 56.75951969933803
+  },
+  "castle_position": {
+    "lat": -3.4508304182023406,
+    "lng": 56.761771599338296
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 971,
+    "districts": 5,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 18,
+    "trees": 4
+  },
+  "statistics": {
+    "buildings": {
+      "count": 971,
+      "types": {
+        "residential": 816,
+        "other": 145,
+        "commercial": 10
+      },
+      "total_occupants": 5421,
+      "avg_occupants": 5.582904222451082,
+      "avg_floors": 1.498455200823893
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Redcrest Stair",
+        "Estate",
+        "Trade District",
+        "Pearl Cross",
+        "East Pass"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 18
+    },
+    "trees": {
+      "count": 4
+    }
+  },
+  "layers": {
+    "base_map": "citystates/tlida/tlida_map.png",
+    "vector_data": {
+      "buildings": "citystates/tlida/tlida_buildings.geojson",
+      "districts": "citystates/tlida/tlida_districts.geojson",
+      "castles": "citystates/tlida/tlida_castles.geojson",
+      "towers": "citystates/tlida/tlida_towers.geojson",
+      "walls": "citystates/tlida/tlida_walls.geojson",
+      "fields": "citystates/tlida/tlida_fields.geojson",
+      "trees": "citystates/tlida/tlida_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:04",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/tlida_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/tlida"
+    }
+  }
+}

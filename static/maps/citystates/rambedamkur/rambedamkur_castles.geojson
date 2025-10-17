@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.225939322497428,
+              32.776371721692364
+            ],
+            [
+              13.226024622497427,
+              32.77537052169237
+            ],
+            [
+              13.225431722497426,
+              32.77543352169237
+            ],
+            [
+              13.225377422497427,
+              32.77607122169237
+            ],
+            [
+              13.225802322497426,
+              32.776330521692365
+            ],
+            [
+              13.225939322497428,
+              32.776371721692364
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "rambedamkur.geojson_fixed.geojson_poly_castle",
+        "age": 871,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "rambedamkur"
+      }
+    }
+  ]
+}

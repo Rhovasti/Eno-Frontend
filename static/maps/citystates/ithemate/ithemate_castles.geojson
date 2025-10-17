@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.916364431917771,
+              34.00726741265194
+            ],
+            [
+              -7.9167210319177705,
+              34.007502812651936
+            ],
+            [
+              -7.915363631917771,
+              34.009559012651934
+            ],
+            [
+              -7.915006931917771,
+              34.009323612651926
+            ],
+            [
+              -7.915227731917771,
+              34.00898921265194
+            ],
+            [
+              -7.914501031917771,
+              34.008509512651926
+            ],
+            [
+              -7.915418231917771,
+              34.007120312651935
+            ],
+            [
+              -7.916144831917771,
+              34.007600012651935
+            ],
+            [
+              -7.916364431917771,
+              34.00726741265194
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ithemate.geojson_fixed.geojson_poly_castle",
+        "age": 398,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "ithemate"
+      }
+    }
+  ]
+}

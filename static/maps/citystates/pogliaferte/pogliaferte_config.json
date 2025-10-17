@@ -1,0 +1,91 @@
+{
+  "citystate": "pogliaferte",
+  "display_name": "Pogliaferte",
+  "bounds": {
+    "west": -25.301302862920686,
+    "south": 34.792950800900456,
+    "east": -25.27602366292068,
+    "north": 34.82361200090047
+  },
+  "center": {
+    "lat": 34.80828140090046,
+    "lng": -25.288663262920682
+  },
+  "castle_position": {
+    "lat": 34.81384228271879,
+    "lng": -25.290572135647825
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 830,
+    "districts": 6,
+    "castles": 1,
+    "towers": 16,
+    "walls": 1,
+    "fields": 20,
+    "trees": 33
+  },
+  "statistics": {
+    "buildings": {
+      "count": 830,
+      "types": {
+        "residential": 509,
+        "commercial": 319,
+        "industrial": 2
+      },
+      "total_occupants": 4286,
+      "avg_occupants": 5.163855421686747,
+      "avg_floors": 1.683132530120482
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Estate",
+        "Underlight",
+        "Weavers Point",
+        "Military Ward",
+        "Old District",
+        "Apple Well"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 16
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 33
+    }
+  },
+  "layers": {
+    "base_map": "citystates/pogliaferte/pogliaferte_map.png",
+    "vector_data": {
+      "buildings": "citystates/pogliaferte/pogliaferte_buildings.geojson",
+      "districts": "citystates/pogliaferte/pogliaferte_districts.geojson",
+      "castles": "citystates/pogliaferte/pogliaferte_castles.geojson",
+      "towers": "citystates/pogliaferte/pogliaferte_towers.geojson",
+      "walls": "citystates/pogliaferte/pogliaferte_walls.geojson",
+      "fields": "citystates/pogliaferte/pogliaferte_fields.geojson",
+      "trees": "citystates/pogliaferte/pogliaferte_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:40",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/pogliaferte_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/pogliaferte"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "citystate": "zadardelen",
+  "display_name": "Zadardelen",
+  "bounds": {
+    "west": 14.539449515717802,
+    "south": -25.681766698857025,
+    "east": 14.614647515717802,
+    "north": -25.61177869885703
+  },
+  "center": {
+    "lat": -25.646772698857028,
+    "lng": 14.577048515717802
+  },
+  "castle_position": {
+    "lat": -25.64702012108012,
+    "lng": 14.577979515717537
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 11710,
+    "districts": 11,
+    "castles": 1,
+    "towers": 16,
+    "walls": 1,
+    "fields": 9,
+    "trees": 627
+  },
+  "statistics": {
+    "buildings": {
+      "count": 11710,
+      "types": {
+        "commercial": 830,
+        "residential": 10325,
+        "other": 555
+      },
+      "total_occupants": 68067,
+      "avg_occupants": 5.812724167378309,
+      "avg_floors": 1.9034158838599489
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Alebridge",
+        "Glass Road",
+        "Brightgate",
+        "Cattle Well",
+        "Citadel",
+        "Misty Mire",
+        "Farmers Reach",
+        "Ashbark Gate",
+        "Fenheart",
+        "Bright Crests Town",
+        "North Zadardelen"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 16
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    },
+    "trees": {
+      "count": 627
+    }
+  },
+  "layers": {
+    "base_map": "citystates/zadardelen/zadardelen_map.png",
+    "vector_data": {
+      "buildings": "citystates/zadardelen/zadardelen_buildings.geojson",
+      "districts": "citystates/zadardelen/zadardelen_districts.geojson",
+      "castles": "citystates/zadardelen/zadardelen_castles.geojson",
+      "towers": "citystates/zadardelen/zadardelen_towers.geojson",
+      "walls": "citystates/zadardelen/zadardelen_walls.geojson",
+      "fields": "citystates/zadardelen/zadardelen_fields.geojson",
+      "trees": "citystates/zadardelen/zadardelen_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:38",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/zadardelen_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/zadardelen"
+    }
+  }
+}

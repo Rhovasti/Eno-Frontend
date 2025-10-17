@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.212417646818471,
+              18.126360229333603
+            ],
+            [
+              14.21256894681847,
+              18.1267034293336
+            ],
+            [
+              14.214532746818472,
+              18.125837529333605
+            ],
+            [
+              14.21403614681847,
+              18.124711329333604
+            ],
+            [
+              14.21309344681847,
+              18.1251270293336
+            ],
+            [
+              14.21343874681847,
+              18.1259100293336
+            ],
+            [
+              14.212417646818471,
+              18.126360229333603
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "aira.geojson_fixed.geojson_poly_castle",
+        "age": 875,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "aira"
+      }
+    }
+  ]
+}

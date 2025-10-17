@@ -1,0 +1,84 @@
+{
+  "citystate": "otety",
+  "display_name": "Otety",
+  "bounds": {
+    "west": -6.745434456024984,
+    "south": 24.049322066846813,
+    "east": -6.733621656024983,
+    "north": 24.06269486684681
+  },
+  "center": {
+    "lat": 24.056008466846812,
+    "lng": -6.739528056024984
+  },
+  "castle_position": {
+    "lat": 24.05462385573569,
+    "lng": -6.74035362269165
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 117,
+    "districts": 3,
+    "castles": 1,
+    "towers": 12,
+    "walls": 1,
+    "fields": 3,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 117,
+      "types": {
+        "residential": 53,
+        "commercial": 64
+      },
+      "total_occupants": 605,
+      "avg_occupants": 5.170940170940171,
+      "avg_floors": 1.435897435897436
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Spice Stair",
+        "Old Otety",
+        "Twin Rings"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 12
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 3
+    }
+  },
+  "layers": {
+    "base_map": "citystates/otety/otety_map.png",
+    "vector_data": {
+      "buildings": "citystates/otety/otety_buildings.geojson",
+      "districts": "citystates/otety/otety_districts.geojson",
+      "castles": "citystates/otety/otety_castles.geojson",
+      "towers": "citystates/otety/otety_towers.geojson",
+      "walls": "citystates/otety/otety_walls.geojson",
+      "fields": "citystates/otety/otety_fields.geojson",
+      "trees": "citystates/otety/otety_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:39",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/otety_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/otety"
+    }
+  }
+}

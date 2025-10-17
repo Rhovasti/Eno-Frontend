@@ -1,0 +1,86 @@
+{
+  "citystate": "beitsa",
+  "display_name": "Beitsa",
+  "bounds": {
+    "west": 17.544610081997547,
+    "south": -36.80170675391916,
+    "east": 17.566186481997548,
+    "north": -36.77424235391916
+  },
+  "center": {
+    "lat": -36.78797455391916,
+    "lng": 17.555398281997547
+  },
+  "castle_position": {
+    "lat": -36.79348517614092,
+    "lng": 17.552861615330798
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1240,
+    "districts": 7,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 0,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1240,
+      "types": {
+        "residential": 687,
+        "commercial": 301,
+        "industrial": 252
+      },
+      "total_occupants": 7976,
+      "avg_occupants": 6.432258064516129,
+      "avg_floors": 1.7620967741935485
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Old Town",
+        "Misthill Road",
+        "Western Slums",
+        "Castle",
+        "Redgate",
+        "Blue Borough",
+        "Chicken Cross"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/beitsa/beitsa_map.png",
+    "vector_data": {
+      "buildings": "citystates/beitsa/beitsa_buildings.geojson",
+      "districts": "citystates/beitsa/beitsa_districts.geojson",
+      "castles": "citystates/beitsa/beitsa_castles.geojson",
+      "towers": "citystates/beitsa/beitsa_towers.geojson",
+      "walls": "citystates/beitsa/beitsa_walls.geojson",
+      "fields": "citystates/beitsa/beitsa_fields.geojson",
+      "trees": "citystates/beitsa/beitsa_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:06",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/beitsa_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/beitsa"
+    }
+  }
+}

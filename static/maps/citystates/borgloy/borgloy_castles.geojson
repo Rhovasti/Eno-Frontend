@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.81335981858422,
+              9.918869959409667
+            ],
+            [
+              23.812907018584223,
+              9.92012485940967
+            ],
+            [
+              23.81518741858422,
+              9.920947559409667
+            ],
+            [
+              23.81531521858422,
+              9.920593459409668
+            ],
+            [
+              23.813926218584225,
+              9.92009225940967
+            ],
+            [
+              23.814091718584226,
+              9.91963355940967
+            ],
+            [
+              23.81358771858422,
+              9.91945175940967
+            ],
+            [
+              23.813747218584222,
+              9.91900975940967
+            ],
+            [
+              23.81335981858422,
+              9.918869959409667
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "borgloy.geojson_fixed.geojson_poly_castle",
+        "age": 52,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "borgloy"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "citystate": "kushimaki",
+  "display_name": "Kushimaki",
+  "bounds": {
+    "west": 50.72671523941081,
+    "south": 22.06056244170047,
+    "east": 50.75835203941081,
+    "north": 22.098721241700467
+  },
+  "center": {
+    "lat": 22.079641841700468,
+    "lng": 50.74253363941081
+  },
+  "castle_position": {
+    "lat": 22.07027644170033,
+    "lng": 50.74305148385535
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 858,
+    "districts": 5,
+    "castles": 1,
+    "towers": 23,
+    "walls": 1,
+    "fields": 17,
+    "trees": 18
+  },
+  "statistics": {
+    "buildings": {
+      "count": 858,
+      "types": {
+        "other": 423,
+        "industrial": 221,
+        "residential": 214
+      },
+      "total_occupants": 6666,
+      "avg_occupants": 7.769230769230769,
+      "avg_floors": 1.886946386946387
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Ivy Fair",
+        "Old Kushimaki",
+        "Military Ward",
+        "Purple Hook",
+        "Moonway Square"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 23
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 17
+    },
+    "trees": {
+      "count": 18
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kushimaki/kushimaki_map.png",
+    "vector_data": {
+      "buildings": "citystates/kushimaki/kushimaki_buildings.geojson",
+      "districts": "citystates/kushimaki/kushimaki_districts.geojson",
+      "castles": "citystates/kushimaki/kushimaki_castles.geojson",
+      "towers": "citystates/kushimaki/kushimaki_towers.geojson",
+      "walls": "citystates/kushimaki/kushimaki_walls.geojson",
+      "fields": "citystates/kushimaki/kushimaki_fields.geojson",
+      "trees": "citystates/kushimaki/kushimaki_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:34",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kushimaki_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kushimaki"
+    }
+  }
+}

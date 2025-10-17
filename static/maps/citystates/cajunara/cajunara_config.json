@@ -1,0 +1,88 @@
+{
+  "citystate": "cajunara",
+  "display_name": "Cajunara",
+  "bounds": {
+    "west": 40.64660079407267,
+    "south": -21.141040415592503,
+    "east": 40.664375594072666,
+    "north": -21.1202756155925
+  },
+  "center": {
+    "lat": -21.130658015592502,
+    "lng": 40.65548819407267
+  },
+  "castle_position": {
+    "lat": -21.123308895592526,
+    "lng": 40.650948974072485
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 760,
+    "districts": 5,
+    "castles": 1,
+    "towers": 6,
+    "walls": 1,
+    "fields": 3,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 760,
+      "types": {
+        "residential": 760
+      },
+      "total_occupants": 4277,
+      "avg_occupants": 5.627631578947368,
+      "avg_floors": 1.8473684210526315
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Two Towers",
+        "Purple Wall",
+        "West Slums",
+        "Noon Hook",
+        "Southern Cajunara"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 6
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 3
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/cajunara/cajunara_map.png",
+    "vector_data": {
+      "buildings": "citystates/cajunara/cajunara_buildings.geojson",
+      "districts": "citystates/cajunara/cajunara_districts.geojson",
+      "castles": "citystates/cajunara/cajunara_castles.geojson",
+      "towers": "citystates/cajunara/cajunara_towers.geojson",
+      "walls": "citystates/cajunara/cajunara_walls.geojson",
+      "fields": "citystates/cajunara/cajunara_fields.geojson",
+      "trees": "citystates/cajunara/cajunara_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:00",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/cajunara_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/cajunara"
+    }
+  }
+}

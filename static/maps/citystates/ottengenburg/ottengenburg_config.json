@@ -1,0 +1,91 @@
+{
+  "citystate": "ottengenburg",
+  "display_name": "Ottengenburg",
+  "bounds": {
+    "west": 56.105265507638315,
+    "south": 10.566940706695895,
+    "east": 56.14676870763831,
+    "north": 10.602704906695891
+  },
+  "center": {
+    "lat": 10.584822806695893,
+    "lng": 56.12601710763831
+  },
+  "castle_position": {
+    "lat": 10.586543433968608,
+    "lng": 56.13334321672889
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1911,
+    "districts": 7,
+    "castles": 1,
+    "towers": 46,
+    "walls": 1,
+    "fields": 15,
+    "trees": 26
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1911,
+      "types": {
+        "residential": 1607,
+        "commercial": 304
+      },
+      "total_occupants": 9901,
+      "avg_occupants": 5.181057038199896,
+      "avg_floors": 1.7430664573521717
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Bone Shade",
+        "Moonbark Road",
+        "Middlegate",
+        "Chicken Gate",
+        "Citadel",
+        "Purple Hill",
+        "Eastern Ottengenburg"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 46
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 26
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ottengenburg/ottengenburg_map.png",
+    "vector_data": {
+      "buildings": "citystates/ottengenburg/ottengenburg_buildings.geojson",
+      "districts": "citystates/ottengenburg/ottengenburg_districts.geojson",
+      "castles": "citystates/ottengenburg/ottengenburg_castles.geojson",
+      "towers": "citystates/ottengenburg/ottengenburg_towers.geojson",
+      "walls": "citystates/ottengenburg/ottengenburg_walls.geojson",
+      "fields": "citystates/ottengenburg/ottengenburg_fields.geojson",
+      "trees": "citystates/ottengenburg/ottengenburg_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:11",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ottengenburg_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ottengenburg"
+    }
+  }
+}

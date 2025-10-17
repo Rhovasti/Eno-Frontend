@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.259340801936325,
+              29.28828311825819
+            ],
+            [
+              31.25934230193632,
+              29.288286118258196
+            ],
+            [
+              31.259823301936322,
+              29.28822471825819
+            ],
+            [
+              31.259822801936323,
+              29.28816891825819
+            ],
+            [
+              31.259963901936324,
+              29.287997818258194
+            ],
+            [
+              31.259666601936324,
+              29.28762541825819
+            ],
+            [
+              31.259152801936324,
+              29.28820661825819
+            ],
+            [
+              31.259340801936325,
+              29.28828311825819
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ian.geojson_fixed.geojson_poly_castle",
+        "age": 547,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "ian"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "citystate": "orve",
+  "display_name": "Orve",
+  "bounds": {
+    "west": -17.400824226334446,
+    "south": 24.20912722066608,
+    "east": -17.381050626334453,
+    "north": 24.229336174512113
+  },
+  "center": {
+    "lat": 24.219231697589095,
+    "lng": -17.39093742633445
+  },
+  "castle_position": {
+    "lat": 24.227660874512114,
+    "lng": -17.3917787109498
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1105,
+    "districts": 6,
+    "castles": 1,
+    "towers": 20,
+    "walls": 1,
+    "fields": 3,
+    "trees": 27
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1105,
+      "types": {
+        "residential": 1020,
+        "other": 85
+      },
+      "total_occupants": 7501,
+      "avg_occupants": 6.788235294117647,
+      "avg_floors": 2.4072398190045248
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Brightgate",
+        "The Slums",
+        "Timber Mill",
+        "Castle",
+        "Downlight Gate",
+        "Deep Park"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 20
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 3
+    },
+    "trees": {
+      "count": 27
+    }
+  },
+  "layers": {
+    "base_map": "citystates/orve/orve_map.png",
+    "vector_data": {
+      "buildings": "citystates/orve/orve_buildings.geojson",
+      "districts": "citystates/orve/orve_districts.geojson",
+      "castles": "citystates/orve/orve_castles.geojson",
+      "towers": "citystates/orve/orve_towers.geojson",
+      "walls": "citystates/orve/orve_walls.geojson",
+      "fields": "citystates/orve/orve_fields.geojson",
+      "trees": "citystates/orve/orve_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:45",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/orve_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/orve"
+    }
+  }
+}

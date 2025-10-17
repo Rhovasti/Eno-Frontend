@@ -1,0 +1,83 @@
+{
+  "citystate": "vea",
+  "display_name": "Vea",
+  "bounds": {
+    "west": 56.25959600504039,
+    "south": 9.098367883512564,
+    "east": 56.2793718050404,
+    "north": 9.120170683512564
+  },
+  "center": {
+    "lat": 9.109269283512564,
+    "lng": 56.269483905040396
+  },
+  "castle_position": {
+    "lat": 9.106982126369704,
+    "lng": 56.27124323361188
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 686,
+    "districts": 5,
+    "castles": 1,
+    "towers": 29,
+    "walls": 1,
+    "fields": 0,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 686,
+      "types": {
+        "other": 90,
+        "residential": 596
+      },
+      "total_occupants": 3691,
+      "avg_occupants": 5.380466472303207,
+      "avg_floors": 1.8119533527696794
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Forest Gate",
+        "Estate",
+        "Purplegate",
+        "Twilight Gate",
+        "East Slums"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 29
+    },
+    "walls": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/vea/vea_map.png",
+    "vector_data": {
+      "buildings": "citystates/vea/vea_buildings.geojson",
+      "districts": "citystates/vea/vea_districts.geojson",
+      "castles": "citystates/vea/vea_castles.geojson",
+      "towers": "citystates/vea/vea_towers.geojson",
+      "walls": "citystates/vea/vea_walls.geojson",
+      "fields": "citystates/vea/vea_fields.geojson",
+      "trees": "citystates/vea/vea_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:50",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/vea_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/vea"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.830796704022482,
+              -36.54377122098234
+            ],
+            [
+              -8.830952604022482,
+              -36.54273492098236
+            ],
+            [
+              -8.829628004022481,
+              -36.542535620982356
+            ],
+            [
+              -8.829522004022483,
+              -36.54324022098235
+            ],
+            [
+              -8.82866750402248,
+              -36.54311162098235
+            ],
+            [
+              -8.82861760402248,
+              -36.543443320982355
+            ],
+            [
+              -8.830796704022482,
+              -36.54377122098234
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "hasamut.geojson_fixed.geojson_poly_castle",
+        "age": 926,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "hasamut"
+      }
+    }
+  ]
+}

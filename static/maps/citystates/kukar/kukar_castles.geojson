@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.34298221684056,
+              -10.7229980563524
+            ],
+            [
+              -24.343438416840563,
+              -10.722823656352402
+            ],
+            [
+              -24.34330441684056,
+              -10.722222456352403
+            ],
+            [
+              -24.342836816840567,
+              -10.722301156352403
+            ],
+            [
+              -24.342836813957724,
+              -10.722301139225474
+            ],
+            [
+              -24.34256571684056,
+              -10.722346756352403
+            ],
+            [
+              -24.34263751684056,
+              -10.722611556352403
+            ],
+            [
+              -24.342868316840566,
+              -10.722555956352403
+            ],
+            [
+              -24.34298221684056,
+              -10.7229980563524
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kukar.geojson_fixed.geojson_poly_castle",
+        "age": 108,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kukar"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -31.78023133907219,
+              24.565413518976282
+            ],
+            [
+              -31.781177139072195,
+              24.567040918976286
+            ],
+            [
+              -31.779981339072197,
+              24.567735818976285
+            ],
+            [
+              -31.779673239072192,
+              24.567205618976285
+            ],
+            [
+              -31.77900133907219,
+              24.567596018976285
+            ],
+            [
+              -31.778710839072193,
+              24.567096118976284
+            ],
+            [
+              -31.77803693907219,
+              24.567487718976285
+            ],
+            [
+              -31.777689939072193,
+              24.566890518976283
+            ],
+            [
+              -31.78023133907219,
+              24.565413518976282
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alos.geojson_fixed.geojson_poly_castle",
+        "age": 188,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "alos"
+      }
+    }
+  ]
+}

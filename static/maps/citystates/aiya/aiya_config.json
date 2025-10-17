@@ -1,0 +1,88 @@
+{
+  "citystate": "aiya",
+  "display_name": "Aiya",
+  "bounds": {
+    "west": 34.521944348965306,
+    "south": 29.52534521230962,
+    "east": 34.55254794896531,
+    "north": 29.55052281230962
+  },
+  "center": {
+    "lat": 29.53793401230962,
+    "lng": 34.53724614896531
+  },
+  "castle_position": {
+    "lat": 29.54277392342074,
+    "lng": 34.53566593785425
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 638,
+    "districts": 4,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 16,
+    "trees": 6
+  },
+  "statistics": {
+    "buildings": {
+      "count": 638,
+      "types": {
+        "residential": 299,
+        "other": 339
+      },
+      "total_occupants": 3747,
+      "avg_occupants": 5.8730407523510975,
+      "avg_floors": 1.9874608150470219
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Bright Sprawl",
+        "Old Aiya",
+        "Estate",
+        "Blue Garden"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 16
+    },
+    "trees": {
+      "count": 6
+    }
+  },
+  "layers": {
+    "base_map": "citystates/aiya/aiya_map.png",
+    "vector_data": {
+      "buildings": "citystates/aiya/aiya_buildings.geojson",
+      "districts": "citystates/aiya/aiya_districts.geojson",
+      "castles": "citystates/aiya/aiya_castles.geojson",
+      "towers": "citystates/aiya/aiya_towers.geojson",
+      "walls": "citystates/aiya/aiya_walls.geojson",
+      "fields": "citystates/aiya/aiya_fields.geojson",
+      "trees": "citystates/aiya/aiya_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:05",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/aiya_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/aiya"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "citystate": "jinzhou",
+  "display_name": "Jinzhou",
+  "bounds": {
+    "west": -35.913932722894195,
+    "south": 10.207907176404046,
+    "east": -35.871836722894194,
+    "north": 10.250087176404044
+  },
+  "center": {
+    "lat": 10.228997176404045,
+    "lng": -35.892884722894195
+  },
+  "castle_position": {
+    "lat": 10.2350995478326,
+    "lng": -35.89426035146568
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1198,
+    "districts": 5,
+    "castles": 1,
+    "towers": 45,
+    "walls": 1,
+    "fields": 23,
+    "trees": 32
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1198,
+      "types": {
+        "residential": 1198
+      },
+      "total_occupants": 6190,
+      "avg_occupants": 5.166944908180301,
+      "avg_floors": 1.7170283806343907
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Upper Ward",
+        "Fey Side",
+        "Black Mill",
+        "Old District",
+        "Chicken Court"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 45
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 23
+    },
+    "trees": {
+      "count": 32
+    }
+  },
+  "layers": {
+    "base_map": "citystates/jinzhou/jinzhou_map.png",
+    "vector_data": {
+      "buildings": "citystates/jinzhou/jinzhou_buildings.geojson",
+      "districts": "citystates/jinzhou/jinzhou_districts.geojson",
+      "castles": "citystates/jinzhou/jinzhou_castles.geojson",
+      "towers": "citystates/jinzhou/jinzhou_towers.geojson",
+      "walls": "citystates/jinzhou/jinzhou_walls.geojson",
+      "fields": "citystates/jinzhou/jinzhou_fields.geojson",
+      "trees": "citystates/jinzhou/jinzhou_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:57",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/jinzhou_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/jinzhou"
+    }
+  }
+}

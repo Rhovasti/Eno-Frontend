@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.922589150171217,
+              -14.922483038335876
+            ],
+            [
+              6.922527450171217,
+              -14.923251738335875
+            ],
+            [
+              6.921986050171218,
+              -14.922868238335877
+            ],
+            [
+              6.922011090423125,
+              -14.922832896005783
+            ],
+            [
+              6.922011150171218,
+              -14.922832938335876
+            ],
+            [
+              6.92219004710731,
+              -14.922580312835777
+            ],
+            [
+              6.922276750171217,
+              -14.922457938335874
+            ],
+            [
+              6.922589150171217,
+              -14.922483038335876
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "darvangor.geojson_fixed.geojson_poly_castle",
+        "age": 507,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "darvangor"
+      }
+    }
+  ]
+}

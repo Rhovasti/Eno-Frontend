@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.57884931571754,
+              -25.646827898857897
+            ],
+            [
+              14.578547715717539,
+              -25.648104598857902
+            ],
+            [
+              14.57682371571754,
+              -25.647697398857897
+            ],
+            [
+              14.577125215717539,
+              -25.6464206988579
+            ],
+            [
+              14.577524315717538,
+              -25.6465149988579
+            ],
+            [
+              14.577425615717539,
+              -25.646933098857897
+            ],
+            [
+              14.57828581571754,
+              -25.647136298857898
+            ],
+            [
+              14.57838461571754,
+              -25.6467181988579
+            ],
+            [
+              14.57884931571754,
+              -25.646827898857897
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "zadardelen.geojson_fixed.geojson_poly_castle",
+        "age": 245,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "zadardelen"
+      }
+    }
+  ]
+}

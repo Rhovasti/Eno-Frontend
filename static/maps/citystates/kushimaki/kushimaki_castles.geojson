@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              50.743176039410905,
+              22.070063541700325
+            ],
+            [
+              50.74328793941091,
+              22.06956244170033
+            ],
+            [
+              50.74230963941091,
+              22.06934394170033
+            ],
+            [
+              50.74196853941091,
+              22.07087134170033
+            ],
+            [
+              50.74244893941091,
+              22.070978641700325
+            ],
+            [
+              50.74256503941091,
+              22.070458941700327
+            ],
+            [
+              50.7442090394109,
+              22.070826141700326
+            ],
+            [
+              50.744322139410905,
+              22.07031944170033
+            ],
+            [
+              50.743176039410905,
+              22.070063541700325
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kushimaki.geojson_fixed.geojson_poly_castle",
+        "age": 123,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kushimaki"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -20.330577957589156,
+              -14.364752622094866
+            ],
+            [
+              -20.32968155758916,
+              -14.364369622094866
+            ],
+            [
+              -20.329497557589157,
+              -14.364800322094865
+            ],
+            [
+              -20.329894657589158,
+              -14.364970022094866
+            ],
+            [
+              -20.32933235758916,
+              -14.366286022094865
+            ],
+            [
+              -20.32983165758916,
+              -14.366499322094864
+            ],
+            [
+              -20.330577957589156,
+              -14.364752622094866
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "gongshan.geojson_fixed.geojson_poly_castle",
+        "age": 712,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "gongshan"
+      }
+    }
+  ]
+}

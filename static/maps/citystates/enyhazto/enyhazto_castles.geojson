@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              38.75599318309539,
+              -4.328764990108692
+            ],
+            [
+              38.7566072830954,
+              -4.328844590108692
+            ],
+            [
+              38.7565251830954,
+              -4.329477990108692
+            ],
+            [
+              38.75566548309539,
+              -4.329366590108692
+            ],
+            [
+              38.755832983095395,
+              -4.328074990108692
+            ],
+            [
+              38.756078483095386,
+              -4.328106790108692
+            ],
+            [
+              38.75599318309539,
+              -4.328764990108692
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "enyhazto.geojson_fixed.geojson_poly_castle",
+        "age": 953,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "enyhazto"
+      }
+    }
+  ]
+}

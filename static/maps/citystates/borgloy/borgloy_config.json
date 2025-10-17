@@ -1,0 +1,90 @@
+{
+  "citystate": "borgloy",
+  "display_name": "Borgloy",
+  "bounds": {
+    "west": 23.808196218584413,
+    "south": 9.904533259409657,
+    "east": 23.83140541858441,
+    "north": 9.925940459409656
+  },
+  "center": {
+    "lat": 9.915236859409656,
+    "lng": 23.81980081858441
+  },
+  "castle_position": {
+    "lat": 9.91973257052078,
+    "lng": 23.813942463028667
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1017,
+    "districts": 6,
+    "castles": 1,
+    "towers": 49,
+    "walls": 1,
+    "fields": 6,
+    "trees": 62
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1017,
+      "types": {
+        "other": 407,
+        "residential": 610
+      },
+      "total_occupants": 6207,
+      "avg_occupants": 6.103244837758112,
+      "avg_floors": 1.4985250737463127
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Oak Way",
+        "Castle Ward",
+        "Starway",
+        "Old Borgloy",
+        "Littlegate",
+        "Twilight Reach"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 49
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 6
+    },
+    "trees": {
+      "count": 62
+    }
+  },
+  "layers": {
+    "base_map": "citystates/borgloy/borgloy_map.png",
+    "vector_data": {
+      "buildings": "citystates/borgloy/borgloy_buildings.geojson",
+      "districts": "citystates/borgloy/borgloy_districts.geojson",
+      "castles": "citystates/borgloy/borgloy_castles.geojson",
+      "towers": "citystates/borgloy/borgloy_towers.geojson",
+      "walls": "citystates/borgloy/borgloy_walls.geojson",
+      "fields": "citystates/borgloy/borgloy_fields.geojson",
+      "trees": "citystates/borgloy/borgloy_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:17",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/borgloy_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/borgloy"
+    }
+  }
+}

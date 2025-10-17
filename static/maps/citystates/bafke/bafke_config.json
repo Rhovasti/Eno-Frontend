@@ -1,0 +1,90 @@
+{
+  "citystate": "bafke",
+  "display_name": "Bafke",
+  "bounds": {
+    "west": 45.16727193790836,
+    "south": -0.20330657330836116,
+    "east": 45.203016937908366,
+    "north": -0.15470057330836112
+  },
+  "center": {
+    "lat": -0.17900357330836114,
+    "lng": 45.18514443790836
+  },
+  "castle_position": {
+    "lat": -0.19162406219724934,
+    "lng": 45.1873879379091
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 3310,
+    "districts": 6,
+    "castles": 1,
+    "towers": 13,
+    "walls": 1,
+    "fields": 10,
+    "trees": 232
+  },
+  "statistics": {
+    "buildings": {
+      "count": 3310,
+      "types": {
+        "residential": 3305,
+        "other": 5
+      },
+      "total_occupants": 16477,
+      "avg_occupants": 4.9779456193353475,
+      "avg_floors": 2.061329305135952
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Golden Ward",
+        "Honey Brook",
+        "Southern Slums",
+        "Citadel",
+        "Blackfall Way",
+        "Old Bafke"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 13
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 232
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bafke/bafke_map.png",
+    "vector_data": {
+      "buildings": "citystates/bafke/bafke_buildings.geojson",
+      "districts": "citystates/bafke/bafke_districts.geojson",
+      "castles": "citystates/bafke/bafke_castles.geojson",
+      "towers": "citystates/bafke/bafke_towers.geojson",
+      "walls": "citystates/bafke/bafke_walls.geojson",
+      "fields": "citystates/bafke/bafke_fields.geojson",
+      "trees": "citystates/bafke/bafke_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:46",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bafke_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bafke"
+    }
+  }
+}

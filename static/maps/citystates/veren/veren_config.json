@@ -1,0 +1,88 @@
+{
+  "citystate": "veren",
+  "display_name": "Veren",
+  "bounds": {
+    "west": 3.3855932300284515,
+    "south": -18.450061600676662,
+    "east": 3.425814830028451,
+    "north": -18.428692000676662
+  },
+  "center": {
+    "lat": -18.439376800676662,
+    "lng": 3.4057040300284513
+  },
+  "castle_position": {
+    "lat": -18.437108900676503,
+    "lng": 3.4148581014570274
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 570,
+    "districts": 5,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 21,
+    "trees": 7
+  },
+  "statistics": {
+    "buildings": {
+      "count": 570,
+      "types": {
+        "residential": 570
+      },
+      "total_occupants": 2974,
+      "avg_occupants": 5.217543859649123,
+      "avg_floors": 1.543859649122807
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Blue Mile",
+        "Greenway Knot",
+        "Fenbark Reach",
+        "Twin Springs",
+        "Citadel"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 21
+    },
+    "trees": {
+      "count": 7
+    }
+  },
+  "layers": {
+    "base_map": "citystates/veren/veren_map.png",
+    "vector_data": {
+      "buildings": "citystates/veren/veren_buildings.geojson",
+      "districts": "citystates/veren/veren_districts.geojson",
+      "castles": "citystates/veren/veren_castles.geojson",
+      "towers": "citystates/veren/veren_towers.geojson",
+      "walls": "citystates/veren/veren_walls.geojson",
+      "fields": "citystates/veren/veren_fields.geojson",
+      "trees": "citystates/veren/veren_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:25",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/veren_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/veren"
+    }
+  }
+}

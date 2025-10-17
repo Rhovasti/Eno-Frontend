@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              17.552182681997465,
+              -36.79375915391869
+            ],
+            [
+              17.55252788199747,
+              -36.7927481539187
+            ],
+            [
+              17.552947581997465,
+              -36.79289145391869
+            ],
+            [
+              17.552843681997466,
+              -36.793195653918694
+            ],
+            [
+              17.55394388199747,
+              -36.79357125391869
+            ],
+            [
+              17.55381198199747,
+              -36.7939574539187
+            ],
+            [
+              17.552711781997466,
+              -36.7935818539187
+            ],
+            [
+              17.552602381997467,
+              -36.7939024539187
+            ],
+            [
+              17.552182681997465,
+              -36.79375915391869
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "beitsa.geojson_fixed.geojson_poly_castle",
+        "age": 840,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "beitsa"
+      }
+    }
+  ]
+}

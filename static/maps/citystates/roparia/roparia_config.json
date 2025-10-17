@@ -1,0 +1,84 @@
+{
+  "citystate": "roparia",
+  "display_name": "Roparia",
+  "bounds": {
+    "west": 47.5361092341139,
+    "south": -23.639251485247645,
+    "east": 47.550353234113906,
+    "north": -23.630278485247647
+  },
+  "center": {
+    "lat": -23.634764985247646,
+    "lng": 47.543231234113904
+  },
+  "castle_position": {
+    "lat": -23.63467157413646,
+    "lng": 47.54092050078047
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 131,
+    "districts": 1,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 8,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 131,
+      "types": {
+        "residential": 131
+      },
+      "total_occupants": 681,
+      "avg_occupants": 5.198473282442748,
+      "avg_floors": 1.5190839694656488
+    },
+    "districts": {
+      "count": 1,
+      "unique_names": [
+        "Roparia"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/roparia/roparia_map.png",
+    "vector_data": {
+      "buildings": "citystates/roparia/roparia_buildings.geojson",
+      "districts": "citystates/roparia/roparia_districts.geojson",
+      "castles": "citystates/roparia/roparia_castles.geojson",
+      "towers": "citystates/roparia/roparia_towers.geojson",
+      "walls": "citystates/roparia/roparia_walls.geojson",
+      "fields": "citystates/roparia/roparia_fields.geojson",
+      "trees": "citystates/roparia/roparia_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:19",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/roparia_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/roparia"
+    }
+  }
+}

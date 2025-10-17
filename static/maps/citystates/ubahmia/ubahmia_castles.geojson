@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              50.264051185488725,
+              -11.205806333741142
+            ],
+            [
+              50.264351585488726,
+              -11.205252333741141
+            ],
+            [
+              50.26487768548873,
+              -11.205585633741142
+            ],
+            [
+              50.26504138548873,
+              -11.205671633741142
+            ],
+            [
+              50.26476678548873,
+              -11.20619443374114
+            ],
+            [
+              50.26465029246158,
+              -11.20613125466926
+            ],
+            [
+              50.264604385488724,
+              -11.206106333741142
+            ],
+            [
+              50.26460437558016,
+              -11.206106352011806
+            ],
+            [
+              50.264051185488725,
+              -11.205806333741142
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ubahmia.geojson_poly_castle",
+        "age": 744,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "ubahmia"
+      }
+    }
+  ]
+}

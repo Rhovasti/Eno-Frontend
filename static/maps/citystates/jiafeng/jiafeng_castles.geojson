@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -34.82011174613193,
+              -2.8359015762351008
+            ],
+            [
+              -34.819891646131936,
+              -2.8364513762351007
+            ],
+            [
+              -34.821676446131946,
+              -2.8371658762351006
+            ],
+            [
+              -34.82211484613194,
+              -2.8360706762351007
+            ],
+            [
+              -34.82033014613194,
+              -2.8353561762351007
+            ],
+            [
+              -34.820525746131935,
+              -2.8348676762351004
+            ],
+            [
+              -34.82005174613194,
+              -2.834677876235101
+            ],
+            [
+              -34.81963784613194,
+              -2.835711876235101
+            ],
+            [
+              -34.82011174613193,
+              -2.8359015762351008
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "jiafeng.geojson_fixed.geojson_poly_castle",
+        "age": 346,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "jiafeng"
+      }
+    }
+  ]
+}

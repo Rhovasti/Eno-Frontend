@@ -1,0 +1,93 @@
+{
+  "citystate": "monte",
+  "display_name": "Monte",
+  "bounds": {
+    "west": -21.923609797065502,
+    "south": 36.3557914979953,
+    "east": -21.877809397065498,
+    "north": 36.39681189799529
+  },
+  "center": {
+    "lat": 36.376301697995295,
+    "lng": -21.9007095970655
+  },
+  "castle_position": {
+    "lat": 36.37413688688399,
+    "lng": -21.904773441509857
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2922,
+    "districts": 8,
+    "castles": 1,
+    "towers": 12,
+    "walls": 1,
+    "fields": 2,
+    "trees": 116
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2922,
+      "types": {
+        "residential": 1971,
+        "other": 749,
+        "commercial": 202
+      },
+      "total_occupants": 16792,
+      "avg_occupants": 5.746748802190281,
+      "avg_floors": 1.4948665297741273
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Dragonwell Way",
+        "Green Ward",
+        "Wolfbark Mile",
+        "Old Monte",
+        "Castle",
+        "Free Road",
+        "Starfall",
+        "Fishgate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 12
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 2
+    },
+    "trees": {
+      "count": 116
+    }
+  },
+  "layers": {
+    "base_map": "citystates/monte/monte_map.png",
+    "vector_data": {
+      "buildings": "citystates/monte/monte_buildings.geojson",
+      "districts": "citystates/monte/monte_districts.geojson",
+      "castles": "citystates/monte/monte_castles.geojson",
+      "towers": "citystates/monte/monte_towers.geojson",
+      "walls": "citystates/monte/monte_walls.geojson",
+      "fields": "citystates/monte/monte_fields.geojson",
+      "trees": "citystates/monte/monte_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:05",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/monte_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/monte"
+    }
+  }
+}

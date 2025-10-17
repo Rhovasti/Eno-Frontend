@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.6892981975953156,
+              29.994161633980926
+            ],
+            [
+              -2.6904649975953157,
+              29.995022833980922
+            ],
+            [
+              -2.690180997595316,
+              29.99540763398092
+            ],
+            [
+              -2.689834597595316,
+              29.995152033980926
+            ],
+            [
+              -2.689271997595316,
+              29.995914233980923
+            ],
+            [
+              -2.688819697595316,
+              29.99558033398092
+            ],
+            [
+              -2.689382297595316,
+              29.994818133980925
+            ],
+            [
+              -2.6890140975953156,
+              29.994546433980926
+            ],
+            [
+              -2.6892981975953156,
+              29.994161633980926
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "atsa.geojson_fixed.geojson_poly_castle",
+        "age": 404,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "atsa"
+      }
+    }
+  ]
+}

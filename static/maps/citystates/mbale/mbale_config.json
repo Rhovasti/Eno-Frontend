@@ -1,0 +1,85 @@
+{
+  "citystate": "mbale",
+  "display_name": "Mbale",
+  "bounds": {
+    "west": 26.523053208308,
+    "south": 33.7620196220915,
+    "east": 26.541403408308007,
+    "north": 33.78241482209151
+  },
+  "center": {
+    "lat": 33.772217222091506,
+    "lng": 26.532228308308003
+  },
+  "castle_position": {
+    "lat": 33.77975424936423,
+    "lng": 26.531752953762535
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 316,
+    "districts": 4,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 10,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 316,
+      "types": {
+        "residential": 309,
+        "other": 7
+      },
+      "total_occupants": 1711,
+      "avg_occupants": 5.4145569620253164,
+      "avg_floors": 1.5031645569620253
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Night Steps",
+        "The Horns",
+        "Fenhill Wall",
+        "Castle"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    }
+  },
+  "layers": {
+    "base_map": "citystates/mbale/mbale_map.png",
+    "vector_data": {
+      "buildings": "citystates/mbale/mbale_buildings.geojson",
+      "districts": "citystates/mbale/mbale_districts.geojson",
+      "castles": "citystates/mbale/mbale_castles.geojson",
+      "towers": "citystates/mbale/mbale_towers.geojson",
+      "walls": "citystates/mbale/mbale_walls.geojson",
+      "fields": "citystates/mbale/mbale_fields.geojson",
+      "trees": "citystates/mbale/mbale_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:32",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/mbale_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/mbale"
+    }
+  }
+}

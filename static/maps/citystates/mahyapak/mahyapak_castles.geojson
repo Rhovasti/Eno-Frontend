@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              53.25928717112362,
+              -12.827689025358929
+            ],
+            [
+              53.26030967112361,
+              -12.826631925358928
+            ],
+            [
+              53.26564957112362,
+              -12.831796825358929
+            ],
+            [
+              53.26274437112362,
+              -12.834800425358928
+            ],
+            [
+              53.2591864711236,
+              -12.83135912535893
+            ],
+            [
+              53.26106917112361,
+              -12.829412725358928
+            ],
+            [
+              53.25928717112362,
+              -12.827689025358929
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "mahyapak.geojson_fixed.geojson_poly_castle",
+        "age": 60,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "mahyapak"
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "citystate": "ouiar",
+  "display_name": "Ouiar",
+  "bounds": {
+    "west": -8.792199798107081,
+    "south": -27.279013553735982,
+    "east": -8.748388998107078,
+    "north": -27.24418575373598
+  },
+  "center": {
+    "lat": -27.26159965373598,
+    "lng": -8.77029439810708
+  },
+  "castle_position": {
+    "lat": -27.267332953736116,
+    "lng": -8.763524631440431
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1250,
+    "districts": 5,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 27,
+    "trees": 87
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1250,
+      "types": {
+        "residential": 1013,
+        "other": 237
+      },
+      "total_occupants": 6909,
+      "avg_occupants": 5.5272,
+      "avg_floors": 1.6328
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Elm Wall",
+        "Northern Bridge",
+        "Ashsoul Mile",
+        "Black Side",
+        "Citadel"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 27
+    },
+    "trees": {
+      "count": 87
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ouiar/ouiar_map.png",
+    "vector_data": {
+      "buildings": "citystates/ouiar/ouiar_buildings.geojson",
+      "districts": "citystates/ouiar/ouiar_districts.geojson",
+      "castles": "citystates/ouiar/ouiar_castles.geojson",
+      "towers": "citystates/ouiar/ouiar_towers.geojson",
+      "walls": "citystates/ouiar/ouiar_walls.geojson",
+      "fields": "citystates/ouiar/ouiar_fields.geojson",
+      "trees": "citystates/ouiar/ouiar_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:26",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ouiar_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ouiar"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "citystate": "kikoupaupo",
+  "display_name": "Kikoupaupo",
+  "bounds": {
+    "west": 50.72968586098734,
+    "south": -1.2039951511318094,
+    "east": 50.74961606098733,
+    "north": -1.1764659511318094
+  },
+  "center": {
+    "lat": -1.1902305511318094,
+    "lng": 50.73965096098733
+  },
+  "castle_position": {
+    "lat": -1.1806349506038571,
+    "lng": 50.743271041192976
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 292,
+    "districts": 3,
+    "castles": 1,
+    "towers": 5,
+    "walls": 1,
+    "fields": 17,
+    "trees": 3
+  },
+  "statistics": {
+    "buildings": {
+      "count": 292,
+      "types": {
+        "commercial": 192,
+        "other": 74,
+        "residential": 26
+      },
+      "total_occupants": 1650,
+      "avg_occupants": 5.6506849315068495,
+      "avg_floors": 2.154109589041096
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Honey Mill",
+        "Estate",
+        "Old Kikoupaupo"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 5
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 17
+    },
+    "trees": {
+      "count": 3
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kikoupaupo/kikoupaupo_map.png",
+    "vector_data": {
+      "buildings": "citystates/kikoupaupo/kikoupaupo_buildings.geojson",
+      "districts": "citystates/kikoupaupo/kikoupaupo_districts.geojson",
+      "castles": "citystates/kikoupaupo/kikoupaupo_castles.geojson",
+      "towers": "citystates/kikoupaupo/kikoupaupo_towers.geojson",
+      "walls": "citystates/kikoupaupo/kikoupaupo_walls.geojson",
+      "fields": "citystates/kikoupaupo/kikoupaupo_fields.geojson",
+      "trees": "citystates/kikoupaupo/kikoupaupo_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:16",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kikoupaupo_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kikoupaupo"
+    }
+  }
+}

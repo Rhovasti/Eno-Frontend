@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              53.48177354422457,
+              -2.122276930479494
+            ],
+            [
+              53.48190404422456,
+              -2.122914730479494
+            ],
+            [
+              53.48132074422457,
+              -2.123034130479494
+            ],
+            [
+              53.48111034422457,
+              -2.1220056304794945
+            ],
+            [
+              53.48126614422457,
+              -2.1220226304794942
+            ],
+            [
+              53.48134364422456,
+              -2.1224015304794945
+            ],
+            [
+              53.48149474422457,
+              -2.122400430479494
+            ],
+            [
+              53.481467144224574,
+              -2.122265730479494
+            ],
+            [
+              53.48177354422457,
+              -2.122276930479494
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "harruresh.geojson_fixed.geojson_poly_castle",
+        "age": 331,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "harruresh"
+      }
+    }
+  ]
+}

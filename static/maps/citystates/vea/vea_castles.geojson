@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              56.27112600504046,
+              9.107219983512561
+            ],
+            [
+              56.27133450504046,
+              9.107423383512561
+            ],
+            [
+              56.271797705040456,
+              9.10675148351256
+            ],
+            [
+              56.271094705040454,
+              9.106522283512561
+            ],
+            [
+              56.270935205040445,
+              9.106753583512564
+            ],
+            [
+              56.271288505040445,
+              9.106984183512562
+            ],
+            [
+              56.27112600504046,
+              9.107219983512561
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "vea.geojson_fixed.geojson_poly_castle",
+        "age": 869,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "vea"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "citystate": "iinasia",
+  "display_name": "Iinasia",
+  "bounds": {
+    "west": -8.14730732679515,
+    "south": -17.080638620678712,
+    "east": -8.132019526795148,
+    "north": -17.06310749845647
+  },
+  "center": {
+    "lat": -17.071873059567594,
+    "lng": -8.139663426795149
+  },
+  "castle_position": {
+    "lat": -17.064558898456472,
+    "lng": -8.138724704572937
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 314,
+    "districts": 4,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 11,
+    "trees": 7
+  },
+  "statistics": {
+    "buildings": {
+      "count": 314,
+      "types": {
+        "industrial": 154,
+        "other": 143,
+        "commercial": 11,
+        "residential": 6
+      },
+      "total_occupants": 3088,
+      "avg_occupants": 9.834394904458598,
+      "avg_floors": 2.0254777070063694
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Forest Field",
+        "Bread Spring",
+        "Military Ward",
+        "Estate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    },
+    "trees": {
+      "count": 7
+    }
+  },
+  "layers": {
+    "base_map": "citystates/iinasia/iinasia_map.png",
+    "vector_data": {
+      "buildings": "citystates/iinasia/iinasia_buildings.geojson",
+      "districts": "citystates/iinasia/iinasia_districts.geojson",
+      "castles": "citystates/iinasia/iinasia_castles.geojson",
+      "towers": "citystates/iinasia/iinasia_towers.geojson",
+      "walls": "citystates/iinasia/iinasia_walls.geojson",
+      "fields": "citystates/iinasia/iinasia_fields.geojson",
+      "trees": "citystates/iinasia/iinasia_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:25",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/iinasia_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/iinasia"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.334825814448893,
+              -18.608118900871627
+            ],
+            [
+              2.3348258746118957,
+              -18.608118889832827
+            ],
+            [
+              2.33480321174129,
+              -18.607995657141128
+            ],
+            [
+              2.3347380746118955,
+              -18.60764048983283
+            ],
+            [
+              2.3354928746118957,
+              -18.607451289832827
+            ],
+            [
+              2.3356318746118956,
+              -18.608005689832826
+            ],
+            [
+              2.334831974611896,
+              -18.60815248983283
+            ],
+            [
+              2.334825814448893,
+              -18.608118900871627
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "auera.geojson_fixed.geojson_poly_castle",
+        "age": 551,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "auera"
+      }
+    }
+  ]
+}

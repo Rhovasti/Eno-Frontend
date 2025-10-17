@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.689789228593376,
+              -24.639558438135904
+            ],
+            [
+              45.68954452859338,
+              -24.6402037381359
+            ],
+            [
+              45.688854028593376,
+              -24.6399419381359
+            ],
+            [
+              45.68917552859339,
+              -24.639094038135905
+            ],
+            [
+              45.68941722859338,
+              -24.6391871381359
+            ],
+            [
+              45.689253628593384,
+              -24.639618738135905
+            ],
+            [
+              45.68950312859338,
+              -24.639714038135903
+            ],
+            [
+              45.68959102859338,
+              -24.639482338135902
+            ],
+            [
+              45.689789228593376,
+              -24.639558438135904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "luquti.geojson_fixed.geojson_poly_castle",
+        "age": 790,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "luquti"
+      }
+    }
+  ]
+}

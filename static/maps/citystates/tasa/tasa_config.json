@@ -1,0 +1,95 @@
+{
+  "citystate": "tasa",
+  "display_name": "Tasa",
+  "bounds": {
+    "west": 44.653243514748254,
+    "south": 28.24458759233335,
+    "east": 44.69778631474826,
+    "north": 28.286736392333342
+  },
+  "center": {
+    "lat": 28.265661992333346,
+    "lng": 44.675514914748256
+  },
+  "castle_position": {
+    "lat": 28.25660527566642,
+    "lng": 44.679120564748224
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2247,
+    "districts": 11,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 21,
+    "trees": 43
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2247,
+      "types": {
+        "industrial": 205,
+        "residential": 2042
+      },
+      "total_occupants": 13310,
+      "avg_occupants": 5.923453493546951,
+      "avg_floors": 1.6786826880284824
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Free Park",
+        "Chicken Gate",
+        "Skyrise Gate",
+        "Redhill Spring",
+        "Bone Rock",
+        "Southern Slums",
+        "East Tasa",
+        "Wine Ward",
+        "Old Tasa",
+        "Fairy Edge",
+        "Egg Arch"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 21
+    },
+    "trees": {
+      "count": 43
+    }
+  },
+  "layers": {
+    "base_map": "citystates/tasa/tasa_map.png",
+    "vector_data": {
+      "buildings": "citystates/tasa/tasa_buildings.geojson",
+      "districts": "citystates/tasa/tasa_districts.geojson",
+      "castles": "citystates/tasa/tasa_castles.geojson",
+      "towers": "citystates/tasa/tasa_towers.geojson",
+      "walls": "citystates/tasa/tasa_walls.geojson",
+      "fields": "citystates/tasa/tasa_fields.geojson",
+      "trees": "citystates/tasa/tasa_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:18",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/tasa_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/tasa"
+    }
+  }
+}

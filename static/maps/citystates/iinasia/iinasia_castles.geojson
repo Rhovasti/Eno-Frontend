@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.138883526795158,
+              -17.064010920678697
+            ],
+            [
+              -8.137237626795159,
+              -17.064323920678696
+            ],
+            [
+              -8.13745322679516,
+              -17.065458220678693
+            ],
+            [
+              -8.13909922679516,
+              -17.065145220678694
+            ],
+            [
+              -8.13902252679516,
+              -17.064741820678698
+            ],
+            [
+              -8.139526126795161,
+              -17.064646020678694
+            ],
+            [
+              -8.13946012679516,
+              -17.0642986206787
+            ],
+            [
+              -8.138956426795158,
+              -17.064394420678695
+            ],
+            [
+              -8.138883526795158,
+              -17.064010920678697
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "iinasia.geojson_fixed.geojson_poly_castle",
+        "age": 313,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "iinasia"
+      }
+    }
+  ]
+}

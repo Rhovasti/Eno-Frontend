@@ -1,0 +1,94 @@
+{
+  "citystate": "pornoli",
+  "display_name": "Pornoli",
+  "bounds": {
+    "west": -9.555233904396204,
+    "south": -14.15650383435063,
+    "east": -9.515896704396205,
+    "north": -14.124203634350632
+  },
+  "center": {
+    "lat": -14.140353734350631,
+    "lng": -9.535565304396204
+  },
+  "castle_position": {
+    "lat": -14.14898370101728,
+    "lng": -9.528816359951744
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 3006,
+    "districts": 8,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 9,
+    "trees": 172
+  },
+  "statistics": {
+    "buildings": {
+      "count": 3006,
+      "types": {
+        "residential": 2252,
+        "commercial": 403,
+        "other": 279,
+        "industrial": 72
+      },
+      "total_occupants": 17186,
+      "avg_occupants": 5.717232202262142,
+      "avg_floors": 1.5931470392548237
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Bright Forge",
+        "Moontide Gate",
+        "Light Square",
+        "Cotton Crest",
+        "Cattleway",
+        "Rainy Water",
+        "East Slums",
+        "Citadel"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    },
+    "trees": {
+      "count": 172
+    }
+  },
+  "layers": {
+    "base_map": "citystates/pornoli/pornoli_map.png",
+    "vector_data": {
+      "buildings": "citystates/pornoli/pornoli_buildings.geojson",
+      "districts": "citystates/pornoli/pornoli_districts.geojson",
+      "castles": "citystates/pornoli/pornoli_castles.geojson",
+      "towers": "citystates/pornoli/pornoli_towers.geojson",
+      "walls": "citystates/pornoli/pornoli_walls.geojson",
+      "fields": "citystates/pornoli/pornoli_fields.geojson",
+      "trees": "citystates/pornoli/pornoli_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:47",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/pornoli_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/pornoli"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.1871438379091,
+              -0.19178447330836043
+            ],
+            [
+              45.18658883790909,
+              -0.19171877330836043
+            ],
+            [
+              45.1866983379091,
+              -0.19079397330836043
+            ],
+            [
+              45.1878004379091,
+              -0.19092437330836046
+            ],
+            [
+              45.1877458379091,
+              -0.19138597330836046
+            ],
+            [
+              45.18820553790909,
+              -0.19144037330836047
+            ],
+            [
+              45.18808583790909,
+              -0.19245167330836047
+            ],
+            [
+              45.1870789379091,
+              -0.19233247330836048
+            ],
+            [
+              45.1871438379091,
+              -0.19178447330836043
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "bafke.geojson_fixed.geojson_poly_castle",
+        "age": 489,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "bafke"
+      }
+    }
+  ]
+}

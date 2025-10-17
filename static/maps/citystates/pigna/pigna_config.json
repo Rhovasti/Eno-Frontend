@@ -1,0 +1,87 @@
+{
+  "citystate": "pigna",
+  "display_name": "Pigna",
+  "bounds": {
+    "west": -14.110495680332265,
+    "south": 22.094582830529927,
+    "east": -14.085527280332263,
+    "north": 22.11784723052993
+  },
+  "center": {
+    "lat": 22.106215030529928,
+    "lng": -14.098011480332264
+  },
+  "castle_position": {
+    "lat": 22.103046616244146,
+    "lng": -14.100056723189438
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1053,
+    "districts": 7,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 0,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1053,
+      "types": {
+        "commercial": 91,
+        "residential": 618,
+        "industrial": 295,
+        "other": 49
+      },
+      "total_occupants": 6939,
+      "avg_occupants": 6.589743589743589,
+      "avg_floors": 1.9411206077872745
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "East Village",
+        "Feygate",
+        "Spice Rock",
+        "Northern Pigna",
+        "Castle",
+        "Greybloom Gate",
+        "Stone Cliff"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/pigna/pigna_map.png",
+    "vector_data": {
+      "buildings": "citystates/pigna/pigna_buildings.geojson",
+      "districts": "citystates/pigna/pigna_districts.geojson",
+      "castles": "citystates/pigna/pigna_castles.geojson",
+      "towers": "citystates/pigna/pigna_towers.geojson",
+      "walls": "citystates/pigna/pigna_walls.geojson",
+      "fields": "citystates/pigna/pigna_fields.geojson",
+      "trees": "citystates/pigna/pigna_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:43",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/pigna_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/pigna"
+    }
+  }
+}

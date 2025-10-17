@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.55300516961347,
+              13.57587764711974
+            ],
+            [
+              37.552477469613464,
+              13.57614434711974
+            ],
+            [
+              37.55281076961346,
+              13.576803947119739
+            ],
+            [
+              37.553338469613465,
+              13.576537247119738
+            ],
+            [
+              37.55321036961345,
+              13.576283647119737
+            ],
+            [
+              37.55301296961346,
+              13.576383347119737
+            ],
+            [
+              37.552921969613465,
+              13.576203347119737
+            ],
+            [
+              37.55311936961347,
+              13.57610354711974
+            ],
+            [
+              37.55300516961347,
+              13.57587764711974
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "uyaria.geojson_poly_castle",
+        "age": 74,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "uyaria"
+      }
+    }
+  ]
+}

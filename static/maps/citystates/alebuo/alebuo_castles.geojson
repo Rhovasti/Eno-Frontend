@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -20.75726795259863,
+              24.531664776604813
+            ],
+            [
+              -20.758444152598628,
+              24.53335237660481
+            ],
+            [
+              -20.757029752598626,
+              24.534338176604813
+            ],
+            [
+              -20.75617955259863,
+              24.533118176604816
+            ],
+            [
+              -20.75714615259863,
+              24.53244457660481
+            ],
+            [
+              -20.75682015259863,
+              24.531976876604816
+            ],
+            [
+              -20.75726795259863,
+              24.531664776604813
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "alebuo.geojson_fixed.geojson_poly_castle",
+        "age": 651,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "alebuo"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -31.568773605217856,
+              17.482197962738105
+            ],
+            [
+              -31.568889105217856,
+              17.485367662738106
+            ],
+            [
+              -31.568384905217854,
+              17.485385962738107
+            ],
+            [
+              -31.56836580521785,
+              17.484863562738106
+            ],
+            [
+              -31.567892805217852,
+              17.484880762738108
+            ],
+            [
+              -31.567796405217855,
+              17.482233462738108
+            ],
+            [
+              -31.568773605217856,
+              17.482197962738105
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "bernala.geojson_fixed.geojson_poly_castle",
+        "age": 356,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "bernala"
+      }
+    }
+  ]
+}

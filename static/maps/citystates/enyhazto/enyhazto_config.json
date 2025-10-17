@@ -1,0 +1,91 @@
+{
+  "citystate": "enyhazto",
+  "display_name": "Enyhazto",
+  "bounds": {
+    "west": 38.74407318309509,
+    "south": -4.339658890108687,
+    "east": 38.76614478309509,
+    "north": -4.319020290108686
+  },
+  "center": {
+    "lat": -4.329339590108686,
+    "lng": 38.75510898309509
+  },
+  "castle_position": {
+    "lat": -4.3287715615372635,
+    "lng": 38.75609939738111
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1011,
+    "districts": 7,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 3,
+    "trees": 68
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1011,
+      "types": {
+        "residential": 881,
+        "commercial": 130
+      },
+      "total_occupants": 5293,
+      "avg_occupants": 5.235410484668645,
+      "avg_floors": 1.6310583580613254
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Cloudwood Gate",
+        "Ember Horn",
+        "Far Ridge",
+        "East Enyhazto",
+        "Citadel",
+        "Black Wood",
+        "Dragonkey"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 3
+    },
+    "trees": {
+      "count": 68
+    }
+  },
+  "layers": {
+    "base_map": "citystates/enyhazto/enyhazto_map.png",
+    "vector_data": {
+      "buildings": "citystates/enyhazto/enyhazto_buildings.geojson",
+      "districts": "citystates/enyhazto/enyhazto_districts.geojson",
+      "castles": "citystates/enyhazto/enyhazto_castles.geojson",
+      "towers": "citystates/enyhazto/enyhazto_towers.geojson",
+      "walls": "citystates/enyhazto/enyhazto_walls.geojson",
+      "fields": "citystates/enyhazto/enyhazto_fields.geojson",
+      "trees": "citystates/enyhazto/enyhazto_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:57",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/enyhazto_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/enyhazto"
+    }
+  }
+}

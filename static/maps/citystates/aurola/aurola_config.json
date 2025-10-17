@@ -1,0 +1,91 @@
+{
+  "citystate": "aurola",
+  "display_name": "Aurola",
+  "bounds": {
+    "west": -16.14706038255973,
+    "south": -19.381624995168565,
+    "east": -16.12405278255973,
+    "north": -19.359157395168566
+  },
+  "center": {
+    "lat": -19.370391195168565,
+    "lng": -16.13555658255973
+  },
+  "castle_position": {
+    "lat": -19.372430625937618,
+    "lng": -16.132869805636574
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1029,
+    "districts": 7,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 1,
+    "trees": 68
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1029,
+      "types": {
+        "other": 351,
+        "residential": 678
+      },
+      "total_occupants": 5705,
+      "avg_occupants": 5.54421768707483,
+      "avg_floors": 1.8756073858114675
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Little Hook",
+        "Northern Aurola",
+        "Honey Mill",
+        "Smugglers Yard",
+        "Citadel",
+        "Egg Road",
+        "Daggerchurch Church"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 1
+    },
+    "trees": {
+      "count": 68
+    }
+  },
+  "layers": {
+    "base_map": "citystates/aurola/aurola_map.png",
+    "vector_data": {
+      "buildings": "citystates/aurola/aurola_buildings.geojson",
+      "districts": "citystates/aurola/aurola_districts.geojson",
+      "castles": "citystates/aurola/aurola_castles.geojson",
+      "towers": "citystates/aurola/aurola_towers.geojson",
+      "walls": "citystates/aurola/aurola_walls.geojson",
+      "fields": "citystates/aurola/aurola_fields.geojson",
+      "trees": "citystates/aurola/aurola_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:39",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/aurola_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/aurola"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "citystate": "bazujduzeszeg",
+  "display_name": "Bazujduzeszeg",
+  "bounds": {
+    "west": 42.54180602205741,
+    "south": -8.332120065513964,
+    "east": 42.5606652220574,
+    "north": -8.313536865513962
+  },
+  "center": {
+    "lat": -8.322828465513963,
+    "lng": 42.551235622057405
+  },
+  "castle_position": {
+    "lat": -8.32499562106951,
+    "lng": 42.55050985539069
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 320,
+    "districts": 3,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 15,
+    "trees": 1
+  },
+  "statistics": {
+    "buildings": {
+      "count": 320,
+      "types": {
+        "industrial": 62,
+        "other": 161,
+        "residential": 97
+      },
+      "total_occupants": 2598,
+      "avg_occupants": 8.11875,
+      "avg_floors": 1.715625
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Upper Ward",
+        "Red Mile",
+        "Cattle Cliff"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bazujduzeszeg/bazujduzeszeg_map.png",
+    "vector_data": {
+      "buildings": "citystates/bazujduzeszeg/bazujduzeszeg_buildings.geojson",
+      "districts": "citystates/bazujduzeszeg/bazujduzeszeg_districts.geojson",
+      "castles": "citystates/bazujduzeszeg/bazujduzeszeg_castles.geojson",
+      "towers": "citystates/bazujduzeszeg/bazujduzeszeg_towers.geojson",
+      "walls": "citystates/bazujduzeszeg/bazujduzeszeg_walls.geojson",
+      "fields": "citystates/bazujduzeszeg/bazujduzeszeg_fields.geojson",
+      "trees": "citystates/bazujduzeszeg/bazujduzeszeg_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:59",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bazujduzeszeg_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bazujduzeszeg"
+    }
+  }
+}

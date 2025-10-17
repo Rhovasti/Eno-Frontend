@@ -1,0 +1,88 @@
+{
+  "citystate": "ithiu",
+  "display_name": "Ithiu",
+  "bounds": {
+    "west": -5.080796588552455,
+    "south": 34.84805785742344,
+    "east": -5.053831988552456,
+    "north": 34.88572345742345
+  },
+  "center": {
+    "lat": 34.86689065742345,
+    "lng": -5.067314288552455
+  },
+  "castle_position": {
+    "lat": 34.88222612105996,
+    "lng": -5.058967106734287
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 663,
+    "districts": 4,
+    "castles": 1,
+    "towers": 12,
+    "walls": 1,
+    "fields": 18,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 663,
+      "types": {
+        "residential": 640,
+        "industrial": 23
+      },
+      "total_occupants": 3374,
+      "avg_occupants": 5.088989441930618,
+      "avg_floors": 2.0542986425339365
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Great Mire",
+        "Citadel",
+        "Estate",
+        "Dark Shrine"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 12
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 18
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ithiu/ithiu_map.png",
+    "vector_data": {
+      "buildings": "citystates/ithiu/ithiu_buildings.geojson",
+      "districts": "citystates/ithiu/ithiu_districts.geojson",
+      "castles": "citystates/ithiu/ithiu_castles.geojson",
+      "towers": "citystates/ithiu/ithiu_towers.geojson",
+      "walls": "citystates/ithiu/ithiu_walls.geojson",
+      "fields": "citystates/ithiu/ithiu_fields.geojson",
+      "trees": "citystates/ithiu/ithiu_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:17",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ithiu_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ithiu"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "citystate": "malveiba",
+  "display_name": "Malveiba",
+  "bounds": {
+    "west": 31.88530664406661,
+    "south": -34.44984040720839,
+    "east": 31.920034844066613,
+    "north": -34.41443320720838
+  },
+  "center": {
+    "lat": -34.43213680720839,
+    "lng": 31.90267074406661
+  },
+  "castle_position": {
+    "lat": -34.42277200720839,
+    "lng": 31.91029247263801
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 715,
+    "districts": 4,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 23,
+    "trees": 8
+  },
+  "statistics": {
+    "buildings": {
+      "count": 715,
+      "types": {
+        "residential": 403,
+        "commercial": 109,
+        "other": 203
+      },
+      "total_occupants": 4079,
+      "avg_occupants": 5.704895104895105,
+      "avg_floors": 2.0195804195804197
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Clay Crest",
+        "Dragonhill",
+        "Old District",
+        "Fey Side"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 23
+    },
+    "trees": {
+      "count": 8
+    }
+  },
+  "layers": {
+    "base_map": "citystates/malveiba/malveiba_map.png",
+    "vector_data": {
+      "buildings": "citystates/malveiba/malveiba_buildings.geojson",
+      "districts": "citystates/malveiba/malveiba_districts.geojson",
+      "castles": "citystates/malveiba/malveiba_castles.geojson",
+      "towers": "citystates/malveiba/malveiba_towers.geojson",
+      "walls": "citystates/malveiba/malveiba_walls.geojson",
+      "fields": "citystates/malveiba/malveiba_fields.geojson",
+      "trees": "citystates/malveiba/malveiba_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:28",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/malveiba_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/malveiba"
+    }
+  }
+}

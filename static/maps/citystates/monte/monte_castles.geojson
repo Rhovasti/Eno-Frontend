@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -21.905298497065413,
+              36.3745178979951
+            ],
+            [
+              -21.904747697065414,
+              36.3749591979951
+            ],
+            [
+              -21.90429369706541,
+              36.374392597995104
+            ],
+            [
+              -21.904511697065413,
+              36.37421799799511
+            ],
+            [
+              -21.90411319706541,
+              36.373720697995104
+            ],
+            [
+              -21.90472739706541,
+              36.3732285979951
+            ],
+            [
+              -21.905125797065413,
+              36.3737257979951
+            ],
+            [
+              -21.904844497065415,
+              36.3739512979951
+            ],
+            [
+              -21.905298497065413,
+              36.3745178979951
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "monte.geojson_fixed.geojson_poly_castle",
+        "age": 296,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "monte"
+      }
+    }
+  ]
+}

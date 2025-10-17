@@ -1,0 +1,87 @@
+{
+  "citystate": "likzib",
+  "display_name": "Likzib",
+  "bounds": {
+    "west": 11.494786158548752,
+    "south": -38.004273858677124,
+    "east": 11.522786689317957,
+    "north": -37.98600585867712
+  },
+  "center": {
+    "lat": -37.99513985867712,
+    "lng": 11.508786423933355
+  },
+  "castle_position": {
+    "lat": -37.995129320215554,
+    "lng": 11.497028158548753
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 812,
+    "districts": 4,
+    "castles": 1,
+    "towers": 13,
+    "walls": 1,
+    "fields": 10,
+    "trees": 20
+  },
+  "statistics": {
+    "buildings": {
+      "count": 812,
+      "types": {
+        "residential": 812
+      },
+      "total_occupants": 4880,
+      "avg_occupants": 6.009852216748769,
+      "avg_floors": 1.9334975369458127
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Spirit Field",
+        "Military Ward",
+        "Old District",
+        "The Horn"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 13
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 20
+    }
+  },
+  "layers": {
+    "base_map": "citystates/likzib/likzib_map.png",
+    "vector_data": {
+      "buildings": "citystates/likzib/likzib_buildings.geojson",
+      "districts": "citystates/likzib/likzib_districts.geojson",
+      "castles": "citystates/likzib/likzib_castles.geojson",
+      "towers": "citystates/likzib/likzib_towers.geojson",
+      "walls": "citystates/likzib/likzib_walls.geojson",
+      "fields": "citystates/likzib/likzib_fields.geojson",
+      "trees": "citystates/likzib/likzib_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:53",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/likzib_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/likzib"
+    }
+  }
+}

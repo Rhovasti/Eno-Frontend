@@ -1,0 +1,94 @@
+{
+  "citystate": "guild",
+  "display_name": "Guild",
+  "bounds": {
+    "west": 57.752218701721425,
+    "south": -2.7877864051187498,
+    "east": 57.88083230172143,
+    "north": -2.670924805118749
+  },
+  "center": {
+    "lat": -2.7293556051187493,
+    "lng": 57.81652550172143
+  },
+  "castle_position": {
+    "lat": -2.7383582765475767,
+    "lng": 57.81001977315558
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 23034,
+    "districts": 9,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 3,
+    "trees": 427
+  },
+  "statistics": {
+    "buildings": {
+      "count": 23034,
+      "types": {
+        "commercial": 1060,
+        "residential": 21734,
+        "other": 240
+      },
+      "total_occupants": 119683,
+      "avg_occupants": 5.195927758965008,
+      "avg_floors": 1.6722236693583399
+    },
+    "districts": {
+      "count": 9,
+      "unique_names": [
+        "West Slums",
+        "Stone Hall",
+        "Blackfall Bridge",
+        "The Docks",
+        "Castle",
+        "Downtide Gate",
+        "Old Edge",
+        "Ember Gate",
+        "Timber Forge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 3
+    },
+    "trees": {
+      "count": 427
+    }
+  },
+  "layers": {
+    "base_map": "citystates/guild/guild_map.png",
+    "vector_data": {
+      "buildings": "citystates/guild/guild_buildings.geojson",
+      "districts": "citystates/guild/guild_districts.geojson",
+      "castles": "citystates/guild/guild_castles.geojson",
+      "towers": "citystates/guild/guild_towers.geojson",
+      "walls": "citystates/guild/guild_walls.geojson",
+      "fields": "citystates/guild/guild_fields.geojson",
+      "trees": "citystates/guild/guild_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:01",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/guild_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/guild"
+    }
+  }
+}

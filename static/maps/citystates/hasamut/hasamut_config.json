@@ -1,0 +1,91 @@
+{
+  "citystate": "hasamut",
+  "display_name": "Hasamut",
+  "bounds": {
+    "west": -8.85208740402251,
+    "south": -36.5952883209824,
+    "east": -8.811353604022509,
+    "north": -36.5307175209824
+  },
+  "center": {
+    "lat": -36.5630029209824,
+    "lng": -8.83172050402251
+  },
+  "castle_position": {
+    "lat": -36.54322973526806,
+    "lng": -8.829854446879624
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1962,
+    "districts": 7,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 20,
+    "trees": 33
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1962,
+      "types": {
+        "residential": 1922,
+        "commercial": 40
+      },
+      "total_occupants": 10323,
+      "avg_occupants": 5.261467889908257,
+      "avg_floors": 1.520387359836901
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Great Docks",
+        "Old Town",
+        "Milk Hall",
+        "Citadel",
+        "North Docks",
+        "Dragonfire Stair",
+        "Shepherds Ridge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 33
+    }
+  },
+  "layers": {
+    "base_map": "citystates/hasamut/hasamut_map.png",
+    "vector_data": {
+      "buildings": "citystates/hasamut/hasamut_buildings.geojson",
+      "districts": "citystates/hasamut/hasamut_districts.geojson",
+      "castles": "citystates/hasamut/hasamut_castles.geojson",
+      "towers": "citystates/hasamut/hasamut_towers.geojson",
+      "walls": "citystates/hasamut/hasamut_walls.geojson",
+      "fields": "citystates/hasamut/hasamut_fields.geojson",
+      "trees": "citystates/hasamut/hasamut_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:07",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/hasamut_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/hasamut"
+    }
+  }
+}

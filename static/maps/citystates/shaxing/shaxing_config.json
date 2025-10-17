@@ -1,0 +1,93 @@
+{
+  "citystate": "shaxing",
+  "display_name": "Shaxing",
+  "bounds": {
+    "west": -28.75623957488467,
+    "south": -0.29373759355134155,
+    "east": -28.710909574884663,
+    "north": -0.2572745935513409
+  },
+  "center": {
+    "lat": -0.27550609355134126,
+    "lng": -28.733574574884667
+  },
+  "castle_position": {
+    "lat": -0.2696759535513449,
+    "lng": -28.725525274884568
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2692,
+    "districts": 9,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 13,
+    "trees": 256
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2692,
+      "types": {
+        "residential": 1767,
+        "other": 925
+      },
+      "total_occupants": 16731,
+      "avg_occupants": 6.215081723625557,
+      "avg_floors": 1.9268202080237742
+    },
+    "districts": {
+      "count": 9,
+      "unique_names": [
+        "Upper Ward",
+        "Long Vale",
+        "Wine Crown",
+        "Oak Road",
+        "Starwell Quarter",
+        "Southern Shaxing",
+        "Cotton Market",
+        "South Slums",
+        "Three Orchards"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 13
+    },
+    "trees": {
+      "count": 256
+    }
+  },
+  "layers": {
+    "base_map": "citystates/shaxing/shaxing_map.png",
+    "vector_data": {
+      "buildings": "citystates/shaxing/shaxing_buildings.geojson",
+      "districts": "citystates/shaxing/shaxing_districts.geojson",
+      "castles": "citystates/shaxing/shaxing_castles.geojson",
+      "towers": "citystates/shaxing/shaxing_towers.geojson",
+      "walls": "citystates/shaxing/shaxing_walls.geojson",
+      "fields": "citystates/shaxing/shaxing_fields.geojson",
+      "trees": "citystates/shaxing/shaxing_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:55",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/shaxing_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/shaxing"
+    }
+  }
+}

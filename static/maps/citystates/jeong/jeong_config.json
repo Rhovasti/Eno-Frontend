@@ -1,0 +1,95 @@
+{
+  "citystate": "jeong",
+  "display_name": "Jeong",
+  "bounds": {
+    "west": 54.09619205492818,
+    "south": 4.217406429853188,
+    "east": 54.176518854928176,
+    "north": 4.301087229853186
+  },
+  "center": {
+    "lat": 4.259246829853187,
+    "lng": 54.13635545492818
+  },
+  "castle_position": {
+    "lat": 4.273958889020852,
+    "lng": 54.15403428281811
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 13682,
+    "districts": 10,
+    "castles": 1,
+    "towers": 139,
+    "walls": 1,
+    "fields": 5,
+    "trees": 496
+  },
+  "statistics": {
+    "buildings": {
+      "count": 13682,
+      "types": {
+        "residential": 11765,
+        "commercial": 1088,
+        "other": 829
+      },
+      "total_occupants": 72253,
+      "avg_occupants": 5.280879988305803,
+      "avg_floors": 1.7168542610729425
+    },
+    "districts": {
+      "count": 10,
+      "unique_names": [
+        "Black Tower",
+        "Great Market",
+        "Eastern Jeong",
+        "Middlegate",
+        "Twin Rocks",
+        "Citadel",
+        "Bright Crown",
+        "Purple Side",
+        "Dark Road",
+        "Underchurch Road"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 139
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 5
+    },
+    "trees": {
+      "count": 496
+    }
+  },
+  "layers": {
+    "base_map": "citystates/jeong/jeong_map.png",
+    "vector_data": {
+      "buildings": "citystates/jeong/jeong_buildings.geojson",
+      "districts": "citystates/jeong/jeong_districts.geojson",
+      "castles": "citystates/jeong/jeong_castles.geojson",
+      "towers": "citystates/jeong/jeong_towers.geojson",
+      "walls": "citystates/jeong/jeong_walls.geojson",
+      "fields": "citystates/jeong/jeong_fields.geojson",
+      "trees": "citystates/jeong/jeong_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:15",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/jeong_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/jeong"
+    }
+  }
+}

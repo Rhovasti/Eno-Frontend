@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              48.45350352237987,
+              -19.370508762576137
+            ],
+            [
+              48.454006022379865,
+              -19.370177262576142
+            ],
+            [
+              48.45522282237987,
+              -19.372021462576143
+            ],
+            [
+              48.45429472237986,
+              -19.372633862576137
+            ],
+            [
+              48.452760122379864,
+              -19.370308162576137
+            ],
+            [
+              48.45318582237986,
+              -19.370027262576137
+            ],
+            [
+              48.45350352237987,
+              -19.370508762576137
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "fibeon.geojson_fixed.geojson_poly_castle",
+        "age": 545,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "fibeon"
+      }
+    }
+  ]
+}

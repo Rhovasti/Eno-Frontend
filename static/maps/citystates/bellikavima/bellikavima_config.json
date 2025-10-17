@@ -1,0 +1,85 @@
+{
+  "citystate": "bellikavima",
+  "display_name": "Bellikavima",
+  "bounds": {
+    "west": 2.5576765614605588,
+    "south": 21.72814169933927,
+    "east": 2.578254161460558,
+    "north": 21.745424299339273
+  },
+  "center": {
+    "lat": 21.736782999339272,
+    "lng": 2.5679653614605584
+  },
+  "castle_position": {
+    "lat": 21.740386399339343,
+    "lng": 2.565557617016121
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 179,
+    "districts": 3,
+    "castles": 1,
+    "towers": 18,
+    "walls": 1,
+    "fields": 14,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 179,
+      "types": {
+        "industrial": 152,
+        "other": 20,
+        "commercial": 7
+      },
+      "total_occupants": 2010,
+      "avg_occupants": 11.22905027932961,
+      "avg_floors": 2.2458100558659218
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Black Hill",
+        "Old District",
+        "Castle Ward"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 18
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bellikavima/bellikavima_map.png",
+    "vector_data": {
+      "buildings": "citystates/bellikavima/bellikavima_buildings.geojson",
+      "districts": "citystates/bellikavima/bellikavima_districts.geojson",
+      "castles": "citystates/bellikavima/bellikavima_castles.geojson",
+      "towers": "citystates/bellikavima/bellikavima_towers.geojson",
+      "walls": "citystates/bellikavima/bellikavima_walls.geojson",
+      "fields": "citystates/bellikavima/bellikavima_fields.geojson",
+      "trees": "citystates/bellikavima/bellikavima_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:02",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bellikavima_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bellikavima"
+    }
+  }
+}

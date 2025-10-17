@@ -1,0 +1,85 @@
+{
+  "citystate": "kudchna",
+  "display_name": "Kudchna",
+  "bounds": {
+    "west": 3.3559839310051354,
+    "south": 27.126257559877057,
+    "east": 3.380957131005135,
+    "north": 27.150405015432753
+  },
+  "center": {
+    "lat": 27.138331287654907,
+    "lng": 3.3684705310051353
+  },
+  "castle_position": {
+    "lat": 27.14832391543275,
+    "lng": 3.363219986560683
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1642,
+    "districts": 2,
+    "castles": 1,
+    "towers": 16,
+    "walls": 1,
+    "fields": 16,
+    "trees": 1
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1642,
+      "types": {
+        "residential": 1642
+      },
+      "total_occupants": 11020,
+      "avg_occupants": 6.7113276492082825,
+      "avg_floors": 2.3958587088915957
+    },
+    "districts": {
+      "count": 2,
+      "unique_names": [
+        "Fish Arch",
+        "Citadel"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 16
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 16
+    },
+    "trees": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kudchna/kudchna_map.png",
+    "vector_data": {
+      "buildings": "citystates/kudchna/kudchna_buildings.geojson",
+      "districts": "citystates/kudchna/kudchna_districts.geojson",
+      "castles": "citystates/kudchna/kudchna_castles.geojson",
+      "towers": "citystates/kudchna/kudchna_towers.geojson",
+      "walls": "citystates/kudchna/kudchna_walls.geojson",
+      "fields": "citystates/kudchna/kudchna_fields.geojson",
+      "trees": "citystates/kudchna/kudchna_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:56",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kudchna_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kudchna"
+    }
+  }
+}

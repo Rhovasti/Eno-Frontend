@@ -1,0 +1,87 @@
+{
+  "citystate": "sera",
+  "display_name": "Sera",
+  "bounds": {
+    "west": -21.712330880711527,
+    "south": 2.0343254017638177,
+    "east": -21.67890608071152,
+    "north": 2.0701982017638176
+  },
+  "center": {
+    "lat": 2.0522618017638177,
+    "lng": -21.695618480711524
+  },
+  "castle_position": {
+    "lat": 2.065195668430483,
+    "lng": -21.68264779182255
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 941,
+    "districts": 4,
+    "castles": 1,
+    "towers": 218,
+    "walls": 1,
+    "fields": 20,
+    "trees": 20
+  },
+  "statistics": {
+    "buildings": {
+      "count": 941,
+      "types": {
+        "residential": 941
+      },
+      "total_occupants": 4948,
+      "avg_occupants": 5.258235919234856,
+      "avg_floors": 1.5292242295430394
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Purple Side",
+        "Haunted Reach",
+        "Upper Ward",
+        "Silver Cliff"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 218
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 20
+    }
+  },
+  "layers": {
+    "base_map": "citystates/sera/sera_map.png",
+    "vector_data": {
+      "buildings": "citystates/sera/sera_buildings.geojson",
+      "districts": "citystates/sera/sera_districts.geojson",
+      "castles": "citystates/sera/sera_castles.geojson",
+      "towers": "citystates/sera/sera_towers.geojson",
+      "walls": "citystates/sera/sera_walls.geojson",
+      "fields": "citystates/sera/sera_fields.geojson",
+      "trees": "citystates/sera/sera_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:35",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/sera_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/sera"
+    }
+  }
+}

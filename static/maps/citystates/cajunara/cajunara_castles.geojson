@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              40.650741494072484,
+              -21.123581915592524
+            ],
+            [
+              40.650590694072484,
+              -21.12328021559253
+            ],
+            [
+              40.65126049407248,
+              -21.122772715592525
+            ],
+            [
+              40.65141069407249,
+              -21.123327715592524
+            ],
+            [
+              40.650741494072484,
+              -21.123581915592524
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "cajunara.geojson_fixed.geojson_poly_castle",
+        "age": 64,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "cajunara"
+      }
+    }
+  ]
+}

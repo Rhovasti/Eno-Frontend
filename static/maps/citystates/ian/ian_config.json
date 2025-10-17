@@ -1,0 +1,84 @@
+{
+  "citystate": "ian",
+  "display_name": "Ian",
+  "bounds": {
+    "west": 31.255000601936317,
+    "south": 29.28490901825828,
+    "east": 31.265361601936313,
+    "north": 29.29617701825828
+  },
+  "center": {
+    "lat": 29.29054301825828,
+    "lng": 31.260181101936315
+  },
+  "castle_position": {
+    "lat": 29.288134480758192,
+    "lng": 31.259556664436325
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 143,
+    "districts": 6,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 0,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 143,
+      "types": {
+        "residential": 111,
+        "other": 32
+      },
+      "total_occupants": 863,
+      "avg_occupants": 6.034965034965035,
+      "avg_floors": 1.937062937062937
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Bread Lodge",
+        "Western Slums",
+        "South Ian",
+        "Freegate",
+        "Old District",
+        "Dragonsoul Mire"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ian/ian_map.png",
+    "vector_data": {
+      "buildings": "citystates/ian/ian_buildings.geojson",
+      "districts": "citystates/ian/ian_districts.geojson",
+      "castles": "citystates/ian/ian_castles.geojson",
+      "towers": "citystates/ian/ian_towers.geojson",
+      "walls": "citystates/ian/ian_walls.geojson",
+      "fields": "citystates/ian/ian_fields.geojson",
+      "trees": "citystates/ian/ian_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:23",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ian_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ian"
+    }
+  }
+}

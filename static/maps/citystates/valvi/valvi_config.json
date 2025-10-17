@@ -1,0 +1,88 @@
+{
+  "citystate": "valvi",
+  "display_name": "Valvi",
+  "bounds": {
+    "west": 25.875194287392393,
+    "south": 26.376348302728896,
+    "east": 25.895770687392396,
+    "north": 26.393574702728895
+  },
+  "center": {
+    "lat": 26.384961502728896,
+    "lng": 25.885482487392395
+  },
+  "castle_position": {
+    "lat": 26.385107759871754,
+    "lng": 25.88726667310666
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 451,
+    "districts": 3,
+    "castles": 1,
+    "towers": 11,
+    "walls": 1,
+    "fields": 9,
+    "trees": 1
+  },
+  "statistics": {
+    "buildings": {
+      "count": 451,
+      "types": {
+        "residential": 169,
+        "commercial": 245,
+        "industrial": 37
+      },
+      "total_occupants": 2790,
+      "avg_occupants": 6.1862527716186255,
+      "avg_floors": 1.6274944567627494
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Merchants District",
+        "Pearl Arch",
+        "Skybloom Hill"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 11
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    },
+    "trees": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/valvi/valvi_map.png",
+    "vector_data": {
+      "buildings": "citystates/valvi/valvi_buildings.geojson",
+      "districts": "citystates/valvi/valvi_districts.geojson",
+      "castles": "citystates/valvi/valvi_castles.geojson",
+      "towers": "citystates/valvi/valvi_towers.geojson",
+      "walls": "citystates/valvi/valvi_walls.geojson",
+      "fields": "citystates/valvi/valvi_fields.geojson",
+      "trees": "citystates/valvi/valvi_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:52",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/valvi_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/valvi"
+    }
+  }
+}

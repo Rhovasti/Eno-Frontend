@@ -1,0 +1,85 @@
+{
+  "citystate": "kushk",
+  "display_name": "Kushk",
+  "bounds": {
+    "west": -7.366364935332546,
+    "south": -27.123458587577872,
+    "east": -7.337658335332547,
+    "north": -27.08722698757788
+  },
+  "center": {
+    "lat": -27.105342787577875,
+    "lng": -7.352011635332547
+  },
+  "castle_position": {
+    "lat": -27.110534949116467,
+    "lng": -7.352750350717202
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1369,
+    "districts": 2,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 20,
+    "trees": 7
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1369,
+      "types": {
+        "residential": 1369
+      },
+      "total_occupants": 7201,
+      "avg_occupants": 5.260043827611395,
+      "avg_floors": 1.4733382030679327
+    },
+    "districts": {
+      "count": 2,
+      "unique_names": [
+        "Bright Shade",
+        "Greyway Water"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 7
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kushk/kushk_map.png",
+    "vector_data": {
+      "buildings": "citystates/kushk/kushk_buildings.geojson",
+      "districts": "citystates/kushk/kushk_districts.geojson",
+      "castles": "citystates/kushk/kushk_castles.geojson",
+      "towers": "citystates/kushk/kushk_towers.geojson",
+      "walls": "citystates/kushk/kushk_walls.geojson",
+      "fields": "citystates/kushk/kushk_fields.geojson",
+      "trees": "citystates/kushk/kushk_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:27",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kushk_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kushk"
+    }
+  }
+}

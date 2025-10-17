@@ -1,0 +1,84 @@
+{
+  "citystate": "moki",
+  "display_name": "Moki",
+  "bounds": {
+    "west": 47.835968016788975,
+    "south": 25.10998210713587,
+    "east": 47.84473981678898,
+    "north": 25.118836907135872
+  },
+  "center": {
+    "lat": 25.11440950713587,
+    "lng": 47.84035391678898
+  },
+  "castle_position": {
+    "lat": 25.112886877360463,
+    "lng": 47.83679848597049
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 96,
+    "districts": 3,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 6,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 96,
+      "types": {
+        "residential": 83,
+        "other": 13
+      },
+      "total_occupants": 486,
+      "avg_occupants": 5.0625,
+      "avg_floors": 2.1145833333333335
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Apple Crest",
+        "Trade Ward",
+        "Downwood Point"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 6
+    }
+  },
+  "layers": {
+    "base_map": "citystates/moki/moki_map.png",
+    "vector_data": {
+      "buildings": "citystates/moki/moki_buildings.geojson",
+      "districts": "citystates/moki/moki_districts.geojson",
+      "castles": "citystates/moki/moki_castles.geojson",
+      "towers": "citystates/moki/moki_towers.geojson",
+      "walls": "citystates/moki/moki_walls.geojson",
+      "fields": "citystates/moki/moki_fields.geojson",
+      "trees": "citystates/moki/moki_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 09:00:02",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/moki_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/moki"
+    }
+  }
+}

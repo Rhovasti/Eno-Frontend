@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              54.15406092311353,
+              4.274329562809555
+            ],
+            [
+              54.154195454929535,
+              4.273852129853308
+            ],
+            [
+              54.154650105035,
+              4.273980245508325
+            ],
+            [
+              54.155419343097876,
+              4.273524175567381
+            ],
+            [
+              54.15545935492953,
+              4.273382129853308
+            ],
+            [
+              54.15264965492953,
+              4.272590529853307
+            ],
+            [
+              54.151778503396315,
+              4.2756827759120775
+            ],
+            [
+              54.15406092311353,
+              4.274329562809555
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "jeong.geojson_fixed.geojson_poly_castle",
+        "age": 305,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "jeong"
+      }
+    }
+  ]
+}

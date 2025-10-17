@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83670162990015,
+              25.113051172789287
+            ],
+            [
+              47.836701616788886,
+              25.113051107135842
+            ],
+            [
+              47.83708237979471,
+              25.112975114519134
+            ],
+            [
+              47.83707181678888,
+              25.112922207135842
+            ],
+            [
+              47.837071850194974,
+              25.11292220046725
+            ],
+            [
+              47.83696771678888,
+              25.112400807135838
+            ],
+            [
+              47.83638651678888,
+              25.112516907135838
+            ],
+            [
+              47.83650121678889,
+              25.11309120713584
+            ],
+            [
+              47.83670162990015,
+              25.113051172789287
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "moki.geojson_fixed.geojson_poly_castle",
+        "age": 17,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "moki"
+      }
+    }
+  ]
+}

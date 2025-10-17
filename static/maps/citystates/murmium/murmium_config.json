@@ -1,0 +1,90 @@
+{
+  "citystate": "murmium",
+  "display_name": "Murmium",
+  "bounds": {
+    "west": -4.687539274065731,
+    "south": -5.854245002697056,
+    "east": -4.65501327406573,
+    "north": -5.836365002697056
+  },
+  "center": {
+    "lat": -5.845305002697056,
+    "lng": -4.671276274065731
+  },
+  "castle_position": {
+    "lat": -5.849726602697066,
+    "lng": -4.665757034065743
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 507,
+    "districts": 5,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 12,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 507,
+      "types": {
+        "residential": 138,
+        "commercial": 284,
+        "other": 85
+      },
+      "total_occupants": 2797,
+      "avg_occupants": 5.516765285996056,
+      "avg_floors": 1.6489151873767258
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Cattle Garden",
+        "Estate",
+        "The Mill",
+        "Free Vale",
+        "Trade District"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 12
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/murmium/murmium_map.png",
+    "vector_data": {
+      "buildings": "citystates/murmium/murmium_buildings.geojson",
+      "districts": "citystates/murmium/murmium_districts.geojson",
+      "castles": "citystates/murmium/murmium_castles.geojson",
+      "towers": "citystates/murmium/murmium_towers.geojson",
+      "walls": "citystates/murmium/murmium_walls.geojson",
+      "fields": "citystates/murmium/murmium_fields.geojson",
+      "trees": "citystates/murmium/murmium_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:37",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/murmium_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/murmium"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54056403411381,
+              -23.635193185247573
+            ],
+            [
+              47.54032863411381,
+              -23.63431978524757
+            ],
+            [
+              47.5410416341138,
+              -23.63412768524757
+            ],
+            [
+              47.541113634113806,
+              -23.63439508524757
+            ],
+            [
+              47.5414514341138,
+              -23.63430398524757
+            ],
+            [
+              47.5415323341138,
+              -23.634604085247574
+            ],
+            [
+              47.54080313411381,
+              -23.634800585247568
+            ],
+            [
+              47.54088563411381,
+              -23.63510658524757
+            ],
+            [
+              47.54056403411381,
+              -23.635193185247573
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "roparia.geojson_fixed.geojson_poly_castle",
+        "age": 231,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "roparia"
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "citystate": "bifjorda",
+  "display_name": "Bifjorda",
+  "bounds": {
+    "west": 34.8641440939513,
+    "south": 0.2448451673145945,
+    "east": 34.89394249395131,
+    "north": 0.2730155673145952
+  },
+  "center": {
+    "lat": 0.25893036731459484,
+    "lng": 34.879043293951305
+  },
+  "castle_position": {
+    "lat": 0.26349350367823043,
+    "lng": 34.87349429395142
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1360,
+    "districts": 7,
+    "castles": 1,
+    "towers": 325,
+    "walls": 1,
+    "fields": 5,
+    "trees": 26
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1360,
+      "types": {
+        "residential": 1069,
+        "commercial": 291
+      },
+      "total_occupants": 8087,
+      "avg_occupants": 5.946323529411765,
+      "avg_floors": 2.2470588235294118
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "North Yard",
+        "Castle",
+        "Cherry Bridge",
+        "Silk Road",
+        "West Bifjorda",
+        "Redgate",
+        "Red Court"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 325
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 5
+    },
+    "trees": {
+      "count": 26
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bifjorda/bifjorda_map.png",
+    "vector_data": {
+      "buildings": "citystates/bifjorda/bifjorda_buildings.geojson",
+      "districts": "citystates/bifjorda/bifjorda_districts.geojson",
+      "castles": "citystates/bifjorda/bifjorda_castles.geojson",
+      "towers": "citystates/bifjorda/bifjorda_towers.geojson",
+      "walls": "citystates/bifjorda/bifjorda_walls.geojson",
+      "fields": "citystates/bifjorda/bifjorda_fields.geojson",
+      "trees": "citystates/bifjorda/bifjorda_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:17",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bifjorda_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bifjorda"
+    }
+  }
+}

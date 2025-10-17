@@ -1,0 +1,89 @@
+{
+  "citystate": "tisvarmend",
+  "display_name": "Tisvarmend",
+  "bounds": {
+    "west": 32.206797935904035,
+    "south": -8.762079573616596,
+    "east": 32.22421953590403,
+    "north": -8.74812774634388
+  },
+  "center": {
+    "lat": -8.755103659980238,
+    "lng": 32.21550873590403
+  },
+  "castle_position": {
+    "lat": -8.74957954634388,
+    "lng": 32.215810117722086
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 492,
+    "districts": 5,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 5,
+    "trees": 5
+  },
+  "statistics": {
+    "buildings": {
+      "count": 492,
+      "types": {
+        "residential": 301,
+        "other": 191
+      },
+      "total_occupants": 2916,
+      "avg_occupants": 5.926829268292683,
+      "avg_floors": 2.2052845528455283
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Great Crossing",
+        "Green Pass",
+        "Castle",
+        "Elm Heath",
+        "Western Tisvarmend"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 5
+    },
+    "trees": {
+      "count": 5
+    }
+  },
+  "layers": {
+    "base_map": "citystates/tisvarmend/tisvarmend_map.png",
+    "vector_data": {
+      "buildings": "citystates/tisvarmend/tisvarmend_buildings.geojson",
+      "districts": "citystates/tisvarmend/tisvarmend_districts.geojson",
+      "castles": "citystates/tisvarmend/tisvarmend_castles.geojson",
+      "towers": "citystates/tisvarmend/tisvarmend_towers.geojson",
+      "walls": "citystates/tisvarmend/tisvarmend_walls.geojson",
+      "fields": "citystates/tisvarmend/tisvarmend_fields.geojson",
+      "trees": "citystates/tisvarmend/tisvarmend_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:49",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/tisvarmend_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/tisvarmend"
+    }
+  }
+}

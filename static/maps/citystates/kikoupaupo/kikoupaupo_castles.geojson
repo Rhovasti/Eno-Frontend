@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              50.74323156098744,
+              -1.1802777511318094
+            ],
+            [
+              50.74361916098745,
+              -1.1804286511318094
+            ],
+            [
+              50.74333026098745,
+              -1.1811707511318095
+            ],
+            [
+              50.742942662015096,
+              -1.1810198484920487
+            ],
+            [
+              50.74323156098744,
+              -1.1802777511318094
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kikoupaupo.geojson_fixed.geojson_poly_castle",
+        "age": 309,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kikoupaupo"
+      }
+    }
+  ]
+}

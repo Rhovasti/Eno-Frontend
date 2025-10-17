@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.658548691450193,
+              42.039459940023285
+            ],
+            [
+              25.656260891450188,
+              42.03694264002328
+            ],
+            [
+              25.654678191450188,
+              42.038381040023275
+            ],
+            [
+              25.65750689145019,
+              42.04149344002328
+            ],
+            [
+              25.65799469145019,
+              42.04105014002328
+            ],
+            [
+              25.657453791450187,
+              42.04045504002328
+            ],
+            [
+              25.658548691450193,
+              42.039459940023285
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "palwede.geojson_fixed.geojson_poly_castle",
+        "age": 193,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "palwede"
+      }
+    }
+  ]
+}

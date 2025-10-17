@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.17204841376934926,
+              -7.013419172101868
+            ],
+            [
+              -0.17217884218088225,
+              -7.0132017914159785
+            ],
+            [
+              -0.17217881376934924,
+              -7.013201772101867
+            ],
+            [
+              -0.17225521376956227,
+              -7.013074505434846
+            ],
+            [
+              -0.17228481376934923,
+              -7.013025172101868
+            ],
+            [
+              -0.17191071376934924,
+              -7.012800672101868
+            ],
+            [
+              -0.17168801376934928,
+              -7.013323772101867
+            ],
+            [
+              -0.17204841376934926,
+              -7.013419172101868
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "euata.geojson_fixed.geojson_poly_castle",
+        "age": 970,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "euata"
+      }
+    }
+  ]
+}

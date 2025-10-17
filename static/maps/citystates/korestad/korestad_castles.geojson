@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.983883995951395,
+              8.528922550233963
+            ],
+            [
+              37.98291549595138,
+              8.528094450233963
+            ],
+            [
+              37.98265439595139,
+              8.528399850233965
+            ],
+            [
+              37.98294339595139,
+              8.528646850233963
+            ],
+            [
+              37.982111395951385,
+              8.529620050233964
+            ],
+            [
+              37.982790895951375,
+              8.530201050233964
+            ],
+            [
+              37.983883995951395,
+              8.528922550233963
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "korestad.geojson_fixed.geojson_poly_castle",
+        "age": 187,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "korestad"
+      }
+    }
+  ]
+}

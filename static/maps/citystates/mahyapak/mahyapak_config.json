@@ -1,0 +1,97 @@
+{
+  "citystate": "mahyapak",
+  "display_name": "Mahyapak",
+  "bounds": {
+    "west": 53.20784477111966,
+    "south": -12.911217325357951,
+    "east": 53.307353171119665,
+    "north": -12.77814692535795
+  },
+  "center": {
+    "lat": -12.84468212535795,
+    "lng": 53.25759897111966
+  },
+  "castle_position": {
+    "lat": -12.8299112967875,
+    "lng": 53.26107622826647
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 22833,
+    "districts": 11,
+    "castles": 1,
+    "towers": 42,
+    "walls": 1,
+    "fields": 12,
+    "trees": 2649
+  },
+  "statistics": {
+    "buildings": {
+      "count": 22833,
+      "types": {
+        "industrial": 6020,
+        "residential": 15140,
+        "commercial": 558,
+        "other": 1115
+      },
+      "total_occupants": 170622,
+      "avg_occupants": 7.472605439495467,
+      "avg_floors": 1.8377348574431744
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Fenheart Town",
+        "Silver Court",
+        "Ashgate",
+        "Stonebridge",
+        "Frostlight Gate",
+        "Eggbridge",
+        "Citadel",
+        "Cattle Side",
+        "Cherry Fair",
+        "Starfire Side",
+        "North Mahyapak"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 42
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 12
+    },
+    "trees": {
+      "count": 2649
+    }
+  },
+  "layers": {
+    "base_map": "citystates/mahyapak/mahyapak_map.png",
+    "vector_data": {
+      "buildings": "citystates/mahyapak/mahyapak_buildings.geojson",
+      "districts": "citystates/mahyapak/mahyapak_districts.geojson",
+      "castles": "citystates/mahyapak/mahyapak_castles.geojson",
+      "towers": "citystates/mahyapak/mahyapak_towers.geojson",
+      "walls": "citystates/mahyapak/mahyapak_walls.geojson",
+      "fields": "citystates/mahyapak/mahyapak_fields.geojson",
+      "trees": "citystates/mahyapak/mahyapak_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:09",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/mahyapak_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/mahyapak"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "citystate": "palwede",
+  "display_name": "Palwede",
+  "bounds": {
+    "west": 25.63644349145014,
+    "south": 42.00097544002225,
+    "east": 25.714336691450132,
+    "north": 42.06858764002225
+  },
+  "center": {
+    "lat": 42.03478154002225,
+    "lng": 25.675390091450137
+  },
+  "castle_position": {
+    "lat": 42.03960602573756,
+    "lng": 25.657284548593047
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 10187,
+    "districts": 11,
+    "castles": 1,
+    "towers": 23,
+    "walls": 1,
+    "fields": 8,
+    "trees": 416
+  },
+  "statistics": {
+    "buildings": {
+      "count": 10187,
+      "types": {
+        "industrial": 4298,
+        "residential": 4275,
+        "commercial": 494,
+        "other": 1120
+      },
+      "total_occupants": 87100,
+      "avg_occupants": 8.550112888976146,
+      "avg_floors": 1.957298517718661
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Rose Lodge",
+        "Milk District",
+        "Redwell Road",
+        "Pearl Knot",
+        "The Docks",
+        "Castle",
+        "Bluegate",
+        "Southern Slums",
+        "Deep Borough",
+        "Light Courts Ward",
+        "Oak Gate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 23
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 416
+    }
+  },
+  "layers": {
+    "base_map": "citystates/palwede/palwede_map.png",
+    "vector_data": {
+      "buildings": "citystates/palwede/palwede_buildings.geojson",
+      "districts": "citystates/palwede/palwede_districts.geojson",
+      "castles": "citystates/palwede/palwede_castles.geojson",
+      "towers": "citystates/palwede/palwede_towers.geojson",
+      "walls": "citystates/palwede/palwede_walls.geojson",
+      "fields": "citystates/palwede/palwede_fields.geojson",
+      "trees": "citystates/palwede/palwede_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:21",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/palwede_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/palwede"
+    }
+  }
+}

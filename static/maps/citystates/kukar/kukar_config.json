@@ -1,0 +1,88 @@
+{
+  "citystate": "kukar",
+  "display_name": "Kukar",
+  "bounds": {
+    "west": -24.36256461684069,
+    "south": -10.728759356352354,
+    "east": -24.336222216840692,
+    "north": -10.711480956352355
+  },
+  "center": {
+    "lat": -10.720120156352355,
+    "lng": -24.34939341684069
+  },
+  "castle_position": {
+    "lat": -10.722573198893855,
+    "lng": -24.34293916096469
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 542,
+    "districts": 4,
+    "castles": 1,
+    "towers": 6,
+    "walls": 1,
+    "fields": 8,
+    "trees": 18
+  },
+  "statistics": {
+    "buildings": {
+      "count": 542,
+      "types": {
+        "commercial": 199,
+        "residential": 343
+      },
+      "total_occupants": 2820,
+      "avg_occupants": 5.202952029520295,
+      "avg_floors": 1.7841328413284132
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Cloudbark Row",
+        "Old District",
+        "Undersoul Court",
+        "Glass Shade"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 6
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 18
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kukar/kukar_map.png",
+    "vector_data": {
+      "buildings": "citystates/kukar/kukar_buildings.geojson",
+      "districts": "citystates/kukar/kukar_districts.geojson",
+      "castles": "citystates/kukar/kukar_castles.geojson",
+      "towers": "citystates/kukar/kukar_towers.geojson",
+      "walls": "citystates/kukar/kukar_walls.geojson",
+      "fields": "citystates/kukar/kukar_fields.geojson",
+      "trees": "citystates/kukar/kukar_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:23",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kukar_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kukar"
+    }
+  }
+}

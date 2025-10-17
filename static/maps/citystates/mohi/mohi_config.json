@@ -1,0 +1,96 @@
+{
+  "citystate": "mohi",
+  "display_name": "Mohi",
+  "bounds": {
+    "west": 47.87301737345901,
+    "south": -1.6937199953352506,
+    "east": 47.90279137345901,
+    "north": -1.66278999533525
+  },
+  "center": {
+    "lat": -1.6782549953352504,
+    "lng": 47.88790437345901
+  },
+  "castle_position": {
+    "lat": -1.6748762226079874,
+    "lng": 47.882009209822535
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1369,
+    "districts": 10,
+    "castles": 1,
+    "towers": 13,
+    "walls": 1,
+    "fields": 7,
+    "trees": 74
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1369,
+      "types": {
+        "residential": 634,
+        "commercial": 429,
+        "other": 240,
+        "industrial": 66
+      },
+      "total_occupants": 7896,
+      "avg_occupants": 5.767713659605551,
+      "avg_floors": 1.8035062089116143
+    },
+    "districts": {
+      "count": 10,
+      "unique_names": [
+        "Dark Town",
+        "Western Docks",
+        "East Mohi",
+        "Dark Horns Ward",
+        "Castle",
+        "Oak Cross",
+        "Low Market",
+        "North Docks",
+        "New Wall",
+        "Salt Docks"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 13
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 7
+    },
+    "trees": {
+      "count": 74
+    }
+  },
+  "layers": {
+    "base_map": "citystates/mohi/mohi_map.png",
+    "vector_data": {
+      "buildings": "citystates/mohi/mohi_buildings.geojson",
+      "districts": "citystates/mohi/mohi_districts.geojson",
+      "castles": "citystates/mohi/mohi_castles.geojson",
+      "towers": "citystates/mohi/mohi_towers.geojson",
+      "walls": "citystates/mohi/mohi_walls.geojson",
+      "fields": "citystates/mohi/mohi_fields.geojson",
+      "trees": "citystates/mohi/mohi_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:13",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/mohi_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/mohi"
+    }
+  }
+}

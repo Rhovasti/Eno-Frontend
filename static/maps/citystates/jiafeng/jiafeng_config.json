@@ -1,0 +1,97 @@
+{
+  "citystate": "jiafeng",
+  "display_name": "Jiafeng",
+  "bounds": {
+    "west": -34.84943724613189,
+    "south": -2.861156776235092,
+    "east": -34.803472446131885,
+    "north": -2.8099719762350923
+  },
+  "center": {
+    "lat": -2.835564376235092,
+    "lng": -34.82645484613189
+  },
+  "castle_position": {
+    "lat": -2.835789409568434,
+    "lng": -34.820494657243046
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2976,
+    "districts": 11,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 20,
+    "trees": 60
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2976,
+      "types": {
+        "commercial": 1215,
+        "other": 1563,
+        "residential": 183,
+        "industrial": 15
+      },
+      "total_occupants": 18356,
+      "avg_occupants": 6.168010752688172,
+      "avg_floors": 1.959005376344086
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Char Crown",
+        "Honey Rock",
+        "Newgate",
+        "Glass Horn",
+        "Darkchurch Bridge",
+        "Castle",
+        "Undersoul Field",
+        "West Water",
+        "Bards Valley",
+        "Free Road",
+        "South Slums"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 60
+    }
+  },
+  "layers": {
+    "base_map": "citystates/jiafeng/jiafeng_map.png",
+    "vector_data": {
+      "buildings": "citystates/jiafeng/jiafeng_buildings.geojson",
+      "districts": "citystates/jiafeng/jiafeng_districts.geojson",
+      "castles": "citystates/jiafeng/jiafeng_castles.geojson",
+      "towers": "citystates/jiafeng/jiafeng_towers.geojson",
+      "walls": "citystates/jiafeng/jiafeng_walls.geojson",
+      "fields": "citystates/jiafeng/jiafeng_fields.geojson",
+      "trees": "citystates/jiafeng/jiafeng_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:48",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/jiafeng_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/jiafeng"
+    }
+  }
+}

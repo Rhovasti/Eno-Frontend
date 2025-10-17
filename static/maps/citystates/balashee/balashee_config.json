@@ -1,0 +1,86 @@
+{
+  "citystate": "balashee",
+  "display_name": "Balashee",
+  "bounds": {
+    "west": 42.22442303016762,
+    "south": 22.59157372574674,
+    "east": 42.25424183016762,
+    "north": 22.619182525746737
+  },
+  "center": {
+    "lat": 22.60537812574674,
+    "lng": 42.23933243016762
+  },
+  "castle_position": {
+    "lat": 22.606429692413347,
+    "lng": 42.238860063500994
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 607,
+    "districts": 2,
+    "castles": 1,
+    "towers": 18,
+    "walls": 1,
+    "fields": 17,
+    "trees": 5
+  },
+  "statistics": {
+    "buildings": {
+      "count": 607,
+      "types": {
+        "residential": 421,
+        "commercial": 186
+      },
+      "total_occupants": 2943,
+      "avg_occupants": 4.848434925864909,
+      "avg_floors": 2.217462932454695
+    },
+    "districts": {
+      "count": 2,
+      "unique_names": [
+        "Military Ward",
+        "Pearl Forge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 18
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 17
+    },
+    "trees": {
+      "count": 5
+    }
+  },
+  "layers": {
+    "base_map": "citystates/balashee/balashee_map.png",
+    "vector_data": {
+      "buildings": "citystates/balashee/balashee_buildings.geojson",
+      "districts": "citystates/balashee/balashee_districts.geojson",
+      "castles": "citystates/balashee/balashee_castles.geojson",
+      "towers": "citystates/balashee/balashee_towers.geojson",
+      "walls": "citystates/balashee/balashee_walls.geojson",
+      "fields": "citystates/balashee/balashee_fields.geojson",
+      "trees": "citystates/balashee/balashee_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:41",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/balashee_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/balashee"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.67962351474823,
+              28.25616429233309
+            ],
+            [
+              44.679399314748224,
+              28.25607919233309
+            ],
+            [
+              44.678459314748224,
+              28.256963492333085
+            ],
+            [
+              44.67844941474823,
+              28.256983192333088
+            ],
+            [
+              44.679168314748225,
+              28.257277192333085
+            ],
+            [
+              44.67962351474823,
+              28.25616429233309
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "tasa.geojson_poly_castle",
+        "age": 230,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "tasa"
+      }
+    }
+  ]
+}

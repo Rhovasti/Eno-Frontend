@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.4810815689060857,
+              22.14968502755347
+            ],
+            [
+              -1.4812987689060855,
+              22.15055392755347
+            ],
+            [
+              -1.4805525689060854,
+              22.15074052755347
+            ],
+            [
+              -1.4804860689060855,
+              22.150474427553473
+            ],
+            [
+              -1.4801148689060855,
+              22.15056722755347
+            ],
+            [
+              -1.4800272689060854,
+              22.150216727553467
+            ],
+            [
+              -1.4803983689060856,
+              22.15012392755347
+            ],
+            [
+              -1.4803352689060854,
+              22.14987162755347
+            ],
+            [
+              -1.4810815689060857,
+              22.14968502755347
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "chitna.geojson_fixed.geojson_poly_castle",
+        "age": 651,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "chitna"
+      }
+    }
+  ]
+}

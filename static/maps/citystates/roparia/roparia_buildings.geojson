@@ -1,0 +1,6863 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5393342341139,
+              -23.634991485247642
+            ],
+            [
+              47.53925823411391,
+              -23.634942485247645
+            ],
+            [
+              47.53932023411391,
+              -23.63484548524765
+            ],
+            [
+              47.5393962341139,
+              -23.634894485247646
+            ],
+            [
+              47.5393342341139,
+              -23.634991485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_6_0",
+        "age": "40",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53944923411391,
+              -23.635395485247646
+            ],
+            [
+              47.53955023411391,
+              -23.63531248524765
+            ],
+            [
+              47.5396212341139,
+              -23.635398485247645
+            ],
+            [
+              47.53953323411391,
+              -23.635470485247648
+            ],
+            [
+              47.5394972341139,
+              -23.635454485247646
+            ],
+            [
+              47.53944923411391,
+              -23.635395485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_7_0",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.539659234113905,
+              -23.635258485247643
+            ],
+            [
+              47.53973523411391,
+              -23.635195485247646
+            ],
+            [
+              47.53979223411391,
+              -23.635264485247642
+            ],
+            [
+              47.539716234113904,
+              -23.635327485247647
+            ],
+            [
+              47.539659234113905,
+              -23.635258485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_7_1",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5397052341139,
+              -23.635479485247647
+            ],
+            [
+              47.5397172341139,
+              -23.635492485247642
+            ],
+            [
+              47.53970223411391,
+              -23.635549485247648
+            ],
+            [
+              47.539650234113914,
+              -23.635524485247647
+            ],
+            [
+              47.5397052341139,
+              -23.635479485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_7_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5386472341139,
+              -23.635943485247648
+            ],
+            [
+              47.538730234113906,
+              -23.635985485247648
+            ],
+            [
+              47.53869523411391,
+              -23.636054485247644
+            ],
+            [
+              47.538612234113906,
+              -23.636012485247644
+            ],
+            [
+              47.5386472341139,
+              -23.635943485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_8_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53892523411391,
+              -23.635668485247646
+            ],
+            [
+              47.53886923411391,
+              -23.635778485247645
+            ],
+            [
+              47.538747234113906,
+              -23.635716485247645
+            ],
+            [
+              47.53879723411391,
+              -23.635617485247646
+            ],
+            [
+              47.538804234113904,
+              -23.635606485247646
+            ],
+            [
+              47.53892523411391,
+              -23.635668485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_8_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53872923411391,
+              -23.636017485247645
+            ],
+            [
+              47.53877923411391,
+              -23.635919485247644
+            ],
+            [
+              47.538843234113905,
+              -23.63595148524765
+            ],
+            [
+              47.5387932341139,
+              -23.636049485247643
+            ],
+            [
+              47.53872923411391,
+              -23.636017485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_8_2",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53986023411391,
+              -23.636014485247646
+            ],
+            [
+              47.5397562341139,
+              -23.635962485247642
+            ],
+            [
+              47.539772234113904,
+              -23.635929485247647
+            ],
+            [
+              47.53984223411391,
+              -23.635896485247645
+            ],
+            [
+              47.5398802341139,
+              -23.635974485247647
+            ],
+            [
+              47.53986023411391,
+              -23.636014485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_10_0",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5393962341139,
+              -23.635919485247644
+            ],
+            [
+              47.5395092341139,
+              -23.635977485247647
+            ],
+            [
+              47.5394812341139,
+              -23.636032485247643
+            ],
+            [
+              47.5393682341139,
+              -23.635975485247645
+            ],
+            [
+              47.5393962341139,
+              -23.635919485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_11_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53944223411391,
+              -23.635759485247643
+            ],
+            [
+              47.5393572341139,
+              -23.635716485247645
+            ],
+            [
+              47.53941423411391,
+              -23.635603485247646
+            ],
+            [
+              47.53949923411391,
+              -23.635646485247644
+            ],
+            [
+              47.53944223411391,
+              -23.635759485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_11_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5393912341139,
+              -23.635796485247642
+            ],
+            [
+              47.53933623411391,
+              -23.63590348524765
+            ],
+            [
+              47.539277234113904,
+              -23.635873485247647
+            ],
+            [
+              47.53933123411391,
+              -23.635766485247647
+            ],
+            [
+              47.5393912341139,
+              -23.635796485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_11_2",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53957223411391,
+              -23.636212485247643
+            ],
+            [
+              47.5394642341139,
+              -23.636158485247645
+            ],
+            [
+              47.53949923411391,
+              -23.636088485247644
+            ],
+            [
+              47.53960723411391,
+              -23.636143485247647
+            ],
+            [
+              47.53957223411391,
+              -23.636212485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_12_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54007523411391,
+              -23.636337485247648
+            ],
+            [
+              47.540104234113905,
+              -23.63624148524765
+            ],
+            [
+              47.54015823411391,
+              -23.636256485247646
+            ],
+            [
+              47.5401502341139,
+              -23.63635948524765
+            ],
+            [
+              47.54007523411391,
+              -23.636337485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_13_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.539958234113904,
+              -23.636204485247642
+            ],
+            [
+              47.54007323411391,
+              -23.63623848524765
+            ],
+            [
+              47.54004023411391,
+              -23.636349485247646
+            ],
+            [
+              47.539935234113905,
+              -23.636318485247646
+            ],
+            [
+              47.53996723411391,
+              -23.636223485247644
+            ],
+            [
+              47.53996823411391,
+              -23.636222485247647
+            ],
+            [
+              47.53996823411391,
+              -23.63622148524765
+            ],
+            [
+              47.53996823411391,
+              -23.636220485247645
+            ],
+            [
+              47.53996823411391,
+              -23.636219485247647
+            ],
+            [
+              47.53996823411391,
+              -23.636218485247642
+            ],
+            [
+              47.53996723411391,
+              -23.636217485247645
+            ],
+            [
+              47.53996723411391,
+              -23.636216485247648
+            ],
+            [
+              47.53996723411391,
+              -23.636215485247643
+            ],
+            [
+              47.53996623411391,
+              -23.636215485247643
+            ],
+            [
+              47.53996623411391,
+              -23.636214485247645
+            ],
+            [
+              47.5399652341139,
+              -23.636213485247648
+            ],
+            [
+              47.5399642341139,
+              -23.636212485247643
+            ],
+            [
+              47.5399642341139,
+              -23.636212485247643
+            ],
+            [
+              47.539963234113905,
+              -23.636211485247646
+            ],
+            [
+              47.53996223411391,
+              -23.636211485247646
+            ],
+            [
+              47.53996123411391,
+              -23.63621048524765
+            ],
+            [
+              47.539957234113906,
+              -23.636209485247644
+            ],
+            [
+              47.539958234113904,
+              -23.636204485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_13_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5416362341139,
+              -23.63654248524765
+            ],
+            [
+              47.54155423411391,
+              -23.636488485247643
+            ],
+            [
+              47.54162123411391,
+              -23.636387485247642
+            ],
+            [
+              47.54168923411391,
+              -23.636431485247645
+            ],
+            [
+              47.541686234113904,
+              -23.63643548524765
+            ],
+            [
+              47.541686234113904,
+              -23.636436485247646
+            ],
+            [
+              47.541685234113906,
+              -23.636436485247646
+            ],
+            [
+              47.541685234113906,
+              -23.636437485247644
+            ],
+            [
+              47.541685234113906,
+              -23.63643848524765
+            ],
+            [
+              47.541685234113906,
+              -23.636439485247646
+            ],
+            [
+              47.541685234113906,
+              -23.636440485247643
+            ],
+            [
+              47.541685234113906,
+              -23.636441485247648
+            ],
+            [
+              47.541685234113906,
+              -23.636442485247645
+            ],
+            [
+              47.541685234113906,
+              -23.636443485247643
+            ],
+            [
+              47.541685234113906,
+              -23.636444485247647
+            ],
+            [
+              47.541686234113904,
+              -23.636445485247645
+            ],
+            [
+              47.541686234113904,
+              -23.636446485247642
+            ],
+            [
+              47.5416872341139,
+              -23.636447485247647
+            ],
+            [
+              47.54168823411391,
+              -23.636447485247647
+            ],
+            [
+              47.54168823411391,
+              -23.636448485247644
+            ],
+            [
+              47.54168923411391,
+              -23.63644948524765
+            ],
+            [
+              47.54169423411391,
+              -23.63645248524765
+            ],
+            [
+              47.5416362341139,
+              -23.63654248524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_14_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54169523411391,
+              -23.636308485247643
+            ],
+            [
+              47.5416302341139,
+              -23.636266485247642
+            ],
+            [
+              47.54168823411391,
+              -23.636177485247647
+            ],
+            [
+              47.541753234113905,
+              -23.636219485247647
+            ],
+            [
+              47.54169523411391,
+              -23.636308485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_14_1",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.541702234113906,
+              -23.636532485247645
+            ],
+            [
+              47.54179123411391,
+              -23.63659048524765
+            ],
+            [
+              47.541725234113905,
+              -23.636690485247644
+            ],
+            [
+              47.541637234113914,
+              -23.636633485247646
+            ],
+            [
+              47.541702234113906,
+              -23.636532485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_14_2",
+        "age": "38",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54118223411391,
+              -23.636189485247645
+            ],
+            [
+              47.54112623411391,
+              -23.636187485247643
+            ],
+            [
+              47.541128234113906,
+              -23.636098485247647
+            ],
+            [
+              47.541184234113906,
+              -23.63610048524765
+            ],
+            [
+              47.54118223411391,
+              -23.636189485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_16_0",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54119523411391,
+              -23.636335485247645
+            ],
+            [
+              47.54129023411391,
+              -23.636337485247648
+            ],
+            [
+              47.541288234113914,
+              -23.636396485247648
+            ],
+            [
+              47.54119323411391,
+              -23.63639348524765
+            ],
+            [
+              47.54119523411391,
+              -23.636335485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_16_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54181823411391,
+              -23.636097485247642
+            ],
+            [
+              47.54173423411391,
+              -23.636095485247647
+            ],
+            [
+              47.541736234113905,
+              -23.636015485247643
+            ],
+            [
+              47.54182023411391,
+              -23.636017485247645
+            ],
+            [
+              47.54181823411391,
+              -23.636097485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_18_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54193823411391,
+              -23.636119485247644
+            ],
+            [
+              47.5418332341139,
+              -23.636116485247644
+            ],
+            [
+              47.54183523411391,
+              -23.636017485247645
+            ],
+            [
+              47.5419402341139,
+              -23.636019485247648
+            ],
+            [
+              47.54193823411391,
+              -23.636119485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_18_1",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5426492341139,
+              -23.635772485247646
+            ],
+            [
+              47.5425432341139,
+              -23.635717485247643
+            ],
+            [
+              47.542586234113905,
+              -23.63563348524765
+            ],
+            [
+              47.54265823411391,
+              -23.635671485247645
+            ],
+            [
+              47.54265723411391,
+              -23.635757485247648
+            ],
+            [
+              47.5426492341139,
+              -23.635772485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_19_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5425482341139,
+              -23.635899485247645
+            ],
+            [
+              47.54250123411391,
+              -23.635988485247648
+            ],
+            [
+              47.54239323411391,
+              -23.635931485247642
+            ],
+            [
+              47.54242223411391,
+              -23.63587548524765
+            ],
+            [
+              47.5424532341139,
+              -23.635849485247643
+            ],
+            [
+              47.5425482341139,
+              -23.635899485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_19_1",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.542637234113904,
+              -23.635904485247647
+            ],
+            [
+              47.5425652341139,
+              -23.635866485247643
+            ],
+            [
+              47.54261723411391,
+              -23.635766485247647
+            ],
+            [
+              47.54265623411391,
+              -23.635786485247646
+            ],
+            [
+              47.5426552341139,
+              -23.635871485247645
+            ],
+            [
+              47.542637234113904,
+              -23.635904485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_19_2",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5414112341139,
+              -23.635981485247644
+            ],
+            [
+              47.541517234113904,
+              -23.635984485247644
+            ],
+            [
+              47.54151523411391,
+              -23.636087485247646
+            ],
+            [
+              47.54140823411391,
+              -23.636085485247644
+            ],
+            [
+              47.5414112341139,
+              -23.635981485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_20_0",
+        "age": "30",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54154423411391,
+              -23.636005485247647
+            ],
+            [
+              47.541547234113914,
+              -23.635872485247642
+            ],
+            [
+              47.541637234113914,
+              -23.635874485247644
+            ],
+            [
+              47.54163423411391,
+              -23.636007485247642
+            ],
+            [
+              47.54154423411391,
+              -23.636005485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_20_1",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54071023411391,
+              -23.636278485247647
+            ],
+            [
+              47.5405952341139,
+              -23.63626948524765
+            ],
+            [
+              47.54060223411391,
+              -23.636184485247643
+            ],
+            [
+              47.540717234113906,
+              -23.63619348524765
+            ],
+            [
+              47.54071023411391,
+              -23.636278485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_21_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.540706234113905,
+              -23.636369485247645
+            ],
+            [
+              47.5407082341139,
+              -23.636336485247643
+            ],
+            [
+              47.5406632341139,
+              -23.636333485247643
+            ],
+            [
+              47.5406632341139,
+              -23.636332485247646
+            ],
+            [
+              47.540655234113906,
+              -23.63633148524765
+            ],
+            [
+              47.54065923411391,
+              -23.636288485247643
+            ],
+            [
+              47.540667234113904,
+              -23.636289485247648
+            ],
+            [
+              47.540667234113904,
+              -23.636289485247648
+            ],
+            [
+              47.540712234113904,
+              -23.636292485247647
+            ],
+            [
+              47.54071523411391,
+              -23.636259485247646
+            ],
+            [
+              47.5408262341139,
+              -23.636268485247644
+            ],
+            [
+              47.54081723411391,
+              -23.636378485247644
+            ],
+            [
+              47.540706234113905,
+              -23.636369485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_21_1",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54057623411391,
+              -23.636311485247642
+            ],
+            [
+              47.540464234113905,
+              -23.636302485247644
+            ],
+            [
+              47.5404712341139,
+              -23.636215485247643
+            ],
+            [
+              47.5405102341139,
+              -23.636218485247642
+            ],
+            [
+              47.54051223411391,
+              -23.636185485247648
+            ],
+            [
+              47.540548234113906,
+              -23.636188485247647
+            ],
+            [
+              47.540545234113914,
+              -23.63622148524765
+            ],
+            [
+              47.5405832341139,
+              -23.63622448524765
+            ],
+            [
+              47.54057623411391,
+              -23.636311485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_21_2",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.541001234113914,
+              -23.636020485247645
+            ],
+            [
+              47.54099123411391,
+              -23.636141485247645
+            ],
+            [
+              47.54088523411391,
+              -23.636132485247646
+            ],
+            [
+              47.54089523411391,
+              -23.636012485247644
+            ],
+            [
+              47.541001234113914,
+              -23.636020485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_22_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5422442341139,
+              -23.633834485247643
+            ],
+            [
+              47.54234223411391,
+              -23.633791485247645
+            ],
+            [
+              47.5423572341139,
+              -23.633825485247645
+            ],
+            [
+              47.54238823411391,
+              -23.63381248524765
+            ],
+            [
+              47.54240923411391,
+              -23.63386048524765
+            ],
+            [
+              47.542378234113905,
+              -23.633873485247644
+            ],
+            [
+              47.54238723411391,
+              -23.633894485247648
+            ],
+            [
+              47.5422892341139,
+              -23.633937485247646
+            ],
+            [
+              47.5422442341139,
+              -23.633834485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_23_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54209923411391,
+              -23.63339048524765
+            ],
+            [
+              47.5421422341139,
+              -23.633351485247648
+            ],
+            [
+              47.54221223411391,
+              -23.633446485247642
+            ],
+            [
+              47.54219123411391,
+              -23.633465485247644
+            ],
+            [
+              47.54217223411391,
+              -23.633471485247643
+            ],
+            [
+              47.54209923411391,
+              -23.63339048524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_24_0",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5419002341139,
+              -23.633191485247647
+            ],
+            [
+              47.54186823411391,
+              -23.633220485247644
+            ],
+            [
+              47.54182023411391,
+              -23.633201485247643
+            ],
+            [
+              47.541832234113905,
+              -23.633115485247647
+            ],
+            [
+              47.5419002341139,
+              -23.633191485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_24_1",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5420192341139,
+              -23.633183485247645
+            ],
+            [
+              47.54209923411391,
+              -23.633292485247647
+            ],
+            [
+              47.54203223411391,
+              -23.633353485247643
+            ],
+            [
+              47.54199423411391,
+              -23.633310485247645
+            ],
+            [
+              47.54196623411391,
+              -23.633260485247643
+            ],
+            [
+              47.54196623411391,
+              -23.633259485247645
+            ],
+            [
+              47.54196623411391,
+              -23.633259485247645
+            ],
+            [
+              47.54196523411391,
+              -23.633258485247648
+            ],
+            [
+              47.54196423411391,
+              -23.633258485247648
+            ],
+            [
+              47.54196423411391,
+              -23.633257485247643
+            ],
+            [
+              47.5419632341139,
+              -23.633257485247643
+            ],
+            [
+              47.5419622341139,
+              -23.633256485247646
+            ],
+            [
+              47.5419452341139,
+              -23.633250485247647
+            ],
+            [
+              47.5420192341139,
+              -23.633183485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_24_2",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54260023411391,
+              -23.634538485247642
+            ],
+            [
+              47.542609234113904,
+              -23.634636485247643
+            ],
+            [
+              47.542535234113906,
+              -23.634643485247647
+            ],
+            [
+              47.5425262341139,
+              -23.634545485247646
+            ],
+            [
+              47.54260023411391,
+              -23.634538485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_25_0",
+        "age": "38",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.542704234113906,
+              -23.634312485247644
+            ],
+            [
+              47.54271423411391,
+              -23.634411485247643
+            ],
+            [
+              47.5425932341139,
+              -23.63442348524765
+            ],
+            [
+              47.54258323411391,
+              -23.634324485247642
+            ],
+            [
+              47.542704234113906,
+              -23.634312485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_25_1",
+        "age": "40",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54273123411391,
+              -23.635125485247645
+            ],
+            [
+              47.54269823411391,
+              -23.635124485247648
+            ],
+            [
+              47.54269723411391,
+              -23.635172485247647
+            ],
+            [
+              47.5426952341139,
+              -23.635172485247647
+            ],
+            [
+              47.5426612341139,
+              -23.635171485247643
+            ],
+            [
+              47.54266223411391,
+              -23.635124485247648
+            ],
+            [
+              47.54262923411391,
+              -23.635123485247643
+            ],
+            [
+              47.54262923411391,
+              -23.635079485247648
+            ],
+            [
+              47.54259023411391,
+              -23.635078485247643
+            ],
+            [
+              47.54259123411391,
+              -23.635036485247642
+            ],
+            [
+              47.54263023411391,
+              -23.635037485247647
+            ],
+            [
+              47.542631234113905,
+              -23.634993485247644
+            ],
+            [
+              47.5427332341139,
+              -23.63499448524765
+            ],
+            [
+              47.54273123411391,
+              -23.635125485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_27_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.542310234113906,
+              -23.634696485247648
+            ],
+            [
+              47.54229823411391,
+              -23.634580485247643
+            ],
+            [
+              47.542417234113906,
+              -23.634568485247645
+            ],
+            [
+              47.542429234113904,
+              -23.634684485247643
+            ],
+            [
+              47.542310234113906,
+              -23.634696485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_28_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54221823411391,
+              -23.63436148524765
+            ],
+            [
+              47.542232234113904,
+              -23.634490485247643
+            ],
+            [
+              47.54215623411391,
+              -23.634497485247646
+            ],
+            [
+              47.54212823411391,
+              -23.634370485247647
+            ],
+            [
+              47.54221823411391,
+              -23.63436148524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_28_1",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54241023411391,
+              -23.635111485247645
+            ],
+            [
+              47.5424192341139,
+              -23.635201485247645
+            ],
+            [
+              47.5423282341139,
+              -23.635210485247644
+            ],
+            [
+              47.54230823411391,
+              -23.635122485247646
+            ],
+            [
+              47.54241023411391,
+              -23.635111485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_30_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.542380234113914,
+              -23.634853485247643
+            ],
+            [
+              47.542344234113905,
+              -23.634856485247642
+            ],
+            [
+              47.5423402341139,
+              -23.63481448524765
+            ],
+            [
+              47.54237523411391,
+              -23.634810485247645
+            ],
+            [
+              47.5423732341139,
+              -23.634787485247646
+            ],
+            [
+              47.54243223411391,
+              -23.634781485247647
+            ],
+            [
+              47.5424412341139,
+              -23.634870485247642
+            ],
+            [
+              47.54238223411391,
+              -23.63487648524765
+            ],
+            [
+              47.542380234113914,
+              -23.634853485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_30_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5427062341139,
+              -23.635318485247648
+            ],
+            [
+              47.54269723411391,
+              -23.635231485247647
+            ],
+            [
+              47.542760234113906,
+              -23.63522548524765
+            ],
+            [
+              47.54275923411391,
+              -23.63531248524765
+            ],
+            [
+              47.5427062341139,
+              -23.635318485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_31_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.542552234113906,
+              -23.635226485247646
+            ],
+            [
+              47.5426612341139,
+              -23.635215485247645
+            ],
+            [
+              47.5426722341139,
+              -23.635323485247643
+            ],
+            [
+              47.542563234113906,
+              -23.635334485247643
+            ],
+            [
+              47.542552234113906,
+              -23.635226485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_31_1",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54111423411391,
+              -23.633157485247647
+            ],
+            [
+              47.5411632341139,
+              -23.633187485247642
+            ],
+            [
+              47.54114923411391,
+              -23.63321048524765
+            ],
+            [
+              47.54113223411391,
+              -23.633199485247648
+            ],
+            [
+              47.541123234113904,
+              -23.633215485247643
+            ],
+            [
+              47.54110823411391,
+              -23.633206485247644
+            ],
+            [
+              47.541117234113905,
+              -23.63319048524765
+            ],
+            [
+              47.541100234113905,
+              -23.633180485247646
+            ],
+            [
+              47.54111423411391,
+              -23.633157485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_32_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54151923411391,
+              -23.63296848524765
+            ],
+            [
+              47.541443234113906,
+              -23.632930485247645
+            ],
+            [
+              47.54146523411391,
+              -23.632885485247645
+            ],
+            [
+              47.5415412341139,
+              -23.632923485247648
+            ],
+            [
+              47.54151923411391,
+              -23.63296848524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_33_0",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5412422341139,
+              -23.632867485247647
+            ],
+            [
+              47.541198234113914,
+              -23.632955485247646
+            ],
+            [
+              47.54107123411391,
+              -23.63289248524765
+            ],
+            [
+              47.54111523411391,
+              -23.632803485247646
+            ],
+            [
+              47.5412422341139,
+              -23.632867485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_34_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54119323411391,
+              -23.633113485247645
+            ],
+            [
+              47.541280234113906,
+              -23.633157485247647
+            ],
+            [
+              47.5412482341139,
+              -23.63322148524765
+            ],
+            [
+              47.54116523411391,
+              -23.633170485247643
+            ],
+            [
+              47.54119323411391,
+              -23.633113485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_34_1",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54124923411391,
+              -23.632883485247643
+            ],
+            [
+              47.54135223411391,
+              -23.63293448524765
+            ],
+            [
+              47.54130223411391,
+              -23.633033485247648
+            ],
+            [
+              47.54121023411391,
+              -23.632987485247643
+            ],
+            [
+              47.54119923411391,
+              -23.632981485247644
+            ],
+            [
+              47.54124923411391,
+              -23.632883485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_34_2",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54073123411391,
+              -23.633445485247645
+            ],
+            [
+              47.5406962341139,
+              -23.633315485247646
+            ],
+            [
+              47.5408202341139,
+              -23.633281485247647
+            ],
+            [
+              47.54085523411391,
+              -23.633411485247645
+            ],
+            [
+              47.54073123411391,
+              -23.633445485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_35_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.540571234113905,
+              -23.63288948524765
+            ],
+            [
+              47.54046123411391,
+              -23.632834485247646
+            ],
+            [
+              47.54050623411391,
+              -23.632744485247645
+            ],
+            [
+              47.540616234113905,
+              -23.63279948524765
+            ],
+            [
+              47.540571234113905,
+              -23.63288948524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_36_0",
+        "age": "38",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.540211234113904,
+              -23.633147485247644
+            ],
+            [
+              47.5401612341139,
+              -23.633272485247648
+            ],
+            [
+              47.5400882341139,
+              -23.633243485247643
+            ],
+            [
+              47.54013723411391,
+              -23.63311748524765
+            ],
+            [
+              47.540211234113904,
+              -23.633147485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_38_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54014623411391,
+              -23.633474485247643
+            ],
+            [
+              47.54018723411391,
+              -23.633370485247642
+            ],
+            [
+              47.54025423411391,
+              -23.633397485247645
+            ],
+            [
+              47.540213234113914,
+              -23.633500485247648
+            ],
+            [
+              47.54014623411391,
+              -23.633474485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_38_1",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5402352341139,
+              -23.633244485247648
+            ],
+            [
+              47.540273234113904,
+              -23.63314548524765
+            ],
+            [
+              47.54034323411391,
+              -23.633173485247642
+            ],
+            [
+              47.54030423411391,
+              -23.633271485247644
+            ],
+            [
+              47.5402352341139,
+              -23.633244485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_38_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54002423411391,
+              -23.633471485247643
+            ],
+            [
+              47.5399762341139,
+              -23.633590485247648
+            ],
+            [
+              47.5398692341139,
+              -23.633548485247648
+            ],
+            [
+              47.53991623411391,
+              -23.633428485247645
+            ],
+            [
+              47.54002423411391,
+              -23.633471485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_40_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53981523411391,
+              -23.633760485247645
+            ],
+            [
+              47.539850234113906,
+              -23.633672485247647
+            ],
+            [
+              47.539946234113906,
+              -23.633710485247644
+            ],
+            [
+              47.539912234113906,
+              -23.633795485247642
+            ],
+            [
+              47.5399082341139,
+              -23.633796485247647
+            ],
+            [
+              47.53981523411391,
+              -23.633760485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_40_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54030923411391,
+              -23.633640485247643
+            ],
+            [
+              47.54018523411391,
+              -23.633674485247642
+            ],
+            [
+              47.540154234113906,
+              -23.63355948524765
+            ],
+            [
+              47.54018723411391,
+              -23.633550485247643
+            ],
+            [
+              47.540177234113905,
+              -23.633513485247644
+            ],
+            [
+              47.540213234113914,
+              -23.633527485247644
+            ],
+            [
+              47.540213234113914,
+              -23.633527485247644
+            ],
+            [
+              47.5402182341139,
+              -23.633529485247646
+            ],
+            [
+              47.54022023411391,
+              -23.633530485247643
+            ],
+            [
+              47.54022123411391,
+              -23.633530485247643
+            ],
+            [
+              47.540222234113905,
+              -23.633530485247643
+            ],
+            [
+              47.5402232341139,
+              -23.633530485247643
+            ],
+            [
+              47.5402242341139,
+              -23.633530485247643
+            ],
+            [
+              47.54022623411391,
+              -23.633530485247643
+            ],
+            [
+              47.54024323411391,
+              -23.63352548524765
+            ],
+            [
+              47.540245234113904,
+              -23.633534485247647
+            ],
+            [
+              47.540278234113906,
+              -23.63352548524765
+            ],
+            [
+              47.54030923411391,
+              -23.633640485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_42_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54048923411391,
+              -23.637432485247647
+            ],
+            [
+              47.540368234113906,
+              -23.637414485247643
+            ],
+            [
+              47.54038223411391,
+              -23.637321485247643
+            ],
+            [
+              47.54050223411391,
+              -23.637338485247643
+            ],
+            [
+              47.54048923411391,
+              -23.637432485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_43_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54037123411391,
+              -23.637229485247648
+            ],
+            [
+              47.54041223411391,
+              -23.637235485247647
+            ],
+            [
+              47.54040723411391,
+              -23.637273485247643
+            ],
+            [
+              47.540365234113914,
+              -23.637267485247644
+            ],
+            [
+              47.54036023411391,
+              -23.637304485247643
+            ],
+            [
+              47.5403472341139,
+              -23.63730248524765
+            ],
+            [
+              47.54036223411391,
+              -23.637199485247645
+            ],
+            [
+              47.5403752341139,
+              -23.637201485247648
+            ],
+            [
+              47.54037123411391,
+              -23.637229485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_43_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54058123411391,
+              -23.637230485247645
+            ],
+            [
+              47.54067523411391,
+              -23.637244485247646
+            ],
+            [
+              47.54065823411391,
+              -23.637360485247644
+            ],
+            [
+              47.54056423411391,
+              -23.637346485247644
+            ],
+            [
+              47.54058123411391,
+              -23.637230485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_43_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5411242341139,
+              -23.637021485247647
+            ],
+            [
+              47.54113223411391,
+              -23.63702648524765
+            ],
+            [
+              47.541117234113905,
+              -23.637130485247642
+            ],
+            [
+              47.5409782341139,
+              -23.637110485247643
+            ],
+            [
+              47.54098523411391,
+              -23.637064485247645
+            ],
+            [
+              47.540988234113904,
+              -23.637065485247643
+            ],
+            [
+              47.54099023411391,
+              -23.637065485247643
+            ],
+            [
+              47.54099123411391,
+              -23.637064485247645
+            ],
+            [
+              47.54099223411391,
+              -23.637064485247645
+            ],
+            [
+              47.5409942341139,
+              -23.637064485247645
+            ],
+            [
+              47.5409952341139,
+              -23.637063485247648
+            ],
+            [
+              47.54099623411391,
+              -23.637063485247648
+            ],
+            [
+              47.54099723411391,
+              -23.637062485247643
+            ],
+            [
+              47.54099823411391,
+              -23.637061485247646
+            ],
+            [
+              47.540999234113904,
+              -23.63706048524765
+            ],
+            [
+              47.5410002341139,
+              -23.637059485247644
+            ],
+            [
+              47.541001234113914,
+              -23.637058485247646
+            ],
+            [
+              47.5410342341139,
+              -23.637008485247645
+            ],
+            [
+              47.5411242341139,
+              -23.637021485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_45_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54066923411391,
+              -23.637123485247646
+            ],
+            [
+              47.54077623411391,
+              -23.637139485247648
+            ],
+            [
+              47.5407632341139,
+              -23.637232485247647
+            ],
+            [
+              47.540655234113906,
+              -23.637217485247643
+            ],
+            [
+              47.54066923411391,
+              -23.637123485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_45_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5414112341139,
+              -23.636845485247644
+            ],
+            [
+              47.54134023411391,
+              -23.636955485247643
+            ],
+            [
+              47.54127923411391,
+              -23.636915485247645
+            ],
+            [
+              47.5413272341139,
+              -23.636790485247648
+            ],
+            [
+              47.5414112341139,
+              -23.636845485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_46_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.540898234113904,
+              -23.636644485247647
+            ],
+            [
+              47.54081123411391,
+              -23.636637485247643
+            ],
+            [
+              47.54081223411391,
+              -23.636615485247642
+            ],
+            [
+              47.54081823411391,
+              -23.636540485247647
+            ],
+            [
+              47.54090623411391,
+              -23.636547485247643
+            ],
+            [
+              47.540898234113904,
+              -23.636644485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_48_0",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54117623411391,
+              -23.636887485247644
+            ],
+            [
+              47.54122223411391,
+              -23.63679848524765
+            ],
+            [
+              47.54128923411391,
+              -23.63683248524765
+            ],
+            [
+              47.541252234113905,
+              -23.636926485247646
+            ],
+            [
+              47.54117623411391,
+              -23.636887485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_49_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5407022341139,
+              -23.636713485247643
+            ],
+            [
+              47.540562234113914,
+              -23.636701485247645
+            ],
+            [
+              47.54057023411391,
+              -23.636608485247645
+            ],
+            [
+              47.54070923411391,
+              -23.636620485247644
+            ],
+            [
+              47.5407022341139,
+              -23.636713485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_51_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53954923411391,
+              -23.633763485247645
+            ],
+            [
+              47.5394472341139,
+              -23.633761485247643
+            ],
+            [
+              47.5394462341139,
+              -23.633761485247643
+            ],
+            [
+              47.539445234113906,
+              -23.633762485247647
+            ],
+            [
+              47.53944423411391,
+              -23.633762485247647
+            ],
+            [
+              47.53944323411391,
+              -23.633762485247647
+            ],
+            [
+              47.53944323411391,
+              -23.633762485247647
+            ],
+            [
+              47.53944223411391,
+              -23.633763485247645
+            ],
+            [
+              47.539474234113904,
+              -23.633682485247643
+            ],
+            [
+              47.53956723411391,
+              -23.633719485247642
+            ],
+            [
+              47.53954923411391,
+              -23.633763485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_53_0",
+        "age": "30",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.539175234113905,
+              -23.63364648524765
+            ],
+            [
+              47.539276234113906,
+              -23.633686485247647
+            ],
+            [
+              47.53923423411391,
+              -23.633793485247647
+            ],
+            [
+              47.53916123411391,
+              -23.633764485247642
+            ],
+            [
+              47.53913523411391,
+              -23.633746485247645
+            ],
+            [
+              47.539175234113905,
+              -23.63364648524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_53_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53929623411391,
+              -23.633659485247644
+            ],
+            [
+              47.5393912341139,
+              -23.633697485247648
+            ],
+            [
+              47.53935323411391,
+              -23.633796485247647
+            ],
+            [
+              47.53925723411391,
+              -23.633758485247643
+            ],
+            [
+              47.53929623411391,
+              -23.633659485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_53_2",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53953423411391,
+              -23.633546485247646
+            ],
+            [
+              47.5394242341139,
+              -23.633502485247643
+            ],
+            [
+              47.5394582341139,
+              -23.633415485247642
+            ],
+            [
+              47.53956723411391,
+              -23.633462485247644
+            ],
+            [
+              47.53953423411391,
+              -23.633546485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_55_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5395982341139,
+              -23.633671485247643
+            ],
+            [
+              47.53950623411391,
+              -23.63363548524765
+            ],
+            [
+              47.53954523411391,
+              -23.633537485247647
+            ],
+            [
+              47.5395712341139,
+              -23.633547485247643
+            ],
+            [
+              47.53958423411391,
+              -23.633514485247648
+            ],
+            [
+              47.53962423411391,
+              -23.633530485247643
+            ],
+            [
+              47.53961123411391,
+              -23.633563485247645
+            ],
+            [
+              47.539637234113904,
+              -23.63357348524765
+            ],
+            [
+              47.5395982341139,
+              -23.633671485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_55_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53917223411391,
+              -23.634280485247647
+            ],
+            [
+              47.53906523411391,
+              -23.634222485247644
+            ],
+            [
+              47.539125234113904,
+              -23.634111485247647
+            ],
+            [
+              47.539220234113905,
+              -23.634163485247644
+            ],
+            [
+              47.5392222341139,
+              -23.634188485247645
+            ],
+            [
+              47.53917223411391,
+              -23.634280485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_56_0",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.539074234113905,
+              -23.634166485247643
+            ],
+            [
+              47.53895923411391,
+              -23.634103485247646
+            ],
+            [
+              47.538989234113906,
+              -23.634047485247645
+            ],
+            [
+              47.53911023411391,
+              -23.634100485247647
+            ],
+            [
+              47.539074234113905,
+              -23.634166485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_56_1",
+        "age": "31",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5390242341139,
+              -23.634291485247648
+            ],
+            [
+              47.53909523411391,
+              -23.634329485247644
+            ],
+            [
+              47.539046234113904,
+              -23.63442048524765
+            ],
+            [
+              47.53897523411391,
+              -23.634382485247645
+            ],
+            [
+              47.5390242341139,
+              -23.634291485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_57_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.538415234113906,
+              -23.63405448524765
+            ],
+            [
+              47.53835123411391,
+              -23.634020485247643
+            ],
+            [
+              47.5384002341139,
+              -23.633906485247646
+            ],
+            [
+              47.53847423411391,
+              -23.633946485247645
+            ],
+            [
+              47.538415234113906,
+              -23.63405448524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_58_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5380672341139,
+              -23.634084485247644
+            ],
+            [
+              47.5379772341139,
+              -23.634046485247648
+            ],
+            [
+              47.5380002341139,
+              -23.633993485247647
+            ],
+            [
+              47.53808723411391,
+              -23.634036485247645
+            ],
+            [
+              47.5380672341139,
+              -23.634084485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_60_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.538258234113904,
+              -23.63383248524765
+            ],
+            [
+              47.53827323411391,
+              -23.633796485247647
+            ],
+            [
+              47.538286234113905,
+              -23.63380148524765
+            ],
+            [
+              47.5382872341139,
+              -23.63380148524765
+            ],
+            [
+              47.53840323411391,
+              -23.633850485247645
+            ],
+            [
+              47.53838623411391,
+              -23.63388848524765
+            ],
+            [
+              47.53838623411391,
+              -23.633889485247646
+            ],
+            [
+              47.53836923411391,
+              -23.633929485247645
+            ],
+            [
+              47.53833023411391,
+              -23.633913485247643
+            ],
+            [
+              47.5383102341139,
+              -23.633960485247645
+            ],
+            [
+              47.53827323411391,
+              -23.633945485247647
+            ],
+            [
+              47.53829423411391,
+              -23.633897485247648
+            ],
+            [
+              47.5382532341139,
+              -23.633880485247648
+            ],
+            [
+              47.538271234113914,
+              -23.633838485247647
+            ],
+            [
+              47.538258234113904,
+              -23.63383248524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_60_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53820523411391,
+              -23.634141485247643
+            ],
+            [
+              47.53826723411391,
+              -23.634167485247648
+            ],
+            [
+              47.53824023411391,
+              -23.634231485247643
+            ],
+            [
+              47.53823223411391,
+              -23.63425148524765
+            ],
+            [
+              47.53817123411391,
+              -23.634220485247642
+            ],
+            [
+              47.53820523411391,
+              -23.634141485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_60_2",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5380792341139,
+              -23.633284485247646
+            ],
+            [
+              47.5381352341139,
+              -23.633152485247646
+            ],
+            [
+              47.5382642341139,
+              -23.633206485247644
+            ],
+            [
+              47.538207234113905,
+              -23.633338485247645
+            ],
+            [
+              47.5380792341139,
+              -23.633284485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_61_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5380852341139,
+              -23.632967485247644
+            ],
+            [
+              47.53802423411391,
+              -23.633109485247648
+            ],
+            [
+              47.5379502341139,
+              -23.633077485247643
+            ],
+            [
+              47.5380112341139,
+              -23.632935485247646
+            ],
+            [
+              47.5380852341139,
+              -23.632967485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_61_1",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5382372341139,
+              -23.633043485247644
+            ],
+            [
+              47.53813823411391,
+              -23.633001485247643
+            ],
+            [
+              47.5381912341139,
+              -23.632879485247646
+            ],
+            [
+              47.53829023411391,
+              -23.632921485247646
+            ],
+            [
+              47.5382372341139,
+              -23.633043485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_61_2",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53795723411391,
+              -23.63393648524765
+            ],
+            [
+              47.53794123411391,
+              -23.633973485247648
+            ],
+            [
+              47.5378312341139,
+              -23.633927485247643
+            ],
+            [
+              47.53786223411391,
+              -23.633853485247645
+            ],
+            [
+              47.538010234113905,
+              -23.633917485247647
+            ],
+            [
+              47.5379952341139,
+              -23.633952485247644
+            ],
+            [
+              47.53795723411391,
+              -23.63393648524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_63_0",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53768623411391,
+              -23.633862485247644
+            ],
+            [
+              47.5377802341139,
+              -23.633902485247642
+            ],
+            [
+              47.53773223411391,
+              -23.634015485247648
+            ],
+            [
+              47.537638234113906,
+              -23.633975485247642
+            ],
+            [
+              47.53768623411391,
+              -23.633862485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_63_1",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53782723411391,
+              -23.633960485247645
+            ],
+            [
+              47.53795223411391,
+              -23.634014485247643
+            ],
+            [
+              47.53790623411391,
+              -23.634122485247648
+            ],
+            [
+              47.5377802341139,
+              -23.634068485247642
+            ],
+            [
+              47.53782723411391,
+              -23.633960485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_63_2",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5377582341139,
+              -23.633695485247646
+            ],
+            [
+              47.537779234113906,
+              -23.63364648524765
+            ],
+            [
+              47.537819234113904,
+              -23.63366348524765
+            ],
+            [
+              47.5377982341139,
+              -23.633712485247646
+            ],
+            [
+              47.537841234113905,
+              -23.633730485247643
+            ],
+            [
+              47.5378082341139,
+              -23.633808485247645
+            ],
+            [
+              47.53768223411391,
+              -23.633754485247646
+            ],
+            [
+              47.53771523411391,
+              -23.63367748524765
+            ],
+            [
+              47.5377582341139,
+              -23.633695485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_65_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53853223411391,
+              -23.635128485247645
+            ],
+            [
+              47.53859423411391,
+              -23.63501148524765
+            ],
+            [
+              47.5386922341139,
+              -23.635063485247645
+            ],
+            [
+              47.5386302341139,
+              -23.63518048524765
+            ],
+            [
+              47.53853223411391,
+              -23.635128485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_66_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5387492341139,
+              -23.634819485247643
+            ],
+            [
+              47.53869423411391,
+              -23.634923485247644
+            ],
+            [
+              47.53861023411391,
+              -23.634879485247648
+            ],
+            [
+              47.53861023411391,
+              -23.634878485247643
+            ],
+            [
+              47.538665234113914,
+              -23.634775485247648
+            ],
+            [
+              47.5387492341139,
+              -23.634819485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_66_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.538854234113906,
+              -23.634932485247642
+            ],
+            [
+              47.53875623411391,
+              -23.634880485247646
+            ],
+            [
+              47.5387882341139,
+              -23.634820485247648
+            ],
+            [
+              47.53888623411391,
+              -23.634872485247644
+            ],
+            [
+              47.538854234113906,
+              -23.634932485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_66_2",
+        "age": "39",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.538489234113904,
+              -23.634736485247647
+            ],
+            [
+              47.53838523411391,
+              -23.634681485247643
+            ],
+            [
+              47.538440234113914,
+              -23.634577485247643
+            ],
+            [
+              47.53854423411391,
+              -23.63463148524765
+            ],
+            [
+              47.538489234113904,
+              -23.634736485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_68_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53842523411391,
+              -23.63474148524765
+            ],
+            [
+              47.53841223411391,
+              -23.634764485247647
+            ],
+            [
+              47.5382932341139,
+              -23.634701485247643
+            ],
+            [
+              47.53831723411391,
+              -23.634656485247643
+            ],
+            [
+              47.53834123411391,
+              -23.634669485247645
+            ],
+            [
+              47.5383602341139,
+              -23.634633485247644
+            ],
+            [
+              47.5383992341139,
+              -23.634653485247643
+            ],
+            [
+              47.53838023411391,
+              -23.634689485247645
+            ],
+            [
+              47.538404234113905,
+              -23.634702485247647
+            ],
+            [
+              47.538393234113904,
+              -23.63472448524765
+            ],
+            [
+              47.53842523411391,
+              -23.63474148524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_68_1",
+        "age": "32",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5383542341139,
+              -23.634606485247648
+            ],
+            [
+              47.53831223411391,
+              -23.634584485247647
+            ],
+            [
+              47.5383432341139,
+              -23.634525485247647
+            ],
+            [
+              47.53838523411391,
+              -23.634547485247648
+            ],
+            [
+              47.5383542341139,
+              -23.634606485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_68_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5381922341139,
+              -23.634736485247647
+            ],
+            [
+              47.53815023411391,
+              -23.634815485247646
+            ],
+            [
+              47.538046234113914,
+              -23.634760485247643
+            ],
+            [
+              47.53806023411391,
+              -23.634732485247643
+            ],
+            [
+              47.5380672341139,
+              -23.634735485247642
+            ],
+            [
+              47.5380682341139,
+              -23.634736485247647
+            ],
+            [
+              47.53806923411391,
+              -23.634736485247647
+            ],
+            [
+              47.53807023411391,
+              -23.634736485247647
+            ],
+            [
+              47.53807123411391,
+              -23.634736485247647
+            ],
+            [
+              47.538072234113905,
+              -23.634737485247644
+            ],
+            [
+              47.538072234113905,
+              -23.634736485247647
+            ],
+            [
+              47.5380732341139,
+              -23.634736485247647
+            ],
+            [
+              47.538074234113914,
+              -23.634736485247647
+            ],
+            [
+              47.53807523411391,
+              -23.634736485247647
+            ],
+            [
+              47.53807623411391,
+              -23.634735485247642
+            ],
+            [
+              47.538077234113906,
+              -23.634735485247642
+            ],
+            [
+              47.538077234113906,
+              -23.634734485247645
+            ],
+            [
+              47.538078234113904,
+              -23.634734485247645
+            ],
+            [
+              47.5380792341139,
+              -23.634733485247647
+            ],
+            [
+              47.5380792341139,
+              -23.634732485247643
+            ],
+            [
+              47.53808023411391,
+              -23.634732485247643
+            ],
+            [
+              47.5381022341139,
+              -23.634689485247645
+            ],
+            [
+              47.5381922341139,
+              -23.634736485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_70_0",
+        "age": "30",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53771023411391,
+              -23.634304485247643
+            ],
+            [
+              47.537751234113905,
+              -23.634326485247644
+            ],
+            [
+              47.53772823411391,
+              -23.634370485247647
+            ],
+            [
+              47.53768723411391,
+              -23.634348485247646
+            ],
+            [
+              47.53771023411391,
+              -23.634304485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_71_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53765923411391,
+              -23.634287485247643
+            ],
+            [
+              47.53758623411391,
+              -23.634249485247647
+            ],
+            [
+              47.537616234113905,
+              -23.634193485247646
+            ],
+            [
+              47.53768823411391,
+              -23.634231485247643
+            ],
+            [
+              47.53765923411391,
+              -23.634287485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_71_1",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.537582234113906,
+              -23.634253485247644
+            ],
+            [
+              47.53749023411391,
+              -23.634204485247647
+            ],
+            [
+              47.5375222341139,
+              -23.634143485247645
+            ],
+            [
+              47.53761423411391,
+              -23.63419248524765
+            ],
+            [
+              47.537582234113906,
+              -23.634253485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_71_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5383602341139,
+              -23.635261485247643
+            ],
+            [
+              47.53831823411391,
+              -23.635238485247644
+            ],
+            [
+              47.5383712341139,
+              -23.635141485247647
+            ],
+            [
+              47.538505234113906,
+              -23.635214485247648
+            ],
+            [
+              47.53849323411391,
+              -23.635237485247647
+            ],
+            [
+              47.538438234113904,
+              -23.635207485247644
+            ],
+            [
+              47.538421234113905,
+              -23.635238485247644
+            ],
+            [
+              47.5383832341139,
+              -23.635218485247645
+            ],
+            [
+              47.5383602341139,
+              -23.635261485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_72_0",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53857023411391,
+              -23.635316485247646
+            ],
+            [
+              47.5386422341139,
+              -23.635355485247647
+            ],
+            [
+              47.53859223411391,
+              -23.635447485247642
+            ],
+            [
+              47.5385692341139,
+              -23.635435485247644
+            ],
+            [
+              47.5385462341139,
+              -23.635476485247647
+            ],
+            [
+              47.53852023411391,
+              -23.635462485247647
+            ],
+            [
+              47.53854323411391,
+              -23.635421485247644
+            ],
+            [
+              47.53852023411391,
+              -23.63540848524765
+            ],
+            [
+              47.53857023411391,
+              -23.635316485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_72_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53824523411391,
+              -23.635742485247643
+            ],
+            [
+              47.538320234113904,
+              -23.63578248524765
+            ],
+            [
+              47.53827223411391,
+              -23.635871485247645
+            ],
+            [
+              47.5381972341139,
+              -23.63583048524765
+            ],
+            [
+              47.53824523411391,
+              -23.635742485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_73_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53765823411391,
+              -23.635575485247646
+            ],
+            [
+              47.53766623411391,
+              -23.635483485247644
+            ],
+            [
+              47.53778323411391,
+              -23.635493485247647
+            ],
+            [
+              47.5377752341139,
+              -23.635586485247646
+            ],
+            [
+              47.53765823411391,
+              -23.635575485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_74_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.537639234113904,
+              -23.635775485247645
+            ],
+            [
+              47.537650234113904,
+              -23.635649485247644
+            ],
+            [
+              47.53772723411391,
+              -23.635655485247643
+            ],
+            [
+              47.53771623411391,
+              -23.63578248524765
+            ],
+            [
+              47.537639234113904,
+              -23.635775485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_74_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53781623411391,
+              -23.635555485247647
+            ],
+            [
+              47.537824234113906,
+              -23.635459485247647
+            ],
+            [
+              47.53788923411391,
+              -23.635465485247646
+            ],
+            [
+              47.537880234113906,
+              -23.635560485247648
+            ],
+            [
+              47.53781623411391,
+              -23.635555485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_74_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5373702341139,
+              -23.635508485247644
+            ],
+            [
+              47.53736223411391,
+              -23.635594485247648
+            ],
+            [
+              47.5372962341139,
+              -23.635589485247646
+            ],
+            [
+              47.53730423411391,
+              -23.635503485247643
+            ],
+            [
+              47.5373702341139,
+              -23.635508485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_76_0",
+        "age": "39",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.537335234113904,
+              -23.634821485247645
+            ],
+            [
+              47.537385234113906,
+              -23.634704485247642
+            ],
+            [
+              47.537481234113905,
+              -23.634745485247645
+            ],
+            [
+              47.537464234113905,
+              -23.634784485247646
+            ],
+            [
+              47.53742323411391,
+              -23.63485948524765
+            ],
+            [
+              47.537335234113904,
+              -23.634821485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_77_0",
+        "age": "39",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5375382341139,
+              -23.635337485247643
+            ],
+            [
+              47.53752923411391,
+              -23.635442485247648
+            ],
+            [
+              47.53737923411391,
+              -23.635429485247645
+            ],
+            [
+              47.53738823411391,
+              -23.635324485247647
+            ],
+            [
+              47.5375382341139,
+              -23.635337485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_78_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53756223411391,
+              -23.635313485247647
+            ],
+            [
+              47.537571234113905,
+              -23.635202485247643
+            ],
+            [
+              47.537635234113914,
+              -23.635207485247644
+            ],
+            [
+              47.53762623411391,
+              -23.635318485247648
+            ],
+            [
+              47.53756223411391,
+              -23.635313485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_78_1",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5373692341139,
+              -23.635365485247643
+            ],
+            [
+              47.53736223411391,
+              -23.635448485247647
+            ],
+            [
+              47.53730923411391,
+              -23.635444485247643
+            ],
+            [
+              47.53731623411391,
+              -23.63536048524765
+            ],
+            [
+              47.5373692341139,
+              -23.635365485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_78_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5391142341139,
+              -23.637091485247648
+            ],
+            [
+              47.53916723411391,
+              -23.637002485247645
+            ],
+            [
+              47.53928023411391,
+              -23.637069485247647
+            ],
+            [
+              47.53926223411391,
+              -23.637099485247642
+            ],
+            [
+              47.539271234113905,
+              -23.637104485247644
+            ],
+            [
+              47.539254234113905,
+              -23.63713348524765
+            ],
+            [
+              47.53924523411391,
+              -23.637128485247647
+            ],
+            [
+              47.5392272341139,
+              -23.637158485247642
+            ],
+            [
+              47.5391142341139,
+              -23.637091485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_79_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53889123411391,
+              -23.636634485247644
+            ],
+            [
+              47.53876923411391,
+              -23.636560485247646
+            ],
+            [
+              47.538834234113914,
+              -23.636451485247644
+            ],
+            [
+              47.5389622341139,
+              -23.636516485247643
+            ],
+            [
+              47.53889123411391,
+              -23.636634485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_81_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5387202341139,
+              -23.63679848524765
+            ],
+            [
+              47.5387932341139,
+              -23.63667748524765
+            ],
+            [
+              47.538950234113905,
+              -23.636772485247644
+            ],
+            [
+              47.538877234113905,
+              -23.636893485247644
+            ],
+            [
+              47.5387202341139,
+              -23.63679848524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_81_1",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.538736234113905,
+              -23.637031485247643
+            ],
+            [
+              47.53877423411391,
+              -23.637054485247642
+            ],
+            [
+              47.5388052341139,
+              -23.637003485247643
+            ],
+            [
+              47.538837234113906,
+              -23.637022485247645
+            ],
+            [
+              47.53880623411391,
+              -23.63707448524765
+            ],
+            [
+              47.53884223411391,
+              -23.637095485247645
+            ],
+            [
+              47.5387822341139,
+              -23.637194485247644
+            ],
+            [
+              47.53867723411391,
+              -23.637131485247647
+            ],
+            [
+              47.538736234113905,
+              -23.637031485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_81_2",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53935223411391,
+              -23.637041485247646
+            ],
+            [
+              47.5393392341139,
+              -23.637033485247645
+            ],
+            [
+              47.53937023411391,
+              -23.636980485247644
+            ],
+            [
+              47.5393842341139,
+              -23.636988485247645
+            ],
+            [
+              47.53940323411391,
+              -23.636956485247648
+            ],
+            [
+              47.53943723411391,
+              -23.636976485247647
+            ],
+            [
+              47.53945923411391,
+              -23.636937485247646
+            ],
+            [
+              47.53948923411391,
+              -23.636955485247643
+            ],
+            [
+              47.53946623411391,
+              -23.636993485247647
+            ],
+            [
+              47.53950023411391,
+              -23.637013485247646
+            ],
+            [
+              47.53944423411391,
+              -23.637108485247648
+            ],
+            [
+              47.53934723411391,
+              -23.637051485247643
+            ],
+            [
+              47.53935223411391,
+              -23.637041485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_83_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53957823411391,
+              -23.636918485247644
+            ],
+            [
+              47.5394922341139,
+              -23.636867485247645
+            ],
+            [
+              47.5395312341139,
+              -23.63680148524765
+            ],
+            [
+              47.5396212341139,
+              -23.63684648524765
+            ],
+            [
+              47.53957823411391,
+              -23.636918485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_83_1",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53979723411391,
+              -23.637151485247646
+            ],
+            [
+              47.539760234113906,
+              -23.637252485247647
+            ],
+            [
+              47.53969123411391,
+              -23.637227485247646
+            ],
+            [
+              47.53974723411391,
+              -23.63713348524765
+            ],
+            [
+              47.53979723411391,
+              -23.637151485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_85_0",
+        "age": "30",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5399252341139,
+              -23.637277485247647
+            ],
+            [
+              47.539958234113904,
+              -23.637186485247643
+            ],
+            [
+              47.54000623411391,
+              -23.637203485247642
+            ],
+            [
+              47.5399922341139,
+              -23.637300485247646
+            ],
+            [
+              47.5399252341139,
+              -23.637277485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_85_1",
+        "age": "30",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53982523411391,
+              -23.637609485247648
+            ],
+            [
+              47.53995123411391,
+              -23.637655485247645
+            ],
+            [
+              47.53992723411391,
+              -23.637721485247642
+            ],
+            [
+              47.5398012341139,
+              -23.637675485247645
+            ],
+            [
+              47.53982523411391,
+              -23.637609485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_86_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53992323411391,
+              -23.637933485247647
+            ],
+            [
+              47.53996223411391,
+              -23.637946485247642
+            ],
+            [
+              47.53995023411391,
+              -23.638033485247643
+            ],
+            [
+              47.5398972341139,
+              -23.638016485247643
+            ],
+            [
+              47.53992323411391,
+              -23.637933485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_88_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53968123411391,
+              -23.637981485247646
+            ],
+            [
+              47.53963923411391,
+              -23.638064485247643
+            ],
+            [
+              47.539569234113905,
+              -23.63802848524765
+            ],
+            [
+              47.53961123411391,
+              -23.637946485247642
+            ],
+            [
+              47.53968123411391,
+              -23.637981485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_89_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53823923411391,
+              -23.636684485247645
+            ],
+            [
+              47.53833923411391,
+              -23.636745485247648
+            ],
+            [
+              47.5382812341139,
+              -23.636840485247642
+            ],
+            [
+              47.538181234113914,
+              -23.636779485247647
+            ],
+            [
+              47.53823923411391,
+              -23.636684485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_90_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.53836323411391,
+              -23.636827485247647
+            ],
+            [
+              47.53846923411391,
+              -23.63689148524765
+            ],
+            [
+              47.5384172341139,
+              -23.636978485247642
+            ],
+            [
+              47.5383102341139,
+              -23.636914485247647
+            ],
+            [
+              47.53836323411391,
+              -23.636827485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_90_1",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.538426234113906,
+              -23.636781485247642
+            ],
+            [
+              47.538485234113914,
+              -23.636683485247648
+            ],
+            [
+              47.53858923411391,
+              -23.636745485247648
+            ],
+            [
+              47.5385292341139,
+              -23.63684348524765
+            ],
+            [
+              47.538426234113906,
+              -23.636781485247642
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_90_2",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.541731234113904,
+              -23.631523485247644
+            ],
+            [
+              47.541641234113904,
+              -23.631557485247644
+            ],
+            [
+              47.5416192341139,
+              -23.631500485247646
+            ],
+            [
+              47.5417092341139,
+              -23.63146548524765
+            ],
+            [
+              47.541731234113904,
+              -23.631523485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_91_0",
+        "age": "39",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54163423411391,
+              -23.631639485247643
+            ],
+            [
+              47.541731234113904,
+              -23.631601485247646
+            ],
+            [
+              47.54176323411391,
+              -23.631685485247647
+            ],
+            [
+              47.5416652341139,
+              -23.631722485247646
+            ],
+            [
+              47.54163423411391,
+              -23.631639485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_91_1",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5416142341139,
+              -23.632589485247646
+            ],
+            [
+              47.54158723411391,
+              -23.632667485247648
+            ],
+            [
+              47.541511234113905,
+              -23.632629485247644
+            ],
+            [
+              47.54154423411391,
+              -23.632564485247645
+            ],
+            [
+              47.5416142341139,
+              -23.632589485247646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_92_0",
+        "age": "35",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.541776234113904,
+              -23.632480485247644
+            ],
+            [
+              47.541736234113905,
+              -23.632593485247643
+            ],
+            [
+              47.54161523411391,
+              -23.632550485247645
+            ],
+            [
+              47.54165523411391,
+              -23.632437485247646
+            ],
+            [
+              47.541776234113904,
+              -23.632480485247644
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_92_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5417492341139,
+              -23.632380485247648
+            ],
+            [
+              47.5417712341139,
+              -23.632317485247643
+            ],
+            [
+              47.541854234113906,
+              -23.632335485247648
+            ],
+            [
+              47.5418282341139,
+              -23.632408485247648
+            ],
+            [
+              47.5417492341139,
+              -23.632380485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_92_2",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5423122341139,
+              -23.632668485247645
+            ],
+            [
+              47.5422892341139,
+              -23.632566485247647
+            ],
+            [
+              47.54238123411391,
+              -23.632560485247648
+            ],
+            [
+              47.542400234113906,
+              -23.632648485247646
+            ],
+            [
+              47.5423122341139,
+              -23.632668485247645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_94_0",
+        "age": "37",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5421042341139,
+              -23.632909485247648
+            ],
+            [
+              47.5421992341139,
+              -23.632887485247647
+            ],
+            [
+              47.54221323411391,
+              -23.632954485247648
+            ],
+            [
+              47.54216223411391,
+              -23.632975485247645
+            ],
+            [
+              47.542138234113914,
+              -23.632942485247643
+            ],
+            [
+              47.542138234113914,
+              -23.632941485247645
+            ],
+            [
+              47.5421372341139,
+              -23.632940485247648
+            ],
+            [
+              47.542136234113904,
+              -23.632940485247648
+            ],
+            [
+              47.54213523411391,
+              -23.632939485247643
+            ],
+            [
+              47.54213423411391,
+              -23.632939485247643
+            ],
+            [
+              47.54210723411391,
+              -23.632925485247643
+            ],
+            [
+              47.5421042341139,
+              -23.632909485247648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_94_1",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54208823411391,
+              -23.63277148524765
+            ],
+            [
+              47.5421142341139,
+              -23.63288948524765
+            ],
+            [
+              47.5420592341139,
+              -23.632901485247647
+            ],
+            [
+              47.5420192341139,
+              -23.632881485247648
+            ],
+            [
+              47.54207223411391,
+              -23.632775485247645
+            ],
+            [
+              47.54208823411391,
+              -23.63277148524765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_94_2",
+        "age": "38",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5419342341139,
+              -23.632569485247647
+            ],
+            [
+              47.54198123411391,
+              -23.632474485247645
+            ],
+            [
+              47.5420532341139,
+              -23.632510485247646
+            ],
+            [
+              47.542006234113906,
+              -23.632605485247648
+            ],
+            [
+              47.5419342341139,
+              -23.632569485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_95_0",
+        "age": "36",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.541967234113905,
+              -23.632493485247647
+            ],
+            [
+              47.5419122341139,
+              -23.632603485247646
+            ],
+            [
+              47.5418162341139,
+              -23.63255448524765
+            ],
+            [
+              47.541871234113906,
+              -23.632444485247643
+            ],
+            [
+              47.541967234113905,
+              -23.632493485247647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_95_1",
+        "age": "34",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.5417882341139,
+              -23.632635485247643
+            ],
+            [
+              47.54189223411391,
+              -23.632687485247647
+            ],
+            [
+              47.5418782341139,
+              -23.632714485247643
+            ],
+            [
+              47.541911234113904,
+              -23.632730485247645
+            ],
+            [
+              47.54190323411391,
+              -23.632746485247647
+            ],
+            [
+              47.54176723411391,
+              -23.63267848524765
+            ],
+            [
+              47.5417882341139,
+              -23.632635485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_95_2",
+        "age": "38",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.54912523411391,
+              -23.634777485247643
+            ],
+            [
+              47.54907523411391,
+              -23.634692485247644
+            ],
+            [
+              47.5491162341139,
+              -23.634668485247648
+            ],
+            [
+              47.549166234113905,
+              -23.634754485247644
+            ],
+            [
+              47.54912523411391,
+              -23.634777485247643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "building_96_0",
+        "age": "33",
+        "generation": "4",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "roparia",
+        "district": "Roparia"
+      }
+    }
+  ]
+}

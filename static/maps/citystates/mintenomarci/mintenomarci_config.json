@@ -1,0 +1,87 @@
+{
+  "citystate": "mintenomarci",
+  "display_name": "Mintenomarci",
+  "bounds": {
+    "west": -6.696146111105771,
+    "south": 16.624384432674812,
+    "east": -6.6643425111057715,
+    "north": 16.649666032674805
+  },
+  "center": {
+    "lat": 16.63702523267481,
+    "lng": -6.680244311105771
+  },
+  "castle_position": {
+    "lat": 16.635380978828877,
+    "lng": -6.681508618798124
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1281,
+    "districts": 4,
+    "castles": 1,
+    "towers": 19,
+    "walls": 1,
+    "fields": 13,
+    "trees": 10
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1281,
+      "types": {
+        "residential": 1281
+      },
+      "total_occupants": 8557,
+      "avg_occupants": 6.679937548790008,
+      "avg_floors": 2.3341139734582357
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Noonbridge",
+        "New Knot",
+        "Blackbloom Quarter",
+        "Castle Ward"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 19
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 13
+    },
+    "trees": {
+      "count": 10
+    }
+  },
+  "layers": {
+    "base_map": "citystates/mintenomarci/mintenomarci_map.png",
+    "vector_data": {
+      "buildings": "citystates/mintenomarci/mintenomarci_buildings.geojson",
+      "districts": "citystates/mintenomarci/mintenomarci_districts.geojson",
+      "castles": "citystates/mintenomarci/mintenomarci_castles.geojson",
+      "towers": "citystates/mintenomarci/mintenomarci_towers.geojson",
+      "walls": "citystates/mintenomarci/mintenomarci_walls.geojson",
+      "fields": "citystates/mintenomarci/mintenomarci_fields.geojson",
+      "trees": "citystates/mintenomarci/mintenomarci_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:20",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/mintenomarci_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/mintenomarci"
+    }
+  }
+}

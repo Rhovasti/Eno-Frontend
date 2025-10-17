@@ -1,0 +1,2268 @@
+{
+  "citystates": [
+    {
+      "name": "aira",
+      "display_name": "Aira",
+      "center": {
+        "lat": 18.120355429333625,
+        "lng": 14.215410946818473
+      },
+      "bounds": {
+        "west": 14.206582446818473,
+        "south": 18.110908429333627,
+        "east": 14.224239446818473,
+        "north": 18.129802429333623
+      },
+      "feature_count": 687,
+      "building_count": 595,
+      "config_file": "citystates/aira/aira_config.json"
+    },
+    {
+      "name": "aiya",
+      "display_name": "Aiya",
+      "center": {
+        "lat": 29.53793401230962,
+        "lng": 34.53724614896531
+      },
+      "bounds": {
+        "west": 34.521944348965306,
+        "south": 29.52534521230962,
+        "east": 34.55254794896531,
+        "north": 29.55052281230962
+      },
+      "feature_count": 676,
+      "building_count": 638,
+      "config_file": "citystates/aiya/aiya_config.json"
+    },
+    {
+      "name": "alebuo",
+      "display_name": "Alebuo",
+      "center": {
+        "lat": 24.53034067660432,
+        "lng": -20.75238365259905
+      },
+      "bounds": {
+        "west": -20.79249785259905,
+        "south": 24.498231476604325,
+        "east": -20.712269452599052,
+        "north": 24.56244987660432
+      },
+      "feature_count": 9665,
+      "building_count": 9367,
+      "config_file": "citystates/alebuo/alebuo_config.json"
+    },
+    {
+      "name": "alos",
+      "display_name": "Alos",
+      "center": {
+        "lat": 24.570789518976532,
+        "lng": -31.786699939072577
+      },
+      "bounds": {
+        "west": -31.799015739072573,
+        "south": 24.551077718976536,
+        "east": -31.77438413907258,
+        "north": 24.59050131897653
+      },
+      "feature_count": 1313,
+      "building_count": 1204,
+      "config_file": "citystates/alos/alos_config.json"
+    },
+    {
+      "name": "aneroa",
+      "display_name": "Aneroa",
+      "center": {
+        "lat": -36.69279411585762,
+        "lng": -7.787355724344469
+      },
+      "bounds": {
+        "west": -7.800180724344469,
+        "south": -36.705491615857625,
+        "east": -7.774530724344468,
+        "north": -36.68009661585762
+      },
+      "feature_count": 965,
+      "building_count": 940,
+      "config_file": "citystates/aneroa/aneroa_config.json"
+    },
+    {
+      "name": "asuyan",
+      "display_name": "Asuyan",
+      "center": {
+        "lat": 38.11459851950015,
+        "lng": 23.98244381231414
+      },
+      "bounds": {
+        "west": 23.965988612314142,
+        "south": 38.097527319500145,
+        "east": 23.99889901231414,
+        "north": 38.13166971950015
+      },
+      "feature_count": 1750,
+      "building_count": 1618,
+      "config_file": "citystates/asuyan/asuyan_config.json"
+    },
+    {
+      "name": "atar",
+      "display_name": "Atar",
+      "center": {
+        "lat": -30.27157079841522,
+        "lng": -18.059968249960555
+      },
+      "bounds": {
+        "west": -18.071388849960556,
+        "south": -30.28464839841522,
+        "east": -18.048547649960554,
+        "north": -30.258493198415216
+      },
+      "feature_count": 1853,
+      "building_count": 1795,
+      "config_file": "citystates/atar/atar_config.json"
+    },
+    {
+      "name": "atsa",
+      "display_name": "Atsa",
+      "center": {
+        "lat": 29.993212233981044,
+        "lng": -2.6896485975953364
+      },
+      "bounds": {
+        "west": -2.702716497595337,
+        "south": 29.97614883398104,
+        "east": -2.6765806975953357,
+        "north": 30.01027563398105
+      },
+      "feature_count": 1318,
+      "building_count": 1237,
+      "config_file": "citystates/atsa/atsa_config.json"
+    },
+    {
+      "name": "auera",
+      "display_name": "Auera",
+      "center": {
+        "lat": -18.606613089832855,
+        "lng": 2.342950574611894
+      },
+      "bounds": {
+        "west": 2.331126174611894,
+        "south": -18.618870489832855,
+        "east": 2.3547749746118942,
+        "north": -18.594355689832856
+      },
+      "feature_count": 778,
+      "building_count": 754,
+      "config_file": "citystates/auera/auera_config.json"
+    },
+    {
+      "name": "aurola",
+      "display_name": "Aurola",
+      "center": {
+        "lat": -19.370391195168565,
+        "lng": -16.13555658255973
+      },
+      "bounds": {
+        "west": -16.14706038255973,
+        "south": -19.381624995168565,
+        "east": -16.12405278255973,
+        "north": -19.359157395168566
+      },
+      "feature_count": 1116,
+      "building_count": 1029,
+      "config_file": "citystates/aurola/aurola_config.json"
+    },
+    {
+      "name": "avesia",
+      "display_name": "Avesia",
+      "center": {
+        "lat": -28.824300017745948,
+        "lng": 16.321760140432332
+      },
+      "bounds": {
+        "west": 16.291518640432333,
+        "south": -28.85680201774595,
+        "east": 16.35200164043233,
+        "north": -28.791798017745947
+      },
+      "feature_count": 7900,
+      "building_count": 7726,
+      "config_file": "citystates/avesia/avesia_config.json"
+    },
+    {
+      "name": "bafke",
+      "display_name": "Bafke",
+      "center": {
+        "lat": -0.17900357330836114,
+        "lng": 45.18514443790836
+      },
+      "bounds": {
+        "west": 45.16727193790836,
+        "south": -0.20330657330836116,
+        "east": 45.203016937908366,
+        "north": -0.15470057330836112
+      },
+      "feature_count": 3573,
+      "building_count": 3310,
+      "config_file": "citystates/bafke/bafke_config.json"
+    },
+    {
+      "name": "balashee",
+      "display_name": "Balashee",
+      "center": {
+        "lat": 22.60537812574674,
+        "lng": 42.23933243016762
+      },
+      "bounds": {
+        "west": 42.22442303016762,
+        "south": 22.59157372574674,
+        "east": 42.25424183016762,
+        "north": 22.619182525746737
+      },
+      "feature_count": 651,
+      "building_count": 607,
+      "config_file": "citystates/balashee/balashee_config.json"
+    },
+    {
+      "name": "bancik",
+      "display_name": "Bancik",
+      "center": {
+        "lat": -2.48441793625337,
+        "lng": 46.73511392976101
+      },
+      "bounds": {
+        "west": 46.72526562976101,
+        "south": -2.4984597362533703,
+        "east": 46.744962229761015,
+        "north": -2.47037613625337
+      },
+      "feature_count": 829,
+      "building_count": 807,
+      "config_file": "citystates/bancik/bancik_config.json"
+    },
+    {
+      "name": "bazujduzeszeg",
+      "display_name": "Bazujduzeszeg",
+      "center": {
+        "lat": -8.322828465513963,
+        "lng": 42.551235622057405
+      },
+      "bounds": {
+        "west": 42.54180602205741,
+        "south": -8.332120065513964,
+        "east": 42.5606652220574,
+        "north": -8.313536865513962
+      },
+      "feature_count": 348,
+      "building_count": 320,
+      "config_file": "citystates/bazujduzeszeg/bazujduzeszeg_config.json"
+    },
+    {
+      "name": "beitsa",
+      "display_name": "Beitsa",
+      "center": {
+        "lat": -36.78797455391916,
+        "lng": 17.555398281997547
+      },
+      "bounds": {
+        "west": 17.544610081997547,
+        "south": -36.80170675391916,
+        "east": 17.566186481997548,
+        "north": -36.77424235391916
+      },
+      "feature_count": 1258,
+      "building_count": 1240,
+      "config_file": "citystates/beitsa/beitsa_config.json"
+    },
+    {
+      "name": "bellikavima",
+      "display_name": "Bellikavima",
+      "center": {
+        "lat": 21.736782999339272,
+        "lng": 2.5679653614605584
+      },
+      "bounds": {
+        "west": 2.5576765614605588,
+        "south": 21.72814169933927,
+        "east": 2.578254161460558,
+        "north": 21.745424299339273
+      },
+      "feature_count": 216,
+      "building_count": 179,
+      "config_file": "citystates/bellikavima/bellikavima_config.json"
+    },
+    {
+      "name": "bernala",
+      "display_name": "Bernala",
+      "center": {
+        "lat": 17.483887662737708,
+        "lng": -31.559909405217752
+      },
+      "bounds": {
+        "west": -31.584168605217755,
+        "south": 17.460786462737705,
+        "east": -31.53565020521775,
+        "north": 17.50698886273771
+      },
+      "feature_count": 5023,
+      "building_count": 4843,
+      "config_file": "citystates/bernala/bernala_config.json"
+    },
+    {
+      "name": "bifjorda",
+      "display_name": "Bifjorda",
+      "center": {
+        "lat": 0.25893036731459484,
+        "lng": 34.879043293951305
+      },
+      "bounds": {
+        "west": 34.8641440939513,
+        "south": 0.2448451673145945,
+        "east": 34.89394249395131,
+        "north": 0.2730155673145952
+      },
+      "feature_count": 1725,
+      "building_count": 1360,
+      "config_file": "citystates/bifjorda/bifjorda_config.json"
+    },
+    {
+      "name": "borgloy",
+      "display_name": "Borgloy",
+      "center": {
+        "lat": 9.915236859409656,
+        "lng": 23.81980081858441
+      },
+      "bounds": {
+        "west": 23.808196218584413,
+        "south": 9.904533259409657,
+        "east": 23.83140541858441,
+        "north": 9.925940459409656
+      },
+      "feature_count": 1142,
+      "building_count": 1017,
+      "config_file": "citystates/borgloy/borgloy_config.json"
+    },
+    {
+      "name": "briarviles",
+      "display_name": "Briarviles",
+      "center": {
+        "lat": 7.714980921120261,
+        "lng": 40.87187406164401
+      },
+      "bounds": {
+        "west": 40.86066706164401,
+        "south": 7.702092921120261,
+        "east": 40.883081061644006,
+        "north": 7.72786892112026
+      },
+      "feature_count": 1286,
+      "building_count": 1191,
+      "config_file": "citystates/briarviles/briarviles_config.json"
+    },
+    {
+      "name": "bungomo",
+      "display_name": "Bungomo",
+      "center": {
+        "lat": 38.898911045967715,
+        "lng": 27.572572402248184
+      },
+      "bounds": {
+        "west": 27.55882520224818,
+        "south": 38.88679784596771,
+        "east": 27.58631960224819,
+        "north": 38.91102424596772
+      },
+      "feature_count": 1330,
+      "building_count": 1244,
+      "config_file": "citystates/bungomo/bungomo_config.json"
+    },
+    {
+      "name": "cajunara",
+      "display_name": "Cajunara",
+      "center": {
+        "lat": -21.130658015592502,
+        "lng": 40.65548819407267
+      },
+      "bounds": {
+        "west": 40.64660079407267,
+        "south": -21.141040415592503,
+        "east": 40.664375594072666,
+        "north": -21.1202756155925
+      },
+      "feature_count": 778,
+      "building_count": 760,
+      "config_file": "citystates/cajunara/cajunara_config.json"
+    },
+    {
+      "name": "castri",
+      "display_name": "Castri",
+      "center": {
+        "lat": 38.110650550255244,
+        "lng": -19.139932504971
+      },
+      "bounds": {
+        "west": -19.159319904971003,
+        "south": 38.086501150255245,
+        "east": -19.120545104970997,
+        "north": 38.13479995025524
+      },
+      "feature_count": 2871,
+      "building_count": 2517,
+      "config_file": "citystates/castri/castri_config.json"
+    },
+    {
+      "name": "chingsan",
+      "display_name": "Chingsan",
+      "center": {
+        "lat": -16.969053880956448,
+        "lng": -29.36819411237775
+      },
+      "bounds": {
+        "west": -29.40750651237775,
+        "south": -17.01114928095645,
+        "east": -29.32888171237775,
+        "north": -16.926958480956447
+      },
+      "feature_count": 13374,
+      "building_count": 13091,
+      "config_file": "citystates/chingsan/chingsan_config.json"
+    },
+    {
+      "name": "chitna",
+      "display_name": "Chitna",
+      "center": {
+        "lat": 22.150567127553487,
+        "lng": -1.4764776689060846
+      },
+      "bounds": {
+        "west": -1.4889204689060846,
+        "south": 22.140215827553487,
+        "east": -1.4640348689060845,
+        "north": 22.160918427553487
+      },
+      "feature_count": 702,
+      "building_count": 671,
+      "config_file": "citystates/chitna/chitna_config.json"
+    },
+    {
+      "name": "darvangor",
+      "display_name": "Darvangor",
+      "center": {
+        "lat": -14.920020638335906,
+        "lng": 6.922115750171243
+      },
+      "bounds": {
+        "west": 6.913367150171243,
+        "south": -14.927579238335907,
+        "east": 6.930864350171244,
+        "north": -14.912462038335905
+      },
+      "feature_count": 453,
+      "building_count": 427,
+      "config_file": "citystates/darvangor/darvangor_config.json"
+    },
+    {
+      "name": "dautong",
+      "display_name": "Dautong",
+      "center": {
+        "lat": -23.70781130265439,
+        "lng": -22.25993601044479
+      },
+      "bounds": {
+        "west": -22.29490961044479,
+        "south": -23.747687902654395,
+        "east": -22.22496241044479,
+        "north": -23.66793470265439
+      },
+      "feature_count": 10268,
+      "building_count": 9443,
+      "config_file": "citystates/dautong/dautong_config.json"
+    },
+    {
+      "name": "doros",
+      "display_name": "Doros",
+      "center": {
+        "lat": 27.336723643959246,
+        "lng": -5.560386395076154
+      },
+      "bounds": {
+        "west": -5.5752769950761545,
+        "south": 27.320739043959243,
+        "east": -5.545495795076154,
+        "north": 27.35270824395925
+      },
+      "feature_count": 1335,
+      "building_count": 1253,
+      "config_file": "citystates/doros/doros_config.json"
+    },
+    {
+      "name": "d\u00fbr-tu",
+      "display_name": "D\u00fbr-Tu",
+      "center": {
+        "lat": 38.13623086187155,
+        "lng": 31.013681007457095
+      },
+      "bounds": {
+        "west": 30.984449507457096,
+        "south": 38.103071861871555,
+        "east": 31.042912507457093,
+        "north": 38.16938986187155
+      },
+      "feature_count": 6497,
+      "building_count": 6470,
+      "config_file": "citystates/d\u00fbr-tu/d\u00fbr-tu_config.json"
+    },
+    {
+      "name": "eliusila",
+      "display_name": "Eliusila",
+      "center": {
+        "lat": -17.216078935658004,
+        "lng": -17.492782445079204
+      },
+      "bounds": {
+        "west": -17.5024694450792,
+        "south": -17.224268935658003,
+        "east": -17.483095445079208,
+        "north": -17.207888935658005
+      },
+      "feature_count": 396,
+      "building_count": 351,
+      "config_file": "citystates/eliusila/eliusila_config.json"
+    },
+    {
+      "name": "eneya",
+      "display_name": "Eneya",
+      "center": {
+        "lat": 40.179080726397565,
+        "lng": 25.67487100698961
+      },
+      "bounds": {
+        "west": 25.65869260698961,
+        "south": 40.162659326397566,
+        "east": 25.691049406989606,
+        "north": 40.195502126397564
+      },
+      "feature_count": 2278,
+      "building_count": 2182,
+      "config_file": "citystates/eneya/eneya_config.json"
+    },
+    {
+      "name": "engar",
+      "display_name": "Engar",
+      "center": {
+        "lat": 7.943627239397415,
+        "lng": 32.824242064266315
+      },
+      "bounds": {
+        "west": 32.79190756426632,
+        "south": 7.908113239397414,
+        "east": 32.85657656426631,
+        "north": 7.979141239397416
+      },
+      "feature_count": 8755,
+      "building_count": 8498,
+      "config_file": "citystates/engar/engar_config.json"
+    },
+    {
+      "name": "enyhazto",
+      "display_name": "Enyhazto",
+      "center": {
+        "lat": -4.329339590108686,
+        "lng": 38.75510898309509
+      },
+      "bounds": {
+        "west": 38.74407318309509,
+        "south": -4.339658890108687,
+        "east": 38.76614478309509,
+        "north": -4.319020290108686
+      },
+      "feature_count": 1099,
+      "building_count": 1011,
+      "config_file": "citystates/enyhazto/enyhazto_config.json"
+    },
+    {
+      "name": "ergoigoibar",
+      "display_name": "Ergoigoibar",
+      "center": {
+        "lat": 40.59730678206669,
+        "lng": -6.957583574063888
+      },
+      "bounds": {
+        "west": -6.968713074063887,
+        "south": 40.58458078206669,
+        "east": -6.9464540740638885,
+        "north": 40.61003278206669
+      },
+      "feature_count": 434,
+      "building_count": 357,
+      "config_file": "citystates/ergoigoibar/ergoigoibar_config.json"
+    },
+    {
+      "name": "euata",
+      "display_name": "Euata",
+      "center": {
+        "lat": -7.0168771721018555,
+        "lng": -0.17512481376935018
+      },
+      "bounds": {
+        "west": -0.1841782137693502,
+        "south": -7.023495072101856,
+        "east": -0.16607141376935017,
+        "north": -7.010259272101855
+      },
+      "feature_count": 244,
+      "building_count": 227,
+      "config_file": "citystates/euata/euata_config.json"
+    },
+    {
+      "name": "fanha",
+      "display_name": "Fanha",
+      "center": {
+        "lat": -32.24942679583702,
+        "lng": 35.41380295622841
+      },
+      "bounds": {
+        "west": 35.39707135622841,
+        "south": -32.26599489583702,
+        "east": 35.43053455622841,
+        "north": -32.23285869583702
+      },
+      "feature_count": 1046,
+      "building_count": 1005,
+      "config_file": "citystates/fanha/fanha_config.json"
+    },
+    {
+      "name": "fibeon",
+      "display_name": "Fibeon",
+      "center": {
+        "lat": -19.378410162576085,
+        "lng": 48.4470185223799
+      },
+      "bounds": {
+        "west": 48.438149522379895,
+        "south": -19.390320162576085,
+        "east": 48.4558875223799,
+        "north": -19.366500162576084
+      },
+      "feature_count": 547,
+      "building_count": 515,
+      "config_file": "citystates/fibeon/fibeon_config.json"
+    },
+    {
+      "name": "fonte",
+      "display_name": "Fonte",
+      "center": {
+        "lat": 18.380100329096734,
+        "lng": -20.58876106215382
+      },
+      "bounds": {
+        "west": -20.59842106215382,
+        "south": 18.372843829096734,
+        "east": -20.57910106215382,
+        "north": 18.387356829096735
+      },
+      "feature_count": 411,
+      "building_count": 367,
+      "config_file": "citystates/fonte/fonte_config.json"
+    },
+    {
+      "name": "gongshan",
+      "display_name": "Gongshan",
+      "center": {
+        "lat": -14.364469522094849,
+        "lng": -20.330998357588975
+      },
+      "bounds": {
+        "west": -20.359784557588974,
+        "south": -14.396273722094849,
+        "east": -20.302212157588976,
+        "north": -14.332665322094849
+      },
+      "feature_count": 6080,
+      "building_count": 5632,
+      "config_file": "citystates/gongshan/gongshan_config.json"
+    },
+    {
+      "name": "guild",
+      "display_name": "Guild",
+      "center": {
+        "lat": -2.7293556051187493,
+        "lng": 57.81652550172143
+      },
+      "bounds": {
+        "west": 57.752218701721425,
+        "south": -2.7877864051187498,
+        "east": 57.88083230172143,
+        "north": -2.670924805118749
+      },
+      "feature_count": 23492,
+      "building_count": 23034,
+      "config_file": "citystates/guild/guild_config.json"
+    },
+    {
+      "name": "gyba",
+      "display_name": "Gyba",
+      "center": {
+        "lat": 37.72477696812649,
+        "lng": -11.953377989514196
+      },
+      "bounds": {
+        "west": -11.990865389514198,
+        "south": 37.689344568126494,
+        "east": -11.915890589514195,
+        "north": 37.76020936812649
+      },
+      "feature_count": 3602,
+      "building_count": 3238,
+      "config_file": "citystates/gyba/gyba_config.json"
+    },
+    {
+      "name": "hajsala",
+      "display_name": "Hajsala",
+      "center": {
+        "lat": -17.117520518935493,
+        "lng": 41.18852741376302
+      },
+      "bounds": {
+        "west": 41.17633121376302,
+        "south": -17.12790021893549,
+        "east": 41.20072361376302,
+        "north": -17.107140818935495
+      },
+      "feature_count": 519,
+      "building_count": 486,
+      "config_file": "citystates/hajsala/hajsala_config.json"
+    },
+    {
+      "name": "harruresh",
+      "display_name": "Harruresh",
+      "center": {
+        "lat": -2.129869630479504,
+        "lng": 53.4818341442245
+      },
+      "bounds": {
+        "west": 53.4622177442245,
+        "south": -2.145910530479503,
+        "east": 53.5014505442245,
+        "north": -2.1138287304795047
+      },
+      "feature_count": 2236,
+      "building_count": 2195,
+      "config_file": "citystates/harruresh/harruresh_config.json"
+    },
+    {
+      "name": "hasamut",
+      "display_name": "Hasamut",
+      "center": {
+        "lat": -36.5630029209824,
+        "lng": -8.83172050402251
+      },
+      "bounds": {
+        "west": -8.85208740402251,
+        "south": -36.5952883209824,
+        "east": -8.811353604022509,
+        "north": -36.5307175209824
+      },
+      "feature_count": 2034,
+      "building_count": 1962,
+      "config_file": "citystates/hasamut/hasamut_config.json"
+    },
+    {
+      "name": "huang",
+      "display_name": "Huang",
+      "center": {
+        "lat": 7.149679189413147,
+        "lng": -19.83654280527507
+      },
+      "bounds": {
+        "west": -19.85281860527507,
+        "south": 7.131590389413148,
+        "east": -19.82026700527507,
+        "north": 7.1677679894131465
+      },
+      "feature_count": 1015,
+      "building_count": 908,
+      "config_file": "citystates/huang/huang_config.json"
+    },
+    {
+      "name": "ian",
+      "display_name": "Ian",
+      "center": {
+        "lat": 29.29054301825828,
+        "lng": 31.260181101936315
+      },
+      "bounds": {
+        "west": 31.255000601936317,
+        "south": 29.28490901825828,
+        "east": 31.265361601936313,
+        "north": 29.29617701825828
+      },
+      "feature_count": 158,
+      "building_count": 143,
+      "config_file": "citystates/ian/ian_config.json"
+    },
+    {
+      "name": "ieye",
+      "display_name": "Ieye",
+      "center": {
+        "lat": -40.05082026388557,
+        "lng": 16.175937400813645
+      },
+      "bounds": {
+        "west": 16.158662100813643,
+        "south": -40.07256906388557,
+        "east": 16.193212700813646,
+        "north": -40.02907146388557
+      },
+      "feature_count": 1702,
+      "building_count": 1644,
+      "config_file": "citystates/ieye/ieye_config.json"
+    },
+    {
+      "name": "iinasia",
+      "display_name": "Iinasia",
+      "center": {
+        "lat": -17.071873059567594,
+        "lng": -8.139663426795149
+      },
+      "bounds": {
+        "west": -8.14730732679515,
+        "south": -17.080638620678712,
+        "east": -8.132019526795148,
+        "north": -17.06310749845647
+      },
+      "feature_count": 348,
+      "building_count": 314,
+      "config_file": "citystates/iinasia/iinasia_config.json"
+    },
+    {
+      "name": "ithemate",
+      "display_name": "Ithemate",
+      "center": {
+        "lat": 34.0056202126517,
+        "lng": -7.919684931917823
+      },
+      "bounds": {
+        "west": -7.950357231917822,
+        "south": 33.9741034126517,
+        "east": -7.889012631917824,
+        "north": 34.0371370126517
+      },
+      "feature_count": 5297,
+      "building_count": 4826,
+      "config_file": "citystates/ithemate/ithemate_config.json"
+    },
+    {
+      "name": "ithiu",
+      "display_name": "Ithiu",
+      "center": {
+        "lat": 34.86689065742345,
+        "lng": -5.067314288552455
+      },
+      "bounds": {
+        "west": -5.080796588552455,
+        "south": 34.84805785742344,
+        "east": -5.053831988552456,
+        "north": 34.88572345742345
+      },
+      "feature_count": 701,
+      "building_count": 663,
+      "config_file": "citystates/ithiu/ithiu_config.json"
+    },
+    {
+      "name": "itia",
+      "display_name": "Itia",
+      "center": {
+        "lat": 43.46088985307448,
+        "lng": 32.16352257636479
+      },
+      "bounds": {
+        "west": 32.148441576364796,
+        "south": 43.44765985307448,
+        "east": 32.178603576364786,
+        "north": 43.47411985307448
+      },
+      "feature_count": 534,
+      "building_count": 499,
+      "config_file": "citystates/itia/itia_config.json"
+    },
+    {
+      "name": "jargeroy",
+      "display_name": "Jargeroy",
+      "center": {
+        "lat": 10.270163809361767,
+        "lng": 40.59405029952385
+      },
+      "bounds": {
+        "west": 40.56929869952385,
+        "south": 10.244870209361766,
+        "east": 40.61880189952385,
+        "north": 10.295457409361768
+      },
+      "feature_count": 2917,
+      "building_count": 2725,
+      "config_file": "citystates/jargeroy/jargeroy_config.json"
+    },
+    {
+      "name": "jeong",
+      "display_name": "Jeong",
+      "center": {
+        "lat": 4.259246829853187,
+        "lng": 54.13635545492818
+      },
+      "bounds": {
+        "west": 54.09619205492818,
+        "south": 4.217406429853188,
+        "east": 54.176518854928176,
+        "north": 4.301087229853186
+      },
+      "feature_count": 14334,
+      "building_count": 13682,
+      "config_file": "citystates/jeong/jeong_config.json"
+    },
+    {
+      "name": "jiafeng",
+      "display_name": "Jiafeng",
+      "center": {
+        "lat": -2.835564376235092,
+        "lng": -34.82645484613189
+      },
+      "bounds": {
+        "west": -34.84943724613189,
+        "south": -2.861156776235092,
+        "east": -34.803472446131885,
+        "north": -2.8099719762350923
+      },
+      "feature_count": 3086,
+      "building_count": 2976,
+      "config_file": "citystates/jiafeng/jiafeng_config.json"
+    },
+    {
+      "name": "jining",
+      "display_name": "Jining",
+      "center": {
+        "lat": 14.165260839340958,
+        "lng": -25.17562381896635
+      },
+      "bounds": {
+        "west": -25.184278218966348,
+        "south": 14.157254939340957,
+        "east": -25.166969418966353,
+        "north": 14.173266739340958
+      },
+      "feature_count": 522,
+      "building_count": 421,
+      "config_file": "citystates/jining/jining_config.json"
+    },
+    {
+      "name": "jinzhou",
+      "display_name": "Jinzhou",
+      "center": {
+        "lat": 10.228997176404045,
+        "lng": -35.892884722894195
+      },
+      "bounds": {
+        "west": -35.913932722894195,
+        "south": 10.207907176404046,
+        "east": -35.871836722894194,
+        "north": 10.250087176404044
+      },
+      "feature_count": 1305,
+      "building_count": 1198,
+      "config_file": "citystates/jinzhou/jinzhou_config.json"
+    },
+    {
+      "name": "jouy",
+      "display_name": "Jouy",
+      "center": {
+        "lat": 13.389857993363973,
+        "lng": 42.33624288191326
+      },
+      "bounds": {
+        "west": 42.31896408191326,
+        "south": 13.375459193363973,
+        "east": 42.35352168191326,
+        "north": 13.404256793363974
+      },
+      "feature_count": 2269,
+      "building_count": 2143,
+      "config_file": "citystates/jouy/jouy_config.json"
+    },
+    {
+      "name": "kikoupaupo",
+      "display_name": "Kikoupaupo",
+      "center": {
+        "lat": -1.1902305511318094,
+        "lng": 50.73965096098733
+      },
+      "bounds": {
+        "west": 50.72968586098734,
+        "south": -1.2039951511318094,
+        "east": 50.74961606098733,
+        "north": -1.1764659511318094
+      },
+      "feature_count": 322,
+      "building_count": 292,
+      "config_file": "citystates/kikoupaupo/kikoupaupo_config.json"
+    },
+    {
+      "name": "kolli",
+      "display_name": "Kolli",
+      "center": {
+        "lat": 26.624924292923087,
+        "lng": 16.56483189492621
+      },
+      "bounds": {
+        "west": 16.543492894926214,
+        "south": 26.60682129292309,
+        "east": 16.58617089492621,
+        "north": 26.643027292923083
+      },
+      "feature_count": 994,
+      "building_count": 919,
+      "config_file": "citystates/kolli/kolli_config.json"
+    },
+    {
+      "name": "korestad",
+      "display_name": "Korestad",
+      "center": {
+        "lat": 8.54248065023399,
+        "lng": 37.98716209595115
+      },
+      "bounds": {
+        "west": 37.966799795951154,
+        "south": 8.52117285023399,
+        "east": 38.007524395951144,
+        "north": 8.563788450233991
+      },
+      "feature_count": 1436,
+      "building_count": 1356,
+      "config_file": "citystates/korestad/korestad_config.json"
+    },
+    {
+      "name": "kudchna",
+      "display_name": "Kudchna",
+      "center": {
+        "lat": 27.138331287654907,
+        "lng": 3.3684705310051353
+      },
+      "bounds": {
+        "west": 3.3559839310051354,
+        "south": 27.126257559877057,
+        "east": 3.380957131005135,
+        "north": 27.150405015432753
+      },
+      "feature_count": 1679,
+      "building_count": 1642,
+      "config_file": "citystates/kudchna/kudchna_config.json"
+    },
+    {
+      "name": "kudina",
+      "display_name": "Kudina",
+      "center": {
+        "lat": 40.9510416710325,
+        "lng": 7.895133729965547
+      },
+      "bounds": {
+        "west": 7.883408429965548,
+        "south": 40.9365198710325,
+        "east": 7.906859029965546,
+        "north": 40.965563471032496
+      },
+      "feature_count": 1214,
+      "building_count": 1153,
+      "config_file": "citystates/kudina/kudina_config.json"
+    },
+    {
+      "name": "kukar",
+      "display_name": "Kukar",
+      "center": {
+        "lat": -10.720120156352355,
+        "lng": -24.34939341684069
+      },
+      "bounds": {
+        "west": -24.36256461684069,
+        "south": -10.728759356352354,
+        "east": -24.336222216840692,
+        "north": -10.711480956352355
+      },
+      "feature_count": 580,
+      "building_count": 542,
+      "config_file": "citystates/kukar/kukar_config.json"
+    },
+    {
+      "name": "kuoruvaa",
+      "display_name": "Kuoruvaa",
+      "center": {
+        "lat": 20.61991267160113,
+        "lng": 14.997023638950855
+      },
+      "bounds": {
+        "west": 14.977149238950854,
+        "south": 20.60389477160113,
+        "east": 15.016898038950856,
+        "north": 20.635930571601133
+      },
+      "feature_count": 2238,
+      "building_count": 2155,
+      "config_file": "citystates/kuoruvaa/kuoruvaa_config.json"
+    },
+    {
+      "name": "kure",
+      "display_name": "Kure",
+      "center": {
+        "lat": 35.64401076920923,
+        "lng": 33.50771138750363
+      },
+      "bounds": {
+        "west": 33.48597038750363,
+        "south": 35.62764676920923,
+        "east": 33.52945238750364,
+        "north": 35.660374769209234
+      },
+      "feature_count": 2051,
+      "building_count": 1932,
+      "config_file": "citystates/kure/kure_config.json"
+    },
+    {
+      "name": "kushimaki",
+      "display_name": "Kushimaki",
+      "center": {
+        "lat": 22.079641841700468,
+        "lng": 50.74253363941081
+      },
+      "bounds": {
+        "west": 50.72671523941081,
+        "south": 22.06056244170047,
+        "east": 50.75835203941081,
+        "north": 22.098721241700467
+      },
+      "feature_count": 923,
+      "building_count": 858,
+      "config_file": "citystates/kushimaki/kushimaki_config.json"
+    },
+    {
+      "name": "kushk",
+      "display_name": "Kushk",
+      "center": {
+        "lat": -27.105342787577875,
+        "lng": -7.352011635332547
+      },
+      "bounds": {
+        "west": -7.366364935332546,
+        "south": -27.123458587577872,
+        "east": -7.337658335332547,
+        "north": -27.08722698757788
+      },
+      "feature_count": 1407,
+      "building_count": 1369,
+      "config_file": "citystates/kushk/kushk_config.json"
+    },
+    {
+      "name": "kyenga",
+      "display_name": "Kyenga",
+      "center": {
+        "lat": 32.20555402096145,
+        "lng": 21.0049236540442
+      },
+      "bounds": {
+        "west": 20.9806514540442,
+        "south": 32.180394820961446,
+        "east": 21.029195854044204,
+        "north": 32.230713220961455
+      },
+      "feature_count": 1748,
+      "building_count": 1658,
+      "config_file": "citystates/kyenga/kyenga_config.json"
+    },
+    {
+      "name": "laizhou",
+      "display_name": "Laizhou",
+      "center": {
+        "lat": 1.8945334270106853,
+        "lng": -22.372540827255207
+      },
+      "bounds": {
+        "west": -22.380621727255207,
+        "south": 1.8848530270106851,
+        "east": -22.364459927255208,
+        "north": 1.9042138270106854
+      },
+      "feature_count": 424,
+      "building_count": 306,
+      "config_file": "citystates/laizhou/laizhou_config.json"
+    },
+    {
+      "name": "likzib",
+      "display_name": "Likzib",
+      "center": {
+        "lat": -37.99513985867712,
+        "lng": 11.508786423933355
+      },
+      "bounds": {
+        "west": 11.494786158548752,
+        "south": -38.004273858677124,
+        "east": 11.522786689317957,
+        "north": -37.98600585867712
+      },
+      "feature_count": 861,
+      "building_count": 812,
+      "config_file": "citystates/likzib/likzib_config.json"
+    },
+    {
+      "name": "luquti",
+      "display_name": "Luquti",
+      "center": {
+        "lat": -24.63350823813601,
+        "lng": 45.688277828593534
+      },
+      "bounds": {
+        "west": 45.668858828593535,
+        "south": -24.65115123813601,
+        "east": 45.707696828593534,
+        "north": -24.61586523813601
+      },
+      "feature_count": 1063,
+      "building_count": 1022,
+      "config_file": "citystates/luquti/luquti_config.json"
+    },
+    {
+      "name": "mahyapak",
+      "display_name": "Mahyapak",
+      "center": {
+        "lat": -12.84468212535795,
+        "lng": 53.25759897111966
+      },
+      "bounds": {
+        "west": 53.20784477111966,
+        "south": -12.911217325357951,
+        "east": 53.307353171119665,
+        "north": -12.77814692535795
+      },
+      "feature_count": 25549,
+      "building_count": 22833,
+      "config_file": "citystates/mahyapak/mahyapak_config.json"
+    },
+    {
+      "name": "makad",
+      "display_name": "Makad",
+      "center": {
+        "lat": -30.86441966247696,
+        "lng": -18.385452090317724
+      },
+      "bounds": {
+        "west": -18.400096890317723,
+        "south": -30.874479462476955,
+        "east": -18.370807290317725,
+        "north": -30.85435986247696
+      },
+      "feature_count": 1092,
+      "building_count": 1056,
+      "config_file": "citystates/makad/makad_config.json"
+    },
+    {
+      "name": "malveiba",
+      "display_name": "Malveiba",
+      "center": {
+        "lat": -34.43213680720839,
+        "lng": 31.90267074406661
+      },
+      "bounds": {
+        "west": 31.88530664406661,
+        "south": -34.44984040720839,
+        "east": 31.920034844066613,
+        "north": -34.41443320720838
+      },
+      "feature_count": 761,
+      "building_count": 715,
+      "config_file": "citystates/malveiba/malveiba_config.json"
+    },
+    {
+      "name": "mbale",
+      "display_name": "Mbale",
+      "center": {
+        "lat": 33.772217222091506,
+        "lng": 26.532228308308003
+      },
+      "bounds": {
+        "west": 26.523053208308,
+        "south": 33.7620196220915,
+        "east": 26.541403408308007,
+        "north": 33.78241482209151
+      },
+      "feature_count": 346,
+      "building_count": 316,
+      "config_file": "citystates/mbale/mbale_config.json"
+    },
+    {
+      "name": "mernah",
+      "display_name": "Mernah",
+      "center": {
+        "lat": -38.269335328828156,
+        "lng": 4.415734839967192
+      },
+      "bounds": {
+        "west": 4.404945639967193,
+        "south": -38.279189528828155,
+        "east": 4.426524039967192,
+        "north": -38.259481128828156
+      },
+      "feature_count": 710,
+      "building_count": 676,
+      "config_file": "citystates/mernah/mernah_config.json"
+    },
+    {
+      "name": "mevus",
+      "display_name": "Mevus",
+      "center": {
+        "lat": -37.61197817625078,
+        "lng": -3.6108728242140757
+      },
+      "bounds": {
+        "west": -3.621198324214076,
+        "south": -37.62512117625078,
+        "east": -3.6005473242140753,
+        "north": -37.59883517625078
+      },
+      "feature_count": 598,
+      "building_count": 559,
+      "config_file": "citystates/mevus/mevus_config.json"
+    },
+    {
+      "name": "mical",
+      "display_name": "Mical",
+      "center": {
+        "lat": -37.23042770125722,
+        "lng": 40.76928576122434
+      },
+      "bounds": {
+        "west": 40.74317196122434,
+        "south": -37.25166600125723,
+        "east": 40.795399561224336,
+        "north": -37.20918940125721
+      },
+      "feature_count": 1510,
+      "building_count": 1429,
+      "config_file": "citystates/mical/mical_config.json"
+    },
+    {
+      "name": "mintenomarci",
+      "display_name": "Mintenomarci",
+      "center": {
+        "lat": 16.63702523267481,
+        "lng": -6.680244311105771
+      },
+      "bounds": {
+        "west": -6.696146111105771,
+        "south": 16.624384432674812,
+        "east": -6.6643425111057715,
+        "north": 16.649666032674805
+      },
+      "feature_count": 1329,
+      "building_count": 1281,
+      "config_file": "citystates/mintenomarci/mintenomarci_config.json"
+    },
+    {
+      "name": "modurelius",
+      "display_name": "Modurelius",
+      "center": {
+        "lat": -9.431579818516013,
+        "lng": -14.449648907079933
+      },
+      "bounds": {
+        "west": -14.457773007079933,
+        "south": -9.440835418516015,
+        "east": -14.441524807079933,
+        "north": -9.422324218516012
+      },
+      "feature_count": 194,
+      "building_count": 174,
+      "config_file": "citystates/modurelius/modurelius_config.json"
+    },
+    {
+      "name": "mohi",
+      "display_name": "Mohi",
+      "center": {
+        "lat": -1.6782549953352504,
+        "lng": 47.88790437345901
+      },
+      "bounds": {
+        "west": 47.87301737345901,
+        "south": -1.6937199953352506,
+        "east": 47.90279137345901,
+        "north": -1.66278999533525
+      },
+      "feature_count": 1475,
+      "building_count": 1369,
+      "config_file": "citystates/mohi/mohi_config.json"
+    },
+    {
+      "name": "moki",
+      "display_name": "Moki",
+      "center": {
+        "lat": 25.11440950713587,
+        "lng": 47.84035391678898
+      },
+      "bounds": {
+        "west": 47.835968016788975,
+        "south": 25.10998210713587,
+        "east": 47.84473981678898,
+        "north": 25.118836907135872
+      },
+      "feature_count": 115,
+      "building_count": 96,
+      "config_file": "citystates/moki/moki_config.json"
+    },
+    {
+      "name": "monte",
+      "display_name": "Monte",
+      "center": {
+        "lat": 36.376301697995295,
+        "lng": -21.9007095970655
+      },
+      "bounds": {
+        "west": -21.923609797065502,
+        "south": 36.3557914979953,
+        "east": -21.877809397065498,
+        "north": 36.39681189799529
+      },
+      "feature_count": 3062,
+      "building_count": 2922,
+      "config_file": "citystates/monte/monte_config.json"
+    },
+    {
+      "name": "motu",
+      "display_name": "Motu",
+      "center": {
+        "lat": 11.778077920760419,
+        "lng": 49.1676996289935
+      },
+      "bounds": {
+        "west": 49.14811442899351,
+        "south": 11.758706220760418,
+        "east": 49.1872848289935,
+        "north": 11.79744962076042
+      },
+      "feature_count": 2217,
+      "building_count": 2056,
+      "config_file": "citystates/motu/motu_config.json"
+    },
+    {
+      "name": "murmium",
+      "display_name": "Murmium",
+      "center": {
+        "lat": -5.845305002697056,
+        "lng": -4.671276274065731
+      },
+      "bounds": {
+        "west": -4.687539274065731,
+        "south": -5.854245002697056,
+        "east": -4.65501327406573,
+        "north": -5.836365002697056
+      },
+      "feature_count": 535,
+      "building_count": 507,
+      "config_file": "citystates/murmium/murmium_config.json"
+    },
+    {
+      "name": "nyirfalmasle",
+      "display_name": "Nyirfalmasle",
+      "center": {
+        "lat": -1.0095997236186398,
+        "lng": 26.942092780352475
+      },
+      "bounds": {
+        "west": 26.927560380352478,
+        "south": -1.0262821236186397,
+        "east": 26.95662518035247,
+        "north": -0.9929173236186397
+      },
+      "feature_count": 527,
+      "building_count": 485,
+      "config_file": "citystates/nyirfalmasle/nyirfalmasle_config.json"
+    },
+    {
+      "name": "oatue",
+      "display_name": "Oatue",
+      "center": {
+        "lat": -37.95493395619363,
+        "lng": 2.413394279620037
+      },
+      "bounds": {
+        "west": 2.3989887796200375,
+        "south": -37.971901956193626,
+        "east": 2.427799779620037,
+        "north": -37.93796595619363
+      },
+      "feature_count": 1168,
+      "building_count": 1121,
+      "config_file": "citystates/oatue/oatue_config.json"
+    },
+    {
+      "name": "orve",
+      "display_name": "Orve",
+      "center": {
+        "lat": 24.219231697589095,
+        "lng": -17.39093742633445
+      },
+      "bounds": {
+        "west": -17.400824226334446,
+        "south": 24.20912722066608,
+        "east": -17.381050626334453,
+        "north": 24.229336174512113
+      },
+      "feature_count": 1163,
+      "building_count": 1105,
+      "config_file": "citystates/orve/orve_config.json"
+    },
+    {
+      "name": "otety",
+      "display_name": "Otety",
+      "center": {
+        "lat": 24.056008466846812,
+        "lng": -6.739528056024984
+      },
+      "bounds": {
+        "west": -6.745434456024984,
+        "south": 24.049322066846813,
+        "east": -6.733621656024983,
+        "north": 24.06269486684681
+      },
+      "feature_count": 137,
+      "building_count": 117,
+      "config_file": "citystates/otety/otety_config.json"
+    },
+    {
+      "name": "ottengenburg",
+      "display_name": "Ottengenburg",
+      "center": {
+        "lat": 10.584822806695893,
+        "lng": 56.12601710763831
+      },
+      "bounds": {
+        "west": 56.105265507638315,
+        "south": 10.566940706695895,
+        "east": 56.14676870763831,
+        "north": 10.602704906695891
+      },
+      "feature_count": 2007,
+      "building_count": 1911,
+      "config_file": "citystates/ottengenburg/ottengenburg_config.json"
+    },
+    {
+      "name": "ouiar",
+      "display_name": "Ouiar",
+      "center": {
+        "lat": -27.26159965373598,
+        "lng": -8.77029439810708
+      },
+      "bounds": {
+        "west": -8.792199798107081,
+        "south": -27.279013553735982,
+        "east": -8.748388998107078,
+        "north": -27.24418575373598
+      },
+      "feature_count": 1381,
+      "building_count": 1250,
+      "config_file": "citystates/ouiar/ouiar_config.json"
+    },
+    {
+      "name": "palwede",
+      "display_name": "Palwede",
+      "center": {
+        "lat": 42.03478154002225,
+        "lng": 25.675390091450137
+      },
+      "bounds": {
+        "west": 25.63644349145014,
+        "south": 42.00097544002225,
+        "east": 25.714336691450132,
+        "north": 42.06858764002225
+      },
+      "feature_count": 10647,
+      "building_count": 10187,
+      "config_file": "citystates/palwede/palwede_config.json"
+    },
+    {
+      "name": "patrellasa",
+      "display_name": "Patrellasa",
+      "center": {
+        "lat": 13.336495566294928,
+        "lng": -11.44107888410524
+      },
+      "bounds": {
+        "west": -11.461735084105241,
+        "south": 13.318711366294927,
+        "east": -11.420422684105239,
+        "north": 13.35427976629493
+      },
+      "feature_count": 2033,
+      "building_count": 1960,
+      "config_file": "citystates/patrellasa/patrellasa_config.json"
+    },
+    {
+      "name": "phoelit",
+      "display_name": "Phoelit",
+      "center": {
+        "lat": -31.678749080666794,
+        "lng": 18.984728750156428
+      },
+      "bounds": {
+        "west": 18.96028835015643,
+        "south": -31.702036480666795,
+        "east": 19.009169150156428,
+        "north": -31.655461680666793
+      },
+      "feature_count": 4877,
+      "building_count": 4403,
+      "config_file": "citystates/phoelit/phoelit_config.json"
+    },
+    {
+      "name": "pigna",
+      "display_name": "Pigna",
+      "center": {
+        "lat": 22.106215030529928,
+        "lng": -14.098011480332264
+      },
+      "bounds": {
+        "west": -14.110495680332265,
+        "south": 22.094582830529927,
+        "east": -14.085527280332263,
+        "north": 22.11784723052993
+      },
+      "feature_count": 1079,
+      "building_count": 1053,
+      "config_file": "citystates/pigna/pigna_config.json"
+    },
+    {
+      "name": "pinkang",
+      "display_name": "Pinkang",
+      "center": {
+        "lat": -5.781686000245193,
+        "lng": -29.481909142539514
+      },
+      "bounds": {
+        "west": -29.495075542539514,
+        "south": -5.800576400245192,
+        "east": -29.468742742539515,
+        "north": -5.762795600245194
+      },
+      "feature_count": 869,
+      "building_count": 837,
+      "config_file": "citystates/pinkang/pinkang_config.json"
+    },
+    {
+      "name": "pogliaferte",
+      "display_name": "Pogliaferte",
+      "center": {
+        "lat": 34.80828140090046,
+        "lng": -25.288663262920682
+      },
+      "bounds": {
+        "west": -25.301302862920686,
+        "south": 34.792950800900456,
+        "east": -25.27602366292068,
+        "north": 34.82361200090047
+      },
+      "feature_count": 907,
+      "building_count": 830,
+      "config_file": "citystates/pogliaferte/pogliaferte_config.json"
+    },
+    {
+      "name": "pornoli",
+      "display_name": "Pornoli",
+      "center": {
+        "lat": -14.140353734350631,
+        "lng": -9.535565304396204
+      },
+      "bounds": {
+        "west": -9.555233904396204,
+        "south": -14.15650383435063,
+        "east": -9.515896704396205,
+        "north": -14.124203634350632
+      },
+      "feature_count": 3214,
+      "building_count": 3006,
+      "config_file": "citystates/pornoli/pornoli_config.json"
+    },
+    {
+      "name": "pranos",
+      "display_name": "Pranos",
+      "center": {
+        "lat": 25.232474762917306,
+        "lng": -26.807446083644393
+      },
+      "bounds": {
+        "west": -26.84941188364439,
+        "south": 25.194828462917307,
+        "east": -26.765480283644397,
+        "north": 25.270121062917305
+      },
+      "feature_count": 11853,
+      "building_count": 11431,
+      "config_file": "citystates/pranos/pranos_config.json"
+    },
+    {
+      "name": "rambedamkur",
+      "display_name": "Rambedamkur",
+      "center": {
+        "lat": 32.763887321692316,
+        "lng": 13.230519522497369
+      },
+      "bounds": {
+        "west": 13.210225122497368,
+        "south": 32.73894292169232,
+        "east": 13.25081392249737,
+        "north": 32.78883172169231
+      },
+      "feature_count": 1158,
+      "building_count": 1093,
+      "config_file": "citystates/rambedamkur/rambedamkur_config.json"
+    },
+    {
+      "name": "regoes",
+      "display_name": "Regoes",
+      "center": {
+        "lat": -38.65404198694452,
+        "lng": 35.77717186471581
+      },
+      "bounds": {
+        "west": 35.76773796471581,
+        "south": -38.664526386944516,
+        "east": 35.78660576471581,
+        "north": -38.643557586944524
+      },
+      "feature_count": 463,
+      "building_count": 436,
+      "config_file": "citystates/regoes/regoes_config.json"
+    },
+    {
+      "name": "reriro",
+      "display_name": "Reriro",
+      "center": {
+        "lat": -39.7078513843948,
+        "lng": 28.270528574355737
+      },
+      "bounds": {
+        "west": 28.252497974355737,
+        "south": -39.72392098439481,
+        "east": 28.288559174355736,
+        "north": -39.69178178439479
+      },
+      "feature_count": 2309,
+      "building_count": 2232,
+      "config_file": "citystates/reriro/reriro_config.json"
+    },
+    {
+      "name": "riroku",
+      "display_name": "Riroku",
+      "center": {
+        "lat": 34.111945677543126,
+        "lng": 40.56023659965516
+      },
+      "bounds": {
+        "west": 40.53908959965516,
+        "south": 34.096556677543134,
+        "east": 40.58138359965516,
+        "north": 34.12733467754312
+      },
+      "feature_count": 1841,
+      "building_count": 1735,
+      "config_file": "citystates/riroku/riroku_config.json"
+    },
+    {
+      "name": "roparia",
+      "display_name": "Roparia",
+      "center": {
+        "lat": -23.634764985247646,
+        "lng": 47.543231234113904
+      },
+      "bounds": {
+        "west": 47.5361092341139,
+        "south": -23.639251485247645,
+        "east": 47.550353234113906,
+        "north": -23.630278485247647
+      },
+      "feature_count": 151,
+      "building_count": 131,
+      "config_file": "citystates/roparia/roparia_config.json"
+    },
+    {
+      "name": "sa",
+      "display_name": "Sa",
+      "center": {
+        "lat": -21.540975754342124,
+        "lng": -27.697990652864284
+      },
+      "bounds": {
+        "west": -27.70892205286428,
+        "south": -21.55091915434212,
+        "east": -27.687059252864287,
+        "north": -21.531032354342127
+      },
+      "feature_count": 483,
+      "building_count": 434,
+      "config_file": "citystates/sa/sa_config.json"
+    },
+    {
+      "name": "sera",
+      "display_name": "Sera",
+      "center": {
+        "lat": 2.0522618017638177,
+        "lng": -21.695618480711524
+      },
+      "bounds": {
+        "west": -21.712330880711527,
+        "south": 2.0343254017638177,
+        "east": -21.67890608071152,
+        "north": 2.0701982017638176
+      },
+      "feature_count": 1205,
+      "building_count": 941,
+      "config_file": "citystates/sera/sera_config.json"
+    },
+    {
+      "name": "shaxing",
+      "display_name": "Shaxing",
+      "center": {
+        "lat": -0.27550609355134126,
+        "lng": -28.733574574884667
+      },
+      "bounds": {
+        "west": -28.75623957488467,
+        "south": -0.29373759355134155,
+        "east": -28.710909574884663,
+        "north": -0.2572745935513409
+      },
+      "feature_count": 2981,
+      "building_count": 2692,
+      "config_file": "citystates/shaxing/shaxing_config.json"
+    },
+    {
+      "name": "shfanaan",
+      "display_name": "Shfanaan",
+      "center": {
+        "lat": -31.438061941594857,
+        "lng": -14.435491582479235
+      },
+      "bounds": {
+        "west": -14.457838482479234,
+        "south": -31.46229834159486,
+        "east": -14.413144682479237,
+        "north": -31.413825541594854
+      },
+      "feature_count": 4318,
+      "building_count": 4080,
+      "config_file": "citystates/shfanaan/shfanaan_config.json"
+    },
+    {
+      "name": "shma",
+      "display_name": "Shma",
+      "center": {
+        "lat": -16.645848093158772,
+        "lng": 41.04285488758789
+      },
+      "bounds": {
+        "west": 41.0300535875879,
+        "south": -16.66040289315877,
+        "east": 41.055656187587886,
+        "north": -16.631293293158773
+      },
+      "feature_count": 920,
+      "building_count": 887,
+      "config_file": "citystates/shma/shma_config.json"
+    },
+    {
+      "name": "sobriro",
+      "display_name": "Sobriro",
+      "center": {
+        "lat": -32.08581013719913,
+        "lng": 41.92836771031653
+      },
+      "bounds": {
+        "west": 41.916709710316525,
+        "south": -32.09833513719913,
+        "east": 41.94002571031653,
+        "north": -32.073285137199136
+      },
+      "feature_count": 518,
+      "building_count": 493,
+      "config_file": "citystates/sobriro/sobriro_config.json"
+    },
+    {
+      "name": "sunker",
+      "display_name": "Sunker",
+      "center": {
+        "lat": 7.741018735849136,
+        "lng": 24.7858939726184
+      },
+      "bounds": {
+        "west": 24.7639851726184,
+        "south": 7.7126609358491365,
+        "east": 24.8078027726184,
+        "north": 7.769376535849135
+      },
+      "feature_count": 4276,
+      "building_count": 4093,
+      "config_file": "citystates/sunker/sunker_config.json"
+    },
+    {
+      "name": "szargony",
+      "display_name": "Szargony",
+      "center": {
+        "lat": -11.191166957084743,
+        "lng": 34.91497059257488
+      },
+      "bounds": {
+        "west": 34.908968392574884,
+        "south": -11.198158157084745,
+        "east": 34.92097279257488,
+        "north": -11.184175757084741
+      },
+      "feature_count": 296,
+      "building_count": 271,
+      "config_file": "citystates/szargony/szargony_config.json"
+    },
+    {
+      "name": "tasa",
+      "display_name": "Tasa",
+      "center": {
+        "lat": 28.265661992333346,
+        "lng": 44.675514914748256
+      },
+      "bounds": {
+        "west": 44.653243514748254,
+        "south": 28.24458759233335,
+        "east": 44.69778631474826,
+        "north": 28.286736392333342
+      },
+      "feature_count": 2338,
+      "building_count": 2247,
+      "config_file": "citystates/tasa/tasa_config.json"
+    },
+    {
+      "name": "tetonykut",
+      "display_name": "Tetonykut",
+      "center": {
+        "lat": -18.91878443826067,
+        "lng": 50.24469909004634
+      },
+      "bounds": {
+        "west": 50.23531979004634,
+        "south": -18.928878238260666,
+        "east": 50.25407839004634,
+        "north": -18.908690638260673
+      },
+      "feature_count": 762,
+      "building_count": 711,
+      "config_file": "citystates/tetonykut/tetonykut_config.json"
+    },
+    {
+      "name": "teveh",
+      "display_name": "Teveh",
+      "center": {
+        "lat": 11.420651328150202,
+        "lng": 53.89283102516703
+      },
+      "bounds": {
+        "west": 53.87858322516703,
+        "south": 11.4037685281502,
+        "east": 53.90707882516703,
+        "north": 11.437534128150203
+      },
+      "feature_count": 1120,
+      "building_count": 1053,
+      "config_file": "citystates/teveh/teveh_config.json"
+    },
+    {
+      "name": "tisvarmend",
+      "display_name": "Tisvarmend",
+      "center": {
+        "lat": -8.755103659980238,
+        "lng": 32.21550873590403
+      },
+      "bounds": {
+        "west": 32.206797935904035,
+        "south": -8.762079573616596,
+        "east": 32.22421953590403,
+        "north": -8.74812774634388
+      },
+      "feature_count": 519,
+      "building_count": 492,
+      "config_file": "citystates/tisvarmend/tisvarmend_config.json"
+    },
+    {
+      "name": "tlida",
+      "display_name": "Tlida",
+      "center": {
+        "lat": -3.4486960610594792,
+        "lng": 56.75951969933803
+      },
+      "bounds": {
+        "west": 56.74520139933803,
+        "south": -3.465248861059479,
+        "east": 56.77383799933803,
+        "north": -3.4321432610594793
+      },
+      "feature_count": 1008,
+      "building_count": 971,
+      "config_file": "citystates/tlida/tlida_config.json"
+    },
+    {
+      "name": "tonkhanhad",
+      "display_name": "Tonkhanhad",
+      "center": {
+        "lat": -21.159232525121716,
+        "lng": 13.90395434547058
+      },
+      "bounds": {
+        "west": 13.88258354547058,
+        "south": -21.180215825121714,
+        "east": 13.925325145470582,
+        "north": -21.13824922512172
+      },
+      "feature_count": 2088,
+      "building_count": 1925,
+      "config_file": "citystates/tonkhanhad/tonkhanhad_config.json"
+    },
+    {
+      "name": "tsanghom",
+      "display_name": "Tsanghom",
+      "center": {
+        "lat": -17.57480774058338,
+        "lng": -19.523937536019826
+      },
+      "bounds": {
+        "west": -19.542158336019828,
+        "south": -17.58745204058338,
+        "east": -19.505716736019824,
+        "north": -17.562163440583383
+      },
+      "feature_count": 944,
+      "building_count": 812,
+      "config_file": "citystates/tsanghom/tsanghom_config.json"
+    },
+    {
+      "name": "tsin",
+      "display_name": "Tsin",
+      "center": {
+        "lat": -14.915387319294776,
+        "lng": -23.977582575994926
+      },
+      "bounds": {
+        "west": -23.99514757599493,
+        "south": -14.929185319294776,
+        "east": -23.96001757599492,
+        "north": -14.901589319294777
+      },
+      "feature_count": 1710,
+      "building_count": 1666,
+      "config_file": "citystates/tsin/tsin_config.json"
+    },
+    {
+      "name": "ubahmia",
+      "display_name": "Ubahmia",
+      "center": {
+        "lat": -11.201799233741147,
+        "lng": 50.2599093854888
+      },
+      "bounds": {
+        "west": 50.2449951854888,
+        "south": -11.212481433741146,
+        "east": 50.2748235854888,
+        "north": -11.191117033741147
+      },
+      "feature_count": 518,
+      "building_count": 479,
+      "config_file": "citystates/ubahmia/ubahmia_config.json"
+    },
+    {
+      "name": "uiaria",
+      "display_name": "Uiaria",
+      "center": {
+        "lat": -29.57606730130688,
+        "lng": 47.46950653806983
+      },
+      "bounds": {
+        "west": 47.45736283806983,
+        "south": -29.593558501306884,
+        "east": 47.48165023806983,
+        "north": -29.55857610130688
+      },
+      "feature_count": 804,
+      "building_count": 761,
+      "config_file": "citystates/uiaria/uiaria_config.json"
+    },
+    {
+      "name": "urir",
+      "display_name": "Urir",
+      "center": {
+        "lat": -21.679795053729986,
+        "lng": 13.513201365775668
+      },
+      "bounds": {
+        "west": 13.496788365775668,
+        "south": -21.69380505372999,
+        "east": 13.529614365775668,
+        "north": -21.665785053729984
+      },
+      "feature_count": 868,
+      "building_count": 828,
+      "config_file": "citystates/urir/urir_config.json"
+    },
+    {
+      "name": "uyaria",
+      "display_name": "Uyaria",
+      "center": {
+        "lat": 13.582256247119723,
+        "lng": 37.54873196961355
+      },
+      "bounds": {
+        "west": 37.54081336961355,
+        "south": 13.573636647119724,
+        "east": 37.556650569613545,
+        "north": 13.590875847119722
+      },
+      "feature_count": 359,
+      "building_count": 322,
+      "config_file": "citystates/uyaria/uyaria_config.json"
+    },
+    {
+      "name": "valvi",
+      "display_name": "Valvi",
+      "center": {
+        "lat": 26.384961502728896,
+        "lng": 25.885482487392395
+      },
+      "bounds": {
+        "west": 25.875194287392393,
+        "south": 26.376348302728896,
+        "east": 25.895770687392396,
+        "north": 26.393574702728895
+      },
+      "feature_count": 477,
+      "building_count": 451,
+      "config_file": "citystates/valvi/valvi_config.json"
+    },
+    {
+      "name": "vea",
+      "display_name": "Vea",
+      "center": {
+        "lat": 9.109269283512564,
+        "lng": 56.269483905040396
+      },
+      "bounds": {
+        "west": 56.25959600504039,
+        "south": 9.098367883512564,
+        "east": 56.2793718050404,
+        "north": 9.120170683512564
+      },
+      "feature_count": 722,
+      "building_count": 686,
+      "config_file": "citystates/vea/vea_config.json"
+    },
+    {
+      "name": "veren",
+      "display_name": "Veren",
+      "center": {
+        "lat": -18.439376800676662,
+        "lng": 3.4057040300284513
+      },
+      "bounds": {
+        "west": 3.3855932300284515,
+        "south": -18.450061600676662,
+        "east": 3.425814830028451,
+        "north": -18.428692000676662
+      },
+      "feature_count": 614,
+      "building_count": 570,
+      "config_file": "citystates/veren/veren_config.json"
+    },
+    {
+      "name": "vialiranave",
+      "display_name": "Vialiranave",
+      "center": {
+        "lat": -33.694908464875425,
+        "lng": 27.82786300596497
+      },
+      "bounds": {
+        "west": 27.807938505964973,
+        "south": -33.72003646487542,
+        "east": 27.84778750596497,
+        "north": -33.66978046487543
+      },
+      "feature_count": 3179,
+      "building_count": 2997,
+      "config_file": "citystates/vialiranave/vialiranave_config.json"
+    },
+    {
+      "name": "vul",
+      "display_name": "Vul",
+      "center": {
+        "lat": 21.47200301774818,
+        "lng": 50.40424318438605
+      },
+      "bounds": {
+        "west": 50.38880048438604,
+        "south": 21.455756817748174,
+        "east": 50.419685884386055,
+        "north": 21.488249217748184
+      },
+      "feature_count": 2052,
+      "building_count": 1942,
+      "config_file": "citystates/vul/vul_config.json"
+    },
+    {
+      "name": "waishan",
+      "display_name": "Waishan",
+      "center": {
+        "lat": -11.83990481487535,
+        "lng": -33.65348274652992
+      },
+      "bounds": {
+        "west": -33.66229024652992,
+        "south": -11.853272814875352,
+        "east": -33.644675246529914,
+        "north": -11.826536814875348
+      },
+      "feature_count": 344,
+      "building_count": 314,
+      "config_file": "citystates/waishan/waishan_config.json"
+    },
+    {
+      "name": "zadardelen",
+      "display_name": "Zadardelen",
+      "center": {
+        "lat": -25.646772698857028,
+        "lng": 14.577048515717802
+      },
+      "bounds": {
+        "west": 14.539449515717802,
+        "south": -25.681766698857025,
+        "east": 14.614647515717802,
+        "north": -25.61177869885703
+      },
+      "feature_count": 12375,
+      "building_count": 11710,
+      "config_file": "citystates/zadardelen/zadardelen_config.json"
+    },
+    {
+      "name": "zidesun",
+      "display_name": "Zidesun",
+      "center": {
+        "lat": -9.252233888189329,
+        "lng": 49.74332827935605
+      },
+      "bounds": {
+        "west": 49.72743187935605,
+        "south": -9.266559288189328,
+        "east": 49.75922467935605,
+        "north": -9.23790848818933
+      },
+      "feature_count": 1574,
+      "building_count": 1479,
+      "config_file": "citystates/zidesun/zidesun_config.json"
+    }
+  ],
+  "total_count": 133,
+  "created": "2025-09-21 09:00:02",
+  "version": "1.0"
+}

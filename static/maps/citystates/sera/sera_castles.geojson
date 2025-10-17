@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -21.683592380711442,
+              2.0650362017638164
+            ],
+            [
+              -21.682823980711436,
+              2.0662240017638167
+            ],
+            [
+              -21.68132988071144,
+              2.065257401763817
+            ],
+            [
+              -21.681595680711435,
+              2.0648466017638167
+            ],
+            [
+              -21.68228608071144,
+              2.065293301763816
+            ],
+            [
+              -21.682478480711442,
+              2.0649960017638165
+            ],
+            [
+              -21.68291048071144,
+              2.065275501763816
+            ],
+            [
+              -21.68322078071144,
+              2.0647958017638164
+            ],
+            [
+              -21.683592380711442,
+              2.0650362017638164
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "sera.geojson_fixed.geojson_poly_castle",
+        "age": 623,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "sera"
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "citystate": "doros",
+  "display_name": "Doros",
+  "bounds": {
+    "west": -5.5752769950761545,
+    "south": 27.320739043959243,
+    "east": -5.545495795076154,
+    "north": 27.35270824395925
+  },
+  "center": {
+    "lat": 27.336723643959246,
+    "lng": -5.560386395076154
+  },
+  "castle_position": {
+    "lat": 27.332264959343732,
+    "lng": -5.554346279691503
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1253,
+    "districts": 6,
+    "castles": 1,
+    "towers": 22,
+    "walls": 1,
+    "fields": 14,
+    "trees": 38
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1253,
+      "types": {
+        "residential": 1224,
+        "other": 26,
+        "industrial": 3
+      },
+      "total_occupants": 6444,
+      "avg_occupants": 5.142857142857143,
+      "avg_floors": 1.8188347964884277
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Artists District",
+        "Mistfall Lodge",
+        "Twilight Vale",
+        "Castle Ward",
+        "Merchants District",
+        "Blue Borough"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 22
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    },
+    "trees": {
+      "count": 38
+    }
+  },
+  "layers": {
+    "base_map": "citystates/doros/doros_map.png",
+    "vector_data": {
+      "buildings": "citystates/doros/doros_buildings.geojson",
+      "districts": "citystates/doros/doros_districts.geojson",
+      "castles": "citystates/doros/doros_castles.geojson",
+      "towers": "citystates/doros/doros_towers.geojson",
+      "walls": "citystates/doros/doros_walls.geojson",
+      "fields": "citystates/doros/doros_fields.geojson",
+      "trees": "citystates/doros/doros_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:27",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/doros_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/doros"
+    }
+  }
+}

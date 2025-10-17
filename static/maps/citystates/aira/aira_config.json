@@ -1,0 +1,89 @@
+{
+  "citystate": "aira",
+  "display_name": "Aira",
+  "bounds": {
+    "west": 14.206582446818473,
+    "south": 18.110908429333627,
+    "east": 14.224239446818473,
+    "north": 18.129802429333623
+  },
+  "center": {
+    "lat": 18.120355429333625,
+    "lng": 14.215410946818473
+  },
+  "castle_position": {
+    "lat": 18.125858543619316,
+    "lng": 14.21321504681847
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 595,
+    "districts": 5,
+    "castles": 1,
+    "towers": 24,
+    "walls": 1,
+    "fields": 11,
+    "trees": 50
+  },
+  "statistics": {
+    "buildings": {
+      "count": 595,
+      "types": {
+        "other": 224,
+        "residential": 371
+      },
+      "total_occupants": 3165,
+      "avg_occupants": 5.319327731092437,
+      "avg_floors": 1.9092436974789917
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "West Slums",
+        "Castle Ward",
+        "Whitegate",
+        "New Arch",
+        "Starwind"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 24
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    },
+    "trees": {
+      "count": 50
+    }
+  },
+  "layers": {
+    "base_map": "citystates/aira/aira_map.png",
+    "vector_data": {
+      "buildings": "citystates/aira/aira_buildings.geojson",
+      "districts": "citystates/aira/aira_districts.geojson",
+      "castles": "citystates/aira/aira_castles.geojson",
+      "towers": "citystates/aira/aira_towers.geojson",
+      "walls": "citystates/aira/aira_walls.geojson",
+      "fields": "citystates/aira/aira_fields.geojson",
+      "trees": "citystates/aira/aira_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:01",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/aira.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/aira"
+    }
+  }
+}

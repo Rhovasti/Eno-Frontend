@@ -1,0 +1,97 @@
+{
+  "citystate": "vialiranave",
+  "display_name": "Vialiranave",
+  "bounds": {
+    "west": 27.807938505964973,
+    "south": -33.72003646487542,
+    "east": 27.84778750596497,
+    "north": -33.66978046487543
+  },
+  "center": {
+    "lat": -33.694908464875425,
+    "lng": 27.82786300596497
+  },
+  "castle_position": {
+    "lat": -33.69803678709766,
+    "lng": 27.831157228187266
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2997,
+    "districts": 12,
+    "castles": 1,
+    "towers": 19,
+    "walls": 1,
+    "fields": 15,
+    "trees": 134
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2997,
+      "types": {
+        "commercial": 529,
+        "other": 400,
+        "residential": 2068
+      },
+      "total_occupants": 16636,
+      "avg_occupants": 5.550884217550884,
+      "avg_floors": 1.7450784117450784
+    },
+    "districts": {
+      "count": 12,
+      "unique_names": [
+        "Western Slums",
+        "Clear Hill",
+        "Dawnway",
+        "Castle",
+        "Grimrise Gate",
+        "Salt Wall",
+        "Southern Vialiranave",
+        "The Horn",
+        "Timber Fair",
+        "Redheart Water",
+        "Far Reach",
+        "Stone Cliff"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 19
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 134
+    }
+  },
+  "layers": {
+    "base_map": "citystates/vialiranave/vialiranave_map.png",
+    "vector_data": {
+      "buildings": "citystates/vialiranave/vialiranave_buildings.geojson",
+      "districts": "citystates/vialiranave/vialiranave_districts.geojson",
+      "castles": "citystates/vialiranave/vialiranave_castles.geojson",
+      "towers": "citystates/vialiranave/vialiranave_towers.geojson",
+      "walls": "citystates/vialiranave/vialiranave_walls.geojson",
+      "fields": "citystates/vialiranave/vialiranave_fields.geojson",
+      "trees": "citystates/vialiranave/vialiranave_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:57",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/vialiranave_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/vialiranave"
+    }
+  }
+}

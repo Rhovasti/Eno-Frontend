@@ -1,0 +1,91 @@
+{
+  "citystate": "zidesun",
+  "display_name": "Zidesun",
+  "bounds": {
+    "west": 49.72743187935605,
+    "south": -9.266559288189328,
+    "east": 49.75922467935605,
+    "north": -9.23790848818933
+  },
+  "center": {
+    "lat": -9.252233888189329,
+    "lng": 49.74332827935605
+  },
+  "castle_position": {
+    "lat": -9.249608745332182,
+    "lng": 49.74254265078449
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1479,
+    "districts": 7,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 15,
+    "trees": 61
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1479,
+      "types": {
+        "residential": 1207,
+        "other": 272
+      },
+      "total_occupants": 8527,
+      "avg_occupants": 5.765382014874915,
+      "avg_floors": 2.284651791751183
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Eastern",
+        "Heavy Trodden",
+        "Pale Town",
+        "Will",
+        "Court",
+        "Outside",
+        "Merchants Domain"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 61
+    }
+  },
+  "layers": {
+    "base_map": "citystates/zidesun/zidesun_map.png",
+    "vector_data": {
+      "buildings": "citystates/zidesun/zidesun_buildings.geojson",
+      "districts": "citystates/zidesun/zidesun_districts.geojson",
+      "castles": "citystates/zidesun/zidesun_castles.geojson",
+      "towers": "citystates/zidesun/zidesun_towers.geojson",
+      "walls": "citystates/zidesun/zidesun_walls.geojson",
+      "fields": "citystates/zidesun/zidesun_fields.geojson",
+      "trees": "citystates/zidesun/zidesun_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:08",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/zidesun_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/zidesun"
+    }
+  }
+}

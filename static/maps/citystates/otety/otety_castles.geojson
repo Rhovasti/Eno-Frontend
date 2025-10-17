@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740514056024983,
+              24.0547221668468
+            ],
+            [
+              -6.739630056024984,
+              24.054897066846806
+            ],
+            [
+              -6.739577056024984,
+              24.0546291668468
+            ],
+            [
+              -6.740461056024984,
+              24.054454266846804
+            ],
+            [
+              -6.740399956024984,
+              24.054145866846802
+            ],
+            [
+              -6.740673456024984,
+              24.0540916668468
+            ],
+            [
+              -6.740843156024983,
+              24.054949066846802
+            ],
+            [
+              -6.740569756024984,
+              24.055003266846803
+            ],
+            [
+              -6.740514056024983,
+              24.0547221668468
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "otety.geojson_fixed.geojson_poly_castle",
+        "age": 346,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "otety"
+      }
+    }
+  ]
+}

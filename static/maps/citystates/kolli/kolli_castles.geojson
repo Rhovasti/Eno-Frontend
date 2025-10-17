@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              16.561303294926322,
+              26.626829592923077
+            ],
+            [
+              16.56303349492632,
+              26.62747379292308
+            ],
+            [
+              16.56369989492632,
+              26.625683992923076
+            ],
+            [
+              16.563146794926322,
+              26.625477992923077
+            ],
+            [
+              16.562954194926323,
+              26.625995292923076
+            ],
+            [
+              16.561777094926324,
+              26.625556992923077
+            ],
+            [
+              16.561303294926322,
+              26.626829592923077
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kolli.geojson_fixed.geojson_poly_castle",
+        "age": 795,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kolli"
+      }
+    }
+  ]
+}

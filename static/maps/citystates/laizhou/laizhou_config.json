@@ -1,0 +1,88 @@
+{
+  "citystate": "laizhou",
+  "display_name": "Laizhou",
+  "bounds": {
+    "west": -22.380621727255207,
+    "south": 1.8848530270106851,
+    "east": -22.364459927255208,
+    "north": 1.9042138270106854
+  },
+  "center": {
+    "lat": 1.8945334270106853,
+    "lng": -22.372540827255207
+  },
+  "castle_position": {
+    "lat": 1.890612084153542,
+    "lng": -22.373023741540983
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 306,
+    "districts": 3,
+    "castles": 1,
+    "towers": 92,
+    "walls": 1,
+    "fields": 15,
+    "trees": 6
+  },
+  "statistics": {
+    "buildings": {
+      "count": 306,
+      "types": {
+        "commercial": 203,
+        "industrial": 90,
+        "residential": 13
+      },
+      "total_occupants": 2436,
+      "avg_occupants": 7.96078431372549,
+      "avg_floors": 1.7418300653594772
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Estate",
+        "Middle Mile",
+        "Bone Star"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 92
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 6
+    }
+  },
+  "layers": {
+    "base_map": "citystates/laizhou/laizhou_map.png",
+    "vector_data": {
+      "buildings": "citystates/laizhou/laizhou_buildings.geojson",
+      "districts": "citystates/laizhou/laizhou_districts.geojson",
+      "castles": "citystates/laizhou/laizhou_castles.geojson",
+      "towers": "citystates/laizhou/laizhou_towers.geojson",
+      "walls": "citystates/laizhou/laizhou_walls.geojson",
+      "fields": "citystates/laizhou/laizhou_fields.geojson",
+      "trees": "citystates/laizhou/laizhou_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:46",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/laizhou_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/laizhou"
+    }
+  }
+}

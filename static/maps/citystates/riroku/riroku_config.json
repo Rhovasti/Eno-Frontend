@@ -1,0 +1,92 @@
+{
+  "citystate": "riroku",
+  "display_name": "Riroku",
+  "bounds": {
+    "west": 40.53908959965516,
+    "south": 34.096556677543134,
+    "east": 40.58138359965516,
+    "north": 34.12733467754312
+  },
+  "center": {
+    "lat": 34.111945677543126,
+    "lng": 40.56023659965516
+  },
+  "castle_position": {
+    "lat": 34.11207078865447,
+    "lng": 40.55457149965482
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1735,
+    "districts": 8,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 15,
+    "trees": 71
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1735,
+      "types": {
+        "residential": 1652,
+        "commercial": 83
+      },
+      "total_occupants": 9097,
+      "avg_occupants": 5.243227665706052,
+      "avg_floors": 2.0518731988472623
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Greyway Bridge",
+        "Ashsoul Borough",
+        "Castle",
+        "Middle Road",
+        "Southern Docks",
+        "Black Docks",
+        "New Riroku",
+        "Old Crossing"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 71
+    }
+  },
+  "layers": {
+    "base_map": "citystates/riroku/riroku_map.png",
+    "vector_data": {
+      "buildings": "citystates/riroku/riroku_buildings.geojson",
+      "districts": "citystates/riroku/riroku_districts.geojson",
+      "castles": "citystates/riroku/riroku_castles.geojson",
+      "towers": "citystates/riroku/riroku_towers.geojson",
+      "walls": "citystates/riroku/riroku_walls.geojson",
+      "fields": "citystates/riroku/riroku_fields.geojson",
+      "trees": "citystates/riroku/riroku_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:32",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/riroku_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/riroku"
+    }
+  }
+}

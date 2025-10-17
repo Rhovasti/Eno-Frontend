@@ -1,0 +1,94 @@
+{
+  "citystate": "kure",
+  "display_name": "Kure",
+  "bounds": {
+    "west": 33.48597038750363,
+    "south": 35.62764676920923,
+    "east": 33.52945238750364,
+    "north": 35.660374769209234
+  },
+  "center": {
+    "lat": 35.64401076920923,
+    "lng": 33.50771138750363
+  },
+  "castle_position": {
+    "lat": 35.64511346920942,
+    "lng": 33.50522358750371
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1932,
+    "districts": 10,
+    "castles": 1,
+    "towers": 11,
+    "walls": 1,
+    "fields": 17,
+    "trees": 79
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1932,
+      "types": {
+        "residential": 1294,
+        "commercial": 638
+      },
+      "total_occupants": 11086,
+      "avg_occupants": 5.738095238095238,
+      "avg_floors": 2.4026915113871636
+    },
+    "districts": {
+      "count": 10,
+      "unique_names": [
+        "Daggerrise Crest",
+        "Blackbloom Edge",
+        "Highgate",
+        "Salt Horn",
+        "Wool Tower",
+        "Night End",
+        "Fairy Steps",
+        "The Heath",
+        "Northern Slums",
+        "Old Ward"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 11
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 17
+    },
+    "trees": {
+      "count": 79
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kure/kure_map.png",
+    "vector_data": {
+      "buildings": "citystates/kure/kure_buildings.geojson",
+      "districts": "citystates/kure/kure_districts.geojson",
+      "castles": "citystates/kure/kure_castles.geojson",
+      "towers": "citystates/kure/kure_towers.geojson",
+      "walls": "citystates/kure/kure_walls.geojson",
+      "fields": "citystates/kure/kure_fields.geojson",
+      "trees": "citystates/kure/kure_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:09",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kure_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kure"
+    }
+  }
+}

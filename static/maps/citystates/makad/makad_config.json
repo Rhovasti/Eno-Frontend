@@ -1,0 +1,91 @@
+{
+  "citystate": "makad",
+  "display_name": "Makad",
+  "bounds": {
+    "west": -18.400096890317723,
+    "south": -30.874479462476955,
+    "east": -18.370807290317725,
+    "north": -30.85435986247696
+  },
+  "center": {
+    "lat": -30.86441966247696,
+    "lng": -18.385452090317724
+  },
+  "castle_position": {
+    "lat": -30.871827962476964,
+    "lng": -18.390993528779386
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1056,
+    "districts": 6,
+    "castles": 1,
+    "towers": 13,
+    "walls": 1,
+    "fields": 7,
+    "trees": 8
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1056,
+      "types": {
+        "residential": 868,
+        "other": 166,
+        "commercial": 22
+      },
+      "total_occupants": 5641,
+      "avg_occupants": 5.3418560606060606,
+      "avg_floors": 1.665719696969697
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Daggerwell Reach",
+        "Three Arches",
+        "Castle",
+        "East Slums",
+        "Grimway Ward",
+        "Old Well"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 13
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 7
+    },
+    "trees": {
+      "count": 8
+    }
+  },
+  "layers": {
+    "base_map": "citystates/makad/makad_map.png",
+    "vector_data": {
+      "buildings": "citystates/makad/makad_buildings.geojson",
+      "districts": "citystates/makad/makad_districts.geojson",
+      "castles": "citystates/makad/makad_castles.geojson",
+      "towers": "citystates/makad/makad_towers.geojson",
+      "walls": "citystates/makad/makad_walls.geojson",
+      "fields": "citystates/makad/makad_fields.geojson",
+      "trees": "citystates/makad/makad_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:40",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/makad_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/makad"
+    }
+  }
+}

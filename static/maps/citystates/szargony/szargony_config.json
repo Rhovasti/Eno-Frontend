@@ -1,0 +1,87 @@
+{
+  "citystate": "szargony",
+  "display_name": "Szargony",
+  "bounds": {
+    "west": 34.908968392574884,
+    "south": -11.198158157084745,
+    "east": 34.92097279257488,
+    "north": -11.184175757084741
+  },
+  "center": {
+    "lat": -11.191166957084743,
+    "lng": 34.91497059257488
+  },
+  "castle_position": {
+    "lat": -11.188989957084763,
+    "lng": 34.91393646400341
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 271,
+    "districts": 3,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 8,
+    "trees": 5
+  },
+  "statistics": {
+    "buildings": {
+      "count": 271,
+      "types": {
+        "other": 221,
+        "residential": 50
+      },
+      "total_occupants": 1648,
+      "avg_occupants": 6.081180811808118,
+      "avg_floors": 2.4723247232472323
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Underwind Streets",
+        "Estate",
+        "Silver Crown"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 5
+    }
+  },
+  "layers": {
+    "base_map": "citystates/szargony/szargony_map.png",
+    "vector_data": {
+      "buildings": "citystates/szargony/szargony_buildings.geojson",
+      "districts": "citystates/szargony/szargony_districts.geojson",
+      "castles": "citystates/szargony/szargony_castles.geojson",
+      "towers": "citystates/szargony/szargony_towers.geojson",
+      "walls": "citystates/szargony/szargony_walls.geojson",
+      "fields": "citystates/szargony/szargony_fields.geojson",
+      "trees": "citystates/szargony/szargony_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:58",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/szargony_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/szargony"
+    }
+  }
+}

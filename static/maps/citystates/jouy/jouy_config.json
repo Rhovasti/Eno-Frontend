@@ -1,0 +1,91 @@
+{
+  "citystate": "jouy",
+  "display_name": "Jouy",
+  "bounds": {
+    "west": 42.31896408191326,
+    "south": 13.375459193363973,
+    "east": 42.35352168191326,
+    "north": 13.404256793363974
+  },
+  "center": {
+    "lat": 13.389857993363973,
+    "lng": 42.33624288191326
+  },
+  "castle_position": {
+    "lat": 13.380683502454788,
+    "lng": 42.33350186373157
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2143,
+    "districts": 7,
+    "castles": 1,
+    "towers": 54,
+    "walls": 1,
+    "fields": 3,
+    "trees": 60
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2143,
+      "types": {
+        "residential": 2136,
+        "commercial": 7
+      },
+      "total_occupants": 13310,
+      "avg_occupants": 6.21091927204853,
+      "avg_floors": 2.3215118992067194
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "New Road",
+        "Castle",
+        "New Jouy",
+        "Moonrise Bridge",
+        "Red Ring",
+        "Skyhill Gate",
+        "Bright End"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 54
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 3
+    },
+    "trees": {
+      "count": 60
+    }
+  },
+  "layers": {
+    "base_map": "citystates/jouy/jouy_map.png",
+    "vector_data": {
+      "buildings": "citystates/jouy/jouy_buildings.geojson",
+      "districts": "citystates/jouy/jouy_districts.geojson",
+      "castles": "citystates/jouy/jouy_castles.geojson",
+      "towers": "citystates/jouy/jouy_towers.geojson",
+      "walls": "citystates/jouy/jouy_walls.geojson",
+      "fields": "citystates/jouy/jouy_fields.geojson",
+      "trees": "citystates/jouy/jouy_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:46",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/jouy_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/jouy"
+    }
+  }
+}

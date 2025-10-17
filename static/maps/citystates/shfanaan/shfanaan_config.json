@@ -1,0 +1,96 @@
+{
+  "citystate": "shfanaan",
+  "display_name": "Shfanaan",
+  "bounds": {
+    "west": -14.457838482479234,
+    "south": -31.46229834159486,
+    "east": -14.413144682479237,
+    "north": -31.413825541594854
+  },
+  "center": {
+    "lat": -31.438061941594857,
+    "lng": -14.435491582479235
+  },
+  "castle_position": {
+    "lat": -31.437059319373443,
+    "lng": -14.428099904701307
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 4080,
+    "districts": 11,
+    "castles": 1,
+    "towers": 12,
+    "walls": 1,
+    "fields": 14,
+    "trees": 199
+  },
+  "statistics": {
+    "buildings": {
+      "count": 4080,
+      "types": {
+        "other": 1176,
+        "residential": 2719,
+        "commercial": 185
+      },
+      "total_occupants": 23812,
+      "avg_occupants": 5.836274509803921,
+      "avg_floors": 2.063970588235294
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Moonsoul Road",
+        "Dark Cross",
+        "East Slums",
+        "Four Stars",
+        "Grey Water",
+        "Downwood Hill",
+        "Southern Shfanaan",
+        "Northern Gate",
+        "Fish Horn",
+        "Bright Reach",
+        "Silk Wall"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 12
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    },
+    "trees": {
+      "count": 199
+    }
+  },
+  "layers": {
+    "base_map": "citystates/shfanaan/shfanaan_map.png",
+    "vector_data": {
+      "buildings": "citystates/shfanaan/shfanaan_buildings.geojson",
+      "districts": "citystates/shfanaan/shfanaan_districts.geojson",
+      "castles": "citystates/shfanaan/shfanaan_castles.geojson",
+      "towers": "citystates/shfanaan/shfanaan_towers.geojson",
+      "walls": "citystates/shfanaan/shfanaan_walls.geojson",
+      "fields": "citystates/shfanaan/shfanaan_fields.geojson",
+      "trees": "citystates/shfanaan/shfanaan_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:14",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/shfanaan_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/shfanaan"
+    }
+  }
+}

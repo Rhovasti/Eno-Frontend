@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.91060084406658,
+              -34.42324460720839
+            ],
+            [
+              31.909995144066578,
+              -34.42334260720838
+            ],
+            [
+              31.90992664406658,
+              -34.42209710720839
+            ],
+            [
+              31.91016074406658,
+              -34.42210210720839
+            ],
+            [
+              31.91019364406658,
+              -34.42269950720839
+            ],
+            [
+              31.91056944406658,
+              -34.42267350720839
+            ],
+            [
+              31.91060084406658,
+              -34.42324460720839
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "malveiba.geojson_fixed.geojson_poly_castle",
+        "age": 48,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "malveiba"
+      }
+    }
+  ]
+}

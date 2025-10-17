@@ -1,0 +1,96 @@
+{
+  "citystate": "alebuo",
+  "display_name": "Alebuo",
+  "bounds": {
+    "west": -20.79249785259905,
+    "south": 24.498231476604325,
+    "east": -20.712269452599052,
+    "north": 24.56244987660432
+  },
+  "center": {
+    "lat": 24.53034067660432,
+    "lng": -20.75238365259905
+  },
+  "castle_position": {
+    "lat": 24.53265139089053,
+    "lng": -20.757165095455772
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 9367,
+    "districts": 11,
+    "castles": 1,
+    "towers": 25,
+    "walls": 1,
+    "fields": 4,
+    "trees": 256
+  },
+  "statistics": {
+    "buildings": {
+      "count": 9367,
+      "types": {
+        "residential": 7298,
+        "industrial": 1840,
+        "commercial": 229
+      },
+      "total_occupants": 63809,
+      "avg_occupants": 6.812106330735561,
+      "avg_floors": 2.171346215437173
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Purple Road",
+        "Purple Point",
+        "Silver Cliff",
+        "The Forge",
+        "North Alebuo",
+        "Citadel",
+        "Old District",
+        "Everway Borough",
+        "Pearl Shade",
+        "Old Ring",
+        "Chargate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 25
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 4
+    },
+    "trees": {
+      "count": 256
+    }
+  },
+  "layers": {
+    "base_map": "citystates/alebuo/alebuo_map.png",
+    "vector_data": {
+      "buildings": "citystates/alebuo/alebuo_buildings.geojson",
+      "districts": "citystates/alebuo/alebuo_districts.geojson",
+      "castles": "citystates/alebuo/alebuo_castles.geojson",
+      "towers": "citystates/alebuo/alebuo_towers.geojson",
+      "walls": "citystates/alebuo/alebuo_walls.geojson",
+      "fields": "citystates/alebuo/alebuo_fields.geojson",
+      "trees": "citystates/alebuo/alebuo_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:52",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/alebuo_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/alebuo"
+    }
+  }
+}

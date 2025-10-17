@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.527726204396188,
+              -14.148340634350612
+            ],
+            [
+              -9.52743390439619,
+              -14.148658934350612
+            ],
+            [
+              -9.52952090439619,
+              -14.15057613435061
+            ],
+            [
+              -9.530230104396189,
+              -14.149804134350612
+            ],
+            [
+              -9.529379904396187,
+              -14.149023034350611
+            ],
+            [
+              -9.529642004396187,
+              -14.148737634350612
+            ],
+            [
+              -9.52918350439619,
+              -14.148316534350611
+            ],
+            [
+              -9.528504504396189,
+              -14.149055634350612
+            ],
+            [
+              -9.527726204396188,
+              -14.148340634350612
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "pornoli.geojson_fixed.geojson_poly_castle",
+        "age": 481,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "pornoli"
+      }
+    }
+  ]
+}

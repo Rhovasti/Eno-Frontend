@@ -1,0 +1,93 @@
+{
+  "citystate": "atsa",
+  "display_name": "Atsa",
+  "bounds": {
+    "west": -2.702716497595337,
+    "south": 29.97614883398104,
+    "east": -2.6765806975953357,
+    "north": 30.01027563398105
+  },
+  "center": {
+    "lat": 29.993212233981044,
+    "lng": -2.6896485975953364
+  },
+  "castle_position": {
+    "lat": 29.99497387842537,
+    "lng": -2.6895072309286494
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1237,
+    "districts": 7,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 8,
+    "trees": 50
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1237,
+      "types": {
+        "residential": 408,
+        "other": 480,
+        "commercial": 282,
+        "industrial": 67
+      },
+      "total_occupants": 7966,
+      "avg_occupants": 6.439773645917542,
+      "avg_floors": 1.9320937752627325
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Fairy Market",
+        "Ivy Road",
+        "Eastern Atsa",
+        "Darkwind Road",
+        "Citadel",
+        "Clay Rock",
+        "Greengate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 50
+    }
+  },
+  "layers": {
+    "base_map": "citystates/atsa/atsa_map.png",
+    "vector_data": {
+      "buildings": "citystates/atsa/atsa_buildings.geojson",
+      "districts": "citystates/atsa/atsa_districts.geojson",
+      "castles": "citystates/atsa/atsa_castles.geojson",
+      "towers": "citystates/atsa/atsa_towers.geojson",
+      "walls": "citystates/atsa/atsa_walls.geojson",
+      "fields": "citystates/atsa/atsa_fields.geojson",
+      "trees": "citystates/atsa/atsa_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:48",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/atsa_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/atsa"
+    }
+  }
+}

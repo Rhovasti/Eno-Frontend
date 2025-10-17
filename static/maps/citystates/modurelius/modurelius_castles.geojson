@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -14.4482323070799,
+              -9.43281941851601
+            ],
+            [
+              -14.447750307079898,
+              -9.433411518516012
+            ],
+            [
+              -14.448113807079901,
+              -9.43370741851601
+            ],
+            [
+              -14.448595807079899,
+              -9.43311521851601
+            ],
+            [
+              -14.4482323070799,
+              -9.43281941851601
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "modurelius.geojson_fixed.geojson_poly_castle",
+        "age": 302,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "modurelius"
+      }
+    }
+  ]
+}

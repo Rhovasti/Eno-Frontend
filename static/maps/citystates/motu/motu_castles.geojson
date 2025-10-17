@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              49.1615597289934,
+              11.781850120760412
+            ],
+            [
+              49.1610094289934,
+              11.78271672076041
+            ],
+            [
+              49.1614473289934,
+              11.782994720760412
+            ],
+            [
+              49.161770528993394,
+              11.782485820760412
+            ],
+            [
+              49.16253772899341,
+              11.78297302076041
+            ],
+            [
+              49.162764828993396,
+              11.782615320760412
+            ],
+            [
+              49.1615597289934,
+              11.781850120760412
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "motu.geojson_fixed.geojson_poly_castle",
+        "age": 121,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "motu"
+      }
+    }
+  ]
+}

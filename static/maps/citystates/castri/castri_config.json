@@ -1,0 +1,94 @@
+{
+  "citystate": "castri",
+  "display_name": "Castri",
+  "bounds": {
+    "west": -19.159319904971003,
+    "south": 38.086501150255245,
+    "east": -19.120545104970997,
+    "north": 38.13479995025524
+  },
+  "center": {
+    "lat": 38.110650550255244,
+    "lng": -19.139932504971
+  },
+  "castle_position": {
+    "lat": 38.110222179304195,
+    "lng": -19.13566395765047
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2517,
+    "districts": 10,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 15,
+    "trees": 318
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2517,
+      "types": {
+        "commercial": 212,
+        "residential": 2305
+      },
+      "total_occupants": 13143,
+      "avg_occupants": 5.221692491060787,
+      "avg_floors": 1.6313071116408422
+    },
+    "districts": {
+      "count": 10,
+      "unique_names": [
+        "Spirit Mire",
+        "Breadgate",
+        "Black Arch",
+        "Old Castri",
+        "Greenhill Water",
+        "Light Crosses Ward",
+        "Southern Castri",
+        "Copper Orchard",
+        "Misty Streets",
+        "Iron Cliff"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 318
+    }
+  },
+  "layers": {
+    "base_map": "citystates/castri/castri_map.png",
+    "vector_data": {
+      "buildings": "citystates/castri/castri_buildings.geojson",
+      "districts": "citystates/castri/castri_districts.geojson",
+      "castles": "citystates/castri/castri_castles.geojson",
+      "towers": "citystates/castri/castri_towers.geojson",
+      "walls": "citystates/castri/castri_walls.geojson",
+      "fields": "citystates/castri/castri_fields.geojson",
+      "trees": "citystates/castri/castri_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:26",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/castri_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/castri"
+    }
+  }
+}

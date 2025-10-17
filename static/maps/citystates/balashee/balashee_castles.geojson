@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.23904273016766,
+              22.606476425746678
+            ],
+            [
+              42.23933083016767,
+              22.60672212574668
+            ],
+            [
+              42.23991793016766,
+              22.606033525746682
+            ],
+            [
+              42.23905163016766,
+              22.605294925746684
+            ],
+            [
+              42.23790883016766,
+              22.60663522574668
+            ],
+            [
+              42.23819723016765,
+              22.606881125746682
+            ],
+            [
+              42.238479430167665,
+              22.60655022574668
+            ],
+            [
+              42.238769230167655,
+              22.606797225746682
+            ],
+            [
+              42.23904273016766,
+              22.606476425746678
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "balashee.geojson_fixed.geojson_poly_castle",
+        "age": 137,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "balashee"
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "citystate": "eneya",
+  "display_name": "Eneya",
+  "bounds": {
+    "west": 25.65869260698961,
+    "south": 40.162659326397566,
+    "east": 25.691049406989606,
+    "north": 40.195502126397564
+  },
+  "center": {
+    "lat": 40.179080726397565,
+    "lng": 25.67487100698961
+  },
+  "castle_position": {
+    "lat": 40.17420416925476,
+    "lng": 25.68034710698964
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2182,
+    "districts": 11,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 7,
+    "trees": 68
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2182,
+      "types": {
+        "other": 1034,
+        "commercial": 486,
+        "residential": 550,
+        "industrial": 112
+      },
+      "total_occupants": 13932,
+      "avg_occupants": 6.384967919340055,
+      "avg_floors": 1.8565536205316224
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Noongate",
+        "Pale Crossing",
+        "High Side",
+        "Dark Water",
+        "East Slums",
+        "Northern Eneya",
+        "Daggercrest Quarter",
+        "The Well",
+        "Fish Cross",
+        "Bread Forge",
+        "Black Knot"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 7
+    },
+    "trees": {
+      "count": 68
+    }
+  },
+  "layers": {
+    "base_map": "citystates/eneya/eneya_map.png",
+    "vector_data": {
+      "buildings": "citystates/eneya/eneya_buildings.geojson",
+      "districts": "citystates/eneya/eneya_districts.geojson",
+      "castles": "citystates/eneya/eneya_castles.geojson",
+      "towers": "citystates/eneya/eneya_towers.geojson",
+      "walls": "citystates/eneya/eneya_walls.geojson",
+      "fields": "citystates/eneya/eneya_fields.geojson",
+      "trees": "citystates/eneya/eneya_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:49",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/eneya_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/eneya"
+    }
+  }
+}

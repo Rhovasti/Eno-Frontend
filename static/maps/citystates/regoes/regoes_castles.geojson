@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              35.777203464715704,
+              -38.657662186944535
+            ],
+            [
+              35.777142564715696,
+              -38.65785188694453
+            ],
+            [
+              35.776396764715706,
+              -38.65754018694453
+            ],
+            [
+              35.77661886471571,
+              -38.65711588694454
+            ],
+            [
+              35.77670088005241,
+              -38.65715015763881
+            ],
+            [
+              35.7767008647157,
+              -38.657150186944534
+            ],
+            [
+              35.777122839958515,
+              -38.65732655408394
+            ],
+            [
+              35.7770263647157,
+              -38.65758818694454
+            ],
+            [
+              35.777203464715704,
+              -38.657662186944535
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "regoes.geojson_fixed.geojson_poly_castle",
+        "age": 563,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "regoes"
+      }
+    }
+  ]
+}

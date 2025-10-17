@@ -1,0 +1,96 @@
+{
+  "citystate": "alos",
+  "display_name": "Alos",
+  "bounds": {
+    "west": -31.799015739072573,
+    "south": 24.551077718976536,
+    "east": -31.77438413907258,
+    "north": 24.59050131897653
+  },
+  "center": {
+    "lat": 24.570789518976532,
+    "lng": -31.786699939072577
+  },
+  "castle_position": {
+    "lat": 24.566875530087394,
+    "lng": -31.779414827961084
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1204,
+    "districts": 11,
+    "castles": 1,
+    "towers": 26,
+    "walls": 1,
+    "fields": 11,
+    "trees": 59
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1204,
+      "types": {
+        "residential": 852,
+        "other": 182,
+        "commercial": 170
+      },
+      "total_occupants": 6536,
+      "avg_occupants": 5.428571428571429,
+      "avg_floors": 2.049003322259136
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Old Alos",
+        "Blacksoul Sprawl",
+        "Western Slums",
+        "Elm Docks",
+        "Green Mill",
+        "Citadel",
+        "Honey Forge",
+        "North Docks",
+        "The Springs",
+        "Cloudfire",
+        "Old Walk"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 26
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    },
+    "trees": {
+      "count": 59
+    }
+  },
+  "layers": {
+    "base_map": "citystates/alos/alos_map.png",
+    "vector_data": {
+      "buildings": "citystates/alos/alos_buildings.geojson",
+      "districts": "citystates/alos/alos_districts.geojson",
+      "castles": "citystates/alos/alos_castles.geojson",
+      "towers": "citystates/alos/alos_towers.geojson",
+      "walls": "citystates/alos/alos_walls.geojson",
+      "fields": "citystates/alos/alos_fields.geojson",
+      "trees": "citystates/alos/alos_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:12",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/alos_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/alos"
+    }
+  }
+}

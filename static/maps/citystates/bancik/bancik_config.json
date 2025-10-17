@@ -1,0 +1,87 @@
+{
+  "citystate": "bancik",
+  "display_name": "Bancik",
+  "bounds": {
+    "west": 46.72526562976101,
+    "south": -2.4984597362533703,
+    "east": 46.744962229761015,
+    "north": -2.47037613625337
+  },
+  "center": {
+    "lat": -2.48441793625337,
+    "lng": 46.73511392976101
+  },
+  "castle_position": {
+    "lat": -2.4786297362533762,
+    "lng": 46.7333624964276
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 807,
+    "districts": 3,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 7,
+    "trees": 3
+  },
+  "statistics": {
+    "buildings": {
+      "count": 807,
+      "types": {
+        "residential": 756,
+        "industrial": 51
+      },
+      "total_occupants": 4262,
+      "avg_occupants": 5.281288723667906,
+      "avg_floors": 1.983890954151177
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Oak Shade",
+        "Old Town",
+        "White Market"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 7
+    },
+    "trees": {
+      "count": 3
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bancik/bancik_map.png",
+    "vector_data": {
+      "buildings": "citystates/bancik/bancik_buildings.geojson",
+      "districts": "citystates/bancik/bancik_districts.geojson",
+      "castles": "citystates/bancik/bancik_castles.geojson",
+      "towers": "citystates/bancik/bancik_towers.geojson",
+      "walls": "citystates/bancik/bancik_walls.geojson",
+      "fields": "citystates/bancik/bancik_fields.geojson",
+      "trees": "citystates/bancik/bancik_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:34",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bancik_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bancik"
+    }
+  }
+}

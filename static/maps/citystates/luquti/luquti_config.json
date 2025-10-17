@@ -1,0 +1,90 @@
+{
+  "citystate": "luquti",
+  "display_name": "Luquti",
+  "bounds": {
+    "west": 45.668858828593535,
+    "south": -24.65115123813601,
+    "east": 45.707696828593534,
+    "north": -24.61586523813601
+  },
+  "center": {
+    "lat": -24.63350823813601,
+    "lng": 45.688277828593534
+  },
+  "castle_position": {
+    "lat": -24.63959542702479,
+    "lng": 45.689435284148935
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1022,
+    "districts": 5,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 26,
+    "trees": 1
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1022,
+      "types": {
+        "commercial": 454,
+        "industrial": 537,
+        "residential": 31
+      },
+      "total_occupants": 7162,
+      "avg_occupants": 7.007827788649706,
+      "avg_floors": 1.8111545988258317
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Greenwind Star",
+        "Market Town",
+        "Moonbloom Ward",
+        "Spirit Crossing",
+        "Green Hill"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 26
+    },
+    "trees": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/luquti/luquti_map.png",
+    "vector_data": {
+      "buildings": "citystates/luquti/luquti_buildings.geojson",
+      "districts": "citystates/luquti/luquti_districts.geojson",
+      "castles": "citystates/luquti/luquti_castles.geojson",
+      "towers": "citystates/luquti/luquti_towers.geojson",
+      "walls": "citystates/luquti/luquti_walls.geojson",
+      "fields": "citystates/luquti/luquti_fields.geojson",
+      "trees": "citystates/luquti/luquti_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:04",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/luquti_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/luquti"
+    }
+  }
+}

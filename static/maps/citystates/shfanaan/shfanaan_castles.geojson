@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -14.427915882479086,
+              -31.437372041595665
+            ],
+            [
+              -14.428488082479086,
+              -31.43795034159566
+            ],
+            [
+              -14.429003382479086,
+              -31.43725724159566
+            ],
+            [
+              -14.428008882479086,
+              -31.436251941595664
+            ],
+            [
+              -14.427790882479085,
+              -31.43646754159566
+            ],
+            [
+              -14.427999182479086,
+              -31.436678041595663
+            ],
+            [
+              -14.427744082479085,
+              -31.436946441595666
+            ],
+            [
+              -14.428032882479085,
+              -31.437238241595665
+            ],
+            [
+              -14.427915882479086,
+              -31.437372041595665
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "shfanaan.geojson_fixed.geojson_poly_castle",
+        "age": 443,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "shfanaan"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.893545229965523,
+              40.95278767103224
+            ],
+            [
+              7.893578129965523,
+              40.953020971032245
+            ],
+            [
+              7.893915729965523,
+              40.95297337103224
+            ],
+            [
+              7.893823829965522,
+              40.952322271032244
+            ],
+            [
+              7.8941976299655225,
+              40.95226947103225
+            ],
+            [
+              7.8941564299655225,
+              40.95197767103225
+            ],
+            [
+              7.893127929965522,
+              40.952122871032245
+            ],
+            [
+              7.893228229965524,
+              40.95283247103225
+            ],
+            [
+              7.893545229965523,
+              40.95278767103224
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kudina.geojson_fixed.geojson_poly_castle",
+        "age": 920,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kudina"
+      }
+    }
+  ]
+}

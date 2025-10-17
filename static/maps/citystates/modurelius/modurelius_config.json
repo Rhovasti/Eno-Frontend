@@ -1,0 +1,86 @@
+{
+  "citystate": "modurelius",
+  "display_name": "Modurelius",
+  "bounds": {
+    "west": -14.457773007079933,
+    "south": -9.440835418516015,
+    "east": -14.441524807079933,
+    "north": -9.422324218516012
+  },
+  "center": {
+    "lat": -9.431579818516013,
+    "lng": -14.449648907079933
+  },
+  "castle_position": {
+    "lat": -9.43317459851601,
+    "lng": -14.4481849070799
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 174,
+    "districts": 3,
+    "castles": 1,
+    "towers": 5,
+    "walls": 1,
+    "fields": 8,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 174,
+      "types": {
+        "residential": 174
+      },
+      "total_occupants": 912,
+      "avg_occupants": 5.241379310344827,
+      "avg_floors": 1.528735632183908
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "The Wells",
+        "Estate",
+        "Wine Cross"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 5
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/modurelius/modurelius_map.png",
+    "vector_data": {
+      "buildings": "citystates/modurelius/modurelius_buildings.geojson",
+      "districts": "citystates/modurelius/modurelius_districts.geojson",
+      "castles": "citystates/modurelius/modurelius_castles.geojson",
+      "towers": "citystates/modurelius/modurelius_towers.geojson",
+      "walls": "citystates/modurelius/modurelius_walls.geojson",
+      "fields": "citystates/modurelius/modurelius_fields.geojson",
+      "trees": "citystates/modurelius/modurelius_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:00",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/modurelius_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/modurelius"
+    }
+  }
+}

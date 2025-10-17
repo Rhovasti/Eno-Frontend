@@ -1,0 +1,90 @@
+{
+  "citystate": "kolli",
+  "display_name": "Kolli",
+  "bounds": {
+    "west": 16.543492894926214,
+    "south": 26.60682129292309,
+    "east": 16.58617089492621,
+    "north": 26.643027292923083
+  },
+  "center": {
+    "lat": 26.624924292923087,
+    "lng": 16.56483189492621
+  },
+  "castle_position": {
+    "lat": 26.626263892923077,
+    "lng": 16.56245972349775
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 919,
+    "districts": 5,
+    "castles": 1,
+    "towers": 19,
+    "walls": 1,
+    "fields": 30,
+    "trees": 19
+  },
+  "statistics": {
+    "buildings": {
+      "count": 919,
+      "types": {
+        "residential": 457,
+        "other": 289,
+        "commercial": 173
+      },
+      "total_occupants": 6114,
+      "avg_occupants": 6.652883569096844,
+      "avg_floors": 2.1523394994559304
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Castle District",
+        "Two Heaths",
+        "Cherry Forge",
+        "Old Kolli",
+        "Cloudwell Ward"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 19
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 30
+    },
+    "trees": {
+      "count": 19
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kolli/kolli_map.png",
+    "vector_data": {
+      "buildings": "citystates/kolli/kolli_buildings.geojson",
+      "districts": "citystates/kolli/kolli_districts.geojson",
+      "castles": "citystates/kolli/kolli_castles.geojson",
+      "towers": "citystates/kolli/kolli_towers.geojson",
+      "walls": "citystates/kolli/kolli_walls.geojson",
+      "fields": "citystates/kolli/kolli_fields.geojson",
+      "trees": "citystates/kolli/kolli_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:31",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kolli_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kolli"
+    }
+  }
+}

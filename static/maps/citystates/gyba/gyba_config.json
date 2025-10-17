@@ -1,0 +1,96 @@
+{
+  "citystate": "gyba",
+  "display_name": "Gyba",
+  "bounds": {
+    "west": -11.990865389514198,
+    "south": 37.689344568126494,
+    "east": -11.915890589514195,
+    "north": 37.76020936812649
+  },
+  "center": {
+    "lat": 37.72477696812649,
+    "lng": -11.953377989514196
+  },
+  "castle_position": {
+    "lat": 37.727503831763094,
+    "lng": -11.928986780423203
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 3238,
+    "districts": 12,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 36,
+    "trees": 297
+  },
+  "statistics": {
+    "buildings": {
+      "count": 3238,
+      "types": {
+        "residential": 3204,
+        "industrial": 34
+      },
+      "total_occupants": 16789,
+      "avg_occupants": 5.184990735021619,
+      "avg_floors": 1.6880790611488574
+    },
+    "districts": {
+      "count": 12,
+      "unique_names": [
+        "Apple Ring",
+        "Southern Gyba",
+        "The Wall",
+        "Silver Ford",
+        "Ember Shade",
+        "Ashen Gate",
+        "Castle",
+        "High Side",
+        "Applegate",
+        "Stormbloom Road",
+        "Middle Hill",
+        "Moonway Edge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 36
+    },
+    "trees": {
+      "count": 297
+    }
+  },
+  "layers": {
+    "base_map": "citystates/gyba/gyba_map.png",
+    "vector_data": {
+      "buildings": "citystates/gyba/gyba_buildings.geojson",
+      "districts": "citystates/gyba/gyba_districts.geojson",
+      "castles": "citystates/gyba/gyba_castles.geojson",
+      "towers": "citystates/gyba/gyba_towers.geojson",
+      "walls": "citystates/gyba/gyba_walls.geojson",
+      "fields": "citystates/gyba/gyba_fields.geojson",
+      "trees": "citystates/gyba/gyba_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:02",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/gyba_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/gyba"
+    }
+  }
+}

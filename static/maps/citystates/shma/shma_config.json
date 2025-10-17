@@ -1,0 +1,89 @@
+{
+  "citystate": "shma",
+  "display_name": "Shma",
+  "bounds": {
+    "west": 41.0300535875879,
+    "south": -16.66040289315877,
+    "east": 41.055656187587886,
+    "north": -16.631293293158773
+  },
+  "center": {
+    "lat": -16.645848093158772,
+    "lng": 41.04285488758789
+  },
+  "castle_position": {
+    "lat": -16.65030984856597,
+    "lng": 41.050486235055004
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 887,
+    "districts": 5,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 14,
+    "trees": 5
+  },
+  "statistics": {
+    "buildings": {
+      "count": 887,
+      "types": {
+        "residential": 884,
+        "industrial": 3
+      },
+      "total_occupants": 4728,
+      "avg_occupants": 5.33032694475761,
+      "avg_floors": 1.6381059751972942
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Oak Shade",
+        "Rainy Ridge",
+        "Trade District",
+        "Redbloom Point",
+        "Winebridge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    },
+    "trees": {
+      "count": 5
+    }
+  },
+  "layers": {
+    "base_map": "citystates/shma/shma_map.png",
+    "vector_data": {
+      "buildings": "citystates/shma/shma_buildings.geojson",
+      "districts": "citystates/shma/shma_districts.geojson",
+      "castles": "citystates/shma/shma_castles.geojson",
+      "towers": "citystates/shma/shma_towers.geojson",
+      "walls": "citystates/shma/shma_walls.geojson",
+      "fields": "citystates/shma/shma_fields.geojson",
+      "trees": "citystates/shma/shma_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:36",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/shma_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/shma"
+    }
+  }
+}

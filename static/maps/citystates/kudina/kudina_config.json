@@ -1,0 +1,95 @@
+{
+  "citystate": "kudina",
+  "display_name": "Kudina",
+  "bounds": {
+    "west": 7.883408429965548,
+    "south": 40.9365198710325,
+    "east": 7.906859029965546,
+    "north": 40.965563471032496
+  },
+  "center": {
+    "lat": 40.9510416710325,
+    "lng": 7.895133729965547
+  },
+  "castle_position": {
+    "lat": 40.95256604881003,
+    "lng": 7.893679818854412
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1153,
+    "districts": 11,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 4,
+    "trees": 36
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1153,
+      "types": {
+        "residential": 1017,
+        "commercial": 136
+      },
+      "total_occupants": 6200,
+      "avg_occupants": 5.377276669557675,
+      "avg_floors": 1.611448395490026
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Wool Forge",
+        "Egg Docks",
+        "Western Docks",
+        "Misty Park",
+        "Eastern Slums",
+        "Castle",
+        "Spice Church",
+        "Redway Streets",
+        "Rose Court",
+        "Farmers Gate",
+        "Starsoul Village"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 4
+    },
+    "trees": {
+      "count": 36
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kudina/kudina_map.png",
+    "vector_data": {
+      "buildings": "citystates/kudina/kudina_buildings.geojson",
+      "districts": "citystates/kudina/kudina_districts.geojson",
+      "castles": "citystates/kudina/kudina_castles.geojson",
+      "towers": "citystates/kudina/kudina_towers.geojson",
+      "walls": "citystates/kudina/kudina_walls.geojson",
+      "fields": "citystates/kudina/kudina_fields.geojson",
+      "trees": "citystates/kudina/kudina_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:55",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kudina_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kudina"
+    }
+  }
+}

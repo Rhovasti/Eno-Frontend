@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -20.5916705621538,
+              18.38520732909674
+            ],
+            [
+              -20.590920562153798,
+              18.38523102909674
+            ],
+            [
+              -20.5908726621538,
+              18.38371532909674
+            ],
+            [
+              -20.5924925621538,
+              18.38366412909674
+            ],
+            [
+              -20.592506062153795,
+              18.38409222909674
+            ],
+            [
+              -20.5920698621538,
+              18.38410602909674
+            ],
+            [
+              -20.5920869621538,
+              18.38464682909674
+            ],
+            [
+              -20.591653262153798,
+              18.384660529096738
+            ],
+            [
+              -20.5916705621538,
+              18.38520732909674
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "fonte.geojson_fixed.geojson_poly_castle",
+        "age": 317,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "fonte"
+      }
+    }
+  ]
+}

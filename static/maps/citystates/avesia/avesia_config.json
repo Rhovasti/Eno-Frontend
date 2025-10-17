@@ -1,0 +1,96 @@
+{
+  "citystate": "avesia",
+  "display_name": "Avesia",
+  "bounds": {
+    "west": 16.291518640432333,
+    "south": -28.85680201774595,
+    "east": 16.35200164043233,
+    "north": -28.791798017745947
+  },
+  "center": {
+    "lat": -28.824300017745948,
+    "lng": 16.321760140432332
+  },
+  "castle_position": {
+    "lat": -28.82151799956479,
+    "lng": 16.318190831341763
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 7726,
+    "districts": 11,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 9,
+    "trees": 135
+  },
+  "statistics": {
+    "buildings": {
+      "count": 7726,
+      "types": {
+        "residential": 6478,
+        "commercial": 1063,
+        "industrial": 185
+      },
+      "total_occupants": 42972,
+      "avg_occupants": 5.561998446803003,
+      "avg_floors": 1.8171110535852963
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Fenbloom",
+        "Long Water",
+        "Eastern Slums",
+        "Spirit Walk",
+        "Bread Tower",
+        "Citadel",
+        "Old District",
+        "Spice Road",
+        "Underrise Gate",
+        "Winebridge",
+        "Greygate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    },
+    "trees": {
+      "count": 135
+    }
+  },
+  "layers": {
+    "base_map": "citystates/avesia/avesia_map.png",
+    "vector_data": {
+      "buildings": "citystates/avesia/avesia_buildings.geojson",
+      "districts": "citystates/avesia/avesia_districts.geojson",
+      "castles": "citystates/avesia/avesia_castles.geojson",
+      "towers": "citystates/avesia/avesia_towers.geojson",
+      "walls": "citystates/avesia/avesia_walls.geojson",
+      "fields": "citystates/avesia/avesia_fields.geojson",
+      "trees": "citystates/avesia/avesia_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:30",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/avesia_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/avesia"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.37287852725527,
+              1.890419727010685
+            ],
+            [
+              -22.37305122725527,
+              1.8902242270106848
+            ],
+            [
+              -22.37360812725527,
+              1.890836327010685
+            ],
+            [
+              -22.37296722725527,
+              1.891101427010685
+            ],
+            [
+              -22.372805927255268,
+              1.890711527010685
+            ],
+            [
+              -22.372976627255266,
+              1.8905716270106852
+            ],
+            [
+              -22.37287852725527,
+              1.890419727010685
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "laizhou.geojson_fixed.geojson_poly_castle",
+        "age": 614,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "laizhou"
+      }
+    }
+  ]
+}

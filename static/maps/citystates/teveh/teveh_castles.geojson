@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              53.89570802516746,
+              11.411417228150256
+            ],
+            [
+              53.89522332516746,
+              11.411717928150257
+            ],
+            [
+              53.89564572516746,
+              11.412487428150254
+            ],
+            [
+              53.89643392516745,
+              11.411998428150255
+            ],
+            [
+              53.89628962516746,
+              11.411765728150254
+            ],
+            [
+              53.896016125167456,
+              11.411935328150253
+            ],
+            [
+              53.89570802516746,
+              11.411417228150256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "teveh.geojson_poly_castle",
+        "age": 650,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "teveh"
+      }
+    }
+  ]
+}

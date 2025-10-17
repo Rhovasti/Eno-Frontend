@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.989935612314156,
+              38.112378919500124
+            ],
+            [
+              23.989762812314154,
+              38.11159491950013
+            ],
+            [
+              23.987744612314152,
+              38.11203961950013
+            ],
+            [
+              23.98822791231415,
+              38.11423291950013
+            ],
+            [
+              23.989576812314155,
+              38.11393561950013
+            ],
+            [
+              23.989447912314155,
+              38.11335041950013
+            ],
+            [
+              23.99074131231415,
+              38.113065419500124
+            ],
+            [
+              23.990559812314153,
+              38.11224141950013
+            ],
+            [
+              23.989935612314156,
+              38.112378919500124
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "asuyan.geojson_fixed.geojson_poly_castle",
+        "age": 471,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "asuyan"
+      }
+    }
+  ]
+}

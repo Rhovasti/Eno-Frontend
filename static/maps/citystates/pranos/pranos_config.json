@@ -1,0 +1,96 @@
+{
+  "citystate": "pranos",
+  "display_name": "Pranos",
+  "bounds": {
+    "west": -26.84941188364439,
+    "south": 25.194828462917307,
+    "east": -26.765480283644397,
+    "north": 25.270121062917305
+  },
+  "center": {
+    "lat": 25.232474762917306,
+    "lng": -26.807446083644393
+  },
+  "castle_position": {
+    "lat": 25.24700033564553,
+    "lng": -26.79662023819035
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 11431,
+    "districts": 11,
+    "castles": 1,
+    "towers": 33,
+    "walls": 1,
+    "fields": 11,
+    "trees": 365
+  },
+  "statistics": {
+    "buildings": {
+      "count": 11431,
+      "types": {
+        "residential": 7238,
+        "commercial": 3066,
+        "other": 1127
+      },
+      "total_occupants": 61221,
+      "avg_occupants": 5.355699413874552,
+      "avg_floors": 1.74735368734144
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Castle District",
+        "East Pranos",
+        "New Ridge",
+        "Old Pranos",
+        "East Slums",
+        "Darkbark Star",
+        "Freegate",
+        "Nightbridge",
+        "New Wall",
+        "Elmgate",
+        "Everkey Bridge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 33
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    },
+    "trees": {
+      "count": 365
+    }
+  },
+  "layers": {
+    "base_map": "citystates/pranos/pranos_map.png",
+    "vector_data": {
+      "buildings": "citystates/pranos/pranos_buildings.geojson",
+      "districts": "citystates/pranos/pranos_districts.geojson",
+      "castles": "citystates/pranos/pranos_castles.geojson",
+      "towers": "citystates/pranos/pranos_towers.geojson",
+      "walls": "citystates/pranos/pranos_walls.geojson",
+      "fields": "citystates/pranos/pranos_fields.geojson",
+      "trees": "citystates/pranos/pranos_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:24",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/pranos_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/pranos"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.666193574065743,
+              -5.849895402697066
+            ],
+            [
+              -4.6660853740657435,
+              -5.849403902697067
+            ],
+            [
+              -4.665169874065742,
+              -5.8494588026970655
+            ],
+            [
+              -4.665142774065743,
+              -5.8499795026970665
+            ],
+            [
+              -4.666193574065743,
+              -5.849895402697066
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "murmium.geojson_fixed.geojson_poly_castle",
+        "age": 523,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "murmium"
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "citystate": "fonte",
+  "display_name": "Fonte",
+  "bounds": {
+    "west": -20.59842106215382,
+    "south": 18.372843829096734,
+    "east": -20.57910106215382,
+    "north": 18.387356829096735
+  },
+  "center": {
+    "lat": 18.380100329096734,
+    "lng": -20.58876106215382
+  },
+  "castle_position": {
+    "lat": 18.38450341798563,
+    "lng": -20.59177145104269
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 367,
+    "districts": 4,
+    "castles": 1,
+    "towers": 20,
+    "walls": 1,
+    "fields": 10,
+    "trees": 8
+  },
+  "statistics": {
+    "buildings": {
+      "count": 367,
+      "types": {
+        "residential": 118,
+        "commercial": 249
+      },
+      "total_occupants": 1873,
+      "avg_occupants": 5.1035422343324255,
+      "avg_floors": 1.7901907356948228
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Castle District",
+        "Estate",
+        "Apple Arch",
+        "Trade District"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 20
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 8
+    }
+  },
+  "layers": {
+    "base_map": "citystates/fonte/fonte_map.png",
+    "vector_data": {
+      "buildings": "citystates/fonte/fonte_buildings.geojson",
+      "districts": "citystates/fonte/fonte_districts.geojson",
+      "castles": "citystates/fonte/fonte_castles.geojson",
+      "towers": "citystates/fonte/fonte_towers.geojson",
+      "walls": "citystates/fonte/fonte_walls.geojson",
+      "fields": "citystates/fonte/fonte_fields.geojson",
+      "trees": "citystates/fonte/fonte_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:23",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/fonte_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/fonte"
+    }
+  }
+}

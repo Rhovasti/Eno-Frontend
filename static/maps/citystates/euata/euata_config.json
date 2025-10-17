@@ -1,0 +1,81 @@
+{
+  "citystate": "euata",
+  "display_name": "Euata",
+  "bounds": {
+    "west": -0.1841782137693502,
+    "south": -7.023495072101856,
+    "east": -0.16607141376935017,
+    "north": -7.010259272101855
+  },
+  "center": {
+    "lat": -7.0168771721018555,
+    "lng": -0.17512481376935018
+  },
+  "castle_position": {
+    "lat": -7.013183253682754,
+    "lng": -0.1720741548208175
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 227,
+    "districts": 1,
+    "castles": 1,
+    "towers": 5,
+    "walls": 1,
+    "fields": 9,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 227,
+      "types": {
+        "residential": 227
+      },
+      "total_occupants": 1207,
+      "avg_occupants": 5.317180616740088,
+      "avg_floors": 1.5154185022026432
+    },
+    "districts": {
+      "count": 1,
+      "unique_names": [
+        "Euata"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 5
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    }
+  },
+  "layers": {
+    "base_map": "citystates/euata/euata_map.png",
+    "vector_data": {
+      "buildings": "citystates/euata/euata_buildings.geojson",
+      "districts": "citystates/euata/euata_districts.geojson",
+      "castles": "citystates/euata/euata_castles.geojson",
+      "towers": "citystates/euata/euata_towers.geojson",
+      "walls": "citystates/euata/euata_walls.geojson",
+      "fields": "citystates/euata/euata_fields.geojson",
+      "trees": "citystates/euata/euata_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:51",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/euata_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/euata"
+    }
+  }
+}

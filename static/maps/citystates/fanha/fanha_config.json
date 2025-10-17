@@ -1,0 +1,88 @@
+{
+  "citystate": "fanha",
+  "display_name": "Fanha",
+  "bounds": {
+    "west": 35.39707135622841,
+    "south": -32.26599489583702,
+    "east": 35.43053455622841,
+    "north": -32.23285869583702
+  },
+  "center": {
+    "lat": -32.24942679583702,
+    "lng": 35.41380295622841
+  },
+  "castle_position": {
+    "lat": -32.25619151012281,
+    "lng": 35.41009184194284
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1005,
+    "districts": 4,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 24,
+    "trees": 4
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1005,
+      "types": {
+        "commercial": 983,
+        "residential": 22
+      },
+      "total_occupants": 5205,
+      "avg_occupants": 5.17910447761194,
+      "avg_floors": 1.590049751243781
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "The Tower",
+        "Cotton Wall",
+        "Deep Water",
+        "Twilight Edge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 24
+    },
+    "trees": {
+      "count": 4
+    }
+  },
+  "layers": {
+    "base_map": "citystates/fanha/fanha_map.png",
+    "vector_data": {
+      "buildings": "citystates/fanha/fanha_buildings.geojson",
+      "districts": "citystates/fanha/fanha_districts.geojson",
+      "castles": "citystates/fanha/fanha_castles.geojson",
+      "towers": "citystates/fanha/fanha_towers.geojson",
+      "walls": "citystates/fanha/fanha_walls.geojson",
+      "fields": "citystates/fanha/fanha_fields.geojson",
+      "trees": "citystates/fanha/fanha_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:12",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/fanha_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/fanha"
+    }
+  }
+}

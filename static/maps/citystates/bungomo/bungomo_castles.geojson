@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.564208102248394,
+              38.89398394596778
+            ],
+            [
+              27.562978702248394,
+              38.89411974596778
+            ],
+            [
+              27.563258402248394,
+              38.896650245967784
+            ],
+            [
+              27.563758702248393,
+              38.896594945967784
+            ],
+            [
+              27.563828802248388,
+              38.89722984596778
+            ],
+            [
+              27.56455790224839,
+              38.89714924596779
+            ],
+            [
+              27.564208102248394,
+              38.89398394596778
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "bungomo.geojson_fixed.geojson_poly_castle",
+        "age": 186,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "bungomo"
+      }
+    }
+  ]
+}

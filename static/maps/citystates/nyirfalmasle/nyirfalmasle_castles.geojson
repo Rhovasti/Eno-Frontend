@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.940921280352494,
+              -1.0104182236186363
+            ],
+            [
+              26.941218872364548,
+              -1.0103192995849213
+            ],
+            [
+              26.941218880352498,
+              -1.0103193236186363
+            ],
+            [
+              26.941756091646933,
+              -1.0101407576109074
+            ],
+            [
+              26.941942680352494,
+              -1.0107023236186363
+            ],
+            [
+              26.941858719214604,
+              -1.0107302771230764
+            ],
+            [
+              26.941797280352493,
+              -1.0107507236186364
+            ],
+            [
+              26.941797282923833,
+              -1.0107507313435673
+            ],
+            [
+              26.9411082803525,
+              -1.0109801236186364
+            ],
+            [
+              26.940921280352494,
+              -1.0104182236186363
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "nyirfalmasle.geojson_fixed.geojson_poly_castle",
+        "age": 787,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "nyirfalmasle"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              49.74250077935591,
+              -9.249023388189325
+            ],
+            [
+              49.74337017935592,
+              -9.249183588189325
+            ],
+            [
+              49.74308727935592,
+              -9.250718288189326
+            ],
+            [
+              49.74185547935592,
+              -9.250491188189326
+            ],
+            [
+              49.742060779355924,
+              -9.249377288189326
+            ],
+            [
+              49.74242327935592,
+              -9.249444088189325
+            ],
+            [
+              49.74250077935591,
+              -9.249023388189325
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "zidesun.geojson_fixed.geojson_poly_castle",
+        "age": 752,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "zidesun"
+      }
+    }
+  ]
+}

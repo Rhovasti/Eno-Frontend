@@ -1,0 +1,89 @@
+{
+  "citystate": "ubahmia",
+  "display_name": "Ubahmia",
+  "bounds": {
+    "west": 50.2449951854888,
+    "south": -11.212481433741146,
+    "east": 50.2748235854888,
+    "north": -11.191117033741147
+  },
+  "center": {
+    "lat": -11.201799233741147,
+    "lng": 50.2599093854888
+  },
+  "castle_position": {
+    "lat": -11.205851182541005,
+    "lng": 50.264555429606986
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 479,
+    "districts": 4,
+    "castles": 1,
+    "towers": 6,
+    "walls": 1,
+    "fields": 14,
+    "trees": 13
+  },
+  "statistics": {
+    "buildings": {
+      "count": 479,
+      "types": {
+        "other": 294,
+        "commercial": 166,
+        "residential": 19
+      },
+      "total_occupants": 3103,
+      "avg_occupants": 6.478079331941545,
+      "avg_floors": 1.465553235908142
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Bright Lodge",
+        "Four Crests",
+        "Trade District",
+        "Forest Hill"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 6
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    },
+    "trees": {
+      "count": 13
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ubahmia/ubahmia_map.png",
+    "vector_data": {
+      "buildings": "citystates/ubahmia/ubahmia_buildings.geojson",
+      "districts": "citystates/ubahmia/ubahmia_districts.geojson",
+      "castles": "citystates/ubahmia/ubahmia_castles.geojson",
+      "towers": "citystates/ubahmia/ubahmia_towers.geojson",
+      "walls": "citystates/ubahmia/ubahmia_walls.geojson",
+      "fields": "citystates/ubahmia/ubahmia_fields.geojson",
+      "trees": "citystates/ubahmia/ubahmia_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:35",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ubahmia_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ubahmia"
+    }
+  }
+}

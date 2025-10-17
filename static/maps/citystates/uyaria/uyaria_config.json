@@ -1,0 +1,90 @@
+{
+  "citystate": "uyaria",
+  "display_name": "Uyaria",
+  "bounds": {
+    "west": 37.54081336961355,
+    "south": 13.573636647119724,
+    "east": 37.556650569613545,
+    "north": 13.590875847119722
+  },
+  "center": {
+    "lat": 13.582256247119723,
+    "lng": 37.54873196961355
+  },
+  "castle_position": {
+    "lat": 13.576246080453071,
+    "lng": 37.55298908072458
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 322,
+    "districts": 6,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 10,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 322,
+      "types": {
+        "residential": 290,
+        "other": 32
+      },
+      "total_occupants": 1685,
+      "avg_occupants": 5.232919254658385,
+      "avg_floors": 1.9130434782608696
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Pond",
+        "Kurney",
+        "Gate",
+        "Pot",
+        "Meadows",
+        "Shallow Estate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/uyaria/uyaria_map.png",
+    "vector_data": {
+      "buildings": "citystates/uyaria/uyaria_buildings.geojson",
+      "districts": "citystates/uyaria/uyaria_districts.geojson",
+      "castles": "citystates/uyaria/uyaria_castles.geojson",
+      "towers": "citystates/uyaria/uyaria_towers.geojson",
+      "walls": "citystates/uyaria/uyaria_walls.geojson",
+      "fields": "citystates/uyaria/uyaria_fields.geojson",
+      "trees": "citystates/uyaria/uyaria_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:28",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/uyaria_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/uyaria"
+    }
+  }
+}

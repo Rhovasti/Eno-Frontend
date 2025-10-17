@@ -1,0 +1,94 @@
+{
+  "citystate": "tsanghom",
+  "display_name": "Tsanghom",
+  "bounds": {
+    "west": -19.542158336019828,
+    "south": -17.58745204058338,
+    "east": -19.505716736019824,
+    "north": -17.562163440583383
+  },
+  "center": {
+    "lat": -17.57480774058338,
+    "lng": -19.523937536019826
+  },
+  "castle_position": {
+    "lat": -17.57343912629776,
+    "lng": -19.524136678876864
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 812,
+    "districts": 9,
+    "castles": 1,
+    "towers": 13,
+    "walls": 1,
+    "fields": 16,
+    "trees": 92
+  },
+  "statistics": {
+    "buildings": {
+      "count": 812,
+      "types": {
+        "residential": 700,
+        "industrial": 40,
+        "commercial": 72
+      },
+      "total_occupants": 5347,
+      "avg_occupants": 6.584975369458128,
+      "avg_floors": 2.3091133004926108
+    },
+    "districts": {
+      "count": 9,
+      "unique_names": [
+        "Golden Mill",
+        "North Tsanghom",
+        "Fortress",
+        "Red Wall",
+        "Greatgate",
+        "New Park",
+        "Stonefire",
+        "Mooncrest Square",
+        "Ashen Quarter"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 13
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 16
+    },
+    "trees": {
+      "count": 92
+    }
+  },
+  "layers": {
+    "base_map": "citystates/tsanghom/tsanghom_map.png",
+    "vector_data": {
+      "buildings": "citystates/tsanghom/tsanghom_buildings.geojson",
+      "districts": "citystates/tsanghom/tsanghom_districts.geojson",
+      "castles": "citystates/tsanghom/tsanghom_castles.geojson",
+      "towers": "citystates/tsanghom/tsanghom_towers.geojson",
+      "walls": "citystates/tsanghom/tsanghom_walls.geojson",
+      "fields": "citystates/tsanghom/tsanghom_fields.geojson",
+      "trees": "citystates/tsanghom/tsanghom_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:08",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/tsanghom_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/tsanghom"
+    }
+  }
+}

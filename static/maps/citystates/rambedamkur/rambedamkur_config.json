@@ -1,0 +1,88 @@
+{
+  "citystate": "rambedamkur",
+  "display_name": "Rambedamkur",
+  "bounds": {
+    "west": 13.210225122497368,
+    "south": 32.73894292169232,
+    "east": 13.25081392249737,
+    "north": 32.78883172169231
+  },
+  "center": {
+    "lat": 32.763887321692316,
+    "lng": 13.230519522497369
+  },
+  "castle_position": {
+    "lat": 32.77599153835903,
+    "lng": 13.22575245583076
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1093,
+    "districts": 4,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 33,
+    "trees": 17
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1093,
+      "types": {
+        "residential": 981,
+        "commercial": 112
+      },
+      "total_occupants": 5723,
+      "avg_occupants": 5.236047575480329,
+      "avg_floors": 1.5077767612076853
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Starhill Reach",
+        "Salt Orchard",
+        "Market Town",
+        "Oak Cross"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 33
+    },
+    "trees": {
+      "count": 17
+    }
+  },
+  "layers": {
+    "base_map": "citystates/rambedamkur/rambedamkur_map.png",
+    "vector_data": {
+      "buildings": "citystates/rambedamkur/rambedamkur_buildings.geojson",
+      "districts": "citystates/rambedamkur/rambedamkur_districts.geojson",
+      "castles": "citystates/rambedamkur/rambedamkur_castles.geojson",
+      "towers": "citystates/rambedamkur/rambedamkur_towers.geojson",
+      "walls": "citystates/rambedamkur/rambedamkur_walls.geojson",
+      "fields": "citystates/rambedamkur/rambedamkur_fields.geojson",
+      "trees": "citystates/rambedamkur/rambedamkur_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:03",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/rambedamkur_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/rambedamkur"
+    }
+  }
+}

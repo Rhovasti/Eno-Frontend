@@ -1,0 +1,89 @@
+{
+  "citystate": "urir",
+  "display_name": "Urir",
+  "bounds": {
+    "west": 13.496788365775668,
+    "south": -21.69380505372999,
+    "east": 13.529614365775668,
+    "north": -21.665785053729984
+  },
+  "center": {
+    "lat": -21.679795053729986,
+    "lng": 13.513201365775668
+  },
+  "castle_position": {
+    "lat": -21.682155682301477,
+    "lng": 13.524215365775678
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 828,
+    "districts": 4,
+    "castles": 1,
+    "towers": 6,
+    "walls": 1,
+    "fields": 19,
+    "trees": 9
+  },
+  "statistics": {
+    "buildings": {
+      "count": 828,
+      "types": {
+        "industrial": 520,
+        "residential": 285,
+        "other": 23
+      },
+      "total_occupants": 6722,
+      "avg_occupants": 8.118357487922705,
+      "avg_floors": 1.541062801932367
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Dusk District",
+        "Trade District",
+        "Downfall Walk",
+        "Oak Rock"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 6
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 19
+    },
+    "trees": {
+      "count": 9
+    }
+  },
+  "layers": {
+    "base_map": "citystates/urir/urir_map.png",
+    "vector_data": {
+      "buildings": "citystates/urir/urir_buildings.geojson",
+      "districts": "citystates/urir/urir_districts.geojson",
+      "castles": "citystates/urir/urir_castles.geojson",
+      "towers": "citystates/urir/urir_towers.geojson",
+      "walls": "citystates/urir/urir_walls.geojson",
+      "fields": "citystates/urir/urir_fields.geojson",
+      "trees": "citystates/urir/urir_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:06",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/urir_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/urir"
+    }
+  }
+}

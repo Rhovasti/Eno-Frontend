@@ -1,0 +1,93 @@
+{
+  "citystate": "ithemate",
+  "display_name": "Ithemate",
+  "bounds": {
+    "west": -7.950357231917822,
+    "south": 33.9741034126517,
+    "east": -7.889012631917824,
+    "north": 34.0371370126517
+  },
+  "center": {
+    "lat": 34.0056202126517,
+    "lng": -7.919684931917823
+  },
+  "castle_position": {
+    "lat": 34.00812659042971,
+    "lng": -7.915679143028882
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 4826,
+    "districts": 8,
+    "castles": 1,
+    "towers": 19,
+    "walls": 1,
+    "fields": 10,
+    "trees": 432
+  },
+  "statistics": {
+    "buildings": {
+      "count": 4826,
+      "types": {
+        "industrial": 1589,
+        "residential": 2560,
+        "commercial": 677
+      },
+      "total_occupants": 38235,
+      "avg_occupants": 7.922710319104849,
+      "avg_floors": 2.1373808537090757
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Eastgate",
+        "Starrise Road",
+        "Castle",
+        "Old Mill",
+        "Dragonbloom Gate",
+        "Black Star",
+        "Ambertide Borough",
+        "Black Field"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 19
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 432
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ithemate/ithemate_map.png",
+    "vector_data": {
+      "buildings": "citystates/ithemate/ithemate_buildings.geojson",
+      "districts": "citystates/ithemate/ithemate_districts.geojson",
+      "castles": "citystates/ithemate/ithemate_castles.geojson",
+      "towers": "citystates/ithemate/ithemate_towers.geojson",
+      "walls": "citystates/ithemate/ithemate_walls.geojson",
+      "fields": "citystates/ithemate/ithemate_fields.geojson",
+      "trees": "citystates/ithemate/ithemate_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:42",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ithemate_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ithemate"
+    }
+  }
+}

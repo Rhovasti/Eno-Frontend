@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.172470918966262,
+              14.169053539340963
+            ],
+            [
+              -25.17126271896626,
+              14.170151139340964
+            ],
+            [
+              -25.16950651896626,
+              14.168218039340962
+            ],
+            [
+              -25.169832918966257,
+              14.167921539340961
+            ],
+            [
+              -25.170596618966258,
+              14.168762139340961
+            ],
+            [
+              -25.171093318966257,
+              14.168310939340964
+            ],
+            [
+              -25.17140231896626,
+              14.168651039340963
+            ],
+            [
+              -25.17178741896626,
+              14.168301139340963
+            ],
+            [
+              -25.172470918966262,
+              14.169053539340963
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "jining.geojson_fixed.geojson_poly_castle",
+        "age": 239,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "jining"
+      }
+    }
+  ]
+}

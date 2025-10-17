@@ -1,0 +1,91 @@
+{
+  "citystate": "mernah",
+  "display_name": "Mernah",
+  "bounds": {
+    "west": 4.404945639967193,
+    "south": -38.279189528828155,
+    "east": 4.426524039967192,
+    "north": -38.259481128828156
+  },
+  "center": {
+    "lat": -38.269335328828156,
+    "lng": 4.415734839967192
+  },
+  "castle_position": {
+    "lat": -38.264955812801595,
+    "lng": 4.419166884910234
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 676,
+    "districts": 5,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 1,
+    "trees": 19
+  },
+  "statistics": {
+    "buildings": {
+      "count": 676,
+      "types": {
+        "commercial": 484,
+        "industrial": 124,
+        "residential": 60,
+        "other": 8
+      },
+      "total_occupants": 4011,
+      "avg_occupants": 5.933431952662722,
+      "avg_floors": 2.1701183431952664
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Silver Gate",
+        "Timber Crown",
+        "Ashway Gate",
+        "North Slums",
+        "Dark Reach"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 1
+    },
+    "trees": {
+      "count": 19
+    }
+  },
+  "layers": {
+    "base_map": "citystates/mernah/mernah_map.png",
+    "vector_data": {
+      "buildings": "citystates/mernah/mernah_buildings.geojson",
+      "districts": "citystates/mernah/mernah_districts.geojson",
+      "castles": "citystates/mernah/mernah_castles.geojson",
+      "towers": "citystates/mernah/mernah_towers.geojson",
+      "walls": "citystates/mernah/mernah_walls.geojson",
+      "fields": "citystates/mernah/mernah_fields.geojson",
+      "trees": "citystates/mernah/mernah_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 09:00:01",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/mernah_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/mernah"
+    }
+  }
+}

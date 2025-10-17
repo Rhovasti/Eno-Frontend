@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -19.523790036019722,
+              -17.573686340583475
+            ],
+            [
+              -19.524632936019724,
+              -17.574323040583476
+            ],
+            [
+              -19.525768736019725,
+              -17.572819240583474
+            ],
+            [
+              -19.52443923601972,
+              -17.57181514058347
+            ],
+            [
+              -19.523024636019723,
+              -17.573688140583474
+            ],
+            [
+              -19.523511136019724,
+              -17.574055640583477
+            ],
+            [
+              -19.523790036019722,
+              -17.573686340583475
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "tsanghom.geojson_poly_castle",
+        "age": 446,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "tsanghom"
+      }
+    }
+  ]
+}

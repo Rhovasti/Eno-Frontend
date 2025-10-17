@@ -1,0 +1,88 @@
+{
+  "citystate": "hajsala",
+  "display_name": "Hajsala",
+  "bounds": {
+    "west": 41.17633121376302,
+    "south": -17.12790021893549,
+    "east": 41.20072361376302,
+    "north": -17.107140818935495
+  },
+  "center": {
+    "lat": -17.117520518935493,
+    "lng": 41.18852741376302
+  },
+  "castle_position": {
+    "lat": -17.113036547506926,
+    "lng": 41.18588084233455
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 486,
+    "districts": 4,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 19,
+    "trees": 1
+  },
+  "statistics": {
+    "buildings": {
+      "count": 486,
+      "types": {
+        "residential": 471,
+        "industrial": 15
+      },
+      "total_occupants": 2816,
+      "avg_occupants": 5.794238683127572,
+      "avg_floors": 1.5781893004115226
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Pale Reach",
+        "Market District",
+        "Blackheart Ward",
+        "Candlekey Cross"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 19
+    },
+    "trees": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/hajsala/hajsala_map.png",
+    "vector_data": {
+      "buildings": "citystates/hajsala/hajsala_buildings.geojson",
+      "districts": "citystates/hajsala/hajsala_districts.geojson",
+      "castles": "citystates/hajsala/hajsala_castles.geojson",
+      "towers": "citystates/hajsala/hajsala_towers.geojson",
+      "walls": "citystates/hajsala/hajsala_walls.geojson",
+      "fields": "citystates/hajsala/hajsala_fields.geojson",
+      "trees": "citystates/hajsala/hajsala_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:50",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/hajsala_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/hajsala"
+    }
+  }
+}

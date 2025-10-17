@@ -1,0 +1,84 @@
+{
+  "citystate": "chitna",
+  "display_name": "Chitna",
+  "bounds": {
+    "west": -1.4889204689060846,
+    "south": 22.140215827553487,
+    "east": -1.4640348689060845,
+    "north": 22.160918427553487
+  },
+  "center": {
+    "lat": 22.150567127553487,
+    "lng": -1.4764776689060846
+  },
+  "castle_position": {
+    "lat": 22.150213160886803,
+    "lng": -1.4805973689060854
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 671,
+    "districts": 3,
+    "castles": 1,
+    "towers": 15,
+    "walls": 1,
+    "fields": 11,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 671,
+      "types": {
+        "other": 227,
+        "residential": 444
+      },
+      "total_occupants": 4562,
+      "avg_occupants": 6.7988077496274215,
+      "avg_floors": 2.4992548435171384
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Bright Town",
+        "Old Chitna",
+        "Bone District"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 15
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    }
+  },
+  "layers": {
+    "base_map": "citystates/chitna/chitna_map.png",
+    "vector_data": {
+      "buildings": "citystates/chitna/chitna_buildings.geojson",
+      "districts": "citystates/chitna/chitna_districts.geojson",
+      "castles": "citystates/chitna/chitna_castles.geojson",
+      "towers": "citystates/chitna/chitna_towers.geojson",
+      "walls": "citystates/chitna/chitna_walls.geojson",
+      "fields": "citystates/chitna/chitna_fields.geojson",
+      "trees": "citystates/chitna/chitna_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:30",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/chitna_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/chitna"
+    }
+  }
+}

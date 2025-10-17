@@ -1,0 +1,91 @@
+{
+  "citystate": "d\u00fbr-tu",
+  "display_name": "D\u00fbr-Tu",
+  "bounds": {
+    "west": 30.984449507457096,
+    "south": 38.103071861871555,
+    "east": 31.042912507457093,
+    "north": 38.16938986187155
+  },
+  "center": {
+    "lat": 38.13623086187155,
+    "lng": 31.013681007457095
+  },
+  "castle_position": {
+    "lat": 38.13976227298223,
+    "lng": 31.01367517412407
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 6470,
+    "districts": 11,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 0,
+    "trees": 0
+  },
+  "statistics": {
+    "buildings": {
+      "count": 6470,
+      "types": {
+        "industrial": 1267,
+        "residential": 3202,
+        "commercial": 940,
+        "other": 1061
+      },
+      "total_occupants": 42609,
+      "avg_occupants": 6.5856259659969085,
+      "avg_floors": 1.8591962905718702
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Western D\u00c3\u00bbr-Tu",
+        "Twilight Mile",
+        "Rose Cross",
+        "White Crowns Town",
+        "Downlight Vale",
+        "Castle",
+        "Blue Orchard",
+        "Deep Ridge",
+        "Tailors Gate",
+        "South Slums",
+        "Darkkey Road"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    }
+  },
+  "layers": {
+    "base_map": "citystates/d\u00fbr-tu/d\u00fbr-tu_map.png",
+    "vector_data": {
+      "buildings": "citystates/d\u00fbr-tu/d\u00fbr-tu_buildings.geojson",
+      "districts": "citystates/d\u00fbr-tu/d\u00fbr-tu_districts.geojson",
+      "castles": "citystates/d\u00fbr-tu/d\u00fbr-tu_castles.geojson",
+      "towers": "citystates/d\u00fbr-tu/d\u00fbr-tu_towers.geojson",
+      "walls": "citystates/d\u00fbr-tu/d\u00fbr-tu_walls.geojson",
+      "fields": "citystates/d\u00fbr-tu/d\u00fbr-tu_fields.geojson",
+      "trees": "citystates/d\u00fbr-tu/d\u00fbr-tu_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:49",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/d\u00fbr-tu_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/d\u00fbr-tu"
+    }
+  }
+}

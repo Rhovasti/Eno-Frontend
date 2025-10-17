@@ -1,0 +1,89 @@
+{
+  "citystate": "nyirfalmasle",
+  "display_name": "Nyirfalmasle",
+  "bounds": {
+    "west": 26.927560380352478,
+    "south": -1.0262821236186397,
+    "east": 26.95662518035247,
+    "north": -0.9929173236186397
+  },
+  "center": {
+    "lat": -1.0095997236186398,
+    "lng": 26.942092780352475
+  },
+  "castle_position": {
+    "lat": -1.010553000737429,
+    "lng": 26.94145406482649
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 485,
+    "districts": 5,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 22,
+    "trees": 6
+  },
+  "statistics": {
+    "buildings": {
+      "count": 485,
+      "types": {
+        "residential": 285,
+        "industrial": 200
+      },
+      "total_occupants": 3913,
+      "avg_occupants": 8.068041237113402,
+      "avg_floors": 2.465979381443299
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Pearl Forge",
+        "Market Ward",
+        "Cherry Brook",
+        "Dawn Hill",
+        "Middle Mile"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 22
+    },
+    "trees": {
+      "count": 6
+    }
+  },
+  "layers": {
+    "base_map": "citystates/nyirfalmasle/nyirfalmasle_map.png",
+    "vector_data": {
+      "buildings": "citystates/nyirfalmasle/nyirfalmasle_buildings.geojson",
+      "districts": "citystates/nyirfalmasle/nyirfalmasle_districts.geojson",
+      "castles": "citystates/nyirfalmasle/nyirfalmasle_castles.geojson",
+      "towers": "citystates/nyirfalmasle/nyirfalmasle_towers.geojson",
+      "walls": "citystates/nyirfalmasle/nyirfalmasle_walls.geojson",
+      "fields": "citystates/nyirfalmasle/nyirfalmasle_fields.geojson",
+      "trees": "citystates/nyirfalmasle/nyirfalmasle_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:37",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/nyirfalmasle_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/nyirfalmasle"
+    }
+  }
+}

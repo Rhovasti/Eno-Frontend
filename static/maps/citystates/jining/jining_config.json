@@ -1,0 +1,93 @@
+{
+  "citystate": "jining",
+  "display_name": "Jining",
+  "bounds": {
+    "west": -25.184278218966348,
+    "south": 14.157254939340957,
+    "east": -25.166969418966353,
+    "north": 14.173266739340958
+  },
+  "center": {
+    "lat": 14.165260839340958,
+    "lng": -25.17562381896635
+  },
+  "castle_position": {
+    "lat": 14.168713672674295,
+    "lng": -25.171158185632926
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 421,
+    "districts": 8,
+    "castles": 1,
+    "towers": 37,
+    "walls": 1,
+    "fields": 4,
+    "trees": 50
+  },
+  "statistics": {
+    "buildings": {
+      "count": 421,
+      "types": {
+        "residential": 309,
+        "other": 51,
+        "commercial": 61
+      },
+      "total_occupants": 2308,
+      "avg_occupants": 5.4821852731591445,
+      "avg_floors": 1.6959619952494063
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "West Jining",
+        "Fish Church",
+        "Little Grove",
+        "Hermits Mire",
+        "Citadel",
+        "Bright Horn",
+        "Green Springs District",
+        "The Court"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 37
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 4
+    },
+    "trees": {
+      "count": 50
+    }
+  },
+  "layers": {
+    "base_map": "citystates/jining/jining_map.png",
+    "vector_data": {
+      "buildings": "citystates/jining/jining_buildings.geojson",
+      "districts": "citystates/jining/jining_districts.geojson",
+      "castles": "citystates/jining/jining_castles.geojson",
+      "towers": "citystates/jining/jining_towers.geojson",
+      "walls": "citystates/jining/jining_walls.geojson",
+      "fields": "citystates/jining/jining_fields.geojson",
+      "trees": "citystates/jining/jining_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:21",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/jining_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/jining"
+    }
+  }
+}

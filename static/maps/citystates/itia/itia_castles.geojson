@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.17017217636485,
+              43.46383855307448
+            ],
+            [
+              32.16976877636484,
+              43.46279815307449
+            ],
+            [
+              32.169213076364834,
+              43.46365445307448
+            ],
+            [
+              32.16926557636484,
+              43.463871853074494
+            ],
+            [
+              32.169540276364835,
+              43.463646753074485
+            ],
+            [
+              32.16965657636485,
+              43.464000053074486
+            ],
+            [
+              32.17017217636485,
+              43.46383855307448
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "itia.geojson_fixed.geojson_poly_castle",
+        "age": 997,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "itia"
+      }
+    }
+  ]
+}

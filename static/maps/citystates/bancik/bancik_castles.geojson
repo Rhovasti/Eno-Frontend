@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.733093629760944,
+              -2.4788902362533762
+            ],
+            [
+              46.732911229760944,
+              -2.478720136253376
+            ],
+            [
+              46.733631629760936,
+              -2.4779493362533755
+            ],
+            [
+              46.733664729760946,
+              -2.478278836253376
+            ],
+            [
+              46.73349682976094,
+              -2.4784586362533756
+            ],
+            [
+              46.73359972976094,
+              -2.4788364362533764
+            ],
+            [
+              46.73347142976094,
+              -2.478974036253376
+            ],
+            [
+              46.733299629760936,
+              -2.478669736253376
+            ],
+            [
+              46.733093629760944,
+              -2.4788902362533762
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "bancik.geojson_fixed.geojson_poly_castle",
+        "age": 909,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "bancik"
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "citystate": "tsin",
+  "display_name": "Tsin",
+  "bounds": {
+    "west": -23.99514757599493,
+    "south": -14.929185319294776,
+    "east": -23.96001757599492,
+    "north": -14.901589319294777
+  },
+  "center": {
+    "lat": -14.915387319294776,
+    "lng": -23.977582575994926
+  },
+  "castle_position": {
+    "lat": -14.91684212596141,
+    "lng": -23.96551464932817
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1666,
+    "districts": 8,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 6,
+    "trees": 14
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1666,
+      "types": {
+        "other": 785,
+        "residential": 472,
+        "commercial": 409
+      },
+      "total_occupants": 10305,
+      "avg_occupants": 6.185474189675871,
+      "avg_floors": 1.5942376950780313
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Stormcrest Ridge",
+        "Bone Shade",
+        "Fortress",
+        "Mistheart Gate",
+        "Downwood Crossing",
+        "Pale Borough",
+        "Green Road",
+        "Copper Heath"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 6
+    },
+    "trees": {
+      "count": 14
+    }
+  },
+  "layers": {
+    "base_map": "citystates/tsin/tsin_map.png",
+    "vector_data": {
+      "buildings": "citystates/tsin/tsin_buildings.geojson",
+      "districts": "citystates/tsin/tsin_districts.geojson",
+      "castles": "citystates/tsin/tsin_castles.geojson",
+      "towers": "citystates/tsin/tsin_towers.geojson",
+      "walls": "citystates/tsin/tsin_walls.geojson",
+      "fields": "citystates/tsin/tsin_fields.geojson",
+      "trees": "citystates/tsin/tsin_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:16",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/tsin_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/tsin"
+    }
+  }
+}

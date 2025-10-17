@@ -1,0 +1,7074 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_0_0",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Tenement",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83876391678898,
+              25.114082007135867
+            ],
+            [
+              47.83885091678897,
+              25.114037007135867
+            ],
+            [
+              47.83882591678898,
+              25.11399000713587
+            ],
+            [
+              47.83873991678898,
+              25.114034007135867
+            ],
+            [
+              47.83876391678898,
+              25.114082007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_1_0",
+        "age": "1",
+        "generation": "10",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840109916788975,
+              25.113972007135867
+            ],
+            [
+              47.840059916788974,
+              25.113877007135866
+            ],
+            [
+              47.839969916788974,
+              25.113925007135865
+            ],
+            [
+              47.84002691678897,
+              25.11401600713587
+            ],
+            [
+              47.840109916788975,
+              25.113972007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_1_1",
+        "age": "0",
+        "generation": "10",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84041291678898,
+              25.114094007135865
+            ],
+            [
+              47.84034991678898,
+              25.11397400713587
+            ],
+            [
+              47.84022991678897,
+              25.114037007135867
+            ],
+            [
+              47.840295916788975,
+              25.114149007135868
+            ],
+            [
+              47.84036791678898,
+              25.11411800713587
+            ],
+            [
+              47.84041291678898,
+              25.114094007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_1_2",
+        "age": "49",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84001191678898,
+              25.11363100713587
+            ],
+            [
+              47.84013991678897,
+              25.113564007135867
+            ],
+            [
+              47.84008991678897,
+              25.113469007135865
+            ],
+            [
+              47.83996691678898,
+              25.11354600713587
+            ],
+            [
+              47.84001191678898,
+              25.11363100713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_3_0",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84070491678898,
+              25.11365000713587
+            ],
+            [
+              47.84077791678898,
+              25.11377100713587
+            ],
+            [
+              47.840847916788974,
+              25.11372900713587
+            ],
+            [
+              47.84077591678897,
+              25.11360800713587
+            ],
+            [
+              47.84070491678898,
+              25.11365000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_3_1",
+        "age": "44",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84054191678898,
+              25.113761007135867
+            ],
+            [
+              47.84064791678898,
+              25.11369800713587
+            ],
+            [
+              47.840610916788975,
+              25.113637007135868
+            ],
+            [
+              47.84050491678897,
+              25.113700007135865
+            ],
+            [
+              47.84054191678898,
+              25.113761007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_4_0",
+        "age": "45",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83979691678897,
+              25.113472007135865
+            ],
+            [
+              47.83974791678898,
+              25.113503007135865
+            ],
+            [
+              47.83981491678898,
+              25.113610007135872
+            ],
+            [
+              47.83986391678897,
+              25.11358000713587
+            ],
+            [
+              47.83979691678897,
+              25.113472007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_4_1",
+        "age": "43",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83979191678898,
+              25.113089007135866
+            ],
+            [
+              47.83968691678898,
+              25.113154007135865
+            ],
+            [
+              47.83976191678897,
+              25.11327300713587
+            ],
+            [
+              47.83980191678897,
+              25.113249007135867
+            ],
+            [
+              47.83979891678898,
+              25.113244007135865
+            ],
+            [
+              47.83979891678898,
+              25.113243007135868
+            ],
+            [
+              47.83979791678898,
+              25.11324200713587
+            ],
+            [
+              47.83979791678898,
+              25.113241007135866
+            ],
+            [
+              47.83979791678898,
+              25.113240007135868
+            ],
+            [
+              47.83979791678898,
+              25.11323900713587
+            ],
+            [
+              47.83979791678898,
+              25.113238007135866
+            ],
+            [
+              47.83979791678898,
+              25.11323700713587
+            ],
+            [
+              47.83979791678898,
+              25.11323600713587
+            ],
+            [
+              47.83979791678898,
+              25.113235007135867
+            ],
+            [
+              47.83979891678898,
+              25.11323400713587
+            ],
+            [
+              47.83979891678898,
+              25.11323300713587
+            ],
+            [
+              47.83979991678898,
+              25.113232007135867
+            ],
+            [
+              47.839800916788974,
+              25.11323100713587
+            ],
+            [
+              47.839800916788974,
+              25.113230007135865
+            ],
+            [
+              47.83980191678897,
+              25.113230007135865
+            ],
+            [
+              47.83980291678897,
+              25.113229007135867
+            ],
+            [
+              47.83985791678897,
+              25.113195007135868
+            ],
+            [
+              47.83979191678898,
+              25.113089007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_4_2",
+        "age": "45",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83975191678897,
+              25.113381007135867
+            ],
+            [
+              47.83982391678897,
+              25.113497007135866
+            ],
+            [
+              47.839912916788975,
+              25.11344200713587
+            ],
+            [
+              47.83984391678898,
+              25.11332300713587
+            ],
+            [
+              47.83975191678897,
+              25.113381007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_6_0",
+        "age": "1",
+        "generation": "10",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83952891678898,
+              25.11277200713587
+            ],
+            [
+              47.839546916788976,
+              25.11280000713587
+            ],
+            [
+              47.83952891678898,
+              25.11281100713587
+            ],
+            [
+              47.839552916788975,
+              25.112849007135868
+            ],
+            [
+              47.839569916788975,
+              25.112838007135867
+            ],
+            [
+              47.83958791678897,
+              25.112866007135867
+            ],
+            [
+              47.839620916788974,
+              25.11284500713587
+            ],
+            [
+              47.83964391678897,
+              25.11288200713587
+            ],
+            [
+              47.83967991678898,
+              25.11285900713587
+            ],
+            [
+              47.83965691678898,
+              25.11282300713587
+            ],
+            [
+              47.83969091678898,
+              25.112802007135866
+            ],
+            [
+              47.839631916788974,
+              25.11270800713587
+            ],
+            [
+              47.83952891678898,
+              25.11277200713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_6_1",
+        "age": "0",
+        "generation": "10",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83973991678897,
+              25.112956007135868
+            ],
+            [
+              47.83979291678898,
+              25.11304200713587
+            ],
+            [
+              47.83988691678897,
+              25.11298300713587
+            ],
+            [
+              47.83983291678898,
+              25.112897007135867
+            ],
+            [
+              47.83973991678897,
+              25.112956007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_8_0",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84081491678897,
+              25.11357400713587
+            ],
+            [
+              47.84089091678898,
+              25.113686007135872
+            ],
+            [
+              47.84099491678897,
+              25.11361600713587
+            ],
+            [
+              47.84093491678898,
+              25.11352700713587
+            ],
+            [
+              47.840891916788976,
+              25.113558007135868
+            ],
+            [
+              47.84089091678898,
+              25.113558007135868
+            ],
+            [
+              47.84088991678898,
+              25.113559007135866
+            ],
+            [
+              47.84088891678897,
+              25.113559007135866
+            ],
+            [
+              47.84088791678897,
+              25.113559007135866
+            ],
+            [
+              47.840886916788975,
+              25.11356000713587
+            ],
+            [
+              47.84088591678898,
+              25.11356000713587
+            ],
+            [
+              47.84088491678898,
+              25.11356000713587
+            ],
+            [
+              47.84088391678898,
+              25.11356000713587
+            ],
+            [
+              47.84088291678897,
+              25.113559007135866
+            ],
+            [
+              47.84088191678897,
+              25.113559007135866
+            ],
+            [
+              47.840880916788976,
+              25.113559007135866
+            ],
+            [
+              47.84087991678898,
+              25.113558007135868
+            ],
+            [
+              47.84087991678898,
+              25.113558007135868
+            ],
+            [
+              47.84087891678898,
+              25.11355700713587
+            ],
+            [
+              47.84087791678897,
+              25.113556007135866
+            ],
+            [
+              47.84087791678897,
+              25.11355500713587
+            ],
+            [
+              47.84086691678898,
+              25.113539007135866
+            ],
+            [
+              47.84081491678897,
+              25.11357400713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_9_0",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.841297916788974,
+              25.113547007135868
+            ],
+            [
+              47.84121091678898,
+              25.113607007135865
+            ],
+            [
+              47.84124891678897,
+              25.11366200713587
+            ],
+            [
+              47.84133291678897,
+              25.11359900713587
+            ],
+            [
+              47.841297916788974,
+              25.113547007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_9_1",
+        "age": "42",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84120091678898,
+              25.113176007135866
+            ],
+            [
+              47.841162916788974,
+              25.113119007135868
+            ],
+            [
+              47.84107591678898,
+              25.11317700713587
+            ],
+            [
+              47.84111491678898,
+              25.113235007135867
+            ],
+            [
+              47.84120091678898,
+              25.113176007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_10_0",
+        "age": "15",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Wiseman\u00e2\u20ac\u2122s Hut",
+        "occupants": 4,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 3,
+        "employees": 1,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83941691678898,
+              25.11188000713587
+            ],
+            [
+              47.83931491678898,
+              25.11188000713587
+            ],
+            [
+              47.83931391678898,
+              25.11195100713587
+            ],
+            [
+              47.83941691678898,
+              25.111952007135866
+            ],
+            [
+              47.83941691678898,
+              25.11188000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_11_0",
+        "age": "20",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Scholar\u00e2\u20ac\u2122s Study",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83937391678897,
+              25.112658007135867
+            ],
+            [
+              47.83934291678898,
+              25.112647007135866
+            ],
+            [
+              47.83924091678898,
+              25.112647007135866
+            ],
+            [
+              47.83924091678898,
+              25.112759007135868
+            ],
+            [
+              47.83933191678898,
+              25.112759007135868
+            ],
+            [
+              47.83937391678897,
+              25.11273300713587
+            ],
+            [
+              47.83937391678897,
+              25.112658007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_12_0",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84239591678897,
+              25.111848007135865
+            ],
+            [
+              47.84230391678898,
+              25.11177900713587
+            ],
+            [
+              47.842271916788974,
+              25.111822007135867
+            ],
+            [
+              47.84236291678897,
+              25.11189100713587
+            ],
+            [
+              47.84239591678897,
+              25.111848007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_12_1",
+        "age": "43",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84248791678898,
+              25.11196500713587
+            ],
+            [
+              47.84258191678897,
+              25.112036007135867
+            ],
+            [
+              47.84263591678898,
+              25.11196400713587
+            ],
+            [
+              47.84254291678897,
+              25.111893007135865
+            ],
+            [
+              47.84248791678898,
+              25.11196500713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_12_2",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84256091678897,
+              25.111831007135866
+            ],
+            [
+              47.84261291678898,
+              25.111763007135867
+            ],
+            [
+              47.84256491678897,
+              25.111726007135868
+            ],
+            [
+              47.842512916788976,
+              25.111794007135867
+            ],
+            [
+              47.84256091678897,
+              25.111831007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_13_0",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84054491678897,
+              25.117451007135866
+            ],
+            [
+              47.84069291678898,
+              25.11733700713587
+            ],
+            [
+              47.840588916788974,
+              25.117201007135865
+            ],
+            [
+              47.84044091678898,
+              25.11731500713587
+            ],
+            [
+              47.84054491678897,
+              25.117451007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_14_0",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Tenement",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84122791678898,
+              25.11704100713587
+            ],
+            [
+              47.84107691678898,
+              25.11696800713587
+            ],
+            [
+              47.84104191678898,
+              25.11703000713587
+            ],
+            [
+              47.84102991678897,
+              25.11705600713587
+            ],
+            [
+              47.84117591678897,
+              25.11714800713587
+            ],
+            [
+              47.84122791678898,
+              25.11704100713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_14_1",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Row House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84147891678897,
+              25.11714600713587
+            ],
+            [
+              47.841314916788974,
+              25.117066007135872
+            ],
+            [
+              47.841314916788974,
+              25.117066007135872
+            ],
+            [
+              47.84125191678898,
+              25.11719400713587
+            ],
+            [
+              47.84140691678897,
+              25.11729200713587
+            ],
+            [
+              47.84147891678897,
+              25.11714600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_16_0",
+        "age": "10",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "3",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84153791678898,
+              25.116590007135866
+            ],
+            [
+              47.84135591678897,
+              25.11650100713587
+            ],
+            [
+              47.84127591678897,
+              25.116665007135868
+            ],
+            [
+              47.84145791678898,
+              25.11675400713587
+            ],
+            [
+              47.84153791678898,
+              25.116590007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_16_1",
+        "age": "10",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Row House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.841240916788976,
+              25.116623007135868
+            ],
+            [
+              47.841302916788976,
+              25.11649600713587
+            ],
+            [
+              47.84120991678897,
+              25.11645100713587
+            ],
+            [
+              47.84114791678897,
+              25.11657700713587
+            ],
+            [
+              47.841240916788976,
+              25.116623007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_17_0",
+        "age": "15",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84022891678897,
+              25.117074007135866
+            ],
+            [
+              47.84013191678898,
+              25.116947007135867
+            ],
+            [
+              47.84002891678898,
+              25.11702500713587
+            ],
+            [
+              47.840126916788975,
+              25.117152007135868
+            ],
+            [
+              47.84022891678897,
+              25.117074007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_19_0",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840998916788976,
+              25.11631200713587
+            ],
+            [
+              47.84088891678897,
+              25.116396007135865
+            ],
+            [
+              47.84091291678898,
+              25.116427007135865
+            ],
+            [
+              47.84094591678898,
+              25.11647000713587
+            ],
+            [
+              47.841055916788974,
+              25.116387007135867
+            ],
+            [
+              47.840998916788976,
+              25.11631200713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_19_1",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84091091678897,
+              25.116266007135867
+            ],
+            [
+              47.84082691678897,
+              25.116156007135867
+            ],
+            [
+              47.84074991678898,
+              25.11621400713587
+            ],
+            [
+              47.84083491678898,
+              25.11632400713587
+            ],
+            [
+              47.84091091678897,
+              25.116266007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_20_0",
+        "age": "15",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Dormitory",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840453916788974,
+              25.11642200713587
+            ],
+            [
+              47.84032491678897,
+              25.116520007135872
+            ],
+            [
+              47.84043191678897,
+              25.116660007135867
+            ],
+            [
+              47.84053091678898,
+              25.116584007135867
+            ],
+            [
+              47.840475916788975,
+              25.11651200713587
+            ],
+            [
+              47.840475916788975,
+              25.116511007135866
+            ],
+            [
+              47.84047491678898,
+              25.11650900713587
+            ],
+            [
+              47.84047391678898,
+              25.116508007135867
+            ],
+            [
+              47.84047391678898,
+              25.11650700713587
+            ],
+            [
+              47.84047291678898,
+              25.116505007135867
+            ],
+            [
+              47.84047291678898,
+              25.116503007135865
+            ],
+            [
+              47.84047291678898,
+              25.116502007135868
+            ],
+            [
+              47.84047291678898,
+              25.116500007135866
+            ],
+            [
+              47.84047391678898,
+              25.116499007135868
+            ],
+            [
+              47.84047391678898,
+              25.116497007135866
+            ],
+            [
+              47.84047491678898,
+              25.11649600713587
+            ],
+            [
+              47.84047491678898,
+              25.116494007135866
+            ],
+            [
+              47.840475916788975,
+              25.11649300713587
+            ],
+            [
+              47.84047691678897,
+              25.11649200713587
+            ],
+            [
+              47.84047791678897,
+              25.116491007135867
+            ],
+            [
+              47.84047991678898,
+              25.116489007135865
+            ],
+            [
+              47.84049591678898,
+              25.116477007135867
+            ],
+            [
+              47.840453916788974,
+              25.11642200713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_21_0",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "3",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84094791678898,
+              25.116106007135865
+            ],
+            [
+              47.84106791678897,
+              25.116015007135868
+            ],
+            [
+              47.84102691678898,
+              25.11596100713587
+            ],
+            [
+              47.84090691678898,
+              25.116052007135867
+            ],
+            [
+              47.84094791678898,
+              25.116106007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_21_1",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84127191678897,
+              25.116168007135865
+            ],
+            [
+              47.841184916788976,
+              25.11605400713587
+            ],
+            [
+              47.84107191678898,
+              25.116140007135865
+            ],
+            [
+              47.84107591678898,
+              25.116145007135867
+            ],
+            [
+              47.84110391678898,
+              25.116123007135865
+            ],
+            [
+              47.84110491678898,
+              25.116123007135865
+            ],
+            [
+              47.841105916788976,
+              25.116122007135868
+            ],
+            [
+              47.84110691678897,
+              25.116122007135868
+            ],
+            [
+              47.84110791678897,
+              25.11612100713587
+            ],
+            [
+              47.84110891678898,
+              25.11612100713587
+            ],
+            [
+              47.84111091678898,
+              25.11612100713587
+            ],
+            [
+              47.841111916788975,
+              25.11612100713587
+            ],
+            [
+              47.84111291678897,
+              25.11612100713587
+            ],
+            [
+              47.84111391678897,
+              25.11612100713587
+            ],
+            [
+              47.84111591678898,
+              25.116122007135868
+            ],
+            [
+              47.84111691678898,
+              25.116122007135868
+            ],
+            [
+              47.841117916788974,
+              25.116123007135865
+            ],
+            [
+              47.84111891678897,
+              25.116123007135865
+            ],
+            [
+              47.84111991678897,
+              25.11612400713587
+            ],
+            [
+              47.84112091678898,
+              25.116125007135867
+            ],
+            [
+              47.84112191678898,
+              25.116126007135872
+            ],
+            [
+              47.841196916788974,
+              25.11622500713587
+            ],
+            [
+              47.84127191678897,
+              25.116168007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_23_0",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "4",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84142491678898,
+              25.115830007135866
+            ],
+            [
+              47.841494916788974,
+              25.11590700713587
+            ],
+            [
+              47.84156491678898,
+              25.115844007135866
+            ],
+            [
+              47.841494916788974,
+              25.11576700713587
+            ],
+            [
+              47.84142491678898,
+              25.115830007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_23_1",
+        "age": "17",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.841353916788975,
+              25.115869007135867
+            ],
+            [
+              47.84125991678897,
+              25.11595500713587
+            ],
+            [
+              47.84129391678897,
+              25.11600000713587
+            ],
+            [
+              47.84133791678897,
+              25.116049007135867
+            ],
+            [
+              47.84143591678898,
+              25.11596000713587
+            ],
+            [
+              47.841353916788975,
+              25.115869007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_24_0",
+        "age": "10",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84166091678898,
+              25.115540007135866
+            ],
+            [
+              47.84153791678898,
+              25.115652007135868
+            ],
+            [
+              47.84164291678897,
+              25.115768007135866
+            ],
+            [
+              47.84176591678897,
+              25.115656007135872
+            ],
+            [
+              47.84166091678898,
+              25.115540007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_25_0",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84179791678898,
+              25.11568700713587
+            ],
+            [
+              47.84190991678898,
+              25.115791007135865
+            ],
+            [
+              47.841910916788976,
+              25.115788007135865
+            ],
+            [
+              47.84191191678897,
+              25.115788007135865
+            ],
+            [
+              47.84191291678897,
+              25.115787007135868
+            ],
+            [
+              47.84191391678898,
+              25.11578600713587
+            ],
+            [
+              47.84191491678898,
+              25.115785007135866
+            ],
+            [
+              47.84191591678898,
+              25.115785007135866
+            ],
+            [
+              47.84191791678897,
+              25.11578400713587
+            ],
+            [
+              47.84191891678897,
+              25.11578400713587
+            ],
+            [
+              47.84191991678898,
+              25.11578400713587
+            ],
+            [
+              47.84192091678898,
+              25.11578400713587
+            ],
+            [
+              47.841921916788976,
+              25.11578400713587
+            ],
+            [
+              47.84192391678897,
+              25.11578400713587
+            ],
+            [
+              47.84192491678897,
+              25.11578400713587
+            ],
+            [
+              47.84192591678898,
+              25.115785007135866
+            ],
+            [
+              47.84192691678898,
+              25.115785007135866
+            ],
+            [
+              47.841927916788975,
+              25.11578600713587
+            ],
+            [
+              47.84192891678897,
+              25.115787007135868
+            ],
+            [
+              47.84193291678898,
+              25.11578900713587
+            ],
+            [
+              47.842034916788975,
+              25.115680007135868
+            ],
+            [
+              47.841910916788976,
+              25.11556400713587
+            ],
+            [
+              47.84179791678898,
+              25.11568700713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_25_1",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Brick Row",
+        "occupants": 3,
+        "bodies": 3,
+        "souls": 1,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84181291678898,
+              25.115805007135865
+            ],
+            [
+              47.84172791678897,
+              25.115726007135866
+            ],
+            [
+              47.84165391678897,
+              25.115793007135867
+            ],
+            [
+              47.841753916788974,
+              25.115867007135865
+            ],
+            [
+              47.84181291678898,
+              25.115805007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_26_0",
+        "age": "16",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84071291678897,
+              25.115258007135868
+            ],
+            [
+              47.84059791678898,
+              25.115107007135865
+            ],
+            [
+              47.84049591678898,
+              25.11518400713587
+            ],
+            [
+              47.840610916788975,
+              25.115335007135865
+            ],
+            [
+              47.84071291678897,
+              25.115258007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_26_1",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84069691678897,
+              25.11522600713587
+            ],
+            [
+              47.84082191678898,
+              25.11539200713587
+            ],
+            [
+              47.84098091678898,
+              25.11527100713587
+            ],
+            [
+              47.84085491678897,
+              25.115106007135868
+            ],
+            [
+              47.84069691678897,
+              25.11522600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_27_0",
+        "age": "49",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84069391678898,
+              25.11468600713587
+            ],
+            [
+              47.84077091678897,
+              25.11462700713587
+            ],
+            [
+              47.840739916788976,
+              25.11457300713587
+            ],
+            [
+              47.840717916788975,
+              25.114586007135866
+            ],
+            [
+              47.840700916788975,
+              25.11455600713587
+            ],
+            [
+              47.84066091678898,
+              25.114580007135867
+            ],
+            [
+              47.84067791678898,
+              25.114609007135865
+            ],
+            [
+              47.840655916788975,
+              25.114622007135868
+            ],
+            [
+              47.84069391678898,
+              25.11468600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_27_1",
+        "age": "49",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840801916788976,
+              25.11443000713587
+            ],
+            [
+              47.84086891678898,
+              25.114543007135868
+            ],
+            [
+              47.84092891678898,
+              25.114507007135867
+            ],
+            [
+              47.84093091678898,
+              25.11450600713587
+            ],
+            [
+              47.84086191678898,
+              25.114395007135865
+            ],
+            [
+              47.840801916788976,
+              25.11443000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_29_0",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "3",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840323916788975,
+              25.114670007135867
+            ],
+            [
+              47.84018091678898,
+              25.11477900713587
+            ],
+            [
+              47.84027791678898,
+              25.114907007135866
+            ],
+            [
+              47.840385916788975,
+              25.11482400713587
+            ],
+            [
+              47.84030291678897,
+              25.11470500713587
+            ],
+            [
+              47.84030291678897,
+              25.114704007135867
+            ],
+            [
+              47.840301916788974,
+              25.11470300713587
+            ],
+            [
+              47.840300916788976,
+              25.114701007135867
+            ],
+            [
+              47.840300916788976,
+              25.11470000713587
+            ],
+            [
+              47.840300916788976,
+              25.114699007135865
+            ],
+            [
+              47.840300916788976,
+              25.11469700713587
+            ],
+            [
+              47.840300916788976,
+              25.114696007135866
+            ],
+            [
+              47.840300916788976,
+              25.11469400713587
+            ],
+            [
+              47.840300916788976,
+              25.114693007135866
+            ],
+            [
+              47.840301916788974,
+              25.11469200713587
+            ],
+            [
+              47.840301916788974,
+              25.114690007135867
+            ],
+            [
+              47.84030291678897,
+              25.11468900713587
+            ],
+            [
+              47.84030391678898,
+              25.11468800713587
+            ],
+            [
+              47.84030391678898,
+              25.114687007135867
+            ],
+            [
+              47.84030491678898,
+              25.11468600713587
+            ],
+            [
+              47.840306916788975,
+              25.114685007135865
+            ],
+            [
+              47.84030791678897,
+              25.114684007135867
+            ],
+            [
+              47.84032591678897,
+              25.114673007135867
+            ],
+            [
+              47.840323916788975,
+              25.114670007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_30_0",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Worker Housing",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83933091678898,
+              25.115287007135866
+            ],
+            [
+              47.83941491678898,
+              25.115233007135867
+            ],
+            [
+              47.83933591678898,
+              25.11513000713587
+            ],
+            [
+              47.83926491678898,
+              25.11518400713587
+            ],
+            [
+              47.83933091678898,
+              25.115287007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_30_1",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Brick Row",
+        "occupants": 3,
+        "bodies": 3,
+        "souls": 1,
+        "floors": "3",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83923991678897,
+              25.115348007135868
+            ],
+            [
+              47.83917691678897,
+              25.11525100713587
+            ],
+            [
+              47.83906991678897,
+              25.11533300713587
+            ],
+            [
+              47.83912091678897,
+              25.115425007135865
+            ],
+            [
+              47.83923991678897,
+              25.115348007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_32_0",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "3",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83959691678898,
+              25.11605300713587
+            ],
+            [
+              47.839518916788975,
+              25.115908007135868
+            ],
+            [
+              47.83940891678897,
+              25.115968007135866
+            ],
+            [
+              47.83948791678898,
+              25.11611200713587
+            ],
+            [
+              47.83959691678898,
+              25.11605300713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_32_1",
+        "age": "15",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "3",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.839513916788974,
+              25.115819007135865
+            ],
+            [
+              47.839445916788975,
+              25.115692007135866
+            ],
+            [
+              47.83930791678898,
+              25.11578100713587
+            ],
+            [
+              47.83937091678898,
+              25.115897007135867
+            ],
+            [
+              47.839513916788974,
+              25.115819007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_33_0",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Worker Housing",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "4",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83969291678898,
+              25.11497600713587
+            ],
+            [
+              47.83957091678897,
+              25.11506900713587
+            ],
+            [
+              47.83965691678898,
+              25.115182007135868
+            ],
+            [
+              47.83977891678897,
+              25.11508800713587
+            ],
+            [
+              47.83969291678898,
+              25.11497600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_34_0",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840143916788975,
+              25.11517200713587
+            ],
+            [
+              47.840030916788976,
+              25.11502300713587
+            ],
+            [
+              47.84000191678898,
+              25.115044007135868
+            ],
+            [
+              47.84002291678898,
+              25.11507200713587
+            ],
+            [
+              47.84002391678898,
+              25.115073007135866
+            ],
+            [
+              47.84002491678898,
+              25.11507400713587
+            ],
+            [
+              47.84002491678898,
+              25.115075007135868
+            ],
+            [
+              47.840025916788974,
+              25.11507700713587
+            ],
+            [
+              47.840025916788974,
+              25.115078007135867
+            ],
+            [
+              47.840025916788974,
+              25.115079007135865
+            ],
+            [
+              47.840025916788974,
+              25.115081007135867
+            ],
+            [
+              47.840025916788974,
+              25.11508200713587
+            ],
+            [
+              47.840025916788974,
+              25.11508300713587
+            ],
+            [
+              47.840025916788974,
+              25.11508500713587
+            ],
+            [
+              47.84002491678898,
+              25.11508600713587
+            ],
+            [
+              47.84002491678898,
+              25.115087007135866
+            ],
+            [
+              47.84002391678898,
+              25.11508800713587
+            ],
+            [
+              47.84002291678898,
+              25.115089007135868
+            ],
+            [
+              47.84002191678897,
+              25.115090007135866
+            ],
+            [
+              47.84002091678897,
+              25.11509100713587
+            ],
+            [
+              47.840019916788975,
+              25.115092007135868
+            ],
+            [
+              47.83991991678897,
+              25.115160007135866
+            ],
+            [
+              47.84000791678898,
+              25.115275007135867
+            ],
+            [
+              47.840143916788975,
+              25.11517200713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_34_1",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Brick Row",
+        "occupants": 3,
+        "bodies": 3,
+        "souls": 1,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83987691678898,
+              25.11485200713587
+            ],
+            [
+              47.839985916788976,
+              25.114769007135866
+            ],
+            [
+              47.83991791678898,
+              25.114681007135868
+            ],
+            [
+              47.83980991678898,
+              25.11476400713587
+            ],
+            [
+              47.83987691678898,
+              25.11485200713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_36_0",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84021991678898,
+              25.115799007135866
+            ],
+            [
+              47.84034391678898,
+              25.11570400713587
+            ],
+            [
+              47.84024591678897,
+              25.11557500713587
+            ],
+            [
+              47.84020791678897,
+              25.11560300713587
+            ],
+            [
+              47.840120916788976,
+              25.115669007135867
+            ],
+            [
+              47.84021991678898,
+              25.115799007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_36_1",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Worker Housing",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "4",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84034491678898,
+              25.11563700713587
+            ],
+            [
+              47.84047691678897,
+              25.11553600713587
+            ],
+            [
+              47.84041091678898,
+              25.11544900713587
+            ],
+            [
+              47.840278916788975,
+              25.11555000713587
+            ],
+            [
+              47.84034491678898,
+              25.11563700713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_37_0",
+        "age": "13",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83986391678897,
+              25.115436007135866
+            ],
+            [
+              47.83994391678898,
+              25.115540007135866
+            ],
+            [
+              47.84005591678897,
+              25.115455007135868
+            ],
+            [
+              47.83997591678897,
+              25.115351007135867
+            ],
+            [
+              47.83997591678897,
+              25.115351007135867
+            ],
+            [
+              47.83986391678897,
+              25.115436007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_39_0",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Brick Row",
+        "occupants": 3,
+        "bodies": 3,
+        "souls": 1,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84008491678898,
+              25.116126007135872
+            ],
+            [
+              47.83995491678897,
+              25.11622500713587
+            ],
+            [
+              47.84003391678898,
+              25.11632900713587
+            ],
+            [
+              47.84016391678898,
+              25.116230007135865
+            ],
+            [
+              47.84008491678898,
+              25.116126007135872
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_39_1",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Row House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.840143916788975,
+              25.116032007135868
+            ],
+            [
+              47.84024691678897,
+              25.116167007135868
+            ],
+            [
+              47.84031491678897,
+              25.11611600713587
+            ],
+            [
+              47.840211916788974,
+              25.11598000713587
+            ],
+            [
+              47.840143916788975,
+              25.116032007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_40_0",
+        "age": "15",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Row House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84040491678897,
+              25.115971007135865
+            ],
+            [
+              47.84054091678898,
+              25.115867007135865
+            ],
+            [
+              47.84044991678897,
+              25.11574700713587
+            ],
+            [
+              47.84031391678897,
+              25.11585100713587
+            ],
+            [
+              47.84040491678897,
+              25.115971007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_41_0",
+        "age": "16",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Scholar\u00e2\u20ac\u2122s Study",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83854991678898,
+              25.11082500713587
+            ],
+            [
+              47.83851091678898,
+              25.11072000713587
+            ],
+            [
+              47.83840591678897,
+              25.110758007135868
+            ],
+            [
+              47.83844491678897,
+              25.11086400713587
+            ],
+            [
+              47.83854991678898,
+              25.11082500713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_43_0",
+        "age": "20",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Cemetery",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83756991678898,
+              25.112973007135867
+            ],
+            [
+              47.83759891678898,
+              25.11310200713587
+            ],
+            [
+              47.83772591678897,
+              25.113074007135868
+            ],
+            [
+              47.83769691678897,
+              25.112945007135867
+            ],
+            [
+              47.83756991678898,
+              25.112973007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_43_1",
+        "age": "17",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Funeral Pyre Site",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.837621916788976,
+              25.113150007135868
+            ],
+            [
+              47.837486916788976,
+              25.11318000713587
+            ],
+            [
+              47.83751091678897,
+              25.11328700713587
+            ],
+            [
+              47.83764591678897,
+              25.113257007135868
+            ],
+            [
+              47.837621916788976,
+              25.113150007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_43_2",
+        "age": "18",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Fortification",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83749391678897,
+              25.112973007135867
+            ],
+            [
+              47.83766491678898,
+              25.11293500713587
+            ],
+            [
+              47.83763991678897,
+              25.11282500713587
+            ],
+            [
+              47.83746791678898,
+              25.11285900713587
+            ],
+            [
+              47.83749391678897,
+              25.112973007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_44_0",
+        "age": "20",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Cemetery",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.838196916788974,
+              25.11288500713587
+            ],
+            [
+              47.83822091678897,
+              25.112996007135866
+            ],
+            [
+              47.83834391678897,
+              25.112923007135866
+            ],
+            [
+              47.83832291678898,
+              25.11285600713587
+            ],
+            [
+              47.838196916788974,
+              25.11288500713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_45_0",
+        "age": "16",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Tools",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83836591678897,
+              25.112464007135866
+            ],
+            [
+              47.83825191678898,
+              25.11247600713587
+            ],
+            [
+              47.83826291678898,
+              25.112577007135865
+            ],
+            [
+              47.83827091678897,
+              25.11260000713587
+            ],
+            [
+              47.838376916788974,
+              25.11256700713587
+            ],
+            [
+              47.83836591678897,
+              25.112464007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_45_1",
+        "age": "17",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Bell Tower",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83878091678898,
+              25.112478007135866
+            ],
+            [
+              47.838764916788975,
+              25.11232800713587
+            ],
+            [
+              47.83861791678898,
+              25.11234400713587
+            ],
+            [
+              47.83863291678898,
+              25.11249000713587
+            ],
+            [
+              47.83864491678898,
+              25.112486007135868
+            ],
+            [
+              47.838646916788974,
+              25.112486007135868
+            ],
+            [
+              47.83864791678897,
+              25.112486007135868
+            ],
+            [
+              47.83864991678898,
+              25.112486007135868
+            ],
+            [
+              47.83865091678898,
+              25.112486007135868
+            ],
+            [
+              47.83865291678897,
+              25.112486007135868
+            ],
+            [
+              47.83865391678897,
+              25.112486007135868
+            ],
+            [
+              47.83865591678898,
+              25.112487007135865
+            ],
+            [
+              47.83865691678898,
+              25.112487007135865
+            ],
+            [
+              47.838657916788975,
+              25.11248800713587
+            ],
+            [
+              47.83865891678897,
+              25.112489007135867
+            ],
+            [
+              47.83865991678897,
+              25.11249000713587
+            ],
+            [
+              47.83866091678898,
+              25.11249100713587
+            ],
+            [
+              47.83866091678898,
+              25.11249100713587
+            ],
+            [
+              47.83878091678898,
+              25.112478007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_45_2",
+        "age": "17",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Watchtower",
+        "occupants": 10,
+        "bodies": 9,
+        "souls": 4,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 8,
+        "employees": 5,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.838725916788974,
+              25.11250700713587
+            ],
+            [
+              47.83873891678897,
+              25.11262000713587
+            ],
+            [
+              47.83887491678898,
+              25.112605007135866
+            ],
+            [
+              47.83887491678898,
+              25.11249100713587
+            ],
+            [
+              47.838725916788974,
+              25.11250700713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_46_0",
+        "age": "21",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Chapel",
+        "occupants": 8,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 6,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83674691678898,
+              25.113213007135865
+            ],
+            [
+              47.836754916788976,
+              25.11325100713587
+            ],
+            [
+              47.836754916788976,
+              25.11325300713587
+            ],
+            [
+              47.836754916788976,
+              25.11325400713587
+            ],
+            [
+              47.836754916788976,
+              25.113255007135866
+            ],
+            [
+              47.836754916788976,
+              25.11325600713587
+            ],
+            [
+              47.836754916788976,
+              25.113258007135865
+            ],
+            [
+              47.83675391678898,
+              25.11325900713587
+            ],
+            [
+              47.83675391678898,
+              25.113260007135867
+            ],
+            [
+              47.83675291678898,
+              25.113261007135865
+            ],
+            [
+              47.83675191678897,
+              25.11326200713587
+            ],
+            [
+              47.83675191678897,
+              25.113263007135867
+            ],
+            [
+              47.83675091678897,
+              25.11326400713587
+            ],
+            [
+              47.836749916788975,
+              25.11326500713587
+            ],
+            [
+              47.83674891678898,
+              25.11326500713587
+            ],
+            [
+              47.83674691678898,
+              25.113266007135866
+            ],
+            [
+              47.83674591678897,
+              25.113266007135866
+            ],
+            [
+              47.83674491678897,
+              25.11326700713587
+            ],
+            [
+              47.83670591678897,
+              25.113275007135865
+            ],
+            [
+              47.83671991678898,
+              25.11333800713587
+            ],
+            [
+              47.83685591678898,
+              25.11330700713587
+            ],
+            [
+              47.83684891678898,
+              25.113275007135865
+            ],
+            [
+              47.836907916788974,
+              25.11326200713587
+            ],
+            [
+              47.83689691678897,
+              25.113213007135865
+            ],
+            [
+              47.83683791678898,
+              25.113226007135868
+            ],
+            [
+              47.83683091678897,
+              25.11319400713587
+            ],
+            [
+              47.83674691678898,
+              25.113213007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_52_0",
+        "age": "10",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83887991678898,
+              25.11580000713587
+            ],
+            [
+              47.83902791678898,
+              25.115908007135868
+            ],
+            [
+              47.83907591678897,
+              25.115841007135867
+            ],
+            [
+              47.83897991678897,
+              25.115664007135866
+            ],
+            [
+              47.83887991678898,
+              25.11580000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_52_1",
+        "age": "10",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83859491678898,
+              25.11618600713587
+            ],
+            [
+              47.83870191678898,
+              25.11604000713587
+            ],
+            [
+              47.83858691678897,
+              25.115956007135868
+            ],
+            [
+              47.83847991678897,
+              25.11610200713587
+            ],
+            [
+              47.83859491678898,
+              25.11618600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_54_0",
+        "age": "18",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Brick Row",
+        "occupants": 3,
+        "bodies": 3,
+        "souls": 1,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83899191678897,
+              25.11620500713587
+            ],
+            [
+              47.83911091678898,
+              25.116103007135866
+            ],
+            [
+              47.83901191678898,
+              25.115987007135868
+            ],
+            [
+              47.83889291678898,
+              25.116089007135866
+            ],
+            [
+              47.83899191678897,
+              25.11620500713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_54_1",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83903891678898,
+              25.11622000713587
+            ],
+            [
+              47.83910491678897,
+              25.11629800713587
+            ],
+            [
+              47.83922191678897,
+              25.116235007135867
+            ],
+            [
+              47.83915791678898,
+              25.11611800713587
+            ],
+            [
+              47.83903891678898,
+              25.11622000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_55_0",
+        "age": "8",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83855891678897,
+              25.11650600713587
+            ],
+            [
+              47.83850391678898,
+              25.11661300713587
+            ],
+            [
+              47.83850691678897,
+              25.116615007135866
+            ],
+            [
+              47.83850791678897,
+              25.116615007135866
+            ],
+            [
+              47.83850891678898,
+              25.11661600713587
+            ],
+            [
+              47.83850991678898,
+              25.11661700713587
+            ],
+            [
+              47.83851091678898,
+              25.116618007135866
+            ],
+            [
+              47.838511916788974,
+              25.11661900713587
+            ],
+            [
+              47.83851291678897,
+              25.116621007135866
+            ],
+            [
+              47.83851291678897,
+              25.11662200713587
+            ],
+            [
+              47.83851391678897,
+              25.116623007135868
+            ],
+            [
+              47.83851391678897,
+              25.116624007135865
+            ],
+            [
+              47.83851391678897,
+              25.116626007135867
+            ],
+            [
+              47.83851391678897,
+              25.11662700713587
+            ],
+            [
+              47.83851391678897,
+              25.116629007135867
+            ],
+            [
+              47.83851391678897,
+              25.11663000713587
+            ],
+            [
+              47.83851391678897,
+              25.11663100713587
+            ],
+            [
+              47.83851291678897,
+              25.11663300713587
+            ],
+            [
+              47.83851291678897,
+              25.11663400713587
+            ],
+            [
+              47.83849191678898,
+              25.11667500713587
+            ],
+            [
+              47.83858791678898,
+              25.11672400713587
+            ],
+            [
+              47.83866991678897,
+              25.11656300713587
+            ],
+            [
+              47.83855891678897,
+              25.11650600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_56_0",
+        "age": "9",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Dormitory",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.838618916788974,
+              25.117285007135866
+            ],
+            [
+              47.83846991678898,
+              25.117398007135865
+            ],
+            [
+              47.83853091678898,
+              25.11747800713587
+            ],
+            [
+              47.83869791678897,
+              25.117389007135866
+            ],
+            [
+              47.838618916788974,
+              25.117285007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_56_1",
+        "age": "11",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Tenement",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.838286916788974,
+              25.11745800713587
+            ],
+            [
+              47.83819391678898,
+              25.11752800713587
+            ],
+            [
+              47.83828191678897,
+              25.11761200713587
+            ],
+            [
+              47.83836791678898,
+              25.11756500713587
+            ],
+            [
+              47.838286916788974,
+              25.11745800713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_57_0",
+        "age": "16",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Alchemist\u00e2\u20ac\u2122s Workshop",
+        "occupants": 8,
+        "bodies": 9,
+        "souls": 4,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 7,
+        "employees": 5,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83762991678897,
+              25.11360000713587
+            ],
+            [
+              47.83776391678897,
+              25.113562007135865
+            ],
+            [
+              47.83774991678898,
+              25.113513007135868
+            ],
+            [
+              47.83761391678898,
+              25.11354300713587
+            ],
+            [
+              47.83762991678897,
+              25.11360000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_57_1",
+        "age": "18",
+        "generation": "0",
+        "type": "other",
+        "specific_type": "Observatory",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83759891678898,
+              25.11365000713587
+            ],
+            [
+              47.837571916788974,
+              25.11355200713587
+            ],
+            [
+              47.83745091678898,
+              25.113579007135865
+            ],
+            [
+              47.83748091678898,
+              25.113683007135865
+            ],
+            [
+              47.83759891678898,
+              25.11365000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_59_0",
+        "age": "9",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Row House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83791691678897,
+              25.11419000713587
+            ],
+            [
+              47.83807991678897,
+              25.11413400713587
+            ],
+            [
+              47.83802291678897,
+              25.113969007135868
+            ],
+            [
+              47.83785991678897,
+              25.11402500713587
+            ],
+            [
+              47.83791691678897,
+              25.11419000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_59_1",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Terrace House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83783691678897,
+              25.114245007135867
+            ],
+            [
+              47.83777791678898,
+              25.114076007135868
+            ],
+            [
+              47.83762491678898,
+              25.11412900713587
+            ],
+            [
+              47.837695916788974,
+              25.11429400713587
+            ],
+            [
+              47.83783691678897,
+              25.114245007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_60_0",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83830591678898,
+              25.114566007135867
+            ],
+            [
+              47.83837391678898,
+              25.11472500713587
+            ],
+            [
+              47.83846591678898,
+              25.11467700713587
+            ],
+            [
+              47.83838991678897,
+              25.114530007135865
+            ],
+            [
+              47.83830591678898,
+              25.114566007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_61_0",
+        "age": "10",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Worker Housing",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83813791678898,
+              25.115774007135865
+            ],
+            [
+              47.83829991678897,
+              25.115892007135866
+            ],
+            [
+              47.83841791678897,
+              25.11573000713587
+            ],
+            [
+              47.838257916788976,
+              25.115613007135867
+            ],
+            [
+              47.83817691678898,
+              25.115723007135866
+            ],
+            [
+              47.83817591678897,
+              25.11572400713587
+            ],
+            [
+              47.83817491678897,
+              25.115725007135868
+            ],
+            [
+              47.838173916788975,
+              25.115726007135866
+            ],
+            [
+              47.83817191678898,
+              25.11572700713587
+            ],
+            [
+              47.83817191678898,
+              25.115728007135868
+            ],
+            [
+              47.83813791678898,
+              25.115774007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_63_0",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83859991678898,
+              25.11529100713587
+            ],
+            [
+              47.83844591678897,
+              25.11537000713587
+            ],
+            [
+              47.83853691678898,
+              25.115546007135865
+            ],
+            [
+              47.83862691678898,
+              25.115500007135868
+            ],
+            [
+              47.83867391678898,
+              25.11543500713587
+            ],
+            [
+              47.83859991678898,
+              25.11529100713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_63_1",
+        "age": "12",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Apartment Block",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "4",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83848991678897,
+              25.115504007135865
+            ],
+            [
+              47.83839191678898,
+              25.11531400713587
+            ],
+            [
+              47.83821591678898,
+              25.115405007135866
+            ],
+            [
+              47.83840891678898,
+              25.115546007135865
+            ],
+            [
+              47.83848991678897,
+              25.115504007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_64_0",
+        "age": "14",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Row House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "3",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83847391678897,
+              25.115056007135866
+            ],
+            [
+              47.83838991678897,
+              25.11489400713587
+            ],
+            [
+              47.838252916788974,
+              25.11496500713587
+            ],
+            [
+              47.838336916788975,
+              25.11512800713587
+            ],
+            [
+              47.83847391678897,
+              25.115056007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_64_1",
+        "age": "16",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Boarding House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83824591678898,
+              25.114946007135867
+            ],
+            [
+              47.83841191678897,
+              25.11486000713587
+            ],
+            [
+              47.83836291678898,
+              25.11476400713587
+            ],
+            [
+              47.838196916788974,
+              25.114850007135868
+            ],
+            [
+              47.83824591678898,
+              25.114946007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_65_0",
+        "age": "47",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.842879916788974,
+              25.11285900713587
+            ],
+            [
+              47.84275191678897,
+              25.112754007135866
+            ],
+            [
+              47.842670916788975,
+              25.11285100713587
+            ],
+            [
+              47.84279891678898,
+              25.112957007135865
+            ],
+            [
+              47.842879916788974,
+              25.11285900713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_66_0",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84135291678898,
+              25.114046007135865
+            ],
+            [
+              47.841285916788976,
+              25.113956007135865
+            ],
+            [
+              47.84119191678897,
+              25.114028007135868
+            ],
+            [
+              47.84125891678897,
+              25.11411700713587
+            ],
+            [
+              47.84135291678898,
+              25.114046007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_66_1",
+        "age": "44",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.841544916788976,
+              25.114197007135868
+            ],
+            [
+              47.84146391678898,
+              25.114090007135868
+            ],
+            [
+              47.84135491678897,
+              25.114172007135867
+            ],
+            [
+              47.84143591678898,
+              25.114279007135867
+            ],
+            [
+              47.841544916788976,
+              25.114197007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_66_2",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.841330916788976,
+              25.113973007135865
+            ],
+            [
+              47.84140891678898,
+              25.11391500713587
+            ],
+            [
+              47.84136391678898,
+              25.11385600713587
+            ],
+            [
+              47.841285916788976,
+              25.11391400713587
+            ],
+            [
+              47.841330916788976,
+              25.113973007135865
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_67_0",
+        "age": "48",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.841674916788975,
+              25.114026007135866
+            ],
+            [
+              47.841736916788975,
+              25.114108007135865
+            ],
+            [
+              47.841832916788974,
+              25.11403600713587
+            ],
+            [
+              47.841770916788974,
+              25.11395400713587
+            ],
+            [
+              47.841674916788975,
+              25.114026007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_68_0",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84225091678897,
+              25.113212007135868
+            ],
+            [
+              47.84231891678897,
+              25.11326800713587
+            ],
+            [
+              47.84236591678898,
+              25.113212007135868
+            ],
+            [
+              47.84229791678898,
+              25.113156007135867
+            ],
+            [
+              47.84225091678897,
+              25.113212007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_68_1",
+        "age": "43",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84223591678898,
+              25.113353007135867
+            ],
+            [
+              47.84214891678897,
+              25.113280007135867
+            ],
+            [
+              47.84209991678898,
+              25.113339007135867
+            ],
+            [
+              47.842186916788975,
+              25.11341100713587
+            ],
+            [
+              47.84223591678898,
+              25.113353007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_68_2",
+        "age": "45",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84250291678897,
+              25.113418007135866
+            ],
+            [
+              47.84243691678897,
+              25.11336300713587
+            ],
+            [
+              47.84237491678897,
+              25.113438007135866
+            ],
+            [
+              47.84244091678897,
+              25.11349300713587
+            ],
+            [
+              47.84250291678897,
+              25.113418007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_69_0",
+        "age": "44",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84160891678897,
+              25.114867007135867
+            ],
+            [
+              47.84166191678898,
+              25.11493100713587
+            ],
+            [
+              47.84172891678898,
+              25.11487400713587
+            ],
+            [
+              47.84172191678897,
+              25.11486600713587
+            ],
+            [
+              47.84170691678898,
+              25.11487700713587
+            ],
+            [
+              47.84170591678898,
+              25.114878007135868
+            ],
+            [
+              47.84170491678897,
+              25.114878007135868
+            ],
+            [
+              47.84170391678897,
+              25.114879007135865
+            ],
+            [
+              47.841702916788975,
+              25.114879007135865
+            ],
+            [
+              47.84170191678898,
+              25.114879007135865
+            ],
+            [
+              47.84170191678898,
+              25.114879007135865
+            ],
+            [
+              47.84170091678898,
+              25.114879007135865
+            ],
+            [
+              47.84169991678898,
+              25.114879007135865
+            ],
+            [
+              47.84169891678897,
+              25.114879007135865
+            ],
+            [
+              47.84169791678897,
+              25.114879007135865
+            ],
+            [
+              47.841696916788976,
+              25.114878007135868
+            ],
+            [
+              47.84169591678898,
+              25.114878007135868
+            ],
+            [
+              47.84169591678898,
+              25.11487700713587
+            ],
+            [
+              47.84169491678898,
+              25.11487700713587
+            ],
+            [
+              47.84169391678897,
+              25.114876007135866
+            ],
+            [
+              47.84165491678898,
+              25.114828007135866
+            ],
+            [
+              47.84160891678897,
+              25.114867007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_69_1",
+        "age": "45",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84175591678897,
+              25.114887007135867
+            ],
+            [
+              47.84181691678897,
+              25.11495900713587
+            ],
+            [
+              47.84188591678898,
+              25.114901007135867
+            ],
+            [
+              47.84182791678897,
+              25.11482700713587
+            ],
+            [
+              47.84175591678897,
+              25.114887007135867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_69_2",
+        "age": "46",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84175791678898,
+              25.114971007135868
+            ],
+            [
+              47.841702916788975,
+              25.11490500713587
+            ],
+            [
+              47.84163991678898,
+              25.114958007135865
+            ],
+            [
+              47.84169591678898,
+              25.11502400713587
+            ],
+            [
+              47.84175791678898,
+              25.114971007135868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_70_0",
+        "age": "43",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84283091678897,
+              25.11532400713587
+            ],
+            [
+              47.842935916788974,
+              25.11538100713587
+            ],
+            [
+              47.84297391678898,
+              25.11531300713587
+            ],
+            [
+              47.842861916788976,
+              25.11526600713587
+            ],
+            [
+              47.84283091678897,
+              25.11532400713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_70_1",
+        "age": "41",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.842833916788976,
+              25.11546600713587
+            ],
+            [
+              47.842777916788975,
+              25.11556900713587
+            ],
+            [
+              47.84289991678898,
+              25.115635007135868
+            ],
+            [
+              47.84295191678898,
+              25.115540007135866
+            ],
+            [
+              47.842895916788976,
+              25.115514007135868
+            ],
+            [
+              47.84289491678898,
+              25.115514007135868
+            ],
+            [
+              47.84289391678898,
+              25.11551300713587
+            ],
+            [
+              47.84289291678897,
+              25.115512007135866
+            ],
+            [
+              47.84289191678897,
+              25.11551100713587
+            ],
+            [
+              47.842890916788974,
+              25.11551100713587
+            ],
+            [
+              47.842890916788974,
+              25.11551000713587
+            ],
+            [
+              47.84288991678898,
+              25.115509007135866
+            ],
+            [
+              47.84288991678898,
+              25.11550800713587
+            ],
+            [
+              47.84288891678898,
+              25.11550700713587
+            ],
+            [
+              47.84288891678898,
+              25.11550500713587
+            ],
+            [
+              47.84288891678898,
+              25.115504007135865
+            ],
+            [
+              47.84288891678898,
+              25.115503007135867
+            ],
+            [
+              47.84288891678898,
+              25.11550200713587
+            ],
+            [
+              47.84288891678898,
+              25.115501007135865
+            ],
+            [
+              47.84288991678898,
+              25.115500007135868
+            ],
+            [
+              47.84288991678898,
+              25.11549900713587
+            ],
+            [
+              47.842890916788974,
+              25.11549700713587
+            ],
+            [
+              47.842833916788976,
+              25.11546600713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_71_0",
+        "age": "49",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.842434916788974,
+              25.115236007135866
+            ],
+            [
+              47.84237191678898,
+              25.11532700713587
+            ],
+            [
+              47.84245391678897,
+              25.11538400713587
+            ],
+            [
+              47.842518916788976,
+              25.11529400713587
+            ],
+            [
+              47.842434916788974,
+              25.115236007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_71_1",
+        "age": "48",
+        "generation": "9",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.842501916788976,
+              25.115267007135866
+            ],
+            [
+              47.84257291678898,
+              25.115165007135868
+            ],
+            [
+              47.84249791678897,
+              25.11511300713587
+            ],
+            [
+              47.842417916788975,
+              25.11520900713587
+            ],
+            [
+              47.842501916788976,
+              25.115267007135866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_72_0",
+        "age": "0",
+        "generation": "10",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84334791678897,
+              25.11469200713587
+            ],
+            [
+              47.84341691678898,
+              25.11456500713587
+            ],
+            [
+              47.84332791678898,
+              25.114516007135865
+            ],
+            [
+              47.84325891678898,
+              25.11464300713587
+            ],
+            [
+              47.84334791678897,
+              25.11469200713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_73_0",
+        "age": "15",
+        "generation": "24",
+        "type": "residential",
+        "specific_type": "Worker Housing",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84392391678898,
+              25.11795000713587
+            ],
+            [
+              47.843858916788975,
+              25.118048007135865
+            ],
+            [
+              47.84393691678898,
+              25.11809900713587
+            ],
+            [
+              47.84400191678898,
+              25.11800100713587
+            ],
+            [
+              47.84392391678898,
+              25.11795000713587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                47.84066638750865,
+                25.112063590635262
+              ],
+              [
+                47.84046927392494,
+                25.112132980098554
+              ],
+              [
+                47.83962526311078,
+                25.112327492709714
+              ],
+              [
+                47.83931095838019,
+                25.113127067865875
+              ],
+              [
+                47.83902415628421,
+                25.113360666765086
+              ],
+              [
+                47.839078163136804,
+                25.11341188870258
+              ],
+              [
+                47.839417876005406,
+                25.11398727900568
+              ],
+              [
+                47.839443111869805,
+                25.114280251198497
+              ],
+              [
+                47.84000390121763,
+                25.11436167620432
+              ],
+              [
+                47.84012173338265,
+                25.114420704113353
+              ],
+              [
+                47.84035970665817,
+                25.11442944052184
+              ],
+              [
+                47.84060430892914,
+                25.114911215183266
+              ],
+              [
+                47.840764746780266,
+                25.11493390098624
+              ],
+              [
+                47.841147040883286,
+                25.114868240082597
+              ],
+              [
+                47.84124786315542,
+                25.115053901071143
+              ],
+              [
+                47.84134214298633,
+                25.115290344657915
+              ],
+              [
+                47.8418296055097,
+                25.115317986430068
+              ],
+              [
+                47.841994135139565,
+                25.115276732182693
+              ],
+              [
+                47.842417322498015,
+                25.11577487143545
+              ],
+              [
+                47.84254678203685,
+                25.116550468714546
+              ],
+              [
+                47.84291235347478,
+                25.11696112653371
+              ],
+              [
+                47.84377260010743,
+                25.11665414530371
+              ],
+              [
+                47.843580966690276,
+                25.115528580905
+              ],
+              [
+                47.84351881246246,
+                25.115163510323914
+              ],
+              [
+                47.84341691678898,
+                25.114565007135866
+              ],
+              [
+                47.8432023077613,
+                25.113817094165466
+              ],
+              [
+                47.84307371632543,
+                25.11336894729608
+              ],
+              [
+                47.84279154333696,
+                25.112385547680496
+              ],
+              [
+                47.842644135826184,
+                25.11187181076789
+              ],
+              [
+                47.84261291678898,
+                25.111763007135863
+              ],
+              [
+                47.84256491678897,
+                25.111726007135864
+              ],
+              [
+                47.84241309041609,
+                25.11168833378288
+              ],
+              [
+                47.84083074759944,
+                25.11129568910385
+              ],
+              [
+                47.840848970916305,
+                25.11185081369877
+              ],
+              [
+                47.84066638750865,
+                25.112063590635262
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "citystate": "moki",
+        "district": "Apple Crest",
+        "city_district": "moki_Apple Crest",
+        "index_right": 207835.0,
+        "layer": "districts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                47.8370244508595,
+                25.112802317697238
+              ],
+              [
+                47.83674691678898,
+                25.11321300713586
+              ],
+              [
+                47.83670591678897,
+                25.11327500713586
+              ],
+              [
+                47.83671991678898,
+                25.113338007135866
+              ],
+              [
+                47.83690804079845,
+                25.113872788918876
+              ],
+              [
+                47.836986470282035,
+                25.114095739418985
+              ],
+              [
+                47.8377133809895,
+                25.113874919225715
+              ],
+              [
+                47.83773114884879,
+                25.113860779525776
+              ],
+              [
+                47.83835227905657,
+                25.113583802050577
+              ],
+              [
+                47.83837681697442,
+                25.113536961802016
+              ],
+              [
+                47.8389149891628,
+                25.113326098558787
+              ],
+              [
+                47.83902415628421,
+                25.113360666765086
+              ],
+              [
+                47.83931095838019,
+                25.113127067865875
+              ],
+              [
+                47.83962526311078,
+                25.112327492709714
+              ],
+              [
+                47.84046927392494,
+                25.112132980098554
+              ],
+              [
+                47.84066638750865,
+                25.112063590635262
+              ],
+              [
+                47.840848970916305,
+                25.11185081369877
+              ],
+              [
+                47.84083074759944,
+                25.11129568910385
+              ],
+              [
+                47.83951075659698,
+                25.11096812951171
+              ],
+              [
+                47.83851091678898,
+                25.11072000713587
+              ],
+              [
+                47.83840591678897,
+                25.110758007135868
+              ],
+              [
+                47.837826907781334,
+                25.111614840939126
+              ],
+              [
+                47.837538261238784,
+                25.112041983337335
+              ],
+              [
+                47.8370244508595,
+                25.112802317697238
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "citystate": "moki",
+        "district": "Downwood Point",
+        "city_district": "moki_Downwood Point",
+        "index_right": 207869.0,
+        "layer": "districts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                47.83731147009615,
+                25.11501960170499
+              ],
+              [
+                47.837385470529235,
+                25.115229957011756
+              ],
+              [
+                47.83744092510869,
+                25.115387592876196
+              ],
+              [
+                47.83778529005778,
+                25.116366477782964
+              ],
+              [
+                47.837994954446145,
+                25.116962456208107
+              ],
+              [
+                47.83819391678898,
+                25.11752800713587
+              ],
+              [
+                47.83828191678897,
+                25.117612007135868
+              ],
+              [
+                47.838538427860186,
+                25.117634102286278
+              ],
+              [
+                47.8394865485043,
+                25.11771576679744
+              ],
+              [
+                47.83991737507444,
+                25.11775287313634
+              ],
+              [
+                47.84110343457173,
+                25.117855019709125
+              ],
+              [
+                47.84249790370542,
+                25.117975102577944
+              ],
+              [
+                47.84393691678898,
+                25.11809900713587
+              ],
+              [
+                47.84400191678898,
+                25.11800100713587
+              ],
+              [
+                47.84377260010743,
+                25.11665414530371
+              ],
+              [
+                47.84291235347478,
+                25.11696112653371
+              ],
+              [
+                47.84254678203685,
+                25.116550468714546
+              ],
+              [
+                47.842417322498015,
+                25.11577487143545
+              ],
+              [
+                47.841994135139565,
+                25.115276732182693
+              ],
+              [
+                47.8418296055097,
+                25.115317986430068
+              ],
+              [
+                47.84134214298633,
+                25.115290344657915
+              ],
+              [
+                47.84124786315542,
+                25.115053901071143
+              ],
+              [
+                47.841147040883286,
+                25.114868240082597
+              ],
+              [
+                47.840764746780266,
+                25.11493390098624
+              ],
+              [
+                47.84060430892914,
+                25.114911215183266
+              ],
+              [
+                47.84035970665817,
+                25.11442944052184
+              ],
+              [
+                47.84012173338265,
+                25.114420704113353
+              ],
+              [
+                47.84000390121763,
+                25.11436167620432
+              ],
+              [
+                47.839443111869805,
+                25.114280251198497
+              ],
+              [
+                47.839417876005406,
+                25.11398727900568
+              ],
+              [
+                47.839078163136804,
+                25.11341188870258
+              ],
+              [
+                47.83902415628421,
+                25.113360666765086
+              ],
+              [
+                47.8389149891628,
+                25.113326098558787
+              ],
+              [
+                47.83837681697442,
+                25.113536961802016
+              ],
+              [
+                47.83835227905657,
+                25.113583802050577
+              ],
+              [
+                47.83773114884879,
+                25.113860779525776
+              ],
+              [
+                47.8377133809895,
+                25.113874919225715
+              ],
+              [
+                47.836986470282035,
+                25.114095739418985
+              ],
+              [
+                47.83731147009615,
+                25.11501960170499
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "citystate": "moki",
+        "district": "Trade Ward",
+        "city_district": "moki_Trade Ward",
+        "index_right": 207882.0,
+        "layer": "districts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83670162990015,
+              25.113051172789287
+            ],
+            [
+              47.836701616788886,
+              25.113051107135842
+            ],
+            [
+              47.83708237979471,
+              25.112975114519134
+            ],
+            [
+              47.83707181678888,
+              25.112922207135842
+            ],
+            [
+              47.837071850194974,
+              25.11292220046725
+            ],
+            [
+              47.83696771678888,
+              25.112400807135838
+            ],
+            [
+              47.83638651678888,
+              25.112516907135838
+            ],
+            [
+              47.83650121678889,
+              25.11309120713584
+            ],
+            [
+              47.83670162990015,
+              25.113051172789287
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "moki.geojson_fixed.geojson_poly_castle",
+        "age": 17,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "moki",
+        "layer": "castles"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.836615729167505,
+              25.11335782009083
+            ],
+            [
+              47.836714655630644,
+              25.11335264685422
+            ],
+            [
+              47.83672033759541,
+              25.113442716733335
+            ],
+            [
+              47.836621411060676,
+              25.113447889980023
+            ],
+            [
+              47.836615729167505,
+              25.11335782009083
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.837505983795666,
+              25.11331963980664
+            ],
+            [
+              47.837604840037734,
+              25.11331345434151
+            ],
+            [
+              47.83761163376197,
+              25.113403460314558
+            ],
+            [
+              47.837512777448666,
+              25.113409645790473
+            ],
+            [
+              47.837505983795666,
+              25.11331963980664
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83821096822163,
+              25.113028346578556
+            ],
+            [
+              47.83819770849009,
+              25.112938939754613
+            ],
+            [
+              47.83829590634418,
+              25.112926867064093
+            ],
+            [
+              47.83830916614413,
+              25.113016273873214
+            ],
+            [
+              47.83821096822163,
+              25.113028346578556
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.838030518323826,
+              25.11228698429618
+            ],
+            [
+              47.837947751029,
+              25.11223738093542
+            ],
+            [
+              47.83800223138469,
+              25.112162022863718
+            ],
+            [
+              47.83808499864427,
+              25.112211626196967
+            ],
+            [
+              47.838030518323826,
+              25.11228698429618
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.8372058523869,
+              25.112119825367955
+            ],
+            [
+              47.837106869337454,
+              25.11212398587875
+            ],
+            [
+              47.837102299812756,
+              25.112033863548547
+            ],
+            [
+              47.83720128279029,
+              25.112029703047103
+            ],
+            [
+              47.8372058523869,
+              25.112119825367955
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.836315004449126,
+              25.11215726760236
+            ],
+            [
+              47.83621602127653,
+              25.11216142752232
+            ],
+            [
+              47.83621145239934,
+              25.1120713051079
+            ],
+            [
+              47.83631043550002,
+              25.112067145197297
+            ],
+            [
+              47.836315004449126,
+              25.11215726760236
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.835463821061,
+              25.112276273080113
+            ],
+            [
+              47.835378988417865,
+              25.112322894693143
+            ],
+            [
+              47.83532778299321,
+              25.112245656149927
+            ],
+            [
+              47.83541261560859,
+              25.11219903456879
+            ],
+            [
+              47.835463821061,
+              25.112276273080113
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.8353300152148,
+              25.112949218676633
+            ],
+            [
+              47.83534329900731,
+              25.11303862272582
+            ],
+            [
+              47.835245104097964,
+              25.11305071727358
+            ],
+            [
+              47.835231820373856,
+              25.112961313209567
+            ],
+            [
+              47.8353300152148,
+              25.112949218676633
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            47.83666803336356,
+            25.11340026842302
+          ],
+          [
+            47.837493213791774,
+            25.113365654356414
+          ],
+          [
+            47.837573523715136,
+            25.113360629351348
+          ],
+          [
+            47.83765232803965,
+            25.11335236982771
+          ],
+          [
+            47.837728902204496,
+            25.113340951727153
+          ],
+          [
+            47.83780254215157,
+            25.113326480032697
+          ],
+          [
+            47.83787257079836,
+            25.113309087803586
+          ],
+          [
+            47.83793834426272,
+            25.113288934952024
+          ],
+          [
+            47.83799925778278,
+            25.113266206772835
+          ],
+          [
+            47.838054751277156,
+            25.11324111224019
+          ],
+          [
+            47.83810431449462,
+            25.1132138820862
+          ],
+          [
+            47.838147491705826,
+            25.11318476667961
+          ],
+          [
+            47.83818388589381,
+            25.113154033724115
+          ],
+          [
+            47.83821316240503,
+            25.113121965796907
+          ],
+          [
+            47.838235052026995,
+            25.113088857750782
+          ],
+          [
+            47.838249353464434,
+            25.11305501400301
+          ],
+          [
+            47.838255935191086,
+            25.113020745736634
+          ],
+          [
+            47.838254736660055,
+            25.112986368039202
+          ],
+          [
+            47.83824692027614,
+            25.11293366437212
+          ],
+          [
+            47.83824689767197,
+            25.112933018754674
+          ],
+          [
+            47.83816888171131,
+            25.112407519723092
+          ],
+          [
+            47.838159297210844,
+            25.11237175448838
+          ],
+          [
+            47.838141293582176,
+            25.11233657644172
+          ],
+          [
+            47.83811505223369,
+            25.11230234010894
+          ],
+          [
+            47.83808083759655,
+            25.112269390526592
+          ],
+          [
+            47.838038994460895,
+            25.112238059764465
+          ],
+          [
+            47.837989944502034,
+            25.112208663578954
+          ],
+          [
+            47.83793418203154,
+            25.112181498230456
+          ],
+          [
+            47.837872269016074,
+            25.11215683749751
+          ],
+          [
+            47.83780482941415,
+            25.11213492991736
+          ],
+          [
+            47.83773254288782,
+            25.112115996280863
+          ],
+          [
+            47.83765613795276,
+            25.112100227407197
+          ],
+          [
+            47.837576384635724,
+            25.112087782220343
+          ],
+          [
+            47.83749408671338,
+            25.112078786147393
+          ],
+          [
+            47.83741007361089,
+            25.112073329854212
+          ],
+          [
+            47.83732519204176,
+            25.112071468331635
+          ],
+          [
+            47.83724029747344,
+            25.112073220341017
+          ],
+          [
+            47.83597547382893,
+            25.112126379405808
+          ],
+          [
+            47.835895169009135,
+            25.1121314111399
+          ],
+          [
+            47.83581637127506,
+            25.1121396768349
+          ],
+          [
+            47.83573980506556,
+            25.112151100499034
+          ],
+          [
+            47.83566617430137,
+            25.112165577107177
+          ],
+          [
+            47.83559615591279,
+            25.11218297356676
+          ],
+          [
+            47.835530393615834,
+            25.11220312994128
+          ],
+          [
+            47.83546949199373,
+            25.112225860920987
+          ],
+          [
+            47.8354140109384,
+            25.11225095752667
+          ],
+          [
+            47.835364460503165,
+            25.112278189031073
+          ],
+          [
+            47.83532129621356,
+            25.11230730508032
+          ],
+          [
+            47.83528491487991,
+            25.112338037995727
+          ],
+          [
+            47.83525565094975,
+            25.112370105234774
+          ],
+          [
+            47.83523377343379,
+            25.112403211988862
+          ],
+          [
+            47.83521948343361,
+            25.112437053893828
+          ],
+          [
+            47.83521291229378,
+            25.112471319828046
+          ],
+          [
+            47.83521412039542,
+            25.112505694772807
+          ],
+          [
+            47.835300121861714,
+            25.113084515552544
+          ],
+          [
+            47.83530971029855,
+            25.11312028055802
+          ],
+          [
+            47.83532771746899,
+            25.11315545820264
+          ],
+          [
+            47.83535396186654,
+            25.11318969397135
+          ],
+          [
+            47.83538817897382,
+            25.11322264284256
+          ],
+          [
+            47.8354300239296,
+            25.113253972765023
+          ],
+          [
+            47.83547907500509,
+            25.113283368004076
+          ],
+          [
+            47.83553483785494,
+            25.113310532323382
+          ],
+          [
+            47.835596750499676,
+            25.11333519196998
+          ],
+          [
+            47.83566418898948,
+            25.113357098433028
+          ],
+          [
+            47.83573647369229,
+            25.113376030947805
+          ],
+          [
+            47.83581287614275,
+            25.113391798720386
+          ],
+          [
+            47.83589262638301,
+            25.11340424285025
+          ],
+          [
+            47.83597492072149,
+            25.11341323793124
+          ],
+          [
+            47.83605892983146,
+            25.113418693315353
+          ],
+          [
+            47.83614380710763,
+            25.113420554026092
+          ],
+          [
+            47.83622869719694,
+            25.113418801312406
+          ],
+          [
+            47.83666481814156,
+            25.113400469877817
+          ],
+          [
+            47.83666803336356,
+            25.11340026842302
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 83,
+        "citystate": "moki",
+        "floors": 3,
+        "layer": "walls"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83526371678889,
+              25.117554307135837
+            ],
+            [
+              47.83505191678887,
+              25.11768650713584
+            ],
+            [
+              47.835117716788886,
+              25.117792007135836
+            ],
+            [
+              47.83623701678887,
+              25.119585107135837
+            ],
+            [
+              47.83651281678888,
+              25.119413007135837
+            ],
+            [
+              47.83686681678887,
+              25.11875230713584
+            ],
+            [
+              47.83688291678888,
+              25.11859560713584
+            ],
+            [
+              47.83682951678888,
+              25.11848240713584
+            ],
+            [
+              47.83622731678888,
+              25.11812540713584
+            ],
+            [
+              47.83598641678887,
+              25.11798260713584
+            ],
+            [
+              47.83526371678889,
+              25.117554307135837
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.005665,
+        "city": "Moki",
+        "floors": 1,
+        "citystate": "moki",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84501481678889,
+              25.11079820713584
+            ],
+            [
+              47.84483131678887,
+              25.11083600713584
+            ],
+            [
+              47.84469781678888,
+              25.11090520713584
+            ],
+            [
+              47.84456661678888,
+              25.11097580713584
+            ],
+            [
+              47.84449761678887,
+              25.111085507135837
+            ],
+            [
+              47.84458371678889,
+              25.11129250713584
+            ],
+            [
+              47.84534461678888,
+              25.112228707135838
+            ],
+            [
+              47.84582831678888,
+              25.112532107135838
+            ],
+            [
+              47.84589721678887,
+              25.112422407135842
+            ],
+            [
+              47.84658571678888,
+              25.111325007135843
+            ],
+            [
+              47.846723416788876,
+              25.111105507135843
+            ],
+            [
+              47.84640191678888,
+              25.110903807135838
+            ],
+            [
+              47.84611871678888,
+              25.11087900713584
+            ],
+            [
+              47.84583561678889,
+              25.110854307135842
+            ],
+            [
+              47.84526921678888,
+              25.11080490713584
+            ],
+            [
+              47.84501481678889,
+              25.11079820713584
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.006073,
+        "city": "Moki",
+        "floors": 1,
+        "citystate": "moki",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84534241678888,
+              25.113803907135843
+            ],
+            [
+              47.84530081678888,
+              25.113919507135837
+            ],
+            [
+              47.84496821678887,
+              25.114843807135838
+            ],
+            [
+              47.84480191678888,
+              25.11530600713584
+            ],
+            [
+              47.84482491678888,
+              25.11544480713584
+            ],
+            [
+              47.84630101678887,
+              25.115975907135837
+            ],
+            [
+              47.84640711678888,
+              25.11588360713584
+            ],
+            [
+              47.84649031678889,
+              25.115652507135838
+            ],
+            [
+              47.84661501678889,
+              25.115305807135837
+            ],
+            [
+              47.846632216788876,
+              25.11518150713584
+            ],
+            [
+              47.84660621678887,
+              25.11504160713584
+            ],
+            [
+              47.84647201678888,
+              25.11486290713584
+            ],
+            [
+              47.84581521678888,
+              25.11410450713584
+            ],
+            [
+              47.84565101678888,
+              25.11391500713584
+            ],
+            [
+              47.84534241678888,
+              25.113803907135843
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.006134,
+        "city": "Moki",
+        "floors": 1,
+        "citystate": "moki",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.83363441678888,
+              25.11376220713584
+            ],
+            [
+              47.83350481678889,
+              25.113765807135838
+            ],
+            [
+              47.83329481678888,
+              25.113906707135843
+            ],
+            [
+              47.83308481678888,
+              25.11404760713584
+            ],
+            [
+              47.83214001678887,
+              25.11468160713584
+            ],
+            [
+              47.83203501678888,
+              25.11475210713584
+            ],
+            [
+              47.83195321678889,
+              25.11488520713584
+            ],
+            [
+              47.83234831678888,
+              25.115954507135843
+            ],
+            [
+              47.83325981678888,
+              25.11803620713584
+            ],
+            [
+              47.83337371678887,
+              25.11813170713584
+            ],
+            [
+              47.833815316788886,
+              25.11796850713584
+            ],
+            [
+              47.83462931678888,
+              25.11753010713584
+            ],
+            [
+              47.83469531678888,
+              25.117368207135844
+            ],
+            [
+              47.83441731678889,
+              25.116370407135843
+            ],
+            [
+              47.83427831678888,
+              25.11587150713584
+            ],
+            [
+              47.833862916788874,
+              25.11438060713584
+            ],
+            [
+              47.83363441678888,
+              25.11376220713584
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 7e-06,
+        "perimeter": 0.010948,
+        "city": "Moki",
+        "floors": 1,
+        "citystate": "moki",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84394411678889,
+              25.11769680713584
+            ],
+            [
+              47.84387441678888,
+              25.117802807135842
+            ],
+            [
+              47.84380471678888,
+              25.117908807135837
+            ],
+            [
+              47.84359571678888,
+              25.118226807135837
+            ],
+            [
+              47.843038416788886,
+              25.119074807135842
+            ],
+            [
+              47.84269011678889,
+              25.11960490713584
+            ],
+            [
+              47.84284071678887,
+              25.11970380713584
+            ],
+            [
+              47.84301071678888,
+              25.11966380713584
+            ],
+            [
+              47.84335081678887,
+              25.119583707135842
+            ],
+            [
+              47.84403091678888,
+              25.11942350713584
+            ],
+            [
+              47.84420091678888,
+              25.11938340713584
+            ],
+            [
+              47.84435331678888,
+              25.11933180713584
+            ],
+            [
+              47.84442011678888,
+              25.119223907135837
+            ],
+            [
+              47.84440811678887,
+              25.11906420713584
+            ],
+            [
+              47.84432351678889,
+              25.11870500713584
+            ],
+            [
+              47.84411201678887,
+              25.117807107135842
+            ],
+            [
+              47.84394411678889,
+              25.11769680713584
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.005801,
+        "city": "Moki",
+        "floors": 1,
+        "citystate": "moki",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.84715301678888,
+              25.111007607135843
+            ],
+            [
+              47.84690651678888,
+              25.11118990713584
+            ],
+            [
+              47.84620731678888,
+              25.112415107135842
+            ],
+            [
+              47.84627951678888,
+              25.112538107135837
+            ],
+            [
+              47.84649441678887,
+              25.112660807135843
+            ],
+            [
+              47.84681671678888,
+              25.11284470713584
+            ],
+            [
+              47.84703161678888,
+              25.112967307135843
+            ],
+            [
+              47.84717281678887,
+              25.11296950713584
+            ],
+            [
+              47.84808631678888,
+              25.111368907135837
+            ],
+            [
+              47.84799961678888,
+              25.11127130713584
+            ],
+            [
+              47.84775981678888,
+              25.11119230713584
+            ],
+            [
+              47.84728011678888,
+              25.111034407135843
+            ],
+            [
+              47.84715301678888,
+              25.111007607135843
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.005728,
+        "city": "Moki",
+        "floors": 1,
+        "citystate": "moki",
+        "layer": "fields"
+      }
+    }
+  ]
+}

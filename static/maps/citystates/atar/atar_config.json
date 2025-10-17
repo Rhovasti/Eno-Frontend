@@ -1,0 +1,93 @@
+{
+  "citystate": "atar",
+  "display_name": "Atar",
+  "bounds": {
+    "west": -18.071388849960556,
+    "south": -30.28464839841522,
+    "east": -18.048547649960554,
+    "north": -30.258493198415216
+  },
+  "center": {
+    "lat": -30.27157079841522,
+    "lng": -18.059968249960555
+  },
+  "castle_position": {
+    "lat": -30.275146607506077,
+    "lng": -18.06006138632421
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1795,
+    "districts": 8,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 5,
+    "trees": 35
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1795,
+      "types": {
+        "commercial": 438,
+        "residential": 1076,
+        "industrial": 281
+      },
+      "total_occupants": 12688,
+      "avg_occupants": 7.068523676880223,
+      "avg_floors": 2.1799442896935934
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Black Vale",
+        "Green End",
+        "Deep Road",
+        "Starkey Gate",
+        "Blue Fair",
+        "Whitegate",
+        "Northern Slums",
+        "Greywood Shade"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 5
+    },
+    "trees": {
+      "count": 35
+    }
+  },
+  "layers": {
+    "base_map": "citystates/atar/atar_map.png",
+    "vector_data": {
+      "buildings": "citystates/atar/atar_buildings.geojson",
+      "districts": "citystates/atar/atar_districts.geojson",
+      "castles": "citystates/atar/atar_castles.geojson",
+      "towers": "citystates/atar/atar_towers.geojson",
+      "walls": "citystates/atar/atar_walls.geojson",
+      "fields": "citystates/atar/atar_fields.geojson",
+      "trees": "citystates/atar/atar_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:28",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/atar_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/atar"
+    }
+  }
+}

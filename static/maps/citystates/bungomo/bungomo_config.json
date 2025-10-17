@@ -1,0 +1,94 @@
+{
+  "citystate": "bungomo",
+  "display_name": "Bungomo",
+  "bounds": {
+    "west": 27.55882520224818,
+    "south": 38.88679784596771,
+    "east": 27.58631960224819,
+    "north": 38.91102424596772
+  },
+  "center": {
+    "lat": 38.898911045967715,
+    "lng": 27.572572402248184
+  },
+  "castle_position": {
+    "lat": 38.895673131682074,
+    "lng": 27.563828387962676
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1244,
+    "districts": 8,
+    "castles": 1,
+    "towers": 15,
+    "walls": 1,
+    "fields": 10,
+    "trees": 51
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1244,
+      "types": {
+        "industrial": 24,
+        "commercial": 366,
+        "residential": 752,
+        "other": 102
+      },
+      "total_occupants": 6799,
+      "avg_occupants": 5.465434083601286,
+      "avg_floors": 1.5096463022508038
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Blackchurch Bridge",
+        "Fish Lodge",
+        "White Crossing",
+        "Elm Crown",
+        "Eastern Bungomo",
+        "Castle",
+        "Free Reach",
+        "Noon Ridge"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 15
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 51
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bungomo/bungomo_map.png",
+    "vector_data": {
+      "buildings": "citystates/bungomo/bungomo_buildings.geojson",
+      "districts": "citystates/bungomo/bungomo_districts.geojson",
+      "castles": "citystates/bungomo/bungomo_castles.geojson",
+      "towers": "citystates/bungomo/bungomo_towers.geojson",
+      "walls": "citystates/bungomo/bungomo_walls.geojson",
+      "fields": "citystates/bungomo/bungomo_fields.geojson",
+      "trees": "citystates/bungomo/bungomo_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:24",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bungomo_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bungomo"
+    }
+  }
+}

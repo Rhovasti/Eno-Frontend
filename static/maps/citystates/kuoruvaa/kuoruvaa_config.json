@@ -1,0 +1,97 @@
+{
+  "citystate": "kuoruvaa",
+  "display_name": "Kuoruvaa",
+  "bounds": {
+    "west": 14.977149238950854,
+    "south": 20.60389477160113,
+    "east": 15.016898038950856,
+    "north": 20.635930571601133
+  },
+  "center": {
+    "lat": 20.61991267160113,
+    "lng": 14.997023638950855
+  },
+  "castle_position": {
+    "lat": 20.623110235297997,
+    "lng": 15.001186964921178
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2155,
+    "districts": 12,
+    "castles": 1,
+    "towers": 19,
+    "walls": 1,
+    "fields": 10,
+    "trees": 40
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2155,
+      "types": {
+        "residential": 1848,
+        "commercial": 295,
+        "other": 12
+      },
+      "total_occupants": 11194,
+      "avg_occupants": 5.194431554524362,
+      "avg_floors": 1.6348027842227377
+    },
+    "districts": {
+      "count": 12,
+      "unique_names": [
+        "Scholars Side",
+        "Dark Fair",
+        "Cloudbark Ward",
+        "White Road",
+        "Tailors Lodge",
+        "West Slums",
+        "Golden Road",
+        "Applegate",
+        "Twin Heaths",
+        "Grey Ring",
+        "West Kuoruvaa",
+        "Starrise Mire"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 19
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 10
+    },
+    "trees": {
+      "count": 40
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kuoruvaa/kuoruvaa_map.png",
+    "vector_data": {
+      "buildings": "citystates/kuoruvaa/kuoruvaa_buildings.geojson",
+      "districts": "citystates/kuoruvaa/kuoruvaa_districts.geojson",
+      "castles": "citystates/kuoruvaa/kuoruvaa_castles.geojson",
+      "towers": "citystates/kuoruvaa/kuoruvaa_towers.geojson",
+      "walls": "citystates/kuoruvaa/kuoruvaa_walls.geojson",
+      "fields": "citystates/kuoruvaa/kuoruvaa_fields.geojson",
+      "trees": "citystates/kuoruvaa/kuoruvaa_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:45",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kuoruvaa_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kuoruvaa"
+    }
+  }
+}

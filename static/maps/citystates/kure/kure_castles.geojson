@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.50557238750371,
+              35.644704669209425
+            ],
+            [
+              33.50466568750371,
+              35.64461116920942
+            ],
+            [
+              33.50456588750371,
+              35.64557856920941
+            ],
+            [
+              33.5056172875037,
+              35.64568696920943
+            ],
+            [
+              33.50560658750371,
+              35.64545306920943
+            ],
+            [
+              33.504900187503715,
+              35.64538026920942
+            ],
+            [
+              33.504926687503705,
+              35.64491696920941
+            ],
+            [
+              33.505585187503705,
+              35.64498486920943
+            ],
+            [
+              33.50557238750371,
+              35.644704669209425
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kure.geojson_fixed.geojson_poly_castle",
+        "age": 306,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kure"
+      }
+    }
+  ]
+}

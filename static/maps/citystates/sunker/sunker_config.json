@@ -1,0 +1,91 @@
+{
+  "citystate": "sunker",
+  "display_name": "Sunker",
+  "bounds": {
+    "west": 24.7639851726184,
+    "south": 7.7126609358491365,
+    "east": 24.8078027726184,
+    "north": 7.769376535849135
+  },
+  "center": {
+    "lat": 7.741018735849136,
+    "lng": 24.7858939726184
+  },
+  "castle_position": {
+    "lat": 7.7572795181610426,
+    "lng": 24.783942427035782
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 4093,
+    "districts": 7,
+    "castles": 1,
+    "towers": 53,
+    "walls": 1,
+    "fields": 18,
+    "trees": 103
+  },
+  "statistics": {
+    "buildings": {
+      "count": 4093,
+      "types": {
+        "residential": 4076,
+        "commercial": 17
+      },
+      "total_occupants": 26673,
+      "avg_occupants": 6.516735890544832,
+      "avg_floors": 2.4478377718055215
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Twilight Ridge",
+        "Bread Court",
+        "Four Fairs",
+        "Dragonhill Ward",
+        "Silver Gate",
+        "Freeway",
+        "Rainy Gate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 53
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 18
+    },
+    "trees": {
+      "count": 103
+    }
+  },
+  "layers": {
+    "base_map": "citystates/sunker/sunker_map.png",
+    "vector_data": {
+      "buildings": "citystates/sunker/sunker_buildings.geojson",
+      "districts": "citystates/sunker/sunker_districts.geojson",
+      "castles": "citystates/sunker/sunker_castles.geojson",
+      "towers": "citystates/sunker/sunker_towers.geojson",
+      "walls": "citystates/sunker/sunker_walls.geojson",
+      "fields": "citystates/sunker/sunker_fields.geojson",
+      "trees": "citystates/sunker/sunker_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 09:00:00",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/sunker_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/sunker"
+    }
+  }
+}

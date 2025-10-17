@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              57.809803701727006,
+              -2.7384078051190053
+            ],
+            [
+              57.809387101727,
+              -2.738422305119006
+            ],
+            [
+              57.80934120172701,
+              -2.737112705119006
+            ],
+            [
+              57.81093590172701,
+              -2.737056905119006
+            ],
+            [
+              57.811022401727016,
+              -2.7395296051190052
+            ],
+            [
+              57.809844401727005,
+              -2.7395708051190053
+            ],
+            [
+              57.809803701727006,
+              -2.7384078051190053
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "guild.geojson_fixed.geojson_poly_castle",
+        "age": 254,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "guild"
+      }
+    }
+  ]
+}

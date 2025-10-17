@@ -1,0 +1,98 @@
+{
+  "citystate": "jargeroy",
+  "display_name": "Jargeroy",
+  "bounds": {
+    "west": 40.56929869952385,
+    "south": 10.244870209361766,
+    "east": 40.61880189952385,
+    "north": 10.295457409361768
+  },
+  "center": {
+    "lat": 10.270163809361767,
+    "lng": 40.59405029952385
+  },
+  "castle_position": {
+    "lat": 10.275630440131039,
+    "lng": 40.58704996106171
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2725,
+    "districts": 13,
+    "castles": 1,
+    "towers": 110,
+    "walls": 1,
+    "fields": 19,
+    "trees": 48
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2725,
+      "types": {
+        "residential": 2004,
+        "commercial": 501,
+        "other": 220
+      },
+      "total_occupants": 15555,
+      "avg_occupants": 5.708256880733945,
+      "avg_floors": 1.7790825688073395
+    },
+    "districts": {
+      "count": 13,
+      "unique_names": [
+        "Silk Court",
+        "Grimsoul Side",
+        "Scholars Town",
+        "Wolflight",
+        "Western Slums",
+        "Ashen Bridge",
+        "Spice Docks",
+        "Castle",
+        "Northern Jargeroy",
+        "Red Docks",
+        "East Docks",
+        "New Walk",
+        "Cloudfall Wall"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 110
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 19
+    },
+    "trees": {
+      "count": 48
+    }
+  },
+  "layers": {
+    "base_map": "citystates/jargeroy/jargeroy_map.png",
+    "vector_data": {
+      "buildings": "citystates/jargeroy/jargeroy_buildings.geojson",
+      "districts": "citystates/jargeroy/jargeroy_districts.geojson",
+      "castles": "citystates/jargeroy/jargeroy_castles.geojson",
+      "towers": "citystates/jargeroy/jargeroy_towers.geojson",
+      "walls": "citystates/jargeroy/jargeroy_walls.geojson",
+      "fields": "citystates/jargeroy/jargeroy_fields.geojson",
+      "trees": "citystates/jargeroy/jargeroy_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:10",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/jargeroy_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/jargeroy"
+    }
+  }
+}

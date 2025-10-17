@@ -1,0 +1,96 @@
+{
+  "citystate": "gongshan",
+  "display_name": "Gongshan",
+  "bounds": {
+    "west": -20.359784557588974,
+    "south": -14.396273722094849,
+    "east": -20.302212157588976,
+    "north": -14.332665322094849
+  },
+  "center": {
+    "lat": -14.364469522094849,
+    "lng": -20.330998357588975
+  },
+  "castle_position": {
+    "lat": -14.365204364952008,
+    "lng": -20.329913386160587
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 5632,
+    "districts": 11,
+    "castles": 1,
+    "towers": 13,
+    "walls": 1,
+    "fields": 8,
+    "trees": 414
+  },
+  "statistics": {
+    "buildings": {
+      "count": 5632,
+      "types": {
+        "residential": 4807,
+        "other": 528,
+        "commercial": 297
+      },
+      "total_occupants": 30720,
+      "avg_occupants": 5.454545454545454,
+      "avg_floors": 1.7036576704545454
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Dawn Mire",
+        "The Cross",
+        "White Borough",
+        "Elm Road",
+        "Dark Forge",
+        "Elm Temple",
+        "Grimkey Gate",
+        "Chicken Gate",
+        "Southern Slums",
+        "Chicken Brook",
+        "Citadel"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 13
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 414
+    }
+  },
+  "layers": {
+    "base_map": "citystates/gongshan/gongshan_map.png",
+    "vector_data": {
+      "buildings": "citystates/gongshan/gongshan_buildings.geojson",
+      "districts": "citystates/gongshan/gongshan_districts.geojson",
+      "castles": "citystates/gongshan/gongshan_castles.geojson",
+      "towers": "citystates/gongshan/gongshan_towers.geojson",
+      "walls": "citystates/gongshan/gongshan_walls.geojson",
+      "fields": "citystates/gongshan/gongshan_fields.geojson",
+      "trees": "citystates/gongshan/gongshan_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 09:00:01",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/gongshan_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/gongshan"
+    }
+  }
+}

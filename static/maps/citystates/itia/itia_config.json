@@ -1,0 +1,88 @@
+{
+  "citystate": "itia",
+  "display_name": "Itia",
+  "bounds": {
+    "west": 32.148441576364796,
+    "south": 43.44765985307448,
+    "east": 32.178603576364786,
+    "north": 43.47411985307448
+  },
+  "center": {
+    "lat": 43.46088985307448,
+    "lng": 32.16352257636479
+  },
+  "castle_position": {
+    "lat": 43.46366405307448,
+    "lng": 32.169684090650556
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 499,
+    "districts": 4,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 19,
+    "trees": 3
+  },
+  "statistics": {
+    "buildings": {
+      "count": 499,
+      "types": {
+        "commercial": 111,
+        "residential": 388
+      },
+      "total_occupants": 2581,
+      "avg_occupants": 5.1723446893787575,
+      "avg_floors": 1.5230460921843687
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Daggertide",
+        "Old Tower",
+        "Old District",
+        "High Mire"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 19
+    },
+    "trees": {
+      "count": 3
+    }
+  },
+  "layers": {
+    "base_map": "citystates/itia/itia_map.png",
+    "vector_data": {
+      "buildings": "citystates/itia/itia_buildings.geojson",
+      "districts": "citystates/itia/itia_districts.geojson",
+      "castles": "citystates/itia/itia_castles.geojson",
+      "towers": "citystates/itia/itia_towers.geojson",
+      "walls": "citystates/itia/itia_walls.geojson",
+      "fields": "citystates/itia/itia_fields.geojson",
+      "trees": "citystates/itia/itia_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:19",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/itia_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/itia"
+    }
+  }
+}

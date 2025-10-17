@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -19.136112365688355,
+              38.11025291645159
+            ],
+            [
+              -19.13604460497117,
+              38.110331650255056
+            ],
+            [
+              -19.135636404971173,
+              38.11080595025506
+            ],
+            [
+              -19.13498450497117,
+              38.11029005025507
+            ],
+            [
+              -19.135300304971175,
+              38.109923150255064
+            ],
+            [
+              -19.135470404971173,
+              38.110065150255075
+            ],
+            [
+              -19.13565070497117,
+              38.109855650255064
+            ],
+            [
+              -19.136112365688355,
+              38.11025291645159
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "castri.geojson_fixed.geojson_poly_castle",
+        "age": 648,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "castri"
+      }
+    }
+  ]
+}

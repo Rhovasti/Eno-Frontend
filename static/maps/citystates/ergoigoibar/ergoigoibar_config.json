@@ -1,0 +1,89 @@
+{
+  "citystate": "ergoigoibar",
+  "display_name": "Ergoigoibar",
+  "bounds": {
+    "west": -6.968713074063887,
+    "south": 40.58458078206669,
+    "east": -6.9464540740638885,
+    "north": 40.61003278206669
+  },
+  "center": {
+    "lat": 40.59730678206669,
+    "lng": -6.957583574063888
+  },
+  "castle_position": {
+    "lat": 40.60302629233775,
+    "lng": -6.957933505349682
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 357,
+    "districts": 6,
+    "castles": 1,
+    "towers": 6,
+    "walls": 1,
+    "fields": 7,
+    "trees": 56
+  },
+  "statistics": {
+    "buildings": {
+      "count": 357,
+      "types": {
+        "residential": 357
+      },
+      "total_occupants": 1779,
+      "avg_occupants": 4.983193277310924,
+      "avg_floors": 1.9355742296918768
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Highgate",
+        "Black Walk",
+        "Ghost Steps",
+        "Spice Crown",
+        "East Slums",
+        "Chicken Arch"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 6
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 7
+    },
+    "trees": {
+      "count": 56
+    }
+  },
+  "layers": {
+    "base_map": "citystates/ergoigoibar/ergoigoibar_map.png",
+    "vector_data": {
+      "buildings": "citystates/ergoigoibar/ergoigoibar_buildings.geojson",
+      "districts": "citystates/ergoigoibar/ergoigoibar_districts.geojson",
+      "castles": "citystates/ergoigoibar/ergoigoibar_castles.geojson",
+      "towers": "citystates/ergoigoibar/ergoigoibar_towers.geojson",
+      "walls": "citystates/ergoigoibar/ergoigoibar_walls.geojson",
+      "fields": "citystates/ergoigoibar/ergoigoibar_fields.geojson",
+      "trees": "citystates/ergoigoibar/ergoigoibar_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:13",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/ergoigoibar_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/ergoigoibar"
+    }
+  }
+}

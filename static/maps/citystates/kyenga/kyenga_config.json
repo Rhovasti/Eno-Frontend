@@ -1,0 +1,89 @@
+{
+  "citystate": "kyenga",
+  "display_name": "Kyenga",
+  "bounds": {
+    "west": 20.9806514540442,
+    "south": 32.180394820961446,
+    "east": 21.029195854044204,
+    "north": 32.230713220961455
+  },
+  "center": {
+    "lat": 32.20555402096145,
+    "lng": 21.0049236540442
+  },
+  "castle_position": {
+    "lat": 32.207704565086544,
+    "lng": 21.000382293972194
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1658,
+    "districts": 5,
+    "castles": 1,
+    "towers": 10,
+    "walls": 1,
+    "fields": 33,
+    "trees": 40
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1658,
+      "types": {
+        "commercial": 1189,
+        "residential": 469
+      },
+      "total_occupants": 9003,
+      "avg_occupants": 5.430036188178528,
+      "avg_floors": 2.2521109770808203
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Pearl Wall",
+        "Market District",
+        "Dawn Steps",
+        "Cherry Bank",
+        "Underbloom Ferry"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 10
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 33
+    },
+    "trees": {
+      "count": 40
+    }
+  },
+  "layers": {
+    "base_map": "citystates/kyenga/kyenga_map.png",
+    "vector_data": {
+      "buildings": "citystates/kyenga/kyenga_buildings.geojson",
+      "districts": "citystates/kyenga/kyenga_districts.geojson",
+      "castles": "citystates/kyenga/kyenga_castles.geojson",
+      "towers": "citystates/kyenga/kyenga_towers.geojson",
+      "walls": "citystates/kyenga/kyenga_walls.geojson",
+      "fields": "citystates/kyenga/kyenga_fields.geojson",
+      "trees": "citystates/kyenga/kyenga_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:42",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/kyenga_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/kyenga"
+    }
+  }
+}

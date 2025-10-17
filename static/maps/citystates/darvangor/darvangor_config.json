@@ -1,0 +1,87 @@
+{
+  "citystate": "darvangor",
+  "display_name": "Darvangor",
+  "bounds": {
+    "west": 6.913367150171243,
+    "south": -14.927579238335907,
+    "east": 6.930864350171244,
+    "north": -14.912462038335905
+  },
+  "center": {
+    "lat": -14.920020638335906,
+    "lng": 6.922115750171243
+  },
+  "castle_position": {
+    "lat": -14.922723767357102,
+    "lng": 6.922272604819717
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 427,
+    "districts": 3,
+    "castles": 1,
+    "towers": 5,
+    "walls": 1,
+    "fields": 6,
+    "trees": 10
+  },
+  "statistics": {
+    "buildings": {
+      "count": 427,
+      "types": {
+        "residential": 199,
+        "commercial": 228
+      },
+      "total_occupants": 2215,
+      "avg_occupants": 5.187353629976581,
+      "avg_floors": 1.540983606557377
+    },
+    "districts": {
+      "count": 3,
+      "unique_names": [
+        "Southern Bridge",
+        "New Lodge",
+        "Night Field"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 5
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 6
+    },
+    "trees": {
+      "count": 10
+    }
+  },
+  "layers": {
+    "base_map": "citystates/darvangor/darvangor_map.png",
+    "vector_data": {
+      "buildings": "citystates/darvangor/darvangor_buildings.geojson",
+      "districts": "citystates/darvangor/darvangor_districts.geojson",
+      "castles": "citystates/darvangor/darvangor_castles.geojson",
+      "towers": "citystates/darvangor/darvangor_towers.geojson",
+      "walls": "citystates/darvangor/darvangor_walls.geojson",
+      "fields": "citystates/darvangor/darvangor_fields.geojson",
+      "trees": "citystates/darvangor/darvangor_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:55",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/darvangor_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/darvangor"
+    }
+  }
+}

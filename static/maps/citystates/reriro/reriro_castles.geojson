@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              28.266287174355597,
+              -39.708448984394785
+            ],
+            [
+              28.266682674355593,
+              -39.70874528439479
+            ],
+            [
+              28.266606674355593,
+              -39.709497884394786
+            ],
+            [
+              28.266045574355594,
+              -39.709478484394786
+            ],
+            [
+              28.26606297435559,
+              -39.70897478439479
+            ],
+            [
+              28.266256974355592,
+              -39.70904278439479
+            ],
+            [
+              28.266287174355597,
+              -39.708448984394785
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "reriro.geojson_fixed.geojson_poly_castle",
+        "age": 833,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "reriro"
+      }
+    }
+  ]
+}

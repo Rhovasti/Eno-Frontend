@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -14.099522080332292,
+              22.10351593052986
+            ],
+            [
+              -14.099575880332292,
+              22.10248773052986
+            ],
+            [
+              -14.099916880332295,
+              22.10250553052986
+            ],
+            [
+              -14.099900080332294,
+              22.102826230529857
+            ],
+            [
+              -14.100998580332295,
+              22.10288373052986
+            ],
+            [
+              -14.100961480332295,
+              22.103591230529858
+            ],
+            [
+              -14.099522080332292,
+              22.10351593052986
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "pigna.geojson_fixed.geojson_poly_castle",
+        "age": 818,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "pigna"
+      }
+    }
+  ]
+}

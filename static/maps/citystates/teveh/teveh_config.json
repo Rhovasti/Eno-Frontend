@@ -1,0 +1,89 @@
+{
+  "citystate": "teveh",
+  "display_name": "Teveh",
+  "bounds": {
+    "west": 53.87858322516703,
+    "south": 11.4037685281502,
+    "east": 53.90707882516703,
+    "north": 11.437534128150203
+  },
+  "center": {
+    "lat": 11.420651328150202,
+    "lng": 53.89283102516703
+  },
+  "castle_position": {
+    "lat": 11.411819899578827,
+    "lng": 53.89586068231032
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1053,
+    "districts": 5,
+    "castles": 1,
+    "towers": 27,
+    "walls": 1,
+    "fields": 20,
+    "trees": 13
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1053,
+      "types": {
+        "commercial": 753,
+        "residential": 300
+      },
+      "total_occupants": 5503,
+      "avg_occupants": 5.2260208926875595,
+      "avg_floors": 1.5422602089268755
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Low Steps",
+        "Golden Crown",
+        "Spice Shade",
+        "Old Teveh",
+        "Skyhill Yard"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 27
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 13
+    }
+  },
+  "layers": {
+    "base_map": "citystates/teveh/teveh_map.png",
+    "vector_data": {
+      "buildings": "citystates/teveh/teveh_buildings.geojson",
+      "districts": "citystates/teveh/teveh_districts.geojson",
+      "castles": "citystates/teveh/teveh_castles.geojson",
+      "towers": "citystates/teveh/teveh_towers.geojson",
+      "walls": "citystates/teveh/teveh_walls.geojson",
+      "fields": "citystates/teveh/teveh_fields.geojson",
+      "trees": "citystates/teveh/teveh_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:43",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/teveh_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/teveh"
+    }
+  }
+}

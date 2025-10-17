@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              56.761576299338294,
+              -3.4505277610594836
+            ],
+            [
+              56.76176689933829,
+              -3.4503018610594833
+            ],
+            [
+              56.7623301993383,
+              -3.4512054610594833
+            ],
+            [
+              56.761869499338296,
+              -3.4514925610594838
+            ],
+            [
+              56.761545399338296,
+              -3.4509726610594833
+            ],
+            [
+              56.7617365993383,
+              -3.4507848610594833
+            ],
+            [
+              56.761576299338294,
+              -3.4505277610594836
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "tlida.geojson_poly_castle",
+        "age": 830,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "tlida"
+      }
+    }
+  ]
+}

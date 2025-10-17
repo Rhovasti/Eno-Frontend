@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.91399229257484,
+              -11.189364857084762
+            ],
+            [
+              34.91343609257485,
+              -11.188972757084763
+            ],
+            [
+              34.913858392574845,
+              -11.188373757084765
+            ],
+            [
+              34.914156092574835,
+              -11.188724257084765
+            ],
+            [
+              34.91397239257484,
+              -11.188984857084762
+            ],
+            [
+              34.914147692574836,
+              -11.189144357084764
+            ],
+            [
+              34.91399229257484,
+              -11.189364857084762
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "szargony.geojson_poly_castle",
+        "age": 530,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "szargony"
+      }
+    }
+  ]
+}

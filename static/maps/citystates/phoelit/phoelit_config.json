@@ -1,0 +1,96 @@
+{
+  "citystate": "phoelit",
+  "display_name": "Phoelit",
+  "bounds": {
+    "west": 18.96028835015643,
+    "south": -31.702036480666795,
+    "east": 19.009169150156428,
+    "north": -31.655461680666793
+  },
+  "center": {
+    "lat": -31.678749080666794,
+    "lng": 18.984728750156428
+  },
+  "castle_position": {
+    "lat": -31.674919419128717,
+    "lng": 18.983668157848992
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 4403,
+    "districts": 11,
+    "castles": 1,
+    "towers": 12,
+    "walls": 1,
+    "fields": 8,
+    "trees": 441
+  },
+  "statistics": {
+    "buildings": {
+      "count": 4403,
+      "types": {
+        "residential": 2466,
+        "commercial": 1911,
+        "industrial": 26
+      },
+      "total_occupants": 23353,
+      "avg_occupants": 5.303883715648421,
+      "avg_floors": 2.2250738133091073
+    },
+    "districts": {
+      "count": 11,
+      "unique_names": [
+        "Old Temple",
+        "Salt Arch",
+        "New Star",
+        "Wolfwood Town",
+        "East Slums",
+        "Citadel",
+        "Egg Road",
+        "Far Edge",
+        "West Phoelit",
+        "Greywell District",
+        "Fensoul Gate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 12
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 8
+    },
+    "trees": {
+      "count": 441
+    }
+  },
+  "layers": {
+    "base_map": "citystates/phoelit/phoelit_map.png",
+    "vector_data": {
+      "buildings": "citystates/phoelit/phoelit_buildings.geojson",
+      "districts": "citystates/phoelit/phoelit_districts.geojson",
+      "castles": "citystates/phoelit/phoelit_castles.geojson",
+      "towers": "citystates/phoelit/phoelit_towers.geojson",
+      "walls": "citystates/phoelit/phoelit_walls.geojson",
+      "fields": "citystates/phoelit/phoelit_fields.geojson",
+      "trees": "citystates/phoelit/phoelit_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:19",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/phoelit_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/phoelit"
+    }
+  }
+}

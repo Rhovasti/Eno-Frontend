@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.887164087392375,
+              26.3857835027289
+            ],
+            [
+              25.887822587392375,
+              26.3846139027289
+            ],
+            [
+              25.88715638739237,
+              26.384431102728897
+            ],
+            [
+              25.88707738739237,
+              26.3846685027289
+            ],
+            [
+              25.887452687392372,
+              26.384798202728895
+            ],
+            [
+              25.887029487392372,
+              26.385675602728895
+            ],
+            [
+              25.887164087392375,
+              26.3857835027289
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "valvi.geojson_fixed.geojson_poly_castle",
+        "age": 113,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "valvi"
+      }
+    }
+  ]
+}

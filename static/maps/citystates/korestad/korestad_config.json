@@ -1,0 +1,90 @@
+{
+  "citystate": "korestad",
+  "display_name": "Korestad",
+  "bounds": {
+    "west": 37.966799795951154,
+    "south": 8.52117285023399,
+    "east": 38.007524395951144,
+    "north": 8.563788450233991
+  },
+  "center": {
+    "lat": 8.54248065023399,
+    "lng": 37.98716209595115
+  },
+  "castle_position": {
+    "lat": 8.528972478805391,
+    "lng": 37.98302622452282
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1356,
+    "districts": 5,
+    "castles": 1,
+    "towers": 48,
+    "walls": 1,
+    "fields": 20,
+    "trees": 5
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1356,
+      "types": {
+        "residential": 1103,
+        "industrial": 247,
+        "commercial": 6
+      },
+      "total_occupants": 11043,
+      "avg_occupants": 8.143805309734514,
+      "avg_floors": 2.4830383480825957
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Upper Ward",
+        "Copper Crossing",
+        "Underhill Arch",
+        "Potters Water",
+        "White Town"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 48
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 5
+    }
+  },
+  "layers": {
+    "base_map": "citystates/korestad/korestad_map.png",
+    "vector_data": {
+      "buildings": "citystates/korestad/korestad_buildings.geojson",
+      "districts": "citystates/korestad/korestad_districts.geojson",
+      "castles": "citystates/korestad/korestad_castles.geojson",
+      "towers": "citystates/korestad/korestad_towers.geojson",
+      "walls": "citystates/korestad/korestad_walls.geojson",
+      "fields": "citystates/korestad/korestad_fields.geojson",
+      "trees": "citystates/korestad/korestad_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:43",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/korestad_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/korestad"
+    }
+  }
+}

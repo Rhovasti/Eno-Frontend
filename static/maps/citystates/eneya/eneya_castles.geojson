@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.68058620698964,
+              40.17441802639762
+            ],
+            [
+              25.680679506989637,
+              40.174148326397614
+            ],
+            [
+              25.68041760698964,
+              40.173423026397614
+            ],
+            [
+              25.679675706989638,
+              40.17430942639761
+            ],
+            [
+              25.68011680698964,
+              40.174562626397616
+            ],
+            [
+              25.68036770698964,
+              40.174149726397616
+            ],
+            [
+              25.68058620698964,
+              40.17441802639762
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "eneya.geojson_fixed.geojson_poly_castle",
+        "age": 421,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "eneya"
+      }
+    }
+  ]
+}

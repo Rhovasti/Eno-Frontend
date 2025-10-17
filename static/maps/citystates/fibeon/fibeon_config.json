@@ -1,0 +1,88 @@
+{
+  "citystate": "fibeon",
+  "display_name": "Fibeon",
+  "bounds": {
+    "west": 48.438149522379895,
+    "south": -19.390320162576085,
+    "east": 48.4558875223799,
+    "north": -19.366500162576084
+  },
+  "center": {
+    "lat": -19.378410162576085,
+    "lng": 48.4470185223799
+  },
+  "castle_position": {
+    "lat": -19.370883648290423,
+    "lng": 48.45378236523701
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 515,
+    "districts": 4,
+    "castles": 1,
+    "towers": 11,
+    "walls": 1,
+    "fields": 13,
+    "trees": 2
+  },
+  "statistics": {
+    "buildings": {
+      "count": 515,
+      "types": {
+        "residential": 499,
+        "commercial": 16
+      },
+      "total_occupants": 3289,
+      "avg_occupants": 6.386407766990291,
+      "avg_floors": 1.850485436893204
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Market District",
+        "Forest Mile",
+        "Upper District",
+        "Free Ring"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 11
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 13
+    },
+    "trees": {
+      "count": 2
+    }
+  },
+  "layers": {
+    "base_map": "citystates/fibeon/fibeon_map.png",
+    "vector_data": {
+      "buildings": "citystates/fibeon/fibeon_buildings.geojson",
+      "districts": "citystates/fibeon/fibeon_districts.geojson",
+      "castles": "citystates/fibeon/fibeon_castles.geojson",
+      "towers": "citystates/fibeon/fibeon_towers.geojson",
+      "walls": "citystates/fibeon/fibeon_walls.geojson",
+      "fields": "citystates/fibeon/fibeon_fields.geojson",
+      "trees": "citystates/fibeon/fibeon_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:29",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/fibeon_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/fibeon"
+    }
+  }
+}

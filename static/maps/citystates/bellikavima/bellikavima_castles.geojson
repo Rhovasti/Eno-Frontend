@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.5652232614605657,
+              21.740453199339342
+            ],
+            [
+              2.5649485614605654,
+              21.74074129933934
+            ],
+            [
+              2.5659025614605655,
+              21.741651099339343
+            ],
+            [
+              2.5668916614605655,
+              21.740614099339346
+            ],
+            [
+              2.5659377614605656,
+              21.739704199339343
+            ],
+            [
+              2.5656504614605655,
+              21.740005399339346
+            ],
+            [
+              2.5653340614605655,
+              21.739703599339343
+            ],
+            [
+              2.564906961460566,
+              21.74015149933934
+            ],
+            [
+              2.5652232614605657,
+              21.740453199339342
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "bellikavima.geojson_fixed.geojson_poly_castle",
+        "age": 132,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "bellikavima"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "citystate": "waishan",
+  "display_name": "Waishan",
+  "bounds": {
+    "west": -33.66229024652992,
+    "south": -11.853272814875352,
+    "east": -33.644675246529914,
+    "north": -11.826536814875348
+  },
+  "center": {
+    "lat": -11.83990481487535,
+    "lng": -33.65348274652992
+  },
+  "castle_position": {
+    "lat": -11.832599019098472,
+    "lng": -33.65644858735895
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 314,
+    "districts": 4,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 14,
+    "trees": 3
+  },
+  "statistics": {
+    "buildings": {
+      "count": 314,
+      "types": {
+        "residential": 314
+      },
+      "total_occupants": 1644,
+      "avg_occupants": 5.235668789808917,
+      "avg_floors": 1.5382165605095541
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Fish Crown",
+        "Deep Mile",
+        "Greensoul Village",
+        "Old Waishan"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    },
+    "trees": {
+      "count": 3
+    }
+  },
+  "layers": {
+    "base_map": "citystates/waishan/waishan_map.png",
+    "vector_data": {
+      "buildings": "citystates/waishan/waishan_buildings.geojson",
+      "districts": "citystates/waishan/waishan_districts.geojson",
+      "castles": "citystates/waishan/waishan_castles.geojson",
+      "towers": "citystates/waishan/waishan_towers.geojson",
+      "walls": "citystates/waishan/waishan_walls.geojson",
+      "fields": "citystates/waishan/waishan_fields.geojson",
+      "trees": "citystates/waishan/waishan_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:33",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/waishan_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/waishan"
+    }
+  }
+}

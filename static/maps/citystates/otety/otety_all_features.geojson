@@ -1,0 +1,7815 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_2_0",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741749056024984,
+              24.05453446684681
+            ],
+            [
+              -6.741850056024983,
+              24.05450646684681
+            ],
+            [
+              -6.741881056024983,
+              24.05461646684681
+            ],
+            [
+              -6.741781056024983,
+              24.054645466846814
+            ],
+            [
+              -6.741749056024984,
+              24.05453446684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_2_1",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741964056024983,
+              24.05451546684681
+            ],
+            [
+              -6.742062056024983,
+              24.05448746684681
+            ],
+            [
+              -6.742088056024983,
+              24.05457746684681
+            ],
+            [
+              -6.741989056024984,
+              24.05460546684681
+            ],
+            [
+              -6.741964056024983,
+              24.05451546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_4_0",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741970056024984,
+              24.05414846684681
+            ],
+            [
+              -6.742067056024984,
+              24.05413746684681
+            ],
+            [
+              -6.742075056024984,
+              24.05420246684681
+            ],
+            [
+              -6.741979056024984,
+              24.054229466846813
+            ],
+            [
+              -6.741970056024984,
+              24.05414846684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_5_0",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741857056024983,
+              24.054342466846812
+            ],
+            [
+              -6.741976056024983,
+              24.05430946684681
+            ],
+            [
+              -6.742009056024983,
+              24.05442446684681
+            ],
+            [
+              -6.7418900560249835,
+              24.05445846684681
+            ],
+            [
+              -6.741857056024983,
+              24.054342466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_5_1",
+        "age": "24",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741562056024984,
+              24.05437746684681
+            ],
+            [
+              -6.741671056024984,
+              24.05434646684681
+            ],
+            [
+              -6.741704056024984,
+              24.054460466846812
+            ],
+            [
+              -6.741594056024983,
+              24.054491466846812
+            ],
+            [
+              -6.741562056024984,
+              24.05437746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_7_0",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741604056024984,
+              24.05410946684681
+            ],
+            [
+              -6.741608056024983,
+              24.054147466846814
+            ],
+            [
+              -6.741569056024984,
+              24.05415146684681
+            ],
+            [
+              -6.741565056024983,
+              24.054114466846812
+            ],
+            [
+              -6.741524056024984,
+              24.05411846684681
+            ],
+            [
+              -6.741512056024984,
+              24.054015466846813
+            ],
+            [
+              -6.741551056024983,
+              24.05401146684681
+            ],
+            [
+              -6.741547056024984,
+              24.053976466846812
+            ],
+            [
+              -6.741592056024983,
+              24.05397246684681
+            ],
+            [
+              -6.741596056024983,
+              24.054006466846808
+            ],
+            [
+              -6.741634056024983,
+              24.05400246684681
+            ],
+            [
+              -6.741645056024984,
+              24.054105466846813
+            ],
+            [
+              -6.741604056024984,
+              24.05410946684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_7_1",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741634056024983,
+              24.05394346684681
+            ],
+            [
+              -6.741620056024983,
+              24.05381346684681
+            ],
+            [
+              -6.741667056024983,
+              24.05380846684681
+            ],
+            [
+              -6.741708056024983,
+              24.053810466846812
+            ],
+            [
+              -6.741722056024983,
+              24.053933466846814
+            ],
+            [
+              -6.741634056024983,
+              24.05394346684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_11_0",
+        "age": "32",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741575056024983,
+              24.053567466846808
+            ],
+            [
+              -6.741701056024983,
+              24.05366246684681
+            ],
+            [
+              -6.741622056024983,
+              24.05376846684681
+            ],
+            [
+              -6.741523056024983,
+              24.05369346684681
+            ],
+            [
+              -6.7415340560249835,
+              24.053641466846813
+            ],
+            [
+              -6.7415340560249835,
+              24.05363946684681
+            ],
+            [
+              -6.7415340560249835,
+              24.053638466846813
+            ],
+            [
+              -6.7415340560249835,
+              24.05363646684681
+            ],
+            [
+              -6.7415340560249835,
+              24.053635466846814
+            ],
+            [
+              -6.7415340560249835,
+              24.05363346684681
+            ],
+            [
+              -6.741533056024984,
+              24.053632466846814
+            ],
+            [
+              -6.741533056024984,
+              24.053630466846812
+            ],
+            [
+              -6.741530056024983,
+              24.053626466846808
+            ],
+            [
+              -6.741575056024983,
+              24.053567466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_13_0",
+        "age": "31",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741497056024983,
+              24.05557046684681
+            ],
+            [
+              -6.741413056024983,
+              24.05561546684681
+            ],
+            [
+              -6.741349056024983,
+              24.055495466846814
+            ],
+            [
+              -6.741407056024984,
+              24.05546546684681
+            ],
+            [
+              -6.741418056024983,
+              24.055479466846812
+            ],
+            [
+              -6.741419056024984,
+              24.05548046684681
+            ],
+            [
+              -6.7414200560249835,
+              24.055481466846814
+            ],
+            [
+              -6.741421056024983,
+              24.05548246684681
+            ],
+            [
+              -6.741422056024984,
+              24.05548246684681
+            ],
+            [
+              -6.741423056024983,
+              24.05548346684681
+            ],
+            [
+              -6.741424056024984,
+              24.05548346684681
+            ],
+            [
+              -6.741425056024983,
+              24.055484466846814
+            ],
+            [
+              -6.741455056024984,
+              24.05549146684681
+            ],
+            [
+              -6.741497056024983,
+              24.05557046684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_13_1",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741702056024984,
+              24.05555946684681
+            ],
+            [
+              -6.741673056024984,
+              24.055619466846814
+            ],
+            [
+              -6.741596056024983,
+              24.05566046684681
+            ],
+            [
+              -6.7415410560249835,
+              24.055557466846814
+            ],
+            [
+              -6.741602056024984,
+              24.05552546684681
+            ],
+            [
+              -6.741671056024984,
+              24.05554146684681
+            ],
+            [
+              -6.741673056024984,
+              24.05554146684681
+            ],
+            [
+              -6.7416740560249835,
+              24.05554246684681
+            ],
+            [
+              -6.741675056024983,
+              24.05554246684681
+            ],
+            [
+              -6.741676056024984,
+              24.05554146684681
+            ],
+            [
+              -6.741677056024983,
+              24.05554146684681
+            ],
+            [
+              -6.741678056024984,
+              24.05554146684681
+            ],
+            [
+              -6.741679056024983,
+              24.055540466846814
+            ],
+            [
+              -6.741689056024983,
+              24.055535466846813
+            ],
+            [
+              -6.741702056024984,
+              24.05555946684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_15_0",
+        "age": "28",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7414010560249835,
+              24.055940466846813
+            ],
+            [
+              -6.741354056024983,
+              24.05587646684681
+            ],
+            [
+              -6.741396056024984,
+              24.05584546684681
+            ],
+            [
+              -6.741434056024984,
+              24.05591646684681
+            ],
+            [
+              -6.7414010560249835,
+              24.055940466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_15_1",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741228056024983,
+              24.05598946684681
+            ],
+            [
+              -6.7411850560249835,
+              24.056021466846808
+            ],
+            [
+              -6.741202056024983,
+              24.056044466846814
+            ],
+            [
+              -6.741117056024983,
+              24.05610746684681
+            ],
+            [
+              -6.741115056024984,
+              24.05610546684681
+            ],
+            [
+              -6.741100056024983,
+              24.05609046684681
+            ],
+            [
+              -6.741095056024983,
+              24.056083466846808
+            ],
+            [
+              -6.741093056024983,
+              24.056084466846812
+            ],
+            [
+              -6.741085056024984,
+              24.056075466846814
+            ],
+            [
+              -6.741219056024983,
+              24.055976466846808
+            ],
+            [
+              -6.741228056024983,
+              24.05598946684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_17_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Trading House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741043056024983,
+              24.056061466846813
+            ],
+            [
+              -6.741119056024983,
+              24.056137466846813
+            ],
+            [
+              -6.741038056024983,
+              24.056218466846808
+            ],
+            [
+              -6.740962056024983,
+              24.056143466846812
+            ],
+            [
+              -6.741043056024983,
+              24.056061466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_17_1",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Fishmonger\u00e2\u20ac\u2122s Shop",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740994056024984,
+              24.056084466846812
+            ],
+            [
+              -6.740951056024983,
+              24.056041466846814
+            ],
+            [
+              -6.740990056024984,
+              24.056002466846813
+            ],
+            [
+              -6.741033056024984,
+              24.05604546684681
+            ],
+            [
+              -6.740994056024984,
+              24.056084466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_18_0",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741189056024984,
+              24.05566846684681
+            ],
+            [
+              -6.741222056024984,
+              24.05580346684681
+            ],
+            [
+              -6.741124056024983,
+              24.055827466846814
+            ],
+            [
+              -6.741092056024984,
+              24.05569146684681
+            ],
+            [
+              -6.741189056024984,
+              24.05566846684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_18_1",
+        "age": "31",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7411400560249835,
+              24.055658466846808
+            ],
+            [
+              -6.741112056024983,
+              24.05554246684681
+            ],
+            [
+              -6.741213056024984,
+              24.055518466846813
+            ],
+            [
+              -6.741241056024984,
+              24.05563446684681
+            ],
+            [
+              -6.7411400560249835,
+              24.055658466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_18_2",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741012056024983,
+              24.055673466846812
+            ],
+            [
+              -6.741044056024984,
+              24.05580946684681
+            ],
+            [
+              -6.740953056024983,
+              24.055830466846814
+            ],
+            [
+              -6.740921056024984,
+              24.05569446684681
+            ],
+            [
+              -6.741012056024983,
+              24.055673466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_20_0",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740866056024984,
+              24.05633546684681
+            ],
+            [
+              -6.740919056024984,
+              24.056387466846815
+            ],
+            [
+              -6.740873056024984,
+              24.056432466846807
+            ],
+            [
+              -6.740821056024984,
+              24.05638146684681
+            ],
+            [
+              -6.740866056024984,
+              24.05633546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_20_1",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740784056024983,
+              24.056322466846808
+            ],
+            [
+              -6.740717056024984,
+              24.056255466846814
+            ],
+            [
+              -6.740776056024984,
+              24.05619546684681
+            ],
+            [
+              -6.740843056024984,
+              24.05626246684681
+            ],
+            [
+              -6.740784056024983,
+              24.056322466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_22_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Inn",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740590056024983,
+              24.056342466846814
+            ],
+            [
+              -6.740561056024983,
+              24.05622046684681
+            ],
+            [
+              -6.740629056024984,
+              24.056204466846808
+            ],
+            [
+              -6.740658056024984,
+              24.056326466846812
+            ],
+            [
+              -6.740590056024983,
+              24.056342466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_22_1",
+        "age": "0",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740522056024984,
+              24.056086466846814
+            ],
+            [
+              -6.740496056024984,
+              24.055977466846812
+            ],
+            [
+              -6.740571056024983,
+              24.055960466846813
+            ],
+            [
+              -6.740597056024983,
+              24.05606846684681
+            ],
+            [
+              -6.740522056024984,
+              24.056086466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_25_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740516056024983,
+              24.055856466846812
+            ],
+            [
+              -6.740398056024983,
+              24.055884466846813
+            ],
+            [
+              -6.740374056024983,
+              24.05578146684681
+            ],
+            [
+              -6.740491056024984,
+              24.05575346684681
+            ],
+            [
+              -6.740516056024983,
+              24.055856466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_25_1",
+        "age": "49",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740263056024984,
+              24.05583546684681
+            ],
+            [
+              -6.740380056024984,
+              24.055807466846808
+            ],
+            [
+              -6.740403056024984,
+              24.05590546684681
+            ],
+            [
+              -6.740286056024983,
+              24.05593346684681
+            ],
+            [
+              -6.740263056024984,
+              24.05583546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_26_0",
+        "age": "43",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740630056024983,
+              24.05568046684681
+            ],
+            [
+              -6.740654056024983,
+              24.055782466846814
+            ],
+            [
+              -6.740559056024983,
+              24.055805466846813
+            ],
+            [
+              -6.740535056024983,
+              24.055703466846808
+            ],
+            [
+              -6.740630056024983,
+              24.05568046684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_26_1",
+        "age": "42",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Trading House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740814056024984,
+              24.055653466846813
+            ],
+            [
+              -6.740799056024983,
+              24.05559346684681
+            ],
+            [
+              -6.740862056024984,
+              24.05557846684681
+            ],
+            [
+              -6.740876056024984,
+              24.05563846684681
+            ],
+            [
+              -6.740814056024984,
+              24.055653466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_28_0",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Inn",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740577056024984,
+              24.056644466846812
+            ],
+            [
+              -6.740625056024983,
+              24.05658346684681
+            ],
+            [
+              -6.740690056024983,
+              24.05663646684681
+            ],
+            [
+              -6.740641056024984,
+              24.05669646684681
+            ],
+            [
+              -6.740577056024984,
+              24.056644466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_29_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Weaver\u00e2\u20ac\u2122s Stall",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 4,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7397300560249835,
+              24.05620046684681
+            ],
+            [
+              -6.739763056024984,
+              24.05611046684681
+            ],
+            [
+              -6.739862056024984,
+              24.056146466846812
+            ],
+            [
+              -6.739808056024984,
+              24.05622946684681
+            ],
+            [
+              -6.7397300560249835,
+              24.05620046684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_29_1",
+        "age": "48",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739856056024983,
+              24.05600946684681
+            ],
+            [
+              -6.739818056024983,
+              24.056111466846808
+            ],
+            [
+              -6.7397490560249835,
+              24.056086466846814
+            ],
+            [
+              -6.7397870560249835,
+              24.05598446684681
+            ],
+            [
+              -6.739856056024983,
+              24.05600946684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_29_2",
+        "age": "1",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739832056024984,
+              24.055994466846812
+            ],
+            [
+              -6.739868056024983,
+              24.055895466846813
+            ],
+            [
+              -6.7399460560249835,
+              24.055923466846814
+            ],
+            [
+              -6.739909056024983,
+              24.05602346684681
+            ],
+            [
+              -6.739832056024984,
+              24.055994466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_31_0",
+        "age": "49",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740004056024983,
+              24.056295466846812
+            ],
+            [
+              -6.740111056024984,
+              24.056365466846813
+            ],
+            [
+              -6.740069056024984,
+              24.056430466846813
+            ],
+            [
+              -6.739962056024984,
+              24.05636046684681
+            ],
+            [
+              -6.740004056024983,
+              24.056295466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_31_1",
+        "age": "45",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740185056024984,
+              24.05640546684681
+            ],
+            [
+              -6.7400980560249835,
+              24.05634946684681
+            ],
+            [
+              -6.740163056024983,
+              24.056249466846808
+            ],
+            [
+              -6.740250056024983,
+              24.05630546684681
+            ],
+            [
+              -6.740185056024984,
+              24.05640546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_33_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738570056024983,
+              24.05424246684681
+            ],
+            [
+              -6.738552056024984,
+              24.054373466846812
+            ],
+            [
+              -6.738445056024984,
+              24.05435946684681
+            ],
+            [
+              -6.738499056024983,
+              24.05423346684681
+            ],
+            [
+              -6.738570056024983,
+              24.05424246684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_33_1",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Fishmonger\u00e2\u20ac\u2122s Shop",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738696056024983,
+              24.054252466846812
+            ],
+            [
+              -6.738680056024984,
+              24.054369466846808
+            ],
+            [
+              -6.738557056024984,
+              24.054352466846808
+            ],
+            [
+              -6.738573056024984,
+              24.054235466846812
+            ],
+            [
+              -6.738696056024983,
+              24.054252466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_33_2",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738711056024984,
+              24.054066466846812
+            ],
+            [
+              -6.738578056024984,
+              24.054048466846808
+            ],
+            [
+              -6.738603056024983,
+              24.053992466846807
+            ],
+            [
+              -6.738603056024983,
+              24.053990466846813
+            ],
+            [
+              -6.738604056024984,
+              24.053989466846808
+            ],
+            [
+              -6.738604056024984,
+              24.053987466846813
+            ],
+            [
+              -6.738604056024984,
+              24.05398646684681
+            ],
+            [
+              -6.738604056024984,
+              24.053984466846813
+            ],
+            [
+              -6.738604056024984,
+              24.05398346684681
+            ],
+            [
+              -6.738603056024983,
+              24.05398246684681
+            ],
+            [
+              -6.738603056024983,
+              24.05398046684681
+            ],
+            [
+              -6.738602056024984,
+              24.053979466846812
+            ],
+            [
+              -6.738602056024984,
+              24.053978466846814
+            ],
+            [
+              -6.738601056024983,
+              24.05397746684681
+            ],
+            [
+              -6.738600056024984,
+              24.053976466846812
+            ],
+            [
+              -6.738599056024983,
+              24.053975466846808
+            ],
+            [
+              -6.738597056024984,
+              24.05397446684681
+            ],
+            [
+              -6.738596056024983,
+              24.053973466846813
+            ],
+            [
+              -6.738579056024983,
+              24.05396546684681
+            ],
+            [
+              -6.738592056024984,
+              24.053934466846812
+            ],
+            [
+              -6.738664056024984,
+              24.053939466846813
+            ],
+            [
+              -6.738722056024983,
+              24.05398246684681
+            ],
+            [
+              -6.738711056024984,
+              24.054066466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_35_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Weaver\u00e2\u20ac\u2122s Stall",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 4,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738875056024984,
+              24.054966466846814
+            ],
+            [
+              -6.738871056024983,
+              24.055056466846814
+            ],
+            [
+              -6.738784056024983,
+              24.055051466846813
+            ],
+            [
+              -6.738789056024984,
+              24.05496246684681
+            ],
+            [
+              -6.738875056024984,
+              24.054966466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_37_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Market Hall",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738369056024984,
+              24.054834466846813
+            ],
+            [
+              -6.7384650560249835,
+              24.054868466846813
+            ],
+            [
+              -6.738434056024984,
+              24.05495746684681
+            ],
+            [
+              -6.738338056024984,
+              24.05492346684681
+            ],
+            [
+              -6.738369056024984,
+              24.054834466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_37_1",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738513056024983,
+              24.05469746684681
+            ],
+            [
+              -6.738475056024983,
+              24.05480546684681
+            ],
+            [
+              -6.738364056024983,
+              24.054766466846814
+            ],
+            [
+              -6.738402056024983,
+              24.05465846684681
+            ],
+            [
+              -6.738513056024983,
+              24.05469746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_38_0",
+        "age": "48",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Merchant Store",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738201056024984,
+              24.05505546684681
+            ],
+            [
+              -6.738244056024984,
+              24.05495646684681
+            ],
+            [
+              -6.738359056024983,
+              24.055005466846808
+            ],
+            [
+              -6.738316056024983,
+              24.05510546684681
+            ],
+            [
+              -6.738201056024984,
+              24.05505546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_38_1",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Market Hall",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738228056024983,
+              24.055233466846808
+            ],
+            [
+              -6.738205056024983,
+              24.05528846684681
+            ],
+            [
+              -6.738065056024984,
+              24.055228466846813
+            ],
+            [
+              -6.738074056024983,
+              24.055208466846814
+            ],
+            [
+              -6.738079056024983,
+              24.05521046684681
+            ],
+            [
+              -6.738094056024984,
+              24.055175466846812
+            ],
+            [
+              -6.738228056024983,
+              24.055233466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_38_2",
+        "age": "49",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Inn",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7382490560249835,
+              24.055222466846814
+            ],
+            [
+              -6.738361056024983,
+              24.05527146684681
+            ],
+            [
+              -6.738340056024983,
+              24.055346466846814
+            ],
+            [
+              -6.738218056024984,
+              24.05529446684681
+            ],
+            [
+              -6.7382490560249835,
+              24.055222466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_40_0",
+        "age": "43",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Inn",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738536056024984,
+              24.05536446684681
+            ],
+            [
+              -6.738549056024983,
+              24.055253466846814
+            ],
+            [
+              -6.738663056024983,
+              24.05526646684681
+            ],
+            [
+              -6.738650056024984,
+              24.055377466846814
+            ],
+            [
+              -6.738536056024984,
+              24.05536446684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_41_0",
+        "age": "45",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Market Hall",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738791056024983,
+              24.05532546684681
+            ],
+            [
+              -6.738676056024984,
+              24.055312466846814
+            ],
+            [
+              -6.738685056024984,
+              24.055234466846812
+            ],
+            [
+              -6.738712056024983,
+              24.055237466846812
+            ],
+            [
+              -6.738717056024983,
+              24.05519646684681
+            ],
+            [
+              -6.738771056024984,
+              24.055202466846808
+            ],
+            [
+              -6.738766056024984,
+              24.05524346684681
+            ],
+            [
+              -6.738800056024983,
+              24.055247466846808
+            ],
+            [
+              -6.738791056024983,
+              24.05532546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_42_0",
+        "age": "43",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738887056024984,
+              24.05539246684681
+            ],
+            [
+              -6.738911056024984,
+              24.05539546684681
+            ],
+            [
+              -6.738992056024983,
+              24.055417466846812
+            ],
+            [
+              -6.738982056024984,
+              24.05550846684681
+            ],
+            [
+              -6.738875056024984,
+              24.05549646684681
+            ],
+            [
+              -6.738887056024984,
+              24.05539246684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_42_1",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Weaver\u00e2\u20ac\u2122s Stall",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 4,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738774056024983,
+              24.05544646684681
+            ],
+            [
+              -6.738664056024984,
+              24.055433466846814
+            ],
+            [
+              -6.738674056024983,
+              24.05534746684681
+            ],
+            [
+              -6.738782056024984,
+              24.05535946684681
+            ],
+            [
+              -6.738784056024983,
+              24.055360466846814
+            ],
+            [
+              -6.738774056024983,
+              24.05544646684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_42_2",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Merchant Store",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738991056024984,
+              24.055481466846814
+            ],
+            [
+              -6.738998056024984,
+              24.055419466846814
+            ],
+            [
+              -6.739055056024984,
+              24.05543546684681
+            ],
+            [
+              -6.739034056024984,
+              24.05548646684681
+            ],
+            [
+              -6.738991056024984,
+              24.055481466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_43_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737843056024984,
+              24.055109466846808
+            ],
+            [
+              -6.737897056024984,
+              24.055132466846814
+            ],
+            [
+              -6.737860056024983,
+              24.055219466846808
+            ],
+            [
+              -6.737806056024983,
+              24.05519546684681
+            ],
+            [
+              -6.737843056024984,
+              24.055109466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_44_0",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741940056024983,
+              24.05307746684681
+            ],
+            [
+              -6.741836056024983,
+              24.053134466846814
+            ],
+            [
+              -6.741793056024983,
+              24.053058466846814
+            ],
+            [
+              -6.741897056024984,
+              24.05300046684681
+            ],
+            [
+              -6.741940056024983,
+              24.05307746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_44_1",
+        "age": "30",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741879056024983,
+              24.053171466846813
+            ],
+            [
+              -6.741984056024984,
+              24.05311346684681
+            ],
+            [
+              -6.742057056024983,
+              24.05324546684681
+            ],
+            [
+              -6.741983056024983,
+              24.05328546684681
+            ],
+            [
+              -6.741914056024983,
+              24.053233466846812
+            ],
+            [
+              -6.741879056024983,
+              24.053171466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_44_2",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742159056024983,
+              24.053357466846812
+            ],
+            [
+              -6.742107056024983,
+              24.053264466846812
+            ],
+            [
+              -6.742234056024984,
+              24.053193466846814
+            ],
+            [
+              -6.742243056024984,
+              24.05320946684681
+            ],
+            [
+              -6.742222056024984,
+              24.053322466846808
+            ],
+            [
+              -6.742159056024983,
+              24.053357466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_45_0",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7426020560249835,
+              24.05620846684681
+            ],
+            [
+              -6.742725056024984,
+              24.056275466846813
+            ],
+            [
+              -6.742651056024984,
+              24.056410466846813
+            ],
+            [
+              -6.742533056024984,
+              24.05633646684681
+            ],
+            [
+              -6.7426020560249835,
+              24.05620846684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_46_0",
+        "age": "30",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742395056024984,
+              24.055323466846808
+            ],
+            [
+              -6.742330056024983,
+              24.05529146684681
+            ],
+            [
+              -6.742350056024984,
+              24.055251466846812
+            ],
+            [
+              -6.742313056024983,
+              24.055233466846808
+            ],
+            [
+              -6.742354056024984,
+              24.05514846684681
+            ],
+            [
+              -6.742551056024984,
+              24.05524046684681
+            ],
+            [
+              -6.742525056024984,
+              24.05529446684681
+            ],
+            [
+              -6.742467056024983,
+              24.05526646684681
+            ],
+            [
+              -6.742451056024983,
+              24.05530046684681
+            ],
+            [
+              -6.742414056024984,
+              24.055282466846812
+            ],
+            [
+              -6.742395056024984,
+              24.055323466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_46_1",
+        "age": "30",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742245056024984,
+              24.055400466846812
+            ],
+            [
+              -6.742193056024984,
+              24.055509466846814
+            ],
+            [
+              -6.742060056024984,
+              24.055445466846813
+            ],
+            [
+              -6.742113056024984,
+              24.05533646684681
+            ],
+            [
+              -6.742245056024984,
+              24.055400466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_46_2",
+        "age": "31",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742290056024984,
+              24.05545146684681
+            ],
+            [
+              -6.742391056024983,
+              24.05550046684681
+            ],
+            [
+              -6.742329056024984,
+              24.055619466846814
+            ],
+            [
+              -6.742234056024984,
+              24.05556746684681
+            ],
+            [
+              -6.742290056024984,
+              24.05545146684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_48_0",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742376056024984,
+              24.054544466846814
+            ],
+            [
+              -6.742377056024983,
+              24.054631466846814
+            ],
+            [
+              -6.7423410560249835,
+              24.054631466846814
+            ],
+            [
+              -6.742331056024984,
+              24.05454546684681
+            ],
+            [
+              -6.742376056024984,
+              24.054544466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_48_1",
+        "age": "28",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7423220560249835,
+              24.054465466846814
+            ],
+            [
+              -6.742313056024983,
+              24.05437746684681
+            ],
+            [
+              -6.742347056024984,
+              24.05437746684681
+            ],
+            [
+              -6.742364056024984,
+              24.05437946684681
+            ],
+            [
+              -6.742364056024984,
+              24.054401466846812
+            ],
+            [
+              -6.742407056024984,
+              24.054400466846808
+            ],
+            [
+              -6.742407056024984,
+              24.05443946684681
+            ],
+            [
+              -6.742365056024983,
+              24.054440466846813
+            ],
+            [
+              -6.742365056024983,
+              24.05446446684681
+            ],
+            [
+              -6.7423220560249835,
+              24.054465466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_48_2",
+        "age": "24",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742397056024984,
+              24.054797466846814
+            ],
+            [
+              -6.742398056024983,
+              24.054915466846808
+            ],
+            [
+              -6.742336056024984,
+              24.054916466846812
+            ],
+            [
+              -6.742345056024984,
+              24.054798466846812
+            ],
+            [
+              -6.742397056024984,
+              24.054797466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_49_0",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742433056024984,
+              24.05430046684681
+            ],
+            [
+              -6.742534056024983,
+              24.05430446684681
+            ],
+            [
+              -6.742531056024983,
+              24.054378466846813
+            ],
+            [
+              -6.742430056024984,
+              24.054367466846813
+            ],
+            [
+              -6.742433056024984,
+              24.05430046684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_50_0",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.743757056024984,
+              24.054916466846812
+            ],
+            [
+              -6.743805056024984,
+              24.05479046684681
+            ],
+            [
+              -6.743923056024984,
+              24.054836466846808
+            ],
+            [
+              -6.743876056024984,
+              24.054961466846812
+            ],
+            [
+              -6.743757056024984,
+              24.054916466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_50_1",
+        "age": "30",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.743601056024984,
+              24.055037466846812
+            ],
+            [
+              -6.743657056024983,
+              24.05489146684681
+            ],
+            [
+              -6.743773056024983,
+              24.054935466846814
+            ],
+            [
+              -6.743717056024984,
+              24.055081466846808
+            ],
+            [
+              -6.743601056024984,
+              24.055037466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_51_0",
+        "age": "28",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.744172056024983,
+              24.05428446684681
+            ],
+            [
+              -6.744210056024983,
+              24.054159466846812
+            ],
+            [
+              -6.744320056024984,
+              24.05419346684681
+            ],
+            [
+              -6.744264056024983,
+              24.05431246684681
+            ],
+            [
+              -6.744172056024983,
+              24.05428446684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_51_1",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.744012056024983,
+              24.054145466846812
+            ],
+            [
+              -6.743905056024984,
+              24.054113466846808
+            ],
+            [
+              -6.743926056024984,
+              24.054046466846813
+            ],
+            [
+              -6.744034056024983,
+              24.054071466846814
+            ],
+            [
+              -6.744012056024983,
+              24.054145466846812
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_51_2",
+        "age": "31",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.743874056024984,
+              24.05425646684681
+            ],
+            [
+              -6.743752056024984,
+              24.05421946684681
+            ],
+            [
+              -6.7437840560249835,
+              24.054111466846813
+            ],
+            [
+              -6.743907056024984,
+              24.054147466846814
+            ],
+            [
+              -6.743874056024984,
+              24.05425646684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_53_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741044056024984,
+              24.05730946684681
+            ],
+            [
+              -6.741127056024984,
+              24.05723646684681
+            ],
+            [
+              -6.741193056024983,
+              24.057311466846812
+            ],
+            [
+              -6.741109056024984,
+              24.057384466846813
+            ],
+            [
+              -6.741044056024984,
+              24.05730946684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_54_0",
+        "age": "48",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741691056024983,
+              24.05682546684681
+            ],
+            [
+              -6.741762056024983,
+              24.05674146684681
+            ],
+            [
+              -6.741865056024983,
+              24.056829466846814
+            ],
+            [
+              -6.741793056024983,
+              24.056913466846808
+            ],
+            [
+              -6.741691056024983,
+              24.05682546684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_54_1",
+        "age": "0",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Trading House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741161056024984,
+              24.05671246684681
+            ],
+            [
+              -6.741267056024984,
+              24.05680246684681
+            ],
+            [
+              -6.741208056024984,
+              24.056871466846808
+            ],
+            [
+              -6.741116056024984,
+              24.056764466846808
+            ],
+            [
+              -6.741161056024984,
+              24.05671246684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_56_0",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741694056024983,
+              24.05625746684681
+            ],
+            [
+              -6.741630056024983,
+              24.056343466846812
+            ],
+            [
+              -6.741543056024984,
+              24.05627946684681
+            ],
+            [
+              -6.741595056024984,
+              24.05620946684681
+            ],
+            [
+              -6.741609056024984,
+              24.05619546684681
+            ],
+            [
+              -6.741694056024983,
+              24.05625746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_56_1",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741575056024983,
+              24.056458466846813
+            ],
+            [
+              -6.741648056024983,
+              24.056359466846814
+            ],
+            [
+              -6.741714056024984,
+              24.05640846684681
+            ],
+            [
+              -6.741641056024983,
+              24.056506466846812
+            ],
+            [
+              -6.741575056024983,
+              24.056458466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_58_0",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742039056024984,
+              24.056427466846813
+            ],
+            [
+              -6.741961056024984,
+              24.056519466846808
+            ],
+            [
+              -6.741846056024983,
+              24.05642046684681
+            ],
+            [
+              -6.741924056024983,
+              24.05632946684681
+            ],
+            [
+              -6.742039056024984,
+              24.056427466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_59_0",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742335056024984,
+              24.05661746684681
+            ],
+            [
+              -6.742267056024984,
+              24.05669846684681
+            ],
+            [
+              -6.7421510560249835,
+              24.05660046684681
+            ],
+            [
+              -6.742219056024984,
+              24.056520466846813
+            ],
+            [
+              -6.742335056024984,
+              24.05661746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_60_0",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740405056024983,
+              24.05749746684681
+            ],
+            [
+              -6.740300056024983,
+              24.057580466846808
+            ],
+            [
+              -6.740210056024983,
+              24.05746746684681
+            ],
+            [
+              -6.740315056024983,
+              24.057383466846808
+            ],
+            [
+              -6.740405056024983,
+              24.05749746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_60_1",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Fishmonger\u00e2\u20ac\u2122s Shop",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740391056024983,
+              24.057696466846814
+            ],
+            [
+              -6.740480056024984,
+              24.057626466846813
+            ],
+            [
+              -6.740563056024984,
+              24.057730466846813
+            ],
+            [
+              -6.740474056024983,
+              24.05780146684681
+            ],
+            [
+              -6.740391056024983,
+              24.057696466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_60_2",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740154056024984,
+              24.057519466846813
+            ],
+            [
+              -6.740244056024984,
+              24.057632466846812
+            ],
+            [
+              -6.740139056024983,
+              24.05771546684681
+            ],
+            [
+              -6.740050056024984,
+              24.057601466846812
+            ],
+            [
+              -6.740154056024984,
+              24.057519466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_61_0",
+        "age": "43",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737791056024983,
+              24.057260466846813
+            ],
+            [
+              -6.737727056024983,
+              24.057336466846813
+            ],
+            [
+              -6.737648056024984,
+              24.057271466846814
+            ],
+            [
+              -6.737713056024983,
+              24.05719446684681
+            ],
+            [
+              -6.737791056024983,
+              24.057260466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_62_0",
+        "age": "45",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Weaver\u00e2\u20ac\u2122s Stall",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 5,
+        "employees": 4,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737460056024984,
+              24.05672146684681
+            ],
+            [
+              -6.737539056024984,
+              24.056626466846808
+            ],
+            [
+              -6.737634056024984,
+              24.056705466846815
+            ],
+            [
+              -6.737555056024984,
+              24.05680046684681
+            ],
+            [
+              -6.737460056024984,
+              24.05672146684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_62_1",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737653056024984,
+              24.056916466846808
+            ],
+            [
+              -6.737745056024984,
+              24.05680646684681
+            ],
+            [
+              -6.737799056024983,
+              24.05685146684681
+            ],
+            [
+              -6.737707056024984,
+              24.056961466846808
+            ],
+            [
+              -6.737653056024984,
+              24.056916466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_62_2",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Fishmonger\u00e2\u20ac\u2122s Shop",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737554056024983,
+              24.056818466846813
+            ],
+            [
+              -6.737617056024984,
+              24.05674346684681
+            ],
+            [
+              -6.737710056024984,
+              24.05682046684681
+            ],
+            [
+              -6.737646056024984,
+              24.05689646684681
+            ],
+            [
+              -6.737554056024983,
+              24.056818466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_63_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737277056024984,
+              24.05569746684681
+            ],
+            [
+              -6.737177056024983,
+              24.055816466846814
+            ],
+            [
+              -6.737078056024984,
+              24.05573346684681
+            ],
+            [
+              -6.737175056024984,
+              24.055611466846813
+            ],
+            [
+              -6.737277056024984,
+              24.05569746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_63_1",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Fishmonger\u00e2\u20ac\u2122s Shop",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737213056024984,
+              24.05607346684681
+            ],
+            [
+              -6.737090056024984,
+              24.05597046684681
+            ],
+            [
+              -6.737174056024983,
+              24.055870466846812
+            ],
+            [
+              -6.737297056024984,
+              24.055973466846808
+            ],
+            [
+              -6.737213056024984,
+              24.05607346684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_63_2",
+        "age": "45",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Inn",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737446056024984,
+              24.056052466846808
+            ],
+            [
+              -6.737330056024984,
+              24.05595546684681
+            ],
+            [
+              -6.737409056024983,
+              24.05586046684681
+            ],
+            [
+              -6.7375250560249835,
+              24.055957466846813
+            ],
+            [
+              -6.737446056024984,
+              24.056052466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_64_0",
+        "age": "43",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Inn",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737453056024984,
+              24.055360466846814
+            ],
+            [
+              -6.737400056024983,
+              24.05542646684681
+            ],
+            [
+              -6.737346056024984,
+              24.055383466846813
+            ],
+            [
+              -6.737398056024983,
+              24.05531646684681
+            ],
+            [
+              -6.737453056024984,
+              24.055360466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_64_1",
+        "age": "43",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737390056024983,
+              24.05545746684681
+            ],
+            [
+              -6.737493056024984,
+              24.05553946684681
+            ],
+            [
+              -6.737454056024983,
+              24.055588466846814
+            ],
+            [
+              -6.737353056024984,
+              24.055503466846808
+            ],
+            [
+              -6.737390056024983,
+              24.05545746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_64_2",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737606056024983,
+              24.05556246684681
+            ],
+            [
+              -6.737520056024984,
+              24.05549446684681
+            ],
+            [
+              -6.737560056024984,
+              24.05544346684681
+            ],
+            [
+              -6.737654056024983,
+              24.05550246684681
+            ],
+            [
+              -6.737606056024983,
+              24.05556246684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_65_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738473056024983,
+              24.055833466846813
+            ],
+            [
+              -6.738584056024983,
+              24.055914466846808
+            ],
+            [
+              -6.738512056024984,
+              24.05601246684681
+            ],
+            [
+              -6.738401056024983,
+              24.05593046684681
+            ],
+            [
+              -6.738473056024983,
+              24.055833466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_66_0",
+        "age": "44",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739144056024983,
+              24.05625146684681
+            ],
+            [
+              -6.739228056024983,
+              24.056322466846808
+            ],
+            [
+              -6.739137056024983,
+              24.056432466846807
+            ],
+            [
+              -6.739052056024983,
+              24.05636146684681
+            ],
+            [
+              -6.739144056024983,
+              24.05625146684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_66_1",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Fishmonger\u00e2\u20ac\u2122s Shop",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738934056024984,
+              24.056140466846813
+            ],
+            [
+              -6.739011056024983,
+              24.05604846684681
+            ],
+            [
+              -6.739105056024984,
+              24.056126466846813
+            ],
+            [
+              -6.739031056024983,
+              24.05621546684681
+            ],
+            [
+              -6.738963056024984,
+              24.056165466846814
+            ],
+            [
+              -6.738934056024984,
+              24.056140466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_68_0",
+        "age": "49",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739661056024984,
+              24.05656346684681
+            ],
+            [
+              -6.739540056024984,
+              24.056461466846812
+            ],
+            [
+              -6.739611056024984,
+              24.05637746684681
+            ],
+            [
+              -6.739732056024984,
+              24.056478466846812
+            ],
+            [
+              -6.739661056024984,
+              24.05656346684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_69_0",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739847056024983,
+              24.05727846684681
+            ],
+            [
+              -6.739930056024983,
+              24.05720046684681
+            ],
+            [
+              -6.739977056024983,
+              24.05725046684681
+            ],
+            [
+              -6.739887056024983,
+              24.05732146684681
+            ],
+            [
+              -6.739847056024983,
+              24.05727846684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_71_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Merchant Store",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739883056024983,
+              24.05686446684681
+            ],
+            [
+              -6.739963056024983,
+              24.05674146684681
+            ],
+            [
+              -6.740071056024984,
+              24.05681146684681
+            ],
+            [
+              -6.740015056024983,
+              24.056897466846813
+            ],
+            [
+              -6.739975056024983,
+              24.05686446684681
+            ],
+            [
+              -6.739974056024984,
+              24.05686446684681
+            ],
+            [
+              -6.739972056024984,
+              24.056863466846814
+            ],
+            [
+              -6.739971056024984,
+              24.05686246684681
+            ],
+            [
+              -6.739970056024983,
+              24.05686246684681
+            ],
+            [
+              -6.739968056024983,
+              24.05686146684681
+            ],
+            [
+              -6.739967056024984,
+              24.05686146684681
+            ],
+            [
+              -6.739966056024983,
+              24.05686146684681
+            ],
+            [
+              -6.739964056024984,
+              24.05686146684681
+            ],
+            [
+              -6.739963056024983,
+              24.05686246684681
+            ],
+            [
+              -6.739962056024984,
+              24.05686246684681
+            ],
+            [
+              -6.739960056024984,
+              24.05686246684681
+            ],
+            [
+              -6.739959056024983,
+              24.056863466846814
+            ],
+            [
+              -6.739958056024983,
+              24.05686446684681
+            ],
+            [
+              -6.739957056024984,
+              24.05686446684681
+            ],
+            [
+              -6.739956056024983,
+              24.05686546684681
+            ],
+            [
+              -6.739928056024983,
+              24.05689346684681
+            ],
+            [
+              -6.739883056024983,
+              24.05686446684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_71_1",
+        "age": "49",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Trading House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740018056024983,
+              24.05674946684681
+            ],
+            [
+              -6.739899056024983,
+              24.056672466846813
+            ],
+            [
+              -6.739962056024984,
+              24.056596466846813
+            ],
+            [
+              -6.740071056024984,
+              24.05666746684681
+            ],
+            [
+              -6.740018056024983,
+              24.05674946684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_72_0",
+        "age": "1",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Trading House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737142056024984,
+              24.05509746684681
+            ],
+            [
+              -6.737045056024984,
+              24.055020466846813
+            ],
+            [
+              -6.737119056024984,
+              24.054927466846813
+            ],
+            [
+              -6.737216056024984,
+              24.05500446684681
+            ],
+            [
+              -6.737142056024984,
+              24.05509746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_73_0",
+        "age": "48",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7366540560249835,
+              24.055610466846808
+            ],
+            [
+              -6.736573056024984,
+              24.055546466846813
+            ],
+            [
+              -6.736645056024983,
+              24.05545546684681
+            ],
+            [
+              -6.736725056024984,
+              24.05551946684681
+            ],
+            [
+              -6.7366540560249835,
+              24.055610466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_74_0",
+        "age": "49",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737262056024983,
+              24.053635466846814
+            ],
+            [
+              -6.737220056024983,
+              24.053770466846814
+            ],
+            [
+              -6.7370860560249834,
+              24.053728466846813
+            ],
+            [
+              -6.737128056024984,
+              24.05359446684681
+            ],
+            [
+              -6.737262056024983,
+              24.053635466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_74_1",
+        "age": "0",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Market Hall",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737168056024984,
+              24.05389246684681
+            ],
+            [
+              -6.737182056024983,
+              24.053846466846814
+            ],
+            [
+              -6.737236056024983,
+              24.053863466846813
+            ],
+            [
+              -6.737222056024983,
+              24.05390946684681
+            ],
+            [
+              -6.737227056024983,
+              24.05391046684681
+            ],
+            [
+              -6.737192056024984,
+              24.054024466846812
+            ],
+            [
+              -6.737192056024984,
+              24.05402546684681
+            ],
+            [
+              -6.737192056024984,
+              24.05402546684681
+            ],
+            [
+              -6.737178056024984,
+              24.054021466846812
+            ],
+            [
+              -6.737162056024983,
+              24.05407246684681
+            ],
+            [
+              -6.737125056024983,
+              24.054060466846813
+            ],
+            [
+              -6.737141056024983,
+              24.054009466846814
+            ],
+            [
+              -6.737101056024983,
+              24.05399746684681
+            ],
+            [
+              -6.737137056024984,
+              24.053882466846808
+            ],
+            [
+              -6.737168056024984,
+              24.05389246684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_76_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Trading House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737569056024984,
+              24.05436346684681
+            ],
+            [
+              -6.737459056024983,
+              24.05431846684681
+            ],
+            [
+              -6.737502056024983,
+              24.05421346684681
+            ],
+            [
+              -6.737613056024983,
+              24.05425946684681
+            ],
+            [
+              -6.737569056024984,
+              24.05436346684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_76_1",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Apotechary",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737689056024983,
+              24.05392446684681
+            ],
+            [
+              -6.737644056024983,
+              24.054034466846808
+            ],
+            [
+              -6.737519056024983,
+              24.05398346684681
+            ],
+            [
+              -6.737562056024984,
+              24.053872466846812
+            ],
+            [
+              -6.737689056024983,
+              24.05392446684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_76_2",
+        "age": "46",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.737510056024984,
+              24.05413746684681
+            ],
+            [
+              -6.737452056024983,
+              24.05427846684681
+            ],
+            [
+              -6.737308056024984,
+              24.054218466846812
+            ],
+            [
+              -6.737355056024983,
+              24.054105466846813
+            ],
+            [
+              -6.7374420560249835,
+              24.054141466846808
+            ],
+            [
+              -6.737443056024983,
+              24.054141466846808
+            ],
+            [
+              -6.737444056024984,
+              24.054142466846812
+            ],
+            [
+              -6.737446056024984,
+              24.054142466846812
+            ],
+            [
+              -6.737447056024983,
+              24.054142466846812
+            ],
+            [
+              -6.737449056024984,
+              24.054142466846812
+            ],
+            [
+              -6.737450056024983,
+              24.054141466846808
+            ],
+            [
+              -6.737451056024984,
+              24.054141466846808
+            ],
+            [
+              -6.737453056024984,
+              24.054141466846808
+            ],
+            [
+              -6.737454056024983,
+              24.05414046684681
+            ],
+            [
+              -6.737455056024984,
+              24.054139466846813
+            ],
+            [
+              -6.737456056024984,
+              24.05413846684681
+            ],
+            [
+              -6.737457056024983,
+              24.05413746684681
+            ],
+            [
+              -6.737458056024984,
+              24.054136466846813
+            ],
+            [
+              -6.737459056024983,
+              24.05413546684681
+            ],
+            [
+              -6.737460056024984,
+              24.05413446684681
+            ],
+            [
+              -6.737460056024984,
+              24.054133466846814
+            ],
+            [
+              -6.737466056024983,
+              24.054119466846814
+            ],
+            [
+              -6.737510056024984,
+              24.05413746684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_77_0",
+        "age": "24",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740384056024984,
+              24.052518466846813
+            ],
+            [
+              -6.740353056024983,
+              24.05262646684681
+            ],
+            [
+              -6.740261056024984,
+              24.052600466846812
+            ],
+            [
+              -6.740292056024984,
+              24.05249146684681
+            ],
+            [
+              -6.740384056024984,
+              24.052518466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_77_1",
+        "age": "25",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740508056024984,
+              24.052543466846814
+            ],
+            [
+              -6.7405370560249835,
+              24.052445466846812
+            ],
+            [
+              -6.740601056024984,
+              24.052464466846814
+            ],
+            [
+              -6.740572056024984,
+              24.05256246684681
+            ],
+            [
+              -6.740508056024984,
+              24.052543466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_78_0",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Serf House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740710056024984,
+              24.052656466846813
+            ],
+            [
+              -6.740595056024983,
+              24.05262346684681
+            ],
+            [
+              -6.740623056024983,
+              24.052529466846813
+            ],
+            [
+              -6.740737056024983,
+              24.05256246684681
+            ],
+            [
+              -6.740710056024984,
+              24.052656466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_78_1",
+        "age": "25",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740688056024984,
+              24.052464466846814
+            ],
+            [
+              -6.740627056024984,
+              24.05244646684681
+            ],
+            [
+              -6.740655056024984,
+              24.05234846684681
+            ],
+            [
+              -6.740718056024983,
+              24.05236146684681
+            ],
+            [
+              -6.740688056024984,
+              24.052464466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_78_2",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740863056024983,
+              24.05257346684681
+            ],
+            [
+              -6.740837056024983,
+              24.05266346684681
+            ],
+            [
+              -6.740723056024983,
+              24.052630466846814
+            ],
+            [
+              -6.740748056024984,
+              24.052543466846814
+            ],
+            [
+              -6.740748056024984,
+              24.052543466846814
+            ],
+            [
+              -6.740749056024983,
+              24.052543466846814
+            ],
+            [
+              -6.740750056024984,
+              24.05254446684681
+            ],
+            [
+              -6.740751056024983,
+              24.05254446684681
+            ],
+            [
+              -6.740828056024984,
+              24.052563466846813
+            ],
+            [
+              -6.740863056024983,
+              24.05257346684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_79_0",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Cottage",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741297056024983,
+              24.051915466846808
+            ],
+            [
+              -6.741195056024983,
+              24.05191146684681
+            ],
+            [
+              -6.741198056024983,
+              24.05183046684681
+            ],
+            [
+              -6.741301056024984,
+              24.051826466846812
+            ],
+            [
+              -6.741297056024983,
+              24.051915466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_80_0",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740452056024983,
+              24.051766466846814
+            ],
+            [
+              -6.740411056024984,
+              24.051907466846814
+            ],
+            [
+              -6.740288056024983,
+              24.051871466846812
+            ],
+            [
+              -6.740328056024984,
+              24.051730466846813
+            ],
+            [
+              -6.740452056024983,
+              24.051766466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_80_1",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740228056024984,
+              24.052307466846813
+            ],
+            [
+              -6.740261056024984,
+              24.05219346684681
+            ],
+            [
+              -6.740346056024984,
+              24.05221846684681
+            ],
+            [
+              -6.740313056024984,
+              24.052332466846813
+            ],
+            [
+              -6.740228056024984,
+              24.052307466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_81_0",
+        "age": "24",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740002056024984,
+              24.052132466846814
+            ],
+            [
+              -6.740135056024984,
+              24.05217046684681
+            ],
+            [
+              -6.740115056024983,
+              24.052239466846814
+            ],
+            [
+              -6.7400790560249835,
+              24.052228466846813
+            ],
+            [
+              -6.740069056024984,
+              24.05226346684681
+            ],
+            [
+              -6.740009056024984,
+              24.052245466846813
+            ],
+            [
+              -6.740019056024984,
+              24.052211466846813
+            ],
+            [
+              -6.739983056024984,
+              24.05220146684681
+            ],
+            [
+              -6.740002056024984,
+              24.052132466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_82_0",
+        "age": "29",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739724056024983,
+              24.05050146684681
+            ],
+            [
+              -6.739707056024983,
+              24.050452466846814
+            ],
+            [
+              -6.739752056024983,
+              24.05043646684681
+            ],
+            [
+              -6.739769056024983,
+              24.05048546684681
+            ],
+            [
+              -6.7398060560249835,
+              24.050472466846813
+            ],
+            [
+              -6.739840056024983,
+              24.050567466846815
+            ],
+            [
+              -6.739720056024984,
+              24.050609466846808
+            ],
+            [
+              -6.739687056024984,
+              24.050514466846813
+            ],
+            [
+              -6.739724056024983,
+              24.05050146684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_82_1",
+        "age": "31",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739529056024983,
+              24.050564466846808
+            ],
+            [
+              -6.739388056024984,
+              24.050613466846812
+            ],
+            [
+              -6.739356056024983,
+              24.050523466846812
+            ],
+            [
+              -6.739497056024984,
+              24.05047346684681
+            ],
+            [
+              -6.739529056024983,
+              24.050564466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_82_2",
+        "age": "26",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Peasant Hut",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739446056024983,
+              24.050826466846814
+            ],
+            [
+              -6.739511056024984,
+              24.05080346684681
+            ],
+            [
+              -6.739545056024983,
+              24.05090146684681
+            ],
+            [
+              -6.739480056024984,
+              24.05092446684681
+            ],
+            [
+              -6.739446056024983,
+              24.050826466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_84_0",
+        "age": "47",
+        "generation": "6",
+        "type": "commercial",
+        "specific_type": "Tavern",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738639056024983,
+              24.05107846684681
+            ],
+            [
+              -6.738598056024983,
+              24.050961466846807
+            ],
+            [
+              -6.738673056024984,
+              24.05093546684681
+            ],
+            [
+              -6.738708056024983,
+              24.051034466846808
+            ],
+            [
+              -6.738714056024984,
+              24.051052466846812
+            ],
+            [
+              -6.738639056024983,
+              24.05107846684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_84_1",
+        "age": "0",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Alehouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738518056024983,
+              24.05132046684681
+            ],
+            [
+              -6.738483056024984,
+              24.05121946684681
+            ],
+            [
+              -6.738573056024984,
+              24.051187466846812
+            ],
+            [
+              -6.738603056024983,
+              24.05127246684681
+            ],
+            [
+              -6.738565056024983,
+              24.05130446684681
+            ],
+            [
+              -6.738518056024983,
+              24.05132046684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_84_2",
+        "age": "1",
+        "generation": "7",
+        "type": "commercial",
+        "specific_type": "Guild House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738601056024983,
+              24.051226466846813
+            ],
+            [
+              -6.738561056024983,
+              24.05111546684681
+            ],
+            [
+              -6.738683056024984,
+              24.05107246684681
+            ],
+            [
+              -6.738720056024983,
+              24.05117646684681
+            ],
+            [
+              -6.738705056024983,
+              24.051189466846814
+            ],
+            [
+              -6.738601056024983,
+              24.051226466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_85_0",
+        "age": "24",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Noble Villa",
+        "occupants": 7,
+        "bodies": 6,
+        "souls": 3,
+        "floors": "2",
+        "subterrain_level": "No",
+        "jobs": 5,
+        "employees": 3,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738807056024983,
+              24.05078646684681
+            ],
+            [
+              -6.738669056024984,
+              24.05083446684681
+            ],
+            [
+              -6.738647056024984,
+              24.05077146684681
+            ],
+            [
+              -6.738785056024984,
+              24.05072346684681
+            ],
+            [
+              -6.738807056024983,
+              24.05078646684681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_85_1",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738888056024983,
+              24.050770466846814
+            ],
+            [
+              -6.738930056024984,
+              24.05089046684681
+            ],
+            [
+              -6.738834056024983,
+              24.05092446684681
+            ],
+            [
+              -6.738823056024984,
+              24.05089246684681
+            ],
+            [
+              -6.738782056024984,
+              24.05090746684681
+            ],
+            [
+              -6.738762056024983,
+              24.05085046684681
+            ],
+            [
+              -6.7388020560249835,
+              24.050835466846813
+            ],
+            [
+              -6.738791056024983,
+              24.050804466846813
+            ],
+            [
+              -6.738888056024983,
+              24.050770466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_85_2",
+        "age": "27",
+        "generation": "16",
+        "type": "residential",
+        "specific_type": "Townhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Old Otety",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738933056024983,
+              24.050821466846813
+            ],
+            [
+              -6.738893056024983,
+              24.05070746684681
+            ],
+            [
+              -6.738986056024984,
+              24.050674466846814
+            ],
+            [
+              -6.739027056024984,
+              24.05078846684681
+            ],
+            [
+              -6.738933056024983,
+              24.050821466846813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_86_0",
+        "age": "37",
+        "generation": "1",
+        "type": "residential",
+        "specific_type": "Manor House",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "2",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Twin Rings",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.734765056024983,
+              24.058948466846815
+            ],
+            [
+              -6.734736056024984,
+              24.058920466846814
+            ],
+            [
+              -6.734863056024983,
+              24.05878946684681
+            ],
+            [
+              -6.734922056024983,
+              24.05884646684681
+            ],
+            [
+              -6.734895056024984,
+              24.05887446684681
+            ],
+            [
+              -6.734939056024983,
+              24.05891646684681
+            ],
+            [
+              -6.7349070560249835,
+              24.058949466846812
+            ],
+            [
+              -6.734863056024983,
+              24.058906466846814
+            ],
+            [
+              -6.734836056024983,
+              24.058934466846814
+            ],
+            [
+              -6.734807056024984,
+              24.05890546684681
+            ],
+            [
+              -6.734765056024983,
+              24.058948466846815
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_86_1",
+        "age": "38",
+        "generation": "1",
+        "type": "residential",
+        "specific_type": "Village Homestead",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "Yes",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Twin Rings",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.734868056024984,
+              24.059007466846808
+            ],
+            [
+              -6.734948056024983,
+              24.05908546684681
+            ],
+            [
+              -6.734880056024984,
+              24.059156466846808
+            ],
+            [
+              -6.734799056024984,
+              24.059078466846813
+            ],
+            [
+              -6.734868056024984,
+              24.059007466846808
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "building_87_0",
+        "age": "36",
+        "generation": "1",
+        "type": "residential",
+        "specific_type": "Farmhouse",
+        "occupants": 5,
+        "bodies": 5,
+        "souls": 2,
+        "floors": "1",
+        "subterrain_level": "No",
+        "jobs": 0,
+        "employees": 0,
+        "citystate": "otety",
+        "district": "Twin Rings",
+        "layer": "buildings"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741732056024983,
+              24.061557466846814
+            ],
+            [
+              -6.741759056024984,
+              24.06145546684681
+            ],
+            [
+              -6.741849056024984,
+              24.061478466846808
+            ],
+            [
+              -6.741822056024983,
+              24.061580466846813
+            ],
+            [
+              -6.741732056024983,
+              24.061557466846814
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -6.743322489815944,
+                24.053371181405627
+              ],
+              [
+                -6.7441665478254,
+                24.054066932534223
+              ],
+              [
+                -6.744320056024984,
+                24.05419346684681
+              ],
+              [
+                -6.744173768948309,
+                24.05462608111889
+              ],
+              [
+                -6.743983464102437,
+                24.055188865425833
+              ],
+              [
+                -6.7437037510742535,
+                24.05601604725629
+              ],
+              [
+                -6.743255277332841,
+                24.057342278824237
+              ],
+              [
+                -6.742915801044841,
+                24.058346167019153
+              ],
+              [
+                -6.741982467299036,
+                24.056667989389382
+              ],
+              [
+                -6.741799771953176,
+                24.05660505694068
+              ],
+              [
+                -6.741492890561144,
+                24.05669254697911
+              ],
+              [
+                -6.741255579986092,
+                24.05643783303405
+              ],
+              [
+                -6.741278465265256,
+                24.056398051807204
+              ],
+              [
+                -6.741302013088809,
+                24.056308804290943
+              ],
+              [
+                -6.7410752038312545,
+                24.056066880458133
+              ],
+              [
+                -6.74107861991141,
+                24.05589763582991
+              ],
+              [
+                -6.7410737378977235,
+                24.055895341600767
+              ],
+              [
+                -6.740784269483008,
+                24.055903296400295
+              ],
+              [
+                -6.740787270576933,
+                24.055794197007273
+              ],
+              [
+                -6.741006694912653,
+                24.055597316109647
+              ],
+              [
+                -6.740934863001835,
+                24.05484916400517
+              ],
+              [
+                -6.740172865719797,
+                24.054422303134174
+              ],
+              [
+                -6.74015530702054,
+                24.054415246045593
+              ],
+              [
+                -6.740116037621045,
+                24.054319252723168
+              ],
+              [
+                -6.740107727730626,
+                24.054233571296976
+              ],
+              [
+                -6.740115814812944,
+                24.05389901762825
+              ],
+              [
+                -6.73919786661287,
+                24.05299931701123
+              ],
+              [
+                -6.7386313350326095,
+                24.052625872965354
+              ],
+              [
+                -6.739282283742355,
+                24.051749153984844
+              ],
+              [
+                -6.739337738678601,
+                24.051686178754544
+              ],
+              [
+                -6.739162603922645,
+                24.05124405141145
+              ],
+              [
+                -6.738916118658684,
+                24.051101225793968
+              ],
+              [
+                -6.738722783340639,
+                24.050901148710114
+              ],
+              [
+                -6.738595275563632,
+                24.050867700696482
+              ],
+              [
+                -6.738647056024983,
+                24.05077146684681
+              ],
+              [
+                -6.738834369508592,
+                24.05070579744558
+              ],
+              [
+                -6.7391719429692305,
+                24.050587448350015
+              ],
+              [
+                -6.739497056024984,
+                24.05047346684681
+              ],
+              [
+                -6.739594153100217,
+                24.05045937830327
+              ],
+              [
+                -6.739752056024982,
+                24.050436466846808
+              ],
+              [
+                -6.7398060560249835,
+                24.050472466846813
+              ],
+              [
+                -6.740461086852942,
+                24.051012448218298
+              ],
+              [
+                -6.740845437314572,
+                24.051329287739545
+              ],
+              [
+                -6.741996501212598,
+                24.05227815146794
+              ],
+              [
+                -6.742438921182095,
+                24.05264284773683
+              ],
+              [
+                -6.743269096571311,
+                24.053327169280568
+              ],
+              [
+                -6.743322489815944,
+                24.053371181405627
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "citystate": "otety",
+        "district": "Old Otety",
+        "city_district": "otety_Old Otety",
+        "index_right": 216115.0,
+        "layer": "districts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -6.74107861991141,
+                24.05589763582991
+              ],
+              [
+                -6.7410752038312545,
+                24.056066880458133
+              ],
+              [
+                -6.741302013088809,
+                24.056308804290943
+              ],
+              [
+                -6.741278465265256,
+                24.056398051807204
+              ],
+              [
+                -6.741255579986092,
+                24.05643783303405
+              ],
+              [
+                -6.741492890561144,
+                24.05669254697911
+              ],
+              [
+                -6.741799771953176,
+                24.05660505694068
+              ],
+              [
+                -6.741982467299036,
+                24.056667989389382
+              ],
+              [
+                -6.742915801044841,
+                24.058346167019153
+              ],
+              [
+                -6.74281537922351,
+                24.058643128692243
+              ],
+              [
+                -6.742607130424274,
+                24.059258946567358
+              ],
+              [
+                -6.742146802770035,
+                24.059320957214325
+              ],
+              [
+                -6.739468077821346,
+                24.060100825618235
+              ],
+              [
+                -6.738528055341619,
+                24.060434809125383
+              ],
+              [
+                -6.738425131826494,
+                24.060398743992003
+              ],
+              [
+                -6.737820356420715,
+                24.060186824481896
+              ],
+              [
+                -6.7367568762459555,
+                24.058781767526316
+              ],
+              [
+                -6.735867350426881,
+                24.057455164402878
+              ],
+              [
+                -6.7355457575098905,
+                24.057118821458385
+              ],
+              [
+                -6.735545316215191,
+                24.05711862184365
+              ],
+              [
+                -6.73650805398784,
+                24.05497499452988
+              ],
+              [
+                -6.736734043979735,
+                24.054471796956374
+              ],
+              [
+                -6.737028924222138,
+                24.053815200494174
+              ],
+              [
+                -6.737128056024983,
+                24.053594466846807
+              ],
+              [
+                -6.737759832139543,
+                24.05242035096826
+              ],
+              [
+                -6.73846890181781,
+                24.051102565386486
+              ],
+              [
+                -6.738489478923475,
+                24.05106432304098
+              ],
+              [
+                -6.738595275563632,
+                24.050867700696482
+              ],
+              [
+                -6.738722783340639,
+                24.050901148710114
+              ],
+              [
+                -6.738916118658684,
+                24.051101225793968
+              ],
+              [
+                -6.739162603922645,
+                24.05124405141145
+              ],
+              [
+                -6.739337738678601,
+                24.051686178754544
+              ],
+              [
+                -6.739282283742355,
+                24.051749153984844
+              ],
+              [
+                -6.7386313350326095,
+                24.052625872965354
+              ],
+              [
+                -6.73919786661287,
+                24.05299931701123
+              ],
+              [
+                -6.740115814812944,
+                24.05389901762825
+              ],
+              [
+                -6.740107727730626,
+                24.054233571296976
+              ],
+              [
+                -6.740116037621045,
+                24.054319252723168
+              ],
+              [
+                -6.74015530702054,
+                24.054415246045593
+              ],
+              [
+                -6.740172865719797,
+                24.054422303134174
+              ],
+              [
+                -6.740934863001835,
+                24.05484916400517
+              ],
+              [
+                -6.741006694912653,
+                24.055597316109647
+              ],
+              [
+                -6.740787270576933,
+                24.055794197007273
+              ],
+              [
+                -6.740784269483008,
+                24.055903296400295
+              ],
+              [
+                -6.7410737378977235,
+                24.055895341600767
+              ],
+              [
+                -6.74107861991141,
+                24.05589763582991
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "citystate": "otety",
+        "district": "Spice Stair",
+        "city_district": "otety_Spice Stair",
+        "index_right": 216165.0,
+        "layer": "districts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -6.735867350426881,
+                24.057455164402878
+              ],
+              [
+                -6.7367568762459555,
+                24.058781767526316
+              ],
+              [
+                -6.737820356420715,
+                24.060186824481896
+              ],
+              [
+                -6.734880056024984,
+                24.059156466846805
+              ],
+              [
+                -6.734799056024983,
+                24.059078466846803
+              ],
+              [
+                -6.734765998715164,
+                24.058995561274667
+              ],
+              [
+                -6.734736056024984,
+                24.058920466846818
+              ],
+              [
+                -6.735545316215191,
+                24.05711862184365
+              ],
+              [
+                -6.7355457575098905,
+                24.057118821458385
+              ],
+              [
+                -6.735867350426881,
+                24.057455164402878
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                -6.742607130424274,
+                24.059258946567358
+              ],
+              [
+                -6.741822056024983,
+                24.06158046684681
+              ],
+              [
+                -6.741732056024983,
+                24.06155746684681
+              ],
+              [
+                -6.738528055341619,
+                24.060434809125383
+              ],
+              [
+                -6.739468077821346,
+                24.060100825618235
+              ],
+              [
+                -6.742146802770035,
+                24.059320957214325
+              ],
+              [
+                -6.742607130424274,
+                24.059258946567358
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "citystate": "otety",
+        "district": "Twin Rings",
+        "city_district": "otety_Twin Rings",
+        "index_right": 216228.0,
+        "layer": "districts"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740514056024983,
+              24.0547221668468
+            ],
+            [
+              -6.739630056024984,
+              24.054897066846806
+            ],
+            [
+              -6.739577056024984,
+              24.0546291668468
+            ],
+            [
+              -6.740461056024984,
+              24.054454266846804
+            ],
+            [
+              -6.740399956024984,
+              24.054145866846802
+            ],
+            [
+              -6.740673456024984,
+              24.0540916668468
+            ],
+            [
+              -6.740843156024983,
+              24.054949066846802
+            ],
+            [
+              -6.740569756024984,
+              24.055003266846803
+            ],
+            [
+              -6.740514056024983,
+              24.0547221668468
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "otety.geojson_fixed.geojson_poly_castle",
+        "age": 346,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "otety",
+        "layer": "castles"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.740147779197173,
+              24.05510227159194
+            ],
+            [
+              -6.740061396515936,
+              24.055059414809733
+            ],
+            [
+              -6.7400147260439285,
+              24.055138738776222
+            ],
+            [
+              -6.740101108770599,
+              24.055181595579874
+            ],
+            [
+              -6.740147779197173,
+              24.05510227159194
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.739245774261313,
+              24.055093206860143
+            ],
+            [
+              -6.739147616565681,
+              24.055095297152157
+            ],
+            [
+              -6.739149892836075,
+              24.055185433955458
+            ],
+            [
+              -6.739248050600036,
+              24.05518334365354
+            ],
+            [
+              -6.739245774261313,
+              24.055093206860143
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738388447882077,
+              24.05503132179453
+            ],
+            [
+              -6.738296500068986,
+              24.054999701288445
+            ],
+            [
+              -6.7382620657595975,
+              24.055084135685522
+            ],
+            [
+              -6.738354013630636,
+              24.055115756205716
+            ],
+            [
+              -6.738388447882077,
+              24.05503132179453
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.7380687368149035,
+              24.054461245570778
+            ],
+            [
+              -6.738126981063339,
+              24.054388662031553
+            ],
+            [
+              -6.738047939081476,
+              24.05433517688357
+            ],
+            [
+              -6.737989694803856,
+              24.054407760395513
+            ],
+            [
+              -6.7380687368149035,
+              24.054461245570778
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738829948397781,
+              24.05420411889152
+            ],
+            [
+              -6.738928105448438,
+              24.05420202881096
+            ],
+            [
+              -6.738925829368366,
+              24.05411189197577
+            ],
+            [
+              -6.738827672386034,
+              24.054113982046434
+            ],
+            [
+              -6.738829948397781,
+              24.05420411889152
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.73971336140749,
+              24.054185305906035
+            ],
+            [
+              -6.739811518346593,
+              24.054183215260476
+            ],
+            [
+              -6.7398092416515905,
+              24.05409307851437
+            ],
+            [
+              -6.739711084780813,
+              24.054095169150028
+            ],
+            [
+              -6.73971336140749,
+              24.054185305906035
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.74048103820148,
+              24.05388914139623
+            ],
+            [
+              -6.740577628392335,
+              24.053872966810406
+            ],
+            [
+              -6.740560014652011,
+              24.053784268587343
+            ],
+            [
+              -6.740463424522299,
+              24.05380044315424
+            ],
+            [
+              -6.74048103820148,
+              24.05388914139623
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741353776470577,
+              24.053838684468495
+            ],
+            [
+              -6.741451932685552,
+              24.05383658176045
+            ],
+            [
+              -6.741449642861027,
+              24.053746445433184
+            ],
+            [
+              -6.741351486714372,
+              24.05374854813132
+            ],
+            [
+              -6.741353776470577,
+              24.053838684468495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742183634820333,
+              24.053971346923966
+            ],
+            [
+              -6.74226432828345,
+              24.054022709499975
+            ],
+            [
+              -6.742320260869749,
+              24.05394860919414
+            ],
+            [
+              -6.74223956743942,
+              24.053897246644368
+            ],
+            [
+              -6.742183634820333,
+              24.053971346923966
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742361699783933,
+              24.054682989284498
+            ],
+            [
+              -6.742366016317563,
+              24.05477306287296
+            ],
+            [
+              -6.742464104921111,
+              24.05476909901407
+            ],
+            [
+              -6.742459788319728,
+              24.054679025436787
+            ],
+            [
+              -6.742361699783933,
+              24.054682989284498
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.742040600191028,
+              24.055263909247476
+            ],
+            [
+              -6.741946360123556,
+              24.05528920627462
+            ],
+            [
+              -6.741973908262783,
+              24.055375745454576
+            ],
+            [
+              -6.742068148383282,
+              24.055350448403505
+            ],
+            [
+              -6.742040600191028,
+              24.055263909247476
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741176588154466,
+              24.055336102480375
+            ],
+            [
+              -6.741078430842162,
+              24.055338208057602
+            ],
+            [
+              -6.741080723762332,
+              24.055428344336427
+            ],
+            [
+              -6.741178881142962,
+              24.055426238749288
+            ],
+            [
+              -6.741176588154466,
+              24.055336102480375
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 4,
+        "layer": "towers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -6.74008125263191,
+            24.05512050519745
+          ],
+          [
+            -6.7389432651083325,
+            24.05514474130969
+          ],
+          [
+            -6.73885547620209,
+            24.055144811845878
+          ],
+          [
+            -6.738768110396563,
+            24.055141292496117
+          ],
+          [
+            -6.7386820441825535,
+            24.055134218567602
+          ],
+          [
+            -6.73859814101462,
+            24.055123661028645
+          ],
+          [
+            -6.738517242649543,
+            24.055109725796726
+          ],
+          [
+            -6.738440160702261,
+            24.055092552676058
+          ],
+          [
+            -6.738367668504125,
+            24.055072313955193
+          ],
+          [
+            -6.7383004933449655,
+            24.055049212678753
+          ],
+          [
+            -6.738239309176748,
+            24.0550234806105
+          ],
+          [
+            -6.7381847298522075,
+            24.05499537590859
+          ],
+          [
+            -6.738137302966038,
+            24.054965180535575
+          ],
+          [
+            -6.738097504360631,
+            24.05493319743006
+          ],
+          [
+            -6.738065733351341,
+            24.054899747467374
+          ],
+          [
+            -6.7380423087193435,
+            24.05486516624069
+          ],
+          [
+            -6.738027465512225,
+            24.054829800694293
+          ],
+          [
+            -6.738021352684534,
+            24.054794005642734
+          ],
+          [
+            -6.738008394610091,
+            24.054523592258064
+          ],
+          [
+            -6.738010794017519,
+            24.05448917762189
+          ],
+          [
+            -6.738021265270284,
+            24.054455016062832
+          ],
+          [
+            -6.738039711682369,
+            24.05442142311503
+          ],
+          [
+            -6.738065962903178,
+            24.054388709061755
+          ],
+          [
+            -6.738099776489925,
+            24.054357176069516
+          ],
+          [
+            -6.738140840145988,
+            24.05432711539686
+          ],
+          [
+            -6.738188774604623,
+            24.05429880470406
+          ],
+          [
+            -6.738243137131491,
+            24.054272505488242
+          ],
+          [
+            -6.738303425613502,
+            24.054248460667864
+          ],
+          [
+            -6.738369083196453,
+            24.054226892338733
+          ],
+          [
+            -6.738439503428424,
+            24.054207999722436
+          ],
+          [
+            -6.738514035861527,
+            24.054191957325983
+          ],
+          [
+            -6.738591992060293,
+            24.054178913329736
+          ],
+          [
+            -6.738672651961082,
+            24.054168988218507
+          ],
+          [
+            -6.738755270523754,
+            24.054162273668652
+          ],
+          [
+            -6.738839084614284,
+            24.054158831701145
+          ],
+          [
+            -6.740011436961403,
+            24.05413386438515
+          ],
+          [
+            -6.740021531155016,
+            24.05410087367879
+          ],
+          [
+            -6.740039958043575,
+            24.05406728083389
+          ],
+          [
+            -6.7400661895043115,
+            24.054034566051826
+          ],
+          [
+            -6.740099983302848,
+            24.05400303147357
+          ],
+          [
+            -6.7401410273587175,
+            24.053972968341142
+          ],
+          [
+            -6.740188942626794,
+            24.053944654307855
+          ],
+          [
+            -6.740243286597305,
+            24.053918350873673
+          ],
+          [
+            -6.740303557382262,
+            24.053894300970114
+          ],
+          [
+            -6.74036919835045,
+            24.053872726716108
+          ],
+          [
+            -6.740439603268278,
+            24.053853827366723
+          ],
+          [
+            -6.740514121898883,
+            24.05383777747241
+          ],
+          [
+            -6.740592066007871,
+            24.053824725266963
+          ],
+          [
+            -6.740672715720258,
+            24.05381479129821
+          ],
+          [
+            -6.740755326169719,
+            24.053808067314435
+          ],
+          [
+            -6.74083913437876,
+            24.05380461541708
+          ],
+          [
+            -6.741462725656952,
+            24.05379125785913
+          ],
+          [
+            -6.7415505332385735,
+            24.053791177287877
+          ],
+          [
+            -6.741637919901635,
+            24.0537946879044
+          ],
+          [
+            -6.741724008591007,
+            24.053801754474037
+          ],
+          [
+            -6.74180793528042,
+            24.053812306072913
+          ],
+          [
+            -6.741888857645328,
+            24.053826236799736
+          ],
+          [
+            -6.741965963517686,
+            24.05384340683912
+          ],
+          [
+            -6.7420384790379515,
+            24.053863643864588
+          ],
+          [
+            -6.742105676422348,
+            24.053886744768718
+          ],
+          [
+            -6.7421668812674795,
+            24.0539124777016
+          ],
+          [
+            -6.742221479318921,
+            24.053940584398006
+          ],
+          [
+            -6.7422689226357875,
+            24.053970782769824
+          ],
+          [
+            -6.742308735089608,
+            24.05400276973714
+          ],
+          [
+            -6.742340517142075,
+            24.05403622427052
+          ],
+          [
+            -6.7423639498539885,
+            24.054070810612956
+          ],
+          [
+            -6.742378798084999,
+            24.054106181649715
+          ],
+          [
+            -6.742384912852238,
+            24.054141982392295
+          ],
+          [
+            -6.742426387564571,
+            24.055007438151776
+          ],
+          [
+            -6.742423989720528,
+            24.055041845278723
+          ],
+          [
+            -6.742413523744595,
+            24.05507599951318
+          ],
+          [
+            -6.74239508629487,
+            24.055109585529365
+          ],
+          [
+            -6.742368847623503,
+            24.05514229324872
+          ],
+          [
+            -6.742335050003824,
+            24.055173820702635
+          ],
+          [
+            -6.742294005492603,
+            24.055203876820116
+          ],
+          [
+            -6.7422460930481805,
+            24.055232184114942
+          ],
+          [
+            -6.742191755031179,
+            24.055258481247407
+          ],
+          [
+            -6.742131493120027,
+            24.055282525436766
+          ],
+          [
+            -6.742065863679038,
+            24.055304094702535
+          ],
+          [
+            -6.741995472621873,
+            24.055322989913662
+          ],
+          [
+            -6.741920969817755,
+            24.055339036626762
+          ],
+          [
+            -6.7418430430921035,
+            24.055352086696374
+          ],
+          [
+            -6.741762411876827,
+            24.05536201964263
+          ],
+          [
+            -6.741679820569189,
+            24.05536874376334
+          ],
+          [
+            -6.7415960316600945,
+            24.055372196980542
+          ],
+          [
+            -6.740972703118061,
+            24.055385568693424
+          ],
+          [
+            -6.740884907960158,
+            24.055385652472154
+          ],
+          [
+            -6.74079753276424,
+            24.055382145714404
+          ],
+          [
+            -6.740711454259575,
+            24.055375083606762
+          ],
+          [
+            -6.740627536166144,
+            24.055364537010675
+          ],
+          [
+            -6.7405466205290026,
+            24.055350611751194
+          ],
+          [
+            -6.740469519269958,
+            24.055333447555498
+          ],
+          [
+            -6.740397006041398,
+            24.055313216650987
+          ],
+          [
+            -6.740329808463827,
+            24.055290122037135
+          ],
+          [
+            -6.740268600825075,
+            24.055264395449157
+          ],
+          [
+            -6.740213997314385,
+            24.055236295032586
+          ],
+          [
+            -6.74016654585926,
+            24.055206102753417
+          ],
+          [
+            -6.740126722626897,
+            24.05517412156901
+          ],
+          [
+            -6.740094927245494,
+            24.05514067238829
+          ],
+          [
+            -6.74008125263191,
+            24.05512050519745
+          ]
+        ]
+      },
+      "properties": {
+        "castle_id": 90,
+        "citystate": "otety",
+        "floors": 3,
+        "layer": "walls"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.735069356024983,
+              24.0574923668468
+            ],
+            [
+              -6.735245056024983,
+              24.057492666846805
+            ],
+            [
+              -6.735343256024983,
+              24.0575731668468
+            ],
+            [
+              -6.735636256024984,
+              24.057998466846804
+            ],
+            [
+              -6.735782756024983,
+              24.058211166846803
+            ],
+            [
+              -6.735817456024984,
+              24.058357266846805
+            ],
+            [
+              -6.735504656024984,
+              24.0588634668468
+            ],
+            [
+              -6.735100856024983,
+              24.059281566846806
+            ],
+            [
+              -6.734958756024984,
+              24.0592464668468
+            ],
+            [
+              -6.734776656024984,
+              24.059070666846807
+            ],
+            [
+              -6.734139456024984,
+              24.058455266846806
+            ],
+            [
+              -6.734048456024983,
+              24.058367366846802
+            ],
+            [
+              -6.733963956024983,
+              24.058272666846804
+            ],
+            [
+              -6.734153156024984,
+              24.058076766846803
+            ],
+            [
+              -6.735069356024983,
+              24.0574923668468
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.005302,
+        "city": "Otety",
+        "floors": 1,
+        "citystate": "otety",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.738291756024983,
+              24.059843166846804
+            ],
+            [
+              -6.738416556024983,
+              24.059881366846803
+            ],
+            [
+              -6.738517356024984,
+              24.059955566846803
+            ],
+            [
+              -6.738557256024983,
+              24.0601213668468
+            ],
+            [
+              -6.738676856024984,
+              24.060618666846807
+            ],
+            [
+              -6.738756556024983,
+              24.060950266846802
+            ],
+            [
+              -6.738790856024984,
+              24.061124266846804
+            ],
+            [
+              -6.738800256024984,
+              24.061335866846804
+            ],
+            [
+              -6.738758456024984,
+              24.061624366846807
+            ],
+            [
+              -6.738672256024984,
+              24.062205266846803
+            ],
+            [
+              -6.738629156024983,
+              24.062495666846807
+            ],
+            [
+              -6.738479756024983,
+              24.0627200668468
+            ],
+            [
+              -6.738341956024984,
+              24.062701366846802
+            ],
+            [
+              -6.737925556024983,
+              24.062424266846804
+            ],
+            [
+              -6.737300956024983,
+              24.062008466846805
+            ],
+            [
+              -6.7362600560249835,
+              24.061315466846807
+            ],
+            [
+              -6.736195856024983,
+              24.061186266846804
+            ],
+            [
+              -6.736682656024984,
+              24.060454966846805
+            ],
+            [
+              -6.737170856024983,
+              24.059947366846806
+            ],
+            [
+              -6.737341556024983,
+              24.059916566846802
+            ],
+            [
+              -6.737499956024983,
+              24.059904266846807
+            ],
+            [
+              -6.737975056024984,
+              24.059867566846805
+            ],
+            [
+              -6.738133356024983,
+              24.059855366846804
+            ],
+            [
+              -6.738291756024983,
+              24.059843166846804
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 5e-06,
+        "perimeter": 0.008603,
+        "city": "Otety",
+        "floors": 1,
+        "citystate": "otety",
+        "layer": "fields"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.741751256024983,
+              24.0601743668468
+            ],
+            [
+              -6.741872956024984,
+              24.060202466846803
+            ],
+            [
+              -6.741994556024984,
+              24.060230566846805
+            ],
+            [
+              -6.742108656024984,
+              24.060287566846803
+            ],
+            [
+              -6.742124856024983,
+              24.0607203668468
+            ],
+            [
+              -6.741876656024983,
+              24.061673466846806
+            ],
+            [
+              -6.741737856024983,
+              24.061711466846802
+            ],
+            [
+              -6.7416170560249835,
+              24.061680066846804
+            ],
+            [
+              -6.740288756024983,
+              24.061334166846805
+            ],
+            [
+              -6.7398057560249836,
+              24.061208366846806
+            ],
+            [
+              -6.7396850560249835,
+              24.061176866846807
+            ],
+            [
+              -6.739724656024984,
+              24.061024866846807
+            ],
+            [
+              -6.740018856024983,
+              24.0608850668468
+            ],
+            [
+              -6.740607456024984,
+              24.060605466846802
+            ],
+            [
+              -6.741343156024984,
+              24.060256066846804
+            ],
+            [
+              -6.741488856024983,
+              24.060191866846807
+            ],
+            [
+              -6.741621556024983,
+              24.060177466846802
+            ],
+            [
+              -6.741751256024983,
+              24.0601743668468
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "area": 2e-06,
+        "perimeter": 0.006432,
+        "city": "Otety",
+        "floors": 1,
+        "citystate": "otety",
+        "layer": "fields"
+      }
+    }
+  ]
+}

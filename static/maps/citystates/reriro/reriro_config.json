@@ -1,0 +1,94 @@
+{
+  "citystate": "reriro",
+  "display_name": "Reriro",
+  "bounds": {
+    "west": 28.252497974355737,
+    "south": -39.72392098439481,
+    "east": 28.288559174355736,
+    "north": -39.69178178439479
+  },
+  "center": {
+    "lat": -39.7078513843948,
+    "lng": 28.270528574355737
+  },
+  "castle_position": {
+    "lat": -39.708948170109075,
+    "lng": 28.26631846006988
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2232,
+    "districts": 8,
+    "castles": 1,
+    "towers": 8,
+    "walls": 1,
+    "fields": 9,
+    "trees": 50
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2232,
+      "types": {
+        "residential": 1422,
+        "industrial": 406,
+        "commercial": 268,
+        "other": 136
+      },
+      "total_occupants": 14622,
+      "avg_occupants": 6.551075268817204,
+      "avg_floors": 1.7939068100358424
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "Light Spring",
+        "Far Ridge",
+        "Eastern Slums",
+        "Three Lodges",
+        "Rosegate",
+        "New Town",
+        "Purple Arch",
+        "Western Reriro"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 8
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 9
+    },
+    "trees": {
+      "count": 50
+    }
+  },
+  "layers": {
+    "base_map": "citystates/reriro/reriro_map.png",
+    "vector_data": {
+      "buildings": "citystates/reriro/reriro_buildings.geojson",
+      "districts": "citystates/reriro/reriro_districts.geojson",
+      "castles": "citystates/reriro/reriro_castles.geojson",
+      "towers": "citystates/reriro/reriro_towers.geojson",
+      "walls": "citystates/reriro/reriro_walls.geojson",
+      "fields": "citystates/reriro/reriro_fields.geojson",
+      "trees": "citystates/reriro/reriro_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:11",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/reriro_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/reriro"
+    }
+  }
+}

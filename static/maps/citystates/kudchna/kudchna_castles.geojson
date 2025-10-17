@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.3630725310051273,
+              27.148271059877196
+            ],
+            [
+              3.3626752310051278,
+              27.148465559877195
+            ],
+            [
+              3.362877031005127,
+              27.148877959877197
+            ],
+            [
+              3.3632744310051277,
+              27.148683559877192
+            ],
+            [
+              3.3634957310051274,
+              27.149135759877197
+            ],
+            [
+              3.3643344310051275,
+              27.148725259877196
+            ],
+            [
+              3.3635083310051272,
+              27.147037259877195
+            ],
+            [
+              3.362669631005127,
+              27.147447759877195
+            ],
+            [
+              3.3630725310051273,
+              27.148271059877196
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "kudchna.geojson_fixed.geojson_poly_castle",
+        "age": 995,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "kudchna"
+      }
+    }
+  ]
+}

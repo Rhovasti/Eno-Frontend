@@ -1,0 +1,90 @@
+{
+  "citystate": "briarviles",
+  "display_name": "Briarviles",
+  "bounds": {
+    "west": 40.86066706164401,
+    "south": 7.702092921120261,
+    "east": 40.883081061644006,
+    "north": 7.72786892112026
+  },
+  "center": {
+    "lat": 7.714980921120261,
+    "lng": 40.87187406164401
+  },
+  "castle_position": {
+    "lat": 7.712860478263137,
+    "lng": 40.87041681878708
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1191,
+    "districts": 5,
+    "castles": 1,
+    "towers": 51,
+    "walls": 1,
+    "fields": 1,
+    "trees": 36
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1191,
+      "types": {
+        "other": 423,
+        "residential": 644,
+        "commercial": 124
+      },
+      "total_occupants": 7119,
+      "avg_occupants": 5.9773299748110835,
+      "avg_floors": 1.6154492023509657
+    },
+    "districts": {
+      "count": 5,
+      "unique_names": [
+        "Harbour Ward",
+        "The Slums",
+        "Castle",
+        "Cherry Gate",
+        "Pale Tower"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 51
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 1
+    },
+    "trees": {
+      "count": 36
+    }
+  },
+  "layers": {
+    "base_map": "citystates/briarviles/briarviles_map.png",
+    "vector_data": {
+      "buildings": "citystates/briarviles/briarviles_buildings.geojson",
+      "districts": "citystates/briarviles/briarviles_districts.geojson",
+      "castles": "citystates/briarviles/briarviles_castles.geojson",
+      "towers": "citystates/briarviles/briarviles_towers.geojson",
+      "walls": "citystates/briarviles/briarviles_walls.geojson",
+      "fields": "citystates/briarviles/briarviles_fields.geojson",
+      "trees": "citystates/briarviles/briarviles_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:54",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/briarviles_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/briarviles"
+    }
+  }
+}

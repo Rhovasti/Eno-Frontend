@@ -1,0 +1,89 @@
+{
+  "citystate": "mical",
+  "display_name": "Mical",
+  "bounds": {
+    "west": 40.74317196122434,
+    "south": -37.25166600125723,
+    "east": 40.795399561224336,
+    "north": -37.20918940125721
+  },
+  "center": {
+    "lat": -37.23042770125722,
+    "lng": 40.76928576122434
+  },
+  "castle_position": {
+    "lat": -37.23656914570178,
+    "lng": 40.77603187233593
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1429,
+    "districts": 4,
+    "castles": 1,
+    "towers": 7,
+    "walls": 1,
+    "fields": 29,
+    "trees": 39
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1429,
+      "types": {
+        "other": 824,
+        "industrial": 375,
+        "residential": 230
+      },
+      "total_occupants": 10558,
+      "avg_occupants": 7.388383484954514,
+      "avg_floors": 1.5283414975507348
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Grey Arch",
+        "Low Point",
+        "Estate",
+        "Stormchurch Field"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 7
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 29
+    },
+    "trees": {
+      "count": 39
+    }
+  },
+  "layers": {
+    "base_map": "citystates/mical/mical_map.png",
+    "vector_data": {
+      "buildings": "citystates/mical/mical_buildings.geojson",
+      "districts": "citystates/mical/mical_districts.geojson",
+      "castles": "citystates/mical/mical_castles.geojson",
+      "towers": "citystates/mical/mical_towers.geojson",
+      "walls": "citystates/mical/mical_walls.geojson",
+      "fields": "citystates/mical/mical_fields.geojson",
+      "trees": "citystates/mical/mical_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:07",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/mical_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/mical"
+    }
+  }
+}

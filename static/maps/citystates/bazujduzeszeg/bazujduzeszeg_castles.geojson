@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.55068332205737,
+              -8.325094765513954
+            ],
+            [
+              42.55106772205737,
+              -8.325014065513953
+            ],
+            [
+              42.55113922205736,
+              -8.325354465513955
+            ],
+            [
+              42.55003882205736,
+              -8.325585565513956
+            ],
+            [
+              42.54983842205736,
+              -8.324631465513955
+            ],
+            [
+              42.55022812205736,
+              -8.324549665513954
+            ],
+            [
+              42.550291722057366,
+              -8.324852165513954
+            ],
+            [
+              42.55061802205735,
+              -8.324783665513953
+            ],
+            [
+              42.55068332205737,
+              -8.325094765513954
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "bazujduzeszeg.geojson_fixed.geojson_poly_castle",
+        "age": 997,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "bazujduzeszeg"
+      }
+    }
+  ]
+}

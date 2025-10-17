@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.53600834896537,
+              29.542700512309626
+            ],
+            [
+              34.536000748965364,
+              29.542228212309627
+            ],
+            [
+              34.53517764896536,
+              29.542255212309623
+            ],
+            [
+              34.53519294896536,
+              29.54320611230963
+            ],
+            [
+              34.53552824896536,
+              29.543200712309623
+            ],
+            [
+              34.53552474896536,
+              29.542986412309627
+            ],
+            [
+              34.53577844896536,
+              29.542981312309625
+            ],
+            [
+              34.53577394896536,
+              29.54270631230963
+            ],
+            [
+              34.53600834896537,
+              29.542700512309626
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "aiya.geojson_fixed.geojson_poly_castle",
+        "age": 460,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "aiya"
+      }
+    }
+  ]
+}

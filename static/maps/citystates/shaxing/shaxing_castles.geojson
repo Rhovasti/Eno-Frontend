@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -28.72524747488457,
+              -0.2692852935513449
+            ],
+            [
+              -28.72503967488457,
+              -0.2699992935513449
+            ],
+            [
+              -28.72594197488457,
+              -0.2702618935513449
+            ],
+            [
+              -28.72614977488457,
+              -0.2695479935513449
+            ],
+            [
+              -28.72524747488457,
+              -0.2692852935513449
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "shaxing.geojson_fixed.geojson_poly_castle",
+        "age": 730,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "shaxing"
+      }
+    }
+  ]
+}

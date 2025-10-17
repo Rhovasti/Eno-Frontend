@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.785393024344469,
+              -36.68857741585774
+            ],
+            [
+              -7.78567812434447,
+              -36.68779851585773
+            ],
+            [
+              -7.78503242434447,
+              -36.68748471585773
+            ],
+            [
+              -7.78481352434447,
+              -36.688067215857735
+            ],
+            [
+              -7.785120224344469,
+              -36.688192415857735
+            ],
+            [
+              -7.7850281243444694,
+              -36.68844031585774
+            ],
+            [
+              -7.785393024344469,
+              -36.68857741585774
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "aneroa.geojson_fixed.geojson_poly_castle",
+        "age": 870,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "aneroa"
+      }
+    }
+  ]
+}

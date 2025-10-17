@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              35.410124256228556,
+              -32.2556203958371
+            ],
+            [
+              35.41060375622854,
+              -32.2566273958371
+            ],
+            [
+              35.41004395622855,
+              -32.256711495837095
+            ],
+            [
+              35.40988325622854,
+              -32.2565076958371
+            ],
+            [
+              35.41013385622854,
+              -32.25644489583709
+            ],
+            [
+              35.40972955622854,
+              -32.2558082958371
+            ],
+            [
+              35.410124256228556,
+              -32.2556203958371
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "fanha.geojson_fixed.geojson_poly_castle",
+        "age": 847,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "fanha"
+      }
+    }
+  ]
+}

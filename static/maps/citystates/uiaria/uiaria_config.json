@@ -1,0 +1,88 @@
+{
+  "citystate": "uiaria",
+  "display_name": "Uiaria",
+  "bounds": {
+    "west": 47.45736283806983,
+    "south": -29.593558501306884,
+    "east": 47.48165023806983,
+    "north": -29.55857610130688
+  },
+  "center": {
+    "lat": -29.57606730130688,
+    "lng": 47.46950653806983
+  },
+  "castle_position": {
+    "lat": -29.564897083124894,
+    "lng": 47.471535401706134
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 761,
+    "districts": 4,
+    "castles": 1,
+    "towers": 9,
+    "walls": 1,
+    "fields": 20,
+    "trees": 8
+  },
+  "statistics": {
+    "buildings": {
+      "count": 761,
+      "types": {
+        "other": 538,
+        "residential": 223
+      },
+      "total_occupants": 4149,
+      "avg_occupants": 5.45203679369251,
+      "avg_floors": 2.4756898817345596
+    },
+    "districts": {
+      "count": 4,
+      "unique_names": [
+        "Old Uiaria",
+        "Rose Cliff",
+        "Rainy Vale",
+        "Castle Ward"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 9
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 20
+    },
+    "trees": {
+      "count": 8
+    }
+  },
+  "layers": {
+    "base_map": "citystates/uiaria/uiaria_map.png",
+    "vector_data": {
+      "buildings": "citystates/uiaria/uiaria_buildings.geojson",
+      "districts": "citystates/uiaria/uiaria_districts.geojson",
+      "castles": "citystates/uiaria/uiaria_castles.geojson",
+      "towers": "citystates/uiaria/uiaria_towers.geojson",
+      "walls": "citystates/uiaria/uiaria_walls.geojson",
+      "fields": "citystates/uiaria/uiaria_fields.geojson",
+      "trees": "citystates/uiaria/uiaria_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:18",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/uiaria_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/uiaria"
+    }
+  }
+}

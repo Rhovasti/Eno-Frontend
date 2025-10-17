@@ -1,0 +1,92 @@
+{
+  "citystate": "bernala",
+  "display_name": "Bernala",
+  "bounds": {
+    "west": -31.584168605217755,
+    "south": 17.460786462737705,
+    "east": -31.53565020521775,
+    "north": 17.50698886273771
+  },
+  "center": {
+    "lat": 17.483887662737708,
+    "lng": -31.559909405217752
+  },
+  "castle_position": {
+    "lat": 17.483875334166676,
+    "lng": -31.56841089093214
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 4843,
+    "districts": 7,
+    "castles": 1,
+    "towers": 29,
+    "walls": 1,
+    "fields": 15,
+    "trees": 127
+  },
+  "statistics": {
+    "buildings": {
+      "count": 4843,
+      "types": {
+        "other": 1701,
+        "residential": 2461,
+        "commercial": 681
+      },
+      "total_occupants": 27964,
+      "avg_occupants": 5.7741069584968,
+      "avg_floors": 1.7908321288457567
+    },
+    "districts": {
+      "count": 7,
+      "unique_names": [
+        "Northern Bernala",
+        "Stone Horn",
+        "Free Village",
+        "Castle",
+        "Moonchurch Gate",
+        "Winebridge",
+        "Southgate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 29
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 127
+    }
+  },
+  "layers": {
+    "base_map": "citystates/bernala/bernala_map.png",
+    "vector_data": {
+      "buildings": "citystates/bernala/bernala_buildings.geojson",
+      "districts": "citystates/bernala/bernala_districts.geojson",
+      "castles": "citystates/bernala/bernala_castles.geojson",
+      "towers": "citystates/bernala/bernala_towers.geojson",
+      "walls": "citystates/bernala/bernala_walls.geojson",
+      "fields": "citystates/bernala/bernala_fields.geojson",
+      "trees": "citystates/bernala/bernala_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:22",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/bernala_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/bernala"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -29.477963542539662,
+              -5.777140500245219
+            ],
+            [
+              -29.47760284253966,
+              -5.776761400245219
+            ],
+            [
+              -29.47759744253966,
+              -5.776763700245219
+            ],
+            [
+              -29.477176942539664,
+              -5.776886100245219
+            ],
+            [
+              -29.477138542539663,
+              -5.778000400245219
+            ],
+            [
+              -29.47736934253966,
+              -5.778090400245219
+            ],
+            [
+              -29.47743024253966,
+              -5.77786870024522
+            ],
+            [
+              -29.477963542539662,
+              -5.777140500245219
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "pinkang.geojson_fixed.geojson_poly_castle",
+        "age": 683,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "pinkang"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              40.775777661224815,
+              -37.23677450125733
+            ],
+            [
+              40.77600766122482,
+              -37.23636170125734
+            ],
+            [
+              40.77583256122481,
+              -37.23619160125733
+            ],
+            [
+              40.775986861224816,
+              -37.23586200125733
+            ],
+            [
+              40.77664666122481,
+              -37.23633580125734
+            ],
+            [
+              40.77620266122482,
+              -37.23695420125733
+            ],
+            [
+              40.77609776122481,
+              -37.23682890125734
+            ],
+            [
+              40.77595736122482,
+              -37.23703910125734
+            ],
+            [
+              40.775777661224815,
+              -37.23677450125733
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "mical.geojson_fixed.geojson_poly_castle",
+        "age": 620,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "mical"
+      }
+    }
+  ]
+}

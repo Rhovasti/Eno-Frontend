@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              40.870963061644225,
+              7.712306421120279
+            ],
+            [
+              40.87074426164423,
+              7.711970321120279
+            ],
+            [
+              40.86944926164421,
+              7.71281362112028
+            ],
+            [
+              40.870204461644214,
+              7.71397322112028
+            ],
+            [
+              40.87056496164421,
+              7.71373842112028
+            ],
+            [
+              40.87002866164422,
+              7.712914921120279
+            ],
+            [
+              40.870963061644225,
+              7.712306421120279
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "briarviles.geojson_fixed.geojson_poly_castle",
+        "age": 136,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "briarviles"
+      }
+    }
+  ]
+}

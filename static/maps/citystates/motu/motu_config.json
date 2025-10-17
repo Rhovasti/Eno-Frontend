@@ -1,0 +1,92 @@
+{
+  "citystate": "motu",
+  "display_name": "Motu",
+  "bounds": {
+    "west": 49.14811442899351,
+    "south": 11.758706220760418,
+    "east": 49.1872848289935,
+    "north": 11.79744962076042
+  },
+  "center": {
+    "lat": 11.778077920760419,
+    "lng": 49.1676996289935
+  },
+  "castle_position": {
+    "lat": 11.782497977903267,
+    "lng": 49.16180704327911
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 2056,
+    "districts": 8,
+    "castles": 1,
+    "towers": 40,
+    "walls": 1,
+    "fields": 14,
+    "trees": 97
+  },
+  "statistics": {
+    "buildings": {
+      "count": 2056,
+      "types": {
+        "commercial": 800,
+        "residential": 1256
+      },
+      "total_occupants": 10820,
+      "avg_occupants": 5.262645914396887,
+      "avg_floors": 1.663910505836576
+    },
+    "districts": {
+      "count": 8,
+      "unique_names": [
+        "East Motu",
+        "High Steps",
+        "Stone Hall",
+        "Blackgate",
+        "Castle",
+        "Egg Rock",
+        "Golden Town",
+        "Black Stairs District"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 40
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 14
+    },
+    "trees": {
+      "count": 97
+    }
+  },
+  "layers": {
+    "base_map": "citystates/motu/motu_map.png",
+    "vector_data": {
+      "buildings": "citystates/motu/motu_buildings.geojson",
+      "districts": "citystates/motu/motu_districts.geojson",
+      "castles": "citystates/motu/motu_castles.geojson",
+      "towers": "citystates/motu/motu_towers.geojson",
+      "walls": "citystates/motu/motu_walls.geojson",
+      "fields": "citystates/motu/motu_fields.geojson",
+      "trees": "citystates/motu/motu_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:41",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/motu_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/motu"
+    }
+  }
+}

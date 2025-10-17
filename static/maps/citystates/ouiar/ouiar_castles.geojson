@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.762953998107099,
+              -27.267107553736118
+            ],
+            [
+              -8.763319098107099,
+              -27.268302153736116
+            ],
+            [
+              -8.763702998107098,
+              -27.268184853736116
+            ],
+            [
+              -8.763593298107098,
+              -27.267825853736113
+            ],
+            [
+              -8.764506498107098,
+              -27.267546853736114
+            ],
+            [
+              -8.764133498107098,
+              -27.266326253736118
+            ],
+            [
+              -8.763220298107099,
+              -27.266605253736117
+            ],
+            [
+              -8.7633379981071,
+              -27.266990253736118
+            ],
+            [
+              -8.762953998107099,
+              -27.267107553736118
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ouiar.geojson_fixed.geojson_poly_castle",
+        "age": 135,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "ouiar"
+      }
+    }
+  ]
+}

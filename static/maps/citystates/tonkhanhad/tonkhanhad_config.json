@@ -1,0 +1,93 @@
+{
+  "citystate": "tonkhanhad",
+  "display_name": "Tonkhanhad",
+  "bounds": {
+    "west": 13.88258354547058,
+    "south": -21.180215825121714,
+    "east": 13.925325145470582,
+    "north": -21.13824922512172
+  },
+  "center": {
+    "lat": -21.159232525121716,
+    "lng": 13.90395434547058
+  },
+  "castle_position": {
+    "lat": -21.14508287178828,
+    "lng": 13.903923825470661
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1925,
+    "districts": 9,
+    "castles": 1,
+    "towers": 19,
+    "walls": 1,
+    "fields": 15,
+    "trees": 118
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1925,
+      "types": {
+        "residential": 1570,
+        "commercial": 355
+      },
+      "total_occupants": 9821,
+      "avg_occupants": 5.101818181818182,
+      "avg_floors": 1.8212987012987012
+    },
+    "districts": {
+      "count": 9,
+      "unique_names": [
+        "Witches Hook",
+        "Silk Well",
+        "Stormlight",
+        "Trade District",
+        "Amberchurch",
+        "Spirit Sprawl",
+        "South Tonkhanhad",
+        "Citadel",
+        "Greygate"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 19
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 15
+    },
+    "trees": {
+      "count": 118
+    }
+  },
+  "layers": {
+    "base_map": "citystates/tonkhanhad/tonkhanhad_map.png",
+    "vector_data": {
+      "buildings": "citystates/tonkhanhad/tonkhanhad_buildings.geojson",
+      "districts": "citystates/tonkhanhad/tonkhanhad_districts.geojson",
+      "castles": "citystates/tonkhanhad/tonkhanhad_castles.geojson",
+      "towers": "citystates/tonkhanhad/tonkhanhad_towers.geojson",
+      "walls": "citystates/tonkhanhad/tonkhanhad_walls.geojson",
+      "fields": "citystates/tonkhanhad/tonkhanhad_fields.geojson",
+      "trees": "citystates/tonkhanhad/tonkhanhad_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:33",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/tonkhanhad_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/tonkhanhad"
+    }
+  }
+}

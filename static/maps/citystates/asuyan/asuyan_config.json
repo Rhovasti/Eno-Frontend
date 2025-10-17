@@ -1,0 +1,94 @@
+{
+  "citystate": "asuyan",
+  "display_name": "Asuyan",
+  "bounds": {
+    "west": 23.965988612314142,
+    "south": 38.097527319500145,
+    "east": 23.99889901231414,
+    "north": 38.13166971950015
+  },
+  "center": {
+    "lat": 38.11459851950015,
+    "lng": 23.98244381231414
+  },
+  "castle_position": {
+    "lat": 38.11280201950013,
+    "lng": 23.989548045647485
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1618,
+    "districts": 9,
+    "castles": 1,
+    "towers": 16,
+    "walls": 1,
+    "fields": 11,
+    "trees": 94
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1618,
+      "types": {
+        "residential": 1254,
+        "commercial": 179,
+        "other": 185
+      },
+      "total_occupants": 9868,
+      "avg_occupants": 6.098887515451175,
+      "avg_floors": 1.838689740420272
+    },
+    "districts": {
+      "count": 9,
+      "unique_names": [
+        "Silver Gate",
+        "Greenlight",
+        "Misty Row",
+        "Old Stair",
+        "Citadel",
+        "North Slums",
+        "Greychurch Road",
+        "Eastern Asuyan",
+        "Wolfcrest Pass"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 16
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 11
+    },
+    "trees": {
+      "count": 94
+    }
+  },
+  "layers": {
+    "base_map": "citystates/asuyan/asuyan_map.png",
+    "vector_data": {
+      "buildings": "citystates/asuyan/asuyan_buildings.geojson",
+      "districts": "citystates/asuyan/asuyan_districts.geojson",
+      "castles": "citystates/asuyan/asuyan_castles.geojson",
+      "towers": "citystates/asuyan/asuyan_towers.geojson",
+      "walls": "citystates/asuyan/asuyan_walls.geojson",
+      "fields": "citystates/asuyan/asuyan_fields.geojson",
+      "trees": "citystates/asuyan/asuyan_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:59:53",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/asuyan_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/asuyan"
+    }
+  }
+}

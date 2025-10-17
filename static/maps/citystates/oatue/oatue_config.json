@@ -1,0 +1,90 @@
+{
+  "citystate": "oatue",
+  "display_name": "Oatue",
+  "bounds": {
+    "west": 2.3989887796200375,
+    "south": -37.971901956193626,
+    "east": 2.427799779620037,
+    "north": -37.93796595619363
+  },
+  "center": {
+    "lat": -37.95493395619363,
+    "lng": 2.413394279620037
+  },
+  "castle_position": {
+    "lat": -37.944225374375556,
+    "lng": 2.416139261438221
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 1121,
+    "districts": 6,
+    "castles": 1,
+    "towers": 14,
+    "walls": 1,
+    "fields": 17,
+    "trees": 8
+  },
+  "statistics": {
+    "buildings": {
+      "count": 1121,
+      "types": {
+        "residential": 1107,
+        "industrial": 14
+      },
+      "total_occupants": 5534,
+      "avg_occupants": 4.936663693131133,
+      "avg_floors": 2.1739518287243533
+    },
+    "districts": {
+      "count": 6,
+      "unique_names": [
+        "Underfire Steps",
+        "Estate",
+        "Upper District",
+        "Forest District",
+        "Blackheart Temple",
+        "Old Oatue"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 14
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 17
+    },
+    "trees": {
+      "count": 8
+    }
+  },
+  "layers": {
+    "base_map": "citystates/oatue/oatue_map.png",
+    "vector_data": {
+      "buildings": "citystates/oatue/oatue_buildings.geojson",
+      "districts": "citystates/oatue/oatue_districts.geojson",
+      "castles": "citystates/oatue/oatue_castles.geojson",
+      "towers": "citystates/oatue/oatue_towers.geojson",
+      "walls": "citystates/oatue/oatue_walls.geojson",
+      "fields": "citystates/oatue/oatue_fields.geojson",
+      "trees": "citystates/oatue/oatue_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:51",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/oatue_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/oatue"
+    }
+  }
+}

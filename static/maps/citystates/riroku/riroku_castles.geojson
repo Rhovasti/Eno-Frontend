@@ -1,0 +1,66 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              40.55528419965482,
+              34.11229717754336
+            ],
+            [
+              40.55500919965482,
+              34.11137137754336
+            ],
+            [
+              40.55425289965481,
+              34.11159597754335
+            ],
+            [
+              40.55435049965482,
+              34.111924877543366
+            ],
+            [
+              40.55395049965482,
+              34.11204357754335
+            ],
+            [
+              40.55404209965481,
+              34.11235197754336
+            ],
+            [
+              40.55444209965482,
+              34.11223317754335
+            ],
+            [
+              40.55452779965482,
+              34.11252177754336
+            ],
+            [
+              40.55528419965482,
+              34.11229717754336
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "riroku.geojson_fixed.geojson_poly_castle",
+        "age": 447,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "riroku"
+      }
+    }
+  ]
+}

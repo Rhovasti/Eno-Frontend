@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3.4146028300284557,
+              -18.437908400676502
+            ],
+            [
+              3.4139911300284553,
+              -18.437326700676504
+            ],
+            [
+              3.414286830028456,
+              -18.437015900676503
+            ],
+            [
+              3.4145819300284557,
+              -18.437296500676506
+            ],
+            [
+              3.4158123300284555,
+              -18.436002700676507
+            ],
+            [
+              3.416128830028456,
+              -18.436303700676508
+            ],
+            [
+              3.4146028300284557,
+              -18.437908400676502
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "veren.geojson_fixed.geojson_poly_castle",
+        "age": 629,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "veren"
+      }
+    }
+  ]
+}

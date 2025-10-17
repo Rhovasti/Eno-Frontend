@@ -1,0 +1,95 @@
+{
+  "citystate": "chingsan",
+  "display_name": "Chingsan",
+  "bounds": {
+    "west": -29.40750651237775,
+    "south": -17.01114928095645,
+    "east": -29.32888171237775,
+    "north": -16.926958480956447
+  },
+  "center": {
+    "lat": -16.969053880956448,
+    "lng": -29.36819411237775
+  },
+  "castle_position": {
+    "lat": -16.95161182711071,
+    "lng": -29.38228193545522
+  },
+  "zoom_levels": {
+    "min": 10,
+    "max": 18,
+    "default": 15
+  },
+  "features": {
+    "buildings": 13091,
+    "districts": 10,
+    "castles": 1,
+    "towers": 17,
+    "walls": 1,
+    "fields": 2,
+    "trees": 252
+  },
+  "statistics": {
+    "buildings": {
+      "count": 13091,
+      "types": {
+        "residential": 5022,
+        "other": 5499,
+        "industrial": 2570
+      },
+      "total_occupants": 92717,
+      "avg_occupants": 7.082499427087312,
+      "avg_floors": 1.8324803299977084
+    },
+    "districts": {
+      "count": 10,
+      "unique_names": [
+        "Fenkey Streets",
+        "Western Docks",
+        "New Chingsan",
+        "Blackgate",
+        "New Market",
+        "Cattle Docks",
+        "Military Ward",
+        "Old Chingsan",
+        "Southern Hook",
+        "Stormway Brook"
+      ]
+    },
+    "castles": {
+      "count": 1
+    },
+    "towers": {
+      "count": 17
+    },
+    "walls": {
+      "count": 1
+    },
+    "fields": {
+      "count": 2
+    },
+    "trees": {
+      "count": 252
+    }
+  },
+  "layers": {
+    "base_map": "citystates/chingsan/chingsan_map.png",
+    "vector_data": {
+      "buildings": "citystates/chingsan/chingsan_buildings.geojson",
+      "districts": "citystates/chingsan/chingsan_districts.geojson",
+      "castles": "citystates/chingsan/chingsan_castles.geojson",
+      "towers": "citystates/chingsan/chingsan_towers.geojson",
+      "walls": "citystates/chingsan/chingsan_walls.geojson",
+      "fields": "citystates/chingsan/chingsan_fields.geojson",
+      "trees": "citystates/chingsan/chingsan_trees.geojson"
+    }
+  },
+  "metadata": {
+    "created": "2025-09-21 08:58:27",
+    "coordinate_system": "EPSG:4326",
+    "data_sources": {
+      "raster": "/root/Eno/qgis/raster/citystates/chingsan_georef.png",
+      "vector": "/root/Eno/qgis/work/citystate_complete_maps/chingsan"
+    }
+  }
+}

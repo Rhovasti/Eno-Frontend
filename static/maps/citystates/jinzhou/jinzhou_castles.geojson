@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -35.89470922289426,
+              10.234524476404028
+            ],
+            [
+              -35.89505882289425,
+              10.234802076404028
+            ],
+            [
+              -35.893714922894254,
+              10.236494776404028
+            ],
+            [
+              -35.893032222894256,
+              10.235952776404028
+            ],
+            [
+              -35.89413242289425,
+              10.23456687640403
+            ],
+            [
+              -35.89446562289425,
+              10.23483137640403
+            ],
+            [
+              -35.89470922289426,
+              10.234524476404028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "jinzhou.geojson_fixed.geojson_poly_castle",
+        "age": 810,
+        "generation": 0,
+        "type": "castle",
+        "specific_type": "Main Castle",
+        "occupants": "TBD",
+        "bodies": null,
+        "souls": null,
+        "jobs": null,
+        "employees": null,
+        "floors": 4,
+        "subterrain_level": "Yes",
+        "citystate": "jinzhou"
+      }
+    }
+  ]
+}
