@@ -17,34 +17,28 @@ class AudioService {
     }
 
     /**
-     * Generate audio using Stability AI Stable Audio
+     * Generate audio using Stability AI Stable Audio 2.5
      * @param {string} prompt - The text prompt for audio generation
      * @param {Object} options - Additional options
      * @returns {Promise<Buffer>} - Audio buffer
      */
     async generateAudio(prompt, options = {}) {
         return new Promise((resolve, reject) => {
-            // For now, use a placeholder endpoint structure
-            // When Stable Audio API becomes available, this will be updated
+            // Stable Audio 2.5 endpoint - WORKING as of 2025-10-01
             const hostname = 'api.stability.ai';
-            const path = '/v1/generation/stable-audio/text-to-audio'; // Placeholder path
-            
+            const path = '/v2beta/audio/stable-audio-2/text-to-audio';
+
             const FormData = require('form-data');
             const form = new FormData();
-            
-            // Basic parameters based on Stable Audio research
+
+            // Required parameters for Stable Audio 2.5
             form.append('prompt', prompt);
-            form.append('duration', options.duration || 30); // Default 30 seconds
+            form.append('model', 'stable-audio-2.5'); // Stable Audio 2.5 model
+            form.append('duration', options.duration || 30); // Duration in seconds
             form.append('output_format', 'mp3'); // MP3 for web compatibility
-            
-            // Audio style/type options
-            if (options.audioType) {
-                form.append('audio_type', options.audioType); // music, sfx, ambient
-            }
-            
-            if (options.style) {
-                form.append('style', options.style); // orchestral, electronic, acoustic, etc.
-            }
+
+            // Note: Stable Audio 2.5 doesn't use audio_type or style parameters
+            // The prompt should include all style/mood descriptions
 
             const requestOptions = {
                 hostname: hostname,
@@ -64,8 +58,7 @@ class AudioService {
                         errorData += chunk;
                     });
                     res.on('end', () => {
-                        // For now, since the API might not be available, return a placeholder error
-                        reject(new Error(`Stable Audio generation failed: ${res.statusCode} - Audio API not yet available`));
+                        reject(new Error(`Stable Audio 2.5 generation failed: ${res.statusCode} - ${errorData}`));
                     });
                     return;
                 }
@@ -212,23 +205,63 @@ class AudioService {
      */
     determineAudioType(prompt) {
         const lowerPrompt = prompt.toLowerCase();
-        
+
         // Music keywords
-        if (lowerPrompt.includes('musiikki') || lowerPrompt.includes('music') || 
+        if (lowerPrompt.includes('musiikki') || lowerPrompt.includes('music') ||
             lowerPrompt.includes('song') || lowerPrompt.includes('melody') ||
             lowerPrompt.includes('orkestri') || lowerPrompt.includes('piano')) {
             return 'music';
         }
-        
+
         // Sound effects keywords
         if (lowerPrompt.includes('ääni') || lowerPrompt.includes('sound') ||
             lowerPrompt.includes('noise') || lowerPrompt.includes('effect') ||
             lowerPrompt.includes('askeleet') || lowerPrompt.includes('footsteps')) {
             return 'sfx';
         }
-        
+
         // Default to ambient
         return 'ambient';
+    }
+
+    /**
+     * Enhance audio prompt with style and type information for Stable Audio 2.5
+     * Since the API doesn't have separate style parameters, we embed them in the prompt
+     * @param {string} prompt - The base audio prompt
+     * @param {Object} options - Style and type options
+     * @returns {string} - Enhanced prompt
+     */
+    enhanceAudioPrompt(prompt, options = {}) {
+        const { audioType, style } = options;
+
+        // Style descriptors for different audio types
+        const styleDescriptors = {
+            orchestral: 'orchestral, cinematic, epic',
+            cinematic: 'cinematic, dramatic, atmospheric',
+            acoustic: 'acoustic, natural, organic',
+            electronic: 'electronic, synthesized, modern',
+            medieval: 'medieval, ancient, historical',
+            dark: 'dark, ominous, mysterious'
+        };
+
+        // Type-specific enhancement
+        let enhancedPrompt = prompt;
+
+        // Add style descriptor if available
+        if (style && styleDescriptors[style]) {
+            enhancedPrompt = `${styleDescriptors[style]} ${enhancedPrompt}`;
+        }
+
+        // Add audio type context
+        if (audioType === 'music') {
+            enhancedPrompt = `musical composition: ${enhancedPrompt}`;
+        } else if (audioType === 'sfx') {
+            enhancedPrompt = `sound effect: ${enhancedPrompt}`;
+        } else if (audioType === 'ambient') {
+            enhancedPrompt = `ambient soundscape: ${enhancedPrompt}`;
+        }
+
+        return enhancedPrompt;
     }
 
     /**
@@ -245,23 +278,22 @@ class AudioService {
             console.log('Original audio prompt:', prompt);
             console.log('English audio prompt:', englishPrompt);
             
-            const options = {
+            // Enhance prompt with style information since Stable Audio 2.5
+            // doesn't have separate style parameters
+            const enhancedPrompt = this.enhanceAudioPrompt(englishPrompt, {
                 audioType: audioType || this.determineAudioType(prompt),
-                style: style || 'cinematic',
+                style: style || 'cinematic'
+            });
+
+            console.log('Enhanced prompt for Stable Audio 2.5:', enhancedPrompt);
+
+            const options = {
                 duration: duration || 30
             };
-            
-            let audioBuffer;
-            
-            try {
-                // Try to generate with Stable Audio API
-                audioBuffer = await this.generateAudio(englishPrompt, options);
-                console.log('Stable Audio generation successful');
-            } catch (apiError) {
-                console.log('Stable Audio API not available, using placeholder:', apiError.message);
-                // Fallback to placeholder until API is available
-                audioBuffer = await this.generatePlaceholderAudio(englishPrompt, options);
-            }
+
+            // Generate with Stable Audio 2.5 API
+            const audioBuffer = await this.generateAudio(enhancedPrompt, options);
+            console.log('Stable Audio 2.5 generation successful');
             
             // Create S3 key
             const timestamp = Date.now();

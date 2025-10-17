@@ -107,19 +107,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const selectedGameId = urlParams.get('gameId');
     
-    // Only fetch games if user is properly authenticated
+    // Check for authentication (but allow anonymous users)
     const token = getCookie('token');
-    if (!token) {
-        console.error('No authentication token found');
-        window.location.href = '/hml/login.html';
-        return;
+    const headers = {};
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
     }
+
+    // Check if user is anonymous (user already declared above at line 13)
+    const isAnonymous = user.roles && JSON.parse(user.roles).includes('anonymous');
     
-    // Fetch all games
+    // Fetch all games (with or without authentication)
     fetch('/api/games', {
-        headers: {
-            'Authorization': `Bearer ${token}`
-        },
+        headers: headers,
         credentials: 'include'
     })
     .then(response => {
@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loadPosts(beatId);
             
             // Only show new post form if chapter is not archived
+            // Anonymous users can also post
             if (!isChapterArchived) {
                 newPostForm.style.display = 'block';
                 
@@ -283,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch(`/api/chapters/${chapterId}/archive`, {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': token ? `Bearer ${token}` : undefined
                     },
                     credentials: 'include'
                 })
@@ -332,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${getCookie('token')}`
+                    'Authorization': token ? `Bearer ${token}` : undefined
                 },
                 credentials: 'include',
                 body: JSON.stringify({ title, description })
@@ -384,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${getCookie('token')}`
+                    'Authorization': token ? `Bearer ${token}` : undefined
                 },
                 credentials: 'include',
                 body: JSON.stringify({ title, content })
@@ -455,11 +456,269 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Auto Media Generation System - DEFINE FUNCTIONS FIRST
+    const autoGenerateImageCheckbox = document.getElementById('autoGenerateImageCheckbox');
+    const autoGenerateAudioCheckbox = document.getElementById('autoGenerateAudioCheckbox');
+    const moodSelectorContainer = document.getElementById('moodSelectorContainer');
+    const moodSelector = document.getElementById('moodSelector');
+
+    // Character selection elements
+    const characterReferenceSection = document.getElementById('characterReferenceSection');
+    const characterSelect = document.getElementById('characterSelect');
+    const characterDetectionStatus = document.getElementById('characterDetectionStatus');
+
+    // Show/hide mood selector and character reference based on checkbox state
+    function updateMediaGenerationVisibility() {
+        if (autoGenerateImageCheckbox && autoGenerateAudioCheckbox && moodSelectorContainer) {
+            const showMoodSelector = autoGenerateImageCheckbox.checked || autoGenerateAudioCheckbox.checked;
+            moodSelectorContainer.style.display = showMoodSelector ? 'block' : 'none';
+        }
+
+        // Show character reference if image generation is selected
+        if (autoGenerateImageCheckbox && characterReferenceSection) {
+            const showCharacterReference = autoGenerateImageCheckbox.checked;
+            characterReferenceSection.style.display = showCharacterReference ? 'block' : 'none';
+        }
+    }
+
+    if (autoGenerateImageCheckbox) {
+        autoGenerateImageCheckbox.addEventListener('change', updateMediaGenerationVisibility);
+    }
+
+    if (autoGenerateAudioCheckbox) {
+        autoGenerateAudioCheckbox.addEventListener('change', updateMediaGenerationVisibility);
+    }
+
+    // Load available characters when page loads
+    loadAvailableCharacters();
+
+    // Function to load available characters from server
+    async function loadAvailableCharacters() {
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch('/api/characters/portraits', {
+                headers: {
+                    'Authorization': token ? `Bearer ${token}` : undefined
+                },
+                credentials: 'include'
+            });
+
+            if (!response.ok) {
+                console.error('Failed to load characters');
+                return;
+            }
+
+            const data = await response.json();
+
+            // Extract characters array from response
+            const characters = data.characters || [];
+
+            // Populate character select dropdown
+            if (characterSelect) {
+                // Clear existing options except the placeholder
+                characterSelect.innerHTML = '<option value="">Ei hahmoa</option>';
+
+                characters.forEach(character => {
+                    const option = document.createElement('option');
+                    option.value = character.id;
+                    option.textContent = character.name;
+                    option.dataset.characterName = character.id;
+                    characterSelect.appendChild(option);
+                });
+            }
+        } catch (error) {
+            console.error('Error loading characters:', error);
+        }
+    }
+
+    // Function to derive prompts from post content
+    async function deriveMediaPrompts(postContent, mood) {
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch('/api/posts/derive-prompts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token ? `Bearer ${token}` : undefined
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    postContent: postContent,
+                    mood: mood || 'mysterious',
+                    language: 'fi'
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to derive prompts');
+            }
+
+            const result = await response.json();
+
+            // Handle character detection and auto-suggestion
+            if (result.detectedCharacters && result.detectedCharacters.length > 0 && characterDetectionStatus) {
+                // Show detected characters
+                characterDetectionStatus.innerHTML = `
+                    <span style="color: #4caf50;">✖</span> Hahmot havaittu: ${result.detectedCharacters.map(char => char.displayName).join(', ')}
+                `;
+
+                // Auto-select first detected character if available
+                if (result.detectedCharacters.length > 0 && characterSelect) {
+                    const firstCharacter = result.detectedCharacters[0];
+                    characterSelect.value = firstCharacter.name;
+                }
+            } else if (characterDetectionStatus) {
+                // Show no characters detected
+                characterDetectionStatus.innerHTML = `
+                    <span style="color: #999;">⚪</span> Ei hahmoja havaittu
+                `;
+            }
+
+            return result;
+        } catch (error) {
+            console.error('Error deriving prompts:', error);
+            throw error;
+        }
+    }
+
+    // Function to auto-generate media after post creation
+    // Parameters are passed directly to avoid reading from reset form
+    async function autoGenerateMedia(postId, postContent, shouldGenerateImage, shouldGenerateAudio, mood) {
+        console.log('=== autoGenerateMedia called ===');
+        console.log('Post ID:', postId);
+        console.log('Post Content:', postContent);
+        console.log('Should generate image:', shouldGenerateImage);
+        console.log('Should generate audio:', shouldGenerateAudio);
+        console.log('Mood:', mood);
+
+        if (!shouldGenerateImage && !shouldGenerateAudio) {
+            console.log('No media generation requested - returning early');
+            return; // Nothing to generate
+        }
+
+        try {
+            console.log('Auto-generating media for post:', postId);
+            console.log('Mood:', mood, 'Image:', shouldGenerateImage, 'Audio:', shouldGenerateAudio);
+
+            // Derive prompts from content
+            const derivedPrompts = await deriveMediaPrompts(postContent, mood);
+            console.log('Derived prompts:', derivedPrompts);
+
+            // Get selected character before showing status
+            const selectedCharacter = characterSelect ? characterSelect.value : null;
+
+            // Show status
+            const statusDiv = document.createElement('div');
+            statusDiv.id = 'autoGenerationStatus';
+            statusDiv.style.cssText = 'background: #e3f2fd; border: 2px solid #2196f3; border-radius: 8px; padding: 15px; margin: 15px 0;';
+            statusDiv.innerHTML = `
+                <h4 style="margin: 0 0 10px 0;">🤖 AI-median automaattinen luonti</h4>
+                <p style="margin: 5px 0;"><strong>Tunnelma:</strong> ${mood}</p>
+                ${selectedCharacter ? `<p style="margin: 5px 0;"><strong>Hahmo:</strong> ${selectedCharacter}</p>` : ''}
+                <p style="margin: 5px 0;"><strong>Kuvaprompti:</strong> ${derivedPrompts.imagePrompt}</p>
+                <p style="margin: 5px 0;"><strong>Ääniprompti:</strong> ${derivedPrompts.audioPrompt}</p>
+                <p style="margin: 10px 0 5px 0; font-style: italic; color: #666;">Luodaan mediaa...</p>
+            `;
+
+            const form = document.getElementById('createPostForm');
+            if (form) {
+                form.parentNode.insertBefore(statusDiv, form.nextSibling);
+            }
+
+            // Generate image if requested
+            if (shouldGenerateImage) {
+                try {
+                    statusDiv.innerHTML += '<p style="color: #2196f3;">⏳ Luodaan kuvaa...</p>';
+
+                    const token = localStorage.getItem('token');
+
+                    // Prepare image generation request with character reference
+                    const imageRequestData = {
+                        prompt: derivedPrompts.imagePrompt,
+                        style: derivedPrompts.stylePreset
+                    };
+
+                    // Add character reference if selected
+                    if (selectedCharacter) {
+                        imageRequestData.character = selectedCharacter;
+                    }
+
+                    const imageResponse = await fetch(`/api/posts/${postId}/generate-image`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': token ? `Bearer ${token}` : undefined
+                        },
+                        credentials: 'include',
+                        body: JSON.stringify(imageRequestData)
+                    });
+
+                    if (imageResponse.ok) {
+                        const imageData = await imageResponse.json();
+                        statusDiv.innerHTML += `<p style="color: #4caf50;">✓ Kuva luotu onnistuneesti!</p>`;
+                        console.log('Image generated:', imageData);
+                    } else {
+                        throw new Error('Image generation failed');
+                    }
+                } catch (error) {
+                    console.error('Error generating image:', error);
+                    statusDiv.innerHTML += `<p style="color: #f44336;">✗ Kuvan luonti epäonnistui: ${error.message}</p>`;
+                }
+            }
+
+            // Generate audio if requested
+            if (shouldGenerateAudio) {
+                try {
+                    statusDiv.innerHTML += '<p style="color: #2196f3;">⏳ Luodaan ääntä...</p>';
+
+                    const token = localStorage.getItem('token');
+                    const audioResponse = await fetch(`/api/posts/${postId}/generate-audio`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': token ? `Bearer ${token}` : undefined
+                        },
+                        credentials: 'include',
+                        body: JSON.stringify({
+                            prompt: derivedPrompts.audioPrompt,
+                            audioType: derivedPrompts.audioType,
+                            audioStyle: derivedPrompts.audioStyle,
+                            duration: 30
+                        })
+                    });
+
+                    if (audioResponse.ok) {
+                        const audioData = await audioResponse.json();
+                        statusDiv.innerHTML += `<p style="color: #4caf50;">✓ Ääni luotu onnistuneesti!</p>`;
+                        console.log('Audio generated:', audioData);
+                    } else {
+                        throw new Error('Audio generation failed');
+                    }
+                } catch (error) {
+                    console.error('Error generating audio:', error);
+                    statusDiv.innerHTML += `<p style="color: #f44336;">✗ Äänen luonti epäonnistui: ${error.message}</p>`;
+                }
+            }
+
+            // Reload posts to show the generated media
+            const beatId = beatSelect.value;
+            if (beatId) {
+                setTimeout(() => loadPosts(beatId), 2000);
+            }
+
+            // Note: Form was already reset before this function ran, so checkboxes are already unchecked
+
+        } catch (error) {
+            console.error('Error in auto-generate media:', error);
+            alert(`Median automaattinen luonti epäonnistui: ${error.message}`);
+        }
+    }
+
     // Create new post on existing beat
     if (createPostForm) {
         createPostForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const beatId = beatSelect.value;
             const title = document.getElementById('postTitle').value;
             const content = document.getElementById('postContent').value;
@@ -507,7 +766,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${getCookie('token')}`
+                    'Authorization': token ? `Bearer ${token}` : undefined
                 },
                 credentials: 'include',
                 body: JSON.stringify(postData)
@@ -525,6 +784,14 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 console.log('Post created successfully:', data);
+
+                // IMPORTANT: Capture checkbox state BEFORE resetting form!
+                const shouldGenerateImage = autoGenerateImageCheckbox && autoGenerateImageCheckbox.checked;
+                const shouldGenerateAudio = autoGenerateAudioCheckbox && autoGenerateAudioCheckbox.checked;
+                const selectedMood = moodSelector ? moodSelector.value : 'mysterious';
+
+                console.log('Captured state before form reset - Image:', shouldGenerateImage, 'Audio:', shouldGenerateAudio, 'Mood:', selectedMood);
+
                 // Reload beats to get the new post
                 const currentChapterId = chapterSelect.value;
                 if (currentChapterId) {
@@ -540,22 +807,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset button state
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
-                
+
                 // Store the new post ID for image and audio generation
                 window.lastCreatedPostId = data.id;
-                
-                // Show image generation section
-                const imageSection = document.getElementById('imageGenerationSection');
-                if (imageSection) {
-                    imageSection.style.display = 'block';
-                    imageSection.scrollIntoView({ behavior: 'smooth' });
-                }
-                
-                // Show audio generation section
-                const audioSection = document.getElementById('audioGenerationSection');
-                if (audioSection) {
-                    audioSection.style.display = 'block';
-                }
+
+                // Auto-generate media if requested (this will happen in background)
+                // Pass captured checkbox state to function
+                console.log('Post created, calling autoGenerateMedia with ID:', data.id, 'Content:', content);
+                autoGenerateMedia(data.id, content, shouldGenerateImage, shouldGenerateAudio, selectedMood).catch(error => {
+                    console.error('Auto-generation error:', error);
+                    // Don't block the UI, just log the error
+                });
                 
                 // If chapter was archived, reload chapters to update the list
                 if (data.chapterArchived) {
@@ -577,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
+
     // GM Assistance System
     const gmAssistanceSection = document.getElementById('gmAssistanceSection');
     const getSuggestionBtn = document.getElementById('getSuggestionBtn');
@@ -586,7 +848,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const suggestionContent = document.getElementById('suggestionContent');
     const useSuggestionBtn = document.getElementById('useSuggestionBtn');
     const newSuggestionBtn = document.getElementById('newSuggestionBtn');
-    
+
     let currentSuggestion = null;
     let currentSuggestions = [];
     
@@ -653,7 +915,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${getCookie('token')}`
+                    'Authorization': token ? `Bearer ${token}` : undefined
                 },
                 credentials: 'include',
                 body: JSON.stringify({
@@ -724,7 +986,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadChapters(gameId) {
         fetch(`/api/games/${gameId}/chapters?includeArchived=true`, {
             headers: {
-                'Authorization': `Bearer ${getCookie('token')}`
+                'Authorization': token ? `Bearer ${token}` : undefined
             },
             credentials: 'include'
         })
@@ -771,7 +1033,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadBeats(chapterId) {
         fetch(`/api/chapters/${chapterId}/beats`, {
             headers: {
-                'Authorization': `Bearer ${getCookie('token')}`
+                'Authorization': token ? `Bearer ${token}` : undefined
             },
             credentials: 'include'
         })
@@ -878,11 +1140,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 postsContainer.appendChild(postElement);
             });
             
-            // Load images for all posts
+            // Load images and audio for all posts
             loadPostImages();
+            loadPostAudio();
         }
     }
-    
+
     // Load images for displayed posts
     async function loadPostImages() {
         const postElements = document.querySelectorAll('.post[data-post-id]');
@@ -893,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const response = await fetch(`/api/posts/${postId}/images`, {
                     headers: {
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': token ? `Bearer ${token}` : undefined
                     },
                     credentials: 'include'
                 });
@@ -926,7 +1189,51 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
+
+    // Load audio for displayed posts
+    async function loadPostAudio() {
+        const postElements = document.querySelectorAll('.post[data-post-id]');
+
+        for (const postElement of postElements) {
+            const postId = postElement.dataset.postId;
+
+            try {
+                const response = await fetch(`/api/posts/${postId}/audio`, {
+                    headers: {
+                        'Authorization': token ? `Bearer ${token}` : undefined
+                    },
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    const audioData = await response.json();
+
+                    if (audioData.length > 0) {
+                        const audioContainer = document.createElement('div');
+                        audioContainer.className = 'post-audio-section';
+
+                        audioData.forEach(audio => {
+                            // Create audio player using AudioPlayer class
+                            const player = new AudioPlayer(audio.audio_url, {
+                                prompt: audio.prompt,
+                                audioType: audio.audio_type,
+                                duration: audio.duration,
+                                showDownload: true
+                            });
+
+                            const playerElement = player.create();
+                            audioContainer.appendChild(playerElement);
+                        });
+
+                        postElement.appendChild(audioContainer);
+                    }
+                }
+            } catch (error) {
+                console.error(`Error loading audio for post ${postId}:`, error);
+            }
+        }
+    }
+
     // Helper function to get cookie value with localStorage fallback
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -1120,7 +1427,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': token ? `Bearer ${token}` : undefined
                     },
                     credentials: 'include',
                     body: JSON.stringify({
@@ -1232,7 +1539,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${getCookie('token')}`
+                        'Authorization': token ? `Bearer ${token}` : undefined
                     },
                     credentials: 'include',
                     body: JSON.stringify({
@@ -1318,7 +1625,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get game info to check if it has an AI GM
             const gameResponse = await fetch(`/api/games/${gameId}`, {
                 headers: {
-                    'Authorization': `Bearer ${getCookie('token')}`
+                    'Authorization': token ? `Bearer ${token}` : undefined
                 },
                 credentials: 'include'
             });
@@ -1345,7 +1652,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${getCookie('token')}`
+                            'Authorization': token ? `Bearer ${token}` : undefined
                         },
                         credentials: 'include',
                         body: JSON.stringify({

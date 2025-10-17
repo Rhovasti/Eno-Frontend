@@ -8,26 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const isLoggedIn = !!user.id;
     
-    // Only attempt to fetch games if user is logged in
-    if (isLoggedIn && availableGames) {
+    // Always attempt to fetch games (anonymous users can view them too)
+    if (availableGames) {
         fetchGames();
     }
 
     function fetchGames() {
         const token = getCookie('token');
-        if (!token) {
-            console.error('No authentication token found');
-            // Don't redirect immediately - just show error message
-            if (availableGames) {
-                availableGames.innerHTML = '<li style="color: red;">Kirjautumistietoja ei löytynyt. <a href="/hml/login.html">Kirjaudu sisään</a></li>';
-            }
-            return;
+        
+        // Fetch games with or without token (server handles anonymous access)
+        const headers = {};
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
         }
         
         fetch('/api/games', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
+            headers: headers,
             credentials: 'include'
         })
             .then(response => {
