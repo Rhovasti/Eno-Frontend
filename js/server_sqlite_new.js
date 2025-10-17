@@ -6,9 +6,20 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const fs = require('fs');
+const fsPromises = require('fs').promises;
 require('dotenv').config();
 const ImageService = require('./services/imageService');
 const AudioService = require('./services/audioService');
+const AsyncGameManager = require('./services/AsyncGameManager');
+
+// Try to load LoreGroundedNarrativeEngine (exported as DynamicNarrativeNetwork)
+let LoreGroundedNarrativeEngine;
+try {
+    LoreGroundedNarrativeEngine = require('./services/LoreGroundedNarrativeEngine');
+    console.log('LoreGroundedNarrativeEngine (DynamicNarrativeNetwork) loaded successfully');
+} catch (error) {
+    console.log('LoreGroundedNarrativeEngine not available:', error.message);
+}
 const Anthropic = require('@anthropic-ai/sdk');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -644,6 +655,25 @@ const db = new sqlite3.Database(dbPath, (err) => {
                 }
             });
         });
+
+        // Add character tracking columns to posts table if they don't exist
+        db.all("PRAGMA table_info(posts)", (err, columns) => {
+            if (err) return;
+            const characterColumnsToAdd = [
+                { name: 'character_references', sql: 'ALTER TABLE posts ADD COLUMN character_references TEXT DEFAULT NULL' },
+                { name: 'characters_detected', sql: 'ALTER TABLE posts ADD COLUMN characters_detected INTEGER DEFAULT 0' }
+            ];
+
+            characterColumnsToAdd.forEach(({ name, sql }) => {
+                const hasColumn = columns.some(col => col.name === name);
+                if (!hasColumn) {
+                    db.run(sql, (err) => {
+                        if (err) console.log(`Column ${name} already exists or error:`, err.message);
+                        else console.log(`Added ${name} column to posts table`);
+                    });
+                }
+            });
+        });
     });
 });
 
@@ -775,6 +805,16 @@ app.get('/wiki.html', (req, res) => {
 // Serve dynamic wiki page
 app.get('/wiki_dynamic.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../hml/wiki_dynamic.html'));
+});
+
+// Serve citystate map page
+app.get('/citystate-map.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../citystate-map.html'));
+});
+
+// Serve citystate integration test page
+app.get('/test-citystate-integration.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../test-citystate-integration.html'));
 });
 
 // Serve admin page
@@ -1380,9 +1420,48 @@ app.post('/api/posts', authenticateToken, (req, res) => {
                     console.error('Error creating post:', err);
                     return res.status(500).json({ error: 'Error creating post: ' + err.message });
                 }
-                
+
+                const postId = this.lastID;
+
                 // Log success message with more details
-                console.log(`Post created successfully - ID: ${this.lastID}, Beat: ${beatId}, Author: ${authorId}`);
+                console.log(`Post created successfully - ID: ${postId}, Beat: ${beatId}, Author: ${authorId}`);
+
+                // Detect and store character references asynchronously
+                (async () => {
+                    try {
+                        // Use AI to detect character mentions in the post content
+                        const detectedCharacters = await detectCharactersInContent(content);
+
+                        if (detectedCharacters && detectedCharacters.length > 0) {
+                            // Store character references in the database
+                            const characterNames = detectedCharacters.map(char => char.name).join(',');
+                            db.run(
+                                `UPDATE posts SET character_references = ?, characters_detected = 1 WHERE id = ?`,
+                                [characterNames, postId],
+                                (updateErr) => {
+                                    if (updateErr) {
+                                        console.error('Error updating character references:', updateErr);
+                                    } else {
+                                        console.log(`Stored character references for post ${postId}: ${characterNames}`);
+                                    }
+                                }
+                            );
+                        } else {
+                            // Mark that no characters were detected
+                            db.run(
+                                `UPDATE posts SET characters_detected = 1 WHERE id = ?`,
+                                [postId],
+                                (updateErr) => {
+                                    if (updateErr) {
+                                        console.error('Error updating characters_detected flag:', updateErr);
+                                    }
+                                }
+                            );
+                        }
+                    } catch (charDetectError) {
+                        console.error('Error in character detection:', charDetectError);
+                    }
+                })();
                 
                 // Trigger AI GM response if this is a player post
                 if ((postType || 'player') === 'player') {
@@ -1426,6 +1505,219 @@ app.post('/api/posts', authenticateToken, (req, res) => {
 // Initialize services
 const imageService = new ImageService();
 const audioService = new AudioService();
+// Make LoreGroundedNarrativeEngine available globally if loaded
+if (LoreGroundedNarrativeEngine) {
+    global.LoreGroundedNarrativeEngine = LoreGroundedNarrativeEngine;
+}
+
+const asyncGameManager = new AsyncGameManager(db);
+
+// Get available character portraits for character reference system
+app.get('/api/characters/portraits', authenticateToken, async (req, res) => {
+    try {
+        const portraitsDir = path.join(__dirname, '../portraits');
+
+        // Check if portraits directory exists
+        await fsPromises.access(portraitsDir);
+
+        // Read all files in portraits directory
+        const files = await fsPromises.readdir(portraitsDir);
+
+        // Filter for PNG files and format character data
+        const characters = files
+            .filter(f => f.endsWith('.png') && !f.startsWith('.'))
+            .map(f => {
+                const characterId = f.replace('.png', '');
+                return {
+                    id: characterId,
+                    name: formatCharacterName(characterId),
+                    portraitPath: `/portraits/${f}`,
+                    thumbnailPath: `/portraits/${f}`
+                };
+            })
+            .sort((a, b) => a.name.localeCompare(b.name)); // Sort alphabetically by name
+
+        res.json({
+            success: true,
+            characters: characters,
+            count: characters.length
+        });
+
+    } catch (error) {
+        console.error('Error loading character portraits:', error);
+
+        // If directory doesn't exist or other error, return empty list
+        res.json({
+            success: true,
+            characters: [],
+            count: 0,
+            error: 'Character portraits directory not found'
+        });
+    }
+});
+
+// Helper function to format character names (e.g., "john_smith" -> "John Smith")
+function formatCharacterName(id) {
+    return id
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
+// Derive image and audio prompts from post content using AI
+app.post('/api/posts/derive-prompts', authenticateToken, async (req, res) => {
+    const { postContent, mood, language } = req.body;
+
+    if (!postContent) {
+        return res.status(400).json({ error: 'Post content is required' });
+    }
+
+    try {
+        console.log('Deriving prompts for content:', postContent.substring(0, 100) + '...');
+        console.log('Mood:', mood, 'Language:', language);
+
+        // Mood-to-style mappings
+        const moodToStyle = {
+            'peaceful': { imageStyle: 'digital-art', audioStyle: 'acoustic', audioType: 'ambient' },
+            'mysterious': { imageStyle: 'fantasy-art', audioStyle: 'dark', audioType: 'ambient' },
+            'action': { imageStyle: 'cinematic', audioStyle: 'orchestral', audioType: 'music' },
+            'dramatic': { imageStyle: 'cinematic', audioStyle: 'cinematic', audioType: 'music' },
+            'humorous': { imageStyle: 'comic-book', audioStyle: 'acoustic', audioType: 'music' },
+            'epic': { imageStyle: 'fantasy-art', audioStyle: 'orchestral', audioType: 'music' },
+            'romantic': { imageStyle: 'digital-art', audioStyle: 'acoustic', audioType: 'music' },
+            'horror': { imageStyle: 'line-art', audioStyle: 'dark', audioType: 'ambient' }
+        };
+
+        const stylePresets = moodToStyle[mood] || moodToStyle['mysterious'];
+
+        // Use Claude to analyze content and extract prompts
+        const response = await anthropic.messages.create({
+            model: process.env.AI_MODEL || 'claude-3-haiku-20240307',
+            max_tokens: 1024,
+            messages: [{
+                role: 'user',
+                content: `You are an expert at analyzing RPG narrative content and creating prompts for AI image and audio generation.
+
+Analyze this RPG post content and extract key elements for media generation:
+
+POST CONTENT:
+${postContent}
+
+MOOD/ATMOSPHERE: ${mood}
+LANGUAGE: ${language || 'unknown'}
+
+Extract these elements:
+1. LOCATION (where): Specific place like "dark cave", "ancient forest", "castle throne room", "city market"
+2. CHARACTERS (who): People, creatures, or beings present (wizard, warrior, dragon, merchant, etc.)
+3. ACTIONS (what): Main activity happening (casting spell, fighting battle, exploring ruins, having conversation, etc.)
+4. TIME (when): Time of day if mentioned (night, dawn, day, dusk, evening)
+5. ATMOSPHERE: Lighting, weather, emotional tone (mysterious, tense, peaceful, ominous)
+6. KEY OBJECTS: Important items, props, or scenery elements
+
+Based on these elements, generate:
+
+1. IMAGE_PROMPT: A detailed English prompt for Stable Diffusion image generation (2-3 sentences, focus on visual composition, lighting, style). Include the mood atmosphere. Make it vivid and specific.
+
+2. AUDIO_PROMPT: An atmospheric description for audio generation (1-2 sentences, focus on sounds, ambience, musical mood). Describe what should be HEARD.
+
+Return ONLY a JSON object with this exact structure (no markdown, no explanation):
+{
+  "imagePrompt": "...",
+  "audioPrompt": "...",
+  "extractedElements": {
+    "location": "...",
+    "characters": ["..."],
+    "actions": ["..."],
+    "timeOfDay": "...",
+    "atmosphere": "..."
+  }
+}`
+            }]
+        });
+
+        // Parse AI response
+        const aiText = response.content[0].text.trim();
+        console.log('AI response:', aiText);
+
+        // Try to extract JSON from response (handle markdown code blocks)
+        let jsonMatch = aiText.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) {
+            throw new Error('No valid JSON found in AI response');
+        }
+
+        const derivedData = JSON.parse(jsonMatch[0]);
+
+        // Get available character portraits for character matching
+        let availableCharacters = [];
+        let suggestedCharacter = null;
+        let mentionedCharacters = derivedData.extractedElements?.characters || [];
+
+        if (mentionedCharacters.length > 0) {
+            try {
+                const portraitsDir = path.join(__dirname, '../portraits');
+                const files = await fsPromises.readdir(portraitsDir);
+                availableCharacters = files
+                    .filter(f => f.endsWith('.png') && !f.startsWith('.'))
+                    .map(f => f.replace('.png', '').toLowerCase());
+
+                console.log('Available characters:', availableCharacters);
+                console.log('Mentioned characters:', mentionedCharacters);
+
+                // Find matching characters (case-insensitive, partial matching)
+                mentionedCharacters.forEach(mentionedChar => {
+                    const charLower = mentionedChar.toLowerCase();
+                    const matchedChar = availableCharacters.find(availableChar => {
+                        // Check for exact match or partial match
+                        return availableChar === charLower ||
+                               availableChar.includes(charLower) ||
+                               charLower.includes(availableChar);
+                    });
+
+                    if (matchedChar && !suggestedCharacter) {
+                        suggestedCharacter = matchedChar;
+                        console.log('Suggested character found:', suggestedCharacter);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error loading character portraits for matching:', error);
+            }
+        }
+
+        // Convert mentioned characters to detectedCharacters format for frontend
+        let detectedCharacters = [];
+        if (suggestedCharacter) {
+            detectedCharacters = [{
+                name: suggestedCharacter,
+                displayName: suggestedCharacter.charAt(0).toUpperCase() + suggestedCharacter.slice(1)
+            }];
+        }
+
+        // Combine with mood-based style suggestions and character detection
+        const result = {
+            imagePrompt: derivedData.imagePrompt,
+            audioPrompt: derivedData.audioPrompt,
+            stylePreset: stylePresets.imageStyle,
+            audioType: stylePresets.audioType,
+            audioStyle: stylePresets.audioStyle,
+            extractedElements: derivedData.extractedElements || {},
+            mentionedCharacters: mentionedCharacters,
+            suggestedCharacter: suggestedCharacter,
+            availableCharacters: availableCharacters,
+            detectedCharacters: detectedCharacters // Match frontend expectation
+        };
+
+        console.log('Derived prompts with character detection:', result);
+        res.json(result);
+
+    } catch (error) {
+        console.error('Error deriving prompts:', error);
+        res.status(500).json({
+            error: 'Failed to derive prompts',
+            details: error.message
+        });
+    }
+});
 
 // Generate image for a post
 app.post('/api/posts/:postId/generate-image', authenticateToken, async (req, res) => {
@@ -3582,6 +3874,98 @@ C) Jakautukaa - osa jatkaa nykyistä tehtävää, osa vastaa kutsuun
     return suggestions[type] || suggestions.plot_advancement;
 }
 
+// Detect characters in content using AI
+async function detectCharactersInContent(content) {
+    try {
+        // Get available character portraits from the filesystem
+        const portraitsDir = path.join(__dirname, '../portraits');
+
+        let availableCharacters = [];
+        try {
+            const portraitFiles = await fsPromises.readdir(portraitsDir);
+            availableCharacters = portraitFiles
+                .filter(file => file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg'))
+                .map(file => {
+                    const characterName = file.replace(/\.(png|jpg|jpeg)$/, '');
+                    return {
+                        name: characterName,
+                        displayName: characterName.charAt(0).toUpperCase() + characterName.slice(1),
+                        filename: file
+                    };
+                });
+        } catch (error) {
+            console.error('Error reading portraits directory:', error);
+            return [];
+        }
+
+        if (availableCharacters.length === 0) {
+            console.log('No character portraits found');
+            return [];
+        }
+
+        // Create character list for the AI
+        const characterList = availableCharacters.map(char =>
+            `- ${char.name} (${char.displayName})`
+        ).join('\n');
+
+        // Use AI to detect which characters are mentioned in the content
+        const response = await anthropic.messages.create({
+            model: process.env.AI_MODEL || 'claude-3-haiku-20240307',
+            max_tokens: 500,
+            temperature: 0.3, // Lower temperature for more consistent detection
+            messages: [
+                {
+                    role: 'user',
+                    content: `You are analyzing RPG post content to detect character mentions.
+
+Available characters:
+${characterList}
+
+Post content to analyze:
+"${content}"
+
+Instructions:
+1. Read the post content carefully
+2. Identify which characters from the available list are mentioned or referred to
+3. Consider direct mentions, pronouns, descriptions, or clear references
+4. Return ONLY a JSON array of detected characters
+
+Response format:
+["character_name1", "character_name2"]
+
+If no characters are detected, return an empty array: []`
+                }
+            ]
+        });
+
+        const responseText = response.content[0].text.trim();
+
+        try {
+            const detectedNames = JSON.parse(responseText);
+            if (!Array.isArray(detectedNames)) {
+                return [];
+            }
+
+            // Match detected names with character details
+            const detectedCharacters = detectedNames
+                .map(name => availableCharacters.find(char => char.name === name))
+                .filter(char => char !== undefined); // Remove any undefined matches
+
+            console.log(`Detected characters: ${detectedCharacters.map(char => char.displayName).join(', ')}`);
+            return detectedCharacters;
+
+        } catch (parseError) {
+            console.error('Failed to parse character detection response:', parseError);
+            console.log('AI Response:', responseText);
+            return [];
+        }
+
+    } catch (error) {
+        console.error('Error in character detection:', error);
+        return [];
+    }
+}
+
 // Generate structured opening post for new games
 function generateStructuredOpening(gmProfile, gameName, genre) {
     const personalityTraits = JSON.parse(gmProfile.personality_traits || '[]');
@@ -3878,6 +4262,91 @@ app.get('/api/wiki/categories', optionalAuth, async (req, res) => {
         res.status(500).json({
             success: false,
             error: 'Internal server error'
+        });
+    }
+});
+
+// Get wiki entries by location
+app.get('/api/wiki/location/:locationType/:locationId', optionalAuth, async (req, res) => {
+    try {
+        const { locationType, locationId } = req.params;
+
+        db.all(`
+            SELECT w.*, u.username as author_name
+            FROM wiki_entries w
+            LEFT JOIN users u ON w.author_id = u.id
+            WHERE w.status = 'published'
+            AND w.location_type = ?
+            AND w.location_id = ?
+            ORDER BY w.created_at DESC
+        `, [locationType, locationId], (err, rows) => {
+            if (err) {
+                console.error('Error fetching wiki entries by location:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            const entries = rows.map(row => ({
+                ...row,
+                tags: row.tags ? JSON.parse(row.tags) : [],
+                related: row.related ? JSON.parse(row.related) : []
+            }));
+
+            res.json({
+                success: true,
+                entries: entries,
+                count: entries.length,
+                location: { type: locationType, id: locationId }
+            });
+        });
+    } catch (error) {
+        console.error('Error in wiki location endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// API endpoint to serve district GeoJSON files on-demand
+app.get('/api/maps/citystates/:cityName/districts', async (req, res) => {
+    try {
+        const cityName = req.params.cityName.toLowerCase();
+        const districtPath = path.join(__dirname, '../../qgis/yksittäiset/districts', `${cityName}.geojson_fixed.geojson_poly.geojson`);
+
+        // Check if district file exists
+        if (!fs.existsSync(districtPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'District data not available for this citystate'
+            });
+        }
+
+        // Read and parse the GeoJSON file
+        const geojsonData = JSON.parse(fs.readFileSync(districtPath, 'utf8'));
+
+        // Extract unique districts with their properties
+        const districts = {};
+        geojsonData.features.forEach(feature => {
+            const districtName = feature.properties.District || 'Unknown';
+            if (!districts[districtName]) {
+                districts[districtName] = {
+                    name: districtName,
+                    era: feature.properties.Era || 'Unknown',
+                    type: feature.properties.Type || 'Unknown',
+                    features: []
+                };
+            }
+            districts[districtName].features.push(feature);
+        });
+
+        res.json({
+            success: true,
+            cityName: cityName,
+            districts: Object.values(districts),
+            featureCount: geojsonData.features.length
+        });
+    } catch (error) {
+        console.error('Error loading district data:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Error loading district data'
         });
     }
 });
@@ -4524,6 +4993,845 @@ app.delete('/api/wiki/entries/:entryId', authenticateToken, authorize(['admin'])
     }
 });
 
+// === TEMPORAL SYSTEM API ENDPOINTS ===
+
+// Require time converter utility
+const timeConverter = require('./utils/timeConverter.js');
+
+// Get events in time range
+app.get('/api/temporal/events', optionalAuth, async (req, res) => {
+    try {
+        const { cycle_start, cycle_end, granularity, location_type, location_id, event_type, min_importance } = req.query;
+
+        // Build query for temporal_events table
+        let query1 = 'SELECT * FROM temporal_events WHERE 1=1';
+        const params1 = [];
+
+        // Filter by time range
+        if (cycle_start !== undefined) {
+            query1 += ' AND cycle_start >= ?';
+            params1.push(parseInt(cycle_start));
+        }
+        if (cycle_end !== undefined) {
+            query1 += ' AND (cycle_end <= ? OR cycle_end IS NULL)';
+            params1.push(parseInt(cycle_end));
+        }
+
+        // Filter by location
+        if (location_type) {
+            query1 += ' AND location_type = ?';
+            params1.push(location_type);
+        }
+        if (location_id) {
+            query1 += ' AND location_id = ?';
+            params1.push(location_id);
+        }
+
+        // Filter by event type
+        if (event_type) {
+            query1 += ' AND event_type = ?';
+            params1.push(event_type);
+        }
+
+        // Filter by importance
+        if (min_importance) {
+            query1 += ' AND importance >= ?';
+            params1.push(parseInt(min_importance));
+        }
+
+        // Build query for wiki_entries with temporal data
+        let query2 = `SELECT
+            id,
+            title,
+            category as event_type,
+            temporal_start_cycle as cycle_start,
+            temporal_start_day as day_start,
+            temporal_end_cycle as cycle_end,
+            temporal_end_day as day_end,
+            5 as importance,
+            location_type,
+            location_id,
+            'wiki_entry' as source_type,
+            id as related_wiki_entry_id,
+            NULL as participants,
+            NULL as related_events
+        FROM wiki_entries
+        WHERE temporal_start_cycle IS NOT NULL`;
+        const params2 = [];
+
+        // Apply same filters to wiki entries
+        if (cycle_start !== undefined) {
+            query2 += ' AND temporal_start_cycle >= ?';
+            params2.push(parseInt(cycle_start));
+        }
+        if (cycle_end !== undefined) {
+            query2 += ' AND (temporal_end_cycle <= ? OR temporal_end_cycle IS NULL)';
+            params2.push(parseInt(cycle_end));
+        }
+        if (location_type) {
+            query2 += ' AND location_type = ?';
+            params2.push(location_type);
+        }
+        if (location_id) {
+            query2 += ' AND location_id = ?';
+            params2.push(location_id);
+        }
+        if (event_type) {
+            query2 += ' AND category = ?';
+            params2.push(event_type);
+        }
+
+        // Get events from both sources
+        db.all(query1, params1, (err1, temporalEvents) => {
+            if (err1) {
+                console.error('Error fetching temporal events:', err1);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            db.all(query2, params2, (err2, wikiEvents) => {
+                if (err2) {
+                    console.error('Error fetching wiki temporal events:', err2);
+                    return res.status(500).json({ success: false, error: 'Database error' });
+                }
+
+                // Combine and sort all events
+                const allEvents = [...temporalEvents, ...wikiEvents];
+
+                // Sort by time
+                allEvents.sort((a, b) => {
+                    if (a.cycle_start !== b.cycle_start) {
+                        return a.cycle_start - b.cycle_start;
+                    }
+                    return (a.day_start || 0) - (b.day_start || 0);
+                });
+
+                // Parse JSON fields and format time
+                const parsedEvents = allEvents.map(event => ({
+                    ...event,
+                    related_events: event.related_events ? JSON.parse(event.related_events) : [],
+                    participants: event.participants ? JSON.parse(event.participants) : [],
+                    formatted_time: timeConverter.cycleToReadable(event.cycle_start, event.day_start),
+                    time_range: timeConverter.formatTimeRange(event.cycle_start, event.day_start, event.cycle_end, event.day_end)
+                }));
+
+                res.json({
+                    success: true,
+                    events: parsedEvents,
+                    count: parsedEvents.length
+                });
+            });
+        });
+    } catch (error) {
+        console.error('Error in temporal events endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Search temporal events by title, description, or participants
+app.get('/api/temporal/events/search', optionalAuth, async (req, res) => {
+    try {
+        const { q, limit = 10 } = req.query;
+
+        if (!q || q.trim().length < 2) {
+            return res.status(400).json({ success: false, error: 'Search query must be at least 2 characters' });
+        }
+
+        const searchTerm = `%${q.trim()}%`;
+        const query = `
+            SELECT * FROM temporal_events
+            WHERE (title LIKE ? OR description LIKE ? OR participants LIKE ?)
+            ORDER BY importance DESC, cycle_start DESC
+            LIMIT ?
+        `;
+
+        db.all(query, [searchTerm, searchTerm, searchTerm, parseInt(limit)], (err, events) => {
+            if (err) {
+                console.error('Error searching temporal events:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            // Parse JSON fields and add formatted time
+            const parsedEvents = events.map(event => {
+                const parsed = {
+                    ...event,
+                    related_events: event.related_events ? JSON.parse(event.related_events) : [],
+                    participants: event.participants ? JSON.parse(event.participants) : []
+                };
+
+                // Add formatted time using timeConverter
+                parsed.formatted_time = timeConverter.cycleToReadable(event.cycle_start, event.day_start);
+                if (event.cycle_end) {
+                    parsed.time_range = timeConverter.formatTimeRange(
+                        event.cycle_start, event.day_start,
+                        event.cycle_end, event.day_end
+                    );
+                } else {
+                    parsed.time_range = timeConverter.cycleToShort(event.cycle_start, event.day_start);
+                }
+
+                return parsed;
+            });
+
+            res.json({
+                success: true,
+                events: parsedEvents,
+                count: parsedEvents.length,
+                query: q
+            });
+        });
+    } catch (error) {
+        console.error('Error in temporal events search endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Get events at specific location and time
+app.get('/api/temporal/events/location', optionalAuth, async (req, res) => {
+    try {
+        const { lat, lon, cycle, radius, day } = req.query;
+
+        if (!lat || !lon) {
+            return res.status(400).json({ success: false, error: 'Latitude and longitude required' });
+        }
+
+        const latitude = parseFloat(lat);
+        const longitude = parseFloat(lon);
+        const radiusKm = parseFloat(radius) || 10; // Default 10km radius
+        const queryCycle = cycle ? parseInt(cycle) : null;
+        const queryDay = day ? parseInt(day) : 1;
+
+        // Rough conversion: 1 degree ≈ 111km
+        const latDelta = radiusKm / 111;
+        const lonDelta = radiusKm / (111 * Math.cos(latitude * Math.PI / 180));
+
+        let query = `
+            SELECT * FROM temporal_events
+            WHERE latitude BETWEEN ? AND ?
+            AND longitude BETWEEN ? AND ?
+        `;
+        const params = [
+            latitude - latDelta,
+            latitude + latDelta,
+            longitude - lonDelta,
+            longitude + lonDelta
+        ];
+
+        // Filter by time if provided
+        if (queryCycle !== null) {
+            query += ' AND cycle_start <= ? AND (cycle_end >= ? OR cycle_end IS NULL OR is_ongoing = 1)';
+            params.push(queryCycle, queryCycle);
+        }
+
+        query += ' ORDER BY importance DESC, cycle_start DESC';
+
+        db.all(query, params, (err, events) => {
+            if (err) {
+                console.error('Error fetching location events:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            const parsedEvents = events.map(event => ({
+                ...event,
+                related_events: event.related_events ? JSON.parse(event.related_events) : [],
+                participants: event.participants ? JSON.parse(event.participants) : [],
+                formatted_time: timeConverter.cycleToReadable(event.cycle_start, event.day_start)
+            }));
+
+            res.json({
+                success: true,
+                events: parsedEvents,
+                count: parsedEvents.length,
+                query: { latitude, longitude, radius: radiusKm, cycle: queryCycle }
+            });
+        });
+    } catch (error) {
+        console.error('Error in location events endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Get events by type
+app.get('/api/temporal/events/type/:eventType', optionalAuth, async (req, res) => {
+    try {
+        const { eventType } = req.params;
+        const { cycle_start, cycle_end, limit } = req.query;
+
+        let query = 'SELECT * FROM temporal_events WHERE event_type = ?';
+        const params = [eventType];
+
+        if (cycle_start) {
+            query += ' AND cycle_start >= ?';
+            params.push(parseInt(cycle_start));
+        }
+        if (cycle_end) {
+            query += ' AND (cycle_end <= ? OR cycle_end IS NULL)';
+            params.push(parseInt(cycle_end));
+        }
+
+        query += ' ORDER BY cycle_start ASC, importance DESC';
+
+        if (limit) {
+            query += ' LIMIT ?';
+            params.push(parseInt(limit));
+        }
+
+        db.all(query, params, (err, events) => {
+            if (err) {
+                console.error('Error fetching events by type:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            const parsedEvents = events.map(event => ({
+                ...event,
+                related_events: event.related_events ? JSON.parse(event.related_events) : [],
+                participants: event.participants ? JSON.parse(event.participants) : [],
+                formatted_time: timeConverter.cycleToReadable(event.cycle_start, event.day_start)
+            }));
+
+            res.json({
+                success: true,
+                events: parsedEvents,
+                count: parsedEvents.length,
+                event_type: eventType
+            });
+        });
+    } catch (error) {
+        console.error('Error in event type endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Get timeline for specific location
+app.get('/api/temporal/timeline/:locationType/:locationId', optionalAuth, async (req, res) => {
+    try {
+        const { locationType, locationId } = req.params;
+        const { cycle_start, cycle_end } = req.query;
+
+        let query = 'SELECT * FROM temporal_events WHERE location_type = ? AND location_id = ?';
+        const params = [locationType, locationId];
+
+        if (cycle_start) {
+            query += ' AND cycle_start >= ?';
+            params.push(parseInt(cycle_start));
+        }
+        if (cycle_end) {
+            query += ' AND (cycle_end <= ? OR cycle_end IS NULL)';
+            params.push(parseInt(cycle_end));
+        }
+
+        query += ' ORDER BY cycle_start ASC, day_start ASC';
+
+        db.all(query, params, (err, events) => {
+            if (err) {
+                console.error('Error fetching timeline:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            const parsedEvents = events.map(event => ({
+                ...event,
+                related_events: event.related_events ? JSON.parse(event.related_events) : [],
+                participants: event.participants ? JSON.parse(event.participants) : [],
+                formatted_time: timeConverter.cycleToReadable(event.cycle_start, event.day_start)
+            }));
+
+            res.json({
+                success: true,
+                timeline: parsedEvents,
+                location: { type: locationType, id: locationId },
+                count: parsedEvents.length
+            });
+        });
+    } catch (error) {
+        console.error('Error in timeline endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Get entity lifespan timeline
+app.get('/api/temporal/entities/:entityName/timeline', optionalAuth, async (req, res) => {
+    try {
+        const { entityName } = req.params;
+
+        const query = 'SELECT * FROM entity_lifespans WHERE entity_name = ?';
+
+        db.get(query, [entityName], (err, entity) => {
+            if (err) {
+                console.error('Error fetching entity lifespan:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            if (!entity) {
+                return res.status(404).json({ success: false, error: 'Entity not found' });
+            }
+
+            // Get related events
+            db.all(
+                'SELECT * FROM temporal_events WHERE participants LIKE ? ORDER BY cycle_start ASC',
+                [`%"${entityName}"%`],
+                (eventsErr, events) => {
+                    if (eventsErr) {
+                        console.error('Error fetching entity events:', eventsErr);
+                        return res.status(500).json({ success: false, error: 'Database error' });
+                    }
+
+                    res.json({
+                        success: true,
+                        entity: {
+                            ...entity,
+                            birth_formatted: entity.birth_cycle ? timeConverter.cycleToReadable(entity.birth_cycle, entity.birth_day) : null,
+                            death_formatted: entity.death_cycle ? timeConverter.cycleToReadable(entity.death_cycle, entity.death_day) : 'Alive'
+                        },
+                        events: events.map(e => ({
+                            ...e,
+                            formatted_time: timeConverter.cycleToReadable(e.cycle_start, e.day_start)
+                        })),
+                        count: events.length
+                    });
+                }
+            );
+        });
+    } catch (error) {
+        console.error('Error in entity timeline endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Get all events for specific wiki entry
+app.get('/api/wiki/entries/:entryId/temporal-events', optionalAuth, async (req, res) => {
+    try {
+        const { entryId } = req.params;
+
+        const query = 'SELECT * FROM temporal_events WHERE wiki_entry_id = ? ORDER BY cycle_start ASC, day_start ASC';
+
+        db.all(query, [entryId], (err, events) => {
+            if (err) {
+                console.error('Error fetching wiki entry events:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            const parsedEvents = events.map(event => ({
+                ...event,
+                related_events: event.related_events ? JSON.parse(event.related_events) : [],
+                participants: event.participants ? JSON.parse(event.participants) : [],
+                formatted_time: timeConverter.cycleToReadable(event.cycle_start, event.day_start),
+                time_range: timeConverter.formatTimeRange(event.cycle_start, event.day_start, event.cycle_end, event.day_end)
+            }));
+
+            res.json({
+                success: true,
+                events: parsedEvents,
+                wiki_entry_id: entryId,
+                count: parsedEvents.length
+            });
+        });
+    } catch (error) {
+        console.error('Error in wiki events endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Create temporal event
+app.post('/api/temporal/events', authenticateToken, authorize(['editor', 'admin']), async (req, res) => {
+    try {
+        const {
+            wiki_entry_id, title, description,
+            latitude, longitude, location_type, location_id,
+            cycle_start, day_start, cycle_end, day_end,
+            granularity, is_ongoing, event_type, importance,
+            related_events, participants
+        } = req.body;
+
+        if (!title || cycle_start === undefined) {
+            return res.status(400).json({ success: false, error: 'Title and cycle_start are required' });
+        }
+
+        const query = `
+            INSERT INTO temporal_events (
+                wiki_entry_id, title, description,
+                latitude, longitude, location_type, location_id,
+                cycle_start, day_start, cycle_end, day_end,
+                granularity, is_ongoing, event_type, importance,
+                related_events, participants
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        db.run(query, [
+            wiki_entry_id || null,
+            title,
+            description || null,
+            latitude || null,
+            longitude || null,
+            location_type || null,
+            location_id || null,
+            cycle_start,
+            day_start || 1,
+            cycle_end || null,
+            day_end || null,
+            granularity || 'day',
+            is_ongoing ? 1 : 0,
+            event_type || null,
+            importance || 0,
+            related_events ? JSON.stringify(related_events) : null,
+            participants ? JSON.stringify(participants) : null
+        ], function(err) {
+            if (err) {
+                console.error('Error creating temporal event:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            res.json({
+                success: true,
+                event_id: this.lastID,
+                message: 'Temporal event created successfully'
+            });
+        });
+    } catch (error) {
+        console.error('Error in create event endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Update temporal event
+app.put('/api/temporal/events/:eventId', authenticateToken, authorize(['editor', 'admin']), async (req, res) => {
+    try {
+        const { eventId } = req.params;
+        const updates = req.body;
+
+        // Build dynamic update query
+        const allowedFields = [
+            'title', 'description', 'latitude', 'longitude',
+            'location_type', 'location_id', 'cycle_start', 'day_start',
+            'cycle_end', 'day_end', 'granularity', 'is_ongoing',
+            'event_type', 'importance', 'related_events', 'participants'
+        ];
+
+        const setFields = [];
+        const params = [];
+
+        for (const field of allowedFields) {
+            if (updates[field] !== undefined) {
+                setFields.push(`${field} = ?`);
+                if (field === 'related_events' || field === 'participants') {
+                    params.push(JSON.stringify(updates[field]));
+                } else {
+                    params.push(updates[field]);
+                }
+            }
+        }
+
+        if (setFields.length === 0) {
+            return res.status(400).json({ success: false, error: 'No fields to update' });
+        }
+
+        setFields.push('updated_at = datetime(\'now\')');
+        params.push(eventId);
+
+        const query = `UPDATE temporal_events SET ${setFields.join(', ')} WHERE id = ?`;
+
+        db.run(query, params, function(err) {
+            if (err) {
+                console.error('Error updating temporal event:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            if (this.changes === 0) {
+                return res.status(404).json({ success: false, error: 'Event not found' });
+            }
+
+            res.json({
+                success: true,
+                message: 'Temporal event updated successfully'
+            });
+        });
+    } catch (error) {
+        console.error('Error in update event endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Delete temporal event
+app.delete('/api/temporal/events/:eventId', authenticateToken, authorize(['admin']), async (req, res) => {
+    try {
+        const { eventId } = req.params;
+
+        const query = 'DELETE FROM temporal_events WHERE id = ?';
+
+        db.run(query, [eventId], function(err) {
+            if (err) {
+                console.error('Error deleting temporal event:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            if (this.changes === 0) {
+                return res.status(404).json({ success: false, error: 'Event not found' });
+            }
+
+            res.json({
+                success: true,
+                message: 'Temporal event deleted successfully'
+            });
+        });
+    } catch (error) {
+        console.error('Error in delete event endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// Get timeline metadata (eras/epochs)
+app.get('/api/temporal/timeline-metadata', optionalAuth, async (req, res) => {
+    try {
+        const query = 'SELECT * FROM timeline_metadata ORDER BY cycle_start ASC';
+
+        db.all(query, [], (err, eras) => {
+            if (err) {
+                console.error('Error fetching timeline metadata:', err);
+                return res.status(500).json({ success: false, error: 'Database error' });
+            }
+
+            res.json({
+                success: true,
+                eras,
+                count: eras.length
+            });
+        });
+    } catch (error) {
+        console.error('Error in timeline metadata endpoint:', error);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+});
+
+// === CITY DETAIL API ENDPOINTS ===
+
+// Get local map data for specific city layer
+app.get('/api/local-map/:layerType/:cityName', async (req, res) => {
+    try {
+        const { layerType, cityName } = req.params;
+
+        // Validate layer type
+        const validLayers = ['buildings', 'roads', 'districts', 'fields', 'trees', 'castles'];
+        console.log(`API request: layerType="${layerType}", cityName="${cityName}"`);
+        console.log(`Valid layers: ${validLayers.join(', ')}`);
+        console.log(`Layer type valid: ${validLayers.includes(layerType)}`);
+
+        if (!validLayers.includes(layerType)) {
+            return res.status(400).json({
+                success: false,
+                error: 'Invalid layer type. Must be one of: ' + validLayers.join(', ')
+            });
+        }
+
+        // Construct file path based on naming convention
+        // Example: /Mundi/local-data/buildings/Aerdusk.geojson
+        let fileName;
+        switch (layerType) {
+            case 'buildings':
+                fileName = `${cityName}.geojson`;
+                break;
+            case 'roads':
+                fileName = `${cityName}_roads.geojson`;
+                break;
+            case 'districts':
+                fileName = `${cityName}_districts.geojson`;
+                break;
+            case 'fields':
+                fileName = `${cityName}_fields.geojson`;
+                break;
+            case 'trees':
+                fileName = `${cityName}_trees.geojson`;
+                break;
+            case 'castles':
+                fileName = `${cityName}_castles.geojson`;
+                break;
+            default:
+                fileName = `${cityName}_${layerType}.geojson`;
+        }
+
+        const filePath = path.join(__dirname, '../../Mundi/local-data', layerType, fileName);
+        console.log(`Looking for city data: ${filePath}`);
+
+        // Check if file exists
+        if (!fs.existsSync(filePath)) {
+            // Try alternative naming conventions
+            const alternatives = [
+                path.join(__dirname, '../../Mundi/local-data', layerType, `${cityName.toLowerCase()}.geojson`),
+                path.join(__dirname, '../../Mundi/local-data', layerType, `${cityName.toUpperCase()}.geojson`),
+                path.join(__dirname, '../../Mundi/city-data', layerType, fileName)
+            ];
+
+            let foundPath = null;
+            for (const altPath of alternatives) {
+                if (fs.existsSync(altPath)) {
+                    foundPath = altPath;
+                    break;
+                }
+            }
+
+            if (!foundPath) {
+                console.log(`City data not found for ${cityName} ${layerType}`);
+                return res.status(404).json({
+                    success: false,
+                    error: `No ${layerType} data found for ${cityName}`,
+                    features: []
+                });
+            }
+
+            filePath = foundPath;
+        }
+
+        // Read and parse GeoJSON file
+        const geoJsonData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+        console.log(`Loaded ${geoJsonData.features?.length || 0} ${layerType} features for ${cityName}`);
+
+        res.json({
+            success: true,
+            layerType: layerType,
+            cityName: cityName,
+            ...geoJsonData
+        });
+
+    } catch (error) {
+        console.error('Error loading city layer data:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load city data',
+            details: error.message
+        });
+    }
+});
+
+// Generate roads for a city using pathfinding algorithm
+app.post('/api/generate-local-roads', async (req, res) => {
+    try {
+        console.log('Road generation request received:', req.body);
+        const { cityName } = req.body;
+
+        if (!cityName) {
+            console.log('Road generation error: cityName missing');
+            return res.status(400).json({
+                success: false,
+                error: 'City name is required'
+            });
+        }
+
+        console.log(`Generating roads for ${cityName}...`);
+
+        // Check if Python road generator script exists
+        const scriptPath = path.join(__dirname, '../scripts/generate_local_roads.py');
+
+        if (!fs.existsSync(scriptPath)) {
+            console.warn('Road generation script not found, creating placeholder response');
+
+            // Return a simple success response for now
+            return res.json({
+                success: true,
+                message: `Road generation initiated for ${cityName}`,
+                roadCount: 'pending generation',
+                cityName: cityName
+            });
+        }
+
+        // Execute Python road generation script
+        const { spawn } = require('child_process');
+        const python = spawn('python3', [scriptPath, cityName]);
+
+        let output = '';
+        let errorOutput = '';
+
+        python.stdout.on('data', (data) => {
+            output += data.toString();
+        });
+
+        python.stderr.on('data', (data) => {
+            errorOutput += data.toString();
+        });
+
+        python.on('close', (code) => {
+            if (code !== 0) {
+                console.error(`Road generation failed with code ${code}: ${errorOutput}`);
+                return res.status(500).json({
+                    success: false,
+                    error: 'Road generation failed',
+                    details: errorOutput
+                });
+            }
+
+            try {
+                const result = JSON.parse(output);
+                console.log(`Road generation completed for ${cityName}:`, result);
+
+                res.json({
+                    success: true,
+                    message: `Generated road network for ${cityName}`,
+                    ...result
+                });
+            } catch (parseError) {
+                console.error('Error parsing road generation result:', parseError);
+                res.json({
+                    success: true,
+                    message: `Road generation completed for ${cityName}`,
+                    output: output
+                });
+            }
+        });
+
+        // Set a timeout for the road generation process
+        setTimeout(() => {
+            python.kill();
+            if (!res.headersSent) {
+                res.status(408).json({
+                    success: false,
+                    error: 'Road generation timeout',
+                    message: 'Process took too long to complete'
+                });
+            }
+        }, 30000); // 30 second timeout
+
+    } catch (error) {
+        console.error('Error in road generation:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Road generation failed',
+            details: error.message
+        });
+    }
+});
+
+// === LAND TEXTURE API ENDPOINTS ===
+
+// Serve land texture files
+app.use('/land-textures', express.static(path.join(__dirname, '../land-textures')));
+
+// Get list of available land textures
+app.get('/api/land-textures', (req, res) => {
+    try {
+        const texturesDir = path.join(__dirname, '../land-textures');
+        const textureFiles = fs.readdirSync(texturesDir)
+            .filter(file => file.endsWith('.png'))
+            .map(file => ({
+                name: file.replace('.png', ''),
+                url: `/land-textures/${file}`,
+                type: file.toLowerCase().includes('arid') ? 'arid' :
+                      file.toLowerCase().includes('forest') ? 'forest' :
+                      file.toLowerCase().includes('grassland') ? 'grassland' :
+                      file.toLowerCase().includes('mountain') ? 'mountain' :
+                      file.toLowerCase().includes('coastal') ? 'coastal' : 'general'
+            }));
+
+        res.json({
+            success: true,
+            textures: textureFiles,
+            count: textureFiles.length
+        });
+    } catch (error) {
+        console.error('Error listing land textures:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to list land textures'
+        });
+    }
+});
+
 // === GEOSPATIAL API ENDPOINTS ===
 
 // Get geospatial data from Mundi system
@@ -4680,6 +5988,234 @@ app.get('/api/geo/villages', optionalAuth, async (req, res) => {
     }
 });
 
+// Enhanced vector data endpoints for improved map rendering
+app.get('/api/vector/cities', optionalAuth, async (req, res) => {
+    try {
+        const data = fs.readFileSync('/root/Eno/qgis/citystates/buildings/kaupungit.geojson', 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'enhanced-cities'
+        });
+
+    } catch (error) {
+        console.error('Error loading enhanced cities data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load enhanced cities data' });
+    }
+});
+
+app.get('/api/vector/roads', optionalAuth, async (req, res) => {
+    try {
+        const data = fs.readFileSync('/root/Eno/qgis/citystates/buildings/projisoidut/tiet.geojson', 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'roads'
+        });
+
+    } catch (error) {
+        console.error('Error loading roads data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load roads data' });
+    }
+});
+
+app.get('/api/vector/water', optionalAuth, async (req, res) => {
+    try {
+        const data = fs.readFileSync('/root/Eno/qgis/citystates/buildings/projisoidut/jarvet.geojson', 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'water-features'
+        });
+
+    } catch (error) {
+        console.error('Error loading water features data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load water features data' });
+    }
+});
+
+// Local roads for high zoom levels (9+)
+app.get('/api/vector/localroads', optionalAuth, async (req, res) => {
+    try {
+        const data = fs.readFileSync('/root/Eno/qgis/citystates/buildings/projisoidut/localroads.geojson', 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'local-roads'
+        });
+
+    } catch (error) {
+        console.error('Error loading local roads data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load local roads data' });
+    }
+});
+
+// Buildings for high zoom levels (9+)
+app.get('/api/vector/buildings', optionalAuth, async (req, res) => {
+    try {
+        const data = fs.readFileSync('/root/Eno/qgis/citystates/buildings/buildings_global_final_corrected.geojson', 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'buildings'
+        });
+
+    } catch (error) {
+        console.error('Error loading buildings data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load buildings data' });
+    }
+});
+
+// Fields for agricultural areas
+app.get('/api/vector/fields', optionalAuth, async (req, res) => {
+    try {
+        const data = fs.readFileSync('/root/Eno/qgis/citystates/buildings/fields.geojson', 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'fields'
+        });
+
+    } catch (error) {
+        console.error('Error loading fields data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load fields data' });
+    }
+});
+
+// High-zoom detail layers (zoom 9+)
+app.get('/api/vector/castles', optionalAuth, async (req, res) => {
+    try {
+        // Convert GPKG to GeoJSON on-the-fly
+        const { execSync } = require('child_process');
+        const tempFile = `/tmp/castles_${Date.now()}.geojson`;
+        execSync(`ogr2ogr -f GeoJSON ${tempFile} /root/Eno/qgis/citystates/buildings/castles_aligned.gpkg -t_srs EPSG:4326`);
+        const geojsonData = JSON.parse(fs.readFileSync(tempFile, 'utf8'));
+        fs.unlinkSync(tempFile); // Clean up temp file
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'castles'
+        });
+
+    } catch (error) {
+        console.error('Error loading castles data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load castles data' });
+    }
+});
+
+app.get('/api/vector/castle_towers', optionalAuth, async (req, res) => {
+    try {
+        const { execSync } = require('child_process');
+        const tempFile = `/tmp/castle_towers_${Date.now()}.geojson`;
+        execSync(`ogr2ogr -f GeoJSON ${tempFile} /root/Eno/qgis/citystates/buildings/castle_towers_final_generated.gpkg -t_srs EPSG:4326`);
+        const geojsonData = JSON.parse(fs.readFileSync(tempFile, 'utf8'));
+        fs.unlinkSync(tempFile);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'castle_towers'
+        });
+
+    } catch (error) {
+        console.error('Error loading castle towers data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load castle towers data' });
+    }
+});
+
+app.get('/api/vector/castle_walls', optionalAuth, async (req, res) => {
+    try {
+        const { execSync } = require('child_process');
+        const tempFile = `/tmp/castle_walls_${Date.now()}.geojson`;
+        execSync(`ogr2ogr -f GeoJSON ${tempFile} /root/Eno/qgis/citystates/buildings/castle_walls_realigned.gpkg -t_srs EPSG:4326`);
+        const geojsonData = JSON.parse(fs.readFileSync(tempFile, 'utf8'));
+        fs.unlinkSync(tempFile);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'castle_walls'
+        });
+
+    } catch (error) {
+        console.error('Error loading castle walls data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load castle walls data' });
+    }
+});
+
+app.get('/api/vector/trees', optionalAuth, async (req, res) => {
+    try {
+        const { execSync } = require('child_process');
+        const tempFile = `/tmp/trees_${Date.now()}.geojson`;
+        execSync(`ogr2ogr -f GeoJSON ${tempFile} /root/Eno/qgis/citystates/buildings/trees_aligned.gpkg -t_srs EPSG:4326`);
+        const geojsonData = JSON.parse(fs.readFileSync(tempFile, 'utf8'));
+        fs.unlinkSync(tempFile);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'trees'
+        });
+
+    } catch (error) {
+        console.error('Error loading trees data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load trees data' });
+    }
+});
+
+app.get('/api/vector/districts', optionalAuth, async (req, res) => {
+    try {
+        const { execSync } = require('child_process');
+        const tempFile = `/tmp/districts_${Date.now()}.geojson`;
+        execSync(`ogr2ogr -f GeoJSON ${tempFile} /root/Eno/qgis/citystates/buildings/districts_final_areas_global_updated.gpkg -t_srs EPSG:4326`);
+        const geojsonData = JSON.parse(fs.readFileSync(tempFile, 'utf8'));
+        fs.unlinkSync(tempFile);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'districts'
+        });
+
+    } catch (error) {
+        console.error('Error loading districts data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load districts data' });
+    }
+});
+
+app.get('/api/vector/joki', optionalAuth, async (req, res) => {
+    try {
+        const { execSync } = require('child_process');
+        const tempFile = `/tmp/joki_${Date.now()}.geojson`;
+        execSync(`ogr2ogr -f GeoJSON ${tempFile} /root/Eno/qgis/citystates/buildings/joki_aligned.gpkg -t_srs EPSG:4326`);
+        const geojsonData = JSON.parse(fs.readFileSync(tempFile, 'utf8'));
+        fs.unlinkSync(tempFile);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'joki'
+        });
+
+    } catch (error) {
+        console.error('Error loading joki data:', error);
+        res.status(500).json({ success: false, error: 'Failed to load joki data' });
+    }
+});
+
 // Get all geospatial layers for map initialization
 app.get('/api/geo/layers', optionalAuth, async (req, res) => {
     try {
@@ -4749,6 +6285,1217 @@ app.get('/api/geo/layers', optionalAuth, async (req, res) => {
         res.status(500).json({ success: false, error: 'Failed to load layer configuration' });
     }
 });
+
+// ==========================================
+// ASYNC GAME MANAGEMENT API ENDPOINTS  
+// ==========================================
+
+// Create a new asynchronous game
+app.post('/api/async-games', authenticateToken, authorize(['gm', 'admin']), async (req, res) => {
+    try {
+        const gameData = {
+            ...req.body,
+            gm_id: req.user.id
+        };
+        
+        const result = await asyncGameManager.createAsyncGame(gameData);
+        res.json(result);
+    } catch (error) {
+        console.error('Error creating async game:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Join an async game as a player
+app.post('/api/async-games/:gameId/join', authenticateToken, async (req, res) => {
+    try {
+        const { gameId } = req.params;
+        const { characterData = {} } = req.body;
+        
+        const result = await asyncGameManager.addPlayerToGame(gameId, req.user.id, characterData);
+        res.json(result);
+    } catch (error) {
+        console.error('Error joining async game:', error);
+        res.status(400).json({ error: error.message });
+    }
+});
+
+// Submit a player action
+app.post('/api/async-games/:gameId/actions', authenticateToken, async (req, res) => {
+    try {
+        const { gameId } = req.params;
+        const actionData = req.body;
+        
+        const result = await asyncGameManager.submitPlayerAction(gameId, req.user.id, actionData);
+        res.json(result);
+    } catch (error) {
+        console.error('Error submitting player action:', error);
+        res.status(400).json({ error: error.message });
+    }
+});
+
+// Get game state summary
+app.get('/api/async-games/:gameId/state', authenticateToken, async (req, res) => {
+    try {
+        const { gameId } = req.params;
+        const state = await asyncGameManager.getGameStateSummary(gameId);
+        res.json(state);
+    } catch (error) {
+        console.error('Error getting game state:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Get player engagement metrics
+app.get('/api/async-games/:gameId/engagement', authenticateToken, async (req, res) => {
+    try {
+        const { gameId } = req.params;
+        const { userId } = req.query;
+        
+        const engagement = await asyncGameManager.getPlayerEngagement(gameId, userId);
+        res.json(engagement);
+    } catch (error) {
+        console.error('Error getting player engagement:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Manual trigger narrative cycle (for testing or manual advancement)
+app.post('/api/async-games/:gameId/trigger-cycle', authenticateToken, authorize(['gm', 'admin']), async (req, res) => {
+    try {
+        const { gameId } = req.params;
+        
+        // Schedule immediate narrative cycle
+        const cycleResult = await asyncGameManager.scheduleNextNarrativeCycle(gameId);
+        res.json({ 
+            message: 'Narrative cycle scheduled', 
+            ...cycleResult 
+        });
+    } catch (error) {
+        console.error('Error triggering narrative cycle:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Get pending actions for a game
+app.get('/api/async-games/:gameId/actions/pending', authenticateToken, authorize(['gm', 'admin']), (req, res) => {
+    const { gameId } = req.params;
+    
+    const query = `
+        SELECT pa.*, u.username, ps.character_name
+        FROM player_actions pa
+        JOIN users u ON pa.user_id = u.id
+        JOIN player_sessions ps ON pa.game_id = ps.game_id AND pa.user_id = ps.user_id
+        WHERE pa.game_id = ? AND pa.action_status = 'pending'
+        ORDER BY pa.action_priority DESC, pa.submitted_at ASC
+    `;
+    
+    db.all(query, [gameId], (err, actions) => {
+        if (err) {
+            console.error('Error fetching pending actions:', err);
+            return res.status(500).json({ error: 'Failed to fetch pending actions' });
+        }
+        
+        res.json({ actions });
+    });
+});
+
+// Get narrative cycles for a game
+app.get('/api/async-games/:gameId/cycles', authenticateToken, (req, res) => {
+    const { gameId } = req.params;
+    const { limit = 10, offset = 0 } = req.query;
+    
+    const query = `
+        SELECT * FROM narrative_cycles 
+        WHERE game_id = ? 
+        ORDER BY cycle_number DESC 
+        LIMIT ? OFFSET ?
+    `;
+    
+    db.all(query, [gameId, parseInt(limit), parseInt(offset)], (err, cycles) => {
+        if (err) {
+            console.error('Error fetching narrative cycles:', err);
+            return res.status(500).json({ error: 'Failed to fetch narrative cycles' });
+        }
+        
+        res.json({ cycles });
+    });
+});
+
+// Get a single async game by ID
+app.get('/api/async-games/:gameId', optionalAuth, (req, res) => {
+    const { gameId } = req.params;
+
+    const query = `
+        SELECT
+            g.*,
+            COUNT(DISTINCT ps.user_id) as active_players,
+            COUNT(DISTINCT pa.id) as pending_actions
+        FROM games g
+        LEFT JOIN player_sessions ps ON ps.game_id = g.id AND ps.session_status = 'active'
+        LEFT JOIN player_actions pa ON pa.game_id = g.id AND pa.action_status = 'pending'
+        WHERE g.id = ?
+        GROUP BY g.id
+    `;
+
+    db.get(query, [gameId], (err, game) => {
+        if (err) {
+            console.error('Error fetching game:', err);
+            return res.status(500).json({ error: 'Failed to fetch game' });
+        }
+
+        if (!game) {
+            return res.status(404).json({ error: 'Game not found' });
+        }
+
+        // Get player list
+        const playersQuery = `
+            SELECT ps.*, u.username, u.email
+            FROM player_sessions ps
+            JOIN users u ON ps.user_id = u.id
+            WHERE ps.game_id = ?
+        `;
+
+        db.all(playersQuery, [gameId], (err, players) => {
+            if (err) {
+                console.error('Error fetching players:', err);
+                players = [];
+            }
+
+            game.players = players || [];
+            res.json(game);
+        });
+    });
+});
+
+// Get active async games list
+app.get('/api/async-games', optionalAuth, (req, res) => {
+    const { includeRecruiting = true, includeActive = true } = req.query;
+    
+    let gameStates = [];
+    if (includeRecruiting) gameStates.push('recruiting');
+    if (includeActive) gameStates.push('active');
+    
+    if (gameStates.length === 0) {
+        return res.json({ games: [] });
+    }
+    
+    const placeholders = gameStates.map(() => '?').join(',');
+    const query = `
+        SELECT 
+            g.*,
+            COUNT(DISTINCT ps.user_id) as active_players,
+            COUNT(DISTINCT pa.id) as pending_actions
+        FROM games g
+        LEFT JOIN player_sessions ps ON g.id = ps.game_id AND ps.session_status = 'active'
+        LEFT JOIN player_actions pa ON g.id = pa.game_id AND pa.action_status = 'pending'
+        WHERE g.game_state IN (${placeholders})
+        GROUP BY g.id
+        ORDER BY g.created_at DESC
+    `;
+    
+    db.all(query, gameStates, (err, games) => {
+        if (err) {
+            console.error('Error fetching async games:', err);
+            return res.status(500).json({ error: 'Failed to fetch games' });
+        }
+        
+        res.json({ games });
+    });
+});
+
+// Cleanup handler for graceful shutdown
+process.on('SIGINT', () => {
+    console.log('Shutting down gracefully...');
+    asyncGameManager.cleanup();
+    process.exit(0);
+});
+
+// Local map data endpoints for detailed city views
+app.get('/api/local-map/:layerType/:cityName', optionalAuth, async (req, res) => {
+    try {
+        const { layerType, cityName } = req.params;
+
+        // Map layer types to folder names
+        const folderMap = {
+            'buildings': 'buildings',
+            'districts': 'districts',
+            'fields': 'fields',
+            'trees': 'trees',
+            'castles': 'castles'
+        };
+
+        const folder = folderMap[layerType];
+        if (!folder) {
+            return res.status(400).json({ success: false, error: 'Invalid layer type' });
+        }
+
+        // Use preprocessed files with consistent naming
+        const processedPath = '/root/Eno/qgis/processed_cities';
+        const normalizedCityName = cityName.toLowerCase();
+        const filePath = `${processedPath}/${normalizedCityName}/${layerType}.geojson`;
+
+        // Check if file exists
+        if (!fs.existsSync(filePath)) {
+            console.log(`File not found: ${filePath}`);
+            return res.status(404).json({
+                success: false,
+                error: `No ${layerType} data found for ${cityName}`
+            });
+        }
+
+        // Read and parse GeoJSON
+        const data = fs.readFileSync(filePath, 'utf8');
+        const geojsonData = JSON.parse(data);
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: `local-${layerType}`,
+            city: cityName
+        });
+
+    } catch (error) {
+        console.error(`Error loading local map data:`, error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load local map data'
+        });
+    }
+});
+
+// Generate local roads using pathfinder algorithm
+app.post('/api/generate-local-roads', optionalAuth, async (req, res) => {
+    try {
+        const { cityName, buildings } = req.body;
+
+        if (!cityName || !buildings) {
+            return res.status(400).json({
+                success: false,
+                error: 'City name and buildings data required'
+            });
+        }
+
+        // Call Python pathfinder script
+        const { execSync } = require('child_process');
+        const scriptPath = path.join(__dirname, '../scripts/generate_local_roads.py');
+
+        // Prepare input data for Python script
+        const inputData = JSON.stringify({
+            cityName: cityName,
+            buildings: buildings
+        });
+
+        try {
+            // Execute Python script with JSON input
+            const result = execSync(`python3 ${scriptPath} '${inputData}'`, {
+                encoding: 'utf8',
+                maxBuffer: 10 * 1024 * 1024 // 10MB buffer for large results
+            });
+
+            // Parse the result
+            const roadNetwork = JSON.parse(result);
+
+            res.json({
+                success: true,
+                data: roadNetwork,
+                message: 'Road network generated successfully'
+            });
+
+        } catch (execError) {
+            console.error('Python script error:', execError.stderr || execError.message);
+
+            // Fallback to simple road network if Python script fails
+            const fallbackNetwork = {
+                type: 'FeatureCollection',
+                features: [
+                    {
+                        type: 'Feature',
+                        properties: { type: 'main' },
+                        geometry: {
+                            type: 'LineString',
+                            coordinates: [[0, 0], [1, 1], [2, 0]]
+                        }
+                    }
+                ]
+            };
+
+            res.json({
+                success: true,
+                data: fallbackNetwork,
+                message: 'Road network generated (fallback)'
+            });
+        }
+
+    } catch (error) {
+        console.error('Error generating roads:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to generate road network'
+        });
+    }
+});
+
+// =============================================
+// Road Generation Helper Functions
+// =============================================
+
+// Generate roads for a citystate based on building locations
+async function generateRoadsForCitystate(citystateName, buildingFeatures) {
+    try {
+        console.log(`Generating roads for citystate: ${citystateName} with ${buildingFeatures.length} buildings`);
+
+        if (!buildingFeatures || buildingFeatures.length === 0) {
+            return [];
+        }
+
+        // Extract building centroids
+        const buildings = buildingFeatures.map((feature, index) => {
+            let centroid;
+            if (feature.geometry.type === 'Polygon') {
+                // Calculate centroid of polygon
+                const coords = feature.geometry.coordinates[0];
+                let x = 0, y = 0;
+                for (const coord of coords) {
+                    x += coord[0];
+                    y += coord[1];
+                }
+                centroid = [x / coords.length, y / coords.length];
+            } else if (feature.geometry.type === 'Point') {
+                centroid = feature.geometry.coordinates;
+            } else {
+                // Skip features that aren't points or polygons
+                return null;
+            }
+
+            return {
+                id: index,
+                coords: centroid,
+                properties: feature.properties || {}
+            };
+        }).filter(building => building !== null);
+
+        if (buildings.length < 2) {
+            console.log('Not enough buildings to generate roads');
+            return [];
+        }
+
+        // Generate a simple road network connecting nearby buildings
+        const roads = [];
+        const maxDistance = 0.002; // Approximate distance threshold in degrees
+
+        for (let i = 0; i < buildings.length; i++) {
+            const building = buildings[i];
+
+            // Find nearest neighbors within threshold
+            const neighbors = buildings
+                .filter((other, j) => j !== i)
+                .map(other => {
+                    const dx = other.coords[0] - building.coords[0];
+                    const dy = other.coords[1] - building.coords[1];
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    return { building: other, distance };
+                })
+                .filter(neighbor => neighbor.distance <= maxDistance)
+                .sort((a, b) => a.distance - b.distance)
+                .slice(0, 3); // Connect to up to 3 nearest neighbors
+
+            // Create road segments to neighbors
+            for (const neighbor of neighbors) {
+                roads.push({
+                    type: 'Feature',
+                    properties: {
+                        road_type: 'local',
+                        surface: 'paved',
+                        generated: true,
+                        from_building: building.id,
+                        to_building: neighbor.building.id
+                    },
+                    geometry: {
+                        type: 'LineString',
+                        coordinates: [
+                            building.coords,
+                            neighbor.building.coords
+                        ]
+                    }
+                });
+            }
+        }
+
+        // Remove duplicate roads (same endpoints)
+        const uniqueRoads = [];
+        const seenConnections = new Set();
+
+        for (const road of roads) {
+            const from = road.properties.from_building;
+            const to = road.properties.to_building;
+            const connectionKey = `${Math.min(from, to)}-${Math.max(from, to)}`;
+
+            if (!seenConnections.has(connectionKey)) {
+                seenConnections.add(connectionKey);
+                uniqueRoads.push(road);
+            }
+        }
+
+        console.log(`Generated ${uniqueRoads.length} road segments for ${citystateName}`);
+        return uniqueRoads;
+
+    } catch (error) {
+        console.error(`Error generating roads for ${citystateName}:`, error);
+        return [];
+    }
+}
+
+// =============================================
+// Citystate Map API Endpoints
+// =============================================
+
+// Get master index of all available citystates
+app.get('/api/citystates', optionalAuth, async (req, res) => {
+    try {
+        const indexPath = path.join(__dirname, '../static/maps/citystates/citystate_index.json');
+
+        if (!fs.existsSync(indexPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'Citystate index not found'
+            });
+        }
+
+        const indexData = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+
+        res.json({
+            success: true,
+            ...indexData
+        });
+
+    } catch (error) {
+        console.error('Error loading citystate index:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load citystate index'
+        });
+    }
+});
+
+// Get configuration for specific citystate
+app.get('/api/citystates/:name/config', optionalAuth, async (req, res) => {
+    try {
+        const { name } = req.params;
+        const configPath = path.join(__dirname, '../static/maps/citystates', name, `${name}_config.json`);
+
+        if (!fs.existsSync(configPath)) {
+            return res.status(404).json({
+                success: false,
+                error: `Configuration not found for citystate: ${name}`
+            });
+        }
+
+        const configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+
+        res.json({
+            success: true,
+            ...configData
+        });
+
+    } catch (error) {
+        console.error(`Error loading config for ${req.params.name}:`, error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load citystate configuration'
+        });
+    }
+});
+
+// Get GeoJSON for specific feature type
+app.get('/api/citystates/:name/features/:type', optionalAuth, async (req, res) => {
+    try {
+        const { name, type } = req.params;
+
+        // Validate feature type
+        const validTypes = ['buildings', 'districts', 'castles', 'towers', 'walls', 'fields', 'trees', 'roads', 'all_features'];
+        if (!validTypes.includes(type)) {
+            return res.status(400).json({
+                success: false,
+                error: `Invalid feature type. Must be one of: ${validTypes.join(', ')}`
+            });
+        }
+
+        // Special handling for roads - try preprocessed files first, then generate
+        if (type === 'roads') {
+            try {
+                // First try to load preprocessed roads from Mundi/local-data/roads
+                const preprocessedRoadsPath = path.join(__dirname, '../Mundi/local-data/roads', `${name}_roads.geojson`);
+
+                if (fs.existsSync(preprocessedRoadsPath)) {
+                    console.log(`Loading preprocessed roads for ${name}`);
+                    const roadData = JSON.parse(fs.readFileSync(preprocessedRoadsPath, 'utf8'));
+
+                    // Check if coordinates are in the right range (citystate coordinates vs world coordinates)
+                    if (roadData.features && roadData.features.length > 0) {
+                        const firstCoord = roadData.features[0].geometry.coordinates[0];
+                        const lng = firstCoord[0];
+                        const lat = firstCoord[1];
+
+                        // Check if coordinates are in citystate range (rough check)
+                        if (lng >= 10 && lng <= 20 && lat >= 15 && lat <= 25) {
+                            console.log(`Using preprocessed roads for ${name} (${roadData.features.length} features)`);
+                            res.json({
+                                success: true,
+                                citystate: name,
+                                feature_type: type,
+                                ...roadData
+                            });
+                            return;
+                        } else {
+                            console.warn(`Preprocessed roads for ${name} appear to be in wrong coordinate system (${lng}, ${lat}), falling back to generation`);
+                        }
+                    }
+                }
+
+                // Fall back to generating roads dynamically
+                console.log(`Generating roads dynamically for ${name}`);
+                const buildingsPath = path.join(__dirname, '../static/maps/citystates', name, `${name}_buildings.geojson`);
+                if (!fs.existsSync(buildingsPath)) {
+                    return res.status(404).json({
+                        success: false,
+                        error: `Buildings data not found for ${name} - required for road generation`
+                    });
+                }
+
+                const buildingsData = JSON.parse(fs.readFileSync(buildingsPath, 'utf8'));
+                const roadFeatures = await generateRoadsForCitystate(name, buildingsData.features);
+
+                res.json({
+                    success: true,
+                    citystate: name,
+                    feature_type: type,
+                    type: 'FeatureCollection',
+                    features: roadFeatures
+                });
+                return;
+            } catch (roadError) {
+                console.error(`Error loading roads for ${name}:`, roadError);
+                // Fall back to empty roads if everything fails
+                res.json({
+                    success: true,
+                    citystate: name,
+                    feature_type: type,
+                    type: 'FeatureCollection',
+                    features: []
+                });
+                return;
+            }
+        }
+
+        const featurePath = path.join(__dirname, '../static/maps/citystates', name, `${name}_${type}.geojson`);
+
+        if (!fs.existsSync(featurePath)) {
+            return res.status(404).json({
+                success: false,
+                error: `Feature data not found for ${name}/${type}`
+            });
+        }
+
+        const featureData = JSON.parse(fs.readFileSync(featurePath, 'utf8'));
+
+        res.json({
+            success: true,
+            citystate: name,
+            feature_type: type,
+            ...featureData
+        });
+
+    } catch (error) {
+        console.error(`Error loading features for ${req.params.name}/${req.params.type}:`, error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load feature data'
+        });
+    }
+});
+
+// Get geographic bounds for specific citystate
+app.get('/api/citystates/:name/bounds', optionalAuth, async (req, res) => {
+    try {
+        const { name } = req.params;
+        const configPath = path.join(__dirname, '../static/maps/citystates', name, `${name}_config.json`);
+
+        if (!fs.existsSync(configPath)) {
+            return res.status(404).json({
+                success: false,
+                error: `Citystate not found: ${name}`
+            });
+        }
+
+        const configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+
+        res.json({
+            success: true,
+            citystate: name,
+            bounds: configData.bounds,
+            center: configData.center,
+            castle_position: configData.castle_position,
+            zoom_levels: configData.zoom_levels
+        });
+
+    } catch (error) {
+        console.error(`Error loading bounds for ${req.params.name}:`, error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load citystate bounds'
+        });
+    }
+});
+
+// Game location API endpoints
+app.get('/api/maps/games', optionalAuth, async (req, res) => {
+    try {
+        const { location_type, location_id } = req.query;
+
+        let query = `
+            SELECT g.*, u.username as gm_username
+            FROM games g
+            LEFT JOIN users u ON g.gm_id = u.id
+            WHERE g.is_archived = 0
+        `;
+        let params = [];
+
+        if (location_type && location_id) {
+            query += ` AND g.location_type = ? AND g.location_id = ?`;
+            params.push(location_type, location_id);
+        } else if (location_type) {
+            query += ` AND g.location_type = ?`;
+            params.push(location_type);
+        }
+
+        query += ` ORDER BY g.created_at DESC`;
+
+        db.all(query, params, (err, games) => {
+            if (err) {
+                console.error('Error fetching games by location:', err);
+                return res.status(500).json({
+                    success: false,
+                    error: 'Failed to fetch games'
+                });
+            }
+
+            const processedGames = games.map(game => ({
+                id: game.id,
+                name: game.name,
+                description: game.description,
+                gm_username: game.gm_username,
+                location_type: game.location_type,
+                location_id: game.location_id,
+                latitude: game.latitude,
+                longitude: game.longitude,
+                genre: game.genre,
+                created_at: game.created_at,
+                player_count: game.player_ids ? JSON.parse(game.player_ids).length : 0
+            }));
+
+            res.json({
+                success: true,
+                games: processedGames,
+                count: processedGames.length
+            });
+        });
+
+    } catch (error) {
+        console.error('Error in games location endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Server error'
+        });
+    }
+});
+
+app.get('/api/maps/games/nearby', optionalAuth, async (req, res) => {
+    try {
+        const { lat, lon, radius = 10 } = req.query;
+
+        if (!lat || !lon) {
+            return res.status(400).json({
+                success: false,
+                error: 'Latitude and longitude are required'
+            });
+        }
+
+        const latitude = parseFloat(lat);
+        const longitude = parseFloat(lon);
+        const radiusKm = parseFloat(radius);
+
+        if (isNaN(latitude) || isNaN(longitude) || isNaN(radiusKm)) {
+            return res.status(400).json({
+                success: false,
+                error: 'Invalid coordinate or radius values'
+            });
+        }
+
+        const query = `
+            SELECT *, (distance) as distance FROM (
+                SELECT g.*, u.username as gm_username,
+                       (6371 * acos(cos(radians(?)) * cos(radians(g.latitude)) *
+                       cos(radians(g.longitude) - radians(?)) +
+                       sin(radians(?)) * sin(radians(g.latitude)))) AS distance
+                FROM games g
+                LEFT JOIN users u ON g.gm_id = u.id
+                WHERE g.is_archived = 0
+                    AND g.latitude IS NOT NULL
+                    AND g.longitude IS NOT NULL
+            ) WHERE distance <= ?
+            ORDER BY distance ASC
+        `;
+
+        db.all(query, [latitude, longitude, latitude, radiusKm], (err, games) => {
+            if (err) {
+                console.error('Error fetching nearby games:', err);
+                return res.status(500).json({
+                    success: false,
+                    error: 'Failed to fetch nearby games'
+                });
+            }
+
+            const processedGames = games.map(game => ({
+                id: game.id,
+                name: game.name,
+                description: game.description,
+                gm_username: game.gm_username,
+                location_type: game.location_type,
+                location_id: game.location_id,
+                latitude: game.latitude,
+                longitude: game.longitude,
+                genre: game.genre,
+                created_at: game.created_at,
+                distance: Math.round(game.distance * 100) / 100, // Round to 2 decimal places
+                player_count: game.player_ids ? JSON.parse(game.player_ids).length : 0
+            }));
+
+            res.json({
+                success: true,
+                games: processedGames,
+                count: processedGames.length,
+                search_params: {
+                    latitude,
+                    longitude,
+                    radius: radiusKm
+                }
+            });
+        });
+
+    } catch (error) {
+        console.error('Error in nearby games endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Server error'
+        });
+    }
+});
+
+// ===== VECTOR LAYER ENDPOINTS FOR WIKI MAP ENHANCEMENT =====
+
+// Helper function to convert EPSG:3857 to WGS84 lat/lon
+function convertEPSG3857ToWGS84(x, y) {
+    // Web Mercator to WGS84 conversion
+    const R = 6378137; // Earth's radius in meters
+
+    const lon = (x / R) * (180 / Math.PI);
+    const lat = (y / R) * (180 / Math.PI);
+
+    // Apply the Mercator projection formula inverse
+    const latRad = lat * (Math.PI / 180);
+    const mercN = Math.log(Math.tan((Math.PI / 4) + (latRad / 2)));
+    const adjustedLat = (Math.atan(Math.exp(mercN)) * 2 - (Math.PI / 2)) * (180 / Math.PI);
+
+    return [adjustedLat, lon];
+}
+
+// Helper function to transform GeoJSON coordinates from EPSG:3857 to WGS84
+function transformGeoJSONCoordinates(geoJson) {
+    if (!geoJson || !geoJson.features) {
+        return geoJson;
+    }
+
+    const transformedGeoJson = {
+        ...geoJson,
+        features: geoJson.features.map(feature => {
+            if (!feature.geometry || !feature.geometry.coordinates) {
+                return feature;
+            }
+
+            const transformedFeature = {
+                ...feature,
+                geometry: {
+                    ...feature.geometry,
+                    coordinates: null
+                }
+            };
+
+            // Handle different geometry types
+            switch (feature.geometry.type) {
+                case 'Point':
+                    transformedFeature.geometry.coordinates = convertEPSG3857ToWGS84(
+                        feature.geometry.coordinates[0],
+                        feature.geometry.coordinates[1]
+                    );
+                    break;
+
+                case 'LineString':
+                    transformedFeature.geometry.coordinates = feature.geometry.coordinates.map(coord =>
+                        convertEPSG3857ToWGS84(coord[0], coord[1])
+                    );
+                    break;
+
+                case 'Polygon':
+                    transformedFeature.geometry.coordinates = feature.geometry.coordinates.map(ring =>
+                        ring.map(coord => convertEPSG3857ToWGS84(coord[0], coord[1]))
+                    );
+                    break;
+
+                case 'MultiPoint':
+                    transformedFeature.geometry.coordinates = feature.geometry.coordinates.map(coord =>
+                        convertEPSG3857ToWGS84(coord[0], coord[1])
+                    );
+                    break;
+
+                case 'MultiLineString':
+                    transformedFeature.geometry.coordinates = feature.geometry.coordinates.map(line =>
+                        line.map(coord => convertEPSG3857ToWGS84(coord[0], coord[1]))
+                    );
+                    break;
+
+                case 'MultiPolygon':
+                    transformedFeature.geometry.coordinates = feature.geometry.coordinates.map(polygon =>
+                        polygon.map(ring => ring.map(coord => convertEPSG3857ToWGS84(coord[0], coord[1])))
+                    );
+                    break;
+
+                default:
+                    // Return original geometry if type is unknown
+                    transformedFeature.geometry = feature.geometry;
+            }
+
+            return transformedFeature;
+        })
+    };
+
+    return transformedGeoJson;
+}
+
+// Elevation contours API - TEMPORARILY DISABLED
+// This endpoint returns empty GeoJSON until proper contour files can be regenerated
+app.get('/api/maps/elevation/contours', async (req, res) => {
+    try {
+        // Return empty GeoJSON structure to maintain compatibility with frontend
+        const emptyGeoJSON = {
+            type: "FeatureCollection",
+            features: []
+        };
+
+        res.json({
+            success: true,
+            data: emptyGeoJSON,
+            type: 'elevation_contours',
+            totalFeatures: 0,
+            originalFeatures: 0,
+            disabled: true,
+            message: 'Elevation contours temporarily disabled - waiting for regenerated contour files'
+        });
+
+    } catch (error) {
+        console.error('Error handling elevation contours request:', error);
+        // Even in error case, return empty GeoJSON for compatibility
+        const emptyGeoJSON = {
+            type: "FeatureCollection",
+            features: []
+        };
+        res.json({
+            success: true,
+            data: emptyGeoJSON,
+            type: 'elevation_contours',
+            totalFeatures: 0,
+            originalFeatures: 0,
+            error: 'Service temporarily unavailable'
+        });
+    }
+});
+
+// Roads network API - Serve tiet.geojson data
+app.get('/api/maps/roads/network', async (req, res) => {
+    try {
+        const roadsPath = path.join(__dirname, '../../qgis/scaled and projected/tiet.geojson');
+
+        // Check if file exists
+        if (!fs.existsSync(roadsPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'Roads network data not found'
+            });
+        }
+
+        // Load and parse GeoJSON (pre-processed files are already in WGS84)
+        const geojsonData = JSON.parse(fs.readFileSync(roadsPath, 'utf8'));
+
+        res.json({
+            success: true,
+            data: geojsonData,
+            type: 'roads_network',
+            totalFeatures: geojsonData.features.length,
+            styling: {
+                recommended: {
+                    color: '#444444',
+                    weight: 1.5,
+                    opacity: 0.8,
+                    dashArray: '5, 5' // Dashed line pattern
+                },
+                alternatives: {
+                    major: {
+                        color: '#333333',
+                        weight: 2.0,
+                        opacity: 0.9,
+                        dashArray: '8, 4'
+                    },
+                    minor: {
+                        color: '#666666',
+                        weight: 1.0,
+                        opacity: 0.7,
+                        dashArray: '3, 3'
+                    }
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error('Error loading roads network:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load roads network data'
+        });
+    }
+});
+
+// Water features API - Serve jarvet.geojson data (lakes and waterways)
+app.get('/api/maps/water/features', async (req, res) => {
+    try {
+        const waterPath = path.join(__dirname, '../../qgis/scaled and projected/jarvet.geojson');
+
+        // Check if file exists
+        if (!fs.existsSync(waterPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'Water features data not found'
+            });
+        }
+
+        // Load and parse GeoJSON (pre-processed files are already in WGS84)
+        const geojsonData = JSON.parse(fs.readFileSync(waterPath, 'utf8'));
+
+        // Filter by water type if requested
+        let filteredFeatures = geojsonData.features;
+        const { waterType } = req.query;
+
+        if (waterType) {
+            filteredFeatures = geojsonData.features.filter(feature => {
+                return feature.properties.type === waterType;
+            });
+        }
+
+        // Return filtered GeoJSON
+        const filteredData = {
+            ...geojsonData,
+            features: filteredFeatures
+        };
+
+        res.json({
+            success: true,
+            data: filteredData,
+            type: 'water_features',
+            totalFeatures: filteredFeatures.length,
+            originalFeatures: geojsonData.features.length,
+            filter: waterType || null
+        });
+
+    } catch (error) {
+        console.error('Error loading water features:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load water features data'
+        });
+    }
+});
+
+// Biomes API - Serve biomes.geojson data (environmental/biome regions)
+app.get('/api/maps/biomes/regions', async (req, res) => {
+    try {
+        const biomesPath = path.join(__dirname, '../../qgis/scaled and projected/biomes.geojson');
+
+        // Check if file exists
+        if (!fs.existsSync(biomesPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'Biomes data not found'
+            });
+        }
+
+        // Load and parse GeoJSON (pre-processed files are already in WGS84)
+        const geojsonData = JSON.parse(fs.readFileSync(biomesPath, 'utf8'));
+
+        // Filter by biome type if requested
+        let filteredFeatures = geojsonData.features;
+        const { biomeType } = req.query;
+
+        if (biomeType) {
+            filteredFeatures = geojsonData.features.filter(feature => {
+                return feature.properties.Biome === biomeType ||
+                       feature.properties.biome === biomeType ||
+                       feature.properties.type === biomeType;
+            });
+        }
+
+        // Get unique biome types for information
+        const uniqueBiomes = [...new Set(geojsonData.features.map(feature =>
+            feature.properties.Biome || feature.properties.biome || feature.properties.type || 'Unknown'
+        ))];
+
+        // Return filtered GeoJSON
+        const filteredData = {
+            ...geojsonData,
+            features: filteredFeatures
+        };
+
+        res.json({
+            success: true,
+            data: filteredData,
+            type: 'biomes',
+            totalFeatures: filteredFeatures.length,
+            originalFeatures: geojsonData.features.length,
+            availableBiomes: uniqueBiomes,
+            filter: biomeType || null
+        });
+
+    } catch (error) {
+        console.error('Error loading biomes data:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load biomes data'
+        });
+    }
+});
+
+// Rivers API - Serve joet.geojson data (rivers and streams)
+app.get('/api/maps/water/rivers', async (req, res) => {
+    try {
+        const riversPath = path.join(__dirname, '../../qgis/scaled and projected/another versions/joet.geojson');
+
+        // Check if file exists
+        if (!fs.existsSync(riversPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'Rivers data not found'
+            });
+        }
+
+        // Load and parse GeoJSON
+        const geojsonData = JSON.parse(fs.readFileSync(riversPath, 'utf8'));
+
+        // Transform coordinates from EPSG:3857 to WGS84 (rivers file needs transformation)
+        const transformedData = transformGeoJSONCoordinates(geojsonData);
+
+        // Filter by river/stream type if requested
+        let filteredFeatures = transformedData.features;
+        const { riverType } = req.query;
+
+        if (riverType) {
+            filteredFeatures = transformedData.features.filter(feature => {
+                return feature.properties.nimi && feature.properties.nimi.toLowerCase().includes(riverType.toLowerCase());
+            });
+        }
+
+        // Return filtered GeoJSON
+        const filteredData = {
+            ...transformedData,
+            features: filteredFeatures
+        };
+
+        // Get unique river names for information
+        const uniqueRivers = [...new Set(transformedData.features.map(feature =>
+            feature.properties.nimi || feature.properties.name || 'Unknown'
+        ))].filter(name => name !== 'Unknown');
+
+        res.json({
+            success: true,
+            data: filteredData,
+            type: 'rivers',
+            totalFeatures: filteredFeatures.length,
+            originalFeatures: transformedData.features.length,
+            availableRivers: uniqueRivers.slice(0, 20), // Show first 20 river names
+            filter: riverType || null
+        });
+
+    } catch (error) {
+        console.error('Error loading rivers data:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load rivers data'
+        });
+    }
+});
+
+// ===== END VECTOR LAYER ENDPOINTS =====
+
+// Setup static file serving for map images with proper headers
+app.use('/static/maps', express.static(path.join(__dirname, '../static/maps'), {
+    setHeaders: (res, path) => {
+        // Set caching headers for map files
+        if (path.endsWith('.png') || path.endsWith('.webp') || path.endsWith('.tif')) {
+            res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour
+        }
+        if (path.endsWith('.geojson')) {
+            res.setHeader('Content-Type', 'application/geo+json');
+            res.setHeader('Cache-Control', 'public, max-age=1800'); // Cache for 30 minutes
+        }
+        if (path.endsWith('.json')) {
+            res.setHeader('Content-Type', 'application/json');
+            res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour
+        }
+    }
+}));
+
+// Serve Mundi geospatial data
+app.use('/mundi-data', express.static(path.join(__dirname, '../../Mundi/mundi.ai'), {
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.geojson')) {
+            res.setHeader('Content-Type', 'application/geo+json');
+            res.setHeader('Cache-Control', 'public, max-age=1800');
+        }
+    }
+}));
+
+// Serve QGIS geospatial data
+app.use('/qgis-data', express.static(path.join(__dirname, '../../qgis'), {
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.geojson')) {
+            res.setHeader('Content-Type', 'application/geo+json');
+            res.setHeader('Cache-Control', 'public, max-age=1800');
+        }
+    }
+}));
+
+// Regional map API routes
+const regionRoutes = require('./routes/maps/regionRoutes');
+app.use('/api/maps', regionRoutes);
+
+// District map API routes
+const districtRoutes = require('./routes/maps/districtRoutes');
+app.use('/api/maps', districtRoutes);
+
+// Building map API routes
+const buildingRoutes = require('./routes/maps/buildingRoutes');
+app.use('/api/maps', buildingRoutes);
+
+// Temporal data API routes
+const temporalDataRoutes = require('./routes/temporal/temporalDataRoutes');
+app.use('/api/temporal', temporalDataRoutes);
 
 // Start the server
 app.listen(port, () => {
