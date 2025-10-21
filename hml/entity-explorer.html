@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity Explorer - Dynamic Knowledge Graph Integration</title>
+    <link rel="stylesheet" href="/css/entity-explorer.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <!-- Main Navigation (following existing patterns) -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">Eno Platform</a>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/games">Games</a></li>
+                    <li><a href="/entity-explorer" class="active">Entity Explorer</a></li>
+                    <li><a href="/wiki">Wiki</a></li>
+                </ul>
+                <div class="nav-user">
+                    <!-- User profile will be inserted here -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="header-content">
+                    <h1>Entity Explorer</h1>
+                    <p class="page-description">
+                        Discover and explore entity relationships through our dynamic knowledge graph integration.
+                        Search for characters, locations, events, and more using semantic search and graph traversal.
+                    </p>
+                </div>
+                <div class="header-status" id="service-status">
+                    <div class="status-indicator" id="status-indicator"></div>
+                    <span id="status-text">Checking service status...</span>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div id="entity-search-container" class="entity-search-container">
+                        <!-- Entity Search component will be mounted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results and Visualization Section -->
+            <section class="results-section">
+                <div class="results-container">
+                    <div class="results-layout">
+                        <!-- Main Content Area -->
+                        <div class="main-content">
+                            <div id="entity-search-results" class="entity-search-results">
+                                <!-- Entity search results will appear here -->
+                            </div>
+                        </div>
+
+                        <!-- Sidebar with Relationship Viewer -->
+                        <div class="sidebar">
+                            <div class="sidebar-header">
+                                <h3>Relationship Explorer</h3>
+                                <div class="sidebar-controls">
+                                    <button id="toggle-sidebar" class="toggle-sidebar-btn" title="Toggle Sidebar">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="relationship-viewer-container" class="relationship-viewer-container">
+                                <!-- Relationship Viewer component will be mounted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="statistics-section" id="statistics-section" style="display: none;">
+                <div class="stats-container">
+                    <h2>Knowledge Graph Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8v8H4V8h12zM4 4h12v4H4V4z"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="total-entities">0</div>
+                                <div class="stat-label">Total Entities</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l5-5-7 1 4 7"/>
+                                    <path d="M22 10l-7 5.5-3 1L13 22"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="total-relationships">0</div>
+                                <div class="stat-label">Relationships</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="semantic-searches">0</div>
+                                <div class="stat-label">Semantic Searches</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <path d="M21 21l-4.35-4.35"/>
+                                    <path d="M11 8a3 3 0 1 1 0 6"/>
+                                </svg>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="graph-searches">0</div>
+                                <div class="stat-label">Graph Searches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Help Section -->
+            <section class="help-section">
+                <div class="help-container">
+                    <h2>How to Use Entity Explorer</h2>
+                    <div class="help-content">
+                        <div class="help-card">
+                            <h3>🔍 Search</h3>
+                            <p>Enter any search term to find entities using our combined semantic and graph search. Try searching for character names, locations, or concepts from your game world.</p>
+                            <ul>
+                                <li>Use the search mode selector to choose between semantic, graph, or combined search</li>
+                                <li>Filter results by entity type (Character, Location, Event, etc.)</li>
+                                <li>View relevance scores to understand match quality</li>
+                            </ul>
+                        </div>
+                        <div class="help-card">
+                            <h3>🔗 Explore Relationships</h3>
+                            <p>Click on any entity to see its relationships in the sidebar. The relationship viewer shows:</p>
+                            <ul>
+                                <li>Direct connections to other entities</li>
+                                <li>Relationship paths showing how entities are connected</li>
+                                <li>Statistics about relationship types and strengths</li>
+                                <li>Interactive controls for exploration depth and filtering</li>
+                            </ul>
+                        </div>
+                        <div class="help-card">
+                            <h3>📊 Search Modes</h3>
+                            <p>Choose the best search mode for your needs:</p>
+                            <ul>
+                                <li><strong>Semantic:</strong> Finds entities based on meaning and context</li>
+                                <li><strong>Graph:</strong> Finds entities by exact name matching</li>
+                                <li><strong>Combined:</strong> Uses both semantic and graph search for best results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Eno Platform - Entity Explorer</p>
+            <p>Powered by Dynamic Knowledge Graph Integration</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading Entity Explorer...</p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="error-modal" id="error-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Error</h3>
+                <button class="modal-close" id="error-modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="error-message">An error occurred while loading the Entity Explorer.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="error-retry" class="btn btn-primary">Retry</button>
+                <button id="error-dismiss" class="btn btn-secondary">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/lib/jwt-decode.min.js"></script>
+    <script src="/js/services/entitySearchService.js"></script>
+    <script src="/js/components/EntitySearch.js"></script>
+    <script src="/js/components/RelationshipViewer.js"></script>
+    <script src="/js/routes/entityRoutes.js"></script>
+    <script src="/js/entity-explorer.js"></script>
+</body>
+</html>
