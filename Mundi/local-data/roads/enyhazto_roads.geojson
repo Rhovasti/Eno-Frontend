@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33280400000001,
+            -8.589714000000003
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33256491525422,
+            -8.589244214689264
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33230775295662,
+            -8.58897834822602
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.3336125,
+            -8.589507000000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33317849659073,
+            -8.590918833038707
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33357654726473,
+            -8.59031364284217
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Market Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33374331252679,
+            -8.590607586736233
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33397745569829,
+            -8.590210495124252
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Castle Way",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33431475287719,
+            -8.590568583063158
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3300850996603,
+            -8.589686157610178
+          ],
+          [
+            77.33464866607204,
+            -8.590521003737683
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.33280400000001,
+            -8.589714000000003
+          ],
+          [
+            77.33256491525422,
+            -8.589244214689264
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.33256491525422,
+            -8.589244214689264
+          ],
+          [
+            77.33230775295662,
+            -8.58897834822602
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.33230775295662,
+            -8.58897834822602
+          ],
+          [
+            77.3336125,
+            -8.589507000000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.3336125,
+            -8.589507000000001
+          ],
+          [
+            77.33317849659073,
+            -8.590918833038707
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.33317849659073,
+            -8.590918833038707
+          ],
+          [
+            77.33357654726473,
+            -8.59031364284217
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "enyhazto",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.33357654726473,
+            -8.59031364284217
+          ],
+          [
+            77.33280400000001,
+            -8.589714000000003
+          ]
+        ]
+      }
+    }
+  ]
+}

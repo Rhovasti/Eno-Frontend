@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.500365,
+            60.000796
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.500678801078963,
+            59.99938402716069
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.500068999999999,
+            60.0011015
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.499977394586153,
+            60.00305969217421
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.4978645,
+            59.9984685
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.4977675,
+            59.9987945
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Market Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.498075939916293,
+            59.99948269310256
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.498075902664068,
+            59.9989026159844
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Castle Way",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.498577848113707,
+            60.00038725591593
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.502104691814495,
+            60.004525916603356
+          ],
+          [
+            -5.499566,
+            60.000057500000004
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.500365,
+            60.000796
+          ],
+          [
+            -5.500678801078963,
+            59.99938402716069
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.500678801078963,
+            59.99938402716069
+          ],
+          [
+            -5.500068999999999,
+            60.0011015
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.500068999999999,
+            60.0011015
+          ],
+          [
+            -5.499977394586153,
+            60.00305969217421
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.499977394586153,
+            60.00305969217421
+          ],
+          [
+            -5.4978645,
+            59.9984685
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.4978645,
+            59.9984685
+          ],
+          [
+            -5.4977675,
+            59.9987945
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "atsa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.4977675,
+            59.9987945
+          ],
+          [
+            -5.500365,
+            60.000796
+          ]
+        ]
+      }
+    }
+  ]
+}

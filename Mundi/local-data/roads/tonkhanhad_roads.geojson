@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.6588315225488,
+            -42.21313700815197
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.6589985,
+            -42.2123835
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.65891670530497,
+            -42.2126995688245
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.658865499999997,
+            -42.212542
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.658257631460163,
+            -42.21257299661475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.658043552896128,
+            -42.212721235838515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.65806095898698,
+            -42.2112117012714
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.65788,
+            -42.212250499999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.658948499999997,
+            -42.211027
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658451763456146,
+            -42.220614338983694
+          ],
+          [
+            27.65882802018349,
+            -42.21107380978592
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.6588315225488,
+            -42.21313700815197
+          ],
+          [
+            27.6589985,
+            -42.2123835
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.6589985,
+            -42.2123835
+          ],
+          [
+            27.65891670530497,
+            -42.2126995688245
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.65891670530497,
+            -42.2126995688245
+          ],
+          [
+            27.658865499999997,
+            -42.212542
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658865499999997,
+            -42.212542
+          ],
+          [
+            27.658257631460163,
+            -42.21257299661475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658257631460163,
+            -42.21257299661475
+          ],
+          [
+            27.658043552896128,
+            -42.212721235838515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tonkhanhad",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            27.658043552896128,
+            -42.212721235838515
+          ],
+          [
+            27.6588315225488,
+            -42.21313700815197
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87823367483451,
+            48.47431164296195
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87840936669517,
+            48.47383192329626
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87663842112964,
+            48.47333780597014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.8756709244924,
+            48.472745871809785
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.875220478755075,
+            48.473166848750566
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.876627994852285,
+            48.47559517932458
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Market Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87657816448124,
+            48.4752814901268
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87763755486738,
+            48.47505869391624
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Castle Way",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87881298026353,
+            48.47560245238991
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.88046134665508,
+            48.468375656793455
+          ],
+          [
+            -34.87259388752703,
+            48.474247341143965
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.87823367483451,
+            48.47431164296195
+          ],
+          [
+            -34.87840936669517,
+            48.47383192329626
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.87840936669517,
+            48.47383192329626
+          ],
+          [
+            -34.87663842112964,
+            48.47333780597014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.87663842112964,
+            48.47333780597014
+          ],
+          [
+            -34.8756709244924,
+            48.472745871809785
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.8756709244924,
+            48.472745871809785
+          ],
+          [
+            -34.875220478755075,
+            48.473166848750566
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.875220478755075,
+            48.473166848750566
+          ],
+          [
+            -34.876627994852285,
+            48.47559517932458
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "orve",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.876627994852285,
+            48.47559517932458
+          ],
+          [
+            -34.87823367483451,
+            48.47431164296195
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43271715528756,
+            -5.375599446473959
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43331650000002,
+            -5.375891
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43217410698423,
+            -5.376958880671437
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43195488644008,
+            -5.376836549354331
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.4311435,
+            -5.377696500000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43111400000001,
+            -5.377553
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Market Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.42915402422683,
+            -5.377841356397785
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43368013522547,
+            -5.374937418763797
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Castle Way",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.4346040331263,
+            -5.37565767494824
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.40744512132466,
+            -5.374348865538456
+          ],
+          [
+            115.43580700000001,
+            -5.3746374999999995
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.43271715528756,
+            -5.375599446473959
+          ],
+          [
+            115.43331650000002,
+            -5.375891
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.43331650000002,
+            -5.375891
+          ],
+          [
+            115.43217410698423,
+            -5.376958880671437
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.43217410698423,
+            -5.376958880671437
+          ],
+          [
+            115.43195488644008,
+            -5.376836549354331
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.43195488644008,
+            -5.376836549354331
+          ],
+          [
+            115.4311435,
+            -5.377696500000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.4311435,
+            -5.377696500000001
+          ],
+          [
+            115.43111400000001,
+            -5.377553
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "guild",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            115.43111400000001,
+            -5.377553
+          ],
+          [
+            115.43271715528756,
+            -5.375599446473959
+          ]
+        ]
+      }
+    }
+  ]
+}

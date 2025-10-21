@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.809254405644836,
+            -63.25939462206763
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.81103373259574,
+            -63.267130070290946
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.81117137041952,
+            -63.2659535564464
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.8366993744699,
+            -63.24979184690417
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.81465093745529,
+            -63.24918318276273
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.81717857832645,
+            -63.2489716647847
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.816072,
+            -63.25029949999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.81564899633306,
+            -63.25056416832126
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.8144086713148,
+            -63.25037356449282
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81641622166822,
+            -63.248956662012006
+          ],
+          [
+            37.814255,
+            -63.250091499999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.809254405644836,
+            -63.25939462206763
+          ],
+          [
+            37.81103373259574,
+            -63.267130070290946
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81103373259574,
+            -63.267130070290946
+          ],
+          [
+            37.81117137041952,
+            -63.2659535564464
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81117137041952,
+            -63.2659535564464
+          ],
+          [
+            37.8366993744699,
+            -63.24979184690417
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.8366993744699,
+            -63.24979184690417
+          ],
+          [
+            37.81465093745529,
+            -63.24918318276273
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81465093745529,
+            -63.24918318276273
+          ],
+          [
+            37.81717857832645,
+            -63.2489716647847
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "phoelit",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.81717857832645,
+            -63.2489716647847
+          ],
+          [
+            37.809254405644836,
+            -63.25939462206763
+          ]
+        ]
+      }
+    }
+  ]
+}

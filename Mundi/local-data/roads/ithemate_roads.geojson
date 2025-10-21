@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.943508504418078,
+            68.03542683160819
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.955297697794746,
+            68.03304721471036
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.954803,
+            68.03692450000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.955004159444051,
+            68.03803455668775
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.955056160506105,
+            68.0383067185451
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.953066115512772,
+            68.03976227989635
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.951707500000001,
+            68.03710799999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.952192371353654,
+            68.03614711375842
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.952381370088723,
+            68.03882770342206
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 7,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.946700443451173,
+            68.03224953060484
+          ],
+          [
+            -15.950168602132301,
+            68.03884928984526
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.943508504418078,
+            68.03542683160819
+          ],
+          [
+            -15.955297697794746,
+            68.03304721471036
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.955297697794746,
+            68.03304721471036
+          ],
+          [
+            -15.954803,
+            68.03692450000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.954803,
+            68.03692450000001
+          ],
+          [
+            -15.955004159444051,
+            68.03803455668775
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.955004159444051,
+            68.03803455668775
+          ],
+          [
+            -15.955056160506105,
+            68.0383067185451
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.955056160506105,
+            68.0383067185451
+          ],
+          [
+            -15.953066115512772,
+            68.03976227989635
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ithemate",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.953066115512772,
+            68.03976227989635
+          ],
+          [
+            -15.943508504418078,
+            68.03542683160819
+          ]
+        ]
+      }
+    }
+  ]
+}

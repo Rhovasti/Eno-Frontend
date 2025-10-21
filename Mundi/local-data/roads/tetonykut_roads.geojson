@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "tetonykut",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.29501330692328,
+            -37.744973073670145
+          ],
+          [
+            100.29642149999998,
+            -37.74097149999999
+          ]
+        ]
+      }
+    }
+  ]
+}

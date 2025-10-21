@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.0611085,
+            21.2162355
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.06181847485654,
+            21.216988999270498
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.06045504485239,
+            21.215831335675748
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.06111986106916,
+            21.218259055709897
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.05977424459961,
+            21.217548369330476
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.06050015789474,
+            21.217466824561406
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Market Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.05796680279444,
+            21.21676753346475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.0593866607905,
+            21.217214264213556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Castle Way",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.0585238394534,
+            21.21854032630026
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "King's Road",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05072349364835,
+            21.218586171131534
+          ],
+          [
+            112.05929399999998,
+            21.217999999999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.0611085,
+            21.2162355
+          ],
+          [
+            112.06181847485654,
+            21.216988999270498
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.06181847485654,
+            21.216988999270498
+          ],
+          [
+            112.06045504485239,
+            21.215831335675748
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.06045504485239,
+            21.215831335675748
+          ],
+          [
+            112.06111986106916,
+            21.218259055709897
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.06111986106916,
+            21.218259055709897
+          ],
+          [
+            112.05977424459961,
+            21.217548369330476
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.05977424459961,
+            21.217548369330476
+          ],
+          [
+            112.06050015789474,
+            21.217466824561406
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "ottengenburg",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            112.06050015789474,
+            21.217466824561406
+          ],
+          [
+            112.0611085,
+            21.2162355
+          ]
+        ]
+      }
+    }
+  ]
+}

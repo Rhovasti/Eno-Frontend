@@ -1,0 +1,180 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.1279710083166,
+            -42.16745366838734
+          ],
+          [
+            81.1322953400688,
+            -42.16835640745944
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.1279710083166,
+            -42.16745366838734
+          ],
+          [
+            81.1291462201417,
+            -42.17164217146291
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.1322953400688,
+            -42.16835640745944
+          ],
+          [
+            81.1291462201417,
+            -42.17164217146291
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.1291462201417,
+            -42.17164217146291
+          ],
+          [
+            81.12602079754603,
+            -42.173792515337425
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Garden Way",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.12949489328294,
+            -42.15699271345661
+          ],
+          [
+            81.12989011755855,
+            -42.15831000961609
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.12949489328294,
+            -42.15699271345661
+          ],
+          [
+            81.128342,
+            -42.156766
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "River Road",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "cajunara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            81.12989011755855,
+            -42.15831000961609
+          ],
+          [
+            81.128342,
+            -42.156766
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.845862499999996,
+            41.2796475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.846183316626675,
+            41.28116541029058
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.846283099228334,
+            41.28061080883397
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.8462225,
+            41.280342
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.845956499999996,
+            41.280451
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.846062766497948,
+            41.28064738764906
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.845018002423146,
+            41.27710290398304
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.844527265780265,
+            41.277209011896424
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.844816313588844,
+            41.27712470786723
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Harbor Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.844611145946146,
+            41.27593154354145
+          ],
+          [
+            29.844637722807015,
+            41.277802950877195
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.845862499999996,
+            41.2796475
+          ],
+          [
+            29.846183316626675,
+            41.28116541029058
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.846183316626675,
+            41.28116541029058
+          ],
+          [
+            29.846283099228334,
+            41.28061080883397
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.846283099228334,
+            41.28061080883397
+          ],
+          [
+            29.8462225,
+            41.280342
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Church Lane",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.8462225,
+            41.280342
+          ],
+          [
+            29.845956499999996,
+            41.280451
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.845956499999996,
+            41.280451
+          ],
+          [
+            29.846062766497948,
+            41.28064738764906
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Merchant Street",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "kuoruvaa",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29.846062766497948,
+            41.28064738764906
+          ],
+          [
+            29.845862499999996,
+            41.2796475
+          ]
+        ]
+      }
+    }
+  ]
+}

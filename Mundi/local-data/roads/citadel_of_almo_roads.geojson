@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "citadel_of_almo",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            66.82593333818045,
+            -23.026886407904545
+          ],
+          [
+            66.83032095613137,
+            -23.02705311989999
+          ]
+        ]
+      }
+    }
+  ]
+}

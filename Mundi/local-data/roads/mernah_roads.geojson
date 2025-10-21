@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "mernah",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.70609559813793,
+            -76.41438688445191
+          ],
+          [
+            8.707099649848427,
+            -76.4152017867155
+          ]
+        ]
+      }
+    }
+  ]
+}

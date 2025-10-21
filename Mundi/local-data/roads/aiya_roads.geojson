@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "aiya",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            68.90377154632043,
+            59.10143973244251
+          ],
+          [
+            68.90107247544863,
+            59.10523283966833
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Cathedral Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "aiya",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            68.90377154632043,
+            59.10143973244251
+          ],
+          [
+            68.899481,
+            59.09937899999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "aiya",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            68.89400099999999,
+            59.089183
+          ],
+          [
+            68.89011675823406,
+            59.08960906381168
+          ]
+        ]
+      }
+    }
+  ]
+}

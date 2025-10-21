@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "malveiba",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            63.64765999277932,
+            -68.74004147560282
+          ],
+          [
+            63.64490016749,
+            -68.74316579549034
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "malveiba",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            63.64133597409407,
+            -68.75285718159857
+          ],
+          [
+            63.64209568268928,
+            -68.75498811215833
+          ]
+        ]
+      }
+    }
+  ]
+}

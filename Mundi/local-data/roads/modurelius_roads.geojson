@@ -1,0 +1,130 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "modurelius",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -29.005635459526772,
+            -18.792105230801162
+          ],
+          [
+            -29.007583092133245,
+            -18.793577656744628
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "modurelius",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -29.005635459526772,
+            -18.792105230801162
+          ],
+          [
+            -29.004784500000007,
+            -18.796662
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "modurelius",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -29.005635459526772,
+            -18.792105230801162
+          ],
+          [
+            -29.009996322905124,
+            -18.79306534081781
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "modurelius",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -29.007583092133245,
+            -18.793577656744628
+          ],
+          [
+            -29.004784500000007,
+            -18.796662
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Garden Way",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "modurelius",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -29.007583092133245,
+            -18.793577656744628
+          ],
+          [
+            -29.009996322905124,
+            -18.79306534081781
+          ]
+        ]
+      }
+    }
+  ]
+}

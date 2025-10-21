@@ -1,0 +1,180 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.752558,
+            -59.04403599999999
+          ],
+          [
+            94.74951233998635,
+            -59.04635103275332
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.752558,
+            -59.04403599999999
+          ],
+          [
+            94.7558015,
+            -59.04139599999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.752558,
+            -59.04403599999999
+          ],
+          [
+            94.75395852413484,
+            -59.04504441145877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.74951233998635,
+            -59.04635103275332
+          ],
+          [
+            94.75023309185686,
+            -59.048873009016624
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Garden Way",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.74951233998635,
+            -59.04635103275332
+          ],
+          [
+            94.75395852413484,
+            -59.04504441145877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.7558015,
+            -59.04139599999999
+          ],
+          [
+            94.75395852413484,
+            -59.04504441145877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "River Road",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "uiaria",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            94.75023309185686,
+            -59.048873009016624
+          ],
+          [
+            94.7466255,
+            -59.051602499999994
+          ]
+        ]
+      }
+    }
+  ]
+}

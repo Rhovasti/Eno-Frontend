@@ -1,0 +1,205 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.7007865,
+            -73.26770499999998
+          ],
+          [
+            -15.6981405,
+            -73.2699635
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.7007865,
+            -73.26770499999998
+          ],
+          [
+            -15.702184198438406,
+            -73.26964407226515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.6981405,
+            -73.2699635
+          ],
+          [
+            -15.702184198438406,
+            -73.26964407226515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.688827999999999,
+            -73.258042
+          ],
+          [
+            -15.688755300070268,
+            -73.25920643753935
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Garden Way",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.688827999999999,
+            -73.258042
+          ],
+          [
+            -15.687280498617138,
+            -73.25693666600694
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.688755300070268,
+            -73.25920643753935
+          ],
+          [
+            -15.687280498617138,
+            -73.25693666600694
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "River Road",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.688755300070268,
+            -73.25920643753935
+          ],
+          [
+            -15.683873499999997,
+            -73.25889449999998
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "aneroa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -15.687280498617138,
+            -73.25693666600694
+          ],
+          [
+            -15.683873499999997,
+            -73.25889449999998
+          ]
+        ]
+      }
+    }
+  ]
+}

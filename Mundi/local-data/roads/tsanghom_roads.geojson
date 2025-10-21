@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "tsanghom",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -39.14174753308028,
+            -35.05055968390176
+          ],
+          [
+            -39.140513000000006,
+            -35.054866000000004
+          ]
+        ]
+      }
+    }
+  ]
+}

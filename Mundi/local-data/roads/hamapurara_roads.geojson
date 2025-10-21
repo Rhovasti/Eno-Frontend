@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "hamapurara",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            34.86743368536977,
+            76.9035937519521
+          ],
+          [
+            34.869222,
+            76.90504750000001
+          ]
+        ]
+      }
+    }
+  ]
+}

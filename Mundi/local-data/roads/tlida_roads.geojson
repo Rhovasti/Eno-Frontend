@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "tlida",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            113.30555516603773,
+            -6.838471013207547
+          ],
+          [
+            113.30361148310627,
+            -6.8405585976158045
+          ]
+        ]
+      }
+    }
+  ]
+}

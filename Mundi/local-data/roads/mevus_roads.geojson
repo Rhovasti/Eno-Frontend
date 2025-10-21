@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "mevus",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -7.339939499999999,
+            -75.10899900000001
+          ],
+          [
+            -7.343070923808467,
+            -75.1066452348098
+          ]
+        ]
+      }
+    }
+  ]
+}

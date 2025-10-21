@@ -1,0 +1,755 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Street 1",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.04154515116274,
+            -29.75388870954882
+          ],
+          [
+            -48.039206497574376,
+            -29.75388870954882
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Street 2",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.039206497574376,
+            -29.75388870954882
+          ],
+          [
+            -48.036867843986016,
+            -29.75388870954882
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Street 3",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.039206497574376,
+            -29.75155005596046
+          ],
+          [
+            -48.036867843986016,
+            -29.75155005596046
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Street 4",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.74687274878374
+          ],
+          [
+            -48.05323841910454,
+            -29.74687274878374
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Street 5",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.74453409519538
+          ],
+          [
+            -48.05323841910454,
+            -29.74453409519538
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Street 6",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.74453409519538
+          ],
+          [
+            -48.05089976551618,
+            -29.74453409519538
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Street 7",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05791572628126,
+            -29.74219544160702
+          ],
+          [
+            -48.0555770726929,
+            -29.74219544160702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Street 8",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.74219544160702
+          ],
+          [
+            -48.05323841910454,
+            -29.74219544160702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Street 9",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05791572628126,
+            -29.73985678801866
+          ],
+          [
+            -48.0555770726929,
+            -29.73985678801866
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Street 10",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05791572628126,
+            -29.7375181344303
+          ],
+          [
+            -48.0555770726929,
+            -29.7375181344303
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Street 11",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.7375181344303
+          ],
+          [
+            -48.05323841910454,
+            -29.7375181344303
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Street 12",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.7375181344303
+          ],
+          [
+            -48.05089976551618,
+            -29.7375181344303
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Street 13",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.73517948084194
+          ],
+          [
+            -48.05089976551618,
+            -29.73517948084194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Street 14",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05089976551618,
+            -29.73517948084194
+          ],
+          [
+            -48.04856111192782,
+            -29.73517948084194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_14",
+        "name": "Street 15",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.04856111192782,
+            -29.73517948084194
+          ],
+          [
+            -48.04622245833946,
+            -29.73517948084194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_15",
+        "name": "Street 16",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.04622245833946,
+            -29.73517948084194
+          ],
+          [
+            -48.0438838047511,
+            -29.73517948084194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_16",
+        "name": "Avenue 17",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05791572628126,
+            -29.74219544160702
+          ],
+          [
+            -48.05791572628126,
+            -29.73985678801866
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_17",
+        "name": "Avenue 18",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.74687274878374
+          ],
+          [
+            -48.0555770726929,
+            -29.74453409519538
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_18",
+        "name": "Avenue 19",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.74453409519538
+          ],
+          [
+            -48.0555770726929,
+            -29.74219544160702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_19",
+        "name": "Avenue 20",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.74219544160702
+          ],
+          [
+            -48.0555770726929,
+            -29.73985678801866
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_20",
+        "name": "Avenue 21",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.0555770726929,
+            -29.73985678801866
+          ],
+          [
+            -48.0555770726929,
+            -29.7375181344303
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_21",
+        "name": "Avenue 22",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.7492114023721
+          ],
+          [
+            -48.05323841910454,
+            -29.74687274878374
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_22",
+        "name": "Avenue 23",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.74687274878374
+          ],
+          [
+            -48.05323841910454,
+            -29.74453409519538
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_23",
+        "name": "Avenue 24",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.74453409519538
+          ],
+          [
+            -48.05323841910454,
+            -29.74219544160702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_24",
+        "name": "Avenue 25",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05323841910454,
+            -29.7375181344303
+          ],
+          [
+            -48.05323841910454,
+            -29.73517948084194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_25",
+        "name": "Avenue 26",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05089976551618,
+            -29.74453409519538
+          ],
+          [
+            -48.05089976551618,
+            -29.74219544160702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_26",
+        "name": "Avenue 27",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.05089976551618,
+            -29.7375181344303
+          ],
+          [
+            -48.05089976551618,
+            -29.73517948084194
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_27",
+        "name": "Avenue 28",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.036867843986016,
+            -29.75388870954882
+          ],
+          [
+            -48.036867843986016,
+            -29.75155005596046
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_28",
+        "name": "Avenue 29",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.034529190397656,
+            -29.73985678801866
+          ],
+          [
+            -48.034529190397656,
+            -29.7375181344303
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_29",
+        "name": "Avenue 30",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "tsin",
+        "algorithm": "radial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -48.032190536809296,
+            -29.74687274878374
+          ],
+          [
+            -48.032190536809296,
+            -29.74453409519538
+          ]
+        ]
+      }
+    }
+  ]
+}

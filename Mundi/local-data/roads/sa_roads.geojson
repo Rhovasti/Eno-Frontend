@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "sa",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -55.48583844442305,
+            -42.979981808241625
+          ],
+          [
+            -55.48533386273671,
+            -42.97682847536344
+          ]
+        ]
+      }
+    }
+  ]
+}

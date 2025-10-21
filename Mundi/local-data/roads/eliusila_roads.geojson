@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "eliusila",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -35.09082894340645,
+            -34.342751676956404
+          ],
+          [
+            -35.088512812676285,
+            -34.34514297809855
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "High Street",
+        "type": "primary",
+        "width": 10,
+        "importance": 10,
+        "city": "ian",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62.34949911261995,
+            58.601261274335286
+          ],
+          [
+            62.34605705198776,
+            58.59827729663608
+          ]
+        ]
+      }
+    }
+  ]
+}

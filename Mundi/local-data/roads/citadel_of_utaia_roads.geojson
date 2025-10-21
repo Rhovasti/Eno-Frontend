@@ -1,0 +1,355 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Street 1",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.918618953093443,
+            -43.825318712644915
+          ],
+          [
+            -30.917239007189618,
+            -43.825318712644915
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Street 2",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.917239007189618,
+            -43.825318712644915
+          ],
+          [
+            -30.915859061285794,
+            -43.825318712644915
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Street 3",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.919998898997267,
+            -43.82393876674109
+          ],
+          [
+            -30.918618953093443,
+            -43.82393876674109
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Street 4",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.918618953093443,
+            -43.82393876674109
+          ],
+          [
+            -30.917239007189618,
+            -43.82393876674109
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Street 5",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.917239007189618,
+            -43.82393876674109
+          ],
+          [
+            -30.915859061285794,
+            -43.82393876674109
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Street 6",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.917239007189618,
+            -43.82255882083726
+          ],
+          [
+            -30.915859061285794,
+            -43.82255882083726
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "Street 7",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.915859061285794,
+            -43.82117887493343
+          ],
+          [
+            -30.91447911538197,
+            -43.82117887493343
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Avenue 8",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.918618953093443,
+            -43.825318712644915
+          ],
+          [
+            -30.918618953093443,
+            -43.82393876674109
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Avenue 9",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.917239007189618,
+            -43.82669865854874
+          ],
+          [
+            -30.917239007189618,
+            -43.825318712644915
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Avenue 10",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.917239007189618,
+            -43.825318712644915
+          ],
+          [
+            -30.917239007189618,
+            -43.82393876674109
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Avenue 11",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.917239007189618,
+            -43.82393876674109
+          ],
+          [
+            -30.917239007189618,
+            -43.82255882083726
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Avenue 12",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.915859061285794,
+            -43.82393876674109
+          ],
+          [
+            -30.915859061285794,
+            -43.82255882083726
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "Avenue 13",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.915859061285794,
+            -43.82255882083726
+          ],
+          [
+            -30.915859061285794,
+            -43.82117887493343
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_13",
+        "name": "Avenue 14",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "citadel_of_utaia",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -30.913099169478144,
+            -43.82393876674109
+          ],
+          [
+            -30.913099169478144,
+            -43.82255882083726
+          ]
+        ]
+      }
+    }
+  ]
+}

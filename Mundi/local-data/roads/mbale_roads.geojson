@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "mbale",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            52.90233383725338,
+            67.56067417032826
+          ],
+          [
+            52.90363850000001,
+            67.56379749999999
+          ]
+        ]
+      }
+    }
+  ]
+}

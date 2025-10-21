@@ -1,0 +1,978 @@
+{
+  "summary": {
+    "total_cities": 140,
+    "successful": 126,
+    "failed": 14,
+    "total_roads": 1334,
+    "total_time": 198.07837462425232,
+    "average_time": 1.4148455330303737
+  },
+  "results": [
+    {
+      "status": "success",
+      "city": "moki",
+      "roads_generated": 16,
+      "processing_time": 1.3657867908477783,
+      "output": "Successfully generated 16 roads for moki\n"
+    },
+    {
+      "status": "success",
+      "city": "roparia",
+      "roads_generated": 16,
+      "processing_time": 1.1713883876800537,
+      "output": "Successfully generated 16 roads for roparia\n"
+    },
+    {
+      "status": "success",
+      "city": "bellikavima",
+      "roads_generated": 0,
+      "processing_time": 1.226283311843872,
+      "output": "Successfully generated 0 roads for bellikavima\n"
+    },
+    {
+      "status": "success",
+      "city": "bulekh_orov",
+      "roads_generated": 16,
+      "processing_time": 1.1978216171264648,
+      "output": "Successfully generated 16 roads for bulekh_orov\n"
+    },
+    {
+      "status": "success",
+      "city": "ian",
+      "roads_generated": 1,
+      "processing_time": 1.1887907981872559,
+      "output": "Successfully generated 1 roads for ian\n"
+    },
+    {
+      "status": "success",
+      "city": "otety",
+      "roads_generated": 4,
+      "processing_time": 1.1804397106170654,
+      "output": "Successfully generated 4 roads for otety\n"
+    },
+    {
+      "status": "success",
+      "city": "citadel_of_almo",
+      "roads_generated": 1,
+      "processing_time": 1.1862115859985352,
+      "output": "Successfully generated 1 roads for citadel_of_almo\n"
+    },
+    {
+      "status": "success",
+      "city": "modurelius",
+      "roads_generated": 5,
+      "processing_time": 1.189659595489502,
+      "output": "Successfully generated 5 roads for modurelius\n"
+    },
+    {
+      "status": "error",
+      "city": "citadel_of_utaia",
+      "error": "2025-09-20 23:08:34,986 - ERROR - No building file found for citadel_of_utaia\n",
+      "processing_time": 1.2228765487670898
+    },
+    {
+      "status": "success",
+      "city": "eliusila",
+      "roads_generated": 1,
+      "processing_time": 1.2340443134307861,
+      "output": "Successfully generated 1 roads for eliusila\n"
+    },
+    {
+      "status": "success",
+      "city": "sa",
+      "roads_generated": 1,
+      "processing_time": 1.2871229648590088,
+      "output": "Successfully generated 1 roads for sa\n"
+    },
+    {
+      "status": "success",
+      "city": "riroku",
+      "roads_generated": 16,
+      "processing_time": 1.3677666187286377,
+      "output": "Successfully generated 16 roads for riroku\n"
+    },
+    {
+      "status": "success",
+      "city": "aira",
+      "roads_generated": 1,
+      "processing_time": 1.2323009967803955,
+      "output": "Successfully generated 1 roads for aira\n"
+    },
+    {
+      "status": "success",
+      "city": "atsa",
+      "roads_generated": 16,
+      "processing_time": 1.3161418437957764,
+      "output": "Successfully generated 16 roads for atsa\n"
+    },
+    {
+      "status": "success",
+      "city": "kudina",
+      "roads_generated": 16,
+      "processing_time": 1.2825725078582764,
+      "output": "Successfully generated 16 roads for kudina\n"
+    },
+    {
+      "status": "success",
+      "city": "euata",
+      "roads_generated": 0,
+      "processing_time": 1.2313427925109863,
+      "output": "Successfully generated 0 roads for euata\n"
+    },
+    {
+      "status": "success",
+      "city": "zidesun",
+      "roads_generated": 16,
+      "processing_time": 1.3294501304626465,
+      "output": "Successfully generated 16 roads for zidesun\n"
+    },
+    {
+      "status": "success",
+      "city": "asuyan",
+      "roads_generated": 16,
+      "processing_time": 1.35247802734375,
+      "output": "Successfully generated 16 roads for asuyan\n"
+    },
+    {
+      "status": "success",
+      "city": "jinzhou",
+      "roads_generated": 16,
+      "processing_time": 1.282134771347046,
+      "output": "Successfully generated 16 roads for jinzhou\n"
+    },
+    {
+      "status": "success",
+      "city": "itia",
+      "roads_generated": 0,
+      "processing_time": 1.2587087154388428,
+      "output": "Successfully generated 0 roads for itia\n"
+    },
+    {
+      "status": "success",
+      "city": "orve",
+      "roads_generated": 16,
+      "processing_time": 1.300128698348999,
+      "output": "Successfully generated 16 roads for orve\n"
+    },
+    {
+      "status": "success",
+      "city": "ottengenburg",
+      "roads_generated": 16,
+      "processing_time": 1.3951220512390137,
+      "output": "Successfully generated 16 roads for ottengenburg\n"
+    },
+    {
+      "status": "success",
+      "city": "ieye",
+      "roads_generated": 16,
+      "processing_time": 1.3994979858398438,
+      "output": "Successfully generated 16 roads for ieye\n"
+    },
+    {
+      "status": "success",
+      "city": "bancik",
+      "roads_generated": 16,
+      "processing_time": 1.299135446548462,
+      "output": "Successfully generated 16 roads for bancik\n"
+    },
+    {
+      "status": "success",
+      "city": "ithiu",
+      "roads_generated": 6,
+      "processing_time": 1.2456638813018799,
+      "output": "Successfully generated 6 roads for ithiu\n"
+    },
+    {
+      "status": "success",
+      "city": "mical",
+      "roads_generated": 16,
+      "processing_time": 1.3305401802062988,
+      "output": "Successfully generated 16 roads for mical\n"
+    },
+    {
+      "status": "success",
+      "city": "makad",
+      "roads_generated": 16,
+      "processing_time": 1.2897584438323975,
+      "output": "Successfully generated 16 roads for makad\n"
+    },
+    {
+      "status": "success",
+      "city": "mbale",
+      "roads_generated": 1,
+      "processing_time": 1.224039077758789,
+      "output": "Successfully generated 1 roads for mbale\n"
+    },
+    {
+      "status": "success",
+      "city": "hamapurara",
+      "roads_generated": 1,
+      "processing_time": 1.2524003982543945,
+      "output": "Successfully generated 1 roads for hamapurara\n"
+    },
+    {
+      "status": "success",
+      "city": "pigna",
+      "roads_generated": 16,
+      "processing_time": 1.3458034992218018,
+      "output": "Successfully generated 16 roads for pigna\n"
+    },
+    {
+      "status": "success",
+      "city": "regoes",
+      "roads_generated": 0,
+      "processing_time": 1.2424511909484863,
+      "output": "Successfully generated 0 roads for regoes\n"
+    },
+    {
+      "status": "success",
+      "city": "fonte",
+      "roads_generated": 0,
+      "processing_time": 1.2284648418426514,
+      "output": "Successfully generated 0 roads for fonte\n"
+    },
+    {
+      "status": "success",
+      "city": "mintenomarci",
+      "roads_generated": 16,
+      "processing_time": 1.3320167064666748,
+      "output": "Successfully generated 16 roads for mintenomarci\n"
+    },
+    {
+      "status": "success",
+      "city": "laizhou",
+      "roads_generated": 16,
+      "processing_time": 1.2605602741241455,
+      "output": "Successfully generated 16 roads for laizhou\n"
+    },
+    {
+      "status": "success",
+      "city": "sobriro",
+      "roads_generated": 3,
+      "processing_time": 1.2320466041564941,
+      "output": "Successfully generated 3 roads for sobriro\n"
+    },
+    {
+      "status": "success",
+      "city": "kolli",
+      "roads_generated": 5,
+      "processing_time": 1.3069255352020264,
+      "output": "Successfully generated 5 roads for kolli\n"
+    },
+    {
+      "status": "success",
+      "city": "fanha",
+      "roads_generated": 16,
+      "processing_time": 1.2837073802947998,
+      "output": "Successfully generated 16 roads for fanha\n"
+    },
+    {
+      "status": "success",
+      "city": "aurola",
+      "roads_generated": 16,
+      "processing_time": 1.2891454696655273,
+      "output": "Successfully generated 16 roads for aurola\n"
+    },
+    {
+      "status": "success",
+      "city": "nyirfalmasle",
+      "roads_generated": 0,
+      "processing_time": 1.2295570373535156,
+      "output": "Successfully generated 0 roads for nyirfalmasle\n"
+    },
+    {
+      "status": "success",
+      "city": "oatue",
+      "roads_generated": 16,
+      "processing_time": 1.311772108078003,
+      "output": "Successfully generated 16 roads for oatue\n"
+    },
+    {
+      "status": "success",
+      "city": "waishan",
+      "roads_generated": 0,
+      "processing_time": 1.2293543815612793,
+      "output": "Successfully generated 0 roads for waishan\n"
+    },
+    {
+      "status": "success",
+      "city": "ergoigoibar",
+      "roads_generated": 3,
+      "processing_time": 1.2020666599273682,
+      "output": "Successfully generated 3 roads for ergoigoibar\n"
+    },
+    {
+      "status": "success",
+      "city": "iinasia",
+      "roads_generated": 0,
+      "processing_time": 1.2354576587677002,
+      "output": "Successfully generated 0 roads for iinasia\n"
+    },
+    {
+      "status": "success",
+      "city": "huang",
+      "roads_generated": 1,
+      "processing_time": 1.2885355949401855,
+      "output": "Successfully generated 1 roads for huang\n"
+    },
+    {
+      "status": "success",
+      "city": "kushk",
+      "roads_generated": 16,
+      "processing_time": 1.3455274105072021,
+      "output": "Successfully generated 16 roads for kushk\n"
+    },
+    {
+      "status": "success",
+      "city": "bazujduzeszeg",
+      "roads_generated": 0,
+      "processing_time": 1.2530362606048584,
+      "output": "Successfully generated 0 roads for bazujduzeszeg\n"
+    },
+    {
+      "status": "success",
+      "city": "kushimaki",
+      "roads_generated": 0,
+      "processing_time": 1.3087620735168457,
+      "output": "Successfully generated 0 roads for kushimaki\n"
+    },
+    {
+      "status": "success",
+      "city": "cajunara",
+      "roads_generated": 7,
+      "processing_time": 1.263122797012329,
+      "output": "Successfully generated 7 roads for cajunara\n"
+    },
+    {
+      "status": "success",
+      "city": "binh_ninh",
+      "roads_generated": 16,
+      "processing_time": 1.3182101249694824,
+      "output": "Successfully generated 16 roads for binh_ninh\n"
+    },
+    {
+      "status": "success",
+      "city": "vul",
+      "roads_generated": 16,
+      "processing_time": 1.3695588111877441,
+      "output": "Successfully generated 16 roads for vul\n"
+    },
+    {
+      "status": "success",
+      "city": "ouiar",
+      "roads_generated": 16,
+      "processing_time": 1.3046636581420898,
+      "output": "Successfully generated 16 roads for ouiar\n"
+    },
+    {
+      "status": "success",
+      "city": "bungomo",
+      "roads_generated": 16,
+      "processing_time": 1.3074774742126465,
+      "output": "Successfully generated 16 roads for bungomo\n"
+    },
+    {
+      "status": "success",
+      "city": "valvi",
+      "roads_generated": 0,
+      "processing_time": 1.2242155075073242,
+      "output": "Successfully generated 0 roads for valvi\n"
+    },
+    {
+      "status": "success",
+      "city": "mernah",
+      "roads_generated": 1,
+      "processing_time": 1.2437958717346191,
+      "output": "Successfully generated 1 roads for mernah\n"
+    },
+    {
+      "status": "success",
+      "city": "aiya",
+      "roads_generated": 3,
+      "processing_time": 1.250685691833496,
+      "output": "Successfully generated 3 roads for aiya\n"
+    },
+    {
+      "status": "success",
+      "city": "vea",
+      "roads_generated": 0,
+      "processing_time": 1.2474775314331055,
+      "output": "Successfully generated 0 roads for vea\n"
+    },
+    {
+      "status": "success",
+      "city": "kukar",
+      "roads_generated": 0,
+      "processing_time": 1.2840540409088135,
+      "output": "Successfully generated 0 roads for kukar\n"
+    },
+    {
+      "status": "success",
+      "city": "beitsa",
+      "roads_generated": 16,
+      "processing_time": 1.3352329730987549,
+      "output": "Successfully generated 16 roads for beitsa\n"
+    },
+    {
+      "status": "success",
+      "city": "balashee",
+      "roads_generated": 4,
+      "processing_time": 1.246589183807373,
+      "output": "Successfully generated 4 roads for balashee\n"
+    },
+    {
+      "status": "success",
+      "city": "murmium",
+      "roads_generated": 6,
+      "processing_time": 1.231264591217041,
+      "output": "Successfully generated 6 roads for murmium\n"
+    },
+    {
+      "status": "success",
+      "city": "mevus",
+      "roads_generated": 1,
+      "processing_time": 1.2439093589782715,
+      "output": "Successfully generated 1 roads for mevus\n"
+    },
+    {
+      "status": "success",
+      "city": "jining",
+      "roads_generated": 0,
+      "processing_time": 1.227473497390747,
+      "output": "Successfully generated 0 roads for jining\n"
+    },
+    {
+      "status": "success",
+      "city": "shma",
+      "roads_generated": 1,
+      "processing_time": 1.2901849746704102,
+      "output": "Successfully generated 1 roads for shma\n"
+    },
+    {
+      "status": "success",
+      "city": "sera",
+      "roads_generated": 2,
+      "processing_time": 1.2678556442260742,
+      "output": "Successfully generated 2 roads for sera\n"
+    },
+    {
+      "status": "success",
+      "city": "likzib",
+      "roads_generated": 0,
+      "processing_time": 1.3009510040283203,
+      "output": "Successfully generated 0 roads for likzib\n"
+    },
+    {
+      "status": "success",
+      "city": "bifjorda",
+      "roads_generated": 16,
+      "processing_time": 1.3092155456542969,
+      "output": "Successfully generated 16 roads for bifjorda\n"
+    },
+    {
+      "status": "success",
+      "city": "veren",
+      "roads_generated": 0,
+      "processing_time": 1.262505054473877,
+      "output": "Successfully generated 0 roads for veren\n"
+    },
+    {
+      "status": "success",
+      "city": "mohi",
+      "roads_generated": 16,
+      "processing_time": 1.3333358764648438,
+      "output": "Successfully generated 16 roads for mohi\n"
+    },
+    {
+      "status": "success",
+      "city": "darvangor",
+      "roads_generated": 0,
+      "processing_time": 1.2666330337524414,
+      "output": "Successfully generated 0 roads for darvangor\n"
+    },
+    {
+      "status": "success",
+      "city": "auera",
+      "roads_generated": 0,
+      "processing_time": 1.316666841506958,
+      "output": "Successfully generated 0 roads for auera\n"
+    },
+    {
+      "status": "success",
+      "city": "hajsala",
+      "roads_generated": 1,
+      "processing_time": 1.2582850456237793,
+      "output": "Successfully generated 1 roads for hajsala\n"
+    },
+    {
+      "status": "success",
+      "city": "pinkang",
+      "roads_generated": 3,
+      "processing_time": 1.2670271396636963,
+      "output": "Successfully generated 3 roads for pinkang\n"
+    },
+    {
+      "status": "success",
+      "city": "doros",
+      "roads_generated": 16,
+      "processing_time": 1.3075857162475586,
+      "output": "Successfully generated 16 roads for doros\n"
+    },
+    {
+      "status": "success",
+      "city": "kyenga",
+      "roads_generated": 16,
+      "processing_time": 1.3323330879211426,
+      "output": "Successfully generated 16 roads for kyenga\n"
+    },
+    {
+      "status": "success",
+      "city": "luquti",
+      "roads_generated": 16,
+      "processing_time": 1.293938159942627,
+      "output": "Successfully generated 16 roads for luquti\n"
+    },
+    {
+      "status": "success",
+      "city": "borgloy",
+      "roads_generated": 16,
+      "processing_time": 1.3011572360992432,
+      "output": "Successfully generated 16 roads for borgloy\n"
+    },
+    {
+      "status": "success",
+      "city": "alos",
+      "roads_generated": 16,
+      "processing_time": 1.3786134719848633,
+      "output": "Successfully generated 16 roads for alos\n"
+    },
+    {
+      "status": "success",
+      "city": "korestad",
+      "roads_generated": 16,
+      "processing_time": 1.3250999450683594,
+      "output": "Successfully generated 16 roads for korestad\n"
+    },
+    {
+      "status": "success",
+      "city": "fibeon",
+      "roads_generated": 13,
+      "processing_time": 1.2674751281738281,
+      "output": "Successfully generated 13 roads for fibeon\n"
+    },
+    {
+      "status": "success",
+      "city": "rambedamkur",
+      "roads_generated": 16,
+      "processing_time": 1.3386650085449219,
+      "output": "Successfully generated 16 roads for rambedamkur\n"
+    },
+    {
+      "status": "success",
+      "city": "chitna",
+      "roads_generated": 0,
+      "processing_time": 1.2806289196014404,
+      "output": "Successfully generated 0 roads for chitna\n"
+    },
+    {
+      "status": "success",
+      "city": "pogliaferte",
+      "roads_generated": 0,
+      "processing_time": 1.295182228088379,
+      "output": "Successfully generated 0 roads for pogliaferte\n"
+    },
+    {
+      "status": "success",
+      "city": "kikoupaupo",
+      "roads_generated": 0,
+      "processing_time": 1.2046895027160645,
+      "output": "Successfully generated 0 roads for kikoupaupo\n"
+    },
+    {
+      "status": "success",
+      "city": "briarviles",
+      "roads_generated": 16,
+      "processing_time": 1.3140850067138672,
+      "output": "Successfully generated 16 roads for briarviles\n"
+    },
+    {
+      "status": "success",
+      "city": "aneroa",
+      "roads_generated": 8,
+      "processing_time": 1.2736589908599854,
+      "output": "Successfully generated 8 roads for aneroa\n"
+    },
+    {
+      "status": "success",
+      "city": "malveiba",
+      "roads_generated": 2,
+      "processing_time": 1.2772691249847412,
+      "output": "Successfully generated 2 roads for malveiba\n"
+    },
+    {
+      "status": "success",
+      "city": "enyhazto",
+      "roads_generated": 16,
+      "processing_time": 1.2716221809387207,
+      "output": "Successfully generated 16 roads for enyhazto\n"
+    },
+    {
+      "status": "error",
+      "city": "tsin.geojson",
+      "error": "2025-09-20 23:10:16,456 - ERROR - No building file found for tsin.geojson\n",
+      "processing_time": 1.1866199970245361
+    },
+    {
+      "status": "error",
+      "city": "uiaria.geojson",
+      "error": "2025-09-20 23:10:17,623 - ERROR - No building file found for uiaria.geojson\n",
+      "processing_time": 1.172128677368164
+    },
+    {
+      "status": "error",
+      "city": "tlida.geojson",
+      "error": "2025-09-20 23:10:18,814 - ERROR - No building file found for tlida.geojson\n",
+      "processing_time": 1.2017061710357666
+    },
+    {
+      "status": "error",
+      "city": "tetonykut.geojson",
+      "error": "2025-09-20 23:10:20,017 - ERROR - No building file found for tetonykut.geojson\n",
+      "processing_time": 1.1914420127868652
+    },
+    {
+      "status": "error",
+      "city": "tisvarmend.geojson",
+      "error": "2025-09-20 23:10:21,189 - ERROR - No building file found for tisvarmend.geojson\n",
+      "processing_time": 1.1900451183319092
+    },
+    {
+      "status": "error",
+      "city": "uyaria.geojson",
+      "error": "2025-09-20 23:10:22,442 - ERROR - No building file found for uyaria.geojson\n",
+      "processing_time": 1.2319259643554688
+    },
+    {
+      "status": "error",
+      "city": "urir.geojson",
+      "error": "2025-09-20 23:10:23,622 - ERROR - No building file found for urir.geojson\n",
+      "processing_time": 1.1790804862976074
+    },
+    {
+      "status": "error",
+      "city": "szargony.geojson",
+      "error": "2025-09-20 23:10:24,811 - ERROR - No building file found for szargony.geojson\n",
+      "processing_time": 1.1966536045074463
+    },
+    {
+      "status": "error",
+      "city": "tsanghom.geojson",
+      "error": "2025-09-20 23:10:25,995 - ERROR - No building file found for tsanghom.geojson\n",
+      "processing_time": 1.178406000137329
+    },
+    {
+      "status": "error",
+      "city": "teveh.geojson",
+      "error": "2025-09-20 23:10:27,178 - ERROR - No building file found for teveh.geojson\n",
+      "processing_time": 1.1764676570892334
+    },
+    {
+      "status": "error",
+      "city": "ubahmia.geojson",
+      "error": "2025-09-20 23:10:28,355 - ERROR - No building file found for ubahmia.geojson\n",
+      "processing_time": 1.173189401626587
+    },
+    {
+      "status": "error",
+      "city": "tonkhanhad.geojson",
+      "error": "2025-09-20 23:10:29,534 - ERROR - No building file found for tonkhanhad.geojson\n",
+      "processing_time": 1.1856491565704346
+    },
+    {
+      "status": "success",
+      "city": "vialiranave",
+      "roads_generated": 16,
+      "processing_time": 1.4788639545440674,
+      "output": "Successfully generated 16 roads for vialiranave\n"
+    },
+    {
+      "status": "success",
+      "city": "jiafeng",
+      "roads_generated": 16,
+      "processing_time": 1.4596755504608154,
+      "output": "Successfully generated 16 roads for jiafeng\n"
+    },
+    {
+      "status": "success",
+      "city": "ithemate",
+      "roads_generated": 16,
+      "processing_time": 1.6559538841247559,
+      "output": "Successfully generated 16 roads for ithemate\n"
+    },
+    {
+      "status": "success",
+      "city": "monte",
+      "roads_generated": 16,
+      "processing_time": 1.4499001502990723,
+      "output": "Successfully generated 16 roads for monte\n"
+    },
+    {
+      "status": "success",
+      "city": "engar",
+      "roads_generated": 16,
+      "processing_time": 2.0784943103790283,
+      "output": "Successfully generated 16 roads for engar\n"
+    },
+    {
+      "status": "success",
+      "city": "atar",
+      "roads_generated": 16,
+      "processing_time": 1.3620176315307617,
+      "output": "Successfully generated 16 roads for atar\n"
+    },
+    {
+      "status": "success",
+      "city": "harruresh",
+      "roads_generated": 16,
+      "processing_time": 1.4062564373016357,
+      "output": "Successfully generated 16 roads for harruresh\n"
+    },
+    {
+      "status": "success",
+      "city": "gyt_no",
+      "roads_generated": 16,
+      "processing_time": 1.3856310844421387,
+      "output": "Successfully generated 16 roads for gyt_no\n"
+    },
+    {
+      "status": "success",
+      "city": "motu",
+      "roads_generated": 16,
+      "processing_time": 1.3783061504364014,
+      "output": "Successfully generated 16 roads for motu\n"
+    },
+    {
+      "status": "success",
+      "city": "shaxing",
+      "roads_generated": 16,
+      "processing_time": 1.4532029628753662,
+      "output": "Successfully generated 16 roads for shaxing\n"
+    },
+    {
+      "status": "success",
+      "city": "palwede",
+      "roads_generated": 16,
+      "processing_time": 2.2585175037384033,
+      "output": "Successfully generated 16 roads for palwede\n"
+    },
+    {
+      "status": "success",
+      "city": "kure",
+      "roads_generated": 16,
+      "processing_time": 1.3743000030517578,
+      "output": "Successfully generated 16 roads for kure\n"
+    },
+    {
+      "status": "success",
+      "city": "eneya",
+      "roads_generated": 16,
+      "processing_time": 1.4016432762145996,
+      "output": "Successfully generated 16 roads for eneya\n"
+    },
+    {
+      "status": "success",
+      "city": "patrellasa",
+      "roads_generated": 16,
+      "processing_time": 1.3846681118011475,
+      "output": "Successfully generated 16 roads for patrellasa\n"
+    },
+    {
+      "status": "success",
+      "city": "bafke",
+      "roads_generated": 16,
+      "processing_time": 1.5694358348846436,
+      "output": "Successfully generated 16 roads for bafke\n"
+    },
+    {
+      "status": "success",
+      "city": "jargeroy",
+      "roads_generated": 16,
+      "processing_time": 1.4848110675811768,
+      "output": "Successfully generated 16 roads for jargeroy\n"
+    },
+    {
+      "status": "success",
+      "city": "citadel_of_the_pass",
+      "roads_generated": 16,
+      "processing_time": 1.4619660377502441,
+      "output": "Successfully generated 16 roads for citadel_of_the_pass\n"
+    },
+    {
+      "status": "success",
+      "city": "reriro",
+      "roads_generated": 16,
+      "processing_time": 1.4122169017791748,
+      "output": "Successfully generated 16 roads for reriro\n"
+    },
+    {
+      "status": "success",
+      "city": "guild",
+      "roads_generated": 16,
+      "processing_time": 3.603030204772949,
+      "output": "Successfully generated 16 roads for guild\n"
+    },
+    {
+      "status": "success",
+      "city": "castri",
+      "roads_generated": 16,
+      "processing_time": 1.4947986602783203,
+      "output": "Successfully generated 16 roads for castri\n"
+    },
+    {
+      "status": "success",
+      "city": "zadardelen",
+      "roads_generated": 16,
+      "processing_time": 2.494443893432617,
+      "output": "Successfully generated 16 roads for zadardelen\n"
+    },
+    {
+      "status": "success",
+      "city": "jeong",
+      "roads_generated": 16,
+      "processing_time": 2.680634021759033,
+      "output": "Successfully generated 16 roads for jeong\n"
+    },
+    {
+      "status": "success",
+      "city": "bernala",
+      "roads_generated": 16,
+      "processing_time": 1.652803897857666,
+      "output": "Successfully generated 16 roads for bernala\n"
+    },
+    {
+      "status": "success",
+      "city": "mahyapak",
+      "roads_generated": 16,
+      "processing_time": 3.6137726306915283,
+      "output": "Successfully generated 16 roads for mahyapak\n"
+    },
+    {
+      "status": "success",
+      "city": "jouy",
+      "roads_generated": 16,
+      "processing_time": 1.4288015365600586,
+      "output": "Successfully generated 16 roads for jouy\n"
+    },
+    {
+      "status": "success",
+      "city": "hasamut",
+      "roads_generated": 16,
+      "processing_time": 1.3824384212493896,
+      "output": "Successfully generated 16 roads for hasamut\n"
+    },
+    {
+      "status": "success",
+      "city": "gongshan",
+      "roads_generated": 16,
+      "processing_time": 1.7495498657226562,
+      "output": "Successfully generated 16 roads for gongshan\n"
+    },
+    {
+      "status": "success",
+      "city": "pornoli",
+      "roads_generated": 16,
+      "processing_time": 1.4595510959625244,
+      "output": "Successfully generated 16 roads for pornoli\n"
+    },
+    {
+      "status": "success",
+      "city": "kuoruvaa",
+      "roads_generated": 16,
+      "processing_time": 1.398345947265625,
+      "output": "Successfully generated 16 roads for kuoruvaa\n"
+    },
+    {
+      "status": "success",
+      "city": "gyba",
+      "roads_generated": 16,
+      "processing_time": 1.5150063037872314,
+      "output": "Successfully generated 16 roads for gyba\n"
+    },
+    {
+      "status": "success",
+      "city": "avesia",
+      "roads_generated": 16,
+      "processing_time": 1.999995231628418,
+      "output": "Successfully generated 16 roads for avesia\n"
+    },
+    {
+      "status": "success",
+      "city": "kudchna",
+      "roads_generated": 16,
+      "processing_time": 1.3605258464813232,
+      "output": "Successfully generated 16 roads for kudchna\n"
+    },
+    {
+      "status": "success",
+      "city": "pranos",
+      "roads_generated": 16,
+      "processing_time": 2.4126243591308594,
+      "output": "Successfully generated 16 roads for pranos\n"
+    },
+    {
+      "status": "success",
+      "city": "phoelit",
+      "roads_generated": 16,
+      "processing_time": 1.6410491466522217,
+      "output": "Successfully generated 16 roads for phoelit\n"
+    },
+    {
+      "status": "success",
+      "city": "sunker",
+      "roads_generated": 16,
+      "processing_time": 1.6139957904815674,
+      "output": "Successfully generated 16 roads for sunker\n"
+    },
+    {
+      "status": "success",
+      "city": "dautong",
+      "roads_generated": 16,
+      "processing_time": 2.2320730686187744,
+      "output": "Successfully generated 16 roads for dautong\n"
+    },
+    {
+      "status": "success",
+      "city": "chingsan",
+      "roads_generated": 16,
+      "processing_time": 2.5790724754333496,
+      "output": "Successfully generated 16 roads for chingsan\n"
+    },
+    {
+      "status": "success",
+      "city": "d\u00fbr-tu",
+      "roads_generated": 16,
+      "processing_time": 1.867837905883789,
+      "output": "Successfully generated 16 roads for d\u00fbr-tu\n"
+    },
+    {
+      "status": "success",
+      "city": "shfanaan",
+      "roads_generated": 16,
+      "processing_time": 1.6006922721862793,
+      "output": "Successfully generated 16 roads for shfanaan\n"
+    },
+    {
+      "status": "success",
+      "city": "alebuo",
+      "roads_generated": 16,
+      "processing_time": 2.1970982551574707,
+      "output": "Successfully generated 16 roads for alebuo\n"
+    },
+    {
+      "status": "error",
+      "city": "tasa.geojson",
+      "error": "2025-09-20 23:11:42,156 - ERROR - No building file found for tasa.geojson\n",
+      "processing_time": 1.1838648319244385
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "hajsala",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            82.1861875,
+            -34.15106800000001
+          ],
+          [
+            82.1817926154765,
+            -34.149547859701975
+          ]
+        ]
+      }
+    }
+  ]
+}

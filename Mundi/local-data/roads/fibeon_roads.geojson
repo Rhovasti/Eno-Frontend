@@ -1,0 +1,330 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_0",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.704718,
+            -38.658738500000005
+          ],
+          [
+            96.70602566494138,
+            -38.66284683108086
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_1",
+        "name": "Workshop Alley",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.70247749999999,
+            -38.66750149999999
+          ],
+          [
+            96.69825157155577,
+            -38.67015362542099
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_2",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.70247749999999,
+            -38.66750149999999
+          ],
+          [
+            96.69889630010492,
+            -38.66870242756209
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_3",
+        "name": "Mill Road",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.70247749999999,
+            -38.66750149999999
+          ],
+          [
+            96.70432155984588,
+            -38.670597670496804
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_4",
+        "name": "Garden Way",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69825157155577,
+            -38.67015362542099
+          ],
+          [
+            96.69889630010492,
+            -38.66870242756209
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_5",
+        "name": "Narrow Alley",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69825157155577,
+            -38.67015362542099
+          ],
+          [
+            96.6964674729064,
+            -38.667454305747135
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_6",
+        "name": "River Road",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69825157155577,
+            -38.67015362542099
+          ],
+          [
+            96.69584252585737,
+            -38.66986082870622
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_7",
+        "name": "Rose Street",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69889630010492,
+            -38.66870242756209
+          ],
+          [
+            96.6964674729064,
+            -38.667454305747135
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_8",
+        "name": "Hill Path",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69889630010492,
+            -38.66870242756209
+          ],
+          [
+            96.69686344625873,
+            -38.66470280900835
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_9",
+        "name": "Garden Way",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69889630010492,
+            -38.66870242756209
+          ],
+          [
+            96.69584252585737,
+            -38.66986082870622
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_10",
+        "name": "Guild Way",
+        "type": "secondary",
+        "width": 7,
+        "importance": 6,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.696511,
+            -38.66127049999999
+          ],
+          [
+            96.69686344625873,
+            -38.66470280900835
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_11",
+        "name": "Hill Path",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.69686344625873,
+            -38.66470280900835
+          ],
+          [
+            96.6964674729064,
+            -38.667454305747135
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "road_12",
+        "name": "River Road",
+        "type": "local",
+        "width": 5,
+        "importance": 3,
+        "city": "fibeon",
+        "algorithm": "clustered"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            96.6964674729064,
+            -38.667454305747135
+          ],
+          [
+            96.69584252585737,
+            -38.66986082870622
+          ]
+        ]
+      }
+    }
+  ]
+}
