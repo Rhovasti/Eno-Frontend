@@ -1596,9 +1596,17 @@ app.post('/api/posts/derive-prompts', authenticateToken, async (req, res) => {
             max_tokens: 1024,
             messages: [{
                 role: 'user',
-                content: `You are an expert at analyzing RPG narrative content and creating prompts for AI image and audio generation.
+                content: `You are an expert at analyzing RPG narrative content for creating accurate AI media prompts.
 
-Analyze this RPG post content and extract key elements for media generation:
+Your task is to extract ONLY elements explicitly mentioned in the post content. Do not extrapolate or add creative details beyond what is clearly stated.
+
+RULES:
+- Extract ONLY specific elements directly mentioned in the text
+- If no clear location is mentioned, use "unspecified location"
+- If no characters are mentioned, use "no specific characters"
+- If no time is mentioned, use "unspecified time"
+- Avoid creative interpretation - stick to literal content
+- Use generic mood-based description if scene details are sparse
 
 POST CONTENT:
 ${postContent}
@@ -1606,21 +1614,21 @@ ${postContent}
 MOOD/ATMOSPHERE: ${mood}
 LANGUAGE: ${language || 'unknown'}
 
-Extract these elements:
-1. LOCATION (where): Specific place like "dark cave", "ancient forest", "castle throne room", "city market"
-2. CHARACTERS (who): People, creatures, or beings present (wizard, warrior, dragon, merchant, etc.)
-3. ACTIONS (what): Main activity happening (casting spell, fighting battle, exploring ruins, having conversation, etc.)
-4. TIME (when): Time of day if mentioned (night, dawn, day, dusk, evening)
-5. ATMOSPHERE: Lighting, weather, emotional tone (mysterious, tense, peaceful, ominous)
-6. KEY OBJECTS: Important items, props, or scenery elements
+Extract these elements based ONLY on explicit mentions:
+1. LOCATION (where): Place explicitly mentioned or "unspecified location"
+2. CHARACTERS (who): People/creatures explicitly named or "no specific characters"
+3. ACTIONS (what): Activities explicitly described or "unspecified action"
+4. TIME (when): Time explicitly mentioned or "unspecified time"
+5. ATMOSPHERE: Emotional tone explicitly described or derive from mood
+6. KEY OBJECTS: Items/props explicitly mentioned
 
-Based on these elements, generate:
+Based on these extracted elements, generate:
 
-1. IMAGE_PROMPT: A detailed English prompt for Stable Diffusion image generation (2-3 sentences, focus on visual composition, lighting, style). Include the mood atmosphere. Make it vivid and specific.
+1. IMAGE_PROMPT: A prompt focusing on explicitly mentioned elements. If details are sparse, create a simple mood-appropriate scene. 2-3 sentences maximum.
 
-2. AUDIO_PROMPT: An atmospheric description for audio generation (1-2 sentences, focus on sounds, ambience, musical mood). Describe what should be HEARD.
+2. AUDIO_PROMPT: Describe sounds that would be present based on explicit mentions or mood. 1-2 sentences maximum.
 
-Return ONLY a JSON object with this exact structure (no markdown, no explanation):
+Return ONLY a JSON object (no markdown, no explanation):
 {
   "imagePrompt": "...",
   "audioPrompt": "...",
@@ -1663,19 +1671,53 @@ Return ONLY a JSON object with this exact structure (no markdown, no explanation
                 console.log('Available characters:', availableCharacters);
                 console.log('Mentioned characters:', mentionedCharacters);
 
-                // Find matching characters (case-insensitive, partial matching)
+                // Enhanced character matching algorithm
                 mentionedCharacters.forEach(mentionedChar => {
                     const charLower = mentionedChar.toLowerCase();
-                    const matchedChar = availableCharacters.find(availableChar => {
-                        // Check for exact match or partial match
-                        return availableChar === charLower ||
-                               availableChar.includes(charLower) ||
-                               charLower.includes(availableChar);
-                    });
 
-                    if (matchedChar && !suggestedCharacter) {
-                        suggestedCharacter = matchedChar;
-                        console.log('Suggested character found:', suggestedCharacter);
+                    // Score-based matching for better character selection
+                    const characterMatches = availableCharacters.map(availableChar => {
+                        let score = 0;
+
+                        // Exact match gets highest score
+                        if (availableChar === charLower) {
+                            score = 100;
+                        }
+                        // Available character contains mentioned character
+                        else if (availableChar.includes(charLower)) {
+                            score = 80;
+                        }
+                        // Mentioned character contains available character
+                        else if (charLower.includes(availableChar)) {
+                            score = 60;
+                        }
+                        // Partial word matching (split on common separators)
+                        else {
+                            const availableParts = availableChar.split(/[\s_-]/);
+                            const mentionedParts = charLower.split(/[\s_-]/);
+
+                            for (const availPart of availableParts) {
+                                for (const mentionedPart of mentionedParts) {
+                                    if (availPart === mentionedPart && availPart.length > 2) {
+                                        score = 40;
+                                        break;
+                                    } else if (availPart.includes(mentionedPart) || mentionedPart.includes(availPart)) {
+                                        score = 20;
+                                    }
+                                }
+                                if (score >= 40) break;
+                            }
+                        }
+
+                        return { character: availableChar, score };
+                    })
+                    .filter(match => match.score > 0)
+                    .sort((a, b) => b.score - a.score);
+
+                    // Select the best match
+                    if (characterMatches.length > 0 && !suggestedCharacter) {
+                        suggestedCharacter = characterMatches[0].character;
+                        console.log(`Character match found: ${suggestedCharacter} (score: ${characterMatches[0].score})`);
                     }
                 });
 
@@ -1693,9 +1735,17 @@ Return ONLY a JSON object with this exact structure (no markdown, no explanation
             }];
         }
 
+        // Enhance image prompt with character reference if available
+        let enhancedImagePrompt = derivedData.imagePrompt;
+        if (suggestedCharacter && mentionedCharacters.length > 0) {
+            // Add character-specific details to the prompt for better consistency
+            const characterName = suggestedCharacter.charAt(0).toUpperCase() + suggestedCharacter.slice(1);
+            enhancedImagePrompt = `${derivedData.imagePrompt}. The character ${characterName} should be prominently featured with consistent appearance, clothing, and features matching their established portrait.`;
+        }
+
         // Combine with mood-based style suggestions and character detection
         const result = {
-            imagePrompt: derivedData.imagePrompt,
+            imagePrompt: enhancedImagePrompt,
             audioPrompt: derivedData.audioPrompt,
             stylePreset: stylePresets.imageStyle,
             audioType: stylePresets.audioType,
@@ -1704,7 +1754,8 @@ Return ONLY a JSON object with this exact structure (no markdown, no explanation
             mentionedCharacters: mentionedCharacters,
             suggestedCharacter: suggestedCharacter,
             availableCharacters: availableCharacters,
-            detectedCharacters: detectedCharacters // Match frontend expectation
+            detectedCharacters: detectedCharacters, // Match frontend expectation
+            characterEnhanced: !!suggestedCharacter // Flag to indicate character enhancement was applied
         };
 
         console.log('Derived prompts with character detection:', result);
@@ -1722,7 +1773,7 @@ Return ONLY a JSON object with this exact structure (no markdown, no explanation
 // Generate image for a post
 app.post('/api/posts/:postId/generate-image', authenticateToken, async (req, res) => {
     const { postId } = req.params;
-    const { prompt, style, sketch } = req.body;
+    const { prompt, style, sketch, character } = req.body;
     const userId = req.user.id;
     
     if (!prompt) {
@@ -1753,90 +1804,18 @@ app.post('/api/posts/:postId/generate-image', authenticateToken, async (req, res
                     console.log('Prompt:', prompt);
                     console.log('Style:', style);
                     console.log('Has sketch:', !!sketch);
-                    
-                    let imageBuffer;
-                    
-                    if (sketch) {
-                        console.log('Processing sketch input...');
-                        // Convert base64 sketch to buffer
-                        const sketchBuffer = Buffer.from(sketch, 'base64');
-                        
-                        // Get style reference image if style is selected
-                        let styleImagePath = null;
-                        if (style === 'comic' || style === 'sketch') {
-                            // Use a random style image from the appropriate style subfolder
-                            const styleDir = path.join(__dirname, '..', 'style', style);
-                            if (fs.existsSync(styleDir)) {
-                                const styleFiles = fs.readdirSync(styleDir);
-                                const pngFiles = styleFiles.filter(f => f.endsWith('.png'));
-                                if (pngFiles.length > 0) {
-                                    const randomStyle = pngFiles[Math.floor(Math.random() * pngFiles.length)];
-                                    styleImagePath = path.join(styleDir, randomStyle);
-                                    console.log('Using style reference from', style, 'folder:', randomStyle);
-                                }
-                            }
-                        }
-                        
-                        // Use sketch-to-image with or without style transfer
-                        if (styleImagePath) {
-                            // For style transfer: use sketch as control, style image as reference
-                            // We need to modify the prompt based on the style
-                            let stylePrompt = prompt;
-                            if (style === 'comic') {
-                                stylePrompt = prompt + ', comic book style, cartoon, illustrated, vibrant colors';
-                            } else if (style === 'sketch') {
-                                stylePrompt = prompt + ', pencil sketch, line art, black and white drawing';
-                            }
-                            
-                            console.log('Using ControlNet with sketch as control and style transfer');
-                            imageBuffer = await imageService.generateImageWithControlNet(
-                                stylePrompt,
-                                sketchBuffer,  // Use sketch as control input
-                                { 
-                                    style: 'line-art',  // Use line-art as base for all sketch generations
-                                    negativePrompt: 'realistic, photo, photorealistic, blurry, bad quality'
-                                }
-                            );
-                        } else {
-                            // Use sketch without style transfer
-                            console.log('Using ControlNet with sketch only');
-                            imageBuffer = await imageService.generateImageWithControlNet(
-                                prompt,
-                                sketchBuffer,
-                                { style: style || undefined }
-                            );
-                        }
-                    } else {
-                        console.log('Generating text-to-image...');
-                        // Regular text-to-image generation
-                        imageBuffer = await imageService.generateImage(prompt, { style: style });
-                    }
-                    
-                    console.log('Image generated, processing...');
-                    
-                    // Process image (resize and create thumbnail)
-                    const { mainImage, thumbnail } = await imageService.processImage(imageBuffer);
-                    
-                    // Upload to S3
-                    const timestamp = Date.now();
-                    const imageKey = `games/${post.game_id}/posts/${postId}/image_${timestamp}.jpg`;
-                    const thumbnailKey = `games/${post.game_id}/posts/${postId}/thumbnail_${timestamp}.jpg`;
-                    
-                    console.log('Uploading images to S3...');
-                    const imageUrl = await imageService.uploadToS3(mainImage, imageKey);
-                    const thumbnailUrl = await imageService.uploadToS3(thumbnail, thumbnailKey);
-                    
-                    const result = {
-                        imageUrl,
-                        thumbnailUrl,
-                        prompt,
-                        englishPrompt: prompt,
-                        metadata: {
-                            style: style || null,
-                            hasSketch: !!sketch
-                        }
-                    };
-                    
+                    console.log('Character reference:', character || 'None');
+
+                    // Use the generateAndUpload method which handles character references properly
+                    const result = await imageService.generateAndUpload({
+                        prompt: prompt,
+                        gameId: post.game_id,
+                        postId: postId,
+                        userId: userId,
+                        character: character,  // This will now be properly used for character consistency
+                        style: style
+                    });
+
                     console.log('Image generation completed successfully');
                     
                     // Save image info to database

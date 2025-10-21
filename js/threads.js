@@ -611,10 +611,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const statusDiv = document.createElement('div');
             statusDiv.id = 'autoGenerationStatus';
             statusDiv.style.cssText = 'background: #e3f2fd; border: 2px solid #2196f3; border-radius: 8px; padding: 15px; margin: 15px 0;';
+
+            // Build status content with character enhancement indicator
+            let characterInfo = selectedCharacter ? `<p style="margin: 5px 0;"><strong>Hahmo:</strong> ${selectedCharacter}</p>` : '';
+            if (derivedPrompts.characterEnhanced) {
+                characterInfo += `<p style="margin: 5px 0; color: #4caf50;">✨ Hahmon yhdenmukaisuus aktivoitu</p>`;
+            }
+
             statusDiv.innerHTML = `
                 <h4 style="margin: 0 0 10px 0;">🤖 AI-median automaattinen luonti</h4>
                 <p style="margin: 5px 0;"><strong>Tunnelma:</strong> ${mood}</p>
-                ${selectedCharacter ? `<p style="margin: 5px 0;"><strong>Hahmo:</strong> ${selectedCharacter}</p>` : ''}
+                ${characterInfo}
                 <p style="margin: 5px 0;"><strong>Kuvaprompti:</strong> ${derivedPrompts.imagePrompt}</p>
                 <p style="margin: 5px 0;"><strong>Ääniprompti:</strong> ${derivedPrompts.audioPrompt}</p>
                 <p style="margin: 10px 0 5px 0; font-style: italic; color: #666;">Luodaan mediaa...</p>
