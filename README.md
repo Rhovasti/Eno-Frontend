@@ -1,113 +1,121 @@
 # Eno Game Platform Frontend
 
-This is the frontend for the Eno game platform, a web-based application for text-based role-playing games.
+This is the frontend for the Eno game platform, a comprehensive web-based ecosystem for text-based role-playing games with AI-powered content generation and worldbuilding tools.
 
-## Setup and Installation
+## Quick Start
 
-1. Install dependencies:
-   ```
+1. **Install dependencies**:
+   ```bash
    npm install
    ```
 
-2. Set up the database:
-   ```
-   mysql -u your_username -p < mysql_schema.sql
-   ```
-
-3. Start the server:
-   ```
-   node js/server.js
+2. **Set up environment**:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your API keys and settings
    ```
 
-## Features
+3. **Start development server**:
+   ```bash
+   node js/server_sqlite_new.js
+   ```
+   The server runs on http://localhost:3000 with auto-created SQLite database.
 
-- User authentication (login/register)
-- Game creation and management
-- Chapter and beat structure for organizing game content
-- Post creation within beats
-- Role-based permissions (admins, game masters, players)
+## Core Features
+
+### Gaming System
+- **User Authentication**: Secure login/register with JWT tokens
+- **Game Structure**: Games → Chapters → Beats → Posts hierarchy
+- **Role Management**: Admin, Game Master, and Player roles
+- **Auto-Media Generation**: AI-powered image and audio generation from post content
+
+### AI Integration
+- **Image Generation**: Stability AI SD 3.5 Medium with ControlNet support
+- **Character Portraits**: Consistent character visualization across sessions
+- **Audio Generation**: Stable Audio 2.5 for ambient sound creation
+- **Prompt Derivation**: Automatic content analysis for media generation
+
+### Worldbuilding Tools
+- **Dynamic Wiki**: Collaborative worldbuilding with rich media support
+- **Geospatial Maps**: Multi-level map system (Regional → District → Building → Interior)
+- **Economic Simulation**: Integration with Enonomics for realistic world data
+- **Knowledge Graph**: N4L domain-specific language for semantic relationships
+
+## Documentation
+
+- **[Development Guide](CLAUDE.md)** - Comprehensive development instructions
+- **[Documentation Index](docs/DOCUMENTATION_INDEX.md)** - Complete documentation overview
+- **[Production Server Guide](docs/productionserver.md)** - Deployment procedures
+- **[Archive](ARCHIVE.md)** - Historical implementation notes
+
+## File Structure
+
+```
+Eno-Frontend/
+├── js/                    # JavaScript source code
+│   ├── routes/           # API route handlers
+│   ├── services/         # Service modules (image, audio)
+│   ├── utils/            # Utility functions
+│   ├── components/       # UI components
+│   └── server_sqlite_new.js  # Main server (recommended)
+├── hml/                  # HTML templates
+├── css/                  # Stylesheets
+├── docs/                 # Documentation
+├── archive/              # Archived files
+└── data/                 # SQLite database (auto-created)
+```
 
 ## API Endpoints
 
 ### Authentication
-- `POST /api/login`: Log in with email and password
-- `POST /api/register`: Register a new user account
-- `POST /api/logout`: Log out the current user
-- `GET /api/user`: Get current user information
+- `POST /api/login` - User login
+- `POST /api/register` - User registration
+- `GET /api/user` - Current user info
 
-### Games
-- `GET /api/games`: Get all games
-- `POST /api/games`: Create a new game
+### Games & Content
+- `GET /api/games` - List all games
+- `POST /api/games` - Create new game
+- `GET /api/games/:id/chapters` - Game chapters
+- `GET /api/chapters/:id/beats` - Chapter beats
+- `GET /api/beats/:id/posts` - Beat posts
 
-### Chapters
-- `GET /api/games/:gameId/chapters`: Get chapters for a game
-- `POST /api/games/:gameId/chapters`: Create a chapter in a game
+### Media Generation
+- `POST /api/generate/image` - AI image generation
+- `POST /api/generate/audio` - AI audio generation
 
-### Beats
-- `GET /api/chapters/:chapterId/beats`: Get beats for a chapter
-- `POST /api/chapters/:chapterId/beats`: Create a beat in a chapter
-- `GET /api/beats/:beatId/posts`: Get posts for a beat
+### Maps & Worldbuilding
+- `GET /api/maps/*` - Geospatial data APIs
+- `GET /api/wiki/*` - Wiki content APIs
 
-### Posts
-- `GET /api/posts`: Get all posts (admin only)
-- `POST /api/posts`: Create a new post in a beat
+## Environment Configuration
 
-## Utilities
-
-### Fetch Beat Posts Script
-
-The repository includes a Python script `fetch_beat_posts.py` to fetch posts for a specific beat. This is useful for extracting game content for archiving or analysis.
-
-Usage:
+Required `.env` variables:
 ```
-python fetch_beat_posts.py BEAT_ID [options]
-```
-
-Options:
-- `--url URL`: Base URL of the Eno API (default: http://localhost:3000/)
-- `--email EMAIL`: Email for authentication
-- `--password PASSWORD`: Password for authentication
-- `--save FILENAME`: Save output to file
-- `--format {text,json}`: Output format (default: text)
-
-Example:
-```
-python fetch_beat_posts.py 5 --url https://yourgameserver.com/ --email user@example.com --password secret --save game_posts --format json
+STABILITY_API_KEY=your_stability_api_key
+AWS_ACCESS_KEY_ID=your_aws_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret
+AWS_BUCKET_NAME=kuvatjakalat
+AWS_REGION=eu-north-1
+AI_API_KEY=your_anthropic_api_key
+JWT_SECRET=change_in_production
 ```
 
-### Post to Beat Script
+## Deployment
 
-The repository also includes a Python script `post_to_beat.py` to create new posts in a beat as either a GM or player.
+- **Development**: `node js/server_sqlite_new.js` (port 3000)
+- **Production**: `./deploy_complete_features.sh` (full deployment)
+- **Live Site**: https://www.iinou.eu
 
-Usage:
-```
-python post_to_beat.py BEAT_ID [options]
-```
+## Database
 
-Options:
-- `--url URL`: Base URL of the Eno API (default: http://localhost:3000/)
-- `--email EMAIL`: Email for authentication (required)
-- `--password PASSWORD`: Password for authentication (required)
-- `--title TITLE`: Title of the post (required) 
-- `--content TEXT`: Content of the post
-- `--file FILENAME`: Read content from file instead of command line
-- `--type {gm,player}`: Post type (default: player)
-- `--debug`: Enable debug output
-
-Example:
-```
-python post_to_beat.py 5 --url https://yourgameserver.com/ --email gm@example.com --password secret --title "GM Update" --file gm_story.txt --type gm
-```
-
-## Database Schema
-
-The application uses a MySQL database with the following tables:
-- `users`: User accounts and authentication
-- `games`: Game instances
-- `chapters`: Sections within games
-- `beats`: Story points within chapters
-- `posts`: User posts within beats
+- **Development**: SQLite (auto-created in `data/database.sqlite`)
+- **Production**: MySQL (see production deployment guide)
+- **Schema**: Games → Chapters → Beats → Posts hierarchy
 
 ## Contributing
 
-Please follow the code style guidelines in the CLAUDE.md file when contributing to this project.
+Please follow the code style guidelines in the [Development Guide](CLAUDE.md) when contributing to this project.
+
+## License
+
+See LICENSE file for licensing information.

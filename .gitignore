@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+package-lock.json
 
 # Environment variables
 .env
@@ -14,8 +15,12 @@ data/
 # Logs
 *.log
 npm-debug.log*
+logs/
 
-# OS files
+# Temporary files
+*.tmp
+*.temp
+*.cache
 .DS_Store
 Thumbs.db
 
@@ -23,14 +28,25 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Temporary files
-*.tmp
-*.temp
-# Backup directories and files
+# Backup files
 backup*/
 *.backup
 *.bak
+*.old
+*~
 
-# Test files (move to archive/test-files/)
+# Test files
 test-*.html
 test_*.html
+debug_*.py
+test_*.py
+test_*.js
+
+# Large binary files
+*.mp3
+*.wav
+*.png (except specific UI assets)
+land-texture.png
+
+# Claude AI files
+.claude/
