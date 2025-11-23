@@ -397,5 +397,5 @@ class EntitySearchService {
     }
 }
 
-// Export for use in other modules
-module.exports = EntitySearchService;
+// Export for use in browser
+window.EntitySearchService = EntitySearchService;

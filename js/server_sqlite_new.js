@@ -807,6 +807,11 @@ app.get('/wiki_dynamic.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../hml/wiki_dynamic.html'));
 });
 
+// Serve Entity Explorer page
+app.get('/entity-explorer', (req, res) => {
+    res.sendFile(path.join(__dirname, '../hml/entity-explorer.html'));
+});
+
 // Serve citystate map page
 app.get('/citystate-map.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../citystate-map.html'));
@@ -7162,39 +7167,71 @@ function transformGeoJSONCoordinates(geoJson) {
 }
 
 // Elevation contours API - TEMPORARILY DISABLED
-// This endpoint returns empty GeoJSON until proper contour files can be regenerated
+// Elevation contours API - Serve kk10m.geojson data
 app.get('/api/maps/elevation/contours', async (req, res) => {
     try {
-        // Return empty GeoJSON structure to maintain compatibility with frontend
-        const emptyGeoJSON = {
-            type: "FeatureCollection",
-            features: []
+        const elevationPath = path.join(__dirname, '../../qgis/citystates/buildings/kk10m.geojson');
+
+        // Check if file exists
+        if (!fs.existsSync(elevationPath)) {
+            return res.status(404).json({
+                success: false,
+                error: 'Elevation contours data not found'
+            });
+        }
+
+        // Load and parse GeoJSON
+        const geojsonData = JSON.parse(fs.readFileSync(elevationPath, 'utf8'));
+
+        // Filter by elevation range if requested
+        let filteredFeatures = geojsonData.features;
+        const { minElev, maxElev } = req.query;
+
+        if (minElev || maxElev) {
+            filteredFeatures = geojsonData.features.filter(feature => {
+                const elevation = feature.properties.ELEV;
+                const min = minElev ? parseFloat(minElev) : -Infinity;
+                const max = maxElev ? parseFloat(maxElev) : Infinity;
+                return elevation >= min && elevation <= max;
+            });
+        }
+
+        // Return filtered GeoJSON
+        const filteredData = {
+            ...geojsonData,
+            features: filteredFeatures
         };
 
         res.json({
             success: true,
-            data: emptyGeoJSON,
+            data: filteredData,
             type: 'elevation_contours',
-            totalFeatures: 0,
-            originalFeatures: 0,
-            disabled: true,
-            message: 'Elevation contours temporarily disabled - waiting for regenerated contour files'
+            totalFeatures: filteredFeatures.length,
+            originalFeatures: geojsonData.features.length,
+            filter: { minElev: minElev || null, maxElev: maxElev || null },
+            styling: {
+                recommended: {
+                    color: '#8B4513',      // Brown for low elevation
+                    weight: 1,
+                    opacity: 0.7
+                },
+                elevationGradient: {
+                    1: { color: '#8B4513', weight: 1, opacity: 0.7 },    // Brown (lowland)
+                    10: { color: '#228B22', weight: 1, opacity: 0.7 },   // Forest green
+                    25: { color: '#90EE90', weight: 1, opacity: 0.7 },   // Light green
+                    50: { color: '#D3D3D3', weight: 1, opacity: 0.7 },   // Light gray (foothills)
+                    100: { color: '#A9A9A9', weight: 1.5, opacity: 0.8 }, // Gray (mountains)
+                    200: { color: '#FFFFFF', weight: 2, opacity: 0.9 }  // White (snow)
+                },
+                visibilityRule: 'zoom >= 13' // Only show at high zoom levels
+            }
         });
 
     } catch (error) {
-        console.error('Error handling elevation contours request:', error);
-        // Even in error case, return empty GeoJSON for compatibility
-        const emptyGeoJSON = {
-            type: "FeatureCollection",
-            features: []
-        };
-        res.json({
-            success: true,
-            data: emptyGeoJSON,
-            type: 'elevation_contours',
-            totalFeatures: 0,
-            originalFeatures: 0,
-            error: 'Service temporarily unavailable'
+        console.error('Error loading elevation contours:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load elevation contours data'
         });
     }
 });
@@ -7202,7 +7239,7 @@ app.get('/api/maps/elevation/contours', async (req, res) => {
 // Roads network API - Serve tiet.geojson data
 app.get('/api/maps/roads/network', async (req, res) => {
     try {
-        const roadsPath = path.join(__dirname, '../../qgis/scaled and projected/tiet.geojson');
+        const roadsPath = path.join(__dirname, '../../qgis/citystates/buildings/tiet.geojson');
 
         // Check if file exists
         if (!fs.existsSync(roadsPath)) {
@@ -7212,7 +7249,7 @@ app.get('/api/maps/roads/network', async (req, res) => {
             });
         }
 
-        // Load and parse GeoJSON (pre-processed files are already in WGS84)
+        // Load and parse GeoJSON
         const geojsonData = JSON.parse(fs.readFileSync(roadsPath, 'utf8'));
 
         res.json({
@@ -7222,25 +7259,29 @@ app.get('/api/maps/roads/network', async (req, res) => {
             totalFeatures: geojsonData.features.length,
             styling: {
                 recommended: {
-                    color: '#444444',
-                    weight: 1.5,
-                    opacity: 0.8,
-                    dashArray: '5, 5' // Dashed line pattern
+                    color: '#666666',
+                    weight: 2,
+                    opacity: 0.8
                 },
                 alternatives: {
                     major: {
                         color: '#333333',
-                        weight: 2.0,
-                        opacity: 0.9,
-                        dashArray: '8, 4'
+                        weight: 2.5,
+                        opacity: 0.9
                     },
                     minor: {
-                        color: '#666666',
+                        color: '#999999',
+                        weight: 1.5,
+                        opacity: 0.7
+                    },
+                    path: {
+                        color: '#8B4513',
                         weight: 1.0,
-                        opacity: 0.7,
+                        opacity: 0.6,
                         dashArray: '3, 3'
                     }
-                }
+                },
+                visibilityRule: 'zoom >= 9' // Show at medium zoom levels and higher
             }
         });
 
@@ -7256,7 +7297,7 @@ app.get('/api/maps/roads/network', async (req, res) => {
 // Water features API - Serve jarvet.geojson data (lakes and waterways)
 app.get('/api/maps/water/features', async (req, res) => {
     try {
-        const waterPath = path.join(__dirname, '../../qgis/scaled and projected/jarvet.geojson');
+        const waterPath = path.join(__dirname, '../../qgis/citystates/buildings/jarvet.geojson');
 
         // Check if file exists
         if (!fs.existsSync(waterPath)) {
@@ -7266,16 +7307,26 @@ app.get('/api/maps/water/features', async (req, res) => {
             });
         }
 
-        // Load and parse GeoJSON (pre-processed files are already in WGS84)
+        // Load and parse GeoJSON
         const geojsonData = JSON.parse(fs.readFileSync(waterPath, 'utf8'));
 
         // Filter by water type if requested
         let filteredFeatures = geojsonData.features;
-        const { waterType } = req.query;
+        const { waterType, minHeight, maxHeight } = req.query;
 
         if (waterType) {
-            filteredFeatures = geojsonData.features.filter(feature => {
+            filteredFeatures = filteredFeatures.filter(feature => {
                 return feature.properties.type === waterType;
+            });
+        }
+
+        // Filter by depth/height range if requested
+        if (minHeight || maxHeight) {
+            filteredFeatures = filteredFeatures.filter(feature => {
+                const height = feature.properties.height;
+                const min = minHeight ? parseFloat(minHeight) : -Infinity;
+                const max = maxHeight ? parseFloat(maxHeight) : Infinity;
+                return height >= min && height <= max;
             });
         }
 
@@ -7291,7 +7342,41 @@ app.get('/api/maps/water/features', async (req, res) => {
             type: 'water_features',
             totalFeatures: filteredFeatures.length,
             originalFeatures: geojsonData.features.length,
-            filter: waterType || null
+            filter: { waterType: waterType || null, minHeight: minHeight || null, maxHeight: maxHeight || null },
+            styling: {
+                recommended: {
+                    color: '#4A90E2',
+                    weight: 2,
+                    fillOpacity: 0.6,
+                    fillColor: '#87CEEB'
+                },
+                alternatives: {
+                    lakes: {
+                        color: '#4A90E2',
+                        weight: 1,
+                        fillOpacity: 0.7,
+                        fillColor: '#87CEEB'
+                    },
+                    rivers: {
+                        color: '#2980B9',
+                        weight: 2,
+                        opacity: 0.8
+                    },
+                    deep: {
+                        color: '#1E3A8A',
+                        weight: 1,
+                        fillOpacity: 0.8,
+                        fillColor: '#3B82F6'
+                    },
+                    shallow: {
+                        color: '#60A5FA',
+                        weight: 1,
+                        fillOpacity: 0.5,
+                        fillColor: '#93C5FD'
+                    }
+                },
+                visibilityRule: 'zoom >= 8' // Show at low zoom levels and higher
+            }
         });
 
     } catch (error) {

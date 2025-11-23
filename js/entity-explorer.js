@@ -97,7 +97,7 @@ class EntityExplorer {
             // Initialize Entity Search component
             const searchContainer = document.getElementById('entity-search-container');
             if (searchContainer) {
-                this.entitySearch = new EntitySearch(searchContainer, this.searchService);
+                this.entitySearch = new EntitySearch('entity-search-container', this.searchService);
 
                 // Set up event handlers for search component
                 this.entitySearch.on('search', this.handleSearch.bind(this));
@@ -108,7 +108,7 @@ class EntityExplorer {
             // Initialize Relationship Viewer component
             const relationshipContainer = document.getElementById('relationship-viewer-container');
             if (relationshipContainer) {
-                this.relationshipViewer = new RelationshipViewer(relationshipContainer, this.searchService);
+                this.relationshipViewer = new RelationshipViewer('relationship-viewer-container', this.searchService);
 
                 // Set up event handlers for relationship viewer
                 this.relationshipViewer.on('relationshipSelected', this.handleRelationshipSelected.bind(this));
