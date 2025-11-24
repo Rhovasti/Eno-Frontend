@@ -76,8 +76,13 @@ sshpass -p "$PROD_PASS" scp hml/admin.html $PROD_USER@$PROD_HOST:$PROD_PATH/hml/
 sshpass -p "$PROD_PASS" scp hml/create-game.html $PROD_USER@$PROD_HOST:$PROD_PATH/hml/ 2>/dev/null
 sshpass -p "$PROD_PASS" scp hml/gm-selection.html $PROD_USER@$PROD_HOST:$PROD_PATH/hml/ 2>/dev/null
 
-# New wiki system
+# Wiki system files (both versions)
 sshpass -p "$PROD_PASS" scp hml/wiki_dynamic.html $PROD_USER@$PROD_HOST:$PROD_PATH/hml/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp hml/wiki_dynamic_production.html $PROD_USER@$PROD_HOST:$PROD_PATH/hml/ 2>/dev/null
+
+# Entity Explorer system
+echo "  - Uploading Entity Explorer..."
+sshpass -p "$PROD_PASS" scp hml/entity-explorer.html $PROD_USER@$PROD_HOST:$PROD_PATH/hml/ 2>/dev/null
 
 # New citystate map system
 sshpass -p "$PROD_PASS" scp citystate-map.html $PROD_USER@$PROD_HOST:$PROD_PATH/ 2>/dev/null
@@ -93,12 +98,55 @@ sshpass -p "$PROD_PASS" scp js/script.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>
 sshpass -p "$PROD_PASS" scp js/threads.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
 sshpass -p "$PROD_PASS" scp js/storyboard.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
 
-# New map and wiki systems
+# Wiki system JavaScript
 sshpass -p "$PROD_PASS" scp js/wiki_dynamic.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/wiki_dynamic_production.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/wiki_timeline_map_integration.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/wiki_production_map.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
+
+# Entity Explorer JavaScript
+echo "  - Uploading Entity Explorer JavaScript..."
+sshpass -p "$PROD_PASS" scp js/entity-explorer.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
+
+# Map viewer systems
 sshpass -p "$PROD_PASS" scp js/CitystateMapViewer.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
 sshpass -p "$PROD_PASS" scp js/city_detail_viewer.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/ 2>/dev/null
 
 echo -e "${GREEN}✓ Frontend files uploaded${NC}"
+
+echo -e "${YELLOW}Step 4a: Uploading components and routes...${NC}"
+
+# Create component directories
+echo "  - Setting up component directories..."
+sshpass -p "$PROD_PASS" ssh $PROD_USER@$PROD_HOST "mkdir -p $PROD_PATH/js/components/timeline" 2>/dev/null
+sshpass -p "$PROD_PASS" ssh $PROD_USER@$PROD_HOST "mkdir -p $PROD_PATH/js/components/maps" 2>/dev/null
+sshpass -p "$PROD_PASS" ssh $PROD_USER@$PROD_HOST "mkdir -p $PROD_PATH/js/routes/maps" 2>/dev/null
+
+# Upload Entity Explorer components
+echo "  - Uploading Entity Explorer components..."
+sshpass -p "$PROD_PASS" scp js/components/EntitySearch.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/components/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/components/RelationshipViewer.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/components/ 2>/dev/null
+
+# Upload Timeline components
+echo "  - Uploading Timeline components..."
+sshpass -p "$PROD_PASS" scp js/components/timeline/TemporalTimeline.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/components/timeline/ 2>/dev/null
+
+# Upload Map components
+echo "  - Uploading Map components..."
+sshpass -p "$PROD_PASS" scp js/components/maps/UnifiedMapViewer.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/components/maps/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/components/maps/TemporalMapExtension.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/components/maps/ 2>/dev/null
+
+# Upload Map API routes
+echo "  - Uploading Map API routes..."
+sshpass -p "$PROD_PASS" scp js/routes/maps/regionRoutes.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/routes/maps/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/routes/maps/districtRoutes.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/routes/maps/ 2>/dev/null
+sshpass -p "$PROD_PASS" scp js/routes/maps/buildingRoutes.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/routes/maps/ 2>/dev/null
+
+# Upload Entity Search Service
+echo "  - Uploading Entity Search Service..."
+sshpass -p "$PROD_PASS" scp js/services/entitySearchService.js $PROD_USER@$PROD_HOST:$PROD_PATH/js/services/ 2>/dev/null
+
+echo -e "${GREEN}✓ Components and routes uploaded${NC}"
 
 echo -e "${YELLOW}Step 5: Uploading static assets...${NC}"
 
@@ -205,15 +253,19 @@ echo -e "${GREEN}DEPLOYMENT COMPLETE!${NC}"
 echo "==============================================================="
 echo ""
 echo -e "${BLUE}Deployed Features:${NC}"
-echo "  • Enhanced Wiki System with map integration"
+echo "  • Enhanced Wiki System with timeline & map integration"
+echo "  • Entity Explorer with relationship visualization"
 echo "  • Citystate Map Viewer with 133 citystates"
-echo "  • Vector overlays (buildings, roads, districts, etc.)"
+echo "  • Vector overlays (elevation, roads, water, buildings, districts)"
+echo "  • Temporal event timeline visualization"
 echo "  • Lore-Grounded Narrative Engine"
 echo "  • AsyncGameManager for long-running games"
 echo "  • Complete service layer architecture"
 echo ""
 echo -e "${BLUE}Access URLs:${NC}"
-echo "  • Wiki: https://www.iinou.eu/hml/wiki_dynamic.html"
+echo "  • Wiki (Production): https://www.iinou.eu/hml/wiki_dynamic_production.html"
+echo "  • Wiki (Standard): https://www.iinou.eu/hml/wiki_dynamic.html"
+echo "  • Entity Explorer: https://www.iinou.eu/entity-explorer"
 echo "  • Maps: https://www.iinou.eu/citystate-map.html"
 echo "  • Games: https://www.iinou.eu/hml/threads.html"
 echo ""
